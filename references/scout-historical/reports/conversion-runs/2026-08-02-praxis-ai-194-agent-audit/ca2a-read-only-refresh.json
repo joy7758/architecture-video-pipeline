@@ -1,0 +1,21 @@
+{
+  "artifact_type": "TITMAS_SCOUT_EXISTING_CONVERSION_REFRESH",
+  "observed_at": "2026-08-02T07:56:47Z",
+  "target": "agentrust-io/ca2a#76",
+  "state": "OPEN",
+  "draft": false,
+  "head_sha": "0a1ffa6710d25f58515b2dca7e0619e134c0a43e",
+  "mergeable": "MERGEABLE",
+  "merge_state": "BLOCKED",
+  "latest_check": {
+    "name": "Require maintainer approval",
+    "conclusion": "FAILURE",
+    "classification": "EXTERNAL_MAINTAINER_APPROVAL_GATE"
+  },
+  "new_maintainer_feedback_observed": false,
+  "new_review_finding_observed": false,
+  "merge_conflict_observed": false,
+  "head_sha_change_observed": false,
+  "closed_or_merged_observed": false,
+  "external_action_performed": false
+}

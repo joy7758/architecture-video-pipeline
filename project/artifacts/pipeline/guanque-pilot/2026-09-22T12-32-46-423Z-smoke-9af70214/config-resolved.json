@@ -1,0 +1,142 @@
+{
+  "schemaVersion": "architecture-film.v1",
+  "adapterId": "guanque",
+  "title": "鹳雀楼 · 一砖一瓦",
+  "width": 360,
+  "height": 640,
+  "fps": 4,
+  "durationSeconds": 24,
+  "audio": "silent",
+  "assemblySemantics": "Reverse and forward playback of the existing per-component assembly schedule; not an exploded-layer structural model.",
+  "shots": [
+    {
+      "id": "finished-opening",
+      "label": "四檐凌空 · 一楼入画",
+      "start": 0,
+      "end": 3,
+      "from": {
+        "progress": 1,
+        "position": [
+          60.72,
+          39.6975,
+          102.935
+        ],
+        "target": [
+          0,
+          12.5,
+          3
+        ]
+      },
+      "to": {
+        "progress": 1,
+        "position": [
+          54.395,
+          39.6975,
+          107.995
+        ],
+        "target": [
+          0,
+          12.5,
+          3
+        ]
+      }
+    },
+    {
+      "id": "reverse-assembly",
+      "label": "循序拆解 · 回望一砖一瓦",
+      "start": 3,
+      "end": 9,
+      "from": {
+        "progress": 1,
+        "position": [
+          54.395,
+          39.6975,
+          107.995
+        ],
+        "target": [
+          0,
+          12.5,
+          3
+        ]
+      },
+      "to": {
+        "progress": 0,
+        "position": [
+          26.565,
+          34.6375,
+          118.115
+        ],
+        "target": [
+          0,
+          12.5,
+          3
+        ]
+      }
+    },
+    {
+      "id": "forward-assembly",
+      "label": "循序营造 · 更上一层楼",
+      "start": 9,
+      "end": 21,
+      "from": {
+        "progress": 0,
+        "position": [
+          26.565,
+          34.6375,
+          118.115
+        ],
+        "target": [
+          0,
+          12.5,
+          3
+        ]
+      },
+      "to": {
+        "progress": 1,
+        "position": [
+          -43.01,
+          38.4325,
+          111.79
+        ],
+        "target": [
+          0,
+          12.5,
+          3
+        ]
+      }
+    },
+    {
+      "id": "finished-closing",
+      "label": "更上一层楼",
+      "start": 21,
+      "end": 24,
+      "from": {
+        "progress": 1,
+        "position": [
+          -43.01,
+          38.4325,
+          111.79
+        ],
+        "target": [
+          0,
+          12.5,
+          3
+        ]
+      },
+      "to": {
+        "progress": 1,
+        "position": [
+          -61.985,
+          39.6975,
+          102.935
+        ],
+        "target": [
+          0,
+          12.5,
+          3
+        ]
+      }
+    }
+  ],
+  "framing_note": "Wider framing for the fixed facade/roof snapshot: camera offsets expanded 15 percent around unchanged targets."
+}

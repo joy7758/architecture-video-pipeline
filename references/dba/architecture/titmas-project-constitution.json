@@ -1,0 +1,156 @@
+{
+  "$schema": "schemas/constitution-machine-contract-v0.1.schema.json",
+  "contract_id": "TITMAS-PROJECT-CONSTITUTION-COHERENCE-v0.1",
+  "contract_type": "TITMAS_PROJECT_CONSTITUTION",
+  "version": "0.1.0",
+  "status": "ACCEPTED_EFFECTIVE_ON_CANONICAL_MERGE",
+  "title": "TITMAS project constitution for unified entry and distributed enforcement",
+  "title_zh": "TITMAS统一入口与分布式执法项目宪法",
+  "parent_constitution_ref": "DBA-MAIN-CONSTITUTION-COHERENCE-v0.1",
+  "authority_effect": "EFFECTIVE_WHEN_REACHABLE_FROM_CANONICAL_MAIN",
+  "human_adoption_decision": "APPROVED",
+  "effective_trigger": "REACHABLE_FROM_CANONICAL_MAIN",
+  "canonical_ref": "refs/heads/main",
+  "authorized_content_head": "440d0163aea1577437a2a9c6737a37e0af47663a",
+  "candidate_branch_authority_effect": "NONE",
+  "post_merge_authority_effect": "ADOPTED_AND_EFFECTIVE",
+  "merge_authorized": true,
+  "implementation_authorized": false,
+  "parent_contract": {
+    "parent_constitution": "DIGITAL_BIOSPHERE_DBA_MAIN_CONSTITUTION",
+    "parent_contract_id": "DBA-MAIN-CONSTITUTION-COHERENCE-v0.1",
+    "titmas_project_constitution_cannot_override_parent": true
+  },
+  "principles": [
+    {
+      "stable_id": "TITMAS-P-INHERIT-DBA",
+      "title": "DBA constitutional inheritance",
+      "title_zh": "继承DBA主宪法",
+      "status": "ADOPTED_CONSTITUTIONAL_EXTENSION",
+      "statement": "TITMAS inherits the DBA main constitution and may narrow its own scope but may not override parent authority, truth, ownership or evidence boundaries.",
+      "statement_zh": "TITMAS继承DBA主宪法，可以收窄自身范围，但不得覆盖父级权威、事实、所有权或证据边界。",
+      "source_refs": [
+        "architecture/main-constitution-principles.json"
+      ]
+    },
+    {
+      "stable_id": "TITMAS-P-UNIFIED-LOGICAL-ENTRY",
+      "title": "Unified logical entry without physical centralization",
+      "title_zh": "统一逻辑入口但不物理集中",
+      "status": "ADOPTED_CONSTITUTIONAL_EXTENSION",
+      "statement": "TITMAS may define a coherent machine-discovery and policy entry contract, but no global mandatory gateway or physical single control point is implied.",
+      "statement_zh": "TITMAS可以定义一致的机器发现与策略入口契约，但不推导全局强制网关或物理单一控制点。",
+      "source_refs": [
+        "agent-index.json",
+        "architecture/commercial-private-infrastructure-strategy-constitution.md"
+      ]
+    },
+    {
+      "stable_id": "TITMAS-P-DISTRIBUTED-ENFORCEMENT",
+      "title": "Distributed and bounded enforcement",
+      "title_zh": "分布式有界执法",
+      "status": "ADOPTED_CONSTITUTIONAL_EXTENSION",
+      "statement": "Policy decisions, evidence checks and revalidation may be enforced at owned integration points without turning TITMAS into a runtime, model, truth source or final authority.",
+      "statement_zh": "策略决策、证据检查和重新核验可以在各自所有的接入点执行，但不得把TITMAS变成运行时、模型、事实源或最终权威。",
+      "source_refs": [
+        "architecture/saee-dbos-contract.md",
+        "architecture/interface-boundary-rules.md"
+      ]
+    },
+    {
+      "stable_id": "TITMAS-P-REVALIDATE-COMPOSITION",
+      "title": "Composition and change revalidation",
+      "title_zh": "组合与变化重新核验",
+      "status": "ADOPTED_CONSTITUTIONAL_EXTENSION",
+      "statement": "A changed module, dependency, policy, permission or entity composition must not inherit an earlier PASS without context-bound revalidation.",
+      "statement_zh": "模块、依赖、策略、权限或主体组合变化后，未经上下文绑定的重新核验不得继承早先的PASS。",
+      "source_refs": [
+        "architecture/ADR-039-verified-correction-and-execution-context-continuity.md"
+      ]
+    }
+  ],
+  "public_product_portfolio": {
+    "product_count": 4,
+    "product_ids": [
+      "TITMAS_GATE",
+      "TITMAS_RECEIPT",
+      "TITMAS_AUDIT",
+      "TITMAS_HEALTH"
+    ],
+    "observer_is_product": false,
+    "dcell_layer_is_product": false
+  },
+  "role": {
+    "role_id": "CROSS_PLATFORM_CONSTITUTIONAL_ENFORCEMENT_REVALIDATION_AND_EVIDENCE_INTEROPERABILITY",
+    "is_runtime": false,
+    "is_model": false,
+    "is_truth_source": false,
+    "is_final_authority": false,
+    "is_global_mandatory_gateway": false,
+    "is_physical_single_gateway": false,
+    "constitutional_functions": [
+      "CROSS_PLATFORM_CONTRACT_ALIGNMENT",
+      "BOUNDED_ENFORCEMENT_RULES",
+      "CONTEXT_BOUND_REVALIDATION",
+      "EVIDENCE_INTEROPERABILITY"
+    ]
+  },
+  "unified_entry_goal": {
+    "default_unified_entry_goal": true,
+    "global_mandatory_entry_claim": false,
+    "logical_unified_entry": true,
+    "physical_single_gateway_required": false,
+    "distributed_enforcement_required": true,
+    "sovereign_central_runtime": false
+  },
+  "human_interface_contract": {
+    "human_readback_must_be_comprehensible": true,
+    "human_readback_must_use_declared_principal_or_market_locale": true,
+    "locale_must_be_explicitly_declared": true,
+    "critical_status_must_not_be_machine_code_only": true,
+    "machine_contract_and_localized_explanation_must_coexist": true,
+    "global_hardcoded_human_locale": false,
+    "machine_contract_remains_canonical": true,
+    "localized_explanation_creates_authority": false
+  },
+  "invariants": [
+    "TITMAS_INHERITS_DBA=true",
+    "TITMAS_MAY_OVERRIDE_DBA=false",
+    "UNIFIED_ENTRY_NE_GLOBAL_MANDATORY_GATEWAY=true",
+    "LOGICAL_ENTRY_NE_PHYSICAL_SINGLE_GATEWAY=true",
+    "TITMAS_NE_RUNTIME=true",
+    "TITMAS_NE_TRUTH_SOURCE=true",
+    "TITMAS_NE_FINAL_AUTHORITY=true",
+    "APPLICABLE_CONSTRAINT_INTERSECTION_REQUIRED=true",
+    "HUMAN_APPROVAL_ALWAYS_REQUIRED=false",
+    "GLOBAL_HARDCODED_HUMAN_LOCALE=false",
+    "HUMAN_COMPREHENSIBILITY_PRESERVED=true",
+    "PUBLIC_PRODUCT_COUNT_REMAINS_FOUR=true",
+    "OBSERVER_IS_PRODUCT=false",
+    "DCELL_LAYER_IS_PRODUCT=false",
+    "OBSERVER_IS_FIFTH_PRODUCT=false",
+    "DCELL_LAYER_IS_FIFTH_PRODUCT=false"
+  ],
+  "non_claims": [
+    "UNIFIED_ENTRY_IMPLEMENTED",
+    "UNIFIED_AGENT_ENTRY_IMPLEMENTED",
+    "SELECTABLE_DCELL_LIBRARY_IMPLEMENTED",
+    "CROSS_PLATFORM_ENFORCEMENT_PROVEN",
+    "EIGHTY_AGENT_SCALE_PROVEN",
+    "PRODUCTION_READY",
+    "COMMERCIAL_OFFERING_AVAILABLE",
+    "COMMERCIAL_OFFER_AVAILABLE",
+    "REAL_CUSTOMER_ADOPTION_PROVEN",
+    "EXTERNAL_ADOPTION_PROVEN"
+  ],
+  "source_refs": [
+    "architecture/main-constitution-principles.json",
+    "architecture/commercial-private-infrastructure-strategy-constitution.md",
+    "architecture/ADR-041-low-friction-entry-and-progressive-value.md",
+    "portfolio/product-catalog.internal.json"
+  ],
+  "limitations": [
+    "Human adoption is approved; normative effect begins only when this contract is reachable from canonical refs/heads/main, and it is not an implemented entry or enforcement system.",
+    "The current commercial private-core direction and four-product portfolio remain unchanged."
+  ]
+}

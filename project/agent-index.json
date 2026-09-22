@@ -1,0 +1,96 @@
+{
+  "schema_version": "1.0",
+  "project": "guanque-tower-3d",
+  "kind": "local-interactive-architectural-art",
+  "human_entry": "README.md",
+  "commands": {
+    "install": "npm --prefix app ci",
+    "dev": "npm run dev",
+    "validate": "npm run check",
+    "build": "npm run build",
+    "preview": "npm run preview"
+  },
+  "surfaces": {
+    "geometry": "app/src/heritage/guanque.ts",
+    "materials": "app/src/heritage/materials.ts",
+    "gpu_assembly": "app/src/heritage/builder.ts",
+    "scene": "app/src/PagodaThreeScene.tsx",
+    "timeline": "app/src/timeline.ts",
+    "ui": "app/src/App.tsx",
+    "facade": "app/src/heritage/facade.ts",
+    "roof": "app/src/heritage/roof.ts"
+  },
+  "observations": {
+    "progress": ".exhibition[data-progress]",
+    "playing": ".exhibition[data-playing]",
+    "view": ".exhibition[data-view]",
+    "renderer": ".three-scene[data-render-stats]"
+  },
+  "progress_contract": {
+    "range": [
+      0,
+      1
+    ],
+    "duration_seconds": 24,
+    "seeking": "pauses playback",
+    "completion": "all scheduled pieces settled"
+  },
+  "scope": {
+    "measured_reconstruction": false,
+    "runtime_model_calls": false,
+    "cloud_deployment": false,
+    "video_export": true
+  },
+  "upstream": {
+    "repository": "https://github.com/lhlGitHub/threejs-architecture-effects",
+    "commit": "693ca2ec1193e7355054f14d7deb1427439a24d0",
+    "license": "MIT"
+  },
+  "pipeline": {
+    "project": "architecture-video-pipeline",
+    "entry": "pipeline/README.md",
+    "roles": "pipeline/roles.md",
+    "integration_status": "pipeline/integrations.json",
+    "contract": "pipeline/schemas/contract.schema.json",
+    "governance": "docs/governance/pipeline-intake.json",
+    "pilot": "jobs/guanque-pilot/request.json",
+    "commands": {
+      "help": "node pipeline/cli.mjs help",
+      "init": "node pipeline/cli.mjs init --id <slug> --building <name> --location <place> --era <version>",
+      "status": "node pipeline/cli.mjs status <id>",
+      "handoff": "node pipeline/cli.mjs handoff <id>",
+      "verify": "node pipeline/cli.mjs verify <id>",
+      "tests": "npm run pipeline:check",
+      "snapshot": "node pipeline/snapshot-app.mjs",
+      "render": "node pipeline/render-video.mjs --app-root <snapshot-app> --config pipeline/video/guanque-pilot-wide.json --url <localhost-preview>",
+      "review": "node pipeline/cli.mjs review <id>"
+    },
+    "titmas": "BLOCKED_CURRENT_SERVICE_UNAVAILABLE",
+    "publication": "USER_ONLY",
+    "video_export_scope": "LOCAL_DETERMINISTIC_PREVIEW_WITH_VERSIONED_SOURCE",
+    "status": "LOCAL_REVIEW_RECORD_GATE_IMPLEMENTED_VISUAL_REWORK_PENDING",
+    "pilot_delivery": "jobs/guanque-pilot/delivery/delivery-manifest.json",
+    "pilot_status": "jobs/guanque-pilot/qa/final-status.json",
+    "pilot_current_delivery_status": "jobs/guanque-pilot/delivery/current-status.json",
+    "reverse_audit": "artifacts/reverse-audit-20260922-r1/assessment.json",
+    "audit_view": "artifacts/reverse-audit-20260922-r1/index.html",
+    "review_contract": "jobs/guanque-pilot/review-contract.json",
+    "review_protocol": "pipeline/REVIEW.md",
+    "discovery_reuse": "docs/discovery-reuse-assessment.md",
+    "module_catalog": {
+      "owner_repository": "joy7758/digital-biosphere-architecture-specification",
+      "repository_relative_path": "digital-biosphere-architecture/cockpit/reusable-module-catalog.json",
+      "local_path": "/Users/zhangbin/Documents/New project/digital-biosphere-architecture/cockpit/reusable-module-catalog.json",
+      "availability_scope": "LOCAL_COCKPIT_CATALOG_NOT_PUBLICATION_OR_ACTIVATION"
+    }
+  },
+  "reference_audit": "docs/photo-comparison-r3.md",
+  "visual_acceptance": "VISUAL_REVIEW_REQUIRED",
+  "photo_comparison": {
+    "url": "http://127.0.0.1:4196/",
+    "entry": "artifacts/photo-audit-r3/view/index.html",
+    "model": "http://127.0.0.1:4187/?inspection=1",
+    "camera_calibrated": false,
+    "reference_photos_in_app_bundle": false
+  }
+}

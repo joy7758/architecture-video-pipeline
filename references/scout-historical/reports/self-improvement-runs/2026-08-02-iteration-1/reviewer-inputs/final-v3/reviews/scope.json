@@ -1,0 +1,27 @@
+{
+  "schema_version": "0.1",
+  "review_id": "2026-08-02-scout-self-improvement-v3-scope-review",
+  "agent_identifier": "/root/comment_scope_review",
+  "model_runtime_identifier": "OpenAI Codex GPT-5",
+  "review_role": "SCOPE_REVIEWER",
+  "input_digest": "sha256:6d1205bb56da39d049619cd9b9b683fd20d37e7be0b9a737fa705ab69a2e73f6",
+  "output_digest": "sha256:53c5cb01f54eba24198eee525b660afdbf9ecf5f08d9feb1da93c1dfd4743ceb",
+  "decision": "PASS",
+  "timestamp": "2026-08-02T06:54:43Z",
+  "ruleset_version": "0.1",
+  "reason_codes": [
+    "FIVE_FILE_DISCOVERY_FIX_ONLY",
+    "REGRESSION_AND_MUTATION_BOUNDED",
+    "LOCAL_STATUS_UPDATE_ONLY"
+  ],
+  "findings": [
+    "The patch remains limited to five discovery files and tests; it changes no governance, Validator, ranking factor, or integration and authorizes only local status output."
+  ],
+  "blocking_reasons": [
+
+  ],
+  "evidence_references": [
+    "reports/self-improvement-runs/2026-08-02-iteration-1/code-diff-v3.patch",
+    "reports/self-improvement-runs/2026-08-02-iteration-1/test-result-v3.json"
+  ]
+}

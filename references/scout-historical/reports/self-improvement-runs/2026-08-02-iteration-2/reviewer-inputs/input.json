@@ -1,0 +1,18 @@
+{
+  "artifact_type":"TITMAS_SCOUT_AGENT_REVIEW_INPUT","ruleset_version":"0.1","review_run_id":"2026-08-02-scout-self-improvement-iteration-2","observed_at":"2026-08-02T06:58:30Z","requested_action":"UPDATE_SCOUT_STATUS",
+  "target":{"type":"LOCAL_SCOUT_CONFIG_CHANGE","reference":"tiamas-scout:self-improvement:iteration-2","url":"local://tiamas-scout/self-improvement/2026-08-02-iteration-2"},
+  "source_issue":{"reference":"reports/daily/2026-08-02-opportunity-report.json","state":"REPRODUCED","observed_defect":"nine configured live searches returned zero while adjacent bounded control queries returned recent public Issues"},
+  "duplicate_check":{"new_query_system_added":false,"same_nine_topics_retained":true,"query_terms_only_changed":true},
+  "pull_request":{"repository":"tiamas-scout","external_pull_request":false,"external_write_requested":false,"base_commit":"c32d545","worktree_only":true},
+  "diff":{"content_digest":"sha256:b053b89c705459f0e702d21e6ef1d6d4dc70b6c25af59376e260d62efae032b8","content_representation":"reports/self-improvement-runs/2026-08-02-iteration-2-query-recall.patch","files":["config/discovery-sources.yaml"],"ranking_factors_changed":false,"filter_policy_changed":false,"validator_or_governance_changed":false},
+  "local_validation":{"record_reference":"reports/self-improvement-runs/2026-08-02-iteration-2/test-result.json","record_digest":"sha256:a27ba152815b7a9817600d0c1add539b5791318ae8db92eaed96fd9f76e87c48","result":"69_RUNS_255_ASSERTIONS_AND_YAML_PARSE_PASS"},
+  "github_checks":[],
+  "automation":{"iteration":2,"maximum_iterations":3,"live_read_only_rerun_pending":true,"no_more_iteration_planned":true},
+  "risk_evidence":{"external_write_requested":false,"same_read_only_collector":true,"freshness_and_public_issue_constraints_retained":true,"historical_files_modified":false},
+  "history_references":[
+    {"path":"reports/self-improvement-runs/2026-08-02-iteration-2/observation.json","content_digest":"sha256:d7515064fb7ea83452c29bf4957d87f3bea2d26bf1d98af320ef01714e60c9dd"},
+    {"path":"reports/self-improvement-runs/2026-08-02-iteration-2/diagnosis.json","content_digest":"sha256:89f164da65d807f3afd58516f0b05210fbee3901792621c43d6223a5a11d0e9b"},
+    {"path":"reports/self-improvement-runs/2026-08-02-iteration-2-query-recall.patch","content_digest":"sha256:b053b89c705459f0e702d21e6ef1d6d4dc70b6c25af59376e260d62efae032b8"}
+  ],
+  "known_limits":["Broader terms may increase noise; existing deterministic filters remain responsible for exclusion.","The ranking remains heuristic_unvalidated.","UPDATE_SCOUT_STATUS authorizes only local output and no GitHub write."]
+}

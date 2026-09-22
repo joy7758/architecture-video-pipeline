@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": ["expiry_id", "subject_ref", "expires_at", "evaluated_at", "result"],
+  "properties": {
+    "expiry_id": {"type": "string"},
+    "subject_ref": {"type": "string"},
+    "expires_at": {"type": "string"},
+    "evaluated_at": {"type": "string"},
+    "result": {"enum": ["ACTIVE", "EXPIRED", "NOT_ASSESSED"]}
+  },
+  "additionalProperties": false
+}

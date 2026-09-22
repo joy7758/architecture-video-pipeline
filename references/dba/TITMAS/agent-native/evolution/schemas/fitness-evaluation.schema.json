@@ -1,0 +1,37 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://titmas.cn/schemas/d19/fitness-evaluation-2.1.json",
+  "title": "TITMAS FitnessEvaluationObject v2.1",
+  "type": "object",
+  "required": [
+    "evaluation_id",
+    "variant_id",
+    "evaluator_agent",
+    "test_results",
+    "security_results",
+    "compatibility_results",
+    "agent_usability_results",
+    "resource_results",
+    "reversibility_results",
+    "evidence_quality",
+    "limitations",
+    "recommendation",
+    "confidence"
+  ],
+  "properties": {
+    "evaluation_id": {"type": "string"},
+    "variant_id": {"type": "string"},
+    "evaluator_agent": {"type": "string"},
+    "test_results": {"enum": ["PASS", "FAIL", "NOT_ASSESSED"]},
+    "security_results": {"enum": ["PASS", "FAIL", "NOT_ASSESSED"]},
+    "compatibility_results": {"enum": ["PASS", "FAIL", "NOT_ASSESSED"]},
+    "agent_usability_results": {"enum": ["PASS", "FAIL", "NOT_ASSESSED"]},
+    "resource_results": {"enum": ["PASS", "FAIL", "NOT_ASSESSED"]},
+    "reversibility_results": {"enum": ["PASS", "FAIL", "NOT_ASSESSED"]},
+    "evidence_quality": {"enum": ["HIGH", "MEDIUM", "LOW", "NOT_ASSESSED"]},
+    "limitations": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+    "recommendation": {"enum": ["SELECT", "SELECT_WITH_CONDITIONS", "REJECT", "DEFER", "NOT_ASSESSED"]},
+    "confidence": {"type": "number"}
+  },
+  "additionalProperties": false
+}

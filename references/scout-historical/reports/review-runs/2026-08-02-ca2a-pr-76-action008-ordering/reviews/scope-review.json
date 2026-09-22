@@ -1,0 +1,33 @@
+{
+  "schema_version": "0.1",
+  "review_id": "ca2a-pr-76-action008-ordering-scope-review",
+  "agent_identifier": "/root/pr76_final_scope",
+  "model_runtime_identifier": "openai-codex/gpt-5",
+  "review_role": "SCOPE_REVIEWER",
+  "input_digest": "sha256:7b3867e1b1dfa0840beb912570b0039978d6f85dc99ca37e070420dfb2f1a686",
+  "output_digest": "sha256:9a73d9721a001bb5c7b065d96e250398302a3afa34f17cf91b3023bb1b4fdf81",
+  "decision": "PASS",
+  "timestamp": "2026-08-02T03:53:45Z",
+  "ruleset_version": "0.1",
+  "reason_codes": [
+    "INPUT_DIGEST_MATCH",
+    "P2_REMEDIATION_ONLY",
+    "NO_SCOPE_EXPANSION",
+    "TITLE_BODY_BOUNDED",
+    "READY_RETENTION_ONLY"
+  ],
+  "findings": [
+    "The input digest exactly matches the designated review input.",
+    "The remediation commit only strengthens ACTION-008 competing-outcome coverage requested by the Codex P2 review.",
+    "The complete PR diff changes only conformance documentation and the conformance test; production code, dependencies, runtime verification, and protocol fields are unchanged.",
+    "The PR title and body remain bounded to the invalid delegation signature test contribution.",
+    "The PR is already Ready and this run requests retention assessment only, not another status transition."
+  ],
+  "blocking_reasons": [],
+  "evidence_references": [
+    "reports/review-runs/2026-08-02-ca2a-pr-76-action008-ordering/input.json#sha256:7b3867e1b1dfa0840beb912570b0039978d6f85dc99ca37e070420dfb2f1a686",
+    "git-diff:76c1a31193ff6a70b732cf8f668935808002e273..9fb5c3b112c1f2d083bc97a12d55f7a583190b9f#sha256:82688a11ed0f103c75cabc80f6c7e16fbd51bee0766a52043d0894ff2d066731",
+    "git-diff:b223ee41ac9e3b635651f9636a08061801b5c826..9fb5c3b112c1f2d083bc97a12d55f7a583190b9f",
+    "https://github.com/agentrust-io/ca2a/pull/76"
+  ]
+}

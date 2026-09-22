@@ -1,0 +1,179 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://titmas.cn/schemas/response-capture-envelope.schema.json",
+  "title": "TITMAS Agent Customer Response Capture Envelope v0.1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "attempt_id",
+    "provider",
+    "requested_model",
+    "returned_model",
+    "model_identity_status",
+    "request_payload_sha256",
+    "request_contract_sha256",
+    "state",
+    "failure_phase",
+    "outcome_classification",
+    "prepared_at",
+    "dispatch_started_at",
+    "response_received_at",
+    "body_captured_at",
+    "parsed_at",
+    "finalized_at",
+    "http_status",
+    "request_id",
+    "provider_request_id",
+    "finish_reason",
+    "response_content_type",
+    "response_body_length",
+    "response_body_sha256",
+    "body_capture_complete",
+    "parse_status",
+    "contract_validation_status",
+    "contract_fields_present",
+    "usage_input_tokens",
+    "usage_output_tokens",
+    "usage_total_tokens",
+    "raw_prompt_retained",
+    "raw_response_retained",
+    "hidden_reasoning_retained",
+    "credential_material_retained",
+    "retry_eligibility",
+    "retry_reason"
+  ],
+  "properties": {
+    "schema_version": {"const": "0.1.0"},
+    "attempt_id": {"type": "string", "minLength": 1},
+    "provider": {"type": "string", "minLength": 1},
+    "requested_model": {"type": "string", "minLength": 1},
+    "returned_model": {"type": "string"},
+    "model_identity_status": {
+      "enum": ["MATCH", "MISSING", "MISMATCH", "NOT_ASSESSED"]
+    },
+    "request_payload_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "request_contract_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "customer_session_id": {"type": "string"},
+    "requested_operation": {"type": "string"},
+    "request_body_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "response_status": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 599
+    },
+    "final_state": {
+      "enum": [
+        "PREPARED",
+        "DISPATCH_STARTED",
+        "RESPONSE_HEADERS_CAPTURED",
+        "RESPONSE_BODY_CAPTURED",
+        "PARSE_COMPLETED",
+        "FINALIZED_SUCCESS",
+        "FAILED_BEFORE_DISPATCH",
+        "FAILED_AFTER_DISPATCH_OUTCOME_UNKNOWN",
+        "FAILED_HTTP_RESPONSE_CAPTURED",
+        "FAILED_EMPTY_BODY",
+        "FAILED_TRUNCATED_BODY",
+        "FAILED_PARSE",
+        "FAILED_MODEL_IDENTITY_MISSING",
+        "FAILED_MODEL_IDENTITY_MISMATCH",
+        "FAILED_ATOMIC_WRITE",
+        "FAILED_RECOVERY_REQUIRED"
+      ]
+    },
+    "state": {
+      "enum": [
+        "PREPARED",
+        "DISPATCH_STARTED",
+        "RESPONSE_HEADERS_CAPTURED",
+        "RESPONSE_BODY_CAPTURED",
+        "PARSE_COMPLETED",
+        "FINALIZED_SUCCESS",
+        "FAILED_BEFORE_DISPATCH",
+        "FAILED_AFTER_DISPATCH_OUTCOME_UNKNOWN",
+        "FAILED_HTTP_RESPONSE_CAPTURED",
+        "FAILED_EMPTY_BODY",
+        "FAILED_TRUNCATED_BODY",
+        "FAILED_PARSE",
+        "FAILED_MODEL_IDENTITY_MISSING",
+        "FAILED_MODEL_IDENTITY_MISMATCH",
+        "FAILED_ATOMIC_WRITE",
+        "FAILED_RECOVERY_REQUIRED"
+      ]
+    },
+    "failure_phase": {
+      "enum": [
+        "NONE",
+        "PRE_DISPATCH",
+        "DISPATCH",
+        "HEADERS",
+        "BODY",
+        "PARSE",
+        "IDENTITY",
+        "PERSISTENCE",
+        "RECOVERY"
+      ]
+    },
+    "outcome_classification": {
+      "enum": [
+        "VALID_RESPONSE",
+        "PROVIDER_HTTP_FAILURE_WITH_RESPONSE",
+        "FAILED_BEFORE_DISPATCH",
+        "POST_DISPATCH_OUTCOME_UNKNOWN",
+        "RESPONSE_CAPTURE_FAILURE",
+        "RESPONSE_PARSE_FAILURE",
+        "MODEL_IDENTITY_FAILURE"
+      ]
+    },
+    "prepared_at": {"type": "string"},
+    "dispatch_started_at": {"type": "string"},
+    "response_received_at": {"type": "string"},
+    "body_captured_at": {"type": "string"},
+    "parsed_at": {"type": "string"},
+    "finalized_at": {"type": "string"},
+    "http_status": {"type": "integer", "minimum": 0, "maximum": 599},
+    "request_id": {"type": "string"},
+    "provider_request_id": {"type": "string"},
+    "finish_reason": {"type": "string"},
+    "response_content_type": {"type": "string"},
+    "response_body_length": {"type": "integer", "minimum": 0},
+    "response_body_sha256": {"type": "string"},
+    "body_capture_complete": {"type": "boolean"},
+    "parse_status": {
+      "enum": ["NOT_STARTED", "NOT_ASSESSED", "PASS", "FAIL"]
+    },
+    "contract_validation_status": {
+      "enum": ["NOT_ASSESSED", "PASS", "FAIL"]
+    },
+    "contract_fields_present": {
+      "type": "array",
+      "items": {"type": "string"},
+      "uniqueItems": true
+    },
+    "usage_input_tokens": {"type": "integer", "minimum": 0},
+    "usage_output_tokens": {"type": "integer", "minimum": 0},
+    "usage_total_tokens": {"type": "integer", "minimum": 0},
+    "raw_prompt_retained": {"const": false},
+    "raw_response_retained": {"const": false},
+    "hidden_reasoning_retained": {"const": false},
+    "credential_material_retained": {"const": false},
+    "retry_eligibility": {
+      "enum": [
+        "NOT_APPLICABLE",
+        "HUMAN_DECISION_REQUIRED_SAFE_TO_REAUTHORIZE",
+        "PROHIBITED_WITHOUT_NEW_HUMAN_DECISION"
+      ]
+    },
+    "retry_reason": {"type": "string"}
+  }
+}

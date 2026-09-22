@@ -1,0 +1,17 @@
+{
+  "checked_at": "2026-09-22T15:11:14.486345+00:00",
+  "result": "PASS_FOR_AUDIT_ARTIFACT_INTEGRITY_ONLY",
+  "hash_references_checked": 167,
+  "frozen_primary_inputs_checked": 19,
+  "frozen_code_inputs_checked": 12,
+  "local_html_links_checked": 15,
+  "actual_extracted_frames": 12,
+  "old_media_and_delivery_records_unchanged": true,
+  "cli_verify_exit_code": 1,
+  "stage": "NEEDS_REVISION",
+  "visual_gate": false,
+  "technical_gate": true,
+  "next_station": "visual",
+  "browser_observation": "Photo and video tabs were displayed; original and delivered video controls and frames loaded. Later tab binding expired; seek buttons not verified.",
+  "automatic_visual_gate_implemented": false
+}

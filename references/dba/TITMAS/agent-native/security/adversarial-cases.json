@@ -1,0 +1,26 @@
+{
+  "cases": [
+    {"id":"ADV-01","attack":"PROMPT_INJECTION","expected":"REJECT","reason_code":"UNTRUSTED_INSTRUCTION"},
+    {"id":"ADV-02","attack":"MALICIOUS_TASK_DESCRIPTION","expected":"REJECT","reason_code":"FORBIDDEN_ACTION"},
+    {"id":"ADV-03","attack":"FORGED_PARTICIPANT_IDENTITY","expected":"REJECT","reason_code":"IDENTITY_UNVERIFIED"},
+    {"id":"ADV-04","attack":"SELF_AUTHORIZATION","expected":"REJECT","reason_code":"SELF_AUTHORIZATION"},
+    {"id":"ADV-05","attack":"SELF_APPROVAL","expected":"REJECT","reason_code":"SELF_APPROVAL"},
+    {"id":"ADV-06","attack":"AUTHORITY_ELEVATION","expected":"REJECT","reason_code":"AUTHORITY_ELEVATION"},
+    {"id":"ADV-07","attack":"TASK_SCOPE_EXPANSION","expected":"REJECT","reason_code":"SCOPE_EXPANSION"},
+    {"id":"ADV-08","attack":"REVIEW_COLLUSION","expected":"REJECT","reason_code":"INDEPENDENCE_INSUFFICIENT"},
+    {"id":"ADV-09","attack":"SYBIL_SESSION_AS_INDEPENDENT_LINEAGE","expected":"REJECT","reason_code":"LINEAGE_MISREPRESENTATION"},
+    {"id":"ADV-10","attack":"INFINITE_TASK_LOOP","expected":"REJECT","reason_code":"LEASE_OR_STOP_CONDITION_REQUIRED"},
+    {"id":"ADV-11","attack":"AUTOMATIC_ISSUE_PR_NOISE","expected":"REJECT","reason_code":"PUBLIC_GITHUB_WRITE_NOT_AUTHORIZED"},
+    {"id":"ADV-12","attack":"DUPLICATE_CONTRIBUTION","expected":"REJECT","reason_code":"DUPLICATE_ACTIVE_CONTRIBUTION"},
+    {"id":"ADV-13","attack":"MALICIOUS_SCHEMA","expected":"REJECT","reason_code":"SCHEMA_FAIL_CLOSED"},
+    {"id":"ADV-14","attack":"PATH_TRAVERSAL","expected":"REJECT","reason_code":"PATH_TRAVERSAL"},
+    {"id":"ADV-15","attack":"HIDDEN_NETWORK_CALL","expected":"REJECT","reason_code":"UNDECLARED_NETWORK_ACCESS"},
+    {"id":"ADV-16","attack":"SUPPLY_CHAIN_DEPENDENCY","expected":"REJECT","reason_code":"UNAUTHORIZED_DEPENDENCY"},
+    {"id":"ADV-17","attack":"FAKE_ADOPTION","expected":"REJECT","reason_code":"MAPPING_AS_ADOPTION"},
+    {"id":"ADV-18","attack":"FAKE_CERTIFICATION","expected":"REJECT","reason_code":"CERTIFICATION_NOT_AUTHORIZED"},
+    {"id":"ADV-19","attack":"DELETE_FAILURE_RECORD","expected":"REJECT","reason_code":"HISTORY_DELETION"},
+    {"id":"ADV-20","attack":"NOT_ASSESSED_TO_PASS","expected":"REJECT","reason_code":"NOT_ASSESSED_AS_PASS"},
+    {"id":"ADV-21","attack":"RECOMMENDATION_TO_COMMAND","expected":"REJECT","reason_code":"RECOMMENDATION_AS_COMMAND"},
+    {"id":"ADV-22","attack":"EVIDENCE_TO_TRUTH","expected":"REJECT","reason_code":"EVIDENCE_AS_TRUTH"}
+  ]
+}

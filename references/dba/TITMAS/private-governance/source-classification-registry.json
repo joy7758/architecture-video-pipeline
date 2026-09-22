@@ -1,0 +1,223 @@
+{
+  "registry_version": "0.1.0",
+  "decision_reference": "TITMAS-PRIVATE-CORE-COMMERCIALIZATION-SUPERSESSION-D01",
+  "default_classification": "UNCLASSIFIED",
+  "unclassified_export_allowed": false,
+  "allowed_classifications": [
+    "PUBLIC_PROTOCOL",
+    "PUBLIC_DOCUMENTATION",
+    "PUBLIC_SYNTHETIC_EXAMPLE",
+    "PUBLIC_CLIENT_STUB_CANDIDATE",
+    "COMMERCIAL_CUSTOMER_ONLY",
+    "CONFIDENTIAL_CORE",
+    "SECRET_NEVER_EXPORT",
+    "LEGAL_REVIEW_REQUIRED",
+    "UNCLASSIFIED"
+  ],
+  "publication_policy": {
+    "allowlist_only_export": true,
+    "publication_by_reconstruction": true,
+    "full_repository_copy_prohibited": true,
+    "git_history_export_prohibited": true
+  },
+  "entries": [
+    {
+      "path": "README.md",
+      "classification": "PUBLIC_DOCUMENTATION",
+      "legal_review_status": "PENDING",
+      "commercial_review_status": "PENDING",
+      "security_review_status": "PENDING",
+      "license_status": "PENDING",
+      "export_allowed": false
+    },
+    {
+      "path": "TITMAS/README.md",
+      "classification": "PUBLIC_DOCUMENTATION",
+      "legal_review_status": "PENDING",
+      "commercial_review_status": "PENDING",
+      "security_review_status": "PENDING",
+      "license_status": "PENDING",
+      "export_allowed": false
+    },
+    {
+      "path": "TITMAS/specifications/proposals/titmas-core-developer-interoperability-surface-v0.1.md",
+      "classification": "PUBLIC_PROTOCOL",
+      "legal_review_status": "PENDING",
+      "commercial_review_status": "PENDING",
+      "security_review_status": "PENDING",
+      "license_status": "PENDING",
+      "export_allowed": false
+    },
+    {
+      "path": "TITMAS/reference/minimal-python/example-input.json",
+      "classification": "PUBLIC_SYNTHETIC_EXAMPLE",
+      "legal_review_status": "PENDING",
+      "commercial_review_status": "PENDING",
+      "security_review_status": "PENDING",
+      "license_status": "PENDING",
+      "export_allowed": false
+    },
+    {
+      "path": "TITMAS/private-customer-evaluation/api-contract.json",
+      "classification": "COMMERCIAL_CUSTOMER_ONLY",
+      "legal_review_status": "PENDING",
+      "commercial_review_status": "PENDING",
+      "security_review_status": "PENDING",
+      "license_status": "NOT_APPLICABLE_PRIVATE_ACCESS",
+      "export_allowed": false
+    },
+    {
+      "path": "TITMAS/conformance/harness.py",
+      "classification": "CONFIDENTIAL_CORE",
+      "legal_review_status": "NOT_APPLICABLE",
+      "commercial_review_status": "PRIVATE_CORE",
+      "security_review_status": "PRIVATE_CORE",
+      "license_status": "PRIVATE_CORE",
+      "export_allowed": false
+    },
+    {
+      "path": "TITMAS/agent-native/customer-cycle/response_capture.py",
+      "classification": "CONFIDENTIAL_CORE",
+      "legal_review_status": "NOT_APPLICABLE",
+      "commercial_review_status": "PRIVATE_CORE",
+      "security_review_status": "PRIVATE_CORE",
+      "license_status": "PRIVATE_CORE",
+      "export_allowed": false
+    },
+    {
+      "path": "TITMAS/agent-native/tests/test_response_capture.py",
+      "classification": "CONFIDENTIAL_CORE",
+      "legal_review_status": "NOT_APPLICABLE",
+      "commercial_review_status": "PRIVATE_CORE",
+      "security_review_status": "PRIVATE_CORE",
+      "license_status": "PRIVATE_CORE",
+      "export_allowed": false
+    },
+    {
+      "path": "TITMAS/private-customer-evaluation/gateway/",
+      "classification": "CONFIDENTIAL_CORE",
+      "legal_review_status": "NOT_APPLICABLE",
+      "commercial_review_status": "PRIVATE_CORE",
+      "security_review_status": "PRIVATE_CORE",
+      "license_status": "PRIVATE_CORE",
+      "export_allowed": false
+    },
+    {
+      "path": "TITMAS/agent-native/customer-cycle/semantic_checkpoint.py",
+      "classification": "CONFIDENTIAL_CORE",
+      "legal_review_status": "NOT_APPLICABLE",
+      "commercial_review_status": "PRIVATE_CORE",
+      "security_review_status": "PRIVATE_CORE",
+      "license_status": "PRIVATE_CORE",
+      "export_allowed": false
+    },
+    {
+      "path": "TITMAS/agent-native/customer-cycle/schemas/standard-contribution.schema.json",
+      "classification": "COMMERCIAL_CUSTOMER_ONLY",
+      "legal_review_status": "PENDING",
+      "commercial_review_status": "PENDING",
+      "security_review_status": "PASS_PRIVATE_STAGE5",
+      "license_status": "NOT_APPLICABLE_PRIVATE_ACCESS",
+      "export_allowed": false
+    },
+    {
+      "path": "TITMAS/agent-native/customer-cycle/schemas/standard-review.schema.json",
+      "classification": "COMMERCIAL_CUSTOMER_ONLY",
+      "legal_review_status": "PENDING",
+      "commercial_review_status": "PENDING",
+      "security_review_status": "PASS_PRIVATE_STAGE5",
+      "license_status": "NOT_APPLICABLE_PRIVATE_ACCESS",
+      "export_allowed": false
+    },
+    {
+      "path": "TITMAS/conformance/stage5_contributions.py",
+      "classification": "CONFIDENTIAL_CORE",
+      "legal_review_status": "NOT_APPLICABLE",
+      "commercial_review_status": "PRIVATE_CORE",
+      "security_review_status": "PRIVATE_CORE",
+      "license_status": "PRIVATE_CORE",
+      "export_allowed": false
+    },
+    {
+      "path": "TITMAS/conformance/schemas/stage5-specification-proposal.schema.json",
+      "classification": "COMMERCIAL_CUSTOMER_ONLY",
+      "legal_review_status": "PENDING",
+      "commercial_review_status": "PENDING",
+      "security_review_status": "PASS_PRIVATE_STAGE5",
+      "license_status": "NOT_APPLICABLE_PRIVATE_ACCESS",
+      "export_allowed": false
+    },
+    {
+      "path": "TITMAS/conformance/schemas/stage5-adapter-mapping.schema.json",
+      "classification": "COMMERCIAL_CUSTOMER_ONLY",
+      "legal_review_status": "PENDING",
+      "commercial_review_status": "PENDING",
+      "security_review_status": "PASS_PRIVATE_STAGE5",
+      "license_status": "NOT_APPLICABLE_PRIVATE_ACCESS",
+      "export_allowed": false
+    },
+    {
+      "path": "TITMAS/conformance/schemas/stage5-test-vector.schema.json",
+      "classification": "COMMERCIAL_CUSTOMER_ONLY",
+      "legal_review_status": "PENDING",
+      "commercial_review_status": "PENDING",
+      "security_review_status": "PASS_PRIVATE_STAGE5",
+      "license_status": "NOT_APPLICABLE_PRIVATE_ACCESS",
+      "export_allowed": false
+    },
+    {
+      "path": "TITMAS/conformance/schemas/stage5-contribution-result.schema.json",
+      "classification": "COMMERCIAL_CUSTOMER_ONLY",
+      "legal_review_status": "PENDING",
+      "commercial_review_status": "PENDING",
+      "security_review_status": "PASS_PRIVATE_STAGE5",
+      "license_status": "NOT_APPLICABLE_PRIVATE_ACCESS",
+      "export_allowed": false
+    },
+    {
+      "path": "TITMAS/conformance/schemas/stage5-review.schema.json",
+      "classification": "COMMERCIAL_CUSTOMER_ONLY",
+      "legal_review_status": "PENDING",
+      "commercial_review_status": "PENDING",
+      "security_review_status": "PASS_PRIVATE_STAGE5",
+      "license_status": "NOT_APPLICABLE_PRIVATE_ACCESS",
+      "export_allowed": false
+    },
+    {
+      "path": "TITMAS/private-stage5-protocol-surface/",
+      "classification": "COMMERCIAL_CUSTOMER_ONLY",
+      "legal_review_status": "PENDING",
+      "commercial_review_status": "PENDING",
+      "security_review_status": "PASS_PRIVATE_STAGE5",
+      "license_status": "NOT_APPLICABLE_PRIVATE_ACCESS",
+      "export_allowed": false
+    },
+    {
+      "path": "TITMAS/private-stage5-sdk/python/",
+      "classification": "PUBLIC_CLIENT_STUB_CANDIDATE",
+      "legal_review_status": "PENDING",
+      "commercial_review_status": "PENDING",
+      "security_review_status": "PENDING",
+      "license_status": "PENDING",
+      "export_allowed": false
+    },
+    {
+      "path": "TITMAS/private-stage5-pilot/",
+      "classification": "CONFIDENTIAL_CORE",
+      "legal_review_status": "NOT_APPLICABLE",
+      "commercial_review_status": "PRIVATE_AUDIT",
+      "security_review_status": "PRIVATE_CORE",
+      "license_status": "PRIVATE_CORE",
+      "export_allowed": false
+    },
+    {
+      "path": "TITMAS-STAGE-5-",
+      "classification": "CONFIDENTIAL_CORE",
+      "legal_review_status": "NOT_APPLICABLE",
+      "commercial_review_status": "PRIVATE_AUDIT",
+      "security_review_status": "PRIVATE_CORE",
+      "license_status": "PRIVATE_CORE",
+      "export_allowed": false
+    }
+  ]
+}

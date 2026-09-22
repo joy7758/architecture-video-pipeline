@@ -1,0 +1,262 @@
+prototype_profile: POST_ACTION_CHAIN
+
+opportunity:
+  _meta:
+    artifact_type: SYNTHETIC_STAGE_2_OPPORTUNITY_FIXTURE
+    fixture_only: true
+    classification: SYNTHETIC_RESEARCH_FIXTURE_ONLY
+    normative: false
+    real_public_signal_reference: true
+    real_customer_record: false
+    semantic_authority: false
+    historical_run_reference: >-
+      examples/validation-runs/2026-08-01-github-agent-hitl-issue-636
+  schema_version: 0.1-draft
+  id: SYNTHETIC-STAGE2-GITHUB-HITL-636-OPP-001
+  source:
+    type: issue
+    reference: https://github.com/openai/openai-agents-python/issues/636
+    timestamp: "2025-05-01T02:34:47Z"
+    content_digest: "sha256:9cd28fc1e717949860bbeb4a646c7a6775c3126f3a195a898b59e0a6e575f8a9"
+  problem: >-
+    Synthetic research hypothesis derived from a public Agent ecosystem issue;
+    it is not a verified customer requirement or current capability gap.
+  domain: synthetic-agent-governance-lifecycle-fixture
+  stakeholders:
+    - role: synthetic_research_fixture_actor
+  titmas_alignment:
+    status: ASSESSED
+    capability_refs: []
+    rationale: >-
+      Synthetic alignment state exists only to exercise the Validator's
+      structural path and carries no product-fit or commercial claim.
+    evidence_refs: []
+  evidence:
+    - evidence_id: EV-STAGE2-PUBLIC-ISSUE-636
+      evidence_type: public_github_issue_reference
+      reference: https://github.com/openai/openai-agents-python/issues/636
+      observed_at: "2026-08-01T08:40:00Z"
+      content_digest: "sha256:9cd28fc1e717949860bbeb4a646c7a6775c3126f3a195a898b59e0a6e575f8a9"
+      supported_claim: >-
+        A public issue requested Human-in-the-Loop capabilities in an Agent SDK.
+      limitations:
+        - not_a_customer_record
+        - current_relevance_unverified
+        - source_bytes_not_recomputed_by_validator
+  scoring:
+    model_reference: docs/matching-score-v0.1.md
+    reference_status: APPLIED
+    status: COMPUTED_UNCALIBRATED
+    model_version: "0.1"
+    score_value: 50
+    method: SYNTHETIC_RESEARCH_FIXTURE_ONLY
+    reason_codes:
+      - SYNTHETIC_SCORE_FOR_STRUCTURAL_PATH_ONLY
+  recommended_action:
+    status: NOT_AUTHORIZED
+    action_type: NONE
+    authoritative: false
+    external_action_allowed: false
+    reason: Synthetic fixture never grants action authority.
+  status: accepted
+
+assessment:
+  schema_version: 0.1-prototype
+  object_type: TITMAS_SCOUT_MATCHING_ASSESSMENT
+  assessment_id: SYNTHETIC-STAGE2-ASSESSMENT-001
+  opportunity_reference:
+    reference_id: SYNTHETIC-STAGE2-GITHUB-HITL-636-OPP-001
+    reference_type: TITMAS_SCOUT_OPPORTUNITY
+    reference_uri: urn:titmas-scout:synthetic-stage2:opportunity:001
+    version: 0.1-draft
+    content_digest: "sha256:6dc5668535b41e25c8dd6eb8d7cf39a2a2895c394a1f1ba195534b71efa8585a"
+  model_id: TITMAS-SCOUT-MATCHING-SCORE
+  model_version: "0.1"
+  reference_status: APPLIED
+  overall_status: COMPUTED_UNCALIBRATED
+  score_value: 50
+  evaluated_at: "2026-08-01T08:49:00Z"
+
+approval:
+  schema_version: 0.1-draft
+  object_type: TITMAS_SCOUT_APPROVAL
+  approval_id: SYNTHETIC-STAGE2-APPROVAL-001
+  opportunity_reference:
+    reference_id: SYNTHETIC-STAGE2-GITHUB-HITL-636-OPP-001
+    reference_type: TITMAS_SCOUT_OPPORTUNITY
+    reference_uri: urn:titmas-scout:synthetic-stage2:opportunity:001
+    version: 0.1-draft
+    content_digest: "sha256:6dc5668535b41e25c8dd6eb8d7cf39a2a2895c394a1f1ba195534b71efa8585a"
+  assessment_reference:
+    reference_id: SYNTHETIC-STAGE2-ASSESSMENT-001
+    reference_type: TITMAS_SCOUT_MATCHING_ASSESSMENT
+    reference_uri: urn:titmas-scout:synthetic-stage2:assessment:001
+    version: 0.1-prototype
+    content_digest: "sha256:511494c1c327dd957642b505f89e22d9f813882c9089344818f22598d72fc960"
+    model_id: TITMAS-SCOUT-MATCHING-SCORE
+    model_version: "0.1"
+    reference_status: APPLIED
+    overall_status: COMPUTED_UNCALIBRATED
+    opportunity_id: SYNTHETIC-STAGE2-GITHUB-HITL-636-OPP-001
+    opportunity_content_digest: "sha256:6dc5668535b41e25c8dd6eb8d7cf39a2a2895c394a1f1ba195534b71efa8585a"
+  action_request_reference:
+    reference_id: SYNTHETIC-STAGE2-ACTION-REQUEST-001
+    reference_type: TITMAS_SCOUT_ACTION_REQUEST
+    reference_uri: urn:titmas-scout:synthetic-stage2:action-request:001
+    version: "0.1"
+    content_digest: "sha256:5555555555555555555555555555555555555555555555555555555555555555"
+  policy_reference:
+    reference_id: SYNTHETIC-STAGE2-POLICY-NOT-VERIFIED-001
+    reference_type: TITMAS_SCOUT_ACTION_POLICY
+    reference_uri: urn:titmas-scout:synthetic-stage2:policy-unverified:001
+    version: "0.1"
+    content_digest: "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+  decision: APPROVED
+  authorized_scope:
+    subject_ids:
+      - SYNTHETIC-STAGE2-EXECUTOR-NO-REAL-IDENTITY-001
+    target_ids:
+      - LOCAL-FIXTURE-ONLY-NO-EXTERNAL-TARGET
+    environment_ids:
+      - LOCAL-RESEARCH-FIXTURE-NO-RUNTIME
+    parameter_constraints: []
+    max_execution_attempts: 1
+    max_successful_executions: 0
+  allowed_actions:
+    - action_id: SYNTHETIC-STAGE2-ACTION-001
+      action_type: SYNTHETIC_NO_OP
+      request_id: SYNTHETIC-STAGE2-ACTION-REQUEST-001
+      request_content_digest: "sha256:5555555555555555555555555555555555555555555555555555555555555555"
+      target_ids:
+        - LOCAL-FIXTURE-ONLY-NO-EXTERNAL-TARGET
+      parameter_content_digest: "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+  blocked_actions: []
+  constraints: []
+  reviewer:
+    reviewer_id: SYNTHETIC-NOT-A-REAL-HUMAN-STAGE2-001
+    reviewer_type: HUMAN
+    role: synthetic_reviewer_shape_not_real_authority
+    identity_reference:
+      reference_id: SYNTHETIC-NOT-A-REAL-HUMAN-IDENTITY-001
+      reference_type: TITMAS_SCOUT_REVIEWER_IDENTITY
+      reference_uri: urn:titmas-scout:synthetic-stage2:not-real-human-identity:001
+      version: "0.1"
+      content_digest: "sha256:cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc"
+    authority_reference:
+      reference_id: SYNTHETIC-NO-REAL-AUTHORITY-001
+      reference_type: TITMAS_SCOUT_REVIEWER_AUTHORITY
+      reference_uri: urn:titmas-scout:synthetic-stage2:no-real-authority:001
+      version: "0.1"
+      content_digest: "sha256:dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd"
+    attestation_reference:
+      reference_id: SYNTHETIC-NO-REAL-ATTESTATION-001
+      reference_type: TITMAS_SCOUT_REVIEWER_ATTESTATION
+      reference_uri: urn:titmas-scout:synthetic-stage2:no-real-attestation:001
+      version: "0.1"
+      content_digest: "sha256:eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee"
+  timestamp:
+    decided_at: "2026-08-01T08:50:00Z"
+    recorded_at: "2026-08-01T08:51:00Z"
+    valid_from: "2026-08-01T08:52:00Z"
+    expires_at: "2026-08-01T23:59:59Z"
+    time_source_reference:
+      reference_id: SYNTHETIC-UNATTESTED-LOCAL-TIME-001
+      reference_type: TITMAS_SCOUT_TIME_SOURCE
+      reference_uri: urn:titmas-scout:synthetic-stage2:unattested-local-time:001
+      version: "0.1"
+      content_digest: "sha256:ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+  evidence_reference:
+    - reference_id: EV-STAGE2-PUBLIC-ISSUE-636
+      reference_type: TITMAS_SCOUT_SOURCE_EVIDENCE
+      reference_uri: https://github.com/openai/openai-agents-python/issues/636
+      version: issue-636-observed-2026-08-01
+      content_digest: "sha256:9cd28fc1e717949860bbeb4a646c7a6775c3126f3a195a898b59e0a6e575f8a9"
+  decision_reason_codes:
+    - SYNTHETIC_APPROVAL_SHAPE_FOR_STRUCTURAL_PATH_ONLY
+    - NO_REAL_HUMAN_DECISION
+  supersedes_approval_reference: null
+
+action:
+  schema_version: 0.1-prototype
+  object_type: TITMAS_SCOUT_ACTION
+  action_id: SYNTHETIC-STAGE2-ACTION-001
+  opportunity_reference:
+    reference_id: SYNTHETIC-STAGE2-GITHUB-HITL-636-OPP-001
+    reference_type: TITMAS_SCOUT_OPPORTUNITY
+    reference_uri: urn:titmas-scout:synthetic-stage2:opportunity:001
+    version: 0.1-draft
+    content_digest: "sha256:6dc5668535b41e25c8dd6eb8d7cf39a2a2895c394a1f1ba195534b71efa8585a"
+  approval_reference:
+    reference_id: SYNTHETIC-STAGE2-APPROVAL-001
+    reference_type: TITMAS_SCOUT_APPROVAL
+    reference_uri: urn:titmas-scout:synthetic-stage2:approval:001
+    version: 0.1-draft
+    content_digest: "sha256:b62090db23d80bdbb33b72b7fddc4fc3eb5318f5ce95d553ec7155089e78b764"
+  action_request_reference:
+    reference_id: SYNTHETIC-STAGE2-ACTION-REQUEST-001
+    reference_type: TITMAS_SCOUT_ACTION_REQUEST
+    reference_uri: urn:titmas-scout:synthetic-stage2:action-request:001
+    version: "0.1"
+    content_digest: "sha256:5555555555555555555555555555555555555555555555555555555555555555"
+  executor_reference:
+    reference_id: SYNTHETIC-STAGE2-EXECUTOR-NO-REAL-IDENTITY-001
+    reference_type: TITMAS_SCOUT_EXECUTOR
+    reference_uri: urn:titmas-scout:synthetic-stage2:no-real-executor:001
+    version: "0.1"
+    content_digest: "sha256:0000000000000000000000000000000000000000000000000000000000000000"
+  lifecycle_state: COMPLETED
+  outcome: CANCELLED
+  authorized_at: "2026-08-01T08:53:00Z"
+  started_at: "2026-08-01T08:54:00Z"
+  completed_at: "2026-08-01T08:55:00Z"
+  completion_receipt_reference:
+    reference_id: SYNTHETIC-STAGE2-RECEIPT-NO-REAL-EXECUTION-001
+    reference_type: TITMAS_SCOUT_ACTION_RECEIPT
+    reference_uri: urn:titmas-scout:synthetic-stage2:no-real-execution-receipt:001
+    version: "0.1"
+    content_digest: "sha256:6666666666666666666666666666666666666666666666666666666666666666"
+  reason_codes:
+    - SYNTHETIC_NO_OP
+    - CANCELLED_WITHOUT_MATERIAL_EFFECT
+    - NO_REAL_EXECUTION_OCCURRED
+
+outcome_evidence:
+  schema_version: 0.1-prototype
+  object_type: TITMAS_SCOUT_OUTCOME_EVIDENCE
+  feedback_id: SYNTHETIC-STAGE2-FEEDBACK-001
+  action_reference:
+    reference_id: SYNTHETIC-STAGE2-ACTION-001
+    reference_type: TITMAS_SCOUT_ACTION
+    reference_uri: urn:titmas-scout:synthetic-stage2:action:001
+    version: 0.1-prototype
+    content_digest: "sha256:3a9efc4a47b1144fad1341d5beb8ae5dac2ff3cf9589cd59f18f93aac62b34b8"
+  completion_receipt_reference:
+    reference_id: SYNTHETIC-STAGE2-RECEIPT-NO-REAL-EXECUTION-001
+    reference_type: TITMAS_SCOUT_ACTION_RECEIPT
+    reference_uri: urn:titmas-scout:synthetic-stage2:no-real-execution-receipt:001
+    version: "0.1"
+    content_digest: "sha256:6666666666666666666666666666666666666666666666666666666666666666"
+  opportunity_reference:
+    reference_id: SYNTHETIC-STAGE2-GITHUB-HITL-636-OPP-001
+    reference_type: TITMAS_SCOUT_OPPORTUNITY
+    reference_uri: urn:titmas-scout:synthetic-stage2:opportunity:001
+    version: 0.1-draft
+    content_digest: "sha256:6dc5668535b41e25c8dd6eb8d7cf39a2a2895c394a1f1ba195534b71efa8585a"
+  observed_at: "2026-08-01T08:56:00Z"
+  source_evidence_ref:
+    reference_id: EV-STAGE2-PUBLIC-ISSUE-636
+    reference_type: TITMAS_SCOUT_SOURCE_EVIDENCE
+    reference_uri: https://github.com/openai/openai-agents-python/issues/636
+    version: issue-636-observed-2026-08-01
+    content_digest: "sha256:9cd28fc1e717949860bbeb4a646c7a6775c3126f3a195a898b59e0a6e575f8a9"
+  ground_truth_source: null
+  subject_refs:
+    - reference_id: SYNTHETIC-STAGE2-SUBJECT-NO-REAL-ENTITY-001
+      reference_type: TITMAS_SCOUT_SUBJECT
+      reference_uri: urn:titmas-scout:synthetic-stage2:no-real-subject:001
+      version: "0.1"
+      content_digest: "sha256:7777777777777777777777777777777777777777777777777777777777777777"
+  evidence_status: INSUFFICIENT_EVIDENCE
+  reason_codes:
+    - NO_GROUND_TRUTH_SOURCE
+    - SYNTHETIC_RESEARCH_FIXTURE_ONLY

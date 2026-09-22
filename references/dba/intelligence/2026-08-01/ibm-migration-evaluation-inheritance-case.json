@@ -1,0 +1,53 @@
+{
+  "case_id": "DBA-IBM-MIGRATION-EVALUATION-INHERITANCE-CASE-2026-08-01",
+  "artifact_kind": "migration_reassessment_case",
+  "status": "REFERENCE_CASE_REASSESSMENT_REQUIRED",
+  "observed_at": "2026-08-01",
+  "primary_repository": "DBA",
+  "sources": [
+    "https://www.ibm.com/docs/en/watsonx/saas?topic=agents-agent-lab-beta",
+    "https://www.ibm.com/docs/en/watsonx/watson-orchestrate/base?topic=notes-whats-new",
+    "https://www.ibm.com/new/announcements/ai-asset-discovery-in-watsonx-governance"
+  ],
+  "official_changes": {
+    "watsonx_ai_agent_lab_end_date": "2026-08-13",
+    "replacement": "WATSONX_ORCHESTRATE_AGENT_LAB_OR_BUILDER",
+    "recommended_execution_style": "REACT_CORE",
+    "deprecated_execution_styles": ["DEFAULT", "REACT"],
+    "agentops_status": "PUBLIC_PREVIEW_AWS_DEPLOYMENTS_ONLY",
+    "asset_discovery_includes": ["AGENTS", "TOOLS", "MCP_SERVERS", "FOUNDATION_MODELS", "COLLABORATOR_AGENTS"]
+  },
+  "inheritance_rule": {
+    "old_evaluation_automatically_inherited": false,
+    "changed_dimensions": [
+      "EC-01-HARNESS",
+      "EC-06-TOOLS-PROTOCOLS",
+      "EC-07-RUNTIME",
+      "EC-08-EXECUTION-STYLE",
+      "EC-09-MONITORING"
+    ],
+    "required_evidence": [
+      "source and target agent definitions",
+      "tool and MCP server manifests",
+      "model and configuration revisions",
+      "execution style and orchestrator version",
+      "test corpus and evaluator identity",
+      "policy and credential scope",
+      "before and after traces with limitations",
+      "rollback and human acceptance record"
+    ],
+    "default_result": "REASSESSMENT_REQUIRED",
+    "authority_effect": "NONE"
+  },
+  "digital_biosphere_state": {
+    "ibm_product_used": false,
+    "migration_planned": false,
+    "integration_assessed": false,
+    "implementation_authorized": false
+  },
+  "non_claims": [
+    "This case does not evaluate IBM product quality.",
+    "This case does not claim a Digital Biosphere migration exists.",
+    "Asset discovery and AgentOps observations do not by themselves prove evidence sufficiency or safe migration."
+  ]
+}

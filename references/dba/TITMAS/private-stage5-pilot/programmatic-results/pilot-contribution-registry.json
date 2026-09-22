@@ -1,0 +1,61 @@
+{
+  "data_classification": "PRIVATE_AUDIT_SYNTHETIC",
+  "entries": [
+    {
+      "conformance_status": "CONFORMANCE_PASS",
+      "contributor_kind": "PROGRAMMATIC",
+      "hashes": {
+        "result_sha256": "7b67c6a164ecf9628fc2d65bb4f3a09f921fcd8cc1649308b5037ac582fca830",
+        "submission_sha256": "49092aac9a3fcad012d9aa5cf9abf55193f3a30131ac34449d88fa374cfbf8bb"
+      },
+      "human_disposition": "REQUIRED",
+      "limitations": [
+        "PRIVATE_STAGE5_PILOT_ONLY",
+        "PILOT_ACCEPTANCE_NE_STANDARD_ADOPTION"
+      ],
+      "pilot_status": "PILOT_ACCEPTED",
+      "review_status": "NOT_RUN",
+      "source": "SYNTHETIC_P01",
+      "submission_id": "stage5-submission-P01-PROPOSAL",
+      "type": "SPECIFICATION_PROPOSAL"
+    },
+    {
+      "conformance_status": "CONFORMANCE_PASS",
+      "contributor_kind": "PROGRAMMATIC",
+      "hashes": {
+        "result_sha256": "1c41d5472ea60613c6dd4217eea113cf1ab09d684906a7dc0d4655a67f082b93",
+        "submission_sha256": "e32058c7f4a3edfa7f01dd6f7784cea23c35f4f80d161e5c7184a36b1c4bc70c"
+      },
+      "human_disposition": "REQUIRED",
+      "limitations": [
+        "PRIVATE_STAGE5_PILOT_ONLY",
+        "PILOT_ACCEPTANCE_NE_STANDARD_ADOPTION"
+      ],
+      "pilot_status": "PILOT_ACCEPTED",
+      "review_status": "NOT_RUN",
+      "source": "SYNTHETIC_P01",
+      "submission_id": "stage5-submission-P01-ADAPTER",
+      "type": "ADAPTER_MAPPING"
+    },
+    {
+      "conformance_status": "CONFORMANCE_FAIL",
+      "contributor_kind": "PROGRAMMATIC",
+      "hashes": {
+        "result_sha256": "a0cedd06563d21269f0c2215fcb18d9fee15529647a8026fee5c9a3dce0e2a94",
+        "submission_sha256": "95f3fa42eb8a873f1d09273d58ab8f0a8bc9a73e7ad0c06a8fc70c09439b2c80"
+      },
+      "human_disposition": "NOT_APPLICABLE",
+      "limitations": [
+        "PRIVATE_STAGE5_PILOT_ONLY",
+        "PILOT_ACCEPTANCE_NE_STANDARD_ADOPTION"
+      ],
+      "pilot_status": "PILOT_REJECTED",
+      "review_status": "NOT_RUN",
+      "source": "SYNTHETIC_P01",
+      "submission_id": "stage5-submission-P01-INVALID-VECTOR",
+      "type": "TEST_VECTOR"
+    }
+  ],
+  "registry_type": "TITMAS_STAGE5_PRIVATE_PILOT_CONTRIBUTION_REGISTRY",
+  "registry_version": "1.0"
+}

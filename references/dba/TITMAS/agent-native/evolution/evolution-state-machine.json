@@ -1,0 +1,48 @@
+{
+  "state_machine_id": "TITMAS-D19-EVOLUTION-STATE-MACHINE-2.1",
+  "version": "2.1.0",
+  "initial_state": "DISCOVERED",
+  "terminal_states": ["RETAINED", "ROLLED_BACK", "REJECTED", "NOT_ASSESSED", "SUPERSEDED", "BLOCKED_LIMIT_REACHED"],
+  "states": [
+    "DISCOVERED",
+    "EVIDENCED",
+    "REPRODUCED",
+    "TRIAGED",
+    "VARIANTS_GENERATED",
+    "SANDBOXED",
+    "EVALUATED",
+    "SELECTED",
+    "AWAITING_AUTHORIZATION",
+    "AUTHORIZED",
+    "APPLIED",
+    "CANARY_OBSERVING",
+    "RETAINED",
+    "ROLLED_BACK",
+    "REJECTED",
+    "NOT_ASSESSED",
+    "SUPERSEDED",
+    "BLOCKED_LIMIT_REACHED"
+  ],
+  "transitions": [
+    {"from": "DISCOVERED", "to": "EVIDENCED", "requires": ["evidence_references"]},
+    {"from": "EVIDENCED", "to": "REPRODUCED", "requires": ["reproduction"]},
+    {"from": "REPRODUCED", "to": "TRIAGED", "requires": ["risk_class", "canonical_owner_repository"]},
+    {"from": "TRIAGED", "to": "VARIANTS_GENERATED", "requires": ["rollback_requirements", "NO_CHANGE_BASELINE"]},
+    {"from": "VARIANTS_GENERATED", "to": "SANDBOXED", "requires": ["ephemeral_environment"]},
+    {"from": "SANDBOXED", "to": "EVALUATED", "requires": ["tests", "fitness_evaluations"]},
+    {"from": "EVALUATED", "to": "SELECTED", "requires": ["selection_record"]},
+    {"from": "SELECTED", "to": "AWAITING_AUTHORIZATION", "requires": ["authorization_class"]},
+    {"from": "AWAITING_AUTHORIZATION", "to": "AUTHORIZED", "requires": ["authorization_reference"]},
+    {"from": "AUTHORIZED", "to": "APPLIED", "requires": ["mutation_receipt_reference"]},
+    {"from": "APPLIED", "to": "CANARY_OBSERVING", "requires": ["canary_scope", "rollback_reference"]},
+    {"from": "CANARY_OBSERVING", "to": "RETAINED", "requires": ["post_change_evidence", "success_threshold_met"]},
+    {"from": "CANARY_OBSERVING", "to": "ROLLED_BACK", "requires": ["rollback_evidence"]}
+  ],
+  "mandatory_gates": ["EVIDENCE", "RISK_CLASSIFICATION", "ROLLBACK_PREPARATION", "OUTCOME_OBSERVATION"],
+  "invalid_shortcuts": [
+    ["DISCOVERED", "APPLIED"],
+    ["EVIDENCED", "AUTHORIZED"],
+    ["SELECTED", "APPLIED"],
+    ["APPLIED", "RETAINED"]
+  ]
+}

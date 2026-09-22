@@ -1,0 +1,115 @@
+{
+  "reference_id": "DBA-KIMI-K3-CAPABILITY-IDENTITY-REFERENCE-0.1",
+  "artifact_kind": "capability_identity_reference_case",
+  "status": "PINNED_NOT_ADOPTED_NOT_EXECUTED",
+  "observed_at": "2026-07-29",
+  "primary_repository": "DBA",
+  "provider": {
+    "organization": "Moonshot AI",
+    "github_organization": "MoonshotAI",
+    "huggingface_organization": "moonshotai"
+  },
+  "source_repositories": {
+    "github": {
+      "url": "https://github.com/MoonshotAI/Kimi-K3",
+      "branch": "main",
+      "commit": "7c5be9599120d7993748de66a76128614f15f210"
+    },
+    "huggingface": {
+      "url": "https://huggingface.co/moonshotai/Kimi-K3",
+      "revision": "9f62e4e9fffbd0a83ddd60e1c209d828994b3569",
+      "last_modified": "2026-07-27T16:29:18.000Z",
+      "private": false,
+      "gated": false,
+      "file_count": 118
+    }
+  },
+  "license": {
+    "display_name": "Kimi K3 License",
+    "huggingface_api_tag": "license:other",
+    "pinned_url": "https://huggingface.co/moonshotai/Kimi-K3/blob/9f62e4e9fffbd0a83ddd60e1c209d828994b3569/LICENSE",
+    "sha256": "20c797ce19af0c17de52c6afb144644768a591c521655f5ebf5712c9850f2887",
+    "classification": "CUSTOM_OPEN_WEIGHT_LICENSE_WITH_CONDITIONS",
+    "observed_conditions": [
+      "copyright and permission notice retention",
+      "applicable-law compliance",
+      "separate agreement threshold for qualifying Model-as-a-Service commercial use",
+      "Kimi K3 display threshold for qualifying high-scale commercial products or services",
+      "additional notification and restriction clauses in the full pinned license"
+    ],
+    "osi_approval_verified": false,
+    "legal_review_complete": false,
+    "legal_interpretation_provided": false
+  },
+  "pinned_files": [
+    {
+      "path": "README.md",
+      "sha256": "57de265b5842dfa465c6e73b368b0e15a89b8793b5450528dad577da202cc6fe"
+    },
+    {
+      "path": "config.json",
+      "sha256": "9710e121a58d03ac92c8d6da287a19541994319afbbe6d6202af001ffd379213"
+    },
+    {
+      "path": "configuration_kimi_k3.py",
+      "sha256": "735eb9ebe593e17d231e08e1df7f7be9b5ee0e079f511aa201f9572077b416ae"
+    },
+    {
+      "path": "modeling_kimi_k3.py",
+      "sha256": "b9171c96726eda55234c92ac8dfae7e24c512fda68968ae8f2c3782b42665ea2"
+    },
+    {
+      "path": "preprocessor_config.json",
+      "sha256": "4be333605990c53a816e586dee9d5dd545afb7a59947c17f8f7ef26b4782668e"
+    },
+    {
+      "path": "tokenizer_config.json",
+      "sha256": "5d0803c94db9cd78763499e0956c95fd5a225c14a727e5a6cf5db3f96f010a6e"
+    }
+  ],
+  "weight_identity": {
+    "format": "safetensors",
+    "shard_count": 96,
+    "total_shard_bytes": 1560936091448,
+    "index_path": "model.safetensors.index.json",
+    "index_size_bytes": 59764096,
+    "index_lfs_sha256": "a1c5210650ce71d2d3ae9ec5a101ac4afd3cf4b10091be589853437eb967febd",
+    "index_xet_hash": "fd2ddaf6273f1843e7c902686e05b0fded569afc0c250974c4877cac08747a49",
+    "canonical_weight_manifest_digest": {
+      "algorithm": "sha256",
+      "value": "acee5a3378751d8d10285b753aa0f2e74221eb4c895571e740bc7d2f27672f18",
+      "input_definition": "UTF-8 lines sorted by path; each line is path<TAB>size<TAB>lfs_sha256<TAB>xet_hash<LF> for 96 model shards"
+    },
+    "canonical_all_file_manifest_digest": {
+      "algorithm": "sha256",
+      "value": "a72b1a68fa19a373bd600654311a189e1bb467455cf442f281ec257d0a35b8ea",
+      "input_definition": "UTF-8 lines sorted by path; each line is path<TAB>size<TAB>git_oid<TAB>lfs_sha256_or_empty<TAB>xet_hash_or_empty<LF> for 118 files"
+    }
+  },
+  "custom_code": {
+    "present": true,
+    "huggingface_tag": "custom_code",
+    "official_transformers_examples_request_trust_remote_code": true,
+    "remote_code_safety_assessed": false
+  },
+  "claims": {
+    "official_open_weight_release_observed": true,
+    "exact_repository_and_weight_index_pinned": true,
+    "model_card_benchmark_results_independently_reproduced": false,
+    "digital_biosphere_compatibility_tested": false,
+    "digital_biosphere_adopted": false
+  },
+  "execution": {
+    "weights_downloaded": false,
+    "model_loaded": false,
+    "inference_executed": false,
+    "runtime_created": false
+  },
+  "authority_boundaries": [
+    "OPEN_WEIGHT_NE_OSI_OPEN_SOURCE_VERIFIED",
+    "MODEL_CAPABILITY_NE_PERMISSION",
+    "MODEL_CARD_NE_INDEPENDENT_EVALUATION",
+    "DIGEST_NE_SAFETY_OR_TRUTH",
+    "REFERENCE_NE_ADOPTION"
+  ]
+}

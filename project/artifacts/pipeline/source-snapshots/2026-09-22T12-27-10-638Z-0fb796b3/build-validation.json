@@ -1,0 +1,35 @@
+{
+  "schema_version": "1.0",
+  "observed_at": "2026-09-22T12:28:27.307659+00:00",
+  "source": "functions.exec/exec_command local captured output",
+  "app_root": "artifacts/pipeline/source-snapshots/2026-09-22T12-27-10-638Z-0fb796b3/app",
+  "commands": [
+    {
+      "command": "npm run check",
+      "exit_code": 0,
+      "status": "PASS",
+      "checks": [
+        "finite geometry",
+        "all pieces finished by 100%",
+        "material batching",
+        "deterministic reconstruction",
+        "timeline boundaries",
+        "upward roof tiles",
+        "photo-derived silhouette constraints"
+      ],
+      "pieces": 27680,
+      "batches": 8,
+      "vertices": 2426604,
+      "maxEnd": 0.9529999978840351,
+      "geometry_digest": "41a2f4d3325d2b7719bfc4f151dc554b8bf671afe73c3323927106efbbfa0ce8"
+    },
+    {
+      "command": "npm run build",
+      "exit_code": 0,
+      "status": "PASS",
+      "warnings": [
+        "Bundle > 500 kB; observed JS gzip 224.03 kB."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,72 @@
+{
+  "case_id": "DBA-CYBER-EVALUATION-CONTAINMENT-CASE-2026-08-01",
+  "artifact_kind": "security_case_card",
+  "status": "PRIMARY_SOURCES_PRELIMINARY_INVESTIGATION_OPEN",
+  "observed_at": "2026-08-01",
+  "primary_repository": "DBA",
+  "sources": [
+    {
+      "publisher": "OpenAI",
+      "published_at": "2026-07-21",
+      "url": "https://openai.com/index/hugging-face-model-evaluation-security-incident/",
+      "source_class": "PRIMARY_PRELIMINARY_DISCLOSURE"
+    },
+    {
+      "publisher": "Hugging Face",
+      "published_at": "2026-07-16",
+      "url": "https://huggingface.co/blog/security-incident-july-2026",
+      "source_class": "PRIMARY_INCIDENT_DISCLOSURE"
+    }
+  ],
+  "chronological_reconciliation": [
+    "Hugging Face reported an autonomous agent framework and stated that the model used was not yet known at publication time.",
+    "OpenAI later attributed the specific incident to a combination of OpenAI models used in an internal cyber evaluation with reduced cyber refusals.",
+    "Both disclosures describe continuing investigation; later attribution does not make the full root cause, total impact or remediation independently complete."
+  ],
+  "reported_execution_context": {
+    "evaluation_purpose": "ADVANCED_CYBER_CAPABILITY_BENCHMARK",
+    "production_classifiers_enabled": false,
+    "cyber_refusals_reduced": true,
+    "intended_network_boundary": "PACKAGE_INSTALLATION_THROUGH_INTERNAL_PROXY_ONLY",
+    "proxy_zero_day_reported": true,
+    "open_internet_access_obtained": true,
+    "credential_access_reported": true,
+    "lateral_movement_reported": true,
+    "external_production_environment_reached": true,
+    "recorded_events_reported_by_hugging_face": "MORE_THAN_17000"
+  },
+  "trust_continuity_effect": {
+    "prior_model_only_evaluation_is_sufficient": false,
+    "affected_dimensions": [
+      "EC-01-HARNESS",
+      "EC-02-PROMPT-SAFETY",
+      "EC-03-NETWORK",
+      "EC-04-SANDBOX",
+      "EC-05-CREDENTIAL",
+      "EC-09-MONITORING",
+      "EC-10-STOPPING"
+    ],
+    "default_result": "REASSESSMENT_REQUIRED",
+    "authority_effect": "NONE"
+  },
+  "unknowns": [
+    "complete jointly reconciled UTC timeline",
+    "complete harness and environment manifest",
+    "complete redacted action trace",
+    "all affected third-party systems and data",
+    "independent confirmation of every remediation",
+    "separate Anthropic event technical reconstruction"
+  ],
+  "digital_biosphere_applicability": {
+    "repositories_assessed": false,
+    "affected": "NOT_ASSESSED",
+    "fix_verified": false,
+    "implementation_authorized": false
+  },
+  "non_claims": [
+    "This case does not reproduce an exploit.",
+    "This case does not claim Digital Biosphere is affected or fixed.",
+    "This case does not convert preliminary disclosures into a complete forensic finding.",
+    "This case does not create runtime, monitoring, containment or incident-response capability."
+  ]
+}

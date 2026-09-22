@@ -1,0 +1,12 @@
+{
+  "cases": [
+    {"id":"NEG-01","expected_error":"OBSERVATION_AS_EVIDENCE","payload":{"evidence_binding":{"source_kind":"OBSERVATION","admission_status":"ADMITTED_EVIDENCE"}}},
+    {"id":"NEG-02","expected_error":"EVIDENCE_AS_TRUTH","payload":{"claims":["TRUTH"]}},
+    {"id":"NEG-03","expected_error":"VERIFICATION_AS_AUTHORIZATION","payload":{"verification_result":{"authorization_status":"AUTHORIZED"}}},
+    {"id":"NEG-04","expected_error":"MAPPING_AS_ADOPTION","payload":{"mapping_only":true,"external_adoption_status":"ADOPTED"}},
+    {"id":"NEG-05","expected_error":"EXPERIMENTAL_AS_STABLE","payload":{"profile_status":"STABLE","maturity":"Experimental"}},
+    {"id":"NEG-06","expected_error":"RECOMMENDATION_AS_COMMAND","payload":{"recommendation_mode":"COMMAND"}},
+    {"id":"NEG-07","expected_error":"HEALTH_AS_CERTIFICATION","payload":{"health_result":{"certification":true}}},
+    {"id":"NEG-08","expected_error":"REFERENCE_IMPL_AS_AUTHORITY","payload":{"authority_ref":"REFERENCE_IMPLEMENTATION"}}
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "review_role":"DISCOVERY_REVIEWER",
+  "decision":"BLOCKING_FAIL",
+  "input_digest":"sha256:099aabfe3bc029aec872003a414a5e7f97ddc1a957352057eae657d31e2674c6",
+  "timestamp":"2026-08-02T06:44:00Z",
+  "blocking_reason":"AMBIGUOUS_REPOSITORY_NUMBER_MISCLASSIFIED_AS_ISSUE",
+  "finding":"agentrust-io/ca2a#76 was incorrectly materialized as github:agentrust-io/ca2a:issue:76.",
+  "required_fix":"Accept only unambiguous issue URLs for issue identity and add a regression assertion.",
+  "external_write_performed":false
+}

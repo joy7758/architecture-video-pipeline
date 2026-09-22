@@ -1,0 +1,35 @@
+{
+  "schema_version": "0.1",
+  "review_id": "2026-08-02-praxis-ai-194-risk-review-attempt-2",
+  "agent_identifier": "/root/pr76_final_risk",
+  "model_runtime_identifier": "OpenAI Codex GPT-5",
+  "review_role": "RISK_REVIEWER",
+  "input_digest": "sha256:8a31c48c73f94a1fd71b9ddf50baf6cf8da4cdcc62d9d026198f5a3d2a3ce097",
+  "output_digest": "sha256:51c8bfe440ec8f2bbf7afe357c465c4d6d59db83feede0d8e6d8772daa3812ba",
+  "decision": "BLOCKING_FAIL",
+  "timestamp": "2026-08-02T08:14:10Z",
+  "ruleset_version": "0.1",
+  "reason_codes": [
+    "INPUT_AND_PAYLOAD_DIGESTS_MATCH",
+    "NO_SECRET_OR_RESTRICTED_DATA_DETECTED",
+    "NO_MARKETING_OR_SPAM_PATTERN_DETECTED",
+    "HUMAN_AUTHORED_COMMUNICATION_REQUIRED",
+    "FIRST_PERSON_ATTRIBUTION_RISK"
+  ],
+  "findings": [
+    "The input, exact body, word count, selected slice, and full-suite evidence bindings match.",
+    "No secret, restricted data, license action, marketing, or bulk-spam pattern was detected.",
+    "The draft contains first-person statements and a prospective contribution commitment that cannot be attributed to the user by an agent.",
+    "The repository requires the contributor to write person-to-person Issue comments in their own words."
+  ],
+  "blocking_reasons": [
+    "HUMAN_REVIEW_REQUIRED:REPOSITORY_PERSON_TO_PERSON_AUTHORSHIP",
+    "AGENT_DRAFT_CONTAINS_FIRST_PERSON_ATTRIBUTION_AND_COMMITMENT",
+    "EXTERNAL_ACTION_EXPLICITLY_UNAUTHORIZED"
+  ],
+  "evidence_references": [
+    "reports/conversion-runs/2026-08-02-praxis-ai-194-agent-audit/reviewer-inputs/input.json",
+    "reports/conversion-runs/2026-08-02-praxis-ai-194-agent-audit/proposed-action.json",
+    "/Users/zhangbin/GitHub/praxis-ai/CONTRIBUTING.md"
+  ]
+}

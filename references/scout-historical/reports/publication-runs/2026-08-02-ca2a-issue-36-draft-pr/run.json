@@ -1,0 +1,148 @@
+{
+  "artifact_type": "TITMAS_SCOUT_EXTERNAL_PUBLICATION_RUN",
+  "schema_version": "0.1-local-record",
+  "run_id": "2026-08-02-ca2a-issue-36-draft-pr",
+  "recorded_at": "2026-08-01T17:08:28Z",
+  "source_issue": {
+    "reference": "agentrust-io/ca2a#36",
+    "url": "https://github.com/agentrust-io/ca2a/issues/36",
+    "state_at_publication": "OPEN",
+    "selected_checklist_item": "ACTION-path invalid-signature case classified as provenance-invalid"
+  },
+  "immutable_predecessor": {
+    "path": "reports/conversion-runs/2026-08-02-ca2a-issue-36-action-invalid-signature/run.json",
+    "content_digest": "sha256:9e2a65a787278b3feb532245225037d21fee902f89d4fa898c5ac182c112de75",
+    "modified_by_this_run": false
+  },
+  "status_transition": [
+    "LOCAL_IMPLEMENTATION_COMPLETED",
+    "FORK_PUSHED",
+    "DRAFT_PR_OPENED"
+  ],
+  "authorization": {
+    "external_action_authorized": true,
+    "external_action_authorized_scope": "CREATE_FORK_PUSH_BRANCH_OPEN_DRAFT_PR",
+    "authorization_source": "EXPLICIT_USER_AUTHORIZATION_IN_CURRENT_TASK",
+    "scope_exhausted": true,
+    "additional_external_action_authorized": false
+  },
+  "local_implementation": {
+    "repository": "/Users/zhangbin/GitHub/ca2a",
+    "branch": "contrib/issue-36-action-invalid-signature",
+    "local_commit": "b223ee41ac9e3b635651f9636a08061801b5c826",
+    "changed_files": [
+      "tests/conformance/README.md",
+      "tests/conformance/test_profile_conformance.py"
+    ]
+  },
+  "fork_publication": {
+    "state": "FORK_PUSHED",
+    "fork": "joy7758/ca2a",
+    "url": "https://github.com/joy7758/ca2a",
+    "created_by_this_run": true,
+    "remote_name": "fork",
+    "branch": "contrib/issue-36-action-invalid-signature",
+    "remote_commit": "b223ee41ac9e3b635651f9636a08061801b5c826",
+    "force_push_used": false,
+    "only_target_branch_pushed_by_this_run": true,
+    "branches_observed_after_publication": [
+      "main",
+      "gh-pages",
+      "contrib/issue-36-action-invalid-signature"
+    ]
+  },
+  "draft_pull_request": {
+    "state": "DRAFT_PR_OPENED",
+    "number": 76,
+    "url": "https://github.com/agentrust-io/ca2a/pull/76",
+    "title": "test: cover invalid delegation signature in action evidence",
+    "repository_state": "OPEN",
+    "draft": true,
+    "base": {
+      "repository": "agentrust-io/ca2a",
+      "branch": "main",
+      "commit": "76c1a31193ff6a70b732cf8f668935808002e273"
+    },
+    "head": {
+      "repository": "joy7758/ca2a",
+      "branch": "contrib/issue-36-action-invalid-signature",
+      "commit": "b223ee41ac9e3b635651f9636a08061801b5c826"
+    },
+    "maintainer_can_modify": true,
+    "mergeable_at_observation": true,
+    "mergeable_state_at_observation": "BLOCKED",
+    "changed_files": 2,
+    "commits": 1,
+    "additions": 17,
+    "deletions": 1,
+    "body_exactly_matches_authorized_text": true,
+    "reference_syntax": "Refs agentrust-io/ca2a#36"
+  },
+  "ci_snapshot": {
+    "observed_at": "2026-08-01T17:08:28Z",
+    "head_commit": "b223ee41ac9e3b635651f9636a08061801b5c826",
+    "checks": [
+      {
+        "name": "Contributor reputation check / check",
+        "status": "COMPLETED",
+        "conclusion": "SUCCESS",
+        "url": "https://github.com/agentrust-io/ca2a/actions/runs/30709610843"
+      },
+      {
+        "name": "Require maintainer approval / gate",
+        "status": "COMPLETED",
+        "conclusion": "FAILURE",
+        "url": "https://github.com/agentrust-io/ca2a/actions/runs/30709610909",
+        "failure_classification": "EXPECTED_MAINTAINER_APPROVAL_GATE",
+        "failure_message": "Waiting for maintainer approval of the current head commit before merging.",
+        "caused_by_contribution_code": false,
+        "requires_code_change": false
+      }
+    ],
+    "dco_failure_observed": false,
+    "lint_failure_observed": false,
+    "test_failure_observed": false,
+    "security_failure_observed": false,
+    "remote_test_or_lint_workflow_observed": false,
+    "checks_retriggered_by_this_run": false
+  },
+  "automation_snapshot": {
+    "bot_comment_present": true,
+    "bot_actor": "github-actions[bot]",
+    "bot_comment_url": "https://github.com/agentrust-io/ca2a/pull/76#issuecomment-5152469032",
+    "bot_comment_summary": "Contributor Check classified the contribution as HIGH with profile HIGH and credential NONE.",
+    "automated_label_present": true,
+    "automated_labels": [
+      "needs-review:HIGH"
+    ],
+    "human_maintainer_feedback": "NONE"
+  },
+  "external_action_boundaries": {
+    "upstream_push": "NOT_PERFORMED",
+    "upstream_main_modified": false,
+    "issue_comment": "NOT_PERFORMED",
+    "reviewer_request": "NOT_PERFORMED",
+    "labels_modified_by_submitter": "NOT_PERFORMED",
+    "milestone_modified": "NOT_PERFORMED",
+    "assignee_modified": "NOT_PERFORMED",
+    "ready_for_review": "NOT_AUTHORIZED",
+    "auto_merge": "NOT_ENABLED",
+    "merge": "NOT_PERFORMED",
+    "fork_or_branch_deleted": false,
+    "tiamas_scout_push": "NOT_AUTHORIZED"
+  },
+  "claims": {
+    "maintainer_approval": "NOT_ESTABLISHED",
+    "merge": "NOT_ESTABLISHED",
+    "adoption": "NOT_ESTABLISHED",
+    "customer": "NOT_ESTABLISHED",
+    "revenue": "NOT_ESTABLISHED",
+    "commercial_validation": "NOT_ESTABLISHED",
+    "production_safety": "NOT_ESTABLISHED"
+  },
+  "next_gate": {
+    "state": "AWAIT_HUMAN_DECISION_AND_MAINTAINER_RESPONSE",
+    "ready_for_review_requires_new_authorization": true,
+    "code_change_required_by_current_ci_evidence": false
+  }
+}

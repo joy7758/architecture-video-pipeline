@@ -1,0 +1,40 @@
+{
+  "artifact_type": "TITMAS_SCOUT_SELECTION_AFTER_CHANGE",
+  "run_id": "2026-08-02-actionability-gate",
+  "selection_policy": "conversion_readiness_then_heuristic_unvalidated_v0.1",
+  "next_conversion_target": {
+    "classification": "ACTIONABLE_NOW",
+    "repository": "praxis-proxy/ai",
+    "issue_number": 194,
+    "url": "https://github.com/praxis-proxy/ai/issues/194"
+  },
+  "original_candidate_pool": [
+    {
+      "url": "https://github.com/praxis-proxy/ai/issues/194",
+      "classification": "ACTIONABLE_NOW",
+      "queue": "conversion_queue"
+    },
+    {
+      "url": "https://github.com/ptone/scion/issues/482",
+      "classification": "ACTIONABLE_NOW",
+      "queue": "conversion_queue"
+    },
+    {
+      "url": "https://github.com/source-inc/gents/issues/461",
+      "classification": "ACTIONABLE_AFTER_CONTACT",
+      "queue": "conversion_queue"
+    },
+    {
+      "url": "https://github.com/syswonder/robonix/issues/189",
+      "classification": "OBSERVE",
+      "queue": "research_watchlist"
+    },
+    {
+      "url": "https://github.com/mnemonik-dev/nightly-research/issues/27",
+      "classification": "OBSERVE",
+      "queue": "research_watchlist"
+    }
+  ],
+  "live_rerun_reference": "reports/latest-opportunities.json",
+  "external_action_authorized": false
+}

@@ -1,0 +1,16 @@
+{
+  "schema_version":"0.1",
+  "review_id":"2026-08-02-ca2a-pr-76-comment-risk-review",
+  "agent_identifier":"/root/comment_risk_review",
+  "model_runtime_identifier":"OpenAI Codex GPT-5",
+  "review_role":"RISK_REVIEWER",
+  "input_digest":"sha256:5532305a50fd3177920965118ab24cb989ac2121a70eb4ee3724693e967d4af0",
+  "output_digest":"sha256:ae717652266e7b441e9f8de1d269e6d2ba4a939bf3a9d29dee8bb1eb616e75fb",
+  "decision":"PASS",
+  "timestamp":"2026-08-02T06:43:27Z",
+  "ruleset_version":"0.1",
+  "reason_codes":["NO_SECRET_OR_RESTRICTED_DATA","NO_DUPLICATE_REVIEW_REQUEST","EXACT_SINGLE_COMMENT_ONLY","NO_HIGH_RISK_ACTION"],
+  "findings":["The exact comment contains no secret, personal data, legal promise, payment, marketing claim, or impersonation; it is limited to one PR review request and authorizes no retry or other write."],
+  "blocking_reasons":[],
+  "evidence_references":["reports/titmas-runs/2026-08-02-ca2a-pr-76-latest-head/reviewer-inputs/comment/input.json","https://github.com/agentrust-io/ca2a/pull/76","git:ca2a@0a1ffa6710d25f58515b2dca7e0619e134c0a43e"]
+}

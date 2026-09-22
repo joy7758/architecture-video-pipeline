@@ -1,0 +1,20 @@
+{
+  "review_id": "TITMAS-INTEGRATION-REVIEW-SECURITY-CLAIMS-01",
+  "review_scope": "SECURITY_AND_CLAIMS",
+  "provider": "Volcengine Ark",
+  "requested_model": "doubao-seed-2-1-pro-260628",
+  "returned_model": "doubao-seed-2-1-pro-260628",
+  "reviewer_lineage": "ARK-DOUBAO21PRO-INTEGRATION-SECURITY-20260729",
+  "verdict": "PASS",
+  "findings": [],
+  "blocking": false,
+  "required_correction": [],
+  "limitations": [
+    "FROZEN_FACT_SUMMARY_ONLY",
+    "NO_FULL_REPOSITORY_ACCESS",
+    "NO_INDEPENDENT_TEST_EXECUTION",
+    "DRAFT_PR_SCOPE_ONLY",
+    "SECURITY_TRANSPORT_INACTIVE_POST_DRAFT_BLOCKER_RETAINED"
+  ],
+  "authority_effect": "NONE"
+}

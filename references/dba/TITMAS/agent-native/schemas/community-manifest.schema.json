@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "manifest_version",
+    "canonical_name",
+    "canonical_entry",
+    "community_mode",
+    "default_participant_type",
+    "human_routine_operation_default",
+    "capabilities",
+    "non_capabilities",
+    "long_term_design_assumption"
+  ],
+  "properties": {
+    "$schema": {"type": "string"},
+    "manifest_version": {"type": "string"},
+    "canonical_name": {"const": "TITMAS Agent-Native Standards Community"},
+    "canonical_entry": {"const": "../../agent-index.json"},
+    "community_mode": {
+      "enum": [
+        "PUBLIC_CONTRIBUTION_ACTIVATION_CANDIDATE",
+        "LIMITED_REPOSITORY_CONTRIBUTION_PREVIEW",
+        "PRIVATE_COMMERCIALIZATION_BOUNDARY"
+      ]
+    },
+    "default_participant_type": {"const": "GOVERNED_AGENT"},
+    "human_routine_operation_default": {"const": false},
+    "capabilities": {"type": "array", "minItems": 8, "items": {"type": "string"}},
+    "non_capabilities": {"type": "array", "minItems": 8, "items": {"type": "string"}},
+    "long_term_design_assumption": {"type": "object"}
+  }
+}

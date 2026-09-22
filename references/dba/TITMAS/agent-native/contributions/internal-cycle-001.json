@@ -1,0 +1,200 @@
+{
+  "cycle_id": "TITMAS-COMMUNITY-CYCLE-001",
+  "decision_reference": "TITMAS-COMMUNITY-CYCLE-001-D01",
+  "task_id": "TITMAS-COMMUNITY-CYCLE-001-TASK-01",
+  "problem": "The canonical contribution example retained controlled-pilot identities and the generalized grounding layer lacked a direct agent-readable entry.",
+  "source_revision": "d914131a60def11738c901018d28a31d07ae84b1",
+  "allowed_files": [
+    "TITMAS/agent-native/contributions/example-contribution-package.json",
+    "TITMAS/agent-native/contributions/internal-cycle-001.json",
+    "TITMAS/conformance/grounding/README.md",
+    "TITMAS/conformance/harness.py",
+    "TITMAS/conformance/tests/test_harness.py"
+  ],
+  "forbidden_files": [
+    "TITMAS/community/community-status.json",
+    "TITMAS/specifications/registry.yaml",
+    "TITMAS/agent-native/tasks/task-registry.json",
+    "digital-biosphere-os/**",
+    "SAEE/**",
+    "TITMAS/research/**"
+  ],
+  "contributor_identity": "current Codex execution lineage",
+  "model_identity": "GPT-5 Codex",
+  "tool_identity": "Codex local workspace tools",
+  "candidate_hash": "sha256:5e5fc6b29870b7ac7509cd310a0fa18d3512e2d623cd38c7c5c66a40a5a8843a",
+  "candidate_hash_scope": [
+    "TITMAS/agent-native/contributions/example-contribution-package.json",
+    "TITMAS/conformance/grounding/README.md",
+    "TITMAS/conformance/harness.py",
+    "TITMAS/conformance/tests/test_harness.py"
+  ],
+  "candidate_hash_scope_note": "The mutable cycle receipt is deliberately excluded from its own candidate hash to avoid a self-referential digest.",
+  "preflight_id": "PF-5fd8c3ededb7aa64",
+  "preflight_status": "PASS",
+  "unresolved_required_references": [],
+  "tests": [
+    "TITMAS Development conformance",
+    "conformance unit tests",
+    "agent-native tests",
+    "minimal reference tests"
+  ],
+  "review_models_requested": [
+    "qwen3.7-max",
+    "kimi-k2.6"
+  ],
+  "review_models_returned": [
+    "qwen3.7-max",
+    "kimi-k2.6",
+    "qwen3.8-max-preview",
+    "doubao-seed-2-0-pro-260215"
+  ],
+  "independent_review_lineage_count": 4,
+  "advisory_review_receipts": [
+    {
+      "review_id": "TITMAS-CYCLE-001-QWEN-REVIEW-01",
+      "provider": "Alibaba Cloud Model Studio",
+      "requested_model": "qwen3.7-max",
+      "returned_model": "qwen3.7-max",
+      "verdict": "REVISION_REQUIRED",
+      "findings": [
+        {
+          "severity": "HIGH",
+          "blocking": true,
+          "finding": "The diff-only review input omitted the two untracked new files.",
+          "disposition": "CORRECTED_BY_COMPLETE_FIVE_FILE_REVIEW_INPUT"
+        },
+        {
+          "severity": "MEDIUM",
+          "blocking": true,
+          "finding": "The general harness hardcoded the Cycle 001 authority identifier.",
+          "disposition": "CORRECTED_BY_REMOVING_CYCLE_SPECIFIC_AUTHORITY_CHECK"
+        }
+      ],
+      "semantic_elevation_detected": false,
+      "authority_effect": "NONE",
+      "raw_prompt_retained": false,
+      "raw_response_retained": false,
+      "retry_count": 0,
+      "fallback": "NONE"
+    },
+    {
+      "review_id": "TITMAS-CYCLE-001-KIMI-REVIEW-01",
+      "provider": "Baidu Qianfan",
+      "requested_model": "kimi-k2.6",
+      "returned_model": "kimi-k2.6",
+      "verdict": "REVISION_REQUIRED",
+      "findings": [
+        {
+          "severity": "HIGH",
+          "blocking": true,
+          "finding": "The diff-only review input omitted the new grounding README.",
+          "disposition": "CORRECTED_BY_COMPLETE_FIVE_FILE_REVIEW_INPUT"
+        },
+        {
+          "severity": "MEDIUM",
+          "blocking": false,
+          "finding": "The general harness hardcoded the Cycle 001 authority identifier.",
+          "disposition": "CORRECTED_BY_REMOVING_CYCLE_SPECIFIC_AUTHORITY_CHECK"
+        }
+      ],
+      "semantic_elevation_detected": false,
+      "authority_effect": "NONE",
+      "raw_prompt_retained": false,
+      "raw_response_retained": false,
+      "retry_count": 0,
+      "fallback": "NONE"
+    },
+    {
+      "review_id": "TITMAS-CYCLE-001-QWEN38-REVIEW-01",
+      "provider": "Alibaba Cloud Model Studio",
+      "requested_model": "qwen3.8-max-preview",
+      "returned_model": "qwen3.8-max-preview",
+      "verdict": "PASS",
+      "findings": [
+        {
+          "severity": "LOW",
+          "blocking": false,
+          "finding": "The receipt was excluded from candidate_hash_scope without an explicit explanation.",
+          "disposition": "CORRECTED_BY_CANDIDATE_HASH_SCOPE_NOTE"
+        }
+      ],
+      "semantic_elevation_detected": false,
+      "authority_effect": "NONE",
+      "raw_prompt_retained": false,
+      "raw_response_retained": false,
+      "retry_count": 0,
+      "fallback": "NONE"
+    },
+    {
+      "review_id": "TITMAS-CYCLE-001-DOUBAO-REVIEW-01",
+      "provider": "Volcengine Ark",
+      "requested_model": "doubao-seed-2-0-pro-260215",
+      "returned_model": "doubao-seed-2-0-pro-260215",
+      "verdict": "PASS",
+      "findings": [
+        {
+          "severity": "LOW",
+          "blocking": false,
+          "finding": "The contribution example remained pending final integration review.",
+          "disposition": "EXPECTED_UNTIL_FINAL_CONFORMANCE"
+        }
+      ],
+      "semantic_elevation_detected": false,
+      "authority_effect": "NONE",
+      "raw_prompt_retained": false,
+      "raw_response_retained": false,
+      "retry_count": 0,
+      "fallback": "NONE"
+    }
+  ],
+  "failed_review_attempts": [
+    {
+      "requested_models": [
+        "deepseek-v4-flash-260425",
+        "glm-5.2"
+      ],
+      "result": "CLIENT_TIMEOUT_NO_SANITIZED_MODEL_RESULT",
+      "retry_count": 0
+    },
+    {
+      "requested_model": "qwen3-max",
+      "result": "MODEL_NOT_FOUND_HTTP_404",
+      "retry_count": 0
+    },
+    {
+      "requested_model": "ernie-5.0-thinking-preview",
+      "result": "CO_LAUNCHED_REQUEST_TERMINATED_WITH_FAILED_BATCH_NO_SANITIZED_MODEL_RESULT",
+      "retry_count": 0
+    }
+  ],
+  "blocking_findings": [
+    {
+      "finding": "Initial diff-only advisory input omitted untracked candidate files.",
+      "status": "CORRECTED",
+      "verification_required": false,
+      "verified_by": [
+        "TITMAS-CYCLE-001-QWEN38-REVIEW-01",
+        "TITMAS-CYCLE-001-DOUBAO-REVIEW-01"
+      ]
+    },
+    {
+      "finding": "General conformance harness was coupled to a Cycle 001 authority ID.",
+      "status": "CORRECTED",
+      "verification_required": false,
+      "verified_by": [
+        "TITMAS-CYCLE-001-QWEN38-REVIEW-01",
+        "TITMAS-CYCLE-001-DOUBAO-REVIEW-01"
+      ]
+    }
+  ],
+  "limitations": [
+    "INTEGRATION_BRANCH_ONLY",
+    "NO_EXTERNAL_DATA",
+    "NO_PUBLIC_GITHUB_WRITE_ACTIVATION",
+    "CONTRIBUTION_ACCEPTANCE_NE_MAIN_MERGE"
+  ],
+  "cycle_status": "INTERNAL_AGENT_NATIVE_CONTRIBUTION_CYCLE_COMPLETE",
+  "contribution_accepted_in_integration_branch": true,
+  "contribution_merged_to_main": false
+}

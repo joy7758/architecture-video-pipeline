@@ -1,0 +1,210 @@
+{
+  "schema_version": "1.0",
+  "packet_id": "TITMAS-CR01-D03-IMPLEMENTATION-READINESS",
+  "decision_reference": "CR01-D03",
+  "status": "READY_FOR_HUMAN_DECISION_NOT_AUTHORIZED",
+  "prepared_at": "2026-07-31T19:20:00+08:00",
+  "source_state": {
+    "governance_revision": "8b01bb8988c9180392ac2b06a39e2541fc98b260",
+    "gateway_revision": "c319001cc1cf9e44d8b3d0b142a025c6c9af1678",
+    "integration_revision": "6ed4dadd4693129d3daca0a9a29964a4f7f864e9",
+    "live_commercial_release": "9bbfce6154d67f4ab50e911b5e49611f5a4a8b57",
+    "legacy_receipts": 1661,
+    "legacy_signatures_valid": 1659,
+    "legacy_signatures_unverifiable_key_unavailable": 2,
+    "legacy_chain_failures": 0,
+    "full_restore_pass": false,
+    "formal_rto_established": false
+  },
+  "public_truth_finding": {
+    "id": "CR01-D03-FINDING-READINESS-RESTORE-DRIFT",
+    "severity": "HIGH",
+    "observed_endpoint": "/api/v1/readiness",
+    "observed_value": "technical_gates.backup_restore_ready=true",
+    "canonical_value": "backup_restore_drill=false",
+    "required_disposition": "CORRECT_IN_AUTHORIZED_GATEWAY_IMPLEMENTATION_BEFORE_ACTIVATION",
+    "automatic_override_allowed": false
+  },
+  "recommended_option": {
+    "id": "OPTION_C_IMMUTABLE_MANIFEST_TENANT_SCOPED_EPOCH",
+    "implementation_authorized": false,
+    "legacy_receipt_rows_mutable": false,
+    "legacy_validity_override": false,
+    "dual_write_allowed": false,
+    "one_active_epoch_per_tenant": true,
+    "receipt_v1_0_retained": true,
+    "receipt_v1_1_candidate": true
+  },
+  "proposed_caps": {
+    "additional_gateway_implementation_prs": 1,
+    "additional_database_migration_executions": 1,
+    "additional_application_deployment_attempts": 1,
+    "additional_isolated_restore_revalidations": 1,
+    "soak_execution": false
+  },
+  "external_resource_constraints": {
+    "new_paid_cloud_resource_authorized": false,
+    "new_provider_purchase_authorized": false,
+    "existing_non_exportable_ed25519_signer_confirmed": false,
+    "missing_signer_disposition": "STOP_FOR_SEPARATE_HUMAN_DECISION"
+  },
+  "test_matrix": [
+    {
+      "id": "D03-T01",
+      "class": "LEGACY_IMMUTABILITY",
+      "assertion": "All 1661 legacy Receipt signed fields and hashes are byte-equivalent before and after migration",
+      "expected": "PASS",
+      "blocking": true
+    },
+    {
+      "id": "D03-T02",
+      "class": "LEGACY_VERIFICATION",
+      "assertion": "Legacy outcome remains 1659 valid, 2 UNVERIFIABLE_KEY_UNAVAILABLE and 0 chain failures",
+      "expected": "PASS_WITH_RETAINED_UNVERIFIABLE",
+      "blocking": true
+    },
+    {
+      "id": "D03-T03",
+      "class": "MANIFEST_SUBSTITUTION",
+      "assertion": "A manifest with any changed digest, signature, decision or exception reference is rejected",
+      "expected": "REJECT",
+      "blocking": true
+    },
+    {
+      "id": "D03-T04",
+      "class": "TENANT_ANCHOR_SUBSTITUTION",
+      "assertion": "Tenant A genesis cannot bind Tenant B legacy tip",
+      "expected": "REJECT",
+      "blocking": true
+    },
+    {
+      "id": "D03-T05",
+      "class": "EPOCH_EQUIVOCATION",
+      "assertion": "A second active epoch for one Tenant violates the database constraint and transaction",
+      "expected": "REJECT_ATOMICALLY",
+      "blocking": true
+    },
+    {
+      "id": "D03-T06",
+      "class": "PARTIAL_ACTIVATION",
+      "assertion": "A fault between Tenant transitions leaves protected writes closed and does not report global success",
+      "expected": "BLOCKED_LEDGER_INTEGRITY",
+      "blocking": true
+    },
+    {
+      "id": "D03-T07",
+      "class": "GENESIS_REPLAY",
+      "assertion": "Replaying a genesis for the same Tenant and transition is idempotent or rejected without a second Receipt",
+      "expected": "NO_DUPLICATE",
+      "blocking": true
+    },
+    {
+      "id": "D03-T08",
+      "class": "MISSING_TRANSITION_KEY",
+      "assertion": "Missing, wrong-mode or mismatched transition key blocks manifest materialization and activation",
+      "expected": "BLOCKED_LEDGER_INTEGRITY",
+      "blocking": true
+    },
+    {
+      "id": "D03-T09",
+      "class": "RECEIPT_DOWNGRADE",
+      "assertion": "A v1.1 epoch genesis cannot be interpreted as v1.0 or omit its transition fields",
+      "expected": "REJECT",
+      "blocking": true
+    },
+    {
+      "id": "D03-T10",
+      "class": "RLS_ISOLATION",
+      "assertion": "Tenant, no-Tenant and cross-Tenant direct SQL tests cover every new Tenant-owned table",
+      "expected": "ZERO_CROSS_TENANT_ACCESS",
+      "blocking": true
+    },
+    {
+      "id": "D03-T11",
+      "class": "MIGRATION_REPLAY",
+      "assertion": "A repeated migration or transition command cannot create duplicate epochs, seals or genesis Receipts",
+      "expected": "FAIL_CLOSED_OR_IDEMPOTENT",
+      "blocking": true
+    },
+    {
+      "id": "D03-T12",
+      "class": "LEDGER_RECONCILIATION",
+      "assertion": "Receipts, usage, billing, quota and idempotency counts remain equal after the transition",
+      "expected": "PASS",
+      "blocking": true
+    },
+    {
+      "id": "D03-T13",
+      "class": "POST_ACTIVATION_ROLLBACK",
+      "assertion": "An epoch-unaware release is never activated after any new epoch genesis exists",
+      "expected": "REJECT_ROLLBACK_TARGET",
+      "blocking": true
+    },
+    {
+      "id": "D03-T14",
+      "class": "PUBLIC_READINESS_TRUTH",
+      "assertion": "Public readiness reports backup integrity, structural restore, Receipt integrity, full restore and RTO separately",
+      "expected": "FAIL_CLOSED_CONSISTENT",
+      "blocking": true
+    },
+    {
+      "id": "D03-T15",
+      "class": "RESTORED_RUNTIME",
+      "assertion": "The isolated restored database passes live application RLS, signer, anchor, schema and negative endpoint tests",
+      "expected": "PASS",
+      "blocking": true
+    },
+    {
+      "id": "D03-T16",
+      "class": "SENSITIVE_OUTPUT",
+      "assertion": "Reports and public projections contain no private identifiers, secrets or customer payloads",
+      "expected": "ZERO_FINDINGS",
+      "blocking": true
+    },
+    {
+      "id": "D03-T17",
+      "class": "CANONICAL_TRANSITION_BINDING",
+      "assertion": "RFC 8785 plus SHA-256 deterministically binds each ordered legacy Receipt hash and retained signature status to the manifest, and Receipt v1.1 signs the manifest digest, legacy set digest and legacy tip",
+      "expected": "PASS",
+      "blocking": true
+    },
+    {
+      "id": "D03-T18",
+      "class": "CUTOVER_STATE_MACHINE",
+      "assertion": "Every transition state and failure edge is persisted; legacy rollback is possible only before any epoch genesis, while any partial activation keeps writes closed and permits only reviewed epoch-aware forward repair",
+      "expected": "FAIL_CLOSED",
+      "blocking": true
+    },
+    {
+      "id": "D03-T19",
+      "class": "NON_EXPORTABLE_SIGNING_KEY",
+      "assertion": "The transition manifest is signed by the exact authorized hardware-backed or managed-KMS Ed25519 key version; no filesystem private-key fallback exists and restored public material verifies the signature",
+      "expected": "PASS_OR_BLOCKED_LEDGER_INTEGRITY",
+      "blocking": true
+    }
+  ],
+  "review_requirements": {
+    "qwen3_7_max_zero_blocker_review": "PASS",
+    "additional_model_lineage_review_or_human_exception": "PASS_DEEPSEEK_V4_PRO",
+    "review_evidence": "architecture/cr01-d03-advisory-review-v1.0.json",
+    "human_decision": "PENDING"
+  },
+  "authorization": {
+    "implementation": false,
+    "gateway_code_change": false,
+    "database_migration": false,
+    "deployment_retry": false,
+    "cr01_restart": false,
+    "soak_execution": false,
+    "new_paid_cloud_resource": false,
+    "new_provider_purchase": false,
+    "production_ready": false
+  },
+  "authority_boundaries": {
+    "packet_is_decision": false,
+    "design_is_implementation": false,
+    "verification_is_authorization": false,
+    "evidence_is_truth": false,
+    "legacy_anchor_is_legacy_signature_verification": false
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "run_id": "2026-08-02-praxis-ai-194-agent-audit",
+  "source_reference": "https://github.com/praxis-proxy/ai/issues/194",
+  "commit_sha": "4a9a8659b1b5d61ae2ad7203fbcdcc7666ae5995",
+  "digest_algorithm": "sha256",
+  "digest_value": "8a31c48c73f94a1fd71b9ddf50baf6cf8da4cdcc62d9d026198f5a3d2a3ce097",
+  "ruleset_version": "0.1",
+  "action_scope": ["POST_BOUNDED_TECHNICAL_COMMENT"],
+  "actor_type": "AGENT_QUORUM",
+  "result": "PRE_ACTION_EVIDENCE_CAPTURED_PENDING_QUORUM",
+  "uncertainty": [
+    "maintainer_scope_acceptance_unknown",
+    "assignment_not_granted",
+    "repository_human_authorship_policy_applies"
+  ],
+  "unsupported_claims": [
+    "authorization_granted",
+    "comment_published",
+    "maintainer_acceptance",
+    "adoption",
+    "revenue",
+    "production_safety",
+    "actor_identity_authenticated"
+  ],
+  "timestamp": "2026-08-02T07:56:47Z"
+}

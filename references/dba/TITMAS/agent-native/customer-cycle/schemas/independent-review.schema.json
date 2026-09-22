@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://titmas.cn/schemas/independent-review.schema.json",
+  "title": "TITMAS Independent Review Result v0.1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "verdict",
+    "customer_result_supported",
+    "blocking_findings",
+    "non_blocking_findings",
+    "evidence_refs",
+    "required_corrections",
+    "limitations"
+  ],
+  "properties": {
+    "verdict": {"enum": ["PASS", "REVISION_REQUIRED", "REJECT"]},
+    "customer_result_supported": {"type": "boolean"},
+    "blocking_findings": {
+      "type": "array",
+      "maxItems": 16,
+      "items": {"type": "string", "maxLength": 512}
+    },
+    "non_blocking_findings": {
+      "type": "array",
+      "maxItems": 16,
+      "items": {"type": "string", "maxLength": 512}
+    },
+    "evidence_refs": {
+      "type": "array",
+      "maxItems": 16,
+      "items": {"type": "string", "maxLength": 256}
+    },
+    "required_corrections": {
+      "type": "array",
+      "maxItems": 16,
+      "items": {"type": "string", "maxLength": 512}
+    },
+    "limitations": {
+      "type": "array",
+      "maxItems": 16,
+      "items": {"type": "string", "maxLength": 512}
+    }
+  }
+}

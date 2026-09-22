@@ -1,0 +1,546 @@
+diff --git a/config/discovery-sources.yaml b/config/discovery-sources.yaml
+index 7e250e8..e964216 100644
+--- a/config/discovery-sources.yaml
++++ b/config/discovery-sources.yaml
+@@ -30,31 +30,31 @@ source_types:
+ queries:
+   - query_id: Q-AI-AGENT-AUDIT
+     topic: AI_AGENT_AUDIT
+-    query: '"AI agent" audit'
++    query: 'agent audit'
+   - query_id: Q-EXECUTION-EVIDENCE
+     topic: EXECUTION_EVIDENCE
+-    query: 'agent "execution evidence"'
++    query: '"execution evidence"'
+   - query_id: Q-VERIFIABLE-TRACE
+     topic: VERIFIABLE_TRACE
+-    query: 'agent "verifiable trace"'
++    query: '"verifiable trace" agent'
+   - query_id: Q-HUMAN-IN-THE-LOOP
+     topic: HUMAN_IN_THE_LOOP
+-    query: '"human in the loop" agent'
++    query: 'human-in-the-loop agent'
+   - query_id: Q-AGENT-AUTHORIZATION
+     topic: AGENT_AUTHORIZATION
+-    query: '"agent authorization"'
++    query: 'agent authorization'
+   - query_id: Q-MCP-SECURITY-AUDIT
+     topic: MCP_SECURITY_AUDIT
+-    query: 'MCP security audit'
++    query: 'MCP security'
+   - query_id: Q-AGENT-GOVERNANCE
+     topic: AGENT_GOVERNANCE_COMPLIANCE
+-    query: '"agent governance" compliance'
++    query: 'agent governance'
+   - query_id: Q-PROVENANCE-REPLAY
+     topic: PROVENANCE_REPLAY
+-    query: 'agent provenance replay'
++    query: 'provenance replay agent'
+   - query_id: Q-TAMPER-EVIDENCE
+     topic: TAMPER_EVIDENCE
+-    query: 'agent "tamper evidence"'
++    query: 'tamper-evident agent'
+ 
+ pain_point_taxonomy:
+   AI_AGENT_AUDIT:
+diff --git a/src/discovery/cli.rb b/src/discovery/cli.rb
+index fb99d0c..8dfd8cc 100644
+--- a/src/discovery/cli.rb
++++ b/src/discovery/cli.rb
+@@ -11,6 +11,7 @@ require_relative "deduplicator"
+ require_relative "opportunity_ranker"
+ require_relative "signal_extractor"
+ require_relative "source_collector"
++require_relative "status_index"
+ require_relative "support"
+ 
+ module TITMASScout
+@@ -36,10 +37,21 @@ module TITMASScout
+         collection = collector.collect
+         deduplication = Deduplicator.new.deduplicate(collection.fetch("items"))
+         extractor = SignalExtractor.new(config: config)
+-        signals = deduplication.fetch("items").map { |item| extractor.extract(item) }
++        status_index = dependencies[:status_index] || StatusIndex.new(
++          reports_root: options.fetch(:output_root)
++        )
++        signals = deduplication.fetch("items").map do |item|
++          signal = extractor.extract(item)
++          history_status = status_index.status_for(signal)
++          history_status ? signal.merge("history_status" => history_status) : signal
++        end
+         ranker = OpportunityRanker.new(config: config, run_date: run_date)
+         filtering = ranker.filter(signals)
+         ranked = ranker.rank(filtering.fetch("retained"))
++        tracked = tracked_opportunities(
++          filtering.fetch("excluded"),
++          status_index.entries.values
++        )
+ 
+         configured_maximum = Integer(
+           config.dig("collection_policy", "maximum_selected_opportunities")
+@@ -64,6 +76,7 @@ module TITMASScout
+           collection: collection,
+           deduplication: deduplication,
+           excluded: filtering.fetch("excluded"),
++          tracked_opportunities: tracked,
+           ranked_candidates: ranked,
+           opportunities: selected
+         )
+@@ -127,6 +140,28 @@ module TITMASScout
+         end
+       end
+ 
++      def self.tracked_opportunities(excluded, historical_entries)
++        retrieved = excluded.select { |item| item["tracked_status"] }.map do |item|
++          item.merge("source_observed_in_current_run" => true)
++        end
++        persistent = historical_entries.map do |entry|
++          {
++            "evidence_paths" => entry.fetch("evidence_paths"),
++            "number" => entry.fetch("number"),
++            "related_entries" => entry.fetch("related_entries"),
++            "repository" => entry.fetch("repository"),
++            "root_problem_id" => entry.fetch("root_problem_id"),
++            "source" => entry.fetch("source"),
++            "source_observed_in_current_run" => false,
++            "tracked_status" => entry.fetch("status")
++          }
++        end
++        (retrieved + persistent).group_by { |item| item.fetch("root_problem_id") }
++                                .values
++                                .map { |items| items.find { |item| item["source_observed_in_current_run"] } || items.first }
++                                .sort_by { |item| item.fetch("root_problem_id") }
++      end
++
+       def self.run_summary(report, paths)
+         {
+           "backend" => report.dig("collection", "backend"),
+diff --git a/src/discovery/daily_report.rb b/src/discovery/daily_report.rb
+index dfa25bf..3dd7a8c 100644
+--- a/src/discovery/daily_report.rb
++++ b/src/discovery/daily_report.rb
+@@ -14,8 +14,8 @@ module TITMASScout
+       end
+ 
+       def build(run_date:, generated_at:, config_path:, config_digest:,
+-                collection:, deduplication:, excluded:, ranked_candidates:,
+-                opportunities:)
++                collection:, deduplication:, excluded:, tracked_opportunities:,
++                ranked_candidates:, opportunities:)
+         filter_counts = excluded.each_with_object(Hash.new(0)) do |item, counts|
+           Array(item["reasons"]).each { |reason| counts[reason] += 1 }
+         end
+@@ -29,6 +29,7 @@ module TITMASScout
+             "excluded_count" => excluded.length,
+             "raw_retrieved_count" => collection.fetch("items").length,
+             "selected_count" => opportunities.length,
++            "tracked_conversion_count" => tracked_opportunities.length,
+             "unique_count" => deduplication.fetch("unique_count")
+           },
+           "collection" => collection.reject { |key, _| key == "items" },
+@@ -60,6 +61,7 @@ module TITMASScout
+             "status" => "FROZEN_AUXILIARY_GUARD",
+             "version" => "TITMAS_SCOUT_TRUST_GUARD_V0.1"
+           },
++          "tracked_opportunities" => tracked_opportunities,
+           "unselected_candidates" => unselected_candidates(
+             ranked_candidates,
+             opportunities
+@@ -148,6 +150,7 @@ module TITMASScout
+           "default_selection_mode" => "AGENT_QUORUM",
+           "human_exception_review_required" => "CONDITIONAL",
+           "opportunities" => report.fetch("opportunities"),
++          "tracked_opportunities" => report.fetch("tracked_opportunities"),
+           "report_date" => report.fetch("report_date"),
+           "schema_version" => REPORT_SCHEMA_VERSION,
+           "source_report" => {
+@@ -191,6 +194,7 @@ module TITMASScout
+         lines << "- Unique candidates: #{counts.fetch("unique_count")}"
+         lines << "- Excluded candidates: #{counts.fetch("excluded_count")}"
+         lines << "- Selected candidates: #{counts.fetch("selected_count")}"
++        lines << "- Tracked active conversions: #{counts.fetch("tracked_conversion_count")}"
+         lines << "- Discussions: `#{report.dig("collection", "discussion_coverage", "status")}`"
+         lines << ""
+         lines << "## Data Coverage"
+@@ -218,6 +222,19 @@ module TITMASScout
+           end
+         end
+ 
++        lines << "## Existing Conversion State"
++        lines << ""
++        if report.fetch("tracked_opportunities").empty?
++          lines << "- No retrieved signal matched an existing conversion or review record."
++        else
++          report.fetch("tracked_opportunities").each do |item|
++            lines << "- `#{item.fetch("tracked_status")}` — [#{markdown_text(item["repository"])}##{item["number"]}](#{item["source"]})"
++            observation = item["source_observed_in_current_run"] ? "observed again" : "carried from immutable local history"
++            lines << "  (`#{item.fetch("root_problem_id")}`; #{observation}; excluded from new discovery)"
++          end
++        end
++        lines << ""
++
+         lines << "## Filtering Summary"
+         lines << ""
+         if report.fetch("filter_reason_counts").empty?
+diff --git a/src/discovery/opportunity_ranker.rb b/src/discovery/opportunity_ranker.rb
+index e2617d9..7aefd51 100644
+--- a/src/discovery/opportunity_ranker.rb
++++ b/src/discovery/opportunity_ranker.rb
+@@ -30,7 +30,11 @@ module TITMASScout
+               "repository" => signal["repository"],
+               "source" => signal["url"],
+               "title" => signal["title"],
+-              "reasons" => reasons.sort
++              "reasons" => reasons.sort,
++              "tracked_status" => signal.dig("history_status", "status"),
++              "root_problem_id" => signal.dig("history_status", "root_problem_id"),
++              "related_entries" => signal.dig("history_status", "related_entries"),
++              "status_evidence_paths" => signal.dig("history_status", "evidence_paths")
+             }
+           end
+         end
+@@ -78,6 +82,9 @@ module TITMASScout
+         reasons << "PURE_NEWS_OR_ANNOUNCEMENT" if pure_news?(signal)
+         reasons << "PROHIBITED_OR_PRIVATE_PARTICIPATION_PATH" if prohibited_entry?(signal)
+         reasons << "ASSIGNED_INTERNAL_WORK_ITEM" if assigned_internal_work?(signal)
++        if signal["history_status"]
++          reasons << "ALREADY_TRACKED:#{signal.dig('history_status', 'status')}"
++        end
+         reasons
+       end
+ 
+diff --git a/src/discovery/source_collector.rb b/src/discovery/source_collector.rb
+index 8fe7bd9..52f9260 100644
+--- a/src/discovery/source_collector.rb
++++ b/src/discovery/source_collector.rb
+@@ -190,7 +190,8 @@ module TITMASScout
+       end
+ 
+       def collect_query(definition, backend)
+-        raw_query = final_query(definition.fetch("query"))
++        topic_query = definition.fetch("query")
++        raw_query = final_query(topic_query)
+         base = {
+           "backend" => backend,
+           "github_total_count" => nil,
+@@ -198,6 +199,7 @@ module TITMASScout
+           "query" => raw_query,
+           "query_id" => definition.fetch("query_id"),
+           "retrieved_at" => @retrieved_at.iso8601,
++          "topic_query" => topic_query,
+           "topic" => definition.fetch("topic")
+         }
+ 
+@@ -243,8 +245,10 @@ module TITMASScout
+ 
+       def collect_with_gh(base)
+         arguments = [
+-          "gh", "search", "issues", base.fetch("query"),
++          "gh", "search", "issues", base.fetch("topic_query"),
++          "--archived=false",
+           "--state", "open",
++          "--updated", ">=#{freshness_cutoff}",
+           "--visibility", "public",
+           "--limit", @policy.fetch("per_query_limit").to_s,
+           "--json", GH_ISSUE_FIELDS
+@@ -270,6 +274,10 @@ module TITMASScout
+         )
+       end
+ 
++      def freshness_cutoff
++        (@run_date - Integer(@policy.fetch("freshness_days"))).iso8601
++      end
++
+       def collect_with_public_rest(base)
+         uri = URI("#{@policy.fetch("public_api_base")}/search/issues")
+         uri.query = URI.encode_www_form(
+diff --git a/src/discovery/status_index.rb b/src/discovery/status_index.rb
+new file mode 100644
+index 0000000..c91b448
+--- /dev/null
++++ b/src/discovery/status_index.rb
+@@ -0,0 +1,137 @@
++# frozen_string_literal: true
++
++require "json"
++
++module TITMASScout
++  module Discovery
++    class StatusIndex
++      STATUS_PRIORITY = {
++        "DISCOVERED" => 0,
++        "SELECTED" => 1,
++        "ACTIVE_CONVERSION" => 2,
++        "READY_FOR_REVIEW" => 3
++      }.freeze
++      HISTORY_DIRECTORIES = %w[
++        conversion-runs publication-runs review-runs titmas-runs
++        self-improvement-runs
++      ].freeze
++      ISSUE_URL = %r{https://github\.com/([^/]+/[^/]+)/issues/(\d+)}i
++      PR_URL = %r{https://github\.com/([^/]+/[^/]+)/pull/(\d+)}i
++
++      def initialize(reports_root: "reports")
++        @reports_root = reports_root
++        @entries = {}
++        build
++      end
++
++      def status_for(signal)
++        key = issue_key(signal["repository"], signal["number"])
++        entry = @entries[key]
++        entry && Marshal.load(Marshal.dump(entry))
++      end
++
++      def entries
++        Marshal.load(Marshal.dump(@entries))
++      end
++
++      private
++
++      def build
++        history_paths.each do |path|
++          document = JSON.parse(File.read(path))
++          strings = collect_strings(document)
++          issues = extract_issues(strings)
++          pull_requests = extract_pull_requests(strings)
++          status = status_for_path(path, document)
++          issues.each do |issue|
++            record(issue, status, path, related_entries: pull_requests)
++          end
++        rescue JSON::ParserError, Errno::ENOENT, Errno::EACCES
++          next
++        end
++      end
++
++      def history_paths
++        HISTORY_DIRECTORIES.flat_map do |directory|
++          Dir[File.join(@reports_root, directory, "**", "*.json")]
++        end.uniq.sort
++      end
++
++      def collect_strings(value)
++        case value
++        when Hash
++          value.flat_map { |key, nested| [key.to_s] + collect_strings(nested) }
++        when Array
++          value.flat_map { |nested| collect_strings(nested) }
++        when String
++          [value]
++        else
++          []
++        end
++      end
++
++      def extract_issues(strings)
++        found = []
++        strings.each do |text|
++          text.scan(ISSUE_URL) { |repository, number| found << issue_identity(repository, number) }
++        end
++        found.uniq { |item| item.fetch("root_problem_id") }
++      end
++
++      def extract_pull_requests(strings)
++        strings.flat_map do |text|
++          text.scan(PR_URL).map do |repository, number|
++            "github:#{repository.downcase}:pull:#{number}"
++          end
++        end.uniq.sort
++      end
++
++      def issue_identity(repository, number)
++        {
++          "repository" => repository.downcase,
++          "number" => Integer(number),
++          "root_problem_id" => "github:#{repository.downcase}:issue:#{number}"
++        }
++      end
++
++      def status_for_path(path, document)
++        return "READY_FOR_REVIEW" if path.include?("/review-runs/") || path.include?("/titmas-runs/")
++        if path.include?("/publication-runs/")
++          serialized = JSON.generate(document)
++          return "READY_FOR_REVIEW" if serialized.include?("READY_FOR_REVIEW")
++          return "ACTIVE_CONVERSION"
++        end
++        return "ACTIVE_CONVERSION" if path.include?("/conversion-runs/")
++
++        "SELECTED"
++      end
++
++      def record(issue, status, path, related_entries:)
++        key = issue_key(issue.fetch("repository"), issue.fetch("number"))
++        current = @entries[key]
++        if current.nil? || STATUS_PRIORITY.fetch(status) > STATUS_PRIORITY.fetch(current.fetch("status"))
++          current = {
++            "number" => issue.fetch("number"),
++            "repository" => issue.fetch("repository"),
++            "status" => status,
++            "root_problem_id" => issue.fetch("root_problem_id"),
++            "source" => "https://github.com/#{issue.fetch('repository')}/issues/#{issue.fetch('number')}",
++            "evidence_paths" => [],
++            "related_entries" => []
++          }
++          @entries[key] = current
++        end
++        current["evidence_paths"] = (current.fetch("evidence_paths") + [relative_path(path)]).uniq.sort
++        current["related_entries"] = (current.fetch("related_entries") + related_entries).uniq.sort
++      end
++
++      def relative_path(path)
++        path.delete_prefix("#{@reports_root}/").prepend("reports/")
++      end
++
++      def issue_key(repository, number)
++        "#{repository.to_s.downcase}##{number}"
++      end
++    end
++  end
++end
+diff --git a/tests/discovery_test.rb b/tests/discovery_test.rb
+index fc2d61b..4117783 100644
+--- a/tests/discovery_test.rb
++++ b/tests/discovery_test.rb
+@@ -13,6 +13,7 @@ require_relative "../src/discovery/deduplicator"
+ require_relative "../src/discovery/opportunity_ranker"
+ require_relative "../src/discovery/signal_extractor"
+ require_relative "../src/discovery/source_collector"
++require_relative "../src/discovery/status_index"
+ 
+ class DiscoveryPrototypeTest < Minitest::Test
+   RUN_DATE = Date.iso8601("2026-08-01")
+@@ -36,6 +37,8 @@ class DiscoveryPrototypeTest < Minitest::Test
+         else
+           result(false, "", "token invalid\n", 1)
+         end
++      elsif arguments.first(3) == %w[gh search issues]
++        result(true, "[]\n", "", 0)
+       else
+         result(false, "", "unexpected command\n", 1)
+       end
+@@ -53,6 +56,32 @@ class DiscoveryPrototypeTest < Minitest::Test
+     end
+   end
+ 
++  def test_authenticated_gh_search_uses_flags_without_embedded_qualifiers
++    runner = FakeCommandRunner.new(authenticated: true)
++    config = Marshal.load(Marshal.dump(@config))
++    config["collection_policy"]["maximum_queries_per_run"] = 1
++    collector = TITMASScout::Discovery::SourceCollector.new(
++      config: config,
++      run_date: RUN_DATE,
++      retrieved_at: RETRIEVED_AT,
++      http_transport: FakeGetTransport.new([]),
++      command_runner: runner
++    )
++
++    result = collector.collect
++    arguments = runner.calls.find do |item|
++      item.first(3) == %w[gh search issues]
++    end
++
++    assert_equal "GH_CLI_AUTHENTICATED", result["backend"]
++    assert_equal @config.dig("queries", 0, "query"), arguments[3]
++    refute_match(/\bis:|archived:|updated:/, arguments[3])
++    assert_includes arguments, "--archived=false"
++    assert_equal "open", arguments[arguments.index("--state") + 1]
++    assert_equal ">=2026-05-03", arguments[arguments.index("--updated") + 1]
++    assert_equal "public", arguments[arguments.index("--visibility") + 1]
++  end
++
+   class FakeGetTransport
+     attr_reader :events
+ 
+@@ -185,6 +214,92 @@ class DiscoveryPrototypeTest < Minitest::Test
+     assert_equal %w[Q-1 Q-2], result.dig("items", 0, "query_ids")
+   end
+ 
++  def test_existing_publication_and_review_are_not_rediscovered
++    Dir.mktmpdir do |directory|
++      review_root = File.join(directory, "review-runs", "run-1")
++      FileUtils.mkdir_p(review_root)
++      File.write(
++        File.join(review_root, "input.json"),
++        JSON.generate(
++          "source_issue" => {
++            "url" => "https://github.com/agentrust-io/ca2a/issues/36"
++          },
++          "target" => "https://github.com/agentrust-io/ca2a/pull/76",
++          "ambiguous_reference" => "agentrust-io/ca2a#76"
++        )
++      )
++      index = TITMASScout::Discovery::StatusIndex.new(reports_root: directory)
++      status = index.status_for(
++        "repository" => "agentrust-io/ca2a", "number" => 36
++      )
++
++      assert_equal "READY_FOR_REVIEW", status["status"]
++      assert_equal "github:agentrust-io/ca2a:issue:36", status["root_problem_id"]
++      assert_equal "agentrust-io/ca2a", status["repository"]
++      assert_equal 36, status["number"]
++      assert_equal "https://github.com/agentrust-io/ca2a/issues/36", status["source"]
++      assert_includes status["related_entries"], "github:agentrust-io/ca2a:pull:76"
++      assert_nil index.status_for(
++        "repository" => "agentrust-io/ca2a", "number" => 76
++      )
++      refute index.entries.key?("agentrust-io/ca2a#76")
++
++      signal = TITMASScout::Discovery::SignalExtractor.new(config: @config).extract(
++        normalized_item.merge(
++          "repository" => "agentrust-io/ca2a",
++          "number" => 36,
++          "url" => "https://github.com/agentrust-io/ca2a/issues/36"
++        )
++      )
++      signal["history_status"] = status
++      ranker = TITMASScout::Discovery::OpportunityRanker.new(
++        config: @config, run_date: RUN_DATE
++      )
++      result = ranker.filter([signal])
++
++      assert_empty result["retained"]
++      assert_includes result.dig("excluded", 0, "reasons"),
++                      "ALREADY_TRACKED:READY_FOR_REVIEW"
++    end
++  end
++
++  def test_cli_carries_active_conversion_when_not_returned_by_current_queries
++    collection = fixed_collection([normalized_item])
++
++    Dir.mktmpdir("titmas-discovery-history-test") do |directory|
++      review_root = File.join(directory, "review-runs", "run-1")
++      FileUtils.mkdir_p(review_root)
++      File.write(
++        File.join(review_root, "input.json"),
++        JSON.generate(
++          "source_issue" => "https://github.com/agentrust-io/ca2a/issues/36",
++          "target" => "https://github.com/agentrust-io/ca2a/pull/76"
++        )
++      )
++
++      code = TITMASScout::Discovery::CLI.run(
++        [
++          "--date", RUN_DATE.iso8601,
++          "--retrieved-at", RETRIEVED_AT.iso8601,
++          "--output-root", directory
++        ],
++        stdout: StringIO.new,
++        stderr: StringIO.new,
++        dependencies: { collector: FixedCollector.new(collection) }
++      )
++
++      assert_equal 0, code
++      report = JSON.parse(File.read(File.join(directory, "latest-opportunities.json")))
++      tracked = report.fetch("tracked_opportunities").find do |item|
++        item["root_problem_id"] == "github:agentrust-io/ca2a:issue:36"
++      end
++      refute_nil tracked
++      assert_equal "READY_FOR_REVIEW", tracked["tracked_status"]
++      assert_equal false, tracked["source_observed_in_current_run"]
++      assert_includes tracked["related_entries"], "github:agentrust-io/ca2a:pull:76"
++    end
++  end
++
+   def test_filter_and_ranking_are_explainable_and_not_calibrated
+     extractor = TITMASScout::Discovery::SignalExtractor.new(config: @config)
+     signal = extractor.extract(normalized_item)

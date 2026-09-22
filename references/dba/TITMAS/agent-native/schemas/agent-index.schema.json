@@ -1,0 +1,61 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "format_version",
+    "canonical_agent_entry",
+    "canonical_program_name",
+    "canonical_program_name_zh",
+    "product_category",
+    "historical_community_identity",
+    "historical_community_archive",
+    "purpose",
+    "when_to_use",
+    "when_not_to_use",
+    "maturity",
+    "source",
+    "machine_surfaces",
+    "commands",
+    "authority_boundaries"
+  ],
+  "properties": {
+    "$schema": {"type": "string"},
+    "format_version": {"const": "3.1.0"},
+    "canonical_agent_entry": {"const": true},
+    "canonical_program_name": {"const": "TITMAS Commercial Agent Infrastructure"},
+    "canonical_program_name_zh": {"const": "TITMAS 商业智能体基础设施"},
+    "product_category": {"const": "COMMERCIAL_PRIVATE_AGENT_INFRASTRUCTURE"},
+    "historical_community_identity": {
+      "type": "object",
+      "required": ["canonical_name", "canonical_name_zh", "aliases", "status", "current_authority_effect"],
+      "properties": {
+        "canonical_name": {"const": "TITMAS Agent-Native Standards Community"},
+        "canonical_name_zh": {"const": "TITMAS 智能体原生标准社区"},
+        "aliases": {"type": "array", "minItems": 2, "items": {"type": "string"}},
+        "status": {"const": "SUPERSEDED_HISTORICAL_IDENTITY"},
+        "current_authority_effect": {"const": "NONE"}
+      }
+    },
+    "historical_community_archive": {
+      "type": "object",
+      "required": ["status", "current_authority_effect", "invocation_authorized", "customer_entry", "surfaces", "commands"],
+      "properties": {
+        "status": {"const": "SUPERSEDED_HISTORICAL_ARCHIVE"},
+        "current_authority_effect": {"const": "NONE"},
+        "invocation_authorized": {"const": false},
+        "customer_entry": {"const": false},
+        "surfaces": {"type": "object"},
+        "commands": {"type": "object"}
+      }
+    },
+    "subtitle": {"type": "string"},
+    "purpose": {"type": "string", "minLength": 20},
+    "when_to_use": {"type": "array", "minItems": 3, "items": {"type": "string"}},
+    "when_not_to_use": {"type": "array", "minItems": 4, "items": {"type": "string"}},
+    "maturity": {"enum": ["Development"]},
+    "source": {"type": "object"},
+    "machine_surfaces": {"type": "object"},
+    "commands": {"type": "object"},
+    "authority_boundaries": {"type": "array", "minItems": 5, "items": {"type": "string"}}
+  }
+}

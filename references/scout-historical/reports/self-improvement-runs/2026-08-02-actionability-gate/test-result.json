@@ -1,0 +1,37 @@
+{
+  "artifact_type": "TITMAS_SCOUT_SELF_IMPROVEMENT_TEST_RESULT",
+  "run_id": "2026-08-02-actionability-gate",
+  "recorded_at": "2026-08-02T08:05:00Z",
+  "discovery_tests": {
+    "command": "ruby -Itest tests/discovery_test.rb",
+    "runs": 29,
+    "assertions": 132,
+    "failures": 0,
+    "errors": 0,
+    "skips": 0
+  },
+  "live_read_only_rerun": {
+    "backend": "GH_CLI_AUTHENTICATED",
+    "raw_retrieved_count": 94,
+    "eligible_count": 58,
+    "excluded_count": 36,
+    "selected_count": 5,
+    "next_conversion_target": "https://github.com/praxis-proxy/ai/issues/194",
+    "external_write_performed": false
+  },
+  "component_tests": {
+    "validator": "13 runs, 44 assertions, 0 failures",
+    "review_aggregator": "30 runs, 106 assertions, 0 failures",
+    "titmas_integration": "10 runs, 39 assertions, 0 failures",
+    "feedback_loop": "6 runs, 6 assertions, 0 failures"
+  },
+  "final_full_suite": {
+    "command": "ruby -Itest -e 'Dir[\"tests/**/*_test.rb\"].sort.each { |file| require File.expand_path(file) }'",
+    "runs": 88,
+    "assertions": 327,
+    "failures": 0,
+    "errors": 0,
+    "skips": 0
+  },
+  "final_full_suite_result": "PASS"
+}

@@ -1,0 +1,16 @@
+{
+  "schema_version":"0.1",
+  "review_id":"2026-08-02-ca2a-pr-76-comment-scope-review",
+  "agent_identifier":"/root/comment_scope_review",
+  "model_runtime_identifier":"OpenAI Codex GPT-5",
+  "review_role":"SCOPE_REVIEWER",
+  "input_digest":"sha256:5532305a50fd3177920965118ab24cb989ac2121a70eb4ee3724693e967d4af0",
+  "output_digest":"sha256:e7ba6b2f8906867c3390738b64bf9a4cda2481c2e214c7986256ba9c32495658",
+  "decision":"PASS",
+  "timestamp":"2026-08-02T06:38:12Z",
+  "ruleset_version":"0.1",
+  "reason_codes":["EXACT_SINGLE_PR_COMMENT","NO_ISSUE_OR_STATE_MUTATION","NO_CLAIM_EXPANSION"],
+  "findings":["The action is limited to one PR #76 comment with exact body @codex review and authorizes no Issue comment, PR state transition, merge, retry, or additional claim."],
+  "blocking_reasons":[],
+  "evidence_references":["reports/titmas-runs/2026-08-02-ca2a-pr-76-latest-head/reviewer-inputs/comment/input.json","https://github.com/agentrust-io/ca2a/pull/76"]
+}

@@ -1,0 +1,87 @@
+{
+  "artifact_type": "TITMAS_SCOUT_AGENT_REVIEW_INPUT",
+  "automation": {
+    "iteration": 1,
+    "live_rerun_pending": true,
+    "maximum_iterations": 3,
+    "new_quorum_required": true
+  },
+  "diff": {
+    "content_digest": "sha256:676a798d1e74f53b9b567e7bc617de5c811f663fa5284ed72368211aa8f1e7f1",
+    "content_representation": "concatenated git diff c32d545 for tracked discovery files plus git diff --no-index /dev/null src/discovery/status_index.rb",
+    "files": [
+      "src/discovery/status_index.rb",
+      "src/discovery/cli.rb",
+      "src/discovery/daily_report.rb",
+      "src/discovery/opportunity_ranker.rb",
+      "tests/discovery_test.rb"
+    ],
+    "governance_model_changed": false,
+    "ranking_model_changed": false,
+    "validator_changed": false
+  },
+  "duplicate_check": {
+    "existing_status_index": false,
+    "parallel_status_system_added": false,
+    "same_run_deduplicator_only": true
+  },
+  "github_checks": [
+
+  ],
+  "history_references": [
+    {
+      "content_digest": "sha256:9df3d51dbe47f4f68f64138851ab38e6fb8152d162808fe65f9b4023c7a480ce",
+      "path": "reports/self-improvement-runs/2026-08-02-iteration-1/observation.json"
+    },
+    {
+      "content_digest": "sha256:98c287231fd4cce9825a0a059f2c3ed84942c8c3d4dcb2cccb3adc90edaa5283",
+      "path": "reports/self-improvement-runs/2026-08-02-iteration-1/diagnosis.json"
+    },
+    {
+      "content_digest": "sha256:388fda700c8b9e301fae58aec2e2ca23cbad90669434c2c54b09128faeaaa37d",
+      "path": "reports/self-improvement-runs/2026-08-02-iteration-1/before-result.json"
+    }
+  ],
+  "known_limits": [
+    "Exact source references are linked; semantic title similarity is intentionally not inferred.",
+    "Live read-only discovery rerun is pending.",
+    "UPDATE_SCOUT_STATUS permits only local Scout records and does not authorize external GitHub action."
+  ],
+  "local_validation": {
+    "all_scout_tests": "68_RUNS_244_ASSERTIONS_PASS",
+    "discovery_tests": "12_RUNS_61_ASSERTIONS_PASS",
+    "record_digest": "sha256:3e99085a985f7580e4ef7c5c21f7aec09ef9832dfb8077eea43b3b874efec341",
+    "record_reference": "reports/self-improvement-runs/2026-08-02-iteration-1/test-result.json"
+  },
+  "observed_at": "2026-08-02T06:27:00Z",
+  "pull_request": {
+    "base_commit": "c32d545",
+    "external_pull_request": false,
+    "external_write_requested": false,
+    "repository": "tiamas-scout",
+    "worktree_only": true
+  },
+  "requested_action": "UPDATE_SCOUT_STATUS",
+  "review_run_id": "2026-08-02-scout-self-improvement-iteration-1",
+  "risk_evidence": {
+    "agent_evidence_modified": false,
+    "constitution_modified": false,
+    "dba_modified": false,
+    "exact_reference_linking_only": true,
+    "external_write_requested": false,
+    "historical_files_modified": false,
+    "title_similarity_linking": false
+  },
+  "ruleset_version": "0.1",
+  "source_issue": {
+    "observation_digest": "sha256:9df3d51dbe47f4f68f64138851ab38e6fb8152d162808fe65f9b4023c7a480ce",
+    "observed_defect": "ca2a#36 ranked as new after conversion/publication/review",
+    "reference": "reports/latest-opportunities.json",
+    "state": "REPRODUCED"
+  },
+  "target": {
+    "reference": "tiamas-scout:self-improvement:iteration-1",
+    "type": "LOCAL_SCOUT_CHANGE",
+    "url": "local://tiamas-scout/self-improvement/2026-08-02-iteration-1"
+  }
+}

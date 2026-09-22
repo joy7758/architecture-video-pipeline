@@ -1,0 +1,76 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://titmas.cn/private-stage5/schemas/review.schema.json",
+  "title": "TITMAS Stage 5 Independent Review v1.0",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "review_id",
+    "submission_id",
+    "reviewer_ref",
+    "provider",
+    "requested_model",
+    "returned_model",
+    "verdict",
+    "checks",
+    "blocking_findings",
+    "non_blocking_findings",
+    "required_corrections",
+    "limitations"
+  ],
+  "properties": {
+    "review_id": {"type": "string", "pattern": "^STAGE5-REVIEW-[A-Z0-9-]{3,48}$"},
+    "submission_id": {"type": "string", "pattern": "^stage5-submission-[A-Za-z0-9-]{4,64}$"},
+    "reviewer_ref": {"type": "string", "minLength": 3, "maxLength": 120},
+    "provider": {"type": "string", "minLength": 2, "maxLength": 80},
+    "requested_model": {"type": "string", "minLength": 2, "maxLength": 120},
+    "returned_model": {"type": "string", "minLength": 2, "maxLength": 120},
+    "verdict": {"enum": ["PASS", "REVISION_REQUIRED", "REJECT"]},
+    "checks": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "grounding",
+        "schema_correctness",
+        "developer_value",
+        "scope",
+        "compatibility",
+        "positive_cases",
+        "negative_cases",
+        "failure_behavior",
+        "semantic_elevation",
+        "authority_boundary",
+        "commercial_overclaim"
+      ],
+      "properties": {
+        "grounding": {"type": "boolean"},
+        "schema_correctness": {"type": "boolean"},
+        "developer_value": {"type": "boolean"},
+        "scope": {"type": "boolean"},
+        "compatibility": {"type": "boolean"},
+        "positive_cases": {"type": "boolean"},
+        "negative_cases": {"type": "boolean"},
+        "failure_behavior": {"type": "boolean"},
+        "semantic_elevation": {"type": "boolean"},
+        "authority_boundary": {"type": "boolean"},
+        "commercial_overclaim": {"type": "boolean"}
+      }
+    },
+    "blocking_findings": {
+      "type": "array", "maxItems": 16,
+      "items": {"type": "string", "minLength": 3, "maxLength": 480}
+    },
+    "non_blocking_findings": {
+      "type": "array", "maxItems": 16,
+      "items": {"type": "string", "minLength": 3, "maxLength": 480}
+    },
+    "required_corrections": {
+      "type": "array", "maxItems": 16,
+      "items": {"type": "string", "minLength": 3, "maxLength": 480}
+    },
+    "limitations": {
+      "type": "array", "minItems": 1, "maxItems": 16,
+      "items": {"type": "string", "minLength": 3, "maxLength": 400}
+    }
+  }
+}

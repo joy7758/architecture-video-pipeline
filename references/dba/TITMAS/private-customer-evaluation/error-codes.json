@@ -1,0 +1,21 @@
+{
+  "contract_version": "0.1.0",
+  "errors": [
+    "TITMAS-EVAL-400-MALFORMED-REQUEST",
+    "TITMAS-EVAL-401-INVALID-SESSION",
+    "TITMAS-EVAL-403-OPERATION-NOT-ALLOWED",
+    "TITMAS-EVAL-404-PROFILE-NOT-AVAILABLE",
+    "TITMAS-EVAL-409-CONTRACT-VERSION-CONFLICT",
+    "TITMAS-EVAL-413-REQUEST-TOO-LARGE",
+    "TITMAS-EVAL-422-NOT-ASSESSABLE",
+    "TITMAS-EVAL-429-SESSION-LIMIT",
+    "TITMAS-EVAL-500-BOUNDED-INTERNAL-FAILURE"
+  ],
+  "response_policy": {
+    "sanitized_json_only": true,
+    "stack_trace_returned": false,
+    "private_path_returned": false,
+    "token_returned": false,
+    "internal_policy_returned": false
+  }
+}

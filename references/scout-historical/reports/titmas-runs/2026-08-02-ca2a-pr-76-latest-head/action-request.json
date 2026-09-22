@@ -1,0 +1,19 @@
+{
+  "action":"POST_BOUNDED_TECHNICAL_COMMENT",
+  "authorization_binding":{
+    "run_id":"2026-08-02-ca2a-pr-76-latest-head",
+    "repository":"agentrust-io/ca2a",
+    "target":"agentrust-io/ca2a#76",
+    "head_sha":"0a1ffa6710d25f58515b2dca7e0619e134c0a43e",
+    "diff_digest":"sha256:82688a11ed0f103c75cabc80f6c7e16fbd51bee0766a52043d0894ff2d066731",
+    "input_digest":"sha256:5532305a50fd3177920965118ab24cb989ac2121a70eb4ee3724693e967d4af0",
+    "ruleset_version":"0.1",
+    "action":"POST_BOUNDED_TECHNICAL_COMMENT",
+    "expires_at":"2026-08-02T08:00:00Z"
+  },
+  "body":"@codex review",
+  "body_digest":"sha256:7750379659fbba413136c8bf4f500a59f1e03f0c36c0ab16b0a2475eb13ecb1a",
+  "maximum_comment_count":1,
+  "repository":"agentrust-io/ca2a",
+  "pull_request_number":76
+}

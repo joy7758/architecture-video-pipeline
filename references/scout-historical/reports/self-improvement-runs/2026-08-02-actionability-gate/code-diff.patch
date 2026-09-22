@@ -1,0 +1,909 @@
+diff --git a/src/discovery/action_pack_generator.rb b/src/discovery/action_pack_generator.rb
+index 9b6f317..2f700ca 100644
+--- a/src/discovery/action_pack_generator.rb
++++ b/src/discovery/action_pack_generator.rb
+@@ -1,5 +1,6 @@
+ # frozen_string_literal: true
+ 
++require_relative "actionability_classifier"
+ require_relative "support"
+ 
+ module TITMASScout
+@@ -54,6 +55,12 @@ module TITMASScout
+       private
+ 
+       def suggested_action(candidate)
++        readiness = candidate.dig("actionability_classification", "classification")
++        unless ActionabilityClassifier::CLASSIFICATIONS.include?(readiness)
++          raise ArgumentError, "Actionability classification is missing or unknown"
++        end
++        return "OBSERVE" if %w[OBSERVE EXCLUDE].include?(readiness)
++        return "COMMENT" if readiness == "ACTIONABLE_AFTER_CONTACT"
+         return "DISCUSSION" if candidate["source_type"] == "GITHUB_DISCUSSION"
+ 
+         text = [candidate["title"], candidate["body"]].join(" ").downcase
+diff --git a/src/discovery/actionability_classifier.rb b/src/discovery/actionability_classifier.rb
+new file mode 100644
+index 0000000..85b0efe
+--- /dev/null
++++ b/src/discovery/actionability_classifier.rb
+@@ -0,0 +1,91 @@
++# frozen_string_literal: true
++
++module TITMASScout
++  module Discovery
++    class ActionabilityClassifier
++      CLASSIFICATIONS = %w[
++        ACTIONABLE_NOW ACTIONABLE_AFTER_CONTACT OBSERVE EXCLUDE
++      ].freeze
++      CONTRIBUTION_LABELS = [
++        "contributions welcome", "good first issue", "help wanted"
++      ].freeze
++      CONTACT_FIRST_PATTERNS = [
++        /should\s+(?:first\s+)?talk\s+to/i,
++        /talk\s+to\s+\S+\s+first/i,
++        /contact\s+(?:the\s+)?maintainer\s+first/i,
++        /discuss\s+(?:the\s+)?design\s+first/i
++      ].freeze
++      RESEARCH_PIPELINE_PATTERNS = [
++        /filed\s+via\s+the\s+nightly\s+research/i,
++        /nightly\s+research.{0,8}issues\s+pipeline/i
++      ].freeze
++
++      def classify(signal)
++        classification, reason_code = classification_for(signal)
++        {
++          "classification" => classification,
++          "evidence" => evidence(signal),
++          "external_action_authorized" => false,
++          "reason_code" => reason_code
++        }
++      end
++
++      private
++
++      def classification_for(signal)
++        unless %w[GITHUB_ISSUE GITHUB_DISCUSSION].include?(signal["source_type"])
++          return ["EXCLUDE", "SOURCE_TYPE_UNKNOWN"]
++        end
++        return ["EXCLUDE", "SOURCE_STATE_UNKNOWN"] unless signal["state"].is_a?(String)
++        return ["EXCLUDE", "SOURCE_NOT_OPEN"] unless signal["state"] == "OPEN"
++        return ["EXCLUDE", "LOCK_STATE_UNKNOWN"] unless [true, false].include?(signal["is_locked"])
++        return ["EXCLUDE", "PUBLIC_ENTRY_LOCKED"] if signal["is_locked"] == true
++        return ["EXCLUDE", "ASSIGNEE_EVIDENCE_UNKNOWN"] unless signal["assignees"].is_a?(Array)
++        return ["OBSERVE", "AUTOMATED_RESEARCH_SUMMARY_NO_PROJECT_ACTION"] if research_summary?(signal)
++        if automated_author?(signal) && !explicit_contribution_signal?(signal)
++          return ["OBSERVE", "AUTOMATED_AUTHOR_WITHOUT_EXTERNAL_CONTRIBUTION_INVITATION"]
++        end
++        if assigned?(signal) && !explicit_contribution_signal?(signal)
++          return ["OBSERVE", "ASSIGNED_WITHOUT_EXTERNAL_CONTRIBUTION_INVITATION"]
++        end
++        return ["ACTIONABLE_AFTER_CONTACT", "CONTACT_FIRST_INSTRUCTION"] if contact_first?(signal)
++
++        ["ACTIONABLE_NOW", "OPEN_PUBLIC_COMMENT_ENTRY"]
++      end
++
++      def assigned?(signal)
++        !Array(signal["assignees"]).empty?
++      end
++
++      def automated_author?(signal)
++        signal["author"].to_s.end_with?("[bot]")
++      end
++
++      def explicit_contribution_signal?(signal)
++        labels = Array(signal["labels"]).map(&:downcase)
++        !(labels & CONTRIBUTION_LABELS).empty?
++      end
++
++      def contact_first?(signal)
++        text = [signal["title"], signal["body"]].join(" ")
++        CONTACT_FIRST_PATTERNS.any? { |pattern| pattern.match?(text) }
++      end
++
++      def research_summary?(signal)
++        text = [signal["title"], signal["body"]].join(" ")
++        RESEARCH_PIPELINE_PATTERNS.any? { |pattern| pattern.match?(text) }
++      end
++
++      def evidence(signal)
++        {
++          "assignees" => signal["assignees"]&.sort,
++          "comments_count" => signal["comments_count"],
++          "is_locked" => signal["is_locked"],
++          "labels" => Array(signal["labels"]).sort,
++          "source" => signal["url"],
++          "state" => signal["state"]
++        }
++      end
++    end
++  end
++end
+diff --git a/src/discovery/cli.rb b/src/discovery/cli.rb
+index 8dfd8cc..df494d7 100644
+--- a/src/discovery/cli.rb
++++ b/src/discovery/cli.rb
+@@ -9,6 +9,7 @@ require_relative "action_pack_generator"
+ require_relative "daily_report"
+ require_relative "deduplicator"
+ require_relative "opportunity_ranker"
++require_relative "opportunity_selector"
+ require_relative "signal_extractor"
+ require_relative "source_collector"
+ require_relative "status_index"
+@@ -57,8 +58,9 @@ module TITMASScout
+           config.dig("collection_policy", "maximum_selected_opportunities")
+         )
+         maximum = [options.fetch(:maximum), configured_maximum, 5].min
++        selection = OpportunitySelector.new.select(ranked, maximum: maximum)
+         generator = ActionPackGenerator.new
+-        selected = ranked.first(maximum).map do |candidate|
++        selected = selection.fetch("report_candidates").map do |candidate|
+           report_candidate(candidate).merge(
+             "action_pack" => generator.generate(candidate),
+             "retention_reason" => retention_reason(candidate)
+@@ -78,12 +80,13 @@ module TITMASScout
+           excluded: filtering.fetch("excluded"),
+           tracked_opportunities: tracked,
+           ranked_candidates: ranked,
+-          opportunities: selected
++          opportunities: selected,
++          selection: public_selection(selection)
+         )
+         paths = report_writer.write(report)
+         stdout.puts(JSON.pretty_generate(Support.deep_sort(run_summary(report, paths))))
+         collection.fetch("successful_query_count").positive? ? 0 : 2
+-      rescue OptionParser::ParseError, ArgumentError, Date::Error => error
++      rescue OptionParser::ParseError, ArgumentError => error
+         stderr.puts("Discovery run failed: #{error.message}")
+         2
+       rescue Psych::Exception, JSON::ParserError, SystemCallError => error
+@@ -140,6 +143,15 @@ module TITMASScout
+         end
+       end
+ 
++      def self.public_selection(selection)
++        {
++          "conversion_queue" => selection.fetch("conversion_queue").map { |item| report_candidate(item) },
++          "excluded_by_actionability" => selection.fetch("excluded_by_actionability").map { |item| report_candidate(item) },
++          "next_conversion_target" => selection["next_conversion_target"] && report_candidate(selection["next_conversion_target"]),
++          "research_watchlist" => selection.fetch("research_watchlist").map { |item| report_candidate(item) }
++        }
++      end
++
+       def self.tracked_opportunities(excluded, historical_entries)
+         retrieved = excluded.select { |item| item["tracked_status"] }.map do |item|
+           item.merge("source_observed_in_current_run" => true)
+diff --git a/src/discovery/daily_report.rb b/src/discovery/daily_report.rb
+index 3dd7a8c..8890955 100644
+--- a/src/discovery/daily_report.rb
++++ b/src/discovery/daily_report.rb
+@@ -15,7 +15,13 @@ module TITMASScout
+ 
+       def build(run_date:, generated_at:, config_path:, config_digest:,
+                 collection:, deduplication:, excluded:, tracked_opportunities:,
+-                ranked_candidates:, opportunities:)
++                ranked_candidates:, opportunities:, selection: nil)
++        selection ||= {
++          "conversion_queue" => [],
++          "excluded_by_actionability" => [],
++          "next_conversion_target" => nil,
++          "research_watchlist" => []
++        }
+         filter_counts = excluded.each_with_object(Hash.new(0)) do |item, counts|
+           Array(item["reasons"]).each { |reason| counts[reason] += 1 }
+         end
+@@ -52,6 +58,7 @@ module TITMASScout
+           ],
+           "no_write_evidence" => no_write_evidence(collection),
+           "opportunities" => opportunities,
++          "opportunity_selection" => selection,
+           "report_date" => run_date.iso8601,
+           "run_status" => report_status(collection),
+           "schema_version" => REPORT_SCHEMA_VERSION,
+@@ -150,6 +157,7 @@ module TITMASScout
+           "default_selection_mode" => "AGENT_QUORUM",
+           "human_exception_review_required" => "CONDITIONAL",
+           "opportunities" => report.fetch("opportunities"),
++          "opportunity_selection" => report.fetch("opportunity_selection"),
+           "tracked_opportunities" => report.fetch("tracked_opportunities"),
+           "report_date" => report.fetch("report_date"),
+           "schema_version" => REPORT_SCHEMA_VERSION,
+@@ -222,6 +230,19 @@ module TITMASScout
+           end
+         end
+ 
++        lines << "## Conversion Selection"
++        lines << ""
++        target = report.dig("opportunity_selection", "next_conversion_target")
++        if target
++          lines << "- Next conversion target: [#{markdown_text(target["repository"])}##{target["number"]}](#{target["url"]})"
++          lines << "- Classification: `#{target.dig("actionability_classification", "classification")}`"
++        else
++          lines << "- Next conversion target: none"
++        end
++        lines << "- Conversion queue count: #{report.dig("opportunity_selection", "conversion_queue").length}"
++        lines << "- Research watchlist count: #{report.dig("opportunity_selection", "research_watchlist").length}"
++        lines << ""
++
+         lines << "## Existing Conversion State"
+         lines << ""
+         if report.fetch("tracked_opportunities").empty?
+diff --git a/src/discovery/opportunity_ranker.rb b/src/discovery/opportunity_ranker.rb
+index 7aefd51..798d19e 100644
+--- a/src/discovery/opportunity_ranker.rb
++++ b/src/discovery/opportunity_ranker.rb
+@@ -1,6 +1,7 @@
+ # frozen_string_literal: true
+ 
+ require "date"
++require_relative "actionability_classifier"
+ require_relative "support"
+ 
+ module TITMASScout
+@@ -14,6 +15,7 @@ module TITMASScout
+         @exclusions = config.fetch("exclusion_policy")
+         @ranking_policy = config.fetch("ranking_policy")
+         @run_date = run_date
++        @actionability_classifier = ActionabilityClassifier.new
+       end
+ 
+       def filter(signals)
+@@ -47,8 +49,10 @@ module TITMASScout
+ 
+       def rank(signals)
+         ranked = Array(signals).map do |signal|
+-          factors = factor_results(signal)
++          classification = @actionability_classifier.classify(signal)
++          factors = factor_results(signal, classification)
+           signal.merge(
++            "actionability_classification" => classification,
+             "heuristic_model" => HEURISTIC_ID,
+             "heuristic_unvalidated" => true,
+             "ranking_factors" => factors,
+@@ -133,9 +137,9 @@ module TITMASScout
+         title_match && body_match
+       end
+ 
+-      def factor_results(signal)
++      def factor_results(signal, classification)
+         {
+-          "actionability" => actionability(signal),
++          "actionability" => actionability(classification),
+           "effort" => effort(signal),
+           "evidence_quality" => evidence_quality(signal),
+           "expected_learning" => expected_learning(signal),
+@@ -170,22 +174,19 @@ module TITMASScout
+         )
+       end
+ 
+-      def actionability(signal)
+-        labels = Array(signal["labels"]).map(&:downcase)
+-        contribution_label = labels.any? do |label|
+-          ["help wanted", "good first issue", "contributions welcome"].include?(label)
+-        end
+-        association = signal["author_association"].to_s.upcase
+-        maintainer_authored = %w[OWNER MEMBER COLLABORATOR].include?(association)
+-        band = contribution_label || maintainer_authored ? "HIGH" : "MEDIUM"
+-        reason = if contribution_label
+-                   "Open unlocked Issue has an explicit contribution-oriented label."
+-                 elsif maintainer_authored
+-                   "Open unlocked Issue was authored by a repository owner, member, or collaborator."
+-                 else
+-                   "Open unlocked Issue is a public review entry; maintainer acceptance remains unknown."
+-                 end
+-        factor(band, reason, [signal["url"], labels.join(", "), association])
++      def actionability(classification)
++        value = classification.fetch("classification")
++        band = {
++          "ACTIONABLE_NOW" => "HIGH",
++          "ACTIONABLE_AFTER_CONTACT" => "MEDIUM",
++          "OBSERVE" => "LOW",
++          "EXCLUDE" => "LOW"
++        }.fetch(value)
++        factor(
++          band,
++          "Conversion readiness is #{value}; this classification does not authorize external action.",
++          [classification.fetch("reason_code"), classification.dig("evidence", "source")]
++        )
+       end
+ 
+       def expected_learning(signal)
+@@ -271,6 +272,7 @@ module TITMASScout
+       def sort_tuple(candidate)
+         factors = candidate.fetch("ranking_factors")
+         [
++          actionability_priority(candidate),
+           -Support.band_value(factors.dig("titmas_relevance", "band")),
+           -Support.band_value(factors.dig("actionability", "band")),
+           -Support.band_value(factors.dig("pain_explicitness", "band")),
+@@ -283,8 +285,20 @@ module TITMASScout
+         ]
+       end
+ 
++      def actionability_priority(candidate)
++        {
++          "ACTIONABLE_NOW" => 0,
++          "ACTIONABLE_AFTER_CONTACT" => 1,
++          "OBSERVE" => 2,
++          "EXCLUDE" => 3
++        }.fetch(candidate.dig("actionability_classification", "classification"), 4)
++      end
++
+       def ordering_basis(candidate)
+-        %w[
++        [{
++          "factor" => "conversion_readiness",
++          "band" => candidate.dig("actionability_classification", "classification")
++        }] + %w[
+           titmas_relevance actionability pain_explicitness expected_learning
+           freshness evidence_quality potential_value effort
+         ].map do |name|
+diff --git a/src/discovery/opportunity_selector.rb b/src/discovery/opportunity_selector.rb
+new file mode 100644
+index 0000000..d63b9d0
+--- /dev/null
++++ b/src/discovery/opportunity_selector.rb
+@@ -0,0 +1,60 @@
++# frozen_string_literal: true
++
++require_relative "actionability_classifier"
++
++module TITMASScout
++  module Discovery
++    class OpportunitySelector
++      CONVERSION_CLASSIFICATIONS = %w[
++        ACTIONABLE_NOW ACTIONABLE_AFTER_CONTACT
++      ].freeze
++
++      def select(ranked_candidates, maximum:)
++        candidates = Array(ranked_candidates)
++        queue = candidates.select do |candidate|
++          CONVERSION_CLASSIFICATIONS.include?(classification(candidate))
++        end
++        watchlist = candidates.select do |candidate|
++          classification(candidate) == "OBSERVE"
++        end
++        excluded = candidates.each_with_object([]) do |candidate, items|
++          value = classification(candidate)
++          if value == "EXCLUDE"
++            items << candidate
++          elsif !ActionabilityClassifier::CLASSIFICATIONS.include?(value)
++            items << unknown_exclusion(candidate)
++          end
++        end
++
++        bounded_queue = queue.first(maximum)
++        remaining = [maximum - bounded_queue.length, 0].max
++        bounded_watchlist = watchlist.first(remaining)
++
++        {
++          "conversion_queue" => bounded_queue,
++          "excluded_by_actionability" => excluded,
++          "next_conversion_target" => queue.first,
++          "report_candidates" => bounded_queue + bounded_watchlist,
++          "research_watchlist" => bounded_watchlist
++        }
++      end
++
++      private
++
++      def classification(candidate)
++        candidate.dig("actionability_classification", "classification")
++      end
++
++      def unknown_exclusion(candidate)
++        candidate.merge(
++          "actionability_classification" => {
++            "classification" => "EXCLUDE",
++            "evidence" => { "source" => candidate["url"] },
++            "external_action_authorized" => false,
++            "reason_code" => "ACTIONABILITY_CLASSIFICATION_UNKNOWN"
++          }
++        )
++      end
++    end
++  end
++end
+diff --git a/src/discovery/source_collector.rb b/src/discovery/source_collector.rb
+index 8ecd0d5..ba4e563 100644
+--- a/src/discovery/source_collector.rb
++++ b/src/discovery/source_collector.rb
+@@ -74,7 +74,7 @@ module TITMASScout
+       end
+ 
+       GH_ISSUE_FIELDS = %w[
+-        author authorAssociation body commentsCount createdAt id isLocked
++        assignees author authorAssociation body commentsCount createdAt id isLocked
+         isPullRequest labels number repository state title updatedAt url
+       ].join(",").freeze
+ 
+@@ -336,13 +336,14 @@ module TITMASScout
+       def normalize_rest_item(item, base)
+         repository = item.fetch("repository_url", "").split("/repos/").last
+         {
++          "assignees" => normalized_assignees(item, "assignees"),
+           "author" => item.dig("user", "login"),
+           "author_association" => item["author_association"],
+           "body" => item["body"],
+           "comments_count" => item["comments"],
+           "created_at" => item["created_at"],
+           "id" => item["node_id"] || item["id"].to_s,
+-          "is_locked" => item["locked"] == true,
++          "is_locked" => normalized_boolean(item, "locked"),
+           "is_pull_request" => item.key?("pull_request"),
+           "labels" => Array(item["labels"]).map { |label| label["name"] },
+           "number" => item["number"],
+@@ -358,13 +359,14 @@ module TITMASScout
+ 
+       def normalize_gh_item(item, base)
+         {
++          "assignees" => normalized_assignees(item, "assignees"),
+           "author" => item.dig("author", "login"),
+           "author_association" => item["authorAssociation"],
+           "body" => item["body"],
+           "comments_count" => item["commentsCount"],
+           "created_at" => item["createdAt"],
+           "id" => item["id"],
+-          "is_locked" => item["isLocked"] == true,
++          "is_locked" => normalized_boolean(item, "isLocked"),
+           "is_pull_request" => item["isPullRequest"] == true,
+           "labels" => Array(item["labels"]).map { |label| label["name"] },
+           "number" => item["number"],
+@@ -392,6 +394,26 @@ module TITMASScout
+         end
+       end
+ 
++      def normalized_assignees(item, key)
++        value = item[key]
++        return nil unless value.is_a?(Array)
++
++        logins = value.map do |assignee|
++          next unless assignee.is_a?(Hash)
++
++          login = assignee["login"]
++          login if login.is_a?(String) && !login.empty?
++        end
++        return nil if logins.any?(&:nil?)
++
++        logins.sort
++      end
++
++      def normalized_boolean(item, key)
++        value = item[key]
++        [true, false].include?(value) ? value : nil
++      end
++
+       def run_command(arguments, kind)
+         unless read_only_command?(arguments)
+           raise ArgumentError, "GitHub command is outside the read-only allowlist"
+diff --git a/tests/discovery_test.rb b/tests/discovery_test.rb
+index 6db0d36..f2674af 100644
+--- a/tests/discovery_test.rb
++++ b/tests/discovery_test.rb
+@@ -3,14 +3,18 @@
+ require "minitest/autorun"
+ require "date"
+ require "json"
++require "open3"
++require "rbconfig"
+ require "stringio"
+ require "tmpdir"
+ require "yaml"
+ require_relative "../src/discovery/action_pack_generator"
++require_relative "../src/discovery/actionability_classifier"
+ require_relative "../src/discovery/cli"
+ require_relative "../src/discovery/daily_report"
+ require_relative "../src/discovery/deduplicator"
+ require_relative "../src/discovery/opportunity_ranker"
++require_relative "../src/discovery/opportunity_selector"
+ require_relative "../src/discovery/signal_extractor"
+ require_relative "../src/discovery/source_collector"
+ require_relative "../src/discovery/status_index"
+@@ -19,12 +23,26 @@ class DiscoveryPrototypeTest < Minitest::Test
+   RUN_DATE = Date.iso8601("2026-08-01")
+   RETRIEVED_AT = Time.iso8601("2026-08-01T10:00:00Z")
+ 
++  def test_action_pack_generator_loads_its_actionability_dependency
++    generator_path = File.expand_path("../src/discovery/action_pack_generator", __dir__)
++    script = <<~RUBY
++      require #{generator_path.inspect}
++      puts TITMASScout::Discovery::ActionPackGenerator.name
++      puts TITMASScout::Discovery::ActionabilityClassifier::CLASSIFICATIONS.length
++    RUBY
++    stdout, stderr, status = Open3.capture3(RbConfig.ruby, "-e", script)
++
++    assert status.success?, stderr
++    assert_equal "TITMASScout::Discovery::ActionPackGenerator\n4\n", stdout
++  end
++
+   class FakeCommandRunner
+     attr_reader :calls
+ 
+-    def initialize(authenticated: false)
++    def initialize(authenticated: false, search_items: [])
+       @authenticated = authenticated
+       @calls = []
++      @search_items = search_items
+     end
+ 
+     def call(arguments)
+@@ -38,7 +56,7 @@ class DiscoveryPrototypeTest < Minitest::Test
+           result(false, "", "token invalid\n", 1)
+         end
+       elsif arguments.first(3) == %w[gh search issues]
+-        result(true, "[]\n", "", 0)
++        result(true, "#{JSON.generate(@search_items)}\n", "", 0)
+       else
+         result(false, "", "unexpected command\n", 1)
+       end
+@@ -82,6 +100,52 @@ class DiscoveryPrototypeTest < Minitest::Test
+     assert_equal "public", arguments[arguments.index("--visibility") + 1]
+   end
+ 
++  def test_authenticated_gh_search_preserves_nonempty_assignees
++    item = gh_issue.merge(
++      "assignees" => [{ "login" => "issue-owner" }]
++    )
++    runner = FakeCommandRunner.new(
++      authenticated: true,
++      search_items: [item]
++    )
++    config = Marshal.load(Marshal.dump(@config))
++    config["collection_policy"]["maximum_queries_per_run"] = 1
++    result = TITMASScout::Discovery::SourceCollector.new(
++      config: config,
++      run_date: RUN_DATE,
++      retrieved_at: RETRIEVED_AT,
++      http_transport: FakeGetTransport.new([]),
++      command_runner: runner
++    ).collect
++
++    assert_equal ["issue-owner"], result.dig("items", 0, "assignees")
++  end
++
++  def test_authenticated_gh_search_preserves_malformed_assignee_as_unknown
++    item = gh_issue.merge("assignees" => [{}])
++    runner = FakeCommandRunner.new(
++      authenticated: true,
++      search_items: [item]
++    )
++    config = Marshal.load(Marshal.dump(@config))
++    config["collection_policy"]["maximum_queries_per_run"] = 1
++    result = TITMASScout::Discovery::SourceCollector.new(
++      config: config,
++      run_date: RUN_DATE,
++      retrieved_at: RETRIEVED_AT,
++      http_transport: FakeGetTransport.new([]),
++      command_runner: runner
++    ).collect
++
++    assert_nil result.dig("items", 0, "assignees")
++    classification = TITMASScout::Discovery::ActionabilityClassifier.new.classify(
++      result.fetch("items").first
++    )
++    assert_equal "EXCLUDE", classification.fetch("classification")
++    assert_equal "ASSIGNEE_EVIDENCE_UNKNOWN", classification.fetch("reason_code")
++    assert_nil classification.dig("evidence", "assignees")
++  end
++
+   class FakeGetTransport
+     attr_reader :events
+ 
+@@ -219,6 +283,27 @@ class DiscoveryPrototypeTest < Minitest::Test
+     assert_equal 3, transport.attempts
+     assert_equal "SUCCESS", result.dig("queries", 0, "status")
+     assert_equal 2, result.dig("queries", 0, "transport_retry_count")
++    assert_equal ["issue-owner"], result.dig("items", 0, "assignees")
++  end
++
++  def test_public_rest_preserves_malformed_assignee_as_unknown
++    transport = FakeGetTransport.new([rest_issue.merge("assignees" => [nil])])
++    config = Marshal.load(Marshal.dump(@config))
++    config["collection_policy"]["maximum_queries_per_run"] = 1
++    result = TITMASScout::Discovery::SourceCollector.new(
++      config: config,
++      run_date: RUN_DATE,
++      retrieved_at: RETRIEVED_AT,
++      http_transport: transport,
++      command_runner: FakeCommandRunner.new(authenticated: false)
++    ).collect
++
++    assert_nil result.dig("items", 0, "assignees")
++    classification = TITMASScout::Discovery::ActionabilityClassifier.new.classify(
++      result.fetch("items").first
++    )
++    assert_equal "EXCLUDE", classification.fetch("classification")
++    assert_equal "ASSIGNEE_EVIDENCE_UNKNOWN", classification.fetch("reason_code")
+   end
+ 
+   def test_deduplication_preserves_query_lineage
+@@ -336,6 +421,145 @@ class DiscoveryPrototypeTest < Minitest::Test
+     refute recursive_key?(candidate, "score")
+   end
+ 
++  def test_actionable_now_precedes_observe_in_conversion_selection
++    candidates = classified_candidate_pool
++    ranked = rank_candidates(candidates.reverse)
++    result = TITMASScout::Discovery::OpportunitySelector.new.select(
++      ranked,
++      maximum: 5
++    )
++
++    assert_equal "https://github.com/praxis-proxy/ai/issues/194",
++                 result.dig("next_conversion_target", "url")
++    assert_equal [194, 482, 461],
++                 result.fetch("conversion_queue").map { |item| item["number"] }
++    assert result.fetch("conversion_queue").all? do |candidate|
++      %w[ACTIONABLE_NOW ACTIONABLE_AFTER_CONTACT].include?(
++        candidate.dig("actionability_classification", "classification")
++      )
++    end
++    refute_includes result.fetch("conversion_queue").map { |item| item["url"] },
++                    "https://github.com/syswonder/robonix/issues/189"
++  end
++
++  def test_assigned_to_author_without_invitation_is_observe
++    candidate = rank_candidates([robonix_candidate]).first
++
++    assert_equal "OBSERVE",
++                 candidate.dig("actionability_classification", "classification")
++    assert_equal "ASSIGNED_WITHOUT_EXTERNAL_CONTRIBUTION_INVITATION",
++                 candidate.dig("actionability_classification", "reason_code")
++    assert_equal "OBSERVE",
++                 TITMASScout::Discovery::ActionPackGenerator.new.generate(candidate)
++                                                            .fetch("suggested_action_type")
++    assert_equal "conversion_readiness",
++                 candidate.fetch("ordering_basis").first.fetch("factor")
++    assert_equal "OBSERVE",
++                 candidate.fetch("ordering_basis").first.fetch("band")
++  end
++
++  def test_assignment_without_invitation_precedes_contact_instruction
++    candidate = rank_candidates([
++      gents_candidate.merge("assignees" => ["jackzampolin"])
++    ]).first
++
++    assert_equal "OBSERVE",
++                 candidate.dig("actionability_classification", "classification")
++    assert_equal "ASSIGNED_WITHOUT_EXTERNAL_CONTRIBUTION_INVITATION",
++                 candidate.dig("actionability_classification", "reason_code")
++  end
++
++  def test_automated_author_without_contribution_invitation_is_observe
++    candidate = rank_candidates([
++      praxis_candidate.merge(
++        "author" => "sadasant-ghost[bot]",
++        "number" => 37,
++        "repository" => "idolum-ai/kenogram",
++        "url" => "https://github.com/idolum-ai/kenogram/issues/37"
++      )
++    ]).first
++
++    assert_equal "OBSERVE",
++                 candidate.dig("actionability_classification", "classification")
++    assert_equal "AUTOMATED_AUTHOR_WITHOUT_EXTERNAL_CONTRIBUTION_INVITATION",
++                 candidate.dig("actionability_classification", "reason_code")
++  end
++
++  def test_unknown_lock_or_assignee_evidence_fails_closed
++    candidates = rank_candidates([
++      praxis_candidate.merge("is_locked" => nil),
++      praxis_candidate.merge("assignees" => nil, "number" => 195,
++                              "url" => "https://github.com/praxis-proxy/ai/issues/195")
++    ])
++
++    assert_equal %w[ASSIGNEE_EVIDENCE_UNKNOWN LOCK_STATE_UNKNOWN],
++                 candidates.map { |item| item.dig("actionability_classification", "reason_code") }.sort
++    assert candidates.all? do |candidate|
++      candidate.dig("actionability_classification", "classification") == "EXCLUDE"
++    end
++  end
++
++  def test_unknown_selector_classification_is_explicitly_excluded
++    candidate = ranked_candidate
++    candidate.delete("actionability_classification")
++    result = TITMASScout::Discovery::OpportunitySelector.new.select(
++      [candidate],
++      maximum: 5
++    )
++
++    assert_nil result["next_conversion_target"]
++    assert_empty result["conversion_queue"]
++    assert_equal "ACTIONABILITY_CLASSIFICATION_UNKNOWN",
++                 result.dig("excluded_by_actionability", 0,
++                            "actionability_classification", "reason_code")
++  end
++
++  def test_action_pack_rejects_missing_or_unknown_actionability
++    generator = TITMASScout::Discovery::ActionPackGenerator.new
++    candidate = ranked_candidate
++    candidate.delete("actionability_classification")
++
++    assert_raises(ArgumentError) { generator.generate(candidate) }
++    candidate["actionability_classification"] = {
++      "classification" => "UNKNOWN"
++    }
++    assert_raises(ArgumentError) { generator.generate(candidate) }
++  end
++
++  def test_excluded_candidate_can_only_generate_observe_pack
++    candidate = ranked_candidate
++    candidate["actionability_classification"] = {
++      "classification" => "EXCLUDE"
++    }
++    pack = TITMASScout::Discovery::ActionPackGenerator.new.generate(candidate)
++
++    assert_equal "OBSERVE", pack["suggested_action_type"]
++    assert_equal false, pack["external_action_authorized"]
++  end
++
++  def test_talk_to_maintainer_first_is_actionable_after_contact
++    candidate = rank_candidates([gents_candidate]).first
++
++    assert_equal "ACTIONABLE_AFTER_CONTACT",
++                 candidate.dig("actionability_classification", "classification")
++    assert_equal "CONTACT_FIRST_INSTRUCTION",
++                 candidate.dig("actionability_classification", "reason_code")
++  end
++
++  def test_automated_research_summary_cannot_be_next_conversion_target
++    ranked = rank_candidates([nightly_research_candidate, praxis_candidate])
++    result = TITMASScout::Discovery::OpportunitySelector.new.select(
++      ranked,
++      maximum: 5
++    )
++
++    assert_equal "OBSERVE",
++                 ranked.find { |item| item["number"] == 27 }
++                       .dig("actionability_classification", "classification")
++    assert_equal 194, result.dig("next_conversion_target", "number")
++    refute_includes result.fetch("conversion_queue").map { |item| item["number"] }, 27
++  end
++
+   def test_historical_issue_636_is_excluded_without_a_new_entry
+     extractor = TITMASScout::Discovery::SignalExtractor.new(config: @config)
+     item = normalized_item.merge(
+@@ -466,6 +690,22 @@ class DiscoveryPrototypeTest < Minitest::Test
+                    latest["human_exception_review_required"]
+       assert_equal false,
+                    latest.dig("architecture_handoff", "dba_repository_modified")
++      next_target = latest.dig("opportunity_selection", "next_conversion_target")
++      refute_nil next_target
++      assert_equal "ACTIONABLE_NOW",
++                   next_target.dig("actionability_classification", "classification")
++      assert_equal "OPEN_PUBLIC_COMMENT_ENTRY",
++                   next_target.dig("actionability_classification", "reason_code")
++      queue = latest.dig("opportunity_selection", "conversion_queue")
++      assert_equal 5, queue.length
++      assert queue.all? do |candidate|
++        %w[ACTIONABLE_NOW ACTIONABLE_AFTER_CONTACT].include?(
++          candidate.dig("actionability_classification", "classification")
++        )
++      end
++      markdown = File.read(File.join(directory, "daily", "2026-08-01-opportunity-report.md"))
++      assert_includes markdown, "## Conversion Selection"
++      assert_includes markdown, "Classification: `ACTIONABLE_NOW`"
+     end
+   end
+ 
+@@ -473,6 +713,7 @@ class DiscoveryPrototypeTest < Minitest::Test
+ 
+   def rest_issue
+     {
++      "assignees" => [{ "login" => "issue-owner" }],
+       "author_association" => "MEMBER",
+       "body" => issue_body,
+       "comments" => 4,
+@@ -493,6 +734,7 @@ class DiscoveryPrototypeTest < Minitest::Test
+ 
+   def normalized_item
+     {
++      "assignees" => [],
+       "author" => "maintainer",
+       "author_association" => "MEMBER",
+       "body" => issue_body,
+@@ -530,6 +772,103 @@ class DiscoveryPrototypeTest < Minitest::Test
+     ranker.rank([signal]).first
+   end
+ 
++  def classified_candidate_pool
++    [praxis_candidate, robonix_candidate, gents_candidate, nightly_research_candidate, scion_candidate]
++  end
++
++  def praxis_candidate
++    normalized_item.merge(
++      "assignees" => [],
++      "body" => "Log every policy decision as an audit event and propagate OpenTelemetry trace context.",
++      "comments_count" => 0,
++      "labels" => ["enhancement"],
++      "number" => 194,
++      "repository" => "praxis-proxy/ai",
++      "title" => "Agent audit trail and observability",
++      "url" => "https://github.com/praxis-proxy/ai/issues/194"
++    )
++  end
++
++  def robonix_candidate
++    normalized_item.merge(
++      "assignees" => ["enkerewpo"],
++      "author" => "enkerewpo",
++      "body" => "The planner can claim completion without execution evidence. The architecture has open questions.",
++      "comments_count" => 0,
++      "labels" => ["bug"],
++      "number" => 189,
++      "repository" => "syswonder/robonix",
++      "title" => "Pilot can falsely complete tasks without execution evidence",
++      "url" => "https://github.com/syswonder/robonix/issues/189"
++    )
++  end
++
++  def gents_candidate
++    normalized_item.merge(
++      "assignees" => [],
++      "body" => "Anyone interested in working on it should talk to Jack first so the authorization design stays aligned.",
++      "labels" => ["design"],
++      "number" => 461,
++      "repository" => "source-inc/gents",
++      "title" => "DefraDB ACP integration for agent authorization",
++      "url" => "https://github.com/source-inc/gents/issues/461"
++    )
++  end
++
++  def nightly_research_candidate
++    normalized_item.merge(
++      "assignees" => [],
++      "body" => "Paper summary and imagined implementation. Filed via the nightly research→issues pipeline.",
++      "labels" => [],
++      "number" => 27,
++      "repository" => "mnemonik-dev/nightly-research",
++      "title" => "[arXiv] ZK-proved agent authorization gate",
++      "url" => "https://github.com/mnemonik-dev/nightly-research/issues/27"
++    )
++  end
++
++  def scion_candidate
++    normalized_item.merge(
++      "assignees" => [],
++      "body" => "Define tiered agent authorization roles and prevent sub-agent scope escalation.",
++      "labels" => ["enhancement"],
++      "number" => 482,
++      "repository" => "ptone/scion",
++      "title" => "Tiered agent authorization roles and sub-agent scope inheritance",
++      "url" => "https://github.com/ptone/scion/issues/482"
++    )
++  end
++
++  def gh_issue
++    {
++      "assignees" => [],
++      "author" => { "login" => "maintainer" },
++      "authorAssociation" => "MEMBER",
++      "body" => issue_body,
++      "commentsCount" => 0,
++      "createdAt" => "2026-07-15T12:00:00Z",
++      "id" => "NODE-42",
++      "isLocked" => false,
++      "isPullRequest" => false,
++      "labels" => [{ "name" => "help wanted" }],
++      "number" => 42,
++      "repository" => { "nameWithOwner" => "example/project" },
++      "state" => "OPEN",
++      "title" => "Need auditable agent execution trace and replay",
++      "updatedAt" => "2026-07-31T12:00:00Z",
++      "url" => "https://github.com/example/project/issues/42"
++    }
++  end
++
++  def rank_candidates(items)
++    extractor = TITMASScout::Discovery::SignalExtractor.new(config: @config)
++    signals = items.map { |item| extractor.extract(item) }
++    TITMASScout::Discovery::OpportunityRanker.new(
++      config: @config,
++      run_date: RUN_DATE
++    ).rank(signals)
++  end
++
+   def fixed_collection(items)
+     {
+       "backend" => "TEST_READ_ONLY_FIXTURE",

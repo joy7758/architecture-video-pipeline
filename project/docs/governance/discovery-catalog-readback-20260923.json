@@ -1,0 +1,35 @@
+{
+  "schema_version": "module-catalog-consumer-readback.v1",
+  "observed_at": "2026-09-22T17:27:56.860813+00:00",
+  "consumer_project": "architecture-video-pipeline",
+  "catalog_id": "DBA-REUSABLE-MODULE-CATALOG-0.1",
+  "catalog_version": "0.1.0",
+  "catalog_status": "SOURCE_BOUND_CATALOG_NO_RUNTIME_AUTHORITY",
+  "catalog_sha256": "4552dc7c67bc9d40547d8069ef183aeb357e84d52f500ee2446697e736d4ff37",
+  "owner_repository": "joy7758/digital-biosphere-architecture-specification",
+  "owner_task_id": "019f93ea-3361-7850-b3e1-877fcd273a0e",
+  "catalog_path": "/Users/zhangbin/Documents/New project/digital-biosphere-architecture/cockpit/reusable-module-catalog.json",
+  "human_catalog_path": "/Users/zhangbin/Documents/New project/digital-biosphere-architecture/cockpit/REUSABLE-MODULE-CATALOG.zh-CN.md",
+  "module_count": 8,
+  "reuse_levels": {
+    "ADAPTATION_REQUIRED": 3,
+    "VERIFICATION_REQUIRED": 3,
+    "SPECIFICATION_ONLY": 1,
+    "DIRECT_REUSE": 1
+  },
+  "local_entry_paths_checked": 19,
+  "consumer_checks": {
+    "json_parse": "PASS",
+    "unique_module_ids": "PASS",
+    "chinese_list_coverage": "PASS",
+    "dba_agent_index_links": "PASS",
+    "local_entry_existence": "PASS",
+    "scout_discovery_separate_from_status_bridge": "PASS",
+    "legacy_license_unknown_retained": "PASS"
+  },
+  "owner_reported_schema_validation": "PASS",
+  "consumer_schema_reexecution": "NOT_RUN_OWNER_REPORT_RETAINED",
+  "module_runtime_execution": "NOT_RUN",
+  "architectural_gap_adapter": "NOT_IMPLEMENTED",
+  "publication_scope": "LOCAL_WORKSPACE_NOT_COMMITTED_OR_PUSHED"
+}

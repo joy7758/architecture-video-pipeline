@@ -1,0 +1,46 @@
+{
+  "product": "TITMAS Enterprise Agent Review",
+  "product_zh": "TITMAS企业智能体实战评测",
+  "version": "0.1.0-beta.1",
+  "release_channel": "commercial-beta",
+  "commercial_beta_ready": true,
+  "production_ready": false,
+  "live_verified_providers": [
+    "aliyun-bailian-direct"
+  ],
+  "offline_verified_providers": [
+    "dify-workflow"
+  ],
+  "dify_live_verified": false,
+  "evidence_level": "E1",
+  "customer_validated": false,
+  "certification": "none",
+  "agent_recommendation_gate": {
+    "reviewed_model": "qwen3.7-max",
+    "status": "CONDITIONALLY_RECOMMENDED",
+    "scope": "仅适用于合成数据的早期筛选与受控演示",
+    "reason": "六个合成案例不足以支持真实企业复杂性或单独采购决策。",
+    "authority_effect": "NONE"
+  },
+  "live_validation": {
+    "provider": "Alibaba Cloud Model Studio",
+    "configured_model": "qwen3.7-max",
+    "reported_model": "qwen3.7-max",
+    "model_pinning_status": "ROLLING_ALIAS",
+    "snapshot_probe_status": "MODEL_NOT_FOUND_RETAINED",
+    "successful_runs": 12,
+    "required_runs": 12,
+    "total_model_cost_cny": 0.089112,
+    "red_line_logic": "PASS",
+    "evidence_capture": "PASS",
+    "result_digest": "dceef259a0a9a40ab4ef53229216ac6d35b7d18858412cb6b5b86b29f0351c14"
+  },
+  "public_sample": "samples/titmas-enterprise-agent-review-public-sample.json",
+  "release_limits": [
+    "SYNTHETIC_CASES_ONLY",
+    "NO_PRODUCTION_READINESS_CLAIM",
+    "NO_CUSTOMER_VALIDATION_CLAIM",
+    "NO_CERTIFICATION_CLAIM",
+    "NO_EXECUTION_AUTHORIZATION"
+  ]
+}

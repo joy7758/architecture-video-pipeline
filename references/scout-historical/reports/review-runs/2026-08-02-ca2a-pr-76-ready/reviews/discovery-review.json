@@ -1,0 +1,35 @@
+{
+  "schema_version": "0.1",
+  "review_id": "ca2a-pr-76-discovery-review",
+  "agent_identifier": "codex-agent:/root/model_audit",
+  "model_runtime_identifier": "openai-codex/gpt-5",
+  "review_role": "DISCOVERY_REVIEWER",
+  "input_digest": "sha256:1b390b08b327c6fe315f7ffe9af007c0454227f753b8249dbf1aed07df30fcd9",
+  "output_digest": "sha256:be02da282fcf5ab43b16ece367d25914e9709d3a0c26f5f3c364664705c47cf8",
+  "decision": "PASS",
+  "timestamp": "2026-08-01T17:36:07Z",
+  "ruleset_version": "0.1",
+  "reason_codes": [
+    "INPUT_DIGEST_VERIFIED",
+    "SOURCE_ISSUE_OPEN_UNLOCKED",
+    "RESIDUAL_CHECKLIST_ITEM_CONFIRMED",
+    "TARGET_NOT_PRESENT_ON_CURRENT_MAIN",
+    "NO_DUPLICATE_OPEN_PR_FOUND",
+    "PUBLIC_ACTION_ENTRY_OPEN"
+  ],
+  "findings": [
+    "The review input digest matches the designated immutable input.",
+    "Issue #36 is open and unlocked, and its maintainer-authored residual checklist still includes the ACTION-path invalid-signature case.",
+    "Upstream main does not contain ACTION-008 or an equivalent target case.",
+    "No separate open PR duplicates the target contribution.",
+    "PR #76 is an open public participation entry at the exact reviewed head SHA."
+  ],
+  "blocking_reasons": [],
+  "evidence_references": [
+    "reports/review-runs/2026-08-02-ca2a-pr-76-ready/input.json#sha256:1b390b08b327c6fe315f7ffe9af007c0454227f753b8249dbf1aed07df30fcd9",
+    "https://github.com/agentrust-io/ca2a/issues/36",
+    "https://github.com/agentrust-io/ca2a/issues/36#issuecomment-5114496886",
+    "https://github.com/agentrust-io/ca2a/pull/76",
+    "git:agentrust-io/ca2a@76c1a31193ff6a70b732cf8f668935808002e273"
+  ]
+}

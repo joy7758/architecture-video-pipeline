@@ -1,0 +1,2509 @@
+{
+  "architecture_handoff": {
+    "dba_repository_modified": false,
+    "integration_request": "READ_ONLY_REVIEW_AND_FUTURE_INGESTION_ASSESSMENT",
+    "status": "READY_FOR_READ_ONLY_REVIEW_NOT_INTEGRATED",
+    "target": "digital-biosphere-architecture"
+  },
+  "artifact_type": "TITMAS_SCOUT_LATEST_OPPORTUNITIES",
+  "data_coverage": {
+    "backend": "GH_CLI_AUTHENTICATED",
+    "collection_status": "PARTIAL_ISSUES_ONLY",
+    "discussion_coverage": {
+      "reason_code": "GLOBAL_DISCUSSION_COLLECTION_NOT_ENABLED_V0_1",
+      "status": "NOT_COLLECTED"
+    },
+    "source_types_collected": [
+      "GITHUB_ISSUE"
+    ],
+    "source_types_missing": [
+      "GITHUB_DISCUSSION"
+    ]
+  },
+  "default_selection_mode": "AGENT_QUORUM",
+  "external_action_authorized": false,
+  "generated_at": "2026-08-02T08:05:00Z",
+  "heuristic_model": "heuristic_unvalidated_v0.1",
+  "human_exception_review_required": "CONDITIONAL",
+  "opportunities": [
+    {
+      "action_entry": {
+        "entry_type": "GITHUB_ISSUE",
+        "is_locked": false,
+        "public_url": "https://github.com/praxis-proxy/ai/issues/194",
+        "state": "OPEN"
+      },
+      "action_pack": {
+        "estimated_effort": "NEEDS_REVIEW",
+        "external_action_authorized": false,
+        "human_exception_decisions_required": [
+
+        ],
+        "key_risks": [
+          "Keyword mapping can overstate relevance and is unvalidated.",
+          "Open state does not imply permission to implement or contact anyone.",
+          "Effort, license, and security facts require evidence; legal, payment, identity, privacy, deletion, and account-security exceptions require human review.",
+          "Source freshness is limited to updated_at=2026-07-23T09:23:12Z."
+        ],
+        "minimum_contribution": "Prepare an evidence-backed scope question and a bounded component-mapping note for Agent Review Quorum; do not post automatically.",
+        "opportunity_summary": "Agent audit trail and observability",
+        "original_source": "https://github.com/praxis-proxy/ai/issues/194",
+        "pain_point": "Agent audit trail and observability: agent audit trail and observability every agent action through the gateway produces an auditable record. full task lifecycle tracing across the grid. scope - propagate opentelemetry trace context…",
+        "possible_acceptance_reasons": [
+          "The public source states a problem aligned with AI_AGENT_AUDIT.",
+          "A bounded existing component role may support a small, reviewable contribution."
+        ],
+        "possible_rejection_reasons": [
+          "Maintainer interest and preferred contribution path are unconfirmed.",
+          "The mapped TITMAS role may not fit repository architecture or scope.",
+          "A similar fix may already exist outside the retrieved Issue record."
+        ],
+        "reusable_components": [
+          {
+            "bounded_role": "execution evidence packaging and offline verification",
+            "capability_id": "AGENT_EVIDENCE",
+            "mapping_evidence": "agent audit trail and observability every agent action through the gateway produces an auditable record. full task lifecycle tracing across the grid. scope - propagate opentelemetry trace context…",
+            "repository": "joy7758/agent-evidence"
+          },
+          {
+            "bounded_role": "bounded intent, action, and result semantics",
+            "capability_id": "AGENT_INTENT_PROTOCOL",
+            "mapping_evidence": "agent audit trail and observability every agent action through the gateway produces an auditable record. full task lifecycle tracing across the grid. scope - propagate opentelemetry trace context…",
+            "repository": "joy7758/agent-intent-protocol"
+          },
+          {
+            "bounded_role": "post-execution audit and replay-oriented review",
+            "capability_id": "ARO_AUDIT",
+            "mapping_evidence": "agent audit trail and observability every agent action through the gateway produces an auditable record. full task lifecycle tracing across the grid. scope - propagate opentelemetry trace context…",
+            "repository": "joy7758/aro-audit"
+          }
+        ],
+        "suggested_action_type": "COMMENT"
+      },
+      "actionability_classification": {
+        "classification": "ACTIONABLE_NOW",
+        "evidence": {
+          "assignees": [
+
+          ],
+          "comments_count": 0,
+          "is_locked": false,
+          "labels": [
+            "enhancement"
+          ],
+          "source": "https://github.com/praxis-proxy/ai/issues/194",
+          "state": "OPEN"
+        },
+        "external_action_authorized": false,
+        "reason_code": "OPEN_PUBLIC_COMMENT_ENTRY"
+      },
+      "assignees": [
+
+      ],
+      "author": "shaneutt",
+      "author_association": "MEMBER",
+      "capability_mappings": [
+        {
+          "bounded_role": "execution evidence packaging and offline verification",
+          "capability_id": "AGENT_EVIDENCE",
+          "evidence_snippet": "agent audit trail and observability every agent action through the gateway produces an auditable record. full task lifecycle tracing across the grid. scope - propagate opentelemetry trace context…",
+          "matched_keywords": [
+            "audit trail"
+          ],
+          "repository": "joy7758/agent-evidence"
+        },
+        {
+          "bounded_role": "bounded intent, action, and result semantics",
+          "capability_id": "AGENT_INTENT_PROTOCOL",
+          "evidence_snippet": "agent audit trail and observability every agent action through the gateway produces an auditable record. full task lifecycle tracing across the grid. scope - propagate opentelemetry trace context…",
+          "matched_keywords": [
+            "agent action"
+          ],
+          "repository": "joy7758/agent-intent-protocol"
+        },
+        {
+          "bounded_role": "post-execution audit and replay-oriented review",
+          "capability_id": "ARO_AUDIT",
+          "evidence_snippet": "agent audit trail and observability every agent action through the gateway produces an auditable record. full task lifecycle tracing across the grid. scope - propagate opentelemetry trace context…",
+          "matched_keywords": [
+            "agent audit",
+            "audit trail"
+          ],
+          "repository": "joy7758/aro-audit"
+        }
+      ],
+      "comments_count": 0,
+      "created_at": "2026-06-22T19:09:44Z",
+      "heuristic_model": "heuristic_unvalidated_v0.1",
+      "heuristic_unvalidated": true,
+      "id": "I_kwDOTJ5-zM8AAAABHXJduA",
+      "is_locked": false,
+      "is_pull_request": false,
+      "labels": [
+        "enhancement"
+      ],
+      "number": 194,
+      "ordering_basis": [
+        {
+          "band": "ACTIONABLE_NOW",
+          "factor": "conversion_readiness"
+        },
+        {
+          "band": "HIGH",
+          "factor": "titmas_relevance"
+        },
+        {
+          "band": "HIGH",
+          "factor": "actionability"
+        },
+        {
+          "band": "HIGH",
+          "factor": "pain_explicitness"
+        },
+        {
+          "band": "HIGH",
+          "factor": "expected_learning"
+        },
+        {
+          "band": "HIGH",
+          "factor": "freshness"
+        },
+        {
+          "band": "HIGH",
+          "factor": "evidence_quality"
+        },
+        {
+          "band": "NEEDS_REVIEW",
+          "factor": "potential_value"
+        },
+        {
+          "band": "NEEDS_REVIEW",
+          "factor": "effort"
+        }
+      ],
+      "pain_classifications": [
+        {
+          "classification": "AI_AGENT_AUDIT",
+          "evidence_snippet": "agent audit trail and observability every agent action through the gateway produces an auditable record. full task lifecycle tracing across the grid. scope - propagate opentelemetry trace context…",
+          "matched_keywords": [
+            "agent audit",
+            "audit trail"
+          ]
+        }
+      ],
+      "pain_point": "Agent audit trail and observability: agent audit trail and observability every agent action through the gateway produces an auditable record. full task lifecycle tracing across the grid. scope - propagate opentelemetry trace context…",
+      "priority_position": 1,
+      "query_ids": [
+        "Q-AI-AGENT-AUDIT"
+      ],
+      "ranking_factors": {
+        "actionability": {
+          "band": "HIGH",
+          "evidence": [
+            "OPEN_PUBLIC_COMMENT_ENTRY",
+            "https://github.com/praxis-proxy/ai/issues/194"
+          ],
+          "reason": "Conversion readiness is ACTIONABLE_NOW; this classification does not authorize external action."
+        },
+        "effort": {
+          "band": "NEEDS_REVIEW",
+          "evidence": [
+
+          ],
+          "reason": "Repository code and contribution scope were not inspected."
+        },
+        "evidence_quality": {
+          "band": "HIGH",
+          "evidence": [
+            "https://github.com/praxis-proxy/ai/issues/194",
+            "body_characters=679",
+            "MEMBER"
+          ],
+          "reason": "Public source metadata and a bounded source excerpt are available."
+        },
+        "expected_learning": {
+          "band": "HIGH",
+          "evidence": [
+            "trace",
+            "audit",
+            "policy",
+            "audit trail"
+          ],
+          "reason": "A bounded contribution could test existing components; actual scope needs policy-selected review."
+        },
+        "freshness": {
+          "band": "HIGH",
+          "evidence": [
+            "2026-07-23T09:23:12Z"
+          ],
+          "reason": "Source was updated 10 day(s) before the run date."
+        },
+        "pain_explicitness": {
+          "band": "HIGH",
+          "evidence": [
+            "agent audit trail and observability every agent action through the gateway produces an auditable record. full task lifecycle tracing across the grid. scope - propagate opentelemetry trace context…"
+          ],
+          "reason": "Source body length and explicit matched pain terms are reviewable."
+        },
+        "potential_value": {
+          "band": "NEEDS_REVIEW",
+          "evidence": [
+            "https://github.com/praxis-proxy/ai/issues/194"
+          ],
+          "reason": "The Issue record does not establish adoption, collaboration, reputation, or revenue value."
+        },
+        "titmas_relevance": {
+          "band": "HIGH",
+          "evidence": [
+            "agent audit trail and observability every agent action through the gateway produces an auditable record. full task lifecycle tracing across the grid. scope - propagate opentelemetry trace context…",
+            "agent audit trail and observability every agent action through the gateway produces an auditable record. full task lifecycle tracing across the grid. scope - propagate opentelemetry trace context…",
+            "agent audit trail and observability every agent action through the gateway produces an auditable record. full task lifecycle tracing across the grid. scope - propagate opentelemetry trace context…"
+          ],
+          "reason": "3 bounded role mapping(s); direct title terms: audit trail."
+        }
+      },
+      "ranking_status": "NEEDS_REVIEW",
+      "repository": "praxis-proxy/ai",
+      "retention_reason": "Retained because the public entry is open, unlocked, fresh, and maps AI_AGENT_AUDIT to existing bounded TITMAS roles; all acceptance and value claims remain unconfirmed.",
+      "source_evidence_excerpt": "agent audit trail and observability every agent action through the gateway produces an auditable record. full task lifecycle tracing across the grid. scope - propagate opentelemetry trace context…",
+      "source_type": "GITHUB_ISSUE",
+      "state": "OPEN",
+      "success_probability": null,
+      "title": "Agent audit trail and observability",
+      "unconfirmed_facts": [
+        "maintainer_interest",
+        "contribution_acceptance",
+        "current_unresolved_scope_beyond_open_state",
+        "implementation_effort",
+        "customer_demand",
+        "commercial_budget_or_value",
+        "legal_and_license_fit"
+      ],
+      "updated_at": "2026-07-23T09:23:12Z",
+      "url": "https://github.com/praxis-proxy/ai/issues/194"
+    },
+    {
+      "action_entry": {
+        "entry_type": "GITHUB_ISSUE",
+        "is_locked": false,
+        "public_url": "https://github.com/ptone/scion/issues/482",
+        "state": "OPEN"
+      },
+      "action_pack": {
+        "estimated_effort": "NEEDS_REVIEW",
+        "external_action_authorized": false,
+        "human_exception_decisions_required": [
+
+        ],
+        "key_risks": [
+          "Keyword mapping can overstate relevance and is unvalidated.",
+          "Open state does not imply permission to implement or contact anyone.",
+          "Effort, license, and security facts require evidence; legal, payment, identity, privacy, deletion, and account-security exceptions require human review.",
+          "Source freshness is limited to updated_at=2026-07-27T18:19:52Z."
+        ],
+        "minimum_contribution": "Prepare an evidence-backed scope question and a bounded component-mapping note for Agent Review Quorum; do not post automatically.",
+        "opportunity_summary": "feat: tiered agent authorization roles and sub-agent scope inheritance",
+        "original_source": "https://github.com/ptone/scion/issues/482",
+        "pain_point": "feat: tiered agent authorization roles and sub-agent scope inheritance: feat: tiered agent authorization roles and sub-agent scope inheritance summary agents currently receive a fixed set of hub api scopes with no mechanism for project admins or user roles to constrain…",
+        "possible_acceptance_reasons": [
+          "The public source states a problem aligned with AGENT_AUTHORIZATION.",
+          "A bounded existing component role may support a small, reviewable contribution."
+        ],
+        "possible_rejection_reasons": [
+          "Maintainer interest and preferred contribution path are unconfirmed.",
+          "The mapped TITMAS role may not fit repository architecture or scope.",
+          "A similar fix may already exist outside the retrieved Issue record."
+        ],
+        "reusable_components": [
+          {
+            "bounded_role": "bounded intent, action, and result semantics",
+            "capability_id": "AGENT_INTENT_PROTOCOL",
+            "mapping_evidence": "feat: tiered agent authorization roles and sub-agent scope inheritance summary agents currently receive a fixed set of hub api scopes with no mechanism for project admins or user roles to constrain…",
+            "repository": "joy7758/agent-intent-protocol"
+          },
+          {
+            "bounded_role": "runtime policy, permission, and execution constraints",
+            "capability_id": "TOKEN_GOVERNOR",
+            "mapping_evidence": "feat: tiered agent authorization roles and sub-agent scope inheritance summary agents currently receive a fixed set of hub api scopes with no mechanism for project admins or user roles to constrain…",
+            "repository": "joy7758/token-governor"
+          }
+        ],
+        "suggested_action_type": "COMMENT"
+      },
+      "actionability_classification": {
+        "classification": "ACTIONABLE_NOW",
+        "evidence": {
+          "assignees": [
+
+          ],
+          "comments_count": 5,
+          "is_locked": false,
+          "labels": [
+            "area:auth",
+            "enhancement",
+            "type:feature"
+          ],
+          "source": "https://github.com/ptone/scion/issues/482",
+          "state": "OPEN"
+        },
+        "external_action_authorized": false,
+        "reason_code": "OPEN_PUBLIC_COMMENT_ENTRY"
+      },
+      "assignees": [
+
+      ],
+      "author": "ptone",
+      "author_association": "OWNER",
+      "capability_mappings": [
+        {
+          "bounded_role": "bounded intent, action, and result semantics",
+          "capability_id": "AGENT_INTENT_PROTOCOL",
+          "evidence_snippet": "feat: tiered agent authorization roles and sub-agent scope inheritance summary agents currently receive a fixed set of hub api scopes with no mechanism for project admins or user roles to constrain…",
+          "matched_keywords": [
+            "agent authorization"
+          ],
+          "repository": "joy7758/agent-intent-protocol"
+        },
+        {
+          "bounded_role": "runtime policy, permission, and execution constraints",
+          "capability_id": "TOKEN_GOVERNOR",
+          "evidence_snippet": "feat: tiered agent authorization roles and sub-agent scope inheritance summary agents currently receive a fixed set of hub api scopes with no mechanism for project admins or user roles to constrain…",
+          "matched_keywords": [
+            "agent authorization"
+          ],
+          "repository": "joy7758/token-governor"
+        }
+      ],
+      "comments_count": 5,
+      "created_at": "2026-07-17T04:52:28Z",
+      "heuristic_model": "heuristic_unvalidated_v0.1",
+      "heuristic_unvalidated": true,
+      "id": "I_kwDORvdnm88AAAABJIzJOA",
+      "is_locked": false,
+      "is_pull_request": false,
+      "labels": [
+        "enhancement",
+        "type:feature",
+        "area:auth"
+      ],
+      "number": 482,
+      "ordering_basis": [
+        {
+          "band": "ACTIONABLE_NOW",
+          "factor": "conversion_readiness"
+        },
+        {
+          "band": "HIGH",
+          "factor": "titmas_relevance"
+        },
+        {
+          "band": "HIGH",
+          "factor": "actionability"
+        },
+        {
+          "band": "HIGH",
+          "factor": "pain_explicitness"
+        },
+        {
+          "band": "HIGH",
+          "factor": "expected_learning"
+        },
+        {
+          "band": "HIGH",
+          "factor": "freshness"
+        },
+        {
+          "band": "HIGH",
+          "factor": "evidence_quality"
+        },
+        {
+          "band": "NEEDS_REVIEW",
+          "factor": "potential_value"
+        },
+        {
+          "band": "NEEDS_REVIEW",
+          "factor": "effort"
+        }
+      ],
+      "pain_classifications": [
+        {
+          "classification": "AGENT_AUTHORIZATION",
+          "evidence_snippet": "feat: tiered agent authorization roles and sub-agent scope inheritance summary agents currently receive a fixed set of hub api scopes with no mechanism for project admins or user roles to constrain…",
+          "matched_keywords": [
+            "agent authorization",
+            "permission"
+          ]
+        }
+      ],
+      "pain_point": "feat: tiered agent authorization roles and sub-agent scope inheritance: feat: tiered agent authorization roles and sub-agent scope inheritance summary agents currently receive a fixed set of hub api scopes with no mechanism for project admins or user roles to constrain…",
+      "priority_position": 2,
+      "query_ids": [
+        "Q-AGENT-AUTHORIZATION"
+      ],
+      "ranking_factors": {
+        "actionability": {
+          "band": "HIGH",
+          "evidence": [
+            "OPEN_PUBLIC_COMMENT_ENTRY",
+            "https://github.com/ptone/scion/issues/482"
+          ],
+          "reason": "Conversion readiness is ACTIONABLE_NOW; this classification does not authorize external action."
+        },
+        "effort": {
+          "band": "NEEDS_REVIEW",
+          "evidence": [
+
+          ],
+          "reason": "Repository code and contribution scope were not inspected."
+        },
+        "evidence_quality": {
+          "band": "HIGH",
+          "evidence": [
+            "https://github.com/ptone/scion/issues/482",
+            "body_characters=1090",
+            "OWNER"
+          ],
+          "reason": "Public source metadata and a bounded source excerpt are available."
+        },
+        "expected_learning": {
+          "band": "HIGH",
+          "evidence": [
+            "agent authorization"
+          ],
+          "reason": "A bounded contribution could test existing components; actual scope needs policy-selected review."
+        },
+        "freshness": {
+          "band": "HIGH",
+          "evidence": [
+            "2026-07-27T18:19:52Z"
+          ],
+          "reason": "Source was updated 6 day(s) before the run date."
+        },
+        "pain_explicitness": {
+          "band": "HIGH",
+          "evidence": [
+            "feat: tiered agent authorization roles and sub-agent scope inheritance summary agents currently receive a fixed set of hub api scopes with no mechanism for project admins or user roles to constrain…"
+          ],
+          "reason": "Source body length and explicit matched pain terms are reviewable."
+        },
+        "potential_value": {
+          "band": "NEEDS_REVIEW",
+          "evidence": [
+            "https://github.com/ptone/scion/issues/482"
+          ],
+          "reason": "The Issue record does not establish adoption, collaboration, reputation, or revenue value."
+        },
+        "titmas_relevance": {
+          "band": "HIGH",
+          "evidence": [
+            "feat: tiered agent authorization roles and sub-agent scope inheritance summary agents currently receive a fixed set of hub api scopes with no mechanism for project admins or user roles to constrain…",
+            "feat: tiered agent authorization roles and sub-agent scope inheritance summary agents currently receive a fixed set of hub api scopes with no mechanism for project admins or user roles to constrain…"
+          ],
+          "reason": "2 bounded role mapping(s); direct title terms: agent authorization."
+        }
+      },
+      "ranking_status": "NEEDS_REVIEW",
+      "repository": "ptone/scion",
+      "retention_reason": "Retained because the public entry is open, unlocked, fresh, and maps AGENT_AUTHORIZATION to existing bounded TITMAS roles; all acceptance and value claims remain unconfirmed.",
+      "source_evidence_excerpt": "feat: tiered agent authorization roles and sub-agent scope inheritance summary agents currently receive a fixed set of hub api scopes with no mechanism for project admins or user roles to constrain…",
+      "source_type": "GITHUB_ISSUE",
+      "state": "OPEN",
+      "success_probability": null,
+      "title": "feat: tiered agent authorization roles and sub-agent scope inheritance",
+      "unconfirmed_facts": [
+        "maintainer_interest",
+        "contribution_acceptance",
+        "current_unresolved_scope_beyond_open_state",
+        "implementation_effort",
+        "customer_demand",
+        "commercial_budget_or_value",
+        "legal_and_license_fit"
+      ],
+      "updated_at": "2026-07-27T18:19:52Z",
+      "url": "https://github.com/ptone/scion/issues/482"
+    },
+    {
+      "action_entry": {
+        "entry_type": "GITHUB_ISSUE",
+        "is_locked": false,
+        "public_url": "https://github.com/rossoctl/rossoctl/issues/2331",
+        "state": "OPEN"
+      },
+      "action_pack": {
+        "estimated_effort": "NEEDS_REVIEW",
+        "external_action_authorized": false,
+        "human_exception_decisions_required": [
+
+        ],
+        "key_risks": [
+          "Keyword mapping can overstate relevance and is unvalidated.",
+          "Open state does not imply permission to implement or contact anyone.",
+          "Effort, license, and security facts require evidence; legal, payment, identity, privacy, deletion, and account-security exceptions require human review.",
+          "Source freshness is limited to updated_at=2026-07-31T16:54:10Z."
+        ],
+        "minimum_contribution": "Prepare an evidence-backed scope question and a bounded component-mapping note for Agent Review Quorum; do not post automatically.",
+        "opportunity_summary": "Agent-to-agent authorization: topology allowlist + Istio ambient identity (blocked on ADR-0003/MultiAgent)",
+        "original_source": "https://github.com/rossoctl/rossoctl/issues/2331",
+        "pain_point": "Agent-to-agent authorization: topology allowlist + Istio ambient identity (blocked on ADR-0003/MultiAgent): agent-to-agent authorization: topology allowlist + istio ambient identity (blocked on adr-0003/multiagent) summary track the deferred agent-to-agent authorization work that was descoped from epic…",
+        "possible_acceptance_reasons": [
+          "The public source states a problem aligned with AGENT_AUTHORIZATION.",
+          "A bounded existing component role may support a small, reviewable contribution."
+        ],
+        "possible_rejection_reasons": [
+          "Maintainer interest and preferred contribution path are unconfirmed.",
+          "The mapped TITMAS role may not fit repository architecture or scope.",
+          "A similar fix may already exist outside the retrieved Issue record."
+        ],
+        "reusable_components": [
+          {
+            "bounded_role": "bounded intent, action, and result semantics",
+            "capability_id": "AGENT_INTENT_PROTOCOL",
+            "mapping_evidence": "agent-to-agent authorization: topology allowlist + istio ambient identity (blocked on adr-0003/multiagent) summary track the deferred agent-to-agent authorization work that was descoped from epic…",
+            "repository": "joy7758/agent-intent-protocol"
+          },
+          {
+            "bounded_role": "runtime policy, permission, and execution constraints",
+            "capability_id": "TOKEN_GOVERNOR",
+            "mapping_evidence": "agent-to-agent authorization: topology allowlist + istio ambient identity (blocked on adr-0003/multiagent) summary track the deferred agent-to-agent authorization work that was descoped from epic…",
+            "repository": "joy7758/token-governor"
+          }
+        ],
+        "suggested_action_type": "COMMENT"
+      },
+      "actionability_classification": {
+        "classification": "ACTIONABLE_NOW",
+        "evidence": {
+          "assignees": [
+
+          ],
+          "comments_count": 0,
+          "is_locked": false,
+          "labels": [
+            "Identity",
+            "enhancement"
+          ],
+          "source": "https://github.com/rossoctl/rossoctl/issues/2331",
+          "state": "OPEN"
+        },
+        "external_action_authorized": false,
+        "reason_code": "OPEN_PUBLIC_COMMENT_ENTRY"
+      },
+      "assignees": [
+
+      ],
+      "author": "mrsabath",
+      "author_association": "CONTRIBUTOR",
+      "capability_mappings": [
+        {
+          "bounded_role": "bounded intent, action, and result semantics",
+          "capability_id": "AGENT_INTENT_PROTOCOL",
+          "evidence_snippet": "agent-to-agent authorization: topology allowlist + istio ambient identity (blocked on adr-0003/multiagent) summary track the deferred agent-to-agent authorization work that was descoped from epic…",
+          "matched_keywords": [
+            "agent authorization"
+          ],
+          "repository": "joy7758/agent-intent-protocol"
+        },
+        {
+          "bounded_role": "runtime policy, permission, and execution constraints",
+          "capability_id": "TOKEN_GOVERNOR",
+          "evidence_snippet": "agent-to-agent authorization: topology allowlist + istio ambient identity (blocked on adr-0003/multiagent) summary track the deferred agent-to-agent authorization work that was descoped from epic…",
+          "matched_keywords": [
+            "agent authorization"
+          ],
+          "repository": "joy7758/token-governor"
+        }
+      ],
+      "comments_count": 0,
+      "created_at": "2026-07-31T16:54:10Z",
+      "heuristic_model": "heuristic_unvalidated_v0.1",
+      "heuristic_unvalidated": true,
+      "id": "I_kwDOOPwIa88AAAABK-lbYA",
+      "is_locked": false,
+      "is_pull_request": false,
+      "labels": [
+        "enhancement",
+        "Identity"
+      ],
+      "number": 2331,
+      "ordering_basis": [
+        {
+          "band": "ACTIONABLE_NOW",
+          "factor": "conversion_readiness"
+        },
+        {
+          "band": "HIGH",
+          "factor": "titmas_relevance"
+        },
+        {
+          "band": "HIGH",
+          "factor": "actionability"
+        },
+        {
+          "band": "HIGH",
+          "factor": "pain_explicitness"
+        },
+        {
+          "band": "HIGH",
+          "factor": "expected_learning"
+        },
+        {
+          "band": "HIGH",
+          "factor": "freshness"
+        },
+        {
+          "band": "HIGH",
+          "factor": "evidence_quality"
+        },
+        {
+          "band": "NEEDS_REVIEW",
+          "factor": "potential_value"
+        },
+        {
+          "band": "NEEDS_REVIEW",
+          "factor": "effort"
+        }
+      ],
+      "pain_classifications": [
+        {
+          "classification": "AGENT_AUTHORIZATION",
+          "evidence_snippet": "agent-to-agent authorization: topology allowlist + istio ambient identity (blocked on adr-0003/multiagent) summary track the deferred agent-to-agent authorization work that was descoped from epic…",
+          "matched_keywords": [
+            "agent authorization"
+          ]
+        }
+      ],
+      "pain_point": "Agent-to-agent authorization: topology allowlist + Istio ambient identity (blocked on ADR-0003/MultiAgent): agent-to-agent authorization: topology allowlist + istio ambient identity (blocked on adr-0003/multiagent) summary track the deferred agent-to-agent authorization work that was descoped from epic…",
+      "priority_position": 3,
+      "query_ids": [
+        "Q-AGENT-AUTHORIZATION"
+      ],
+      "ranking_factors": {
+        "actionability": {
+          "band": "HIGH",
+          "evidence": [
+            "OPEN_PUBLIC_COMMENT_ENTRY",
+            "https://github.com/rossoctl/rossoctl/issues/2331"
+          ],
+          "reason": "Conversion readiness is ACTIONABLE_NOW; this classification does not authorize external action."
+        },
+        "effort": {
+          "band": "NEEDS_REVIEW",
+          "evidence": [
+
+          ],
+          "reason": "Repository code and contribution scope were not inspected."
+        },
+        "evidence_quality": {
+          "band": "HIGH",
+          "evidence": [
+            "https://github.com/rossoctl/rossoctl/issues/2331",
+            "body_characters=3033",
+            "CONTRIBUTOR"
+          ],
+          "reason": "Public source metadata and a bounded source excerpt are available."
+        },
+        "expected_learning": {
+          "band": "HIGH",
+          "evidence": [
+            "policy",
+            "agent authorization"
+          ],
+          "reason": "A bounded contribution could test existing components; actual scope needs policy-selected review."
+        },
+        "freshness": {
+          "band": "HIGH",
+          "evidence": [
+            "2026-07-31T16:54:10Z"
+          ],
+          "reason": "Source was updated 2 day(s) before the run date."
+        },
+        "pain_explicitness": {
+          "band": "HIGH",
+          "evidence": [
+            "agent-to-agent authorization: topology allowlist + istio ambient identity (blocked on adr-0003/multiagent) summary track the deferred agent-to-agent authorization work that was descoped from epic…"
+          ],
+          "reason": "Source body length and explicit matched pain terms are reviewable."
+        },
+        "potential_value": {
+          "band": "NEEDS_REVIEW",
+          "evidence": [
+            "https://github.com/rossoctl/rossoctl/issues/2331"
+          ],
+          "reason": "The Issue record does not establish adoption, collaboration, reputation, or revenue value."
+        },
+        "titmas_relevance": {
+          "band": "HIGH",
+          "evidence": [
+            "agent-to-agent authorization: topology allowlist + istio ambient identity (blocked on adr-0003/multiagent) summary track the deferred agent-to-agent authorization work that was descoped from epic…",
+            "agent-to-agent authorization: topology allowlist + istio ambient identity (blocked on adr-0003/multiagent) summary track the deferred agent-to-agent authorization work that was descoped from epic…"
+          ],
+          "reason": "2 bounded role mapping(s); direct title terms: agent authorization."
+        }
+      },
+      "ranking_status": "NEEDS_REVIEW",
+      "repository": "rossoctl/rossoctl",
+      "retention_reason": "Retained because the public entry is open, unlocked, fresh, and maps AGENT_AUTHORIZATION to existing bounded TITMAS roles; all acceptance and value claims remain unconfirmed.",
+      "source_evidence_excerpt": "agent-to-agent authorization: topology allowlist + istio ambient identity (blocked on adr-0003/multiagent) summary track the deferred agent-to-agent authorization work that was descoped from epic…",
+      "source_type": "GITHUB_ISSUE",
+      "state": "OPEN",
+      "success_probability": null,
+      "title": "Agent-to-agent authorization: topology allowlist + Istio ambient identity (blocked on ADR-0003/MultiAgent)",
+      "unconfirmed_facts": [
+        "maintainer_interest",
+        "contribution_acceptance",
+        "current_unresolved_scope_beyond_open_state",
+        "implementation_effort",
+        "customer_demand",
+        "commercial_budget_or_value",
+        "legal_and_license_fit"
+      ],
+      "updated_at": "2026-07-31T16:54:10Z",
+      "url": "https://github.com/rossoctl/rossoctl/issues/2331"
+    },
+    {
+      "action_entry": {
+        "entry_type": "GITHUB_ISSUE",
+        "is_locked": false,
+        "public_url": "https://github.com/OWASP/CheatSheetSeries/issues/2313",
+        "state": "OPEN"
+      },
+      "action_pack": {
+        "estimated_effort": "NEEDS_REVIEW",
+        "external_action_authorized": false,
+        "human_exception_decisions_required": [
+
+        ],
+        "key_risks": [
+          "Keyword mapping can overstate relevance and is unvalidated.",
+          "Open state does not imply permission to implement or contact anyone.",
+          "Effort, license, and security facts require evidence; legal, payment, identity, privacy, deletion, and account-security exceptions require human review.",
+          "Source freshness is limited to updated_at=2026-07-29T09:21:49Z."
+        ],
+        "minimum_contribution": "Prepare an evidence-backed scope question and a bounded component-mapping note for Agent Review Quorum; do not post automatically.",
+        "opportunity_summary": "Proposal: Verifying Third-Party Agent Execution Evidence Cheat Sheet",
+        "original_source": "https://github.com/OWASP/CheatSheetSeries/issues/2313",
+        "pain_point": "Proposal: Verifying Third-Party Agent Execution Evidence Cheat Sheet: proposal: verifying third-party agent execution evidence cheat sheet i would like to propose a short cheat sheet, and i would rather check the idea here before writing anything. when a team adopts…",
+        "possible_acceptance_reasons": [
+          "The public source states a problem aligned with EXECUTION_EVIDENCE.",
+          "A bounded existing component role may support a small, reviewable contribution."
+        ],
+        "possible_rejection_reasons": [
+          "Maintainer interest and preferred contribution path are unconfirmed.",
+          "The mapped TITMAS role may not fit repository architecture or scope.",
+          "A similar fix may already exist outside the retrieved Issue record."
+        ],
+        "reusable_components": [
+          {
+            "bounded_role": "execution evidence packaging and offline verification",
+            "capability_id": "AGENT_EVIDENCE",
+            "mapping_evidence": "proposal: verifying third-party agent execution evidence cheat sheet i would like to propose a short cheat sheet, and i would rather check the idea here before writing anything. when a team adopts…",
+            "repository": "joy7758/agent-evidence"
+          },
+          {
+            "bounded_role": "post-execution audit and replay-oriented review",
+            "capability_id": "ARO_AUDIT",
+            "mapping_evidence": "that. for disclosure: i maintain in-toto/attestation 570 and its conformance suite, so i have an interest here. happy to be told it is out of scope.",
+            "repository": "joy7758/aro-audit"
+          },
+          {
+            "bounded_role": "execution-integrity reference work",
+            "capability_id": "FDO_KERNEL_MVK",
+            "mapping_evidence": "co-author, i would prefer that. for disclosure: i maintain in-toto/attestation 570 and its conformance suite, so i have an interest here. happy to be told it is out of scope.",
+            "repository": "joy7758/fdo-kernel-mvk"
+          }
+        ],
+        "suggested_action_type": "COMMENT"
+      },
+      "actionability_classification": {
+        "classification": "ACTIONABLE_NOW",
+        "evidence": {
+          "assignees": [
+
+          ],
+          "comments_count": 1,
+          "is_locked": false,
+          "labels": [
+
+          ],
+          "source": "https://github.com/OWASP/CheatSheetSeries/issues/2313",
+          "state": "OPEN"
+        },
+        "external_action_authorized": false,
+        "reason_code": "OPEN_PUBLIC_COMMENT_ENTRY"
+      },
+      "assignees": [
+
+      ],
+      "author": "astrogilda",
+      "author_association": "NONE",
+      "capability_mappings": [
+        {
+          "bounded_role": "execution evidence packaging and offline verification",
+          "capability_id": "AGENT_EVIDENCE",
+          "evidence_snippet": "proposal: verifying third-party agent execution evidence cheat sheet i would like to propose a short cheat sheet, and i would rather check the idea here before writing anything. when a team adopts…",
+          "matched_keywords": [
+            "execution evidence"
+          ],
+          "repository": "joy7758/agent-evidence"
+        },
+        {
+          "bounded_role": "post-execution audit and replay-oriented review",
+          "capability_id": "ARO_AUDIT",
+          "evidence_snippet": "that. for disclosure: i maintain in-toto/attestation 570 and its conformance suite, so i have an interest here. happy to be told it is out of scope.",
+          "matched_keywords": [
+            "conformance"
+          ],
+          "repository": "joy7758/aro-audit"
+        },
+        {
+          "bounded_role": "execution-integrity reference work",
+          "capability_id": "FDO_KERNEL_MVK",
+          "evidence_snippet": "co-author, i would prefer that. for disclosure: i maintain in-toto/attestation 570 and its conformance suite, so i have an interest here. happy to be told it is out of scope.",
+          "matched_keywords": [
+            "attestation"
+          ],
+          "repository": "joy7758/fdo-kernel-mvk"
+        }
+      ],
+      "comments_count": 1,
+      "created_at": "2026-07-28T22:11:36Z",
+      "heuristic_model": "heuristic_unvalidated_v0.1",
+      "heuristic_unvalidated": true,
+      "id": "I_kwDOCbL1IM8AAAABKjnktg",
+      "is_locked": false,
+      "is_pull_request": false,
+      "labels": [
+
+      ],
+      "number": 2313,
+      "ordering_basis": [
+        {
+          "band": "ACTIONABLE_NOW",
+          "factor": "conversion_readiness"
+        },
+        {
+          "band": "HIGH",
+          "factor": "titmas_relevance"
+        },
+        {
+          "band": "HIGH",
+          "factor": "actionability"
+        },
+        {
+          "band": "HIGH",
+          "factor": "pain_explicitness"
+        },
+        {
+          "band": "HIGH",
+          "factor": "expected_learning"
+        },
+        {
+          "band": "HIGH",
+          "factor": "freshness"
+        },
+        {
+          "band": "MEDIUM",
+          "factor": "evidence_quality"
+        },
+        {
+          "band": "NEEDS_REVIEW",
+          "factor": "potential_value"
+        },
+        {
+          "band": "NEEDS_REVIEW",
+          "factor": "effort"
+        }
+      ],
+      "pain_classifications": [
+        {
+          "classification": "EXECUTION_EVIDENCE",
+          "evidence_snippet": "proposal: verifying third-party agent execution evidence cheat sheet i would like to propose a short cheat sheet, and i would rather check the idea here before writing anything. when a team adopts…",
+          "matched_keywords": [
+            "execution evidence",
+            "receipt"
+          ]
+        }
+      ],
+      "pain_point": "Proposal: Verifying Third-Party Agent Execution Evidence Cheat Sheet: proposal: verifying third-party agent execution evidence cheat sheet i would like to propose a short cheat sheet, and i would rather check the idea here before writing anything. when a team adopts…",
+      "priority_position": 4,
+      "query_ids": [
+        "Q-EXECUTION-EVIDENCE"
+      ],
+      "ranking_factors": {
+        "actionability": {
+          "band": "HIGH",
+          "evidence": [
+            "OPEN_PUBLIC_COMMENT_ENTRY",
+            "https://github.com/OWASP/CheatSheetSeries/issues/2313"
+          ],
+          "reason": "Conversion readiness is ACTIONABLE_NOW; this classification does not authorize external action."
+        },
+        "effort": {
+          "band": "NEEDS_REVIEW",
+          "evidence": [
+
+          ],
+          "reason": "Repository code and contribution scope were not inspected."
+        },
+        "evidence_quality": {
+          "band": "MEDIUM",
+          "evidence": [
+            "https://github.com/OWASP/CheatSheetSeries/issues/2313",
+            "body_characters=1744",
+            "NONE"
+          ],
+          "reason": "Public source metadata and a bounded source excerpt are available."
+        },
+        "expected_learning": {
+          "band": "HIGH",
+          "evidence": [
+            "test",
+            "audit",
+            "proposal",
+            "execution evidence"
+          ],
+          "reason": "A bounded contribution could test existing components; actual scope needs policy-selected review."
+        },
+        "freshness": {
+          "band": "HIGH",
+          "evidence": [
+            "2026-07-29T09:21:49Z"
+          ],
+          "reason": "Source was updated 4 day(s) before the run date."
+        },
+        "pain_explicitness": {
+          "band": "HIGH",
+          "evidence": [
+            "proposal: verifying third-party agent execution evidence cheat sheet i would like to propose a short cheat sheet, and i would rather check the idea here before writing anything. when a team adopts…"
+          ],
+          "reason": "Source body length and explicit matched pain terms are reviewable."
+        },
+        "potential_value": {
+          "band": "NEEDS_REVIEW",
+          "evidence": [
+            "https://github.com/OWASP/CheatSheetSeries/issues/2313"
+          ],
+          "reason": "The Issue record does not establish adoption, collaboration, reputation, or revenue value."
+        },
+        "titmas_relevance": {
+          "band": "HIGH",
+          "evidence": [
+            "proposal: verifying third-party agent execution evidence cheat sheet i would like to propose a short cheat sheet, and i would rather check the idea here before writing anything. when a team adopts…",
+            "that. for disclosure: i maintain in-toto/attestation 570 and its conformance suite, so i have an interest here. happy to be told it is out of scope.",
+            "co-author, i would prefer that. for disclosure: i maintain in-toto/attestation 570 and its conformance suite, so i have an interest here. happy to be told it is out of scope."
+          ],
+          "reason": "3 bounded role mapping(s); direct title terms: execution evidence."
+        }
+      },
+      "ranking_status": "NEEDS_REVIEW",
+      "repository": "OWASP/CheatSheetSeries",
+      "retention_reason": "Retained because the public entry is open, unlocked, fresh, and maps EXECUTION_EVIDENCE to existing bounded TITMAS roles; all acceptance and value claims remain unconfirmed.",
+      "source_evidence_excerpt": "proposal: verifying third-party agent execution evidence cheat sheet i would like to propose a short cheat sheet, and i would rather check the idea here before writing anything. when a team adopts…",
+      "source_type": "GITHUB_ISSUE",
+      "state": "OPEN",
+      "success_probability": null,
+      "title": "Proposal: Verifying Third-Party Agent Execution Evidence Cheat Sheet",
+      "unconfirmed_facts": [
+        "maintainer_interest",
+        "contribution_acceptance",
+        "current_unresolved_scope_beyond_open_state",
+        "implementation_effort",
+        "customer_demand",
+        "commercial_budget_or_value",
+        "legal_and_license_fit"
+      ],
+      "updated_at": "2026-07-29T09:21:49Z",
+      "url": "https://github.com/OWASP/CheatSheetSeries/issues/2313"
+    },
+    {
+      "action_entry": {
+        "entry_type": "GITHUB_ISSUE",
+        "is_locked": false,
+        "public_url": "https://github.com/nextlevelbuilder/goclaw/issues/1217",
+        "state": "OPEN"
+      },
+      "action_pack": {
+        "estimated_effort": "NEEDS_REVIEW",
+        "external_action_authorized": false,
+        "human_exception_decisions_required": [
+
+        ],
+        "key_risks": [
+          "Keyword mapping can overstate relevance and is unvalidated.",
+          "Open state does not imply permission to implement or contact anyone.",
+          "Effort, license, and security facts require evidence; legal, payment, identity, privacy, deletion, and account-security exceptions require human review.",
+          "Source freshness is limited to updated_at=2026-07-12T14:24:49Z."
+        ],
+        "minimum_contribution": "Prepare an evidence-backed scope question and a bounded component-mapping note for Agent Review Quorum; do not post automatically.",
+        "opportunity_summary": "[Security] Cross-Agent Authorization Bypass in /v1/tools/invoke Allows Unauthorized Cron Binding to Foreign Agents",
+        "original_source": "https://github.com/nextlevelbuilder/goclaw/issues/1217",
+        "pain_point": "[Security] Cross-Agent Authorization Bypass in /v1/tools/invoke Allows Unauthorized Cron Binding to Foreign Agents: [security] cross-agent authorization bypass in /v1/tools/invoke allows unauthorized cron binding to foreign agents advisory details title : cross-agent authorization bypass in /v1/tools/invoke…",
+        "possible_acceptance_reasons": [
+          "The public source states a problem aligned with AGENT_AUTHORIZATION.",
+          "A bounded existing component role may support a small, reviewable contribution."
+        ],
+        "possible_rejection_reasons": [
+          "Maintainer interest and preferred contribution path are unconfirmed.",
+          "The mapped TITMAS role may not fit repository architecture or scope.",
+          "A similar fix may already exist outside the retrieved Issue record."
+        ],
+        "reusable_components": [
+          {
+            "bounded_role": "bounded intent, action, and result semantics",
+            "capability_id": "AGENT_INTENT_PROTOCOL",
+            "mapping_evidence": "[security] cross-agent authorization bypass in /v1/tools/invoke allows unauthorized cron binding to foreign agents advisory details title : cross-agent authorization bypass in /v1/tools/invoke…",
+            "repository": "joy7758/agent-intent-protocol"
+          },
+          {
+            "bounded_role": "runtime policy, permission, and execution constraints",
+            "capability_id": "TOKEN_GOVERNOR",
+            "mapping_evidence": "[security] cross-agent authorization bypass in /v1/tools/invoke allows unauthorized cron binding to foreign agents advisory details title : cross-agent authorization bypass in /v1/tools/invoke…",
+            "repository": "joy7758/token-governor"
+          }
+        ],
+        "suggested_action_type": "COMMENT"
+      },
+      "actionability_classification": {
+        "classification": "ACTIONABLE_NOW",
+        "evidence": {
+          "assignees": [
+
+          ],
+          "comments_count": 3,
+          "is_locked": false,
+          "labels": [
+            "P1-high",
+            "agent:github-maintain",
+            "area:security",
+            "maintain:triaged",
+            "status:blocked"
+          ],
+          "source": "https://github.com/nextlevelbuilder/goclaw/issues/1217",
+          "state": "OPEN"
+        },
+        "external_action_authorized": false,
+        "reason_code": "OPEN_PUBLIC_COMMENT_ENTRY"
+      },
+      "assignees": [
+
+      ],
+      "author": "YLChen-007",
+      "author_association": "NONE",
+      "capability_mappings": [
+        {
+          "bounded_role": "bounded intent, action, and result semantics",
+          "capability_id": "AGENT_INTENT_PROTOCOL",
+          "evidence_snippet": "[security] cross-agent authorization bypass in /v1/tools/invoke allows unauthorized cron binding to foreign agents advisory details title : cross-agent authorization bypass in /v1/tools/invoke…",
+          "matched_keywords": [
+            "agent authorization"
+          ],
+          "repository": "joy7758/agent-intent-protocol"
+        },
+        {
+          "bounded_role": "runtime policy, permission, and execution constraints",
+          "capability_id": "TOKEN_GOVERNOR",
+          "evidence_snippet": "[security] cross-agent authorization bypass in /v1/tools/invoke allows unauthorized cron binding to foreign agents advisory details title : cross-agent authorization bypass in /v1/tools/invoke…",
+          "matched_keywords": [
+            "agent authorization"
+          ],
+          "repository": "joy7758/token-governor"
+        }
+      ],
+      "comments_count": 3,
+      "created_at": "2026-06-12T07:12:06Z",
+      "heuristic_model": "heuristic_unvalidated_v0.1",
+      "heuristic_unvalidated": true,
+      "id": "I_kwDORV5mps8AAAABFP5-Sw",
+      "is_locked": false,
+      "is_pull_request": false,
+      "labels": [
+        "P1-high",
+        "area:security",
+        "status:blocked",
+        "agent:github-maintain",
+        "maintain:triaged"
+      ],
+      "number": 1217,
+      "ordering_basis": [
+        {
+          "band": "ACTIONABLE_NOW",
+          "factor": "conversion_readiness"
+        },
+        {
+          "band": "HIGH",
+          "factor": "titmas_relevance"
+        },
+        {
+          "band": "HIGH",
+          "factor": "actionability"
+        },
+        {
+          "band": "HIGH",
+          "factor": "pain_explicitness"
+        },
+        {
+          "band": "HIGH",
+          "factor": "expected_learning"
+        },
+        {
+          "band": "MEDIUM",
+          "factor": "freshness"
+        },
+        {
+          "band": "HIGH",
+          "factor": "evidence_quality"
+        },
+        {
+          "band": "NEEDS_REVIEW",
+          "factor": "potential_value"
+        },
+        {
+          "band": "NEEDS_REVIEW",
+          "factor": "effort"
+        }
+      ],
+      "pain_classifications": [
+        {
+          "classification": "AGENT_AUTHORIZATION",
+          "evidence_snippet": "[security] cross-agent authorization bypass in /v1/tools/invoke allows unauthorized cron binding to foreign agents advisory details title : cross-agent authorization bypass in /v1/tools/invoke…",
+          "matched_keywords": [
+            "agent authorization"
+          ]
+        }
+      ],
+      "pain_point": "[Security] Cross-Agent Authorization Bypass in /v1/tools/invoke Allows Unauthorized Cron Binding to Foreign Agents: [security] cross-agent authorization bypass in /v1/tools/invoke allows unauthorized cron binding to foreign agents advisory details title : cross-agent authorization bypass in /v1/tools/invoke…",
+      "priority_position": 5,
+      "query_ids": [
+        "Q-AGENT-AUTHORIZATION"
+      ],
+      "ranking_factors": {
+        "actionability": {
+          "band": "HIGH",
+          "evidence": [
+            "OPEN_PUBLIC_COMMENT_ENTRY",
+            "https://github.com/nextlevelbuilder/goclaw/issues/1217"
+          ],
+          "reason": "Conversion readiness is ACTIONABLE_NOW; this classification does not authorize external action."
+        },
+        "effort": {
+          "band": "NEEDS_REVIEW",
+          "evidence": [
+
+          ],
+          "reason": "Repository code and contribution scope were not inspected."
+        },
+        "evidence_quality": {
+          "band": "HIGH",
+          "evidence": [
+            "https://github.com/nextlevelbuilder/goclaw/issues/1217",
+            "body_characters=6017",
+            "NONE"
+          ],
+          "reason": "Public source metadata and a bounded source excerpt are available."
+        },
+        "expected_learning": {
+          "band": "HIGH",
+          "evidence": [
+            "test",
+            "security",
+            "agent authorization"
+          ],
+          "reason": "A bounded contribution could test existing components; actual scope needs policy-selected review."
+        },
+        "freshness": {
+          "band": "MEDIUM",
+          "evidence": [
+            "2026-07-12T14:24:49Z"
+          ],
+          "reason": "Source was updated 21 day(s) before the run date."
+        },
+        "pain_explicitness": {
+          "band": "HIGH",
+          "evidence": [
+            "[security] cross-agent authorization bypass in /v1/tools/invoke allows unauthorized cron binding to foreign agents advisory details title : cross-agent authorization bypass in /v1/tools/invoke…"
+          ],
+          "reason": "Source body length and explicit matched pain terms are reviewable."
+        },
+        "potential_value": {
+          "band": "NEEDS_REVIEW",
+          "evidence": [
+            "https://github.com/nextlevelbuilder/goclaw/issues/1217"
+          ],
+          "reason": "The Issue record does not establish adoption, collaboration, reputation, or revenue value."
+        },
+        "titmas_relevance": {
+          "band": "HIGH",
+          "evidence": [
+            "[security] cross-agent authorization bypass in /v1/tools/invoke allows unauthorized cron binding to foreign agents advisory details title : cross-agent authorization bypass in /v1/tools/invoke…",
+            "[security] cross-agent authorization bypass in /v1/tools/invoke allows unauthorized cron binding to foreign agents advisory details title : cross-agent authorization bypass in /v1/tools/invoke…"
+          ],
+          "reason": "2 bounded role mapping(s); direct title terms: agent authorization."
+        }
+      },
+      "ranking_status": "NEEDS_REVIEW",
+      "repository": "nextlevelbuilder/goclaw",
+      "retention_reason": "Retained because the public entry is open, unlocked, fresh, and maps AGENT_AUTHORIZATION to existing bounded TITMAS roles; all acceptance and value claims remain unconfirmed.",
+      "source_evidence_excerpt": "[security] cross-agent authorization bypass in /v1/tools/invoke allows unauthorized cron binding to foreign agents advisory details title : cross-agent authorization bypass in /v1/tools/invoke…",
+      "source_type": "GITHUB_ISSUE",
+      "state": "OPEN",
+      "success_probability": null,
+      "title": "[Security] Cross-Agent Authorization Bypass in `/v1/tools/invoke` Allows Unauthorized Cron Binding to Foreign Agents",
+      "unconfirmed_facts": [
+        "maintainer_interest",
+        "contribution_acceptance",
+        "current_unresolved_scope_beyond_open_state",
+        "implementation_effort",
+        "customer_demand",
+        "commercial_budget_or_value",
+        "legal_and_license_fit"
+      ],
+      "updated_at": "2026-07-12T14:24:49Z",
+      "url": "https://github.com/nextlevelbuilder/goclaw/issues/1217"
+    }
+  ],
+  "opportunity_selection": {
+    "conversion_queue": [
+      {
+        "action_entry": {
+          "entry_type": "GITHUB_ISSUE",
+          "is_locked": false,
+          "public_url": "https://github.com/praxis-proxy/ai/issues/194",
+          "state": "OPEN"
+        },
+        "actionability_classification": {
+          "classification": "ACTIONABLE_NOW",
+          "evidence": {
+            "assignees": [
+
+            ],
+            "comments_count": 0,
+            "is_locked": false,
+            "labels": [
+              "enhancement"
+            ],
+            "source": "https://github.com/praxis-proxy/ai/issues/194",
+            "state": "OPEN"
+          },
+          "external_action_authorized": false,
+          "reason_code": "OPEN_PUBLIC_COMMENT_ENTRY"
+        },
+        "assignees": [
+
+        ],
+        "author": "shaneutt",
+        "author_association": "MEMBER",
+        "capability_mappings": [
+          {
+            "bounded_role": "execution evidence packaging and offline verification",
+            "capability_id": "AGENT_EVIDENCE",
+            "evidence_snippet": "agent audit trail and observability every agent action through the gateway produces an auditable record. full task lifecycle tracing across the grid. scope - propagate opentelemetry trace context…",
+            "matched_keywords": [
+              "audit trail"
+            ],
+            "repository": "joy7758/agent-evidence"
+          },
+          {
+            "bounded_role": "bounded intent, action, and result semantics",
+            "capability_id": "AGENT_INTENT_PROTOCOL",
+            "evidence_snippet": "agent audit trail and observability every agent action through the gateway produces an auditable record. full task lifecycle tracing across the grid. scope - propagate opentelemetry trace context…",
+            "matched_keywords": [
+              "agent action"
+            ],
+            "repository": "joy7758/agent-intent-protocol"
+          },
+          {
+            "bounded_role": "post-execution audit and replay-oriented review",
+            "capability_id": "ARO_AUDIT",
+            "evidence_snippet": "agent audit trail and observability every agent action through the gateway produces an auditable record. full task lifecycle tracing across the grid. scope - propagate opentelemetry trace context…",
+            "matched_keywords": [
+              "agent audit",
+              "audit trail"
+            ],
+            "repository": "joy7758/aro-audit"
+          }
+        ],
+        "comments_count": 0,
+        "created_at": "2026-06-22T19:09:44Z",
+        "heuristic_model": "heuristic_unvalidated_v0.1",
+        "heuristic_unvalidated": true,
+        "id": "I_kwDOTJ5-zM8AAAABHXJduA",
+        "is_locked": false,
+        "is_pull_request": false,
+        "labels": [
+          "enhancement"
+        ],
+        "number": 194,
+        "ordering_basis": [
+          {
+            "band": "ACTIONABLE_NOW",
+            "factor": "conversion_readiness"
+          },
+          {
+            "band": "HIGH",
+            "factor": "titmas_relevance"
+          },
+          {
+            "band": "HIGH",
+            "factor": "actionability"
+          },
+          {
+            "band": "HIGH",
+            "factor": "pain_explicitness"
+          },
+          {
+            "band": "HIGH",
+            "factor": "expected_learning"
+          },
+          {
+            "band": "HIGH",
+            "factor": "freshness"
+          },
+          {
+            "band": "HIGH",
+            "factor": "evidence_quality"
+          },
+          {
+            "band": "NEEDS_REVIEW",
+            "factor": "potential_value"
+          },
+          {
+            "band": "NEEDS_REVIEW",
+            "factor": "effort"
+          }
+        ],
+        "pain_classifications": [
+          {
+            "classification": "AI_AGENT_AUDIT",
+            "evidence_snippet": "agent audit trail and observability every agent action through the gateway produces an auditable record. full task lifecycle tracing across the grid. scope - propagate opentelemetry trace context…",
+            "matched_keywords": [
+              "agent audit",
+              "audit trail"
+            ]
+          }
+        ],
+        "pain_point": "Agent audit trail and observability: agent audit trail and observability every agent action through the gateway produces an auditable record. full task lifecycle tracing across the grid. scope - propagate opentelemetry trace context…",
+        "priority_position": 1,
+        "query_ids": [
+          "Q-AI-AGENT-AUDIT"
+        ],
+        "ranking_factors": {
+          "actionability": {
+            "band": "HIGH",
+            "evidence": [
+              "OPEN_PUBLIC_COMMENT_ENTRY",
+              "https://github.com/praxis-proxy/ai/issues/194"
+            ],
+            "reason": "Conversion readiness is ACTIONABLE_NOW; this classification does not authorize external action."
+          },
+          "effort": {
+            "band": "NEEDS_REVIEW",
+            "evidence": [
+
+            ],
+            "reason": "Repository code and contribution scope were not inspected."
+          },
+          "evidence_quality": {
+            "band": "HIGH",
+            "evidence": [
+              "https://github.com/praxis-proxy/ai/issues/194",
+              "body_characters=679",
+              "MEMBER"
+            ],
+            "reason": "Public source metadata and a bounded source excerpt are available."
+          },
+          "expected_learning": {
+            "band": "HIGH",
+            "evidence": [
+              "trace",
+              "audit",
+              "policy",
+              "audit trail"
+            ],
+            "reason": "A bounded contribution could test existing components; actual scope needs policy-selected review."
+          },
+          "freshness": {
+            "band": "HIGH",
+            "evidence": [
+              "2026-07-23T09:23:12Z"
+            ],
+            "reason": "Source was updated 10 day(s) before the run date."
+          },
+          "pain_explicitness": {
+            "band": "HIGH",
+            "evidence": [
+              "agent audit trail and observability every agent action through the gateway produces an auditable record. full task lifecycle tracing across the grid. scope - propagate opentelemetry trace context…"
+            ],
+            "reason": "Source body length and explicit matched pain terms are reviewable."
+          },
+          "potential_value": {
+            "band": "NEEDS_REVIEW",
+            "evidence": [
+              "https://github.com/praxis-proxy/ai/issues/194"
+            ],
+            "reason": "The Issue record does not establish adoption, collaboration, reputation, or revenue value."
+          },
+          "titmas_relevance": {
+            "band": "HIGH",
+            "evidence": [
+              "agent audit trail and observability every agent action through the gateway produces an auditable record. full task lifecycle tracing across the grid. scope - propagate opentelemetry trace context…",
+              "agent audit trail and observability every agent action through the gateway produces an auditable record. full task lifecycle tracing across the grid. scope - propagate opentelemetry trace context…",
+              "agent audit trail and observability every agent action through the gateway produces an auditable record. full task lifecycle tracing across the grid. scope - propagate opentelemetry trace context…"
+            ],
+            "reason": "3 bounded role mapping(s); direct title terms: audit trail."
+          }
+        },
+        "ranking_status": "NEEDS_REVIEW",
+        "repository": "praxis-proxy/ai",
+        "source_evidence_excerpt": "agent audit trail and observability every agent action through the gateway produces an auditable record. full task lifecycle tracing across the grid. scope - propagate opentelemetry trace context…",
+        "source_type": "GITHUB_ISSUE",
+        "state": "OPEN",
+        "success_probability": null,
+        "title": "Agent audit trail and observability",
+        "unconfirmed_facts": [
+          "maintainer_interest",
+          "contribution_acceptance",
+          "current_unresolved_scope_beyond_open_state",
+          "implementation_effort",
+          "customer_demand",
+          "commercial_budget_or_value",
+          "legal_and_license_fit"
+        ],
+        "updated_at": "2026-07-23T09:23:12Z",
+        "url": "https://github.com/praxis-proxy/ai/issues/194"
+      },
+      {
+        "action_entry": {
+          "entry_type": "GITHUB_ISSUE",
+          "is_locked": false,
+          "public_url": "https://github.com/ptone/scion/issues/482",
+          "state": "OPEN"
+        },
+        "actionability_classification": {
+          "classification": "ACTIONABLE_NOW",
+          "evidence": {
+            "assignees": [
+
+            ],
+            "comments_count": 5,
+            "is_locked": false,
+            "labels": [
+              "area:auth",
+              "enhancement",
+              "type:feature"
+            ],
+            "source": "https://github.com/ptone/scion/issues/482",
+            "state": "OPEN"
+          },
+          "external_action_authorized": false,
+          "reason_code": "OPEN_PUBLIC_COMMENT_ENTRY"
+        },
+        "assignees": [
+
+        ],
+        "author": "ptone",
+        "author_association": "OWNER",
+        "capability_mappings": [
+          {
+            "bounded_role": "bounded intent, action, and result semantics",
+            "capability_id": "AGENT_INTENT_PROTOCOL",
+            "evidence_snippet": "feat: tiered agent authorization roles and sub-agent scope inheritance summary agents currently receive a fixed set of hub api scopes with no mechanism for project admins or user roles to constrain…",
+            "matched_keywords": [
+              "agent authorization"
+            ],
+            "repository": "joy7758/agent-intent-protocol"
+          },
+          {
+            "bounded_role": "runtime policy, permission, and execution constraints",
+            "capability_id": "TOKEN_GOVERNOR",
+            "evidence_snippet": "feat: tiered agent authorization roles and sub-agent scope inheritance summary agents currently receive a fixed set of hub api scopes with no mechanism for project admins or user roles to constrain…",
+            "matched_keywords": [
+              "agent authorization"
+            ],
+            "repository": "joy7758/token-governor"
+          }
+        ],
+        "comments_count": 5,
+        "created_at": "2026-07-17T04:52:28Z",
+        "heuristic_model": "heuristic_unvalidated_v0.1",
+        "heuristic_unvalidated": true,
+        "id": "I_kwDORvdnm88AAAABJIzJOA",
+        "is_locked": false,
+        "is_pull_request": false,
+        "labels": [
+          "enhancement",
+          "type:feature",
+          "area:auth"
+        ],
+        "number": 482,
+        "ordering_basis": [
+          {
+            "band": "ACTIONABLE_NOW",
+            "factor": "conversion_readiness"
+          },
+          {
+            "band": "HIGH",
+            "factor": "titmas_relevance"
+          },
+          {
+            "band": "HIGH",
+            "factor": "actionability"
+          },
+          {
+            "band": "HIGH",
+            "factor": "pain_explicitness"
+          },
+          {
+            "band": "HIGH",
+            "factor": "expected_learning"
+          },
+          {
+            "band": "HIGH",
+            "factor": "freshness"
+          },
+          {
+            "band": "HIGH",
+            "factor": "evidence_quality"
+          },
+          {
+            "band": "NEEDS_REVIEW",
+            "factor": "potential_value"
+          },
+          {
+            "band": "NEEDS_REVIEW",
+            "factor": "effort"
+          }
+        ],
+        "pain_classifications": [
+          {
+            "classification": "AGENT_AUTHORIZATION",
+            "evidence_snippet": "feat: tiered agent authorization roles and sub-agent scope inheritance summary agents currently receive a fixed set of hub api scopes with no mechanism for project admins or user roles to constrain…",
+            "matched_keywords": [
+              "agent authorization",
+              "permission"
+            ]
+          }
+        ],
+        "pain_point": "feat: tiered agent authorization roles and sub-agent scope inheritance: feat: tiered agent authorization roles and sub-agent scope inheritance summary agents currently receive a fixed set of hub api scopes with no mechanism for project admins or user roles to constrain…",
+        "priority_position": 2,
+        "query_ids": [
+          "Q-AGENT-AUTHORIZATION"
+        ],
+        "ranking_factors": {
+          "actionability": {
+            "band": "HIGH",
+            "evidence": [
+              "OPEN_PUBLIC_COMMENT_ENTRY",
+              "https://github.com/ptone/scion/issues/482"
+            ],
+            "reason": "Conversion readiness is ACTIONABLE_NOW; this classification does not authorize external action."
+          },
+          "effort": {
+            "band": "NEEDS_REVIEW",
+            "evidence": [
+
+            ],
+            "reason": "Repository code and contribution scope were not inspected."
+          },
+          "evidence_quality": {
+            "band": "HIGH",
+            "evidence": [
+              "https://github.com/ptone/scion/issues/482",
+              "body_characters=1090",
+              "OWNER"
+            ],
+            "reason": "Public source metadata and a bounded source excerpt are available."
+          },
+          "expected_learning": {
+            "band": "HIGH",
+            "evidence": [
+              "agent authorization"
+            ],
+            "reason": "A bounded contribution could test existing components; actual scope needs policy-selected review."
+          },
+          "freshness": {
+            "band": "HIGH",
+            "evidence": [
+              "2026-07-27T18:19:52Z"
+            ],
+            "reason": "Source was updated 6 day(s) before the run date."
+          },
+          "pain_explicitness": {
+            "band": "HIGH",
+            "evidence": [
+              "feat: tiered agent authorization roles and sub-agent scope inheritance summary agents currently receive a fixed set of hub api scopes with no mechanism for project admins or user roles to constrain…"
+            ],
+            "reason": "Source body length and explicit matched pain terms are reviewable."
+          },
+          "potential_value": {
+            "band": "NEEDS_REVIEW",
+            "evidence": [
+              "https://github.com/ptone/scion/issues/482"
+            ],
+            "reason": "The Issue record does not establish adoption, collaboration, reputation, or revenue value."
+          },
+          "titmas_relevance": {
+            "band": "HIGH",
+            "evidence": [
+              "feat: tiered agent authorization roles and sub-agent scope inheritance summary agents currently receive a fixed set of hub api scopes with no mechanism for project admins or user roles to constrain…",
+              "feat: tiered agent authorization roles and sub-agent scope inheritance summary agents currently receive a fixed set of hub api scopes with no mechanism for project admins or user roles to constrain…"
+            ],
+            "reason": "2 bounded role mapping(s); direct title terms: agent authorization."
+          }
+        },
+        "ranking_status": "NEEDS_REVIEW",
+        "repository": "ptone/scion",
+        "source_evidence_excerpt": "feat: tiered agent authorization roles and sub-agent scope inheritance summary agents currently receive a fixed set of hub api scopes with no mechanism for project admins or user roles to constrain…",
+        "source_type": "GITHUB_ISSUE",
+        "state": "OPEN",
+        "success_probability": null,
+        "title": "feat: tiered agent authorization roles and sub-agent scope inheritance",
+        "unconfirmed_facts": [
+          "maintainer_interest",
+          "contribution_acceptance",
+          "current_unresolved_scope_beyond_open_state",
+          "implementation_effort",
+          "customer_demand",
+          "commercial_budget_or_value",
+          "legal_and_license_fit"
+        ],
+        "updated_at": "2026-07-27T18:19:52Z",
+        "url": "https://github.com/ptone/scion/issues/482"
+      },
+      {
+        "action_entry": {
+          "entry_type": "GITHUB_ISSUE",
+          "is_locked": false,
+          "public_url": "https://github.com/rossoctl/rossoctl/issues/2331",
+          "state": "OPEN"
+        },
+        "actionability_classification": {
+          "classification": "ACTIONABLE_NOW",
+          "evidence": {
+            "assignees": [
+
+            ],
+            "comments_count": 0,
+            "is_locked": false,
+            "labels": [
+              "Identity",
+              "enhancement"
+            ],
+            "source": "https://github.com/rossoctl/rossoctl/issues/2331",
+            "state": "OPEN"
+          },
+          "external_action_authorized": false,
+          "reason_code": "OPEN_PUBLIC_COMMENT_ENTRY"
+        },
+        "assignees": [
+
+        ],
+        "author": "mrsabath",
+        "author_association": "CONTRIBUTOR",
+        "capability_mappings": [
+          {
+            "bounded_role": "bounded intent, action, and result semantics",
+            "capability_id": "AGENT_INTENT_PROTOCOL",
+            "evidence_snippet": "agent-to-agent authorization: topology allowlist + istio ambient identity (blocked on adr-0003/multiagent) summary track the deferred agent-to-agent authorization work that was descoped from epic…",
+            "matched_keywords": [
+              "agent authorization"
+            ],
+            "repository": "joy7758/agent-intent-protocol"
+          },
+          {
+            "bounded_role": "runtime policy, permission, and execution constraints",
+            "capability_id": "TOKEN_GOVERNOR",
+            "evidence_snippet": "agent-to-agent authorization: topology allowlist + istio ambient identity (blocked on adr-0003/multiagent) summary track the deferred agent-to-agent authorization work that was descoped from epic…",
+            "matched_keywords": [
+              "agent authorization"
+            ],
+            "repository": "joy7758/token-governor"
+          }
+        ],
+        "comments_count": 0,
+        "created_at": "2026-07-31T16:54:10Z",
+        "heuristic_model": "heuristic_unvalidated_v0.1",
+        "heuristic_unvalidated": true,
+        "id": "I_kwDOOPwIa88AAAABK-lbYA",
+        "is_locked": false,
+        "is_pull_request": false,
+        "labels": [
+          "enhancement",
+          "Identity"
+        ],
+        "number": 2331,
+        "ordering_basis": [
+          {
+            "band": "ACTIONABLE_NOW",
+            "factor": "conversion_readiness"
+          },
+          {
+            "band": "HIGH",
+            "factor": "titmas_relevance"
+          },
+          {
+            "band": "HIGH",
+            "factor": "actionability"
+          },
+          {
+            "band": "HIGH",
+            "factor": "pain_explicitness"
+          },
+          {
+            "band": "HIGH",
+            "factor": "expected_learning"
+          },
+          {
+            "band": "HIGH",
+            "factor": "freshness"
+          },
+          {
+            "band": "HIGH",
+            "factor": "evidence_quality"
+          },
+          {
+            "band": "NEEDS_REVIEW",
+            "factor": "potential_value"
+          },
+          {
+            "band": "NEEDS_REVIEW",
+            "factor": "effort"
+          }
+        ],
+        "pain_classifications": [
+          {
+            "classification": "AGENT_AUTHORIZATION",
+            "evidence_snippet": "agent-to-agent authorization: topology allowlist + istio ambient identity (blocked on adr-0003/multiagent) summary track the deferred agent-to-agent authorization work that was descoped from epic…",
+            "matched_keywords": [
+              "agent authorization"
+            ]
+          }
+        ],
+        "pain_point": "Agent-to-agent authorization: topology allowlist + Istio ambient identity (blocked on ADR-0003/MultiAgent): agent-to-agent authorization: topology allowlist + istio ambient identity (blocked on adr-0003/multiagent) summary track the deferred agent-to-agent authorization work that was descoped from epic…",
+        "priority_position": 3,
+        "query_ids": [
+          "Q-AGENT-AUTHORIZATION"
+        ],
+        "ranking_factors": {
+          "actionability": {
+            "band": "HIGH",
+            "evidence": [
+              "OPEN_PUBLIC_COMMENT_ENTRY",
+              "https://github.com/rossoctl/rossoctl/issues/2331"
+            ],
+            "reason": "Conversion readiness is ACTIONABLE_NOW; this classification does not authorize external action."
+          },
+          "effort": {
+            "band": "NEEDS_REVIEW",
+            "evidence": [
+
+            ],
+            "reason": "Repository code and contribution scope were not inspected."
+          },
+          "evidence_quality": {
+            "band": "HIGH",
+            "evidence": [
+              "https://github.com/rossoctl/rossoctl/issues/2331",
+              "body_characters=3033",
+              "CONTRIBUTOR"
+            ],
+            "reason": "Public source metadata and a bounded source excerpt are available."
+          },
+          "expected_learning": {
+            "band": "HIGH",
+            "evidence": [
+              "policy",
+              "agent authorization"
+            ],
+            "reason": "A bounded contribution could test existing components; actual scope needs policy-selected review."
+          },
+          "freshness": {
+            "band": "HIGH",
+            "evidence": [
+              "2026-07-31T16:54:10Z"
+            ],
+            "reason": "Source was updated 2 day(s) before the run date."
+          },
+          "pain_explicitness": {
+            "band": "HIGH",
+            "evidence": [
+              "agent-to-agent authorization: topology allowlist + istio ambient identity (blocked on adr-0003/multiagent) summary track the deferred agent-to-agent authorization work that was descoped from epic…"
+            ],
+            "reason": "Source body length and explicit matched pain terms are reviewable."
+          },
+          "potential_value": {
+            "band": "NEEDS_REVIEW",
+            "evidence": [
+              "https://github.com/rossoctl/rossoctl/issues/2331"
+            ],
+            "reason": "The Issue record does not establish adoption, collaboration, reputation, or revenue value."
+          },
+          "titmas_relevance": {
+            "band": "HIGH",
+            "evidence": [
+              "agent-to-agent authorization: topology allowlist + istio ambient identity (blocked on adr-0003/multiagent) summary track the deferred agent-to-agent authorization work that was descoped from epic…",
+              "agent-to-agent authorization: topology allowlist + istio ambient identity (blocked on adr-0003/multiagent) summary track the deferred agent-to-agent authorization work that was descoped from epic…"
+            ],
+            "reason": "2 bounded role mapping(s); direct title terms: agent authorization."
+          }
+        },
+        "ranking_status": "NEEDS_REVIEW",
+        "repository": "rossoctl/rossoctl",
+        "source_evidence_excerpt": "agent-to-agent authorization: topology allowlist + istio ambient identity (blocked on adr-0003/multiagent) summary track the deferred agent-to-agent authorization work that was descoped from epic…",
+        "source_type": "GITHUB_ISSUE",
+        "state": "OPEN",
+        "success_probability": null,
+        "title": "Agent-to-agent authorization: topology allowlist + Istio ambient identity (blocked on ADR-0003/MultiAgent)",
+        "unconfirmed_facts": [
+          "maintainer_interest",
+          "contribution_acceptance",
+          "current_unresolved_scope_beyond_open_state",
+          "implementation_effort",
+          "customer_demand",
+          "commercial_budget_or_value",
+          "legal_and_license_fit"
+        ],
+        "updated_at": "2026-07-31T16:54:10Z",
+        "url": "https://github.com/rossoctl/rossoctl/issues/2331"
+      },
+      {
+        "action_entry": {
+          "entry_type": "GITHUB_ISSUE",
+          "is_locked": false,
+          "public_url": "https://github.com/OWASP/CheatSheetSeries/issues/2313",
+          "state": "OPEN"
+        },
+        "actionability_classification": {
+          "classification": "ACTIONABLE_NOW",
+          "evidence": {
+            "assignees": [
+
+            ],
+            "comments_count": 1,
+            "is_locked": false,
+            "labels": [
+
+            ],
+            "source": "https://github.com/OWASP/CheatSheetSeries/issues/2313",
+            "state": "OPEN"
+          },
+          "external_action_authorized": false,
+          "reason_code": "OPEN_PUBLIC_COMMENT_ENTRY"
+        },
+        "assignees": [
+
+        ],
+        "author": "astrogilda",
+        "author_association": "NONE",
+        "capability_mappings": [
+          {
+            "bounded_role": "execution evidence packaging and offline verification",
+            "capability_id": "AGENT_EVIDENCE",
+            "evidence_snippet": "proposal: verifying third-party agent execution evidence cheat sheet i would like to propose a short cheat sheet, and i would rather check the idea here before writing anything. when a team adopts…",
+            "matched_keywords": [
+              "execution evidence"
+            ],
+            "repository": "joy7758/agent-evidence"
+          },
+          {
+            "bounded_role": "post-execution audit and replay-oriented review",
+            "capability_id": "ARO_AUDIT",
+            "evidence_snippet": "that. for disclosure: i maintain in-toto/attestation 570 and its conformance suite, so i have an interest here. happy to be told it is out of scope.",
+            "matched_keywords": [
+              "conformance"
+            ],
+            "repository": "joy7758/aro-audit"
+          },
+          {
+            "bounded_role": "execution-integrity reference work",
+            "capability_id": "FDO_KERNEL_MVK",
+            "evidence_snippet": "co-author, i would prefer that. for disclosure: i maintain in-toto/attestation 570 and its conformance suite, so i have an interest here. happy to be told it is out of scope.",
+            "matched_keywords": [
+              "attestation"
+            ],
+            "repository": "joy7758/fdo-kernel-mvk"
+          }
+        ],
+        "comments_count": 1,
+        "created_at": "2026-07-28T22:11:36Z",
+        "heuristic_model": "heuristic_unvalidated_v0.1",
+        "heuristic_unvalidated": true,
+        "id": "I_kwDOCbL1IM8AAAABKjnktg",
+        "is_locked": false,
+        "is_pull_request": false,
+        "labels": [
+
+        ],
+        "number": 2313,
+        "ordering_basis": [
+          {
+            "band": "ACTIONABLE_NOW",
+            "factor": "conversion_readiness"
+          },
+          {
+            "band": "HIGH",
+            "factor": "titmas_relevance"
+          },
+          {
+            "band": "HIGH",
+            "factor": "actionability"
+          },
+          {
+            "band": "HIGH",
+            "factor": "pain_explicitness"
+          },
+          {
+            "band": "HIGH",
+            "factor": "expected_learning"
+          },
+          {
+            "band": "HIGH",
+            "factor": "freshness"
+          },
+          {
+            "band": "MEDIUM",
+            "factor": "evidence_quality"
+          },
+          {
+            "band": "NEEDS_REVIEW",
+            "factor": "potential_value"
+          },
+          {
+            "band": "NEEDS_REVIEW",
+            "factor": "effort"
+          }
+        ],
+        "pain_classifications": [
+          {
+            "classification": "EXECUTION_EVIDENCE",
+            "evidence_snippet": "proposal: verifying third-party agent execution evidence cheat sheet i would like to propose a short cheat sheet, and i would rather check the idea here before writing anything. when a team adopts…",
+            "matched_keywords": [
+              "execution evidence",
+              "receipt"
+            ]
+          }
+        ],
+        "pain_point": "Proposal: Verifying Third-Party Agent Execution Evidence Cheat Sheet: proposal: verifying third-party agent execution evidence cheat sheet i would like to propose a short cheat sheet, and i would rather check the idea here before writing anything. when a team adopts…",
+        "priority_position": 4,
+        "query_ids": [
+          "Q-EXECUTION-EVIDENCE"
+        ],
+        "ranking_factors": {
+          "actionability": {
+            "band": "HIGH",
+            "evidence": [
+              "OPEN_PUBLIC_COMMENT_ENTRY",
+              "https://github.com/OWASP/CheatSheetSeries/issues/2313"
+            ],
+            "reason": "Conversion readiness is ACTIONABLE_NOW; this classification does not authorize external action."
+          },
+          "effort": {
+            "band": "NEEDS_REVIEW",
+            "evidence": [
+
+            ],
+            "reason": "Repository code and contribution scope were not inspected."
+          },
+          "evidence_quality": {
+            "band": "MEDIUM",
+            "evidence": [
+              "https://github.com/OWASP/CheatSheetSeries/issues/2313",
+              "body_characters=1744",
+              "NONE"
+            ],
+            "reason": "Public source metadata and a bounded source excerpt are available."
+          },
+          "expected_learning": {
+            "band": "HIGH",
+            "evidence": [
+              "test",
+              "audit",
+              "proposal",
+              "execution evidence"
+            ],
+            "reason": "A bounded contribution could test existing components; actual scope needs policy-selected review."
+          },
+          "freshness": {
+            "band": "HIGH",
+            "evidence": [
+              "2026-07-29T09:21:49Z"
+            ],
+            "reason": "Source was updated 4 day(s) before the run date."
+          },
+          "pain_explicitness": {
+            "band": "HIGH",
+            "evidence": [
+              "proposal: verifying third-party agent execution evidence cheat sheet i would like to propose a short cheat sheet, and i would rather check the idea here before writing anything. when a team adopts…"
+            ],
+            "reason": "Source body length and explicit matched pain terms are reviewable."
+          },
+          "potential_value": {
+            "band": "NEEDS_REVIEW",
+            "evidence": [
+              "https://github.com/OWASP/CheatSheetSeries/issues/2313"
+            ],
+            "reason": "The Issue record does not establish adoption, collaboration, reputation, or revenue value."
+          },
+          "titmas_relevance": {
+            "band": "HIGH",
+            "evidence": [
+              "proposal: verifying third-party agent execution evidence cheat sheet i would like to propose a short cheat sheet, and i would rather check the idea here before writing anything. when a team adopts…",
+              "that. for disclosure: i maintain in-toto/attestation 570 and its conformance suite, so i have an interest here. happy to be told it is out of scope.",
+              "co-author, i would prefer that. for disclosure: i maintain in-toto/attestation 570 and its conformance suite, so i have an interest here. happy to be told it is out of scope."
+            ],
+            "reason": "3 bounded role mapping(s); direct title terms: execution evidence."
+          }
+        },
+        "ranking_status": "NEEDS_REVIEW",
+        "repository": "OWASP/CheatSheetSeries",
+        "source_evidence_excerpt": "proposal: verifying third-party agent execution evidence cheat sheet i would like to propose a short cheat sheet, and i would rather check the idea here before writing anything. when a team adopts…",
+        "source_type": "GITHUB_ISSUE",
+        "state": "OPEN",
+        "success_probability": null,
+        "title": "Proposal: Verifying Third-Party Agent Execution Evidence Cheat Sheet",
+        "unconfirmed_facts": [
+          "maintainer_interest",
+          "contribution_acceptance",
+          "current_unresolved_scope_beyond_open_state",
+          "implementation_effort",
+          "customer_demand",
+          "commercial_budget_or_value",
+          "legal_and_license_fit"
+        ],
+        "updated_at": "2026-07-29T09:21:49Z",
+        "url": "https://github.com/OWASP/CheatSheetSeries/issues/2313"
+      },
+      {
+        "action_entry": {
+          "entry_type": "GITHUB_ISSUE",
+          "is_locked": false,
+          "public_url": "https://github.com/nextlevelbuilder/goclaw/issues/1217",
+          "state": "OPEN"
+        },
+        "actionability_classification": {
+          "classification": "ACTIONABLE_NOW",
+          "evidence": {
+            "assignees": [
+
+            ],
+            "comments_count": 3,
+            "is_locked": false,
+            "labels": [
+              "P1-high",
+              "agent:github-maintain",
+              "area:security",
+              "maintain:triaged",
+              "status:blocked"
+            ],
+            "source": "https://github.com/nextlevelbuilder/goclaw/issues/1217",
+            "state": "OPEN"
+          },
+          "external_action_authorized": false,
+          "reason_code": "OPEN_PUBLIC_COMMENT_ENTRY"
+        },
+        "assignees": [
+
+        ],
+        "author": "YLChen-007",
+        "author_association": "NONE",
+        "capability_mappings": [
+          {
+            "bounded_role": "bounded intent, action, and result semantics",
+            "capability_id": "AGENT_INTENT_PROTOCOL",
+            "evidence_snippet": "[security] cross-agent authorization bypass in /v1/tools/invoke allows unauthorized cron binding to foreign agents advisory details title : cross-agent authorization bypass in /v1/tools/invoke…",
+            "matched_keywords": [
+              "agent authorization"
+            ],
+            "repository": "joy7758/agent-intent-protocol"
+          },
+          {
+            "bounded_role": "runtime policy, permission, and execution constraints",
+            "capability_id": "TOKEN_GOVERNOR",
+            "evidence_snippet": "[security] cross-agent authorization bypass in /v1/tools/invoke allows unauthorized cron binding to foreign agents advisory details title : cross-agent authorization bypass in /v1/tools/invoke…",
+            "matched_keywords": [
+              "agent authorization"
+            ],
+            "repository": "joy7758/token-governor"
+          }
+        ],
+        "comments_count": 3,
+        "created_at": "2026-06-12T07:12:06Z",
+        "heuristic_model": "heuristic_unvalidated_v0.1",
+        "heuristic_unvalidated": true,
+        "id": "I_kwDORV5mps8AAAABFP5-Sw",
+        "is_locked": false,
+        "is_pull_request": false,
+        "labels": [
+          "P1-high",
+          "area:security",
+          "status:blocked",
+          "agent:github-maintain",
+          "maintain:triaged"
+        ],
+        "number": 1217,
+        "ordering_basis": [
+          {
+            "band": "ACTIONABLE_NOW",
+            "factor": "conversion_readiness"
+          },
+          {
+            "band": "HIGH",
+            "factor": "titmas_relevance"
+          },
+          {
+            "band": "HIGH",
+            "factor": "actionability"
+          },
+          {
+            "band": "HIGH",
+            "factor": "pain_explicitness"
+          },
+          {
+            "band": "HIGH",
+            "factor": "expected_learning"
+          },
+          {
+            "band": "MEDIUM",
+            "factor": "freshness"
+          },
+          {
+            "band": "HIGH",
+            "factor": "evidence_quality"
+          },
+          {
+            "band": "NEEDS_REVIEW",
+            "factor": "potential_value"
+          },
+          {
+            "band": "NEEDS_REVIEW",
+            "factor": "effort"
+          }
+        ],
+        "pain_classifications": [
+          {
+            "classification": "AGENT_AUTHORIZATION",
+            "evidence_snippet": "[security] cross-agent authorization bypass in /v1/tools/invoke allows unauthorized cron binding to foreign agents advisory details title : cross-agent authorization bypass in /v1/tools/invoke…",
+            "matched_keywords": [
+              "agent authorization"
+            ]
+          }
+        ],
+        "pain_point": "[Security] Cross-Agent Authorization Bypass in /v1/tools/invoke Allows Unauthorized Cron Binding to Foreign Agents: [security] cross-agent authorization bypass in /v1/tools/invoke allows unauthorized cron binding to foreign agents advisory details title : cross-agent authorization bypass in /v1/tools/invoke…",
+        "priority_position": 5,
+        "query_ids": [
+          "Q-AGENT-AUTHORIZATION"
+        ],
+        "ranking_factors": {
+          "actionability": {
+            "band": "HIGH",
+            "evidence": [
+              "OPEN_PUBLIC_COMMENT_ENTRY",
+              "https://github.com/nextlevelbuilder/goclaw/issues/1217"
+            ],
+            "reason": "Conversion readiness is ACTIONABLE_NOW; this classification does not authorize external action."
+          },
+          "effort": {
+            "band": "NEEDS_REVIEW",
+            "evidence": [
+
+            ],
+            "reason": "Repository code and contribution scope were not inspected."
+          },
+          "evidence_quality": {
+            "band": "HIGH",
+            "evidence": [
+              "https://github.com/nextlevelbuilder/goclaw/issues/1217",
+              "body_characters=6017",
+              "NONE"
+            ],
+            "reason": "Public source metadata and a bounded source excerpt are available."
+          },
+          "expected_learning": {
+            "band": "HIGH",
+            "evidence": [
+              "test",
+              "security",
+              "agent authorization"
+            ],
+            "reason": "A bounded contribution could test existing components; actual scope needs policy-selected review."
+          },
+          "freshness": {
+            "band": "MEDIUM",
+            "evidence": [
+              "2026-07-12T14:24:49Z"
+            ],
+            "reason": "Source was updated 21 day(s) before the run date."
+          },
+          "pain_explicitness": {
+            "band": "HIGH",
+            "evidence": [
+              "[security] cross-agent authorization bypass in /v1/tools/invoke allows unauthorized cron binding to foreign agents advisory details title : cross-agent authorization bypass in /v1/tools/invoke…"
+            ],
+            "reason": "Source body length and explicit matched pain terms are reviewable."
+          },
+          "potential_value": {
+            "band": "NEEDS_REVIEW",
+            "evidence": [
+              "https://github.com/nextlevelbuilder/goclaw/issues/1217"
+            ],
+            "reason": "The Issue record does not establish adoption, collaboration, reputation, or revenue value."
+          },
+          "titmas_relevance": {
+            "band": "HIGH",
+            "evidence": [
+              "[security] cross-agent authorization bypass in /v1/tools/invoke allows unauthorized cron binding to foreign agents advisory details title : cross-agent authorization bypass in /v1/tools/invoke…",
+              "[security] cross-agent authorization bypass in /v1/tools/invoke allows unauthorized cron binding to foreign agents advisory details title : cross-agent authorization bypass in /v1/tools/invoke…"
+            ],
+            "reason": "2 bounded role mapping(s); direct title terms: agent authorization."
+          }
+        },
+        "ranking_status": "NEEDS_REVIEW",
+        "repository": "nextlevelbuilder/goclaw",
+        "source_evidence_excerpt": "[security] cross-agent authorization bypass in /v1/tools/invoke allows unauthorized cron binding to foreign agents advisory details title : cross-agent authorization bypass in /v1/tools/invoke…",
+        "source_type": "GITHUB_ISSUE",
+        "state": "OPEN",
+        "success_probability": null,
+        "title": "[Security] Cross-Agent Authorization Bypass in `/v1/tools/invoke` Allows Unauthorized Cron Binding to Foreign Agents",
+        "unconfirmed_facts": [
+          "maintainer_interest",
+          "contribution_acceptance",
+          "current_unresolved_scope_beyond_open_state",
+          "implementation_effort",
+          "customer_demand",
+          "commercial_budget_or_value",
+          "legal_and_license_fit"
+        ],
+        "updated_at": "2026-07-12T14:24:49Z",
+        "url": "https://github.com/nextlevelbuilder/goclaw/issues/1217"
+      }
+    ],
+    "excluded_by_actionability": [
+
+    ],
+    "next_conversion_target": {
+      "action_entry": {
+        "entry_type": "GITHUB_ISSUE",
+        "is_locked": false,
+        "public_url": "https://github.com/praxis-proxy/ai/issues/194",
+        "state": "OPEN"
+      },
+      "actionability_classification": {
+        "classification": "ACTIONABLE_NOW",
+        "evidence": {
+          "assignees": [
+
+          ],
+          "comments_count": 0,
+          "is_locked": false,
+          "labels": [
+            "enhancement"
+          ],
+          "source": "https://github.com/praxis-proxy/ai/issues/194",
+          "state": "OPEN"
+        },
+        "external_action_authorized": false,
+        "reason_code": "OPEN_PUBLIC_COMMENT_ENTRY"
+      },
+      "assignees": [
+
+      ],
+      "author": "shaneutt",
+      "author_association": "MEMBER",
+      "capability_mappings": [
+        {
+          "bounded_role": "execution evidence packaging and offline verification",
+          "capability_id": "AGENT_EVIDENCE",
+          "evidence_snippet": "agent audit trail and observability every agent action through the gateway produces an auditable record. full task lifecycle tracing across the grid. scope - propagate opentelemetry trace context…",
+          "matched_keywords": [
+            "audit trail"
+          ],
+          "repository": "joy7758/agent-evidence"
+        },
+        {
+          "bounded_role": "bounded intent, action, and result semantics",
+          "capability_id": "AGENT_INTENT_PROTOCOL",
+          "evidence_snippet": "agent audit trail and observability every agent action through the gateway produces an auditable record. full task lifecycle tracing across the grid. scope - propagate opentelemetry trace context…",
+          "matched_keywords": [
+            "agent action"
+          ],
+          "repository": "joy7758/agent-intent-protocol"
+        },
+        {
+          "bounded_role": "post-execution audit and replay-oriented review",
+          "capability_id": "ARO_AUDIT",
+          "evidence_snippet": "agent audit trail and observability every agent action through the gateway produces an auditable record. full task lifecycle tracing across the grid. scope - propagate opentelemetry trace context…",
+          "matched_keywords": [
+            "agent audit",
+            "audit trail"
+          ],
+          "repository": "joy7758/aro-audit"
+        }
+      ],
+      "comments_count": 0,
+      "created_at": "2026-06-22T19:09:44Z",
+      "heuristic_model": "heuristic_unvalidated_v0.1",
+      "heuristic_unvalidated": true,
+      "id": "I_kwDOTJ5-zM8AAAABHXJduA",
+      "is_locked": false,
+      "is_pull_request": false,
+      "labels": [
+        "enhancement"
+      ],
+      "number": 194,
+      "ordering_basis": [
+        {
+          "band": "ACTIONABLE_NOW",
+          "factor": "conversion_readiness"
+        },
+        {
+          "band": "HIGH",
+          "factor": "titmas_relevance"
+        },
+        {
+          "band": "HIGH",
+          "factor": "actionability"
+        },
+        {
+          "band": "HIGH",
+          "factor": "pain_explicitness"
+        },
+        {
+          "band": "HIGH",
+          "factor": "expected_learning"
+        },
+        {
+          "band": "HIGH",
+          "factor": "freshness"
+        },
+        {
+          "band": "HIGH",
+          "factor": "evidence_quality"
+        },
+        {
+          "band": "NEEDS_REVIEW",
+          "factor": "potential_value"
+        },
+        {
+          "band": "NEEDS_REVIEW",
+          "factor": "effort"
+        }
+      ],
+      "pain_classifications": [
+        {
+          "classification": "AI_AGENT_AUDIT",
+          "evidence_snippet": "agent audit trail and observability every agent action through the gateway produces an auditable record. full task lifecycle tracing across the grid. scope - propagate opentelemetry trace context…",
+          "matched_keywords": [
+            "agent audit",
+            "audit trail"
+          ]
+        }
+      ],
+      "pain_point": "Agent audit trail and observability: agent audit trail and observability every agent action through the gateway produces an auditable record. full task lifecycle tracing across the grid. scope - propagate opentelemetry trace context…",
+      "priority_position": 1,
+      "query_ids": [
+        "Q-AI-AGENT-AUDIT"
+      ],
+      "ranking_factors": {
+        "actionability": {
+          "band": "HIGH",
+          "evidence": [
+            "OPEN_PUBLIC_COMMENT_ENTRY",
+            "https://github.com/praxis-proxy/ai/issues/194"
+          ],
+          "reason": "Conversion readiness is ACTIONABLE_NOW; this classification does not authorize external action."
+        },
+        "effort": {
+          "band": "NEEDS_REVIEW",
+          "evidence": [
+
+          ],
+          "reason": "Repository code and contribution scope were not inspected."
+        },
+        "evidence_quality": {
+          "band": "HIGH",
+          "evidence": [
+            "https://github.com/praxis-proxy/ai/issues/194",
+            "body_characters=679",
+            "MEMBER"
+          ],
+          "reason": "Public source metadata and a bounded source excerpt are available."
+        },
+        "expected_learning": {
+          "band": "HIGH",
+          "evidence": [
+            "trace",
+            "audit",
+            "policy",
+            "audit trail"
+          ],
+          "reason": "A bounded contribution could test existing components; actual scope needs policy-selected review."
+        },
+        "freshness": {
+          "band": "HIGH",
+          "evidence": [
+            "2026-07-23T09:23:12Z"
+          ],
+          "reason": "Source was updated 10 day(s) before the run date."
+        },
+        "pain_explicitness": {
+          "band": "HIGH",
+          "evidence": [
+            "agent audit trail and observability every agent action through the gateway produces an auditable record. full task lifecycle tracing across the grid. scope - propagate opentelemetry trace context…"
+          ],
+          "reason": "Source body length and explicit matched pain terms are reviewable."
+        },
+        "potential_value": {
+          "band": "NEEDS_REVIEW",
+          "evidence": [
+            "https://github.com/praxis-proxy/ai/issues/194"
+          ],
+          "reason": "The Issue record does not establish adoption, collaboration, reputation, or revenue value."
+        },
+        "titmas_relevance": {
+          "band": "HIGH",
+          "evidence": [
+            "agent audit trail and observability every agent action through the gateway produces an auditable record. full task lifecycle tracing across the grid. scope - propagate opentelemetry trace context…",
+            "agent audit trail and observability every agent action through the gateway produces an auditable record. full task lifecycle tracing across the grid. scope - propagate opentelemetry trace context…",
+            "agent audit trail and observability every agent action through the gateway produces an auditable record. full task lifecycle tracing across the grid. scope - propagate opentelemetry trace context…"
+          ],
+          "reason": "3 bounded role mapping(s); direct title terms: audit trail."
+        }
+      },
+      "ranking_status": "NEEDS_REVIEW",
+      "repository": "praxis-proxy/ai",
+      "source_evidence_excerpt": "agent audit trail and observability every agent action through the gateway produces an auditable record. full task lifecycle tracing across the grid. scope - propagate opentelemetry trace context…",
+      "source_type": "GITHUB_ISSUE",
+      "state": "OPEN",
+      "success_probability": null,
+      "title": "Agent audit trail and observability",
+      "unconfirmed_facts": [
+        "maintainer_interest",
+        "contribution_acceptance",
+        "current_unresolved_scope_beyond_open_state",
+        "implementation_effort",
+        "customer_demand",
+        "commercial_budget_or_value",
+        "legal_and_license_fit"
+      ],
+      "updated_at": "2026-07-23T09:23:12Z",
+      "url": "https://github.com/praxis-proxy/ai/issues/194"
+    },
+    "research_watchlist": [
+
+    ]
+  },
+  "report_date": "2026-08-02",
+  "schema_version": "0.1",
+  "source_report": {
+    "content_digest": "sha256:616f63ebfd77377d920d69a29f00131e60a0fafbe8d2423789e7ef6707f6a6f8",
+    "path": "/tmp/tiamas-scout-actionability-v2.8o8kxv/daily/2026-08-02-opportunity-report.json"
+  },
+  "tracked_opportunities": [
+
+  ],
+  "trust_guard": {
+    "invoked": false,
+    "reason": "Discovery report generation does not itself invoke review authorization or external action.",
+    "status": "FROZEN_AUXILIARY_GUARD",
+    "version": "TITMAS_SCOUT_TRUST_GUARD_V0.1"
+  }
+}

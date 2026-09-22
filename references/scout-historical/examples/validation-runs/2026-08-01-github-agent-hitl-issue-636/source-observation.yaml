@@ -1,0 +1,67 @@
+artifact_type: TITMAS_SCOUT_PUBLIC_SIGNAL_OBSERVATION_V0_1
+observation_id: OBS-GITHUB-AGENT-HITL-636-20260801
+classification: RESEARCH_ONLY_UNARCHIVED_PUBLIC_OBSERVATION
+observation_date: "2026-08-01"
+observation_time_precision: DATE_ONLY
+observation_method: AI_ASSISTED_READ_ONLY_BROWSER
+observer_identity: null
+
+provenance:
+  archived_bytes_included: false
+  screenshot_included: false
+  archive_digest: null
+  binding_strength: UNARCHIVED_OBSERVATION
+  dynamic_replay_requires_network: true
+  external_api_called: false
+  external_action_taken: false
+
+primary_signal:
+  source_reference: https://github.com/openai/openai-agents-python/issues/636
+  source_type: PUBLIC_GITHUB_ISSUE
+  dynamic_page: true
+  observed_public_facts:
+    repository: openai/openai-agents-python
+    issue_number: 636
+    title: Human-In-The-Loop Architecture should be implemented on top priority!
+    opened_date_visible: "2025-05-01"
+    state_visible: Closed
+    linked_item_visible:
+      label: Merged #2230
+      reference: https://github.com/openai/openai-agents-python/pull/2230
+  source_authored_claims:
+    - The issue author requested native pause and resume for Agent workflows.
+    - The issue author requested human feedback and approval integration.
+    - The issue author requested auditability, traceability, and timeout support.
+  observation_constraints:
+    - Page state may change after the observation date.
+    - The visible merged link does not prove which requests were implemented.
+    - The issue author's statements are not independently validated customer facts.
+
+secondary_signal:
+  source_reference: https://github.com/openai/openai-agents-python/blob/21c88f582cdf7a8cbd96c33398eefe166a791d5c/docs/tracing.md
+  source_type: PUBLIC_COMMIT_PINNED_REPOSITORY_DOCUMENT
+  pinned_commit: 21c88f582cdf7a8cbd96c33398eefe166a791d5c
+  dynamic_page: false
+  observed_public_facts:
+    repository: openai/openai-agents-python
+    path: docs/tracing.md
+    heading_visible: Tracing
+  source_authored_claims:
+    - The document states that the Agents SDK includes built-in tracing.
+    - The document describes traces and spans for Agent run events.
+  observation_constraints:
+    - Commit pinning improves reference stability but is not a local archive.
+    - The document does not prove independent verification or product completeness.
+
+not_established:
+  - CURRENT_UNRESOLVED_NEED
+  - REAL_CUSTOMER_DEMAND
+  - ECOSYSTEM_WIDE_CAPABILITY_ABSENCE
+  - ISSUE_AUTHOR_REPRESENTS_CUSTOMER_SEGMENT
+  - MERGED_PR_FULLY_RESOLVES_ISSUE
+  - IMPLEMENTATION_COMPLETENESS
+  - COMMERCIAL_VALUE
+  - TITMAS_FIT
+  - PERMANENT_PUBLIC_PAGE_STATE
+  - SOURCE_DIGEST_INDEPENDENTLY_RECOMPUTED
+  - EXTERNAL_SYSTEM_VERIFIED_BY_VALIDATOR

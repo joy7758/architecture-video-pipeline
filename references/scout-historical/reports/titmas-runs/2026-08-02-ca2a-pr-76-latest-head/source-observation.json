@@ -1,0 +1,34 @@
+{
+  "action_scope": [
+    "READ_ONLY_BASELINE"
+  ],
+  "actor_type": "AGENT",
+  "commit_sha": "9fb5c3b112c1f2d083bc97a12d55f7a583190b9f",
+  "current_head_codex_review": false,
+  "digest_algorithm": "sha256",
+  "digest_value": "134716257464e3b7fdb72402855e74dca58031dcbfc133c6e628fe2057352bfb",
+  "github_merge_state": "BLOCKED",
+  "github_mergeable": true,
+  "initial_local_head": "9fb5c3b112c1f2d083bc97a12d55f7a583190b9f",
+  "initial_remote_head": "9fb5c3b112c1f2d083bc97a12d55f7a583190b9f",
+  "initial_upstream_main": "566e587cd46ef6b88a9701531c96313f0518923d",
+  "issue_36_state": "OPEN",
+  "merge_tree_conflict": false,
+  "old_codex_review_sha": "b223ee41ac9e3b635651f9636a08061801b5c826",
+  "result": "PR_OPEN_READY_MERGEABLE_BLOCKED",
+  "ruleset_version": "0.1",
+  "source_reference": "https://github.com/agentrust-io/ca2a/pull/76",
+  "timestamp": "2026-08-02T06:21:39Z",
+  "uncertainty": [
+    "historical_mergeable_false_cause_not_recoverable"
+  ],
+  "unsupported_claims": [
+    "merge_ready",
+    "maintainer_approval"
+  ],
+  "upstream_commits": [
+    "c559949",
+    "c0be574",
+    "566e587"
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "artifact_type":"TITMAS_SCOUT_FEEDBACK_ANALYSIS","analyzed_at":"2026-08-02T07:17:00Z","target":"agentrust-io/ca2a#76","head_sha":"0a1ffa6710d25f58515b2dca7e0619e134c0a43e","classification":"AUTOMATED_REVIEW_PASS_WITH_EXTERNAL_POLICY_BLOCKERS",
+  "positive_evidence":["Codex current-head review found no major issues","local full test/static/security/audit suite passed","PR remains open, ready, and GitHub reports mergeable"],
+  "remaining_blockers":["maintainer approval absent","CI and CodeQL are action_required and did not execute","old P2 thread is outdated but unresolved","upstream acceptance and merge not established"],
+  "scout_learning":["active conversion state must be loaded before ranking","GH CLI filters must use flags instead of duplicating embedded qualifiers","prefix command allowlists must reject GraphQL mutation shapes","canonical evidence verification remains separate from authorization"],
+  "next_recommended_state":"AWAIT_MAINTAINER_REVIEW_NO_AUTOMATIC_FOLLOWUP","automatic_comment_retry_authorized":false,"external_action_authorized":false
+}

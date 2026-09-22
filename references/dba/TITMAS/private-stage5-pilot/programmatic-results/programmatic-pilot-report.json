@@ -1,0 +1,60 @@
+{
+  "automatic_retry_count": 0,
+  "core_access_count": 0,
+  "data_classification": "PRIVATE_AUDIT_SYNTHETIC",
+  "expected_rejection_count": 3,
+  "limitations": [
+    "PROGRAMMATIC_GATE_ONLY",
+    "NO_REAL_MODEL_INVOLVEMENT",
+    "PILOT_ACCEPTANCE_NE_STANDARD_ADOPTION",
+    "HUMAN_DISPOSITION_REQUIRED_FOR_VALID_SUBMISSIONS"
+  ],
+  "programmatic_pilot_pass": true,
+  "real_model_call_count": 0,
+  "registry_sha256": "0474b54891ab9a8a614bc4d3e3fa4b8013abc7a6202478111201ca737f4a4874",
+  "report_type": "TITMAS_STAGE5_PROGRAMMATIC_PILOT",
+  "report_version": "1.0",
+  "run_at": "2026-07-29T09:36:46.192148Z",
+  "scenario_count": 5,
+  "scenario_pass_count": 5,
+  "scenarios": [
+    {
+      "expected": "CONFORMANCE_PASS_HUMAN_DISPOSITION_REQUIRED",
+      "observed": "CONFORMANCE_PASS_HUMAN_DISPOSITION_REQUIRED",
+      "pass": true,
+      "scenario_id": "P01-A-VALID-PROPOSAL",
+      "submission_id": "stage5-submission-P01-PROPOSAL"
+    },
+    {
+      "expected": "CONFORMANCE_PASS_HUMAN_DISPOSITION_REQUIRED",
+      "observed": "CONFORMANCE_PASS_HUMAN_DISPOSITION_REQUIRED",
+      "pass": true,
+      "scenario_id": "P01-B-VALID-ADAPTER",
+      "submission_id": "stage5-submission-P01-ADAPTER"
+    },
+    {
+      "expected": "EXPECTED_CONFORMANCE_REJECTION",
+      "observed": "EXPECTED_CONFORMANCE_REJECTION",
+      "pass": true,
+      "scenario_id": "P01-C-INVALID-TEST-VECTOR",
+      "status_code": 422,
+      "submission_id": "stage5-submission-P01-INVALID-VECTOR"
+    },
+    {
+      "expected": "EXPECTED_SCOPE_REJECTION",
+      "observed": "EXPECTED_SCOPE_REJECTION",
+      "pass": true,
+      "scenario_id": "P01-D-UNAUTHORIZED-SCOPE",
+      "status_code": 403
+    },
+    {
+      "expected": "EXPECTED_EXPIRED_KEY_REJECTION",
+      "observed": "EXPECTED_EXPIRED_KEY_REJECTION",
+      "pass": true,
+      "scenario_id": "P01-E-EXPIRED-KEY",
+      "status_code": 401
+    }
+  ],
+  "synthetic_only": true,
+  "valid_submission_count": 2
+}

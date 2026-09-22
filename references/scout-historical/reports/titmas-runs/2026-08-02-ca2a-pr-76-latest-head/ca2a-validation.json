@@ -1,0 +1,61 @@
+{
+  "action_008_controls": {
+    "invalid_permissive_rejected": "provenance_invalid/INVALID_CREDENTIAL",
+    "invalid_restrictive": "provenance_invalid/INVALID_CREDENTIAL",
+    "valid_permissive_rejected": "valid_negative_outcome/CONTROLLER_REJECTED",
+    "valid_restrictive": "authorization_invalid/SCOPE_NOT_PERMITTED"
+  },
+  "action_scope": [
+    "LOCAL_VALIDATION"
+  ],
+  "actor_type": "DETERMINISTIC_TOOL",
+  "commit_sha": "0a1ffa6710d25f58515b2dca7e0619e134c0a43e",
+  "digest_algorithm": "sha256",
+  "digest_value": "82688a11ed0f103c75cabc80f6c7e16fbd51bee0766a52043d0894ff2d066731",
+  "environment_observation": {
+    "classification": "LOCAL_ENVIRONMENT_DRIFT_NOT_ACTION_008_FAILURE",
+    "initial_agent_manifest_version": "0.7.0",
+    "initial_collection_error": "ImportError SNP_OFFSETS",
+    "refreshed_version": "0.10.0",
+    "required_version": ">=0.10"
+  },
+  "result": "PASS_AFTER_DEPENDENCY_REFRESH",
+  "ruleset_version": "0.1",
+  "source_reference": "git:agentrust-io/ca2a@0a1ffa6710d25f58515b2dca7e0619e134c0a43e",
+  "source_worktree_clean": true,
+  "test_execution": "ISOLATED_WORKTREE",
+  "tests": {
+    "bandit": "PASS_ZERO_ISSUES",
+    "conformance": {
+      "collected": 31,
+      "failed": 0,
+      "passed": 31,
+      "skipped": 0
+    },
+    "coverage_percent": 86.87,
+    "full": {
+      "collected": 255,
+      "failed": 0,
+      "passed": 252,
+      "skipped": 3
+    },
+    "git_diff_check": "PASS",
+    "mypy": "PASS_36_SOURCE_FILES",
+    "pip_audit": "PASS_NO_KNOWN_VULNERABILITIES",
+    "ruff": "PASS",
+    "target": {
+      "collected": 31,
+      "failed": 0,
+      "passed": 31,
+      "skipped": 0
+    }
+  },
+  "timestamp": "2026-08-02T06:21:00Z",
+  "uncertainty": [
+    "remote_ci_not_executed"
+  ],
+  "unsupported_claims": [
+    "remote_ci_pass",
+    "production_safety"
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "$schema": "../schemas/contribution-package.schema.json",
+  "contribution_id": "TITMAS-COMMUNITY-CYCLE-001-CANDIDATE",
+  "participant_ref": "CODEX-EXECUTION-LINEAGE-CYCLE-001",
+  "task_ref": "TITMAS-COMMUNITY-CYCLE-001-TASK-01",
+  "authority_ref": "TITMAS-AGENT-NATIVE-COMMUNITY-D01",
+  "base_revision": "d914131a60def11738c901018d28a31d07ae84b1",
+  "changed_files": [
+    "TITMAS/agent-native/contributions/example-contribution-package.json",
+    "TITMAS/agent-native/contributions/internal-cycle-001.json",
+    "TITMAS/conformance/grounding/README.md",
+    "TITMAS/conformance/harness.py",
+    "TITMAS/conformance/tests/test_harness.py"
+  ],
+  "diff_reference": "TITMAS/agent-native/contributions/internal-cycle-001.json",
+  "commands_run": [
+    "python3 TITMAS/conformance/harness.py",
+    "python3 -m unittest discover -s TITMAS/conformance/tests -v"
+  ],
+  "tests": [
+    "candidate preflight",
+    "legacy pilot identifier rejection",
+    "full local Development conformance"
+  ],
+  "conformance_results": [
+    "TITMAS_DEVELOPMENT_CONFORMANCE_PASS",
+    "FOUR_INTEGRATION_REVIEW_LINEAGES_PASS"
+  ],
+  "source_and_provenance": [
+    "integration branch frozen source d914131a60def11738c901018d28a31d07ae84b1",
+    "current Codex execution lineage"
+  ],
+  "assumptions": ["repository-local deterministic inputs only"],
+  "claims": ["candidate package is scoped to one authorized internal contribution cycle"],
+  "non_claims": [
+    "CONTRIBUTION_NE_ADOPTION",
+    "AGENT_REVIEW_NE_HUMAN_AUTHORITY",
+    "LOCAL_PASS_NE_PRODUCTION_READY"
+  ],
+  "limitations": [
+    "no external contributor or adopter",
+    "no public GitHub write activation",
+    "merge to main is not authorized"
+  ],
+  "unresolved_uncertainty": ["independent human usability"],
+  "known_risks": ["model advisory review cannot replace Human merge review"],
+  "generated_artifacts": ["sanitized local integration candidate only"],
+  "evidence_references": ["TITMAS/conformance/reports/latest.json"],
+  "requested_reviewer_roles": [
+    "QWEN_ADVISORY_REVIEWER",
+    "KIMI_ADVISORY_REVIEWER"
+  ],
+  "evidence_architecture_reused": true
+}

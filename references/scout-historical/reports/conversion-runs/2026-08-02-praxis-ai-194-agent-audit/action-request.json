@@ -1,0 +1,18 @@
+{
+  "action": "POST_BOUNDED_TECHNICAL_COMMENT",
+  "authorization_binding": {
+    "run_id": "2026-08-02-praxis-ai-194-agent-audit",
+    "repository": "praxis-proxy/ai",
+    "target": "praxis-proxy/ai#194",
+    "source_state": "OPEN",
+    "source_digest": "sha256:35264b36651fe9cef29a396c2a2ca942e7cdba6bb2ff4d7ab48f4ef1121e0849",
+    "head_sha": "4a9a8659b1b5d61ae2ad7203fbcdcc7666ae5995",
+    "selected_slice_digest": "sha256:c98b62f587acfadfa0321f7341083d1873449cebde599ade57c0f8fe339f9048",
+    "diff_digest": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "action_payload_digest": "sha256:9f63711883cb74dc8e2193b51fbe114ea2fefe511839c92c5f2308861282cf93",
+    "input_digest": "sha256:8a31c48c73f94a1fd71b9ddf50baf6cf8da4cdcc62d9d026198f5a3d2a3ce097",
+    "ruleset_version": "0.1",
+    "action": "POST_BOUNDED_TECHNICAL_COMMENT",
+    "expires_at": "2026-08-03T08:00:00Z"
+  }
+}

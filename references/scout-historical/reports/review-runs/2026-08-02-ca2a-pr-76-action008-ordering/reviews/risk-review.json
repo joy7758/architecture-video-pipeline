@@ -1,0 +1,51 @@
+{
+  "schema_version": "0.1",
+  "review_id": "ca2a-pr-76-action008-ordering-risk-review",
+  "agent_identifier": "/root/pr76_final_risk",
+  "model_runtime_identifier": "openai-codex/gpt-5",
+  "review_role": "RISK_REVIEWER",
+  "input_digest": "sha256:7b3867e1b1dfa0840beb912570b0039978d6f85dc99ca37e070420dfb2f1a686",
+  "output_digest": "sha256:32995327aa79dc951de019de6f35d9f097c184989d25eb4ae4fd8621ca36974f",
+  "decision": "PASS",
+  "timestamp": "2026-08-02T03:58:59Z",
+  "ruleset_version": "0.1",
+  "reason_codes": [
+    "INPUT_DIGEST_MATCH",
+    "CURRENT_HEAD_MATCH",
+    "TEST_ONLY_BOUNDED_DIFF",
+    "NO_SENSITIVE_MATERIAL_DETECTED",
+    "NO_LICENSE_OR_DEPENDENCY_CHANGE",
+    "DCO_SIGNOFF_PRESENT",
+    "NO_PROTECTED_UPSTREAM_WRITE",
+    "NO_FORCE_PUSH",
+    "NO_COMMENT_OR_THREAD_WRITE",
+    "READY_STATE_ALREADY_SATISFIED",
+    "NO_NEW_STATE_TRANSITION_REQUESTED",
+    "REMOTE_WORKFLOWS_NOT_RUN",
+    "MAIN_DRIFT_REQUIRES_MERGE_TIME_REVALIDATION"
+  ],
+  "findings": [
+    "The exact input digest, current local and fork head, and clean worktree state were independently reproduced.",
+    "The bounded diff changes only conformance documentation and the ACTION-008 test; production code, protocol fields, dependencies, and license files are unchanged.",
+    "The added content contains no detected private key, token-shaped value, embedded secret, personal data, or restricted-data indicator.",
+    "Both PR commits include the Signed-off-by line required by CONTRIBUTING.md, and no repository CLA requirement was identified.",
+    "The PR text remains bounded, references rather than closes Issue #36, and makes no production, authorization, safety, customer, adoption, or revenue claim.",
+    "The branch was pushed only to the personal fork without force; no protected upstream branch, comment, or review thread was modified.",
+    "PR #76 is already Ready and this input requests retention assessment only, with no new state transition.",
+    "CI and CodeQL did not execute and current main has advanced; merge or acceptance requires fresh integration and workflow revalidation."
+  ],
+  "blocking_reasons": [],
+  "evidence_references": [
+    "reports/review-runs/2026-08-02-ca2a-pr-76-action008-ordering/input.json#sha256:7b3867e1b1dfa0840beb912570b0039978d6f85dc99ca37e070420dfb2f1a686",
+    "git:ca2a@9fb5c3b112c1f2d083bc97a12d55f7a583190b9f#tree:b831d2d3ff12b7a171a1996fdba96fec13dfecfe",
+    "git-diff:76c1a31193ff6a70b732cf8f668935808002e273..9fb5c3b112c1f2d083bc97a12d55f7a583190b9f#sha256:82688a11ed0f103c75cabc80f6c7e16fbd51bee0766a52043d0894ff2d066731",
+    "github-pr-diff:agentrust-io/ca2a#76#sha256:134716257464e3b7fdb72402855e74dca58031dcbfc133c6e628fe2057352bfb",
+    "github-pr:agentrust-io/ca2a#76#head:9fb5c3b112c1f2d083bc97a12d55f7a583190b9f#state:OPEN#draft:false",
+    "github-fork-ref:joy7758/ca2a:contrib/issue-36-action-invalid-signature@9fb5c3b112c1f2d083bc97a12d55f7a583190b9f",
+    "repository-policy:CONTRIBUTING.md#developer-certificate-of-origin",
+    "repository-license:LICENSE#MIT",
+    "github-actions:30713051643#CI:action_required:not_executed",
+    "github-actions:30713051626#CodeQL:action_required:not_executed",
+    "github-main:agentrust-io/ca2a@c0be574c6af4fca464659eed559e611f8f9d92ce"
+  ]
+}

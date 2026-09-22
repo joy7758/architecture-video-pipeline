@@ -1,0 +1,38 @@
+{
+  "schema_version": "0.1",
+  "review_id": "ca2a-pr-76-evidence-review",
+  "agent_identifier": "codex-evidence-reviewer-2026-08-02-ca2a-pr-76",
+  "model_runtime_identifier": "openai-codex/gpt-5",
+  "review_role": "EVIDENCE_REVIEWER",
+  "input_digest": "sha256:1b390b08b327c6fe315f7ffe9af007c0454227f753b8249dbf1aed07df30fcd9",
+  "output_digest": "sha256:0277cb1fdb9520e663f62b19f8c5d2eb9a714a10eefebe1a170b708edf796d6a",
+  "decision": "PASS",
+  "timestamp": "2026-08-01T17:38:11Z",
+  "ruleset_version": "0.1",
+  "reason_codes": [
+    "INPUT_DIGEST_VERIFIED",
+    "SOURCE_ENTRY_LIVE_STATE_VERIFIED",
+    "NO_DUPLICATE_TARGET_IMPLEMENTATION_OBSERVED",
+    "COMMIT_AND_DIFF_DIGEST_VERIFIED",
+    "HISTORY_RECORD_DIGESTS_VERIFIED",
+    "LOCAL_VALIDATION_RECORD_TRACEABLE",
+    "CI_GATE_SEMANTICS_VERIFIED",
+    "AUTOMATION_AND_REVIEW_STATE_VERIFIED",
+    "NO_BLOCKING_EVIDENCE_GAP"
+  ],
+  "findings": [
+    "Issue, PR, commit, tree, base, diff statistics, body digest, and history record digests reproduce the input facts.",
+    "The two-file diff passes git diff --check and contains the expected Signed-off-by trailer.",
+    "The conversion record contains exact local commands and results and is not misrepresented as a remote test attestation.",
+    "Contributor reputation check succeeded; the failed gate only waits for maintainer approval of the current head before merge.",
+    "The PR has no requested reviewer, human review, or auto-merge, and the bot comment and automated label are recorded."
+  ],
+  "blocking_reasons": [],
+  "evidence_references": [
+    "reports/review-runs/2026-08-02-ca2a-pr-76-ready/input.json#sha256:1b390b08b327c6fe315f7ffe9af007c0454227f753b8249dbf1aed07df30fcd9",
+    "reports/conversion-runs/2026-08-02-ca2a-issue-36-action-invalid-signature/run.json#sha256:9e2a65a787278b3feb532245225037d21fee902f89d4fa898c5ac182c112de75",
+    "reports/publication-runs/2026-08-02-ca2a-issue-36-draft-pr/run.json#sha256:70ac56fdb2a992d476ca055906c592468e6220febe7db742e7e2e659e02688e6",
+    "https://github.com/agentrust-io/ca2a/actions/runs/30709610843",
+    "https://github.com/agentrust-io/ca2a/actions/runs/30709610909"
+  ]
+}

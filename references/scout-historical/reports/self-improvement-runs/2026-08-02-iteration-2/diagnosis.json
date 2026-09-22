@@ -1,0 +1,10 @@
+{
+  "artifact_type":"TITMAS_SCOUT_SELF_IMPROVEMENT_DIAGNOSIS",
+  "iteration":2,
+  "timestamp":"2026-08-02T06:57:00Z",
+  "result":"ROOT_CAUSE_CONFIRMED",
+  "root_cause":"Compound exact phrases plus extra topic words reduced all nine live searches to zero while adjacent bounded terms returned recent public Issues.",
+  "minimal_fix":"Broaden only the nine configured search terms while retaining open, public, issue-only, freshness, filtering, ranking, and no-write constraints.",
+  "ranking_model_changed":false,
+  "validator_or_governance_changed":false
+}

@@ -1,0 +1,86 @@
+{
+  "artifact_type": "TITMAS_SCOUT_AGENT_REVIEW_INPUT",
+  "ruleset_version": "0.1",
+  "review_run_id": "2026-08-02-praxis-ai-194-agent-audit-comment",
+  "observed_at": "2026-08-02T07:56:47Z",
+  "requested_action": "POST_BOUNDED_TECHNICAL_COMMENT",
+  "target": {
+    "type": "GITHUB_ISSUE_COMMENT",
+    "reference": "praxis-proxy/ai#194",
+    "url": "https://github.com/praxis-proxy/ai/issues/194"
+  },
+  "source_issue": {
+    "reference": "praxis-proxy/ai#194",
+    "state": "OPEN",
+    "assignees": [],
+    "comment_count": 0,
+    "source_digest": "sha256:35264b36651fe9cef29a396c2a2ca942e7cdba6bb2ff4d7ab48f4ef1121e0849",
+    "parent": "praxis-proxy/ai#171",
+    "blocked_by": "praxis-proxy/ai#172"
+  },
+  "duplicate_check": {
+    "exact_open_pull_request_found": false,
+    "complete_issue_implementation_found": false,
+    "overlapping_issues_reviewed": [92, 142, 148, 184, 211],
+    "scope_confirmation_required": true
+  },
+  "pull_request": {
+    "state": "NOT_CREATED",
+    "draft": false,
+    "head_sha": "4a9a8659b1b5d61ae2ad7203fbcdcc7666ae5995",
+    "assignment_obtained": false,
+    "creation_allowed_by_repository_policy": false
+  },
+  "diff": {
+    "content_digest": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "files": [],
+    "selected_slice_digest": "sha256:c98b62f587acfadfa0321f7341083d1873449cebde599ade57c0f8fe339f9048",
+    "production_code_changed": false
+  },
+  "local_validation": {
+    "record_reference": "reports/self-improvement-runs/2026-08-02-actionability-gate/test-result.json",
+    "record_digest": "sha256:0e6275c79c94f8761543ae7cd2269d91d09dce2271a5f2e3498bab404438c7d5",
+    "result": "FULL_SUITE_88_RUNS_327_ASSERTIONS_PASS"
+  },
+  "github_checks": [],
+  "automation": {
+    "comment_body_digest": "sha256:9f63711883cb74dc8e2193b51fbe114ea2fefe511839c92c5f2308861282cf93",
+    "comment_word_count": 126,
+    "body_status": "AI_DRAFT_REQUIRES_HUMAN_REWRITE",
+    "external_write_attempted": false
+  },
+  "risk_evidence": {
+    "allowed_action_only": "POST_BOUNDED_TECHNICAL_COMMENT",
+    "no_secret": true,
+    "no_sensitive_body_capture": true,
+    "no_titmas_marketing": true,
+    "trace_not_authorization_or_evidence": true,
+    "repository_person_to_person_human_authorship_required": true,
+    "repository_assignment_required_before_pr": true
+  },
+  "history_references": [
+    {
+      "path": "reports/conversion-runs/2026-08-02-praxis-ai-194-agent-audit/source-observation.json",
+      "content_digest": "sha256:92ee99cb47a5fa65f1537cf77da3677e8b4c717a916f69a6de8cf99e09b7e8ad"
+    },
+    {
+      "path": "reports/conversion-runs/2026-08-02-praxis-ai-194-agent-audit/repository-observation.json",
+      "content_digest": "sha256:8c1fd523d1f559a9101403f795075f4ee02f6fc8e7119733ad6038a07fbe55ca"
+    },
+    {
+      "path": "reports/conversion-runs/2026-08-02-praxis-ai-194-agent-audit/selected-slice.json",
+      "content_digest": "sha256:c98b62f587acfadfa0321f7341083d1873449cebde599ade57c0f8fe339f9048"
+    },
+    {
+      "path": "reports/conversion-runs/2026-08-02-praxis-ai-194-agent-audit/proposed-action.json",
+      "content_digest": "sha256:22484d891a083153dbc986e91ef56868e10c51c329093ca9af10c54322faef9f"
+    }
+  ],
+  "known_limits": [
+    "No maintainer has confirmed the selected slice.",
+    "No assignment has been granted.",
+    "The draft body was produced by an agent and cannot be posted under the repository communication policy.",
+    "No code, PR, customer, adoption, revenue, or production-safety evidence exists.",
+    "An open Issue proves a public entry, not maintainer acceptance."
+  ]
+}

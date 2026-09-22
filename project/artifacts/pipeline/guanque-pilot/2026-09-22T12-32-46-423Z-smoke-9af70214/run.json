@@ -1,0 +1,337 @@
+{
+  "schemaVersion": "architecture-video-run.v1",
+  "schema_version": "architecture-video-run.v1",
+  "runId": "2026-09-22T12-32-46-423Z-smoke-9af70214",
+  "adapterId": "guanque",
+  "title": "鹳雀楼 · 一砖一瓦",
+  "status": "TECHNICAL_PASS_CONTENT_REVIEW_PENDING",
+  "contentReview": "NOT_RUN",
+  "publication": "NOT_RUN",
+  "startedAt": "2026-09-22T12:32:46.424Z",
+  "source_root": "/Volumes/ORICO_DATA/Projects/3d盖楼/artifacts/pipeline/source-snapshots/2026-09-22T12-27-10-638Z-0fb796b3/app",
+  "input": {
+    "appRoot": "/Volumes/ORICO_DATA/Projects/3d盖楼/artifacts/pipeline/source-snapshots/2026-09-22T12-27-10-638Z-0fb796b3/app",
+    "sourceMode": "EXPLICIT_APP_ROOT",
+    "configPath": "pipeline/video/guanque-pilot-wide.json",
+    "configSha256": "7516ea85624189a161beb217e5ee3e869b7a2607c8930decdc08760c142e4a0c",
+    "url": "http://127.0.0.1:4189/?export=1"
+  },
+  "capture": {
+    "width": 360,
+    "height": 640,
+    "fps": 4,
+    "requestedFrames": 96,
+    "capturedFrames": 96,
+    "durationSeconds": 24,
+    "mode": "smoke",
+    "dpr": 1,
+    "audio": "silent"
+  },
+  "assemblySemantics": "Reverse and forward playback of the existing per-component assembly schedule; not an exploded-layer structural model.",
+  "servedBundleVerified": true,
+  "browserErrors": [],
+  "networkErrors": [],
+  "consoleWarnings": [],
+  "frameRepeats": [
+    {
+      "index": 0,
+      "firstSha256": "83430ed5cf820ae672acb818a1729db3292163afbf38d9341a0fb47ed02d9c60",
+      "repeatedSha256": "83430ed5cf820ae672acb818a1729db3292163afbf38d9341a0fb47ed02d9c60",
+      "equal": true
+    },
+    {
+      "index": 48,
+      "firstSha256": "867d3b206b1e64e64b49613652da95da9483da9786441d95941b335795ebfe3e",
+      "repeatedSha256": "867d3b206b1e64e64b49613652da95da9483da9786441d95941b335795ebfe3e",
+      "equal": true
+    },
+    {
+      "index": 95,
+      "firstSha256": "ac393e4c7583e38c423ea73465b7d47d4e66c11dbb8bf3ede9e5a3606944f452",
+      "repeatedSha256": "ac393e4c7583e38c423ea73465b7d47d4e66c11dbb8bf3ede9e5a3606944f452",
+      "equal": true
+    }
+  ],
+  "sourceBefore": {
+    "source_root": "/Volumes/ORICO_DATA/Projects/3d盖楼/artifacts/pipeline/source-snapshots/2026-09-22T12-27-10-638Z-0fb796b3/app",
+    "sha256": "4f910dc4baa2c33a022d888d083e8c46f90b204fc62a08f00cff8be9906f7936",
+    "files": [
+      {
+        "path": "app/dist/assets/index-9Luecijy.js",
+        "sha256": "2606cebe564629d9becc25b9f4c28953211836d790315f5e4418c584f21a0e00"
+      },
+      {
+        "path": "app/dist/assets/index-BagzxGXL.css",
+        "sha256": "b89c62c2332d73239120250ac0d882a8fb5cd14f257985021c8adf870b2e1f8a"
+      },
+      {
+        "path": "app/dist/index.html",
+        "sha256": "440968f059c0d73453b8437b3aa0fddc2a6e756fdb01fbdb112d794076dc6374"
+      },
+      {
+        "path": "app/index.html",
+        "sha256": "0e562ea6e6ac62aea27fa8b100a3b62de4095500c8df5cf049fb2bddce2c4468"
+      },
+      {
+        "path": "app/package-lock.json",
+        "sha256": "9fb276d39c7a1ef6a6c2c40e569518a3a2fc0400bff183f79715b3ad28fc9830"
+      },
+      {
+        "path": "app/package.json",
+        "sha256": "97d2be15eb4d146fe7c031fecc71b3013882fee2056a481ef01cc0bc251e718f"
+      },
+      {
+        "path": "app/src/App.tsx",
+        "sha256": "b17b23f42fbb567b9340c80821f9043b67f6508e2183f4c0ffc5c2a2cdc68d76"
+      },
+      {
+        "path": "app/src/export-contract.ts",
+        "sha256": "515cd03ac3a0cbebbed27078bb52baf434e989bdb602c002324493484f63f031"
+      },
+      {
+        "path": "app/src/heritage/architecture.ts",
+        "sha256": "c4f8fe2d48b6bbcac8a0c781b7a77c802494e0488a550ce903fe98dd9c9f701f"
+      },
+      {
+        "path": "app/src/heritage/builder.ts",
+        "sha256": "61cee6b0b70352e5b0a330fd7975757f882c57ab49cb6a25e981b72a2c085d7f"
+      },
+      {
+        "path": "app/src/heritage/facade.ts",
+        "sha256": "a1a0f24134c3fe991eeb8da6fa6fa0f3647e27a750fae404b2722e8b80073ae4"
+      },
+      {
+        "path": "app/src/heritage/guanque.ts",
+        "sha256": "5b1b5462f680a66d820bca7bc16529944ba3dc3a62ef7d4d12f2f407c914662c"
+      },
+      {
+        "path": "app/src/heritage/materials.ts",
+        "sha256": "d55067e72813ba4dc94f17a34ed3a43b92c60c8762f92006f6a38a59e1d3f5ce"
+      },
+      {
+        "path": "app/src/heritage/roof.ts",
+        "sha256": "2268b7eff4f1437448c04d21dc4050b7bc0ee415ce94073dd367620abbfb3ddc"
+      },
+      {
+        "path": "app/src/main.tsx",
+        "sha256": "1411490ded30f203ea8d24183d9adf5c734984f1d6df8934f7fde5c56745eab5"
+      },
+      {
+        "path": "app/src/PagodaThreeScene.tsx",
+        "sha256": "d4ee3e54ffc6acc44f693f6b36cd48943d747c6a26e2bd0abed7e1873330bd68"
+      },
+      {
+        "path": "app/src/style.css",
+        "sha256": "762d60c8bbd596163251b2a6756a4823fed9ddbfa9d15bbaec4d261cbd6a9bf2"
+      },
+      {
+        "path": "app/src/timeline.ts",
+        "sha256": "43b99e428c7f2a3768f1cb31f95a52d7f1b149b81bd8c73c3187a4a62e4d7da1"
+      },
+      {
+        "path": "app/tsconfig.json",
+        "sha256": "da31f78ff412bdf1b9d8230f63eb99d74452f118dd2c02172776a521b762d3f8"
+      },
+      {
+        "path": "app/vite.config.ts",
+        "sha256": "0ea84b4e2909b04e4c1cb1b92392a9f85bcb46605472763b15935d3498ba8ed3"
+      },
+      {
+        "path": "pipeline/render-video.mjs",
+        "sha256": "b50695a5523f34483586bf37b42dbcc90e15322093f74156582cb41d5391093a"
+      },
+      {
+        "path": "pipeline/video/guanque-pilot-wide.json",
+        "sha256": "7516ea85624189a161beb217e5ee3e869b7a2607c8930decdc08760c142e4a0c"
+      }
+    ]
+  },
+  "exporter": {
+    "path": "exporter-source.mjs",
+    "sha256": "b50695a5523f34483586bf37b42dbcc90e15322093f74156582cb41d5391093a"
+  },
+  "servedBundle": {
+    "expectedFingerprint": "dee93b554259bc6dc0fc8b4bef911651d20c23cafb33b42e7ad89d3d61f78224",
+    "preflight": [
+      {
+        "path": "assets/index-9Luecijy.js",
+        "expectedSha256": "2606cebe564629d9becc25b9f4c28953211836d790315f5e4418c584f21a0e00",
+        "actualSha256": "2606cebe564629d9becc25b9f4c28953211836d790315f5e4418c584f21a0e00",
+        "httpStatus": 200,
+        "equal": true
+      },
+      {
+        "path": "assets/index-BagzxGXL.css",
+        "expectedSha256": "b89c62c2332d73239120250ac0d882a8fb5cd14f257985021c8adf870b2e1f8a",
+        "actualSha256": "b89c62c2332d73239120250ac0d882a8fb5cd14f257985021c8adf870b2e1f8a",
+        "httpStatus": 200,
+        "equal": true
+      },
+      {
+        "path": "index.html",
+        "expectedSha256": "440968f059c0d73453b8437b3aa0fddc2a6e756fdb01fbdb112d794076dc6374",
+        "actualSha256": "440968f059c0d73453b8437b3aa0fddc2a6e756fdb01fbdb112d794076dc6374",
+        "httpStatus": 200,
+        "equal": true
+      }
+    ],
+    "browserResponses": [
+      {
+        "path": "index.html",
+        "resourceType": "document",
+        "expectedSha256": "440968f059c0d73453b8437b3aa0fddc2a6e756fdb01fbdb112d794076dc6374",
+        "actualSha256": "440968f059c0d73453b8437b3aa0fddc2a6e756fdb01fbdb112d794076dc6374",
+        "httpStatus": 200,
+        "equal": true
+      },
+      {
+        "path": "assets/index-BagzxGXL.css",
+        "resourceType": "stylesheet",
+        "expectedSha256": "b89c62c2332d73239120250ac0d882a8fb5cd14f257985021c8adf870b2e1f8a",
+        "actualSha256": "b89c62c2332d73239120250ac0d882a8fb5cd14f257985021c8adf870b2e1f8a",
+        "httpStatus": 200,
+        "equal": true
+      },
+      {
+        "path": "assets/index-9Luecijy.js",
+        "resourceType": "script",
+        "expectedSha256": "2606cebe564629d9becc25b9f4c28953211836d790315f5e4418c584f21a0e00",
+        "actualSha256": "2606cebe564629d9becc25b9f4c28953211836d790315f5e4418c584f21a0e00",
+        "httpStatus": 200,
+        "equal": true
+      }
+    ]
+  },
+  "ffmpegVersion": "ffmpeg version 8.1.1 Copyright (c) 2000-2026 the FFmpeg developers",
+  "browserVersion": "153.0.8010.53",
+  "contract": {
+    "version": "architecture-export.v1",
+    "adapterId": "guanque",
+    "controls": 0
+  },
+  "ffprobe": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "h264",
+        "codec_type": "video",
+        "width": 360,
+        "height": 640,
+        "pix_fmt": "yuv420p",
+        "r_frame_rate": "4/1",
+        "duration": "24.000000",
+        "nb_frames": "96",
+        "nb_read_frames": "96"
+      }
+    ],
+    "format": {
+      "duration": "24.000000",
+      "size": "529709"
+    }
+  },
+  "output": {
+    "video": "guanque-pilot.mp4",
+    "cover": "cover.png",
+    "sha256": "460bf01f95a242c808b14e79167c0178d1f7b5baac11cd81ca226c6bbff0d4c2",
+    "coverSha256": "83430ed5cf820ae672acb818a1729db3292163afbf38d9341a0fb47ed02d9c60",
+    "bytes": 529709,
+    "faststart": true
+  },
+  "sourceAfter": {
+    "source_root": "/Volumes/ORICO_DATA/Projects/3d盖楼/artifacts/pipeline/source-snapshots/2026-09-22T12-27-10-638Z-0fb796b3/app",
+    "sha256": "4f910dc4baa2c33a022d888d083e8c46f90b204fc62a08f00cff8be9906f7936",
+    "files": [
+      {
+        "path": "app/dist/assets/index-9Luecijy.js",
+        "sha256": "2606cebe564629d9becc25b9f4c28953211836d790315f5e4418c584f21a0e00"
+      },
+      {
+        "path": "app/dist/assets/index-BagzxGXL.css",
+        "sha256": "b89c62c2332d73239120250ac0d882a8fb5cd14f257985021c8adf870b2e1f8a"
+      },
+      {
+        "path": "app/dist/index.html",
+        "sha256": "440968f059c0d73453b8437b3aa0fddc2a6e756fdb01fbdb112d794076dc6374"
+      },
+      {
+        "path": "app/index.html",
+        "sha256": "0e562ea6e6ac62aea27fa8b100a3b62de4095500c8df5cf049fb2bddce2c4468"
+      },
+      {
+        "path": "app/package-lock.json",
+        "sha256": "9fb276d39c7a1ef6a6c2c40e569518a3a2fc0400bff183f79715b3ad28fc9830"
+      },
+      {
+        "path": "app/package.json",
+        "sha256": "97d2be15eb4d146fe7c031fecc71b3013882fee2056a481ef01cc0bc251e718f"
+      },
+      {
+        "path": "app/src/App.tsx",
+        "sha256": "b17b23f42fbb567b9340c80821f9043b67f6508e2183f4c0ffc5c2a2cdc68d76"
+      },
+      {
+        "path": "app/src/export-contract.ts",
+        "sha256": "515cd03ac3a0cbebbed27078bb52baf434e989bdb602c002324493484f63f031"
+      },
+      {
+        "path": "app/src/heritage/architecture.ts",
+        "sha256": "c4f8fe2d48b6bbcac8a0c781b7a77c802494e0488a550ce903fe98dd9c9f701f"
+      },
+      {
+        "path": "app/src/heritage/builder.ts",
+        "sha256": "61cee6b0b70352e5b0a330fd7975757f882c57ab49cb6a25e981b72a2c085d7f"
+      },
+      {
+        "path": "app/src/heritage/facade.ts",
+        "sha256": "a1a0f24134c3fe991eeb8da6fa6fa0f3647e27a750fae404b2722e8b80073ae4"
+      },
+      {
+        "path": "app/src/heritage/guanque.ts",
+        "sha256": "5b1b5462f680a66d820bca7bc16529944ba3dc3a62ef7d4d12f2f407c914662c"
+      },
+      {
+        "path": "app/src/heritage/materials.ts",
+        "sha256": "d55067e72813ba4dc94f17a34ed3a43b92c60c8762f92006f6a38a59e1d3f5ce"
+      },
+      {
+        "path": "app/src/heritage/roof.ts",
+        "sha256": "2268b7eff4f1437448c04d21dc4050b7bc0ee415ce94073dd367620abbfb3ddc"
+      },
+      {
+        "path": "app/src/main.tsx",
+        "sha256": "1411490ded30f203ea8d24183d9adf5c734984f1d6df8934f7fde5c56745eab5"
+      },
+      {
+        "path": "app/src/PagodaThreeScene.tsx",
+        "sha256": "d4ee3e54ffc6acc44f693f6b36cd48943d747c6a26e2bd0abed7e1873330bd68"
+      },
+      {
+        "path": "app/src/style.css",
+        "sha256": "762d60c8bbd596163251b2a6756a4823fed9ddbfa9d15bbaec4d261cbd6a9bf2"
+      },
+      {
+        "path": "app/src/timeline.ts",
+        "sha256": "43b99e428c7f2a3768f1cb31f95a52d7f1b149b81bd8c73c3187a4a62e4d7da1"
+      },
+      {
+        "path": "app/tsconfig.json",
+        "sha256": "da31f78ff412bdf1b9d8230f63eb99d74452f118dd2c02172776a521b762d3f8"
+      },
+      {
+        "path": "app/vite.config.ts",
+        "sha256": "0ea84b4e2909b04e4c1cb1b92392a9f85bcb46605472763b15935d3498ba8ed3"
+      },
+      {
+        "path": "pipeline/render-video.mjs",
+        "sha256": "b50695a5523f34483586bf37b42dbcc90e15322093f74156582cb41d5391093a"
+      },
+      {
+        "path": "pipeline/video/guanque-pilot-wide.json",
+        "sha256": "7516ea85624189a161beb217e5ee3e869b7a2607c8930decdc08760c142e4a0c"
+      }
+    ]
+  },
+  "sourceUnchanged": true,
+  "finishedAt": "2026-09-22T12:32:51.692Z"
+}

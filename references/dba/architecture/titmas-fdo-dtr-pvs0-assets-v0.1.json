@@ -1,0 +1,31 @@
+{
+  "schema_version": "0.1",
+  "status": "WAITING_FOR_GWDG_RESPONSE",
+  "observed_at": "2026-08-04T00:00:00+08:00",
+  "source_kind": "HUMAN_OWNER_SYNC_WITH_PUBLIC_REFERENCE_CHECK",
+  "portfolio_role": "PUBLIC_EVIDENCE_AUXILIARY_LINE",
+  "assets": [
+    {"pid": "21.T11966/aro-audit-profile-v1", "type": "FdoProfile", "role": "SPECIFICATION_CANDIDATE", "migration": "OWNER_ACCOUNT_DRAFT_REQUESTED"},
+    {"pid": "21.T11966/fdo-operation-evidence-profile-v0-1", "type": "FdoProfile", "role": "HISTORICAL_EXPERIMENTAL_BASELINE_AND_SPECIFICATION_CANDIDATE", "migration": "OWNER_ACCOUNT_DRAFT_REQUESTED"},
+    {"pid": "21.T11966/aro-audit-manifest-v1", "type": "BasicInfoType", "role": "NON_NORMATIVE_DEMO_HISTORY", "migration": "PRESERVE_CLASSIFICATION"},
+    {"pid": "21.T11966/aro-audit-demo-obj-v1", "type": "BasicInfoType", "role": "NON_NORMATIVE_DEMO_OBJECT", "migration": "PRESERVE_CLASSIFICATION"},
+    {"pid": "21.T11966/aro-audit-demo-do-1", "type": "FdoService", "role": "DEMO_SERVICE_INSTANCE", "migration": "PRESERVE_CLASSIFICATION"}
+  ],
+  "public_verification": {
+    "repository": "joy7758/titmas-fdo-public-verification",
+    "commit": "1dcca69d0bcc2ee94b7e3ef0c80f21536cd39d1c",
+    "record_doi": "10.5281/zenodo.21778954",
+    "concept_doi": "10.5281/zenodo.21778953",
+    "reported_offline_tests": "10/10 PASS",
+    "reported_file_count": 43
+  },
+  "boundaries": {
+    "mainline_product": false,
+    "formal_standard": false,
+    "certification_system": false,
+    "production_runtime": false,
+    "control_authority": false,
+    "external_adoption_proven": false,
+    "v1_standard_authorized": false
+  }
+}

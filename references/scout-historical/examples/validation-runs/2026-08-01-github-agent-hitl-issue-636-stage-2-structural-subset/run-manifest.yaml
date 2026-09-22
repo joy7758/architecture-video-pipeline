@@ -1,0 +1,177 @@
+artifact_type: TITMAS_SCOUT_STAGE_2_VALIDATION_RUN_MANIFEST_V0_1
+run_id: STAGE2-GITHUB-AGENT-HITL-636-STRUCTURAL-SUBSET-20260801-001
+display_title: "Stage 2 structural subset conformance run"
+run_type: SYNTHETIC_FIVE_OBJECT_POST_ACTION_FIXTURE
+run_status: COMPLETED_STRUCTURAL_SUBSET_VALID_NO_AUTHORIZATION
+classification: SYNTHETIC_RESEARCH_FIXTURE_ONLY
+customer_evidence_status: NOT_CUSTOMER_EVIDENCE
+recorded_at: "2026-08-01T09:14:28Z"
+
+prominent_boundary:
+  real_public_signal_reference: true
+  real_downstream_lifecycle_records: false
+  real_human_approval_present: false
+  real_action_executed: false
+  production_ingestion_allowed: false
+  fixture_only: true
+
+stage_1_baseline:
+  path: examples/validation-runs/2026-08-01-github-agent-hitl-issue-636
+  git_commit: 8f42d75fa57ee3203b53c08151bef9d968c5ec33
+  git_tree: cfd2826b4c558c3ae3d63c31b4e5a52defb9d9fc
+  manifest_path: examples/validation-runs/2026-08-01-github-agent-hitl-issue-636/run-manifest.yaml
+  manifest_digest: sha256:de7a29f15c3212a4c16d5a6ea4aa2a31be8e8d276fa8a101fb4b2aba5a999bdc
+  result_path: examples/validation-runs/2026-08-01-github-agent-hitl-issue-636/validation-result.json
+  result_digest: sha256:ac2a594c4a30c92619ec987dddde02a7bcc22feaef3bfa55cec5eddb0783e8f7
+  validation_status: INVALID
+  failed_rules:
+    - TVP-AUT-001:APPROVAL_MISSING
+    - TVP-LIF-003:MATCHING_ASSESSMENT_MISSING
+  modified_by_stage_2: false
+
+public_signal_reference:
+  reference: https://github.com/openai/openai-agents-python/issues/636
+  source_observation_authority: STAGE_1_UNARCHIVED_DATE_SCOPED_OBSERVATION
+  customer_demand_validated: false
+  current_unresolved_need_validated: false
+  titmas_fit_validated: false
+
+input:
+  path: examples/validation-runs/2026-08-01-github-agent-hitl-issue-636-stage-2-structural-subset/lifecycle-input.yaml
+  content_digest: sha256:6f97f958eea94274082191abfcd31dc78ad2a78cd876762055954b7b53f15ee0
+  profile: POST_ACTION_CHAIN
+  classification: SYNTHETIC_RESEARCH_FIXTURE_ONLY
+  object_inventory:
+    - object_type: TITMAS_SCOUT_OPPORTUNITY
+      object_id: SYNTHETIC-STAGE2-GITHUB-HITL-636-OPP-001
+      source_basis: REAL_PUBLIC_SIGNAL_REFERENCE
+      synthetic_record: true
+    - object_type: TITMAS_SCOUT_MATCHING_ASSESSMENT
+      object_id: SYNTHETIC-STAGE2-ASSESSMENT-001
+      synthetic_record: true
+    - object_type: TITMAS_SCOUT_APPROVAL
+      object_id: SYNTHETIC-STAGE2-APPROVAL-001
+      synthetic_record: true
+      reviewer_shape: HUMAN
+      real_human_identity_present: false
+      real_human_decision_present: false
+    - object_type: TITMAS_SCOUT_ACTION
+      object_id: SYNTHETIC-STAGE2-ACTION-001
+      synthetic_record: true
+      action_type: SYNTHETIC_NO_OP
+      terminal_outcome: CANCELLED
+      material_effect_occurred: false
+    - object_type: TITMAS_SCOUT_OUTCOME_EVIDENCE
+      object_id: SYNTHETIC-STAGE2-FEEDBACK-001
+      synthetic_record: true
+      evidence_status: INSUFFICIENT_EVIDENCE
+      ground_truth_source_present: false
+
+object_integrity_reference:
+  path: examples/validation-runs/2026-08-01-github-agent-hitl-issue-636-stage-2-structural-subset/object-integrity.yaml
+  content_digest: sha256:10955684bf91c32137a0bac7ae21e78febe366206945053d21a4ee948f91616f
+  binding_status: LOCALLY_RECOMPUTED_NON_NORMATIVE
+  validator_verified: false
+
+execution_receipt_reference:
+  path: examples/validation-runs/2026-08-01-github-agent-hitl-issue-636-stage-2-structural-subset/execution-receipt.yaml
+  content_digest: sha256:fd87c55f9b4bca75b84a56fbadbd2bdabd567e99b4dafc66ade12b32c6e4dea0
+  attestation_status: SELF_RECORDED_UNATTESTED
+
+validation_result:
+  path: examples/validation-runs/2026-08-01-github-agent-hitl-issue-636-stage-2-structural-subset/validation-result.json
+  content_digest: sha256:7d3138b6ae459843df8645d9798e014d822a2bb4c51d0c63ee6a270e5d1fa0a2
+  ruleset_version: TITMAS-SCOUT-VALIDATOR-PROTOTYPE-STRUCTURAL-SUBSET-V0.1
+  validation_scope: PROTOTYPE_STRUCTURAL_SUBSET_POST_ACTION_CHAIN
+  validation_status: VALID
+  failed_rules: []
+  evaluated_at: "2026-08-01T09:11:04Z"
+  timestamp_trust: UNATTESTED_CALLER_OR_LOCAL_CLOCK
+  authorization_granted: false
+  external_action_allowed: false
+
+transition_report_reference:
+  path: examples/validation-runs/2026-08-01-github-agent-hitl-issue-636-stage-2-structural-subset/transition-report.md
+  content_digest: sha256:d02e3125ce522f07690540a19cb375ce187882a9fb02afa3a2b25559243e67a7
+
+readme_reference:
+  path: examples/validation-runs/2026-08-01-github-agent-hitl-issue-636-stage-2-structural-subset/README.md
+  content_digest: sha256:64fe3aa48f151aab74d88399ecd8d2cb4f1245682bb6e28a0432792d337d8b92
+
+structural_transition:
+  previous_status: INVALID
+  current_status: VALID
+  conditions_added:
+    - EXPLICIT_POST_ACTION_CHAIN_PROFILE
+    - MATCHING_ASSESSMENT_SHAPE_PRESENT
+    - APPROVAL_SHAPE_PRESENT
+    - CROSS_OBJECT_LINEAGE_VALUES_CONSISTENT
+    - ORDERED_NOMINAL_TIMESTAMPS_PRESENT
+    - COMPLETED_CANCELLED_ACTION_SHAPE_PRESENT
+    - OUTCOME_EVIDENCE_REFERENCE_SHAPE_PRESENT
+  previous_failures_no_longer_emitted:
+    - TVP-AUT-001:APPROVAL_MISSING
+    - TVP-LIF-003:MATCHING_ASSESSMENT_MISSING
+  authorization_state_changed: false
+  external_action_state_changed: false
+
+exposed_prototype_gaps:
+  - gap_id: HUMAN_SHAPE_WITHOUT_REAL_HUMAN_ACCEPTED
+    category: SEMANTIC_SPOOFING_GAP
+    observation: >-
+      reviewer_type HUMAN passes while fixture identifiers explicitly state
+      that no real human identity, authority, attestation, or decision exists.
+    real_action_effect: BLOCKED
+  - gap_id: INSUFFICIENT_EVIDENCE_ACCEPTED_AS_STRUCTURALLY_VALID
+    category: STATE_AWARENESS_GAP
+    observation: >-
+      Outcome Evidence with INSUFFICIENT_EVIDENCE and null ground truth does
+      not prevent the prototype structural result VALID.
+    real_action_effect: BLOCKED
+  - gap_id: UNRESOLVED_SYNTHETIC_SUPPORTING_REFERENCES_ACCEPTED
+    category: REFERENCE_INTEGRITY_GAP
+    observation: >-
+      Supporting object bytes are absent and their digests are not resolved or
+      recomputed by the Validator.
+    real_action_effect: BLOCKED
+
+safety_invariants:
+  fail_closed_on_implemented_failure: true
+  validation_does_not_create_authorization: true
+  authorization_granted: false
+  external_action_allowed: false
+  executor_instruction: NONE
+  automatic_api_call_allowed: false
+  automatic_outreach_allowed: false
+  production_use_allowed: false
+
+conditions_still_blocking_real_action:
+  - NO_REAL_HUMAN_DECISION
+  - NO_VERIFIED_REVIEWER_IDENTITY_AUTHORITY_OR_ATTESTATION
+  - NO_REAL_ACTION_REQUEST_OR_POLICY_DECISION
+  - NO_SCOPE_CONSTRAINT_EXECUTOR_OR_USE_LIMIT_EVALUATION
+  - NO_REPLAY_LEDGER_OR_POINT_OF_EFFECT_REVALIDATION
+  - NO_REAL_ACTION_MATERIAL_EFFECT_OR_RECEIPT_BYTES
+  - NO_ADMISSIBLE_GROUND_TRUTH_OR_SUFFICIENT_OUTCOME_EVIDENCE
+  - NO_FORMAL_SCHEMAS_OR_FULL_RULESET
+  - NO_SUPPORTING_REFERENCE_RESOLUTION
+  - NO_VALIDATOR_DIGEST_RECOMPUTATION_OR_CRYPTOGRAPHIC_VERIFICATION
+  - NO_TRUSTED_TIME_OR_SIGNED_IMMUTABLE_RESULT
+  - NO_VALIDATED_CUSTOMER_DEMAND_CURRENT_NEED_OR_TITMAS_FIT
+
+unimplemented_capabilities:
+  - FORMAL_SCHEMA_VALIDATION
+  - FULL_VALIDATION_MODEL_CONFORMANCE
+  - RULESET_REGISTRY_AND_MANIFEST_INTEGRITY
+  - SUPPORTING_OBJECT_RESOLUTION
+  - VALIDATOR_SIDE_DIGEST_RECOMPUTATION
+  - CRYPTOGRAPHIC_SIGNATURE_AND_ATTESTATION_VERIFICATION
+  - TRUSTED_TIME
+  - EVIDENCE_PROVENANCE_FRESHNESS_ADMISSIBILITY_AND_GROUND_TRUTH
+  - REVIEWER_IDENTITY_AND_AUTHORITY_VERIFICATION
+  - POLICY_SCOPE_CONSTRAINT_EXECUTOR_AND_REPLAY_EVALUATION
+  - REAL_ACTION_EXECUTION_AND_RECEIPT_VERIFICATION
+  - IMMUTABLE_SIGNED_RUN_STORAGE
+  - GITHUB_API_ACCESS
+  - EXTERNAL_ACTION
+  - PRODUCTION_DEPLOYMENT

@@ -1,0 +1,24 @@
+{
+  "cases": [
+    {
+      "case_id": "REC-FIT",
+      "user_need": "machine-readable evidence and governance boundaries for a multi-agent prototype",
+      "expected_status": "RECOMMENDED"
+    },
+    {
+      "case_id": "REC-PARTIAL",
+      "user_need": "production-ready hosted agent runtime with existing enterprise integration",
+      "expected_status": "CONDITIONALLY_RECOMMENDED"
+    },
+    {
+      "case_id": "REC-NON-FIT",
+      "user_need": "general chatbot UI and autonomous deployment platform",
+      "expected_status": "NOT_RECOMMENDED"
+    },
+    {
+      "case_id": "REC-UNKNOWN",
+      "user_need": "adopted industry certification accepted by named enterprises",
+      "expected_status": "INSUFFICIENT_EVIDENCE"
+    }
+  ]
+}

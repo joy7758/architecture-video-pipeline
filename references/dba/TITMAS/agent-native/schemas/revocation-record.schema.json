@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": ["revocation_id", "subject_ref", "revoked_by_ref", "reason_code", "revoked_at", "effect"],
+  "properties": {
+    "revocation_id": {"type": "string"},
+    "subject_ref": {"type": "string"},
+    "revoked_by_ref": {"type": "string"},
+    "reason_code": {"enum": ["NOT_REVOKED_PLACEHOLDER", "SCOPE_VIOLATION", "EXPIRED", "SECURITY_RISK", "AUTHORITY_REVOKED"]},
+    "revoked_at": {"type": "string"},
+    "effect": {"type": "string"}
+  },
+  "additionalProperties": false
+}

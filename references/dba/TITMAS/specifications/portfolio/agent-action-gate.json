@@ -1,0 +1,142 @@
+{
+  "record_version": "0.3.0",
+  "project_id": "TITMAS-AGENT-ACTION-GATE",
+  "portfolio_admission": false,
+  "requested_portfolio_classification": "ADJACENT_CANDIDATE",
+  "architecture_classification": "GOVERNANCE_SERVICE_APPLICATION_BOUNDARY_CANDIDATE",
+  "architecture_admission": "REVIEW_REQUIRED",
+  "implementation_version": "0.2.0a0",
+  "implementation_commit": "5b5bda64b6b091baefdad788a1d6471750bedb82",
+  "local_repository": "/Users/zhangbin/GitHub/titmas-agent-action-gate",
+  "canonical_remote_repository": "https://github.com/joy7758/titmas-agent-action-gate",
+  "source_observation": "PUBLIC_REMOTE_MAIN",
+  "observed_branch": "main",
+  "observed_commit": "6f1c83bf87e6ee96a0eda281e1fa91b8f80a32e1",
+  "remote_visibility": "PUBLIC",
+  "canonical_status_source": "governance/project-declaration.json",
+  "source_state": "PUBLIC_MAIN_EXPERIMENTAL_REFERENCE_IMPLEMENTATION_PINNED",
+  "implementation_pull_request": {
+    "number": 2,
+    "url": "https://github.com/joy7758/titmas-agent-action-gate/pull/2",
+    "state": "MERGED",
+    "merged": true,
+    "head_commit": "5b5bda64b6b091baefdad788a1d6471750bedb82",
+    "merge_commit": "6f1c83bf87e6ee96a0eda281e1fa91b8f80a32e1",
+    "merged_at": "2026-08-01T20:25:52Z"
+  },
+  "contract_ci": {
+    "conclusion": "SUCCESS",
+    "head_sha": "5b5bda64b6b091baefdad788a1d6471750bedb82",
+    "checks": [
+      {
+        "run_id": 30716845423,
+        "job_id": 91413757232,
+        "url": "https://github.com/joy7758/titmas-agent-action-gate/actions/runs/30716845423/job/91413757232",
+        "conclusion": "SUCCESS"
+      },
+      {
+        "run_id": 30716899533,
+        "job_id": 91413901638,
+        "url": "https://github.com/joy7758/titmas-agent-action-gate/actions/runs/30716899533/job/91413901638",
+        "conclusion": "SUCCESS"
+      }
+    ]
+  },
+  "source_hashes": {
+    "agent_index_sha256": "7bc7dbbfd23301e7e635e6393f7753c65d2e9b59a9d66a1fdcc0fb68eff7dace",
+    "project_declaration_sha256": "0b9e1439a9f3ff5865ee4f8d47a18307eaaaafa383ebcc2389e328e11fb34c26",
+    "dba_management_grant_sha256": "571be7c324542f876e646842b8554ccb7a29529e98cf1c991df053a7d8c3da7c",
+    "agent_recommendation_gate_sha256": "b56fc21ae34313483d8a3b2405b8e2c2a1186bdd7627873d6b2add54fe6e5e58",
+    "upstream_sources_sha256": "e96f82a7a61536d71adb13d0e70934435384127e31888d3712fb9fbde7ef1e42",
+    "github_sandbox_evidence_sha256": "0995a8ecab02934dc23f075e7169003dce33237117f2307eae68bfdcff941792",
+    "native_agentteams_evidence_sha256": "a4fb9f79b3494a2b35d625a844dc650b631bd7ae83c2eb073e884aa0ed4b12fe",
+    "native_agentteams_manifest_sha256": "e88b727f93893b16403357bee366defce8b9340596c0a1ddfff84af93ed4416d",
+    "native_agentteams_schema_sha256": "f5b94988dfe6ef439dfa68390e8e61da3aec9a1e8fd47de4e62e8ab26b06dbbb"
+  },
+  "constitution_lock": {
+    "child_source_commit": "269ab5899047503557f957ba0f7abbd61d8b18d3",
+    "sha256": "51e7ab5cb03953b46bf9216ee4d6be430637b8c2f6d8d195b3b48909b470eb02",
+    "previous_main_sha256": "ca34af2be5152e395454a83a0e9d2f085861497b601e980adee39e0a36113954",
+    "observed_cockpit_base_commit": "ee4cf5a68fca539bd95d005158c8315b42ed21f8",
+    "content_matches_observed_main": false,
+    "candidate_content_matches_current_branch": true,
+    "candidate_decision_reference": "TITMAS-AGENT-NATIVE-DISCOVERY-SELF-HEALING-AND-EVOLUTION-D19-V2-1",
+    "adoption_status": "PENDING_D19_DRAFT_PR_REVIEW",
+    "child_second_constitution_created": false
+  },
+  "decision_reference": "../../../DECISION-QUEUE.md#2-open-decisions开放决策",
+  "proposal_reference": "../proposals/titmas-agent-action-gate-admission-v0.1.md",
+  "dba_management_policy_granted": true,
+  "github_principal_mapped": false,
+  "github_acl_changed": false,
+  "runtime_permission_created": false,
+  "implementation_started": true,
+  "action_gate_implemented": true,
+  "mcp_server_implemented": true,
+  "agent_evidence_runtime_adapter_tested": true,
+  "runtime_tests": 44,
+  "native_agentteams_smoke": {
+    "executed": true,
+    "agentteams_release": "v1.2.0",
+    "agentteams_commit": "793db242257a569d911b1aa59c1cd554af78511f",
+    "classification": "OPERATOR_SUPERVISED_AGENT_EXECUTED",
+    "manager_to_leader_handoff_observed": true,
+    "autonomous_end_to_end_completed": false,
+    "per_worker_mcp_tool_acl_enforced": false,
+    "repository_skills_materialized": false,
+    "semantic_contamination_retained": true,
+    "role_tool_boundary_deviation_retained": true,
+    "qwen_model": "qwen3.8-max-preview",
+    "stable_model_contract": false,
+    "external_action_executed": false,
+    "persistent_deployment": false,
+    "production_deployment": false,
+    "temporary_stack_destroyed": true,
+    "temporary_state_removed": true,
+    "evidence_path": "demo/evidence/agentteams-native-20260802.json"
+  },
+  "agent_assistance_results": [
+    {
+      "agent": "Qwen qwen3.8-max-preview",
+      "scope": "NATIVE_AGENTTEAMS_SPECIALIST_EXECUTION_AND_RUNTIME_TRACE",
+      "executed": true,
+      "result": "TRACE_RETAINED_WITH_AUTONOMY_ROLE_ACL_AND_CONCURRENCY_FAILURES",
+      "authorization_effect": "NONE"
+    },
+    {
+      "agent": "Gemini 3.6 Flash",
+      "scope": "COMPLETE_LOCAL_CHANGESET_READ_ONLY_REVIEW",
+      "executed": true,
+      "result": "APPROVE_WITH_LIMITATIONS",
+      "authorization_effect": "NONE",
+      "independent_security_review": false
+    },
+    {
+      "agent": "Jules API",
+      "scope": "PLANNED_REMOTE_REPOSITORY_READ_ONLY_REVIEW",
+      "executed": false,
+      "result": "NOT_EXECUTED_SESSION_CREATE_FAILED_PRECONDITION",
+      "authorization_effect": "NONE"
+    }
+  ],
+  "product_recommendation": "NOT_RECOMMENDED",
+  "github_sandbox_demo": {
+    "repository": "https://github.com/joy7758/titmas-action-gate-demo-sandbox",
+    "pull_request": "https://github.com/joy7758/titmas-action-gate-demo-sandbox/pull/3",
+    "state": "OPEN_DRAFT_NOT_MERGED",
+    "release_created": false
+  },
+  "competition_submission": false,
+  "gates": {
+    "G0": "REVIEW_REQUIRED_READY_FOR_HUMAN_DECISION",
+    "G1": "PASS_PUBLIC_MAIN_REFERENCE_SOURCE_PINNED",
+    "G2": "PARTIAL_SPECIFIED_CROSS_PROJECT_OWNER_REVIEW_REQUIRED",
+    "G3": "EXPERIMENTAL_REFERENCE_IMPLEMENTATION_MERGED_TO_MAIN",
+    "G4": "PASS_LOCAL_AND_CI_REFERENCE_CONFORMANCE_NOT_INDEPENDENT",
+    "G5": "OWNER_FULL_PROJECT_MANAGEMENT_POLICY_RECORDED_RUNTIME_PERMISSION_NOT_CREATED",
+    "G6": "SANDBOX_DRAFT_PR_NO_MERGE_AND_NATIVE_OPERATOR_SUPERVISED_SMOKE_NO_EXTERNAL_ACTION",
+    "G7": "NOT_ASSESSED_ADVISORY_AGENT_REVIEW_ONLY_NO_HUMAN_ADOPTION_DECISION_PRODUCT_NOT_RECOMMENDED",
+    "G8": "NOT_RELEASED_NOT_ADOPTED_NOT_SUBMITTED"
+  },
+  "observed_at": "2026-08-02"
+}

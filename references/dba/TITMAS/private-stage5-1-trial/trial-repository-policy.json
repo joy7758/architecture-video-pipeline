@@ -1,0 +1,58 @@
+{
+  "policy_version": "1.0.0",
+  "decision_reference": "TITMAS-STAGE-5-1-PRIVATE-EXTERNAL-DEVELOPER-TRIAL-CHANNEL-D01",
+  "repository": "joy7758/titmas-private-developer-trial",
+  "required_visibility": "PRIVATE",
+  "default_branch": "main",
+  "core_repository_fork": false,
+  "git_history_copied": false,
+  "repository_permissions": {
+    "trial_collaborator_can_push": true,
+    "default_branch_direct_push_blocked": true,
+    "force_push_blocked": true,
+    "branch_deletion_blocked": true,
+    "pull_request_required": true,
+    "owner_review_required": true,
+    "required_approving_review_count": 1,
+    "dismiss_stale_reviews": true,
+    "conversation_resolution_required": true,
+    "status_checks_required": true,
+    "required_status_check_contexts": [
+      "trial-conformance"
+    ],
+    "external_developer_core_repository_access": false,
+    "external_developer_trial_repository_access_only": true
+  },
+  "sandbox_key_scopes": {
+    "allowed": [
+      "standards:read",
+      "tasks:read",
+      "examples:read",
+      "sdk:use",
+      "proposal:prepare",
+      "adapter:prepare",
+      "test-vector:prepare",
+      "feedback:submit"
+    ],
+    "prohibited": [
+      "core-source:read",
+      "private-governance:read",
+      "internal-test:read",
+      "secret:read",
+      "standard:adopt",
+      "release:create",
+      "deployment:create",
+      "admin"
+    ]
+  },
+  "protection_failure": {
+    "trial_repository_invitation_ready": false,
+    "block_reason": "INSUFFICIENT_BRANCH_PROTECTION",
+    "option_a": "TRANSFER_TRIAL_REPOSITORY_TO_GITHUB_ORGANIZATION",
+    "option_b": "DISTRIBUTE_TIME_BOUND_SIGNED_TRIAL_ARCHIVE",
+    "recommendation": "OPTION_A_FOR_GRANULAR_READ_OR_TRIAGE_PERMISSIONS"
+  },
+  "external_participant_invitation_authorized": false,
+  "public_export_authorized": false,
+  "formal_standard_change_authorized": false
+}

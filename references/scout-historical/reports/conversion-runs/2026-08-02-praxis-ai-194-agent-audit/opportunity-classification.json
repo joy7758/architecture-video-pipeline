@@ -1,0 +1,16 @@
+{
+  "artifact_type": "TITMAS_SCOUT_OPPORTUNITY_CLASSIFICATION",
+  "run_id": "2026-08-02-praxis-ai-194-agent-audit",
+  "source_reference": "https://github.com/praxis-proxy/ai/issues/194",
+  "classification": "ACTIONABLE_NOW",
+  "reason_code": "OPEN_PUBLIC_COMMENT_ENTRY",
+  "evidence": {
+    "state": "OPEN",
+    "assignees": [],
+    "comments_count": 0,
+    "is_locked": false,
+    "technical_scope_present": true
+  },
+  "conversion_boundary": "ACTIONABLE_NOW identifies a public participation entry; it does not override repository-specific contribution or communication policy.",
+  "external_action_authorized": false
+}

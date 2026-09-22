@@ -1,0 +1,114 @@
+{
+  "artifact_type": "TITMAS_SCOUT_AGENT_EVIDENCE_VERIFICATION",
+  "schema_version": "0.1",
+  "decision": "PASS",
+  "external_action_allowed": false,
+  "authorization_granted": false,
+  "run_id": "2026-08-02-praxis-ai-194-agent-audit",
+  "event_type": "titmas.scout.pre_action",
+  "canonical_repository": "agent-evidence",
+  "canonical_commit": "911db6650547617c71331ddd9506811f04191656",
+  "package_version": "0.1.0rc3",
+  "artifact_family": "EVIDENCE_ENVELOPE_EXPORT",
+  "verification_scope": "STRUCTURE_DIGEST_CHAIN_ONLY",
+  "actor_authentication": "NOT_ESTABLISHED",
+  "signature_present": false,
+  "signature_verified": null,
+  "record_count": 1,
+  "latest_chain_hash": "0d638283c887f1719cea0de150cc198a14ae4de81debf13fa038670e47a61ab2",
+  "artifacts": {
+    "store": {
+      "path": "evidence-store.jsonl",
+      "digest_algorithm": "sha256",
+      "digest_value": "54ad0d86d9d0fb25bf4b449590d4a23ea611e2b7c07fa363aa3787430a75d5e7"
+    },
+    "bundle": {
+      "path": "evidence-bundle.json",
+      "digest_algorithm": "sha256",
+      "digest_value": "147bc22158711be3027a8d2e1659e63be96a4670d00be123b4f7951f6337d192"
+    },
+    "manifest": {
+      "path": "evidence-export-manifest.json",
+      "digest_algorithm": "sha256",
+      "digest_value": "0cf923f65def08c35751d47592f631ca0dc5fd17391e0c506b70c9ea8b39088e"
+    }
+  },
+  "command_receipts": [
+    {
+      "argv": [
+        "[LOCAL_HOME]/GitHub/agent-evidence/.venv/bin/agent-evidence",
+        "record",
+        "--store",
+        "reports/conversion-runs/2026-08-02-praxis-ai-194-agent-audit/agent-evidence-export/evidence-store.jsonl",
+        "--actor",
+        "AGENT_QUORUM",
+        "--event-type",
+        "titmas.scout.pre_action",
+        "--input",
+        "{\"run_id\":\"2026-08-02-praxis-ai-194-agent-audit\",\"source_reference\":\"https://github.com/praxis-proxy/ai/issues/194\",\"commit_sha\":\"4a9a8659b1b5d61ae2ad7203fbcdcc7666ae5995\",\"digest_algorithm\":\"sha256\",\"digest_value\":\"8a31c48c73f94a1fd71b9ddf50baf6cf8da4cdcc62d9d026198f5a3d2a3ce097\",\"ruleset_version\":\"0.1\",\"action_scope\":[\"POST_BOUNDED_TECHNICAL_COMMENT\"],\"actor_type\":\"AGENT_QUORUM\",\"result\":\"PRE_ACTION_EVIDENCE_CAPTURED_PENDING_QUORUM\",\"uncertainty\":[\"maintainer_scope_acceptance_unknown\",\"assignment_not_granted\",\"repository_human_authorship_policy_applies\"],\"unsupported_claims\":[\"authorization_granted\",\"comment_published\",\"maintainer_acceptance\",\"adoption\",\"revenue\",\"production_safety\",\"actor_identity_authenticated\"],\"timestamp\":\"2026-08-02T07:56:47Z\"}",
+        "--output",
+        "{\"result\":\"PRE_ACTION_EVIDENCE_CAPTURED_PENDING_QUORUM\"}",
+        "--context",
+        "{\"source\":\"tiamas-scout\",\"component\":\"titmas-evidence-adapter\",\"attributes\":{\"canonical_repository\":\"agent-evidence\",\"canonical_commit\":\"911db6650547617c71331ddd9506811f04191656\",\"artifact_family\":\"EVIDENCE_ENVELOPE_EXPORT\"}}",
+        "--metadata",
+        "{\"verification_scope\":\"STRUCTURE_DIGEST_CHAIN_ONLY\",\"actor_authentication\":\"NOT_ESTABLISHED\",\"authorization_granted\":false,\"unsupported_claims\":[\"authorization_granted\",\"comment_published\",\"maintainer_acceptance\",\"adoption\",\"revenue\",\"production_safety\",\"actor_identity_authenticated\"]}",
+        "--tag",
+        "titmas-scout",
+        "--tag",
+        "run:2026-08-02-praxis-ai-194-agent-audit"
+      ],
+      "exit_status": 0,
+      "success": true,
+      "stdout": "{\n  \"schema_version\": \"2.0.0\",\n  \"event\": {\n    \"event_id\": \"be4052b9-d1b4-4e35-b061-314f7a33c483\",\n    \"timestamp\": \"2026-08-02T08:09:32.334487Z\",\n    \"event_type\": \"titmas.scout.pre_action\",\n    \"actor\": \"AGENT_QUORUM\",\n    \"inputs\": {\n      \"run_id\": \"2026-08-02-praxis-ai-194-agent-audit\",\n      \"source_reference\": \"https://github.com/praxis-proxy/ai/issues/194\",\n      \"commit_sha\": \"4a9a8659b1b5d61ae2ad7203fbcdcc7666ae5995\",\n      \"digest_algorithm\": \"sha256\",\n      \"digest_value\": \"8a31c48c73f94a1fd71b9ddf50baf6cf8da4cdcc62d9d026198f5a3d2a3ce097\",\n      \"ruleset_version\": \"0.1\",\n      \"action_scope\": [\n        \"POST_BOUNDED_TECHNICAL_COMMENT\"\n      ],\n      \"actor_type\": \"AGENT_QUORUM\",\n      \"result\": \"PRE_ACTION_EVIDENCE_CAPTURED_PENDING_QUORUM\",\n      \"uncertainty\": [\n        \"maintainer_scope_acceptance_unknown\",\n        \"assignment_not_granted\",\n        \"repository_human_authorship_policy_applies\"\n      ],\n      \"unsupported_claims\": [\n        \"authorization_granted\",\n        \"comment_published\",\n        \"maintainer_acceptance\",\n        \"adoption\",\n        \"revenue\",\n        \"production_safety\",\n        \"actor_identity_authenticated\"\n      ],\n      \"timestamp\": \"2026-08-02T07:56:47Z\"\n    },\n    \"outputs\": {\n      \"result\": \"PRE_ACTION_EVIDENCE_CAPTURED_PENDING_QUORUM\"\n    },\n    \"context\": {\n      \"source\": \"tiamas-scout\",\n      \"component\": \"titmas-evidence-adapter\",\n      \"source_event_type\": null,\n      \"span_id\": null,\n      \"parent_span_id\": null,\n      \"ancestor_span_ids\": [],\n      \"name\": null,\n      \"tags\": [\n        \"titmas-scout\",\n        \"run:2026-08-02-praxis-ai-194-agent-audit\"\n      ],\n      \"attributes\": {\n        \"canonical_repository\": \"agent-evidence\",\n        \"canonical_commit\": \"911db6650547617c71331ddd9506811f04191656\",\n        \"artifact_family\": \"EVIDENCE_ENVELOPE_EXPORT\"\n      }\n    },\n    \"metadata\": {\n      \"verification_scope\": \"STRUCTURE_DIGEST_CHAIN_ONLY\",\n      \"actor_authentication\": \"NOT_ESTABLISHED\",\n      \"authorization_granted\": false,\n      \"unsupported_claims\": [\n        \"authorization_granted\",\n        \"comment_published\",\n        \"maintainer_acceptance\",\n        \"adoption\",\n        \"revenue\",\n        \"production_safety\",\n        \"actor_identity_authenticated\"\n      ]\n    }\n  },\n  \"hashes\": {\n    \"event_hash\": \"a0621853a56931b36e3a966afb063cee43cd1334fb7fdc9ebececacf2dad516e\",\n    \"previous_event_hash\": null,\n    \"chain_hash\": \"0d638283c887f1719cea0de150cc198a14ae4de81debf13fa038670e47a61ab2\"\n  }\n}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "[LOCAL_HOME]/GitHub/agent-evidence/.venv/bin/agent-evidence",
+        "verify",
+        "--store",
+        "reports/conversion-runs/2026-08-02-praxis-ai-194-agent-audit/agent-evidence-export/evidence-store.jsonl"
+      ],
+      "exit_status": 0,
+      "success": true,
+      "stdout": "{\n  \"issues\": [],\n  \"latest_chain_hash\": \"0d638283c887f1719cea0de150cc198a14ae4de81debf13fa038670e47a61ab2\",\n  \"ok\": true,\n  \"records\": 1\n}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "[LOCAL_HOME]/GitHub/agent-evidence/.venv/bin/agent-evidence",
+        "export",
+        "--store",
+        "reports/conversion-runs/2026-08-02-praxis-ai-194-agent-audit/agent-evidence-export/evidence-store.jsonl",
+        "--format",
+        "json",
+        "--output",
+        "reports/conversion-runs/2026-08-02-praxis-ai-194-agent-audit/agent-evidence-export/evidence-bundle.json",
+        "--manifest-output",
+        "reports/conversion-runs/2026-08-02-praxis-ai-194-agent-audit/agent-evidence-export/evidence-export-manifest.json"
+      ],
+      "exit_status": 0,
+      "success": true,
+      "stdout": "{\n  \"format\": \"json\",\n  \"manifest_output\": \"reports/conversion-runs/2026-08-02-praxis-ai-194-agent-audit/agent-evidence-export/evidence-export-manifest.json\",\n  \"output\": \"reports/conversion-runs/2026-08-02-praxis-ai-194-agent-audit/agent-evidence-export/evidence-bundle.json\",\n  \"record_count\": 1,\n  \"required_signature_roles\": {},\n  \"required_signatures\": null,\n  \"signature_count\": 0,\n  \"signed\": false\n}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "[LOCAL_HOME]/GitHub/agent-evidence/.venv/bin/agent-evidence",
+        "verify-export",
+        "--bundle",
+        "reports/conversion-runs/2026-08-02-praxis-ai-194-agent-audit/agent-evidence-export/evidence-bundle.json"
+      ],
+      "exit_status": 0,
+      "success": true,
+      "stdout": "{\n  \"format\": \"json\",\n  \"issues\": [],\n  \"latest_chain_hash\": \"0d638283c887f1719cea0de150cc198a14ae4de81debf13fa038670e47a61ab2\",\n  \"ok\": true,\n  \"record_count\": 1,\n  \"required_role_signature_counts\": {},\n  \"required_signature_count\": 0,\n  \"signature_count\": 0,\n  \"signature_policy\": {\n    \"minimum_valid_signatures\": null,\n    \"minimum_valid_signatures_by_role\": {}\n  },\n  \"signature_present\": false,\n  \"signature_results\": [],\n  \"signature_verified\": null,\n  \"verified_role_signature_counts\": {},\n  \"verified_signature_count\": 0\n}\n",
+      "stderr": ""
+    }
+  ],
+  "unsupported_claims": [
+    "EVIDENCE_NE_TRUTH",
+    "VERIFICATION_NE_AUTHORIZATION",
+    "VERIFICATION_NE_CERTIFICATION",
+    "ACTOR_IDENTITY_NOT_AUTHENTICATED"
+  ]
+}

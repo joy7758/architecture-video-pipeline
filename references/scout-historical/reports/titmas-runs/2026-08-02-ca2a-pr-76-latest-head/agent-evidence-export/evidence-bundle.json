@@ -1,0 +1,108 @@
+{
+  "manifest": {
+    "artifact_digest": "8bda2b2ef61d3acd234d6f8bcd4edc9e4e9b9e077d9d088e72faa20a73a808ec",
+    "chain_hash_list_digest": "b1ad0d4b54f417c7b89904cb1415cb62455f1b2e4519e29f26471fca6ea52344",
+    "digest_algorithm": "sha256",
+    "event_hash_list_digest": "d2daa9a01b70ec3e11cc6b6056d7c81059eb03aa06e62799d8df77a698e96287",
+    "export_format": "json",
+    "filters": {},
+    "first_event_hash": "c90d3263501832612aae662a433f1c1db953f9d572c933097931182bdeab5cf1",
+    "generated_at": "2026-08-02T06:22:44.571399+00:00",
+    "last_event_hash": "c90d3263501832612aae662a433f1c1db953f9d572c933097931182bdeab5cf1",
+    "latest_chain_hash": "a06a13eb3f51a83a43071cf245c254135d1f8745754a2400d28927b7818be57d",
+    "record_count": 1,
+    "schema_version": "1.4.0",
+    "signature_policy": {
+      "minimum_valid_signatures": null,
+      "minimum_valid_signatures_by_role": {}
+    }
+  },
+  "records": [
+    {
+      "event": {
+        "actor": "AGENT_QUORUM",
+        "context": {
+          "ancestor_span_ids": [],
+          "attributes": {
+            "artifact_family": "EVIDENCE_ENVELOPE_EXPORT",
+            "canonical_commit": "911db6650547617c71331ddd9506811f04191656",
+            "canonical_repository": "agent-evidence"
+          },
+          "component": "titmas-evidence-adapter",
+          "name": null,
+          "parent_span_id": null,
+          "source": "tiamas-scout",
+          "source_event_type": null,
+          "span_id": null,
+          "tags": [
+            "titmas-scout",
+            "run:2026-08-02-ca2a-pr-76-latest-head"
+          ]
+        },
+        "event_id": "718827eb-ab10-48ac-bbcc-d0c61e4e1965",
+        "event_type": "titmas.scout.pre_action",
+        "inputs": {
+          "action_scope": [
+            "PUSH_PERSONAL_BRANCH",
+            "POST_BOUNDED_TECHNICAL_COMMENT"
+          ],
+          "actor_type": "AGENT_QUORUM",
+          "canonical_evidence": {
+            "artifact_family": "EVIDENCE_ENVELOPE_EXPORT",
+            "commit": "911db6650547617c71331ddd9506811f04191656",
+            "package_version": "0.1.0rc3",
+            "repository": "agent-evidence"
+          },
+          "commit_sha": "0a1ffa6710d25f58515b2dca7e0619e134c0a43e",
+          "digest_algorithm": "sha256",
+          "digest_value": "82688a11ed0f103c75cabc80f6c7e16fbd51bee0766a52043d0894ff2d066731",
+          "integration_version": "0.1",
+          "result": "BASELINE_CAPTURED_LOCAL_SYNC_COMPLETE",
+          "ruleset_version": "0.1",
+          "run_id": "2026-08-02-ca2a-pr-76-latest-head",
+          "source_reference": "agentrust-io/ca2a#76",
+          "timestamp": "2026-08-02T06:21:39Z",
+          "uncertainty": [
+            "maintainer_acceptance_unknown",
+            "remote_ci_not_executed",
+            "codex_review_for_final_head_absent"
+          ],
+          "unsupported_claims": [
+            "maintainer_approval",
+            "merge",
+            "adoption",
+            "customer",
+            "revenue",
+            "production_safety",
+            "dba_ingestion"
+          ]
+        },
+        "metadata": {
+          "actor_authentication": "NOT_ESTABLISHED",
+          "authorization_granted": false,
+          "unsupported_claims": [
+            "maintainer_approval",
+            "merge",
+            "adoption",
+            "customer",
+            "revenue",
+            "production_safety",
+            "dba_ingestion"
+          ],
+          "verification_scope": "STRUCTURE_DIGEST_CHAIN_ONLY"
+        },
+        "outputs": {
+          "result": "BASELINE_CAPTURED_LOCAL_SYNC_COMPLETE"
+        },
+        "timestamp": "2026-08-02T06:22:42.902180Z"
+      },
+      "hashes": {
+        "chain_hash": "a06a13eb3f51a83a43071cf245c254135d1f8745754a2400d28927b7818be57d",
+        "event_hash": "c90d3263501832612aae662a433f1c1db953f9d572c933097931182bdeab5cf1",
+        "previous_event_hash": null
+      },
+      "schema_version": "2.0.0"
+    }
+  ],
+  "signatures": []
+}

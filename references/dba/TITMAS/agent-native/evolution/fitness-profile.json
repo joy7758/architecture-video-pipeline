@@ -1,0 +1,37 @@
+{
+  "fitness_profile_id": "TITMAS-D19-MULTI-OBJECTIVE-FITNESS-2.1",
+  "version": "2.1.0",
+  "multi_objective": true,
+  "opaque_universal_score": false,
+  "pareto_selection_allowed": true,
+  "dimensions": [
+    "AGENT_DISCOVERABILITY",
+    "AGENT_CALLABILITY",
+    "AGENT_REUSABILITY",
+    "CORRECTNESS",
+    "SECURITY",
+    "INTEROPERABILITY",
+    "EVIDENCE_QUALITY",
+    "REPRODUCIBILITY",
+    "RESOURCE_EFFICIENCY",
+    "LATENCY",
+    "ROLLBACKABILITY",
+    "MAINTAINABILITY",
+    "AUTHORITY_SAFETY"
+  ],
+  "hard_gates": {
+    "CORRECTNESS": "PASS",
+    "SECURITY": "PASS",
+    "AUTHORITY_SAFETY": "PASS",
+    "ROLLBACKABILITY": "PASS"
+  },
+  "hard_gate_compensation_allowed": false,
+  "forbidden_objectives": [
+    "MAXIMIZE_USAGE_AT_ALL_COSTS",
+    "MAXIMIZE_TOKEN_CONSUMPTION",
+    "MAXIMIZE_AGENT_DEPENDENCY",
+    "MAXIMIZE_CREDENTIAL_COUNT",
+    "MAXIMIZE_PERSISTENCE"
+  ],
+  "selection_results": ["SELECT", "SELECT_WITH_CONDITIONS", "REJECT_ALL", "DEFER", "NOT_ASSESSED"]
+}

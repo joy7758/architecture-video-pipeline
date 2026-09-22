@@ -1,0 +1,64 @@
+artifact_type: TITMAS_SCOUT_STAGE_2_OBJECT_INTEGRITY_V0_1
+classification: UNVERIFIED_RESEARCH_ARTIFACT_BINDINGS
+input_path: examples/validation-runs/2026-08-01-github-agent-hitl-issue-636-stage-2-structural-subset/lifecycle-input.yaml
+
+canonicalization:
+  method_id: TITMAS_SCOUT_RESEARCH_CANONICAL_JSON_DEEP_SORT_V0_1
+  mapping_order: RECURSIVE_LEXICOGRAPHIC_KEY_ORDER
+  array_order: PRESERVED
+  serialization: UTF8_COMPACT_JSON
+  digest_algorithm: SHA256
+  normative: false
+  validator_recomputes_these_digests: false
+
+embedded_object_digests:
+  opportunity:
+    object_id: SYNTHETIC-STAGE2-GITHUB-HITL-636-OPP-001
+    content_digest: sha256:6dc5668535b41e25c8dd6eb8d7cf39a2a2895c394a1f1ba195534b71efa8585a
+    referenced_by:
+      - assessment.opportunity_reference
+      - approval.opportunity_reference
+      - action.opportunity_reference
+      - outcome_evidence.opportunity_reference
+  assessment:
+    object_id: SYNTHETIC-STAGE2-ASSESSMENT-001
+    content_digest: sha256:511494c1c327dd957642b505f89e22d9f813882c9089344818f22598d72fc960
+    referenced_by:
+      - approval.assessment_reference
+  approval:
+    object_id: SYNTHETIC-STAGE2-APPROVAL-001
+    content_digest: sha256:b62090db23d80bdbb33b72b7fddc4fc3eb5318f5ce95d553ec7155089e78b764
+    referenced_by:
+      - action.approval_reference
+  action:
+    object_id: SYNTHETIC-STAGE2-ACTION-001
+    content_digest: sha256:3a9efc4a47b1144fad1341d5beb8ae5dac2ff3cf9589cd59f18f93aac62b34b8
+    referenced_by:
+      - outcome_evidence.action_reference
+  outcome_evidence:
+    object_id: SYNTHETIC-STAGE2-FEEDBACK-001
+    content_digest: sha256:5a8e9b7f2ebfcc7ad6ab401ed41a5cc9d122a713c3ae53bab43e9b037314eb29
+    referenced_by: []
+
+supporting_reference_semantics:
+  object_instances_included: false
+  digest_method: SYNTHETIC_FIXED_FIXTURE_VALUE
+  validator_resolution_performed: false
+  affected_reference_types:
+    - TITMAS_SCOUT_ACTION_REQUEST
+    - TITMAS_SCOUT_ACTION_POLICY
+    - TITMAS_SCOUT_EXECUTOR
+    - TITMAS_SCOUT_ACTION_RECEIPT
+    - TITMAS_SCOUT_REVIEWER_IDENTITY
+    - TITMAS_SCOUT_REVIEWER_AUTHORITY
+    - TITMAS_SCOUT_REVIEWER_ATTESTATION
+    - TITMAS_SCOUT_TIME_SOURCE
+    - TITMAS_SCOUT_SUBJECT
+
+truth_boundary:
+  local_embedded_object_digests_recomputed: true
+  validator_digest_verification_performed: false
+  supporting_object_bytes_available: false
+  cryptographic_integrity_established: false
+  tamper_evidence_established: false
+  replay_protection_established: false

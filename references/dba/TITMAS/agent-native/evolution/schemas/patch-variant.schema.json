@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://titmas.cn/schemas/d19/patch-variant-2.1.json",
+  "title": "TITMAS PatchVariantObject v2.1",
+  "type": "object",
+  "required": [
+    "variant_id",
+    "variant_kind",
+    "parent_revision",
+    "target_repository",
+    "target_component",
+    "change_summary",
+    "affected_contracts",
+    "semantic_change",
+    "security_change",
+    "authority_change",
+    "migration_required",
+    "implementation_reference",
+    "test_reference",
+    "rollback_reference"
+  ],
+  "properties": {
+    "variant_id": {"type": "string", "pattern": "[A-Z0-9][A-Z0-9._-]{4,127}"},
+    "variant_kind": {"enum": ["MINIMAL_REPAIR", "ALTERNATIVE_REPAIR", "NO_CHANGE_BASELINE"]},
+    "parent_revision": {"type": "string", "minLength": 7},
+    "target_repository": {"type": "string", "minLength": 3},
+    "target_component": {"type": "string", "minLength": 3},
+    "change_summary": {"type": "string", "minLength": 8},
+    "affected_contracts": {"type": "array", "items": {"type": "string"}},
+    "semantic_change": {"type": "boolean"},
+    "security_change": {"type": "boolean"},
+    "authority_change": {"type": "boolean"},
+    "migration_required": {"type": "boolean"},
+    "implementation_reference": {"type": "string"},
+    "test_reference": {"type": "string"},
+    "rollback_reference": {"type": "string", "minLength": 3}
+  },
+  "additionalProperties": false
+}

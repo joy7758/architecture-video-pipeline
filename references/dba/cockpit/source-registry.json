@@ -1,0 +1,28 @@
+{
+  "registry_version": "0.1",
+  "sources": [
+    {
+      "project_id": "titmac-scout",
+      "display_name": "titmac-scout",
+      "conversation_alias": "tiamas-scout",
+      "source_repository": "joy7758/titmac-scout",
+      "source_repository_status": "VERIFIED_PRIVATE",
+      "source_branch": "main",
+      "source_status_path": "governance/project-status.json",
+      "source_schema_path": "governance/project-status.schema.json",
+      "access_mode": "READ_ONLY",
+      "refresh_mode": "ON_DEMAND",
+      "source_mode": "CANONICAL_MAIN_EXACT_REVISION",
+      "freshness_policy": {
+        "active_development_hours": 72,
+        "maintenance_days": 14,
+        "dynamic_observation_max_age_seconds": 300,
+        "failure_mode": "FAIL_CLOSED"
+      },
+      "dynamic_observation_mode": "GITHUB_API_READ_ONLY",
+      "source_revision": "e4adbbbbb149871f108fcf384369182d8c5765f4",
+      "source_tree_digest": "a5e9ff2945ab3da30ce1054631d2139da4efc878",
+      "status_digest": "d9e0438bd99a7ff1e080f5f05b983db9f5e1ef13efbeb504534de6ec8923474c"
+    }
+  ]
+}

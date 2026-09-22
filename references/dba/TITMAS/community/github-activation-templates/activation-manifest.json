@@ -1,0 +1,78 @@
+{
+  "package_id": "TITMAS-GITHUB-CONTRIBUTION-ACTIVATION-TEMPLATES-0.1",
+  "version": "0.1.0",
+  "status": "PRIVATE_BOUNDARY_HISTORICAL_PACKAGE_RETAINED",
+  "source_pr": 41,
+  "source_branch": "codex/titmas-agent-native-open-standards-community-canonical-integration-v1",
+  "source_commit": "7ac40ea01a48160c8f38af7478c01229f7ec8f21",
+  "core_merge_commit": "3ce0b2008db1433db7c24375f81cfa422fabb7e3",
+  "activation_branch": "codex/titmas-community-public-contribution-activation-v0-1",
+  "activation_pr": 42,
+  "activation_content_head": "12c712d42d9fd710d966ea6b6e18d69dd51a8f87",
+  "activation_merge_commit": "3f1a32666f82e6096a0f9158a86e92573e895769",
+  "templates": [
+    {
+      "source_path": ".github/ISSUE_TEMPLATE/bug.yml",
+      "dormant_path": "ISSUE_TEMPLATE/bug.yml",
+      "future_active_path": ".github/ISSUE_TEMPLATE/bug.yml",
+      "sha256": "1e059d4930b9e8ac6d8f719c8276e4504793fe31427528f4864fcf27e8d26906",
+      "template_type": "GITHUB_ISSUE_FORM"
+    },
+    {
+      "source_path": ".github/ISSUE_TEMPLATE/config.yml",
+      "dormant_path": "ISSUE_TEMPLATE/config.yml",
+      "future_active_path": ".github/ISSUE_TEMPLATE/config.yml",
+      "sha256": "bd11fe80c16914ac30b79a91abea56bf12933294dd667ff79c6fd21c8a4325f1",
+      "template_type": "GITHUB_ISSUE_CONFIG"
+    },
+    {
+      "source_path": ".github/ISSUE_TEMPLATE/integration.yml",
+      "dormant_path": "ISSUE_TEMPLATE/integration.yml",
+      "future_active_path": ".github/ISSUE_TEMPLATE/integration.yml",
+      "sha256": "d4f5e106a0505224f8144a218a2a894f313a4b0602dd8ed6358807483964846c",
+      "template_type": "GITHUB_ISSUE_FORM"
+    },
+    {
+      "source_path": ".github/ISSUE_TEMPLATE/proposal.yml",
+      "dormant_path": "ISSUE_TEMPLATE/proposal.yml",
+      "future_active_path": ".github/ISSUE_TEMPLATE/proposal.yml",
+      "sha256": "ca55a329b9dae84694001c944e5f61ca187e9da0f5a4231a000a4bddde128503",
+      "template_type": "GITHUB_ISSUE_FORM"
+    },
+    {
+      "source_path": ".github/pull_request_template.md",
+      "dormant_path": "pull_request_template.md",
+      "future_active_path": ".github/pull_request_template.md",
+      "sha256": "3b2713aef33a67377ccae0d2ecac7394597a9906594c90e54158d802bdca4bd6",
+      "template_type": "GITHUB_PULL_REQUEST_TEMPLATE"
+    }
+  ],
+  "intended_active_destinations": [
+    ".github/ISSUE_TEMPLATE/bug.yml",
+    ".github/ISSUE_TEMPLATE/config.yml",
+    ".github/ISSUE_TEMPLATE/integration.yml",
+    ".github/ISSUE_TEMPLATE/proposal.yml",
+    ".github/pull_request_template.md"
+  ],
+  "content_hashes": {
+    "ISSUE_TEMPLATE/bug.yml": "sha256:1e059d4930b9e8ac6d8f719c8276e4504793fe31427528f4864fcf27e8d26906",
+    "ISSUE_TEMPLATE/config.yml": "sha256:bd11fe80c16914ac30b79a91abea56bf12933294dd667ff79c6fd21c8a4325f1",
+    "ISSUE_TEMPLATE/integration.yml": "sha256:d4f5e106a0505224f8144a218a2a894f313a4b0602dd8ed6358807483964846c",
+    "ISSUE_TEMPLATE/proposal.yml": "sha256:ca55a329b9dae84694001c944e5f61ca187e9da0f5a4231a000a4bddde128503",
+    "pull_request_template.md": "sha256:3b2713aef33a67377ccae0d2ecac7394597a9906594c90e54158d802bdca4bd6"
+  },
+  "security_transport_required": true,
+  "security_transport_verified": true,
+  "human_decision_required": "COMMUNITY-HD-03=ACCEPT_AND_EXECUTE",
+  "human_decision_reference": "TITMAS-COMMUNITY-CORE-MERGE-AND-OPENING-D01",
+  "activation_pr_required": true,
+  "installed": true,
+  "active": false,
+  "authorized": false,
+  "limitations": [
+    "HISTORICAL_LIMITED_REPOSITORY_CONTRIBUTION_PREVIEW_RETAINED",
+    "CURRENT_PUBLIC_CONTRIBUTION_DISABLED",
+    "OPEN_DOOR_NE_ESTABLISHED_COMMUNITY"
+  ],
+  "created_at": "2026-07-29"
+}

@@ -1,0 +1,196 @@
+{
+  "crosswalk_id": "DBA-TRUST-CONTINUITY-COMPATIBILITY-CROSSWALK-0.1",
+  "format_version": "0.1.0",
+  "title": "Trust Continuity Compatibility Crosswalk v0.1",
+  "title_zh": "信任连续性兼容交叉映射 v0.1",
+  "status": "PRIMARY_SOURCE_RECONCILED_REFERENCE_CASES_NO_NEW_CAPABILITY",
+  "observed_at": "2026-08-15",
+  "verified_at": "2026-08-15",
+  "primary_repository": "DBA",
+  "canonical_owner": "Program Governance Cockpit",
+  "extends": "../2026-08-01/execution-context-trust-invalidation-profile.md",
+  "decision_reference": "../../architecture/ADR-039-verified-correction-and-execution-context-continuity.md",
+  "purpose": "Map upstream version, registry and telemetry facts to the existing DBA conclusion-continuity gate without creating a runtime, schema, protocol, identity system, registry or observability backend.",
+  "machine_decision_states": [
+    "UNCHANGED",
+    "REASSESSMENT_REQUIRED",
+    "HOLD_MISSING_EVIDENCE",
+    "REVIEW_REQUIRED"
+  ],
+  "cases": [
+    {
+      "case_id": "TC-ANTHROPIC-MANAGED-AGENT-SESSION-STATE-2026-08-15",
+      "upstream": "Anthropic Claude Managed Agents",
+      "upstream_status": "BETA",
+      "verified_facts": [
+        "An agent is a reusable versioned configuration containing model, system prompt, tools, MCP servers and skills.",
+        "A session can override model, system prompt, tools, MCP servers and skills without changing the agent.",
+        "An existing session can replace its tools and MCP servers after session creation."
+      ],
+      "compatibility_axes": {
+        "declared_agent_identity": [
+          "agent_id",
+          "agent_version"
+        ],
+        "effective_session_capability_state": [
+          "effective_model",
+          "effective_system_prompt_digest",
+          "effective_tool_manifest_digest",
+          "effective_mcp_server_manifest_digest",
+          "effective_skill_manifest_digest",
+          "session_update_sequence_or_digest"
+        ]
+      },
+      "profile_mapping": {
+        "triggers": [
+          "EC-01-HARNESS",
+          "EC-02-PROMPT-SAFETY",
+          "EC-06-TOOLS-PROTOCOLS"
+        ],
+        "default_result_when_effective_state_differs_or_is_unknown": "REASSESSMENT_REQUIRED",
+        "conclusion_inheritance_rule": "Agent ID and agent version equality are insufficient when the effective session capability state differs or cannot be compared."
+      },
+      "source_refs": [
+        "https://platform.claude.com/docs/en/managed-agents/agent-setup",
+        "https://platform.claude.com/docs/en/api/beta/sessions/update"
+      ],
+      "unknowns": [
+        "No Anthropic session was created or executed in this reconciliation.",
+        "The documentation does not prove any TITMAS, DBOS or SAEE integration."
+      ],
+      "prohibited_inferences": [
+        "SAME_AGENT_ID_IMPLIES_SAME_EFFECTIVE_CAPABILITY",
+        "SAME_AGENT_VERSION_IMPLIES_SAME_SESSION_TOOL_STATE",
+        "DOCUMENTED_BETA_FEATURE_IMPLIES_INTERNAL_ADOPTION"
+      ]
+    },
+    {
+      "case_id": "TC-AWS-REGISTRY-DUAL-REVISION-2026-08-15",
+      "upstream": "AWS Agent Registry",
+      "upstream_status": "PUBLIC_PREVIEW_DOCUMENTATION_NAMESPACE_TRANSITION_NOT_CONFIRMED_COMPLETE",
+      "verified_facts": [
+        "Registry records support DRAFT, PENDING_APPROVAL, APPROVED, REJECTED and terminal DEPRECATED lifecycle states.",
+        "Editing or synchronizing an APPROVED record creates a new DRAFT revision while the approved revision remains searchable.",
+        "Search and MCP return the approved revision, while Get and List return the latest revision.",
+        "MCP endpoints and A2A Agent Cards can be synchronized into records and an update creates a new revision.",
+        "The documentation still labels the namespace move from bedrock-agentcore to agent-registry as upcoming even though it names August 6, 2026 as the start date."
+      ],
+      "compatibility_axes": {
+        "latest_registry_revision": "Latest revision returned by Get or List, including a DRAFT revision.",
+        "approved_effective_revision": "Approved revision returned by Search or the registry MCP endpoint.",
+        "bound_or_executed_revision": "Exact revision and descriptor digest actually selected by the consuming or executing context."
+      },
+      "profile_mapping": {
+        "triggers": [
+          "EC-06-TOOLS-PROTOCOLS",
+          "EC-07-RUNTIME"
+        ],
+        "default_result_when_bound_revision_is_missing": "HOLD_MISSING_EVIDENCE",
+        "default_result_when_bound_revision_changed": "REASSESSMENT_REQUIRED",
+        "conclusion_inheritance_rule": "Latest, approved and executed revisions must be recorded separately; registry record identity alone is insufficient."
+      },
+      "source_refs": [
+        "https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/registry-record-lifecycle.html",
+        "https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/registry-sync-records.html",
+        "https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/registry-key-capabilities.html"
+      ],
+      "unknowns": [
+        "The documentation did not establish that the namespace migration was complete in every region on 2026-08-15.",
+        "No AWS registry, record or regional endpoint was invoked in this reconciliation."
+      ],
+      "prohibited_inferences": [
+        "LATEST_REVISION_EQUALS_DISCOVERABLE_APPROVED_REVISION",
+        "APPROVED_REVISION_EQUALS_EXECUTED_REVISION",
+        "SCHEDULED_NAMESPACE_DATE_IMPLIES_GLOBAL_MIGRATION_COMPLETE"
+      ]
+    },
+    {
+      "case_id": "TC-OTEL-EVIDENCE-ORIGIN-ACCOUNTABILITY-2026-08-15",
+      "upstream": "OpenTelemetry GenAI Semantic Conventions",
+      "upstream_status": "OPEN_ISSUE_NO_MILESTONE_NO_ASSOCIATED_PR",
+      "verified_facts": [
+        "Issue 386 proposes self_reported and externally_observed as evidence-origin values.",
+        "The proposal explicitly separates observation origin from signing or accountability.",
+        "Unset must remain unknown rather than defaulting to self_reported.",
+        "The issue remained open with no milestone and no associated pull request when verified."
+      ],
+      "compatibility_axes": {
+        "observation_origin": "Where the observation was produced.",
+        "signer_or_accountability": "Who signed or is accountable for the record.",
+        "claim_content": "What the record asserts."
+      },
+      "profile_mapping": {
+        "triggers": [
+          "EC-09-MONITORING"
+        ],
+        "default_result_when_origin_or_accountability_is_missing": "HOLD_MISSING_EVIDENCE",
+        "conclusion_inheritance_rule": "Observation origin, signer/accountability and claim content are independent axes and must not be inferred from one another."
+      },
+      "source_refs": [
+        "https://github.com/open-telemetry/semantic-conventions-genai/issues/386"
+      ],
+      "unknowns": [
+        "The proposed attribute name and values can change before any specification or release.",
+        "No published semantic-conventions version was identified as adopting the proposal."
+      ],
+      "prohibited_inferences": [
+        "EXTERNALLY_OBSERVED_IMPLIES_THIRD_PARTY_SIGNED",
+        "SELF_REPORTED_IMPLIES_PRODUCER_SIGNED",
+        "OPEN_ISSUE_IMPLIES_ADOPTED_SEMANTIC_CONVENTION",
+        "TELEMETRY_IMPLIES_EVIDENCE_SUFFICIENCY"
+      ]
+    }
+  ],
+  "upstream_tracking": [
+    {
+      "upstream": "Microsoft Entra Agent ID",
+      "verified_state": "PRODUCT_GA_FEATURE_LEVEL_PREVIEW_MARKERS_RETAINED",
+      "relevance": "Owner, sponsor and manager relationships plus sponsor reassignment are authority-context inputs; a relationship change maps to EC-05-CREDENTIAL and REVIEW_REQUIRED.",
+      "source_refs": [
+        "https://learn.microsoft.com/en-us/entra/agent-id/whats-new-agent-id",
+        "https://learn.microsoft.com/en-us/entra/id-governance/agent-id-governance-overview"
+      ]
+    },
+    {
+      "upstream": "ITU-T FG-TIDA",
+      "verified_state": "PRE_STANDARDIZATION_FOCUS_GROUP_NO_TITMAS_ADOPTION",
+      "relevance": "Track identity, trust lifecycle and continuous-assessment terminology; do not claim a final standard, contribution, membership or adoption.",
+      "source_refs": [
+        "https://www.itu.int/en/mediacentre/Pages/PR-2026-07-09-focus-group-agentic-AI.aspx",
+        "https://www.itu.int/en/ITU-T/focusgroups/tida/Pages/default.aspx",
+        "https://www.itu.int/en/ITU-T/Workshops-and-Seminars/2026/0907/Pages/ws-pm.aspx"
+      ]
+    }
+  ],
+  "agent_recommendation_gate": {
+    "result": "CONDITIONALLY_RECOMMENDED",
+    "recommended_as": "MACHINE_READABLE_REFERENCE_CASE_MAPPING_TO_EXISTING_GATES",
+    "not_recommended_as": "INDEPENDENT_DOCUMENT_WITHOUT_GATE_MAPPING_OR_NEW_CONTROL_PLANE",
+    "required_corrections_applied": [
+      "Each case maps to existing EC triggers and explicit fail-closed results.",
+      "Latest, approved and executed registry revisions are separated.",
+      "No new runtime, schema or protocol is introduced."
+    ],
+    "advisory_provider": "GOOGLE_GEMINI",
+    "advisory_only": true,
+    "fallback_reason": "QWEN_WEEKLY_QUOTA_EXHAUSTED_NO_RECOMMENDATION_RESPONSE"
+  },
+  "implementation_effect": {
+    "new_runtime": false,
+    "new_schema": false,
+    "new_protocol": false,
+    "dbos_change_required": false,
+    "saee_change_required": false,
+    "production_change_performed": false,
+    "existing_gate_semantics_changed": false,
+    "reference_cases_added": true
+  },
+  "authority_boundaries": [
+    "REFERENCE_CASE_NE_IMPLEMENTATION",
+    "REASSESSMENT_NE_PERMISSION_REVOCATION",
+    "REGISTRY_APPROVAL_NE_EXECUTION",
+    "OBSERVATION_ORIGIN_NE_SIGNER_ACCOUNTABILITY",
+    "IDENTITY_RELATIONSHIP_NE_RUNTIME_AUTHORITY",
+    "PRE_STANDARDIZATION_NE_STANDARD_ADOPTION"
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "schema_version": "review-results.v1",
+  "job_id": "guanque-pilot",
+  "contract_sha256": "2b0723ff040b778234796734cd9e47dd08204e1f9f6bb70300bed38e386e8c71",
+  "status": "NOT_RUN",
+  "results": []
+}

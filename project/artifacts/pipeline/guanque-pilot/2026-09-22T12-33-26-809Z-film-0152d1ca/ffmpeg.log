@@ -1,0 +1,37 @@
+Input #0, image2, from '/Volumes/ORICO_DATA/Projects/3d盖楼/artifacts/pipeline/guanque-pilot/2026-09-22T12-33-26-809Z-film-0152d1ca/frames/frame-%06d.png':
+  Duration: 00:00:24.00, start: 0.000000, bitrate: N/A
+  Stream #0:0: Video: png, rgb24(pc, gbr/unknown/unknown), 1080x1920, 30 fps, 30 tbr, 30 tbn
+Stream mapping:
+  Stream #0:0 -> #0:0 (png (native) -> h264 (libx264))
+[libx264 @ 0x809018a80] using cpu capabilities: ARMv8 NEON DotProd I8MM
+[libx264 @ 0x809018a80] profile High, level 4.0, 4:2:0, 8-bit
+[libx264 @ 0x809018a80] 264 - core 165 r3222 b35605a - H.264/MPEG-4 AVC codec - Copyleft 2003-2025 - http://www.videolan.org/x264.html - options: cabac=1 ref=3 deblock=1:0:0 analyse=0x3:0x113 me=hex subme=7 psy=1 psy_rd=1.00:0.00 mixed_ref=1 me_range=16 chroma_me=1 trellis=1 8x8dct=1 cqm=0 deadzone=21,11 fast_pskip=1 chroma_qp_offset=-2 threads=15 lookahead_threads=2 sliced_threads=0 nr=0 decimate=1 interlaced=0 bluray_compat=0 constrained_intra=0 bframes=3 b_pyramid=2 b_adapt=1 b_bias=0 direct=1 weightb=1 open_gop=0 weightp=2 keyint=250 keyint_min=25 scenecut=40 intra_refresh=0 rc_lookahead=40 rc=crf mbtree=1 crf=18.0 qcomp=0.60 qpmin=0 qpmax=69 qpstep=4 ip_ratio=1.40 aq=1:1.00
+Output #0, mp4, to '/Volumes/ORICO_DATA/Projects/3d盖楼/artifacts/pipeline/guanque-pilot/2026-09-22T12-33-26-809Z-film-0152d1ca/guanque-pilot.mp4':
+  Metadata:
+    encoder         : Lavf62.12.101
+  Stream #0:0: Video: h264 (avc1 / 0x31637661), yuv420p(tv, progressive), 1080x1920, q=2-31, 30 fps, 15360 tbn
+    Metadata:
+      encoder         : Lavc62.28.101 libx264
+    Side data:
+      CPB properties: bitrate max/min/avg: 0/0/0 buffer size: 0 vbv_delay: N/A
+frame=   58 fps=0.0 q=24.0 size=     512KiB time=00:00:01.86 bitrate=2247.2kbits/s speed=3.69x elapsed=0:00:00.50    frame=  154 fps=152 q=24.0 size=    1280KiB time=00:00:05.06 bitrate=2069.6kbits/s speed=4.99x elapsed=0:00:01.01    frame=  249 fps=164 q=24.0 size=    1792KiB time=00:00:08.23 bitrate=1783.1kbits/s speed=5.42x elapsed=0:00:01.52    frame=  343 fps=169 q=24.0 size=    2304KiB time=00:00:11.36 bitrate=1660.5kbits/s speed= 5.6x elapsed=0:00:02.02    frame=  438 fps=173 q=24.0 size=    2816KiB time=00:00:14.53 bitrate=1587.3kbits/s speed=5.73x elapsed=0:00:02.53    frame=  526 fps=173 q=24.0 size=    3584KiB time=00:00:17.46 bitrate=1680.9kbits/s speed=5.75x elapsed=0:00:03.03    frame=  626 fps=176 q=24.0 size=    4608KiB time=00:00:20.80 bitrate=1814.9kbits/s speed=5.86x elapsed=0:00:03.54    [mp4 @ 0x808c20280] Starting second pass: moving the moov atom to the beginning of the file
+[out#0/mp4 @ 0x808c08900] video:5434KiB audio:0KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: 0.171889%
+frame=  720 fps=183 q=-1.0 Lsize=    5444KiB time=00:00:23.93 bitrate=1863.2kbits/s speed=6.08x elapsed=0:00:03.93    
+[libx264 @ 0x809018a80] frame I:3     Avg QP: 7.60  size:123101
+[libx264 @ 0x809018a80] frame P:181   Avg QP:11.32  size: 17831
+[libx264 @ 0x809018a80] frame B:536   Avg QP:19.20  size:  3670
+[libx264 @ 0x809018a80] consecutive B-frames:  0.6%  0.3%  0.8% 98.3%
+[libx264 @ 0x809018a80] mb I  I16..4: 18.3% 67.9% 13.8%
+[libx264 @ 0x809018a80] mb P  I16..4:  0.1%  0.2%  0.3%  P16..4:  4.2%  3.8%  2.9%  0.0%  0.0%    skip:88.6%
+[libx264 @ 0x809018a80] mb B  I16..4:  0.0%  0.0%  0.0%  B16..8:  6.6%  1.4%  0.6%  direct: 1.0%  skip:90.3%  L0:47.3% L1:45.3% BI: 7.4%
+[libx264 @ 0x809018a80] 8x8 transform intra:57.0% inter:27.0%
+[libx264 @ 0x809018a80] coded y,uvDC,uvAC intra: 65.2% 24.1% 19.9% inter: 2.5% 0.5% 0.2%
+[libx264 @ 0x809018a80] i16 v,h,dc,p: 47% 43%  9%  1%
+[libx264 @ 0x809018a80] i8 v,h,dc,ddl,ddr,vr,hd,vl,hu: 28% 37% 33%  0%  0%  0%  0%  0%  1%
+[libx264 @ 0x809018a80] i4 v,h,dc,ddl,ddr,vr,hd,vl,hu: 28% 34% 16%  3%  3%  3%  4%  3%  5%
+[libx264 @ 0x809018a80] i8c dc,h,v,p: 81% 11%  8%  1%
+[libx264 @ 0x809018a80] Weighted P-Frames: Y:0.0% UV:0.0%
+[libx264 @ 0x809018a80] ref P L0: 58.3%  6.5% 22.0% 13.3%
+[libx264 @ 0x809018a80] ref B L0: 68.5% 25.8%  5.6%
+[libx264 @ 0x809018a80] ref B L1: 90.2%  9.8%
+[libx264 @ 0x809018a80] kb/s:1854.64

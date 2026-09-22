@@ -1,0 +1,653 @@
+{
+  "schema_version": "review-architecture-comparison-plan.v1",
+  "document_id": "3d-review-gate-A0-C-20260923-r1",
+  "created_at": "2026-09-23T00:27:17+08:00",
+  "status": "NOT_RUN",
+  "plan_state": "DESIGN_FIXED_RUN_MANIFEST_NOT_READY",
+  "primary_repository": "/Volumes/ORICO_DATA/Projects/3d盖楼",
+  "classification": "APPLICATION_LOCAL_EVALUATION_PLAN",
+  "purpose": "在同资料、判据、门禁和预算下，比较单个多模态审查者A0与有界分工C；不把门禁改进归因于增加agent。",
+  "source_records": {
+    "architecture_decision": {
+      "path": "/Users/zhangbin/Documents/New project/digital-biosphere-architecture/research/architecture/titmas-review-composition-20260922/DECISION.json",
+      "sha256": "c72e65bd43c3902863ea15d59b1015f7d0df4e09b490aa4cdc52b67bb7673aca",
+      "use": "LOCAL_REFERENCE_ONLY"
+    },
+    "architecture_report": {
+      "path": "/Users/zhangbin/Documents/New project/digital-biosphere-architecture/research/architecture/titmas-review-composition-20260922/REPORT.md",
+      "sha256": "0c0f24f9e4e9f3e285c97b3fbd63b432d961ef1f28917f0ee8d97f046ef87a61",
+      "use": "LOCAL_REFERENCE_ONLY"
+    },
+    "architecture_review": {
+      "path": "/Users/zhangbin/Documents/New project/digital-biosphere-architecture/research/architecture/titmas-review-composition-20260922/REVIEW.md",
+      "sha256": "ace3223e02a0134b993df69bfe438977e4a5c50a4afd79ce775ac2c75e64290c",
+      "use": "LOCAL_REFERENCE_ONLY"
+    },
+    "acceptance_checklist": {
+      "path": "/Volumes/ORICO_DATA/Projects/3d盖楼/artifacts/reverse-audit-20260922-r1/acceptance-checklist.json",
+      "sha256": "3bf84ac9190bc38147059e97868f4a37daa74dc2d89bce2bcdacf56d61661069",
+      "use": "LOCAL_REFERENCE_ONLY"
+    }
+  },
+  "truth_boundaries": {
+    "empirical_comparison": "NOT_RUN",
+    "performance_advantage": "NOT_MEASURED",
+    "cost_and_latency": "NOT_MEASURED",
+    "gold_labels": "NOT_PREPARED",
+    "blinded_case_manifest": "NOT_PREPARED",
+    "candidate_model_invocations": 0,
+    "external_model_calls": "NOT_AUTHORIZED_BY_THIS_PLAN_NOT_RUN",
+    "private_media_upload": "NOT_AUTHORIZED_BY_THIS_PLAN_NOT_RUN",
+    "titmas_remote_execution": "NOT_RUN",
+    "titmas_receipt": "NOT_AVAILABLE",
+    "new_dcell_registration": false,
+    "production_change": false,
+    "publication_authorized_by_this_plan": false,
+    "reference_rule": "来源hash、媒体读取记录、流程PASS均不证明视觉结论正确；本地门禁不等于TITMAS线上服务。",
+    "authority_rule": "本计划仅固定设计；实际运行仍须具备项目允许的模型与数据处理路径、预算及人员，不产生付费、外发或发布授权。"
+  },
+  "comparison_scopes": [
+    {
+      "id": "CONTENT_REVIEW",
+      "domains": [
+        "architectural_fidelity",
+        "reference_demo_match"
+      ],
+      "outputs": [
+        "PASS",
+        "FAIL",
+        "UNKNOWN",
+        "CONFLICTED"
+      ],
+      "note": "PASS仅限冻结的视觉/视频范围，不能转为总体交付PASS；未补足AF-008等必需证据时当前完整外观仍不能PASS。"
+    },
+    {
+      "id": "EVIDENCE_AND_GATE",
+      "domains": [
+        "technical",
+        "coverage",
+        "version_binding"
+      ],
+      "outputs": [
+        "VALID",
+        "REJECT",
+        "INCOMPLETE",
+        "CONFLICTED"
+      ],
+      "note": "确定性合同负例另表统计，不并入模型视觉准确率。"
+    },
+    {
+      "id": "TITMAS_AND_DELIVERY",
+      "domains": [
+        "titmas_evidence",
+        "overall_delivery"
+      ],
+      "outputs": [
+        "NOT_RUN",
+        "PREVIEW_ONLY",
+        "NEEDS_REVISION"
+      ],
+      "note": "本地比较不接通服务、不伪造回执、不把TM-001/TM-002移除以制造总体正例。"
+    }
+  ],
+  "candidates": [
+    {
+      "id": "A0",
+      "name": "同清单单一多模态审查者",
+      "reasoning_topology": "ONE_REVIEWER_SESSION_PER_CASE",
+      "model_instances_logically": 1,
+      "tools": "COMMON_TOOLSET",
+      "deterministic_gate": "COMMON_GATE",
+      "review_steps": "同一审查者可在总预算内多轮逐项看图、看视频、调用工具和修正判断；不能人为限制成一次简短调用。"
+    },
+    {
+      "id": "C",
+      "name": "专门审查模块与应用侧有界协调",
+      "reasoning_topology": "BOUNDED_ROLE_COMPOSITION",
+      "roles": [
+        "architectural_fidelity",
+        "reference_demo_match",
+        "coverage_and_conflict_reconciliation"
+      ],
+      "maximum_role_sessions": 3,
+      "tools": "COMMON_TOOLSET",
+      "deterministic_gate": "COMMON_GATE",
+      "review_steps": "角色共享可访问的完整资料，逐项输出；协调只做覆盖与冲突处理，不能多数票覆盖关键FAIL或UNKNOWN。协调模型调用计入共同预算。"
+    }
+  ],
+  "controlled_variables": {
+    "same_model_and_version_required": true,
+    "model_id": null,
+    "provider": null,
+    "model_config_state": "UNSELECTED_NO_CALL_AUTHORIZATION",
+    "same_sampling_parameters": true,
+    "same_system_safety_and_media_detail": true,
+    "same_reference_and_candidate_bytes": true,
+    "same_user_corrections": true,
+    "same_acceptance_item_ids": true,
+    "same_fail_closed_gate": true,
+    "same_tools_and_media_limits": true,
+    "same_human_intervention": "NO_CASE_SPECIFIC_HINTS_AFTER_START",
+    "prompt_rule": "共同判据正文逐字相同，仅角色/通信/分配提示不同；两套完整提示与参数在selection前hash冻结。",
+    "data_access_rule": "每个C角色都可取得与A0相同的原始包，不能只给模型上游摘要；重复读取和消息传递消耗计入预算。",
+    "scope_rule": "范围可在准备期明确，但A0/C必须相同且在看结果前冻结；不得删掉难项或把UNKNOWN改为NOT_APPLICABLE。",
+    "architecture_vs_model": "未来若试不同模型，必须另建实验分支，不能把模型升级收益计为分工收益。",
+    "physical_layout": "不预设独立仓库、进程、服务或DCell身份。"
+  },
+  "shared_input_contract": {
+    "frozen_local_seeds": [
+      {
+        "id": "photo01",
+        "path": "/Volumes/ORICO_DATA/Projects/3d盖楼/artifacts/reverse-audit-20260922-r1/frozen/docs/references/guanque-user-01.png",
+        "sha256": "e03f001b1ab6e31eea997b2fe8ce346237276e033648b2a4b261fdb5afec32d0",
+        "use": "LOCAL_REFERENCE_ONLY",
+        "binding_check": "MATCHES_FROZEN_CHECKLIST",
+        "note": "用户原图01的倒查冻结副本；本地研究用途"
+      },
+      {
+        "id": "photo02",
+        "path": "/Volumes/ORICO_DATA/Projects/3d盖楼/artifacts/reverse-audit-20260922-r1/frozen/docs/references/guanque-user-02.png",
+        "sha256": "d6fe50eb5e20dd789a2cc95925c0a3ed21b2f8f927e3a248155fd8dc8ad9c8e3",
+        "use": "LOCAL_REFERENCE_ONLY",
+        "binding_check": "MATCHES_FROZEN_CHECKLIST",
+        "note": "用户原图02的倒查冻结副本；本地研究用途"
+      },
+      {
+        "id": "source_corrections",
+        "path": "/Volumes/ORICO_DATA/Projects/3d盖楼/artifacts/reverse-audit-20260922-r1/frozen/docs/user-reference.md",
+        "sha256": "53d5fb6d6a73055e90225b3908eeb72ba25391af030c8e06c477d8da4eb3f78e",
+        "use": "LOCAL_REFERENCE_ONLY",
+        "binding_check": "MATCHES_FROZEN_CHECKLIST",
+        "note": "第二轮及第三轮纠错取代旧结论"
+      },
+      {
+        "id": "upstream_demo",
+        "path": "/Volumes/ORICO_DATA/Projects/3d盖楼/artifacts/reverse-audit-20260922-r1/frozen/vendor/threejs-architecture-effects/assets/preview.mp4",
+        "sha256": "6039c15e6f03df0801ca730ebd4fc1c8f897950c0bf6b17571fc168ac93fe712",
+        "use": "LOCAL_REFERENCE_ONLY",
+        "binding_check": "MATCHES_FROZEN_CHECKLIST",
+        "note": "GitHub仓库自带演示视频；应先分镜观察再订可执行标准"
+      },
+      {
+        "id": "delivered_video",
+        "path": "/Volumes/ORICO_DATA/Projects/3d盖楼/artifacts/reverse-audit-20260922-r1/frozen/jobs/guanque-pilot/delivery/guanque-pilot-preview.mp4",
+        "sha256": "37ce5076a7c7cb9342df309eb69a00bd5c35b5684c0606079aaa69ea6472eeb6",
+        "use": "LOCAL_REFERENCE_ONLY",
+        "binding_check": "MATCHES_FROZEN_CHECKLIST",
+        "note": "被用户指出偏差的历史交付；保留作before证据"
+      },
+      {
+        "id": "prior_model_plan",
+        "path": "/Volumes/ORICO_DATA/Projects/3d盖楼/artifacts/reverse-audit-20260922-r1/frozen/jobs/guanque-pilot/model-plan.json",
+        "sha256": "5d754eb806d22e5fc5716c4945f9a14984360dfc6f04aa67015281438302dcda",
+        "use": "LOCAL_REFERENCE_ONLY",
+        "binding_check": "MATCHES_FROZEN_CHECKLIST",
+        "note": "旧方案声明倒放装配、非独立分层爆炸图"
+      },
+      {
+        "id": "film_plan",
+        "path": "/Volumes/ORICO_DATA/Projects/3d盖楼/artifacts/reverse-audit-20260922-r1/frozen/pipeline/video/guanque-pilot-wide.json",
+        "sha256": "7516ea85624189a161beb217e5ee3e869b7a2607c8930decdc08760c142e4a0c",
+        "use": "LOCAL_REFERENCE_ONLY",
+        "binding_check": "MATCHES_FROZEN_CHECKLIST",
+        "note": "当前镜头与时间分配；不自动代表上游演示匹配"
+      }
+    ],
+    "required_categories": [
+      "原始照片及可见角度说明",
+      "原演示完整视频及冻结分镜规则",
+      "用户原始要求与全部后续纠错",
+      "待审实际图像和最终MP4",
+      "源码/模型计划/相机/渲染版本绑定",
+      "同一完整验收清单与必需项集合",
+      "同一确定性检查结果与工具入口"
+    ],
+    "case_manifest_fields": [
+      "case_id",
+      "source_family_id",
+      "building_id",
+      "split",
+      "source_hashes",
+      "correction_version",
+      "candidate_artifact_hashes",
+      "acceptance_contract_hash",
+      "required_item_ids",
+      "rubric_version",
+      "media_access_manifest",
+      "tool_version",
+      "hidden_gold_record_ref"
+    ],
+    "exposure_rule": "当前历史视频及已公开倒查结论只作known-regression，不进入selection/heldout的收益统计；不能当作合格正例。",
+    "new_case_status": "NOT_PREPARED",
+    "unseen_media_rule": "只有已获用途授权、可供独立标注的本地资料才可进入case；本计划不自动采集或上传。"
+  },
+  "dataset_design": {
+    "unit": "一个冻结的来源/候选产物/要求包；同一包的重复运行不是新增独立样本。",
+    "total_unique_planned_cases": 60,
+    "strata": [
+      {
+        "split": "calibration",
+        "PASS": 4,
+        "FAIL": 4,
+        "UNKNOWN": 4,
+        "total": 12,
+        "purpose": "标注与rubric歧义校准，可调提示；不计最终性能。"
+      },
+      {
+        "split": "selection",
+        "PASS": 8,
+        "FAIL": 8,
+        "UNKNOWN": 8,
+        "total": 24,
+        "purpose": "冻结后进行配对比较，选择待保留候选；不得用结果重写本轮标准。"
+      },
+      {
+        "split": "heldout",
+        "PASS": 8,
+        "FAIL": 8,
+        "UNKNOWN": 8,
+        "total": 24,
+        "purpose": "选择完成后仅一次开启的样本外复核。"
+      }
+    ],
+    "replicates_per_case_per_candidate": 3,
+    "planned_candidate_case_runs": 360,
+    "minimum_heldout_unseen_building_families": 2,
+    "family_split_rule": "heldout按建筑/来源/渲染模板家族整体隔离；同一原图的裁切、同一视频的抽帧和近重复渲染不得跨入heldout。",
+    "distribution_rule": "正例、已知缺陷负例、证据不足例各20个；缺例不以当前坏视频重复凑数，不在看到输出后改配额。",
+    "positive_rule": "独立标注确认满足该scope全部必需项的真实候选，不用“程序正常/像建筑/艺术简化”制造正例；若无合格正例则试验不能启动。",
+    "negative_rule": "selection和heldout各覆盖F01-F08一次；calibration覆盖F01/F02/F04/F05一次。",
+    "unknown_rule": "每个split的UNKNOWN均匀覆盖U01-U04；UNKNOWN样本不得人为定为PASS或FAIL。",
+    "synthetic_rule": "人工注入的合同或报告负例必须标注synthetic；报告按真实视觉、真实视频、合成合同/冲突分别列分母，不混合宣称建筑准确率。",
+    "small_sample_limit": "配额是可执行设计而非功效证明；每类8个保留样本无法证明普适优越或生产可靠。",
+    "case_freeze_state": "NOT_PREPARED"
+  },
+  "failure_taxonomy": [
+    {
+      "id": "F01",
+      "kind": "REAL_OR_CONTROLLED_VISUAL_DEFECT",
+      "issue": "屋顶/抱厦/斗栱/门窗/台基等必需形制偏差",
+      "checklist": [
+        "AF-003",
+        "AF-004",
+        "AF-005",
+        "AF-006",
+        "AF-007",
+        "AF-009"
+      ],
+      "research_cases": [
+        "V01"
+      ]
+    },
+    {
+      "id": "F02",
+      "kind": "REAL_OR_CONTROLLED_TEMPORAL_DEFECT",
+      "issue": "静帧可接受但拆建语义、构件粒度或承托时序不符",
+      "checklist": [
+        "RD-002",
+        "RD-003"
+      ],
+      "research_cases": [
+        "V02"
+      ]
+    },
+    {
+      "id": "F03",
+      "kind": "REAL_OR_CONTROLLED_PRESENTATION_DEFECT",
+      "issue": "主体太小、镜头/光照使必需细节不可判读",
+      "checklist": [
+        "RD-004",
+        "RD-005"
+      ],
+      "research_cases": [
+        "V03"
+      ]
+    },
+    {
+      "id": "F04",
+      "kind": "CONTROLLED_REQUIREMENT_TRANSMISSION_DEFECT",
+      "issue": "审查摘要或模型计划遗漏当前纠错，完整纠错仍在共同原始包内",
+      "checklist": [
+        "AF-001",
+        "TE-001"
+      ],
+      "research_cases": [
+        "V04",
+        "V07"
+      ]
+    },
+    {
+      "id": "F05",
+      "kind": "SYNTHETIC_BINDING_DEFECT",
+      "issue": "旧PASS、错误摘要或更新后的源码/相机/输出冒用旧结论",
+      "checklist": [
+        "TE-001",
+        "TE-002",
+        "TE-003"
+      ],
+      "research_cases": [
+        "V04"
+      ]
+    },
+    {
+      "id": "F06",
+      "kind": "SYNTHETIC_UNSUPPORTED_REVIEW_DEFECT",
+      "issue": "只给泛化PASS或自报看图，缺必需项/执行引用/定位",
+      "checklist": [
+        "TE-004"
+      ],
+      "research_cases": [
+        "V03",
+        "V06"
+      ]
+    },
+    {
+      "id": "F07",
+      "kind": "SYNTHETIC_CONFLICT_OR_DEPENDENCY_DEFECT",
+      "issue": "共享摘要导致共同遗漏、矛盾报告或失败模块被错误汇总",
+      "checklist": [
+        "TE-004"
+      ],
+      "research_cases": [
+        "V07",
+        "V08"
+      ]
+    },
+    {
+      "id": "F08",
+      "kind": "CONTROLLED_TRANSIENT_VIDEO_DEFECT",
+      "issue": "问题落在初始抽帧之间；完整MP4可由共同工具继续检查",
+      "checklist": [
+        "RD-002",
+        "RD-003",
+        "TE-003"
+      ],
+      "research_cases": [
+        "V10"
+      ]
+    },
+    {
+      "id": "U01",
+      "kind": "INSUFFICIENT_VIEW",
+      "issue": "缺必要立面、重复视角或遮挡，不能推断背面/内构",
+      "checklist": [
+        "AF-002",
+        "AF-008"
+      ],
+      "research_cases": [
+        "V05"
+      ]
+    },
+    {
+      "id": "U02",
+      "kind": "UNCALIBRATED_MEASUREMENT",
+      "issue": "相机未标定或缺尺度来源，无法给精确尺寸结论",
+      "checklist": [
+        "AF-002",
+        "AF-004",
+        "AF-005"
+      ]
+    },
+    {
+      "id": "U03",
+      "kind": "UNREADABLE_MEDIA_OR_EXECUTION_LIMIT",
+      "issue": "媒体缺失、解码失败或预算耗尽，需保留UNKNOWN及具体原因",
+      "checklist": [
+        "TE-003",
+        "TE-004"
+      ],
+      "research_cases": [
+        "V06",
+        "V08"
+      ]
+    },
+    {
+      "id": "U04",
+      "kind": "UNRESOLVED_SOURCE_CONFLICT",
+      "issue": "真实来源互相冲突且冻结资料不能裁定，保留CONFLICTED/UNKNOWN",
+      "checklist": [
+        "AF-002",
+        "AF-008"
+      ],
+      "research_cases": [
+        "V08"
+      ]
+    }
+  ],
+  "blinding": {
+    "candidate_visible": [
+      "匿名case_id",
+      "该case全部冻结原始证据",
+      "用户要求与纠错",
+      "完整共同rubric",
+      "可用工具与预算",
+      "应报告的scope"
+    ],
+    "candidate_hidden": [
+      "gold标签和标注理由",
+      "预期缺陷位置",
+      "对方输出",
+      "split名称",
+      "已知倒查答案",
+      "能泄漏标签的文件名/目录名"
+    ],
+    "label_hiding_rule": "通过只读匿名清单映射工件；保留视角、时间戳和版本等任务必需语义；输入注入的旧回执等材料以相同方式提供双方。",
+    "assessor_visible": [
+      "匿名化最终逐项结果",
+      "原始证据",
+      "gold",
+      "证据定位和工具轨迹"
+    ],
+    "assessor_hidden_until_scoring_lock": [
+      "A0或C身份",
+      "模型/角色名",
+      "成本/耗时",
+      "候选选择结果"
+    ],
+    "case_order": "以预冻结随机种子20260923分层排列；同case的A0/C执行先后平衡，避免时段与热缓存优势。",
+    "session_reset": "case之间独立会话；heldout无训练历史；两候选及重复运行互不共享答案或纠错反馈。",
+    "unavoidable_leakage": "完整轨迹可能暴露拓扑；先盲评规范化结果，再解盲审计轨迹，记录无法隐藏的线索。"
+  },
+  "shared_budget": {
+    "status": "DESIGN_CAPS_NOT_ACTIVATED",
+    "scope": "每个case每个candidate每次repeat，覆盖全拓扑所有角色与协调调用的总和",
+    "max_model_requests": 6,
+    "max_total_input_tokens_including_media_and_repeated_context": 64000,
+    "max_total_output_tokens_including_reasoning_if_metered": 16000,
+    "max_media_tool_calls": 24,
+    "max_additional_frames_or_crops": 24,
+    "max_elapsed_seconds": 300,
+    "max_infrastructure_retry_requests_within_request_cap": 1,
+    "same_initial_media_packet": true,
+    "initial_packet_rule": "同样原图与候选图、同样演示和输出视频的分镜/时间均匀初始采样；全部采样参数及hash预先冻结，后续最多24次帧/局部补看。",
+    "billing_rule": "重复上下文、图像token、协调消息、失败及重试全部记录；cache折扣前规范化token与实际计费分开；不能只报worker调用。",
+    "cost_currency": "USD",
+    "max_cost_per_case_run": 1.0,
+    "max_cost_all_planned_runs": 360.0,
+    "cost_authorization": "NOT_GRANTED_BY_THIS_PLAN；数值仅为比较设计上限，不是付款或消耗额度许可。",
+    "cap_precedence": "任一共同上限先触发即停止；没有可用计量或准确价目表就不能开始。",
+    "overflow_result": "BUDGET_EXHAUSTED并保留未完项UNKNOWN；不得删除该case或只给一方追加预算。",
+    "changes": "仅在selection前另写版本和理由；两候选同时调整；不能因某方结果差临时加预算。"
+  },
+  "gold_and_adjudication": {
+    "state": "NOT_PREPARED",
+    "labelers_required": 2,
+    "independent_adjudicator_required": 1,
+    "roles": "至少一位能依据建筑/镜头判据复核的领域评审；两位独立标注者与有权限裁决者均需实际指定，不能虚构已参与。",
+    "independence": "不得由被测A0/C、该样本施工作者或同一生成结论自行产生唯一gold；标注先于被测运行。",
+    "item_label_fields": [
+      "criterion_id",
+      "scope",
+      "PASS_FAIL_UNKNOWN_CONFLICTED",
+      "severity",
+      "evidence_file_hash",
+      "frame_time_or_crop",
+      "observed_fact",
+      "inference",
+      "source_limit",
+      "labeler_id",
+      "disagreement",
+      "adjudication_reason"
+    ],
+    "disagreement_policy": "先分别标注并报告一致性，再裁决；不能根据A0/C答案倒改gold。不可裁定项记UNKNOWN/CONFLICTED。",
+    "measurement_rule": "未经相机标定不设虚构像素/尺寸真值；按可见相对关系和冻结要求标注。",
+    "correction_after_freeze": "若发现gold错误，保留原标签，记录原因和受影响范围，双方同等重算；不得只重跑输家，heldout暴露后进入新版本保留集。",
+    "gold_is_scope_limited": true
+  },
+  "common_output_contract": {
+    "required_fields": [
+      "case_id",
+      "candidate_blind_id",
+      "run_id",
+      "scope",
+      "input_manifest_sha256",
+      "acceptance_contract_sha256",
+      "criterion_id",
+      "decision",
+      "severity",
+      "actual_media_read_refs",
+      "evidence_locator",
+      "observation",
+      "inference",
+      "shared_dependencies",
+      "unresolved_issues",
+      "stop_reason",
+      "usage",
+      "elapsed_ms"
+    ],
+    "decisions": [
+      "PASS",
+      "FAIL",
+      "UNKNOWN",
+      "CONFLICTED"
+    ],
+    "not_applicable": "仅预冻结scope明确允许且有理由的项可N/A；reviewer不能临场自行豁免必需项。",
+    "aggregation": "必需项FAIL/UNKNOWN/CONFLICTED、缺结果、过期绑定或未关闭P1均禁止对应scope PASS；模型原始PASS与确定性gate拦截结果分别保存。",
+    "coverage": "有效且同版的逐项记录数/冻结必需项总数；覆盖不等于正确性，另报PASS/FAIL/UNKNOWN/CONFLICTED计数。"
+  },
+  "metrics": [
+    {
+      "id": "critical_false_pass",
+      "priority": 1,
+      "definition": "gold为关键FAIL/REJECT但候选原始结论PASS，以及共同gate后的错误范围PASS；两者分开统计。",
+      "denominator": "该split所有关键失败case及其必需项",
+      "acceptance_rule": "selection和heldout观测到任一关键误放即不推荐自动放行；零观测错误不等于零真实风险。"
+    },
+    {
+      "id": "positive_false_rejection",
+      "priority": 2,
+      "definition": "gold PASS被明确FAIL/REJECT；UNKNOWN另计弃权，不能隐藏进准确率。",
+      "denominator": "该split全部gold PASS case",
+      "provisional_max_rate": 0.25
+    },
+    {
+      "id": "unnecessary_abstention",
+      "priority": 2,
+      "definition": "gold可判PASS/FAIL时输出UNKNOWN/CONFLICTED或无结果。",
+      "denominator": "该split全部可判case",
+      "provisional_max_rate": 0.25
+    },
+    {
+      "id": "positive_acceptance",
+      "priority": 2,
+      "definition": "gold PASS且输出有合格证据的范围PASS。",
+      "denominator": "该split全部gold PASS case",
+      "provisional_min_rate": 0.5
+    },
+    {
+      "id": "appropriate_unknown",
+      "priority": 2,
+      "definition": "gold UNKNOWN能给出具体证据缺口并保留UNKNOWN/CONFLICTED；误报PASS单列。",
+      "denominator": "该split全部gold UNKNOWN case"
+    },
+    {
+      "id": "item_and_evidence_quality",
+      "priority": 3,
+      "definition": "逐项标签混淆矩阵、有效覆盖、位置是否可重看、观察/推断分开、失效传播正确性。"
+    },
+    {
+      "id": "repeatability_and_correlated_error",
+      "priority": 3,
+      "definition": "同case三次结果翻转；A0/C以及C内部共享漏检的联合次数和条件比率；按模型、摘要、帧集、rubric共享依赖分层。",
+      "caution": "角色多不等于独立证据；少样本相关系数不作可靠性证明。"
+    },
+    {
+      "id": "cost_latency_and_human_work",
+      "priority": 4,
+      "definition": "全拓扑总input/output/media tokens、实际和规范化费用、重试数、冷/热缓存、端到端与计算时间、人工分钟、超时/失败/返工。",
+      "status": "NOT_MEASURED"
+    }
+  ],
+  "analysis_plan": {
+    "paired_unit": "相同case的A0/C比较；三次repeat按case聚类，不能把360次运行当360个独立样本。",
+    "primary_estimates": "按scope、split、缺陷类型报告原始计数/分母、配对差值和不确定性；视觉、视频、合成合同结果分别展示。",
+    "uncertainty": "独立case可报告二项区间；配对差值按source_family聚类重采样。若家族数太少则报告描述性区间并拒绝显著优越声明。",
+    "attrition": "超时、工具失败、超预算、无效格式和弃权均保留在分母；另标cause，不能静默排除。",
+    "selection_rule": "先满足零观测关键误放等安全约束，再查看正例接受、误拒与弃权；只拒绝/只UNKNOWN不得入选。其次比较定位质量、总费用、延迟和人工工作。",
+    "candidate_choice": "A0满足范围要求且C没有稳定可复核增益时选更简单A0；C仅在selection出现可复核收益且heldout未反转、费用/延迟可接受时作为局部候选。否则INCONCLUSIVE或两者不推荐自动放行。",
+    "cost_tradeoff": "不以主观综合分掩盖错误放行。超同预算候选不能胜出；Pareto冲突报告给责任人，不事后拟合权重。",
+    "threshold_provenance": "0.25/0.5为本计划预设的试点筛选上限/下限，不是理论定律或生产SLA；仅可在selection前版本化修订。",
+    "no_superiority_claim": "试点只能支持本地所测范围的继续/停止决定；不能证明DCell优越、全面审查可靠、跨建筑普适或TITMAS服务可用。"
+  },
+  "run_readiness": {
+    "state": "NOT_READY_NOT_RUN",
+    "must_resolve": [
+      "60个可用且满足配额的独立case及去重/家族隔离",
+      "真实合格正例和补足必需的参考信息",
+      "两位独立标注者及裁决者实际身份与完成的gold",
+      "匿名输入/输出视图与标签隐藏",
+      "A0/C提示、模型精确版本、采样参数、工具/门禁版本hash",
+      "可计量且获项目允许的本地或其他模型处理路径",
+      "真实价格/额度核实及任何确需的外发/付款授权",
+      "scope、阈值、预算和run manifest最终冻结"
+    ],
+    "stop_conditions": [
+      "SOURCE_HASH_CHANGED",
+      "gold/保留集泄漏",
+      "模型版本或工具版本意外变化",
+      "某方独享数据或额外预算",
+      "未知媒体上传路径",
+      "缺少可信使用量计量",
+      "关键误放原因未处理",
+      "无法获得真正合格正例"
+    ],
+    "on_stop": "保留已得结果和失败，停止该轮比较；不更改当前视频状态，不延伸为线上接入。"
+  },
+  "customer_recommendation": {
+    "local_gate_direction": "CONDITIONALLY_RECOMMENDED",
+    "scope": "有固定清单、版本绑定、失败/未知保留的本地审查门禁；需实际实现验证和独立视觉复核。",
+    "current_bad_video": "NOT_RECOMMENDED_AS_REFERENCE_FAITHFUL_DELIVERY",
+    "titmas_online_service": "NOT_RECOMMENDED_AS_CURRENTLY_VERIFIED_AVAILABLE_SERVICE",
+    "reasons_and_remediation": [
+      {
+        "reason": "纠错漏传和旧PASS覆盖新问题",
+        "remediation": "同源冻结输入、必需项覆盖及失效传播",
+        "completed_here": "共同输入与输出规则已写入本计划；没有声称代码已验证"
+      },
+      {
+        "reason": "视觉标准过低、未匹配原演示",
+        "remediation": "逐项AF/RD判据、实际MP4与局部证据、独立gold",
+        "completed_here": "判据映射和案例配额已准备；媒体审查和gold仍NOT_RUN/NOT_PREPARED"
+      },
+      {
+        "reason": "多角色可能共享盲区且增加成本",
+        "remediation": "A0公平基线、同预算配对、相关错误与保留集",
+        "completed_here": "比较设计已准备；性能收益NOT_MEASURED"
+      },
+      {
+        "reason": "无真实TITMAS执行与可信回执",
+        "remediation": "由服务owner在独立授权范围内确认能力合同、可达性和原始回执",
+        "completed_here": "本计划保留NOT_RUN，不以本地门禁替代服务"
+      }
+    ],
+    "remaining_gaps": "run_readiness.must_resolve；另有当前建筑和镜头返工及真实TITMAS接入缺口。",
+    "authorization_note": "用户认可研究方向支持本地计划准备；本文件不替代模型调用、资料外发、付费、服务接入或发布所需的具体授权。"
+  },
+  "results": {
+    "A0": null,
+    "C": null,
+    "winner": null,
+    "performance_advantage": "NOT_MEASURED",
+    "model_calls_executed": 0
+  }
+}

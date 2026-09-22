@@ -1,0 +1,111 @@
+{
+  "artifact_type": "TITMAS_SCOUT_AGENT_REVIEW_INPUT",
+  "automation": {
+    "codex_reviewed_commit": "b223ee41ac9e3b635651f9636a08061801b5c826",
+    "current_head_review_present": false,
+    "old_p2_remediation_commit": "9fb5c3b112c1f2d083bc97a12d55f7a583190b9f",
+    "old_thread_outdated": true,
+    "old_thread_unresolved": true,
+    "review_classification": "STALE_REVIEW"
+  },
+  "diff": {
+    "content_digest": "sha256:82688a11ed0f103c75cabc80f6c7e16fbd51bee0766a52043d0894ff2d066731",
+    "content_representation": "git diff --no-ext-diff --no-color --no-renames upstream/main..0a1ffa6710d25f58515b2dca7e0619e134c0a43e exact stdout bytes",
+    "dependencies_changed_by_contribution": false,
+    "files": [
+      "tests/conformance/README.md",
+      "tests/conformance/test_profile_conformance.py"
+    ],
+    "production_code_changed_by_contribution": false,
+    "sync_merge_commit": true
+  },
+  "duplicate_check": {
+    "duplicate_implementation_found": false,
+    "open_target_pr": 76,
+    "related_pr_80_scope": "ACTION-009_THROUGH_ACTION-011_NOT_DUPLICATE",
+    "target_on_upstream_main": false
+  },
+  "github_checks": [
+    {
+      "classification": "EXTERNAL_POLICY_BLOCKER",
+      "code_failure": false,
+      "conclusion": "FAILURE",
+      "name": "Require maintainer approval"
+    },
+    {
+      "classification": "EXTERNAL_POLICY_BLOCKER",
+      "conclusion": "ACTION_REQUIRED",
+      "name": "CI",
+      "remote_tests_executed": false
+    },
+    {
+      "classification": "EXTERNAL_POLICY_BLOCKER",
+      "conclusion": "ACTION_REQUIRED",
+      "name": "CodeQL",
+      "remote_scan_executed": false
+    }
+  ],
+  "history_references": [
+    {
+      "content_digest": "sha256:437ed2da33215b0972944c41668ed440f53827f40c88e5a14b73dab1044140ea",
+      "path": "reports/review-runs/2026-08-02-ca2a-pr-76-action008-ordering/run.json"
+    },
+    {
+      "content_digest": "sha256:ea22ae548cf600e0ee6c117940f38da351fe19b19cc871f3252d7ce605088c84",
+      "path": "reports/titmas-runs/2026-08-02-ca2a-pr-76-latest-head/agent-evidence-verification.json"
+    }
+  ],
+  "known_limits": [
+    "The previous ALLOW is stale because the head changed from 9fb5c3b to 0a1ffa6.",
+    "Remote CI and CodeQL have not executed for the synced head.",
+    "Maintainer approval, merge, adoption, production safety, customer, and revenue are not established.",
+    "This review authorizes only a non-force push to joy7758/ca2a:contrib/issue-36-action-invalid-signature."
+  ],
+  "local_validation": {
+    "canonical_evidence": "PASS_STRUCTURE_DIGEST_CHAIN_ONLY",
+    "coverage_percent": 86.87,
+    "full_suite": "252_PASS_3_HARDWARE_SKIP",
+    "record_digest": "sha256:0f6c7280f84fe7d0f481a66180e2c2dc2817a5aecfbc527f576ca3a46fc162d4",
+    "record_reference": "reports/titmas-runs/2026-08-02-ca2a-pr-76-latest-head/ca2a-validation.json"
+  },
+  "observed_at": "2026-08-02T06:23:00Z",
+  "pull_request": {
+    "ahead_by": 3,
+    "base_branch_current_tip": "566e587cd46ef6b88a9701531c96313f0518923d",
+    "behind_by": 0,
+    "draft": false,
+    "github_merge_state_before_sync": "BLOCKED",
+    "github_mergeable_before_sync": true,
+    "local_head_for_action": "0a1ffa6710d25f58515b2dca7e0619e134c0a43e",
+    "local_tree": "5426ab9d0a69e9daa3ade74c0d5c4a552eed574f",
+    "merge_base": "566e587cd46ef6b88a9701531c96313f0518923d",
+    "merge_conflict": false,
+    "remote_head_before_action": "9fb5c3b112c1f2d083bc97a12d55f7a583190b9f",
+    "state": "OPEN"
+  },
+  "requested_action": "PUSH_PERSONAL_BRANCH",
+  "review_run_id": "2026-08-02-ca2a-pr-76-push-synced-head",
+  "risk_evidence": {
+    "allowed_action_only": "PUSH_PERSONAL_BRANCH",
+    "dco_on_contribution_commits": true,
+    "force_push": false,
+    "merge_commit_only_syncs_upstream_main": true,
+    "personal_fork_only": true,
+    "protected_upstream_write": false,
+    "remote_head_unchanged_since_observation": true,
+    "secrets_scan": "PASS"
+  },
+  "ruleset_version": "0.1",
+  "source_issue": {
+    "locked": false,
+    "reference": "agentrust-io/ca2a#36",
+    "selected_checklist_item": "ACTION-008 invalid delegation signature ordering",
+    "state": "OPEN",
+    "url": "https://github.com/agentrust-io/ca2a/issues/36"
+  },
+  "target": {
+    "reference": "agentrust-io/ca2a#76",
+    "type": "GITHUB_PULL_REQUEST",
+    "url": "https://github.com/agentrust-io/ca2a/pull/76"
+  }
+}

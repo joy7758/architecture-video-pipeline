@@ -1,0 +1,40 @@
+{
+  "schema_version": "0.1",
+  "review_id": "ca2a-pr-76-quality-review",
+  "agent_identifier": "codex-quality-reviewer-ca2a-pr-76",
+  "model_runtime_identifier": "openai-codex/gpt-5",
+  "review_role": "QUALITY_REVIEWER",
+  "input_digest": "sha256:1b390b08b327c6fe315f7ffe9af007c0454227f753b8249dbf1aed07df30fcd9",
+  "output_digest": "sha256:c103c8861f010af467e87ffeee6d9c84c40b3f94c35b7bd42490d2617ea05148",
+  "decision": "PASS",
+  "timestamp": "2026-08-01T17:44:38Z",
+  "ruleset_version": "0.1",
+  "reason_codes": [
+    "TARGET_TEST_PASS",
+    "CONFORMANCE_SUITE_PASS",
+    "FULL_SUITE_PASS",
+    "COVERAGE_THRESHOLD_PASS",
+    "STATIC_ANALYSIS_PASS",
+    "FORMAT_LINT_PASS",
+    "SECURITY_CHECKS_PASS",
+    "MUTATION_KILLED",
+    "TARGET_BEHAVIOR_COVERED",
+    "WORKTREE_CLEAN"
+  ],
+  "findings": [
+    "The target test passed and the conformance suite completed with 31 passing tests.",
+    "The full suite completed with 252 passed, 3 hardware-fixture skips, 0 failed, and 87.01 percent coverage.",
+    "Ruff, mypy, Bandit, pip-audit, and git diff checks passed.",
+    "The mutation control failed as expected when the required provenance-invalid behavior was removed or contradicted.",
+    "The test changes one signature bit and asserts provenance_invalid with INVALID_CREDENTIAL before authorization or outcome classification."
+  ],
+  "blocking_reasons": [],
+  "evidence_references": [
+    "reports/review-runs/2026-08-02-ca2a-pr-76-ready/input.json#sha256:1b390b08b327c6fe315f7ffe9af007c0454227f753b8249dbf1aed07df30fcd9",
+    "git:b223ee41ac9e3b635651f9636a08061801b5c826",
+    "tests/conformance/test_profile_conformance.py::test_action_008_invalid_delegation_signature_is_provenance_invalid",
+    "pytest:tests/conformance/:31_passed",
+    "pytest:tests/unit/+tests/conformance/:252_passed_3_skipped_coverage_87.01",
+    "mutation:expected_failure_confirmed"
+  ]
+}

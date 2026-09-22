@@ -1,0 +1,3 @@
+{
+  "artifact_type":"TITMAS_SCOUT_DISCOVERY_RUN_SUMMARY","run_id":"2026-08-02-live-final","retrieved_at":"2026-08-02T07:15:00Z","backend":"GH_CLI_AUTHENTICATED","source_report":"reports/daily/2026-08-02-opportunity-report.json","source_report_digest":"sha256:da45e9d2b29892cdfa04bdbdd5647dd12a9250ff43e48c422bbc572f33107487","query_count":9,"successful_query_count":9,"raw_candidate_count":94,"unique_candidate_count":94,"excluded_count":36,"eligible_count":58,"selected_count":5,"tracked_conversion_count":1,"external_write_operations_observed":0,"observed_http_methods":[],"github_commands_declared_read_only":true,"discussion_coverage":"NOT_COLLECTED","external_action_authorized":false
+}

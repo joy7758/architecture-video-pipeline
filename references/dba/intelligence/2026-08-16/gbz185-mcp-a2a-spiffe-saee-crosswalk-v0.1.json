@@ -1,0 +1,176 @@
+{
+  "crosswalk_id": "DBA-GBZ185-MCP-A2A-SPIFFE-SAEE-CROSSWALK-0.1",
+  "format_version": "0.1.0",
+  "title": "GB/Z 185 x MCP x A2A x SPIFFE x SAEE Crosswalk v0.1",
+  "title_zh": "GB/Z 185 × MCP × A2A × SPIFFE × SAEE 交叉映射 v0.1",
+  "status": "TITLE_LEVEL_AND_PUBLIC_PROTOCOL_REFERENCE_ONLY_NO_CONFORMANCE_CLAIM",
+  "observed_at": "2026-08-16",
+  "verified_at": "2026-08-16",
+  "primary_repository": "DBA",
+  "purpose": "Route existing identity, description, discovery, interaction and tool-invocation responsibilities to upstream standards before proposing any Digital Biosphere or SAEE implementation.",
+  "source_scope": {
+    "gbz185": "Official title and status metadata for GB/Z 185.1 through GB/Z 185.7 were inspected. Full-text clause-level conformance was not assessed.",
+    "mcp": "Stable specification 2026-07-28 server tools semantics were inspected.",
+    "a2a": "Current A2A specification Agent Card, skills, capabilities and protocol-version semantics were inspected.",
+    "spiffe": "Current SPIFFE identity, SVID and Workload API specifications were inspected.",
+    "saee": "Canonical SAEE capability inventory and MCP surface were inspected from the SAEE canonical engineering repository."
+  },
+  "gbz185_series": [
+    {
+      "standard": "GB/Z 185.1-2026",
+      "title_zh": "人工智能 智能体互联 第1部分：总体架构",
+      "official_status": "CURRENT_GUIDANCE_DOCUMENT",
+      "mapping": {
+        "MCP": "Protocol component for context exchange and tool exposure; not asserted equivalent to the national guidance architecture.",
+        "A2A": "Protocol component for Agent discovery and interaction; not asserted equivalent to the national guidance architecture.",
+        "SPIFFE": "Workload identity component; not an Agent-interconnection architecture.",
+        "SAEE": "Evaluation and evolution-intelligence consumer only; does not replace the architecture."
+      }
+    },
+    {
+      "standard": "GB/Z 185.2-2026",
+      "title_zh": "人工智能 智能体互联 第2部分：身份码",
+      "official_status": "CURRENT_GUIDANCE_DOCUMENT",
+      "mapping": {
+        "MCP": "No Agent identity-code ownership inferred from the inspected tools specification.",
+        "A2A": "Agent Card carries Agent metadata; no equivalence with GB/Z identity-code semantics is claimed.",
+        "SPIFFE": "Defines SPIFFE ID for workload identity; conceptual identity input only, not an asserted GB/Z implementation.",
+        "SAEE": "May consume an identity reference as evaluation context; external identity binding remains missing."
+      }
+    },
+    {
+      "standard": "GB/Z 185.3-2026",
+      "title_zh": "人工智能 智能体互联 第3部分：身份管理",
+      "official_status": "CURRENT_GUIDANCE_DOCUMENT",
+      "mapping": {
+        "MCP": "Authorization can constrain the tool set returned to a request; this is not identity management ownership.",
+        "A2A": "Declares authentication and authorization requirements in Agent Cards; it does not by itself operate identity lifecycle.",
+        "SPIFFE": "Workload API distributes and updates SVIDs and trust bundles; this is the primary inspected workload-identity lifecycle source.",
+        "SAEE": "Does not issue identity, credentials or permissions. Identity issuer or binding changes route to reassessment."
+      }
+    },
+    {
+      "standard": "GB/Z 185.4-2026",
+      "title_zh": "人工智能 智能体互联 第4部分：智能体描述",
+      "official_status": "CURRENT_GUIDANCE_DOCUMENT",
+      "mapping": {
+        "MCP": "Server and tool metadata describe exposed tool interfaces.",
+        "A2A": "Agent Card describes identity metadata, endpoints, capabilities, authentication requirements and skills.",
+        "SPIFFE": "Identifies workloads; it is not an Agent capability-description format.",
+        "SAEE": "Consumes declared description only as untrusted context unless separately bound and verified."
+      }
+    },
+    {
+      "standard": "GB/Z 185.5-2026",
+      "title_zh": "人工智能 智能体互联 第5部分：智能体发现",
+      "official_status": "CURRENT_GUIDANCE_DOCUMENT",
+      "mapping": {
+        "MCP": "tools/list discovers the current request-scoped tool set, not peer Agents in general.",
+        "A2A": "Agent Card and well-known discovery are the primary inspected Agent-discovery surface.",
+        "SPIFFE": "Provides cryptographic workload identity material, not Agent discovery.",
+        "SAEE": "Does not create a Registry or discovery service."
+      }
+    },
+    {
+      "standard": "GB/Z 185.6-2026",
+      "title_zh": "人工智能 智能体互联 第6部分：智能体交互",
+      "official_status": "CURRENT_GUIDANCE_DOCUMENT",
+      "mapping": {
+        "MCP": "Supports client-server context and tool interaction; it is not treated as a complete Agent-to-Agent protocol.",
+        "A2A": "Defines messaging, tasks, streaming and protocol-versioned Agent interaction.",
+        "SPIFFE": "Can authenticate workloads participating in an interaction but does not define task semantics.",
+        "SAEE": "May evaluate bounded interaction evidence; it does not execute or authorize interaction."
+      }
+    },
+    {
+      "standard": "GB/Z 185.7-2026",
+      "title_zh": "人工智能 智能体互联 第7部分：智能体工具调用",
+      "official_status": "CURRENT_GUIDANCE_DOCUMENT",
+      "mapping": {
+        "MCP": "Stable 2026-07-28 tools/list, tools/call and notifications/tools/list_changed are the primary inspected tool interface and change signal.",
+        "A2A": "Agent Cards describe skills and capabilities; A2A is not treated as a replacement for MCP tool invocation.",
+        "SPIFFE": "Can authenticate the calling workload; it does not describe tool schemas or calls.",
+        "SAEE": "May consume a versioned tool-manifest digest as evaluation context; it does not scan or execute tools."
+      }
+    }
+  ],
+  "responsibility_routing": [
+    {
+      "question": "Who defines workload identity?",
+      "primary_inspected_source": "SPIFFE",
+      "additional_guidance": "GB/Z 185.2 and GB/Z 185.3",
+      "saee_role": "CONSUMER_ONLY_EXTERNAL_BINDING_MISSING"
+    },
+    {
+      "question": "Who defines Agent description and discovery?",
+      "primary_inspected_source": "A2A Agent Card",
+      "additional_guidance": "GB/Z 185.4 and GB/Z 185.5",
+      "saee_role": "CONSUMER_ONLY_NO_REGISTRY"
+    },
+    {
+      "question": "Who defines tool listing, calling and tool-list change signals?",
+      "primary_inspected_source": "MCP 2026-07-28",
+      "additional_guidance": "GB/Z 185.7",
+      "saee_role": "CONSUMER_ONLY_NO_MCP_SCANNER"
+    },
+    {
+      "question": "Who defines Agent interaction?",
+      "primary_inspected_source": "A2A",
+      "additional_guidance": "GB/Z 185.6",
+      "saee_role": "EVALUATION_INPUT_ONLY_NO_EXECUTION"
+    },
+    {
+      "question": "Who decides whether an old evaluation is stale after a relevant dependency changes?",
+      "primary_inspected_source": "DBA ADR-039 governance rule",
+      "additional_guidance": "Agent Baseline Check remains a deferred SAEE candidate, not an implemented tool.",
+      "saee_role": "CANDIDATE_OWNER_IMPLEMENTATION_DEFERRED_BY_D16"
+    }
+  ],
+  "adjacent_sources_not_owned_by_this_crosswalk": [
+    {
+      "source": "OpenTelemetry GenAI Semantic Conventions",
+      "role": "Execution observation input; PR 445 and PR 447 remain open proposals and are not adopted fields in this crosswalk."
+    },
+    {
+      "source": "SCITT RFC 9943",
+      "role": "Signed-statement and receipt transparency primitive; signature or receipt does not establish statement truth."
+    }
+  ],
+  "saee_current_truth": {
+    "canonical_public_mcp_tools": [
+      "saee.evaluate_agent_run",
+      "saee.evaluate_evidence"
+    ],
+    "publicly_deployed": false,
+    "external_identity_binding": "MISSING",
+    "delegation_binding": "MISSING",
+    "otlp_ingestion": "MISSING",
+    "agent_baseline_check": "REFERENCE_ONLY_CANDIDATE_DEFERRED_BY_D16"
+  },
+  "source_refs": [
+    "https://openstd.samr.gov.cn/bzgk/std/nd?no=2781",
+    "https://modelcontextprotocol.io/specification/2026-07-28/server/tools",
+    "https://a2a-protocol.org/latest/specification/",
+    "https://spiffe.io/docs/latest/spiffe-specs/spiffe/",
+    "https://spiffe.io/docs/latest/spiffe-specs/spiffe_workload_api/"
+  ],
+  "authority_boundaries": [
+    "GBZ_TITLE_MAPPING_NE_CLAUSE_LEVEL_CONFORMANCE",
+    "GUIDANCE_DOCUMENT_NE_MANDATORY_REGULATION",
+    "CONCEPTUAL_OVERLAP_NE_PROTOCOL_EQUIVALENCE",
+    "MAPPING_NE_ADOPTION",
+    "IDENTITY_NE_PERMISSION",
+    "AGENT_CARD_NE_RUNTIME_TRUTH",
+    "TOOL_LIST_NE_TOOL_SAFETY",
+    "SAEE_EVALUATION_NE_EXECUTION_AUTHORITY",
+    "CROSSWALK_NE_NEW_SCHEMA_OR_PROTOCOL"
+  ],
+  "implementation_effect": {
+    "new_runtime": false,
+    "new_schema": false,
+    "new_protocol": false,
+    "dbos_change_required": false,
+    "saee_change_required_now": false,
+    "production_change_performed": false
+  }
+}

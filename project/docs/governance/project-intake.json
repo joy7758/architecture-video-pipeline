@@ -1,0 +1,52 @@
+{
+  "project_id": "guanque-tower-3d",
+  "primary_repository": "/Volumes/ORICO_DATA/Projects/3d盖楼",
+  "owner": "zhangbin",
+  "classification": "APPLICATION_LOCAL_VISUAL_DEMO",
+  "authorization": "User request: 你给我生成一个，鹳鹊楼的效果。",
+  "scope": [
+    "local development",
+    "local browser verification"
+  ],
+  "governance_source": "joy7758/digital-biosphere-architecture-specification",
+  "governance_commit": "81245d1b691e8038f4b39eebb0592ccf6e5f3cef",
+  "constitution": "upstream/architecture/commercial-private-infrastructure-strategy-constitution.md",
+  "predevelopment_recommendation": "CONDITIONALLY_RECOMMENDED",
+  "reviewer": "/root/prebuild_review",
+  "acceptance": [
+    "recognizable architectural silhouette",
+    "deterministic playback and seeking",
+    "desktop visual verification",
+    "agent-readable entry",
+    "runnable local delivery"
+  ],
+  "reuse": "Hailey threejs-architecture-effects MIT starter; no DBOS/SAEE duplication or runtime dependency",
+  "portfolio_admission": "NOT_REQUESTED_RECORD_ONLY",
+  "commercial_state": "EXPLORATION",
+  "external_model_calls": "NOT_AUTHORIZED_NOT_RUN",
+  "provider": "current Codex provider retained; bai health and task-specific authorization not established",
+  "deployment": "NOT_REQUESTED_NOT_RUN",
+  "status": "LOCAL_R3_REVISED_VISUAL_REVIEW_REQUIRED",
+  "verification": "docs/verification.md",
+  "user_reference": "docs/user-reference.md",
+  "updated_at": "2026-09-22T12:21:22.874574+00:00",
+  "final_recommendation": "RECOMMENDED_FOR_LOCAL_ARTISTIC_DEMO",
+  "visual_review": {
+    "record": "docs/photo-comparison-r3.md",
+    "state": "VISUAL_REVIEW_REQUIRED",
+    "user_accepted": false,
+    "corrections": [
+      "visible ring roof slope",
+      "shared main and annex roof envelope",
+      "upper gallery dimensions",
+      "door leaves and raised heads",
+      "stair joins and terraces",
+      "source-backed entrance couplets"
+    ],
+    "unknown": [
+      "measured roof and ornament geometry",
+      "other elevation inscriptions",
+      "fine bracket and painted ornament fidelity"
+    ]
+  }
+}

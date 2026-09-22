@@ -1,0 +1,471 @@
+{
+  "ci_observation": {
+    "checks": [
+      {
+        "conclusion": "success",
+        "details_url": "https://github.com/joy7758/titmac-scout/actions/runs/31268169158/job/93129582670",
+        "name": "test",
+        "status": "completed"
+      }
+    ],
+    "deployment_implied": false,
+    "limitations": [
+      "CI state is dynamic and applies only to the exact target revision."
+    ],
+    "observation_owner": "DBA_COCKPIT_READ_ONLY_ADAPTER",
+    "observed_at": "2026-08-08T16:58:10.468511Z",
+    "production_readiness_implied": false,
+    "release_implied": false,
+    "status": "PASS",
+    "target_revision": "e4adbbbbb149871f108fcf384369182d8c5765f4"
+  },
+  "ci_observation_freshness": "FRESH",
+  "cockpit_status": "PASS",
+  "community_boundaries": {
+    "architecture_status": "READY",
+    "protocol_status": "CANDIDATE",
+    "public_operation_status": "NOT_YET_VERIFIED"
+  },
+  "conversation_alias": "tiamas-scout",
+  "display_name": "titmac-scout",
+  "fresh_until": "2026-08-11T16:38:30Z",
+  "project_id": "titmac-scout",
+  "projection_boundaries": {
+    "cockpit_pull_only": true,
+    "cockpit_push": false,
+    "cockpit_stores_canonical_run": false,
+    "cockpit_stores_projection": true,
+    "raw_run_copied": false,
+    "status_owner_is_observer": false,
+    "status_projection_is_adoption": false
+  },
+  "projection_contract_version": "0.2",
+  "pull_request_observation": {
+    "closed_pull_requests": [],
+    "limitations": [
+      "Pull request state is a point-in-time GitHub API observation."
+    ],
+    "merged_pull_requests": [
+      {
+        "base_branch": "main",
+        "head_revision": "0ec47b61cd359a946a7bc3f2bc99197a283fc5c6",
+        "is_draft": false,
+        "number": 5,
+        "state": "MERGED",
+        "url": "https://github.com/joy7758/titmac-scout/pull/5"
+      },
+      {
+        "base_branch": "main",
+        "head_revision": "6ed1bdd1c59e681a93c75ea1e995b3dc6afd64f8",
+        "is_draft": false,
+        "number": 4,
+        "state": "MERGED",
+        "url": "https://github.com/joy7758/titmac-scout/pull/4"
+      },
+      {
+        "base_branch": "main",
+        "head_revision": "c1f1d2e6120042d9566a930e7190ad068f2395e8",
+        "is_draft": false,
+        "number": 3,
+        "state": "MERGED",
+        "url": "https://github.com/joy7758/titmac-scout/pull/3"
+      },
+      {
+        "base_branch": "main",
+        "head_revision": "67815bb0be6ca463072815330741d1ca5d8e8589",
+        "is_draft": false,
+        "number": 2,
+        "state": "MERGED",
+        "url": "https://github.com/joy7758/titmac-scout/pull/2"
+      },
+      {
+        "base_branch": "main",
+        "head_revision": "c77c44d2a0ed17260aaa5d1336eed7c3da2b2413",
+        "is_draft": false,
+        "number": 1,
+        "state": "MERGED",
+        "url": "https://github.com/joy7758/titmac-scout/pull/1"
+      }
+    ],
+    "observation_owner": "DBA_COCKPIT_READ_ONLY_ADAPTER",
+    "observed_at": "2026-08-08T16:58:10.468511Z",
+    "open_pull_requests": [],
+    "status": "PASS"
+  },
+  "pull_request_observation_freshness": "FRESH",
+  "remote_head_observation": {
+    "branch": "main",
+    "limitations": [
+      "This is a point-in-time GitHub API observation."
+    ],
+    "observation_owner": "DBA_COCKPIT_READ_ONLY_ADAPTER",
+    "observed_at": "2026-08-08T16:58:10.468511Z",
+    "repository": "joy7758/titmac-scout",
+    "revision": "e4adbbbbb149871f108fcf384369182d8c5765f4",
+    "revision_match": true,
+    "status": "PASS",
+    "tree_digest": "a5e9ff2945ab3da30ce1054631d2139da4efc878",
+    "tree_match": true
+  },
+  "remote_revision_freshness": "FRESH",
+  "retrieved_at": "2026-08-08T16:58:10.468511Z",
+  "source_declarations": {
+    "ci_observation_request": {
+      "deployment_implied": false,
+      "limitations": [
+        "The project-status source does not declare the current GitHub CI result.",
+        "A read-only observer must query the exact fetched revision."
+      ],
+      "observation_owner": "DBA_COCKPIT_READ_ONLY_ADAPTER",
+      "production_readiness_implied": false,
+      "release_implied": false,
+      "status": "EXTERNAL_OBSERVATION_REQUIRED",
+      "target_revision": "e4adbbbbb149871f108fcf384369182d8c5765f4",
+      "workflow_run": null
+    },
+    "declared_work_items": [
+      {
+        "dynamic_state": "EXTERNAL_OBSERVATION_REQUIRED",
+        "purpose": "D20_STATUS_CONTRACT_MERGED_HISTORY",
+        "reference": "joy7758/titmac-scout#1"
+      },
+      {
+        "dynamic_state": "EXTERNAL_OBSERVATION_REQUIRED",
+        "purpose": "D25_RETAINED_TARGET_REPAIR_HISTORY",
+        "reference": "joy7758/digital-biosphere-architecture-specification#109"
+      },
+      {
+        "dynamic_state": "EXTERNAL_OBSERVATION_REQUIRED",
+        "purpose": "D26_NEGATIVE_DISCOVERY_CANONICAL_RETENTION",
+        "reference": "joy7758/titmac-scout#4"
+      }
+    ],
+    "dynamic_observation_boundaries": {
+      "ci_observation_freshness": "EXTERNAL_OBSERVATION_REQUIRED",
+      "freshness_scope": "DECLARED_PROJECT_STATUS_ONLY",
+      "pull_request_observation_freshness": "EXTERNAL_OBSERVATION_REQUIRED",
+      "remote_revision_freshness": "EXTERNAL_OBSERVATION_REQUIRED",
+      "source_status_freshness": "generated_at/fresh_until",
+      "status_owner_is_remote_observer": false
+    },
+    "pull_request_observation_request": {
+      "dynamic_state_source": "GITHUB_API_READ",
+      "items_declared_here": false,
+      "limitations": [
+        "Open, merged, and closed pull request states are dynamic GitHub observations.",
+        "No pull request state in this source implies release, deployment, adoption, or production readiness."
+      ],
+      "observation_owner": "DBA_COCKPIT_READ_ONLY_ADAPTER",
+      "status": "EXTERNAL_GITHUB_QUERY_REQUIRED",
+      "target_repository": "joy7758/titmac-scout",
+      "target_revision": "e4adbbbbb149871f108fcf384369182d8c5765f4"
+    }
+  },
+  "source_freshness": "FRESH",
+  "source_integrity": "PASS",
+  "source_reference": {
+    "branch": "main",
+    "mode": "CANONICAL_MAIN_EXACT_REVISION",
+    "repository": "joy7758/titmac-scout",
+    "schema_path": "governance/project-status.schema.json",
+    "status_path": "governance/project-status.json"
+  },
+  "source_revision": "e4adbbbbb149871f108fcf384369182d8c5765f4",
+  "source_revision_match": true,
+  "source_status_freshness": "FRESH",
+  "source_tree_digest": "a5e9ff2945ab3da30ce1054631d2139da4efc878",
+  "source_tree_match": true,
+  "status_source_digest": "d9e0438bd99a7ff1e080f5f05b983db9f5e1ef13efbeb504534de6ec8923474c",
+  "summary": {
+    "authority_boundaries": [
+      "TITMAC_SCOUT_IS_IMPLEMENTATION_AND_STATUS_OWNER",
+      "DBA_IS_ARCHITECTURE_GOVERNANCE_AND_READ_ONLY_AGGREGATOR",
+      "RECOMMENDATION_NE_DECISION",
+      "DECISION_NE_EXECUTION",
+      "PR_NE_ADOPTION",
+      "CI_PASS_NE_PRODUCTION_READY"
+    ],
+    "blocking_decisions": [
+      "TITMAC_SCOUT_OWNER_ROUTE_VOCABULARY_NORMALIZATION_REVIEW"
+    ],
+    "blocking_issues": [],
+    "canonical_repository": "joy7758/titmac-scout",
+    "ci": {
+      "checks": [
+        {
+          "conclusion": "success",
+          "details_url": "https://github.com/joy7758/titmac-scout/actions/runs/31268169158/job/93129582670",
+          "name": "test",
+          "status": "completed"
+        }
+      ],
+      "deployment_implied": false,
+      "limitations": [
+        "CI state is dynamic and applies only to the exact target revision."
+      ],
+      "observation_owner": "DBA_COCKPIT_READ_ONLY_ADAPTER",
+      "observed_at": "2026-08-08T16:58:10.468511Z",
+      "production_readiness_implied": false,
+      "release_implied": false,
+      "status": "PASS",
+      "target_revision": "e4adbbbbb149871f108fcf384369182d8c5765f4"
+    },
+    "closed_pull_requests": [],
+    "cockpit_bridge_state": "READY_FOR_HUMAN_REVIEW",
+    "development_phase": "D26_NO_ELIGIBLE_DISCOVERY_CANONICAL_RETENTION",
+    "discovery_status": "CANDIDATE",
+    "evolution_progress": {
+      "APPLY": {
+        "evidence_reference": "evolution-runs/D24-DBA-ER1-001/action-reference.json",
+        "limitations": [
+          "DBA_REPOSITORY_MERGE_ONLY",
+          "NO_RUNTIME_SERVICE_DATABASE_OR_PRODUCTION_MUTATION"
+        ],
+        "source_revision": "e4adbbbbb149871f108fcf384369182d8c5765f4",
+        "status": "CANDIDATE",
+        "updated_at": "2026-08-02T11:33:16Z"
+      },
+      "AWAIT_AUTHORIZATION": {
+        "evidence_reference": "evolution-runs/D24-DBA-ER1-001/authorization-reference.json",
+        "limitations": [
+          "D25_EXACT_HUMAN_AUTHORIZATION_RECORDED",
+          "NO_STANDING_OR_FUTURE_MERGE_AUTHORITY"
+        ],
+        "source_revision": "e4adbbbbb149871f108fcf384369182d8c5765f4",
+        "status": "CANDIDATE",
+        "updated_at": "2026-08-02T11:33:16Z"
+      },
+      "CLASSIFY_RISK": {
+        "evidence_reference": "evolution-runs/D24-DBA-ER1-001/problem-evidence.json",
+        "limitations": [
+          "ER_1_CLASSIFICATION_NE_AUTHORIZATION",
+          "ESCALATE_IF_SEMANTICS_OR_SECURITY_CHANGE"
+        ],
+        "source_revision": "e4adbbbbb149871f108fcf384369182d8c5765f4",
+        "status": "CANDIDATE",
+        "updated_at": "2026-08-02T10:35:23Z"
+      },
+      "DISCOVER": {
+        "evidence_reference": "evolution-runs/D26-SECOND-INDEPENDENT-ER1/candidate-register.json",
+        "limitations": [
+          "NO_ELIGIBLE_INDEPENDENT_ER1_FOUND",
+          "DISCOVERY_COUNT_INCREMENTED_WITHOUT_REPAIR_COUNT_CHANGE",
+          "GENERALIZATION_NOT_PROVEN"
+        ],
+        "source_revision": "e4adbbbbb149871f108fcf384369182d8c5765f4",
+        "status": "CANDIDATE",
+        "updated_at": "2026-08-02T12:18:23Z"
+      },
+      "EVALUATE_FITNESS": {
+        "evidence_reference": "evolution-runs/D24-DBA-ER1-001/fitness-evaluations",
+        "limitations": [
+          "ACTUAL_TEST_EXECUTION_DERIVED",
+          "NO_REAL_RUNTIME",
+          "NO_PRODUCTION_EVIDENCE",
+          "SAEE_HAS_NOT_EVALUATED_THIS_CANDIDATE"
+        ],
+        "source_revision": "e4adbbbbb149871f108fcf384369182d8c5765f4",
+        "status": "CANDIDATE",
+        "updated_at": "2026-08-02T10:35:23Z"
+      },
+      "EVIDENCE": {
+        "evidence_reference": "evolution-runs/D26-SECOND-INDEPENDENT-ER1/negative-result-disposition.json",
+        "limitations": [
+          "NEGATIVE_RESULT_IS_CANONICAL_EVIDENCE_NOT_PROOF_OF_GENERALIZATION",
+          "EVIDENCE_NE_TRUTH",
+          "OWNER_ROUTE_GAP_IS_OBSERVATION_ONLY"
+        ],
+        "source_revision": "e4adbbbbb149871f108fcf384369182d8c5765f4",
+        "status": "CANDIDATE",
+        "updated_at": "2026-08-02T12:41:11Z"
+      },
+      "GENERATE_VARIANTS": {
+        "evidence_reference": "evolution-runs/D24-DBA-ER1-001/variants",
+        "limitations": [
+          "MAX_THREE_VARIANTS",
+          "NO_REAL_RUNTIME",
+          "NO_PRODUCTION_EVIDENCE"
+        ],
+        "source_revision": "e4adbbbbb149871f108fcf384369182d8c5765f4",
+        "status": "CANDIDATE",
+        "updated_at": "2026-08-02T10:35:23Z"
+      },
+      "IMPLEMENT_IN_SANDBOX": {
+        "evidence_reference": "evolution-runs/D24-DBA-ER1-001/fitness-evidence",
+        "limitations": [
+          "EPHEMERAL_DBA_WORKTREES_ONLY",
+          "NO_REAL_RUNTIME",
+          "NO_PRODUCTION_EVIDENCE"
+        ],
+        "source_revision": "e4adbbbbb149871f108fcf384369182d8c5765f4",
+        "status": "CANDIDATE",
+        "updated_at": "2026-08-02T10:35:23Z"
+      },
+      "OBSERVE": {
+        "evidence_reference": "evolution-runs/D24-DBA-ER1-001/problem-evidence.json",
+        "limitations": [
+          "ONE_REAL_REPOSITORY_TEST_PROBLEM_ONLY",
+          "NO_RUNTIME_OR_PRODUCTION_OBSERVATION"
+        ],
+        "source_revision": "e4adbbbbb149871f108fcf384369182d8c5765f4",
+        "status": "CANDIDATE",
+        "updated_at": "2026-08-02T10:35:23Z"
+      },
+      "OBSERVE_OUTCOME": {
+        "evidence_reference": "evolution-runs/D24-DBA-ER1-001/post-merge-canary-evidence.json",
+        "limitations": [
+          "POST_MERGE_REPOSITORY_CANARY_PASS",
+          "NO_REAL_RUNTIME",
+          "NO_PRODUCTION_EVIDENCE",
+          "CANARY_PASS_NE_CERTIFICATION"
+        ],
+        "source_revision": "e4adbbbbb149871f108fcf384369182d8c5765f4",
+        "status": "CANDIDATE",
+        "updated_at": "2026-08-02T11:33:16Z"
+      },
+      "RECORD_LINEAGE": {
+        "evidence_reference": "evolution-runs/D24-DBA-ER1-001/lineage.json",
+        "limitations": [
+          "LINEAGE_RETENTION_RECORDED",
+          "SELF_HEALING_NE_SELF_EVOLUTION",
+          "NO_REAL_RUNTIME",
+          "NO_PRODUCTION_EVIDENCE"
+        ],
+        "source_revision": "e4adbbbbb149871f108fcf384369182d8c5765f4",
+        "status": "CANDIDATE",
+        "updated_at": "2026-08-02T11:33:16Z"
+      },
+      "REPRODUCE": {
+        "evidence_reference": "evolution-runs/D24-DBA-ER1-001/fitness-evidence/D24-DBA-ER1-001-V0-CHECKS.json",
+        "limitations": [
+          "TWO_ISOLATED_WORKTREE_ATTEMPTS",
+          "REAL_REPOSITORY_PROBLEM_NE_PRODUCTION_PROBLEM"
+        ],
+        "source_revision": "e4adbbbbb149871f108fcf384369182d8c5765f4",
+        "status": "CANDIDATE",
+        "updated_at": "2026-08-02T10:35:23Z"
+      },
+      "RESOLVE_OWNER": {
+        "evidence_reference": "evolution-runs/D24-DBA-ER1-001/owner-resolution.json",
+        "limitations": [
+          "OWNER_RESOLUTION_NE_AUTHORITY",
+          "NO_REAL_RUNTIME",
+          "NO_PRODUCTION_EVIDENCE"
+        ],
+        "source_revision": "e4adbbbbb149871f108fcf384369182d8c5765f4",
+        "status": "CANDIDATE",
+        "updated_at": "2026-08-02T10:35:23Z"
+      },
+      "RETAIN_OR_ROLLBACK": {
+        "evidence_reference": "evolution-runs/D24-DBA-ER1-001/retention-decision.json",
+        "limitations": [
+          "RETAINED_AFTER_CANARY_PASS",
+          "ROLLBACK_READY_NOT_USED",
+          "ONE_RETAINED_RUN_NE_GENERAL_SELF_HEALING",
+          "NO_PRODUCTION_EVIDENCE"
+        ],
+        "source_revision": "e4adbbbbb149871f108fcf384369182d8c5765f4",
+        "status": "CANDIDATE",
+        "updated_at": "2026-08-02T11:33:16Z"
+      },
+      "SELECT": {
+        "evidence_reference": "evolution-runs/D24-DBA-ER1-001/selection-record.json",
+        "limitations": [
+          "SELECT_WITH_CONDITIONS",
+          "NO_REAL_RUNTIME",
+          "NO_PRODUCTION_EVIDENCE",
+          "SELECTION_NE_AUTHORIZATION"
+        ],
+        "source_revision": "e4adbbbbb149871f108fcf384369182d8c5765f4",
+        "status": "CANDIDATE",
+        "updated_at": "2026-08-02T10:35:23Z"
+      }
+    },
+    "implementation_owner": "joy7758/titmac-scout",
+    "implementation_status": "CANDIDATE",
+    "known_limitations": [
+      "The D24/D25 run retained one Human-authorized repository-only ER-1 repair after a post-merge canary; it does not establish general or production self-healing.",
+      "The retained repair restored a known invariant and did not add a capability, change architecture, or perform self-evolution.",
+      "D26 is the latest bounded discovery run and retained a no-eligible-candidate result; it is not a second repair, a failed self-healing operation, or proof of generalization.",
+      "D24-DBA-ER1-001 remains the last retained self-healing run; D26 increments a bounded discovery-run count only.",
+      "The D26 raw problem vocabulary has no exact current owner-route match; the resulting coverage gap remains an unconfirmed observation pending Human review.",
+      "REAL_PROBLEM_REPRODUCTION_COUNT=1; REAL_REPAIR_DRAFT_PR_COUNT=1; REAL_MERGED_REPAIR_COUNT=1; REAL_SELF_HEALING_OPERATION_COUNT=1; REAL_SELF_EVOLUTION_OPERATION_COUNT=0.",
+      "The repository and status source are private; public machine discovery is not established.",
+      "No release, deployment, production runtime, external adoption, or certification is authorized.",
+      "GitHub CI, pull request, merge, remote-head, and availability facts require a current external read-only observation."
+    ],
+    "latest_evolution_result": "NO_ELIGIBLE_INDEPENDENT_ER1_FOUND",
+    "latest_evolution_run": "evolution-runs/D26-SECOND-INDEPENDENT-ER1",
+    "latest_outcome_evidence": "evolution-runs/D26-SECOND-INDEPENDENT-ER1/outcome-evidence.json",
+    "latest_rollback_evidence": null,
+    "latest_selected_variant": null,
+    "lifecycle_status": "IMPLEMENTING",
+    "merged_pull_requests": [
+      {
+        "base_branch": "main",
+        "head_revision": "0ec47b61cd359a946a7bc3f2bc99197a283fc5c6",
+        "is_draft": false,
+        "number": 5,
+        "state": "MERGED",
+        "url": "https://github.com/joy7758/titmac-scout/pull/5"
+      },
+      {
+        "base_branch": "main",
+        "head_revision": "6ed1bdd1c59e681a93c75ea1e995b3dc6afd64f8",
+        "is_draft": false,
+        "number": 4,
+        "state": "MERGED",
+        "url": "https://github.com/joy7758/titmac-scout/pull/4"
+      },
+      {
+        "base_branch": "main",
+        "head_revision": "c1f1d2e6120042d9566a930e7190ad068f2395e8",
+        "is_draft": false,
+        "number": 3,
+        "state": "MERGED",
+        "url": "https://github.com/joy7758/titmac-scout/pull/3"
+      },
+      {
+        "base_branch": "main",
+        "head_revision": "67815bb0be6ca463072815330741d1ca5d8e8589",
+        "is_draft": false,
+        "number": 2,
+        "state": "MERGED",
+        "url": "https://github.com/joy7758/titmac-scout/pull/2"
+      },
+      {
+        "base_branch": "main",
+        "head_revision": "c77c44d2a0ed17260aaa5d1336eed7c3da2b2413",
+        "is_draft": false,
+        "number": 1,
+        "state": "MERGED",
+        "url": "https://github.com/joy7758/titmac-scout/pull/1"
+      }
+    ],
+    "next_human_decision": "TITMAC_SCOUT_OWNER_ROUTE_VOCABULARY_NORMALIZATION_REVIEW",
+    "open_pull_requests": [],
+    "p0_10_reopened": false,
+    "self_evolution_status": "CANDIDATE",
+    "self_healing_status": "CANDIDATE",
+    "status_source_state": "MERGED_ON_CANONICAL_MAIN",
+    "tests": {
+      "assertions": 288,
+      "capability_or_run_claims_changed": false,
+      "credential_shape_scan": "PASS",
+      "d19_contract_validation": "PASS",
+      "d26_tests": "25/25_PASS",
+      "d27_truth_correction_tests": "12/12_PASS",
+      "json_syntax_validation": "PASS",
+      "python_tests": 104,
+      "ruby_assertions": 288,
+      "ruby_tests": 85,
+      "scope": "D20_D21_D22_D23_D24_D25_D26_AND_D27_LOCAL_VALIDATION",
+      "source_revision": "e4adbbbbb149871f108fcf384369182d8c5765f4",
+      "status": "PASS",
+      "status_contract_validation": "PASS",
+      "tests": 189,
+      "validated_at": "2026-08-08T16:38:30Z",
+      "validation_basis": "CLEAN_CLONE_CURRENT_SOURCE_REVALIDATION"
+    }
+  }
+}

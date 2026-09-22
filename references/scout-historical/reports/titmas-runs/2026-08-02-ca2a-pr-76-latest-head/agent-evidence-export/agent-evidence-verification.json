@@ -1,0 +1,114 @@
+{
+  "artifact_type": "TITMAS_SCOUT_AGENT_EVIDENCE_VERIFICATION",
+  "schema_version": "0.1",
+  "decision": "PASS",
+  "external_action_allowed": false,
+  "authorization_granted": false,
+  "run_id": "2026-08-02-ca2a-pr-76-latest-head",
+  "event_type": "titmas.scout.pre_action",
+  "canonical_repository": "agent-evidence",
+  "canonical_commit": "911db6650547617c71331ddd9506811f04191656",
+  "package_version": "0.1.0rc3",
+  "artifact_family": "EVIDENCE_ENVELOPE_EXPORT",
+  "verification_scope": "STRUCTURE_DIGEST_CHAIN_ONLY",
+  "actor_authentication": "NOT_ESTABLISHED",
+  "signature_present": false,
+  "signature_verified": null,
+  "record_count": 1,
+  "latest_chain_hash": "a06a13eb3f51a83a43071cf245c254135d1f8745754a2400d28927b7818be57d",
+  "artifacts": {
+    "store": {
+      "path": "evidence-store.jsonl",
+      "digest_algorithm": "sha256",
+      "digest_value": "e9a12272fe2d0ff97ed98d17dfc973902706b5c56ec2f234b3ee55b833143bf9"
+    },
+    "bundle": {
+      "path": "evidence-bundle.json",
+      "digest_algorithm": "sha256",
+      "digest_value": "52858c8c275636f3401cb4485393f5664fd964b375078906e7a322637f166bc0"
+    },
+    "manifest": {
+      "path": "evidence-export-manifest.json",
+      "digest_algorithm": "sha256",
+      "digest_value": "fe79d077a960353523ce2a9ca60c7ceaf028d987502e77d6e4b2692092f2805a"
+    }
+  },
+  "command_receipts": [
+    {
+      "argv": [
+        "[LOCAL_HOME]/GitHub/agent-evidence/.venv/bin/agent-evidence",
+        "record",
+        "--store",
+        "reports/titmas-runs/2026-08-02-ca2a-pr-76-latest-head/agent-evidence-export/evidence-store.jsonl",
+        "--actor",
+        "AGENT_QUORUM",
+        "--event-type",
+        "titmas.scout.pre_action",
+        "--input",
+        "{\"action_scope\":[\"PUSH_PERSONAL_BRANCH\",\"POST_BOUNDED_TECHNICAL_COMMENT\"],\"actor_type\":\"AGENT_QUORUM\",\"canonical_evidence\":{\"artifact_family\":\"EVIDENCE_ENVELOPE_EXPORT\",\"commit\":\"911db6650547617c71331ddd9506811f04191656\",\"package_version\":\"0.1.0rc3\",\"repository\":\"agent-evidence\"},\"commit_sha\":\"0a1ffa6710d25f58515b2dca7e0619e134c0a43e\",\"digest_algorithm\":\"sha256\",\"digest_value\":\"82688a11ed0f103c75cabc80f6c7e16fbd51bee0766a52043d0894ff2d066731\",\"integration_version\":\"0.1\",\"result\":\"BASELINE_CAPTURED_LOCAL_SYNC_COMPLETE\",\"ruleset_version\":\"0.1\",\"run_id\":\"2026-08-02-ca2a-pr-76-latest-head\",\"source_reference\":\"agentrust-io/ca2a#76\",\"timestamp\":\"2026-08-02T06:21:39Z\",\"uncertainty\":[\"maintainer_acceptance_unknown\",\"remote_ci_not_executed\",\"codex_review_for_final_head_absent\"],\"unsupported_claims\":[\"maintainer_approval\",\"merge\",\"adoption\",\"customer\",\"revenue\",\"production_safety\",\"dba_ingestion\"]}",
+        "--output",
+        "{\"result\":\"BASELINE_CAPTURED_LOCAL_SYNC_COMPLETE\"}",
+        "--context",
+        "{\"source\":\"tiamas-scout\",\"component\":\"titmas-evidence-adapter\",\"attributes\":{\"canonical_repository\":\"agent-evidence\",\"canonical_commit\":\"911db6650547617c71331ddd9506811f04191656\",\"artifact_family\":\"EVIDENCE_ENVELOPE_EXPORT\"}}",
+        "--metadata",
+        "{\"verification_scope\":\"STRUCTURE_DIGEST_CHAIN_ONLY\",\"actor_authentication\":\"NOT_ESTABLISHED\",\"authorization_granted\":false,\"unsupported_claims\":[\"maintainer_approval\",\"merge\",\"adoption\",\"customer\",\"revenue\",\"production_safety\",\"dba_ingestion\"]}",
+        "--tag",
+        "titmas-scout",
+        "--tag",
+        "run:2026-08-02-ca2a-pr-76-latest-head"
+      ],
+      "exit_status": 0,
+      "success": true,
+      "stdout": "{\n  \"schema_version\": \"2.0.0\",\n  \"event\": {\n    \"event_id\": \"718827eb-ab10-48ac-bbcc-d0c61e4e1965\",\n    \"timestamp\": \"2026-08-02T06:22:42.902180Z\",\n    \"event_type\": \"titmas.scout.pre_action\",\n    \"actor\": \"AGENT_QUORUM\",\n    \"inputs\": {\n      \"action_scope\": [\n        \"PUSH_PERSONAL_BRANCH\",\n        \"POST_BOUNDED_TECHNICAL_COMMENT\"\n      ],\n      \"actor_type\": \"AGENT_QUORUM\",\n      \"canonical_evidence\": {\n        \"artifact_family\": \"EVIDENCE_ENVELOPE_EXPORT\",\n        \"commit\": \"911db6650547617c71331ddd9506811f04191656\",\n        \"package_version\": \"0.1.0rc3\",\n        \"repository\": \"agent-evidence\"\n      },\n      \"commit_sha\": \"0a1ffa6710d25f58515b2dca7e0619e134c0a43e\",\n      \"digest_algorithm\": \"sha256\",\n      \"digest_value\": \"82688a11ed0f103c75cabc80f6c7e16fbd51bee0766a52043d0894ff2d066731\",\n      \"integration_version\": \"0.1\",\n      \"result\": \"BASELINE_CAPTURED_LOCAL_SYNC_COMPLETE\",\n      \"ruleset_version\": \"0.1\",\n      \"run_id\": \"2026-08-02-ca2a-pr-76-latest-head\",\n      \"source_reference\": \"agentrust-io/ca2a#76\",\n      \"timestamp\": \"2026-08-02T06:21:39Z\",\n      \"uncertainty\": [\n        \"maintainer_acceptance_unknown\",\n        \"remote_ci_not_executed\",\n        \"codex_review_for_final_head_absent\"\n      ],\n      \"unsupported_claims\": [\n        \"maintainer_approval\",\n        \"merge\",\n        \"adoption\",\n        \"customer\",\n        \"revenue\",\n        \"production_safety\",\n        \"dba_ingestion\"\n      ]\n    },\n    \"outputs\": {\n      \"result\": \"BASELINE_CAPTURED_LOCAL_SYNC_COMPLETE\"\n    },\n    \"context\": {\n      \"source\": \"tiamas-scout\",\n      \"component\": \"titmas-evidence-adapter\",\n      \"source_event_type\": null,\n      \"span_id\": null,\n      \"parent_span_id\": null,\n      \"ancestor_span_ids\": [],\n      \"name\": null,\n      \"tags\": [\n        \"titmas-scout\",\n        \"run:2026-08-02-ca2a-pr-76-latest-head\"\n      ],\n      \"attributes\": {\n        \"canonical_repository\": \"agent-evidence\",\n        \"canonical_commit\": \"911db6650547617c71331ddd9506811f04191656\",\n        \"artifact_family\": \"EVIDENCE_ENVELOPE_EXPORT\"\n      }\n    },\n    \"metadata\": {\n      \"verification_scope\": \"STRUCTURE_DIGEST_CHAIN_ONLY\",\n      \"actor_authentication\": \"NOT_ESTABLISHED\",\n      \"authorization_granted\": false,\n      \"unsupported_claims\": [\n        \"maintainer_approval\",\n        \"merge\",\n        \"adoption\",\n        \"customer\",\n        \"revenue\",\n        \"production_safety\",\n        \"dba_ingestion\"\n      ]\n    }\n  },\n  \"hashes\": {\n    \"event_hash\": \"c90d3263501832612aae662a433f1c1db953f9d572c933097931182bdeab5cf1\",\n    \"previous_event_hash\": null,\n    \"chain_hash\": \"a06a13eb3f51a83a43071cf245c254135d1f8745754a2400d28927b7818be57d\"\n  }\n}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "[LOCAL_HOME]/GitHub/agent-evidence/.venv/bin/agent-evidence",
+        "verify",
+        "--store",
+        "reports/titmas-runs/2026-08-02-ca2a-pr-76-latest-head/agent-evidence-export/evidence-store.jsonl"
+      ],
+      "exit_status": 0,
+      "success": true,
+      "stdout": "{\n  \"issues\": [],\n  \"latest_chain_hash\": \"a06a13eb3f51a83a43071cf245c254135d1f8745754a2400d28927b7818be57d\",\n  \"ok\": true,\n  \"records\": 1\n}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "[LOCAL_HOME]/GitHub/agent-evidence/.venv/bin/agent-evidence",
+        "export",
+        "--store",
+        "reports/titmas-runs/2026-08-02-ca2a-pr-76-latest-head/agent-evidence-export/evidence-store.jsonl",
+        "--format",
+        "json",
+        "--output",
+        "reports/titmas-runs/2026-08-02-ca2a-pr-76-latest-head/agent-evidence-export/evidence-bundle.json",
+        "--manifest-output",
+        "reports/titmas-runs/2026-08-02-ca2a-pr-76-latest-head/agent-evidence-export/evidence-export-manifest.json"
+      ],
+      "exit_status": 0,
+      "success": true,
+      "stdout": "{\n  \"format\": \"json\",\n  \"manifest_output\": \"reports/titmas-runs/2026-08-02-ca2a-pr-76-latest-head/agent-evidence-export/evidence-export-manifest.json\",\n  \"output\": \"reports/titmas-runs/2026-08-02-ca2a-pr-76-latest-head/agent-evidence-export/evidence-bundle.json\",\n  \"record_count\": 1,\n  \"required_signature_roles\": {},\n  \"required_signatures\": null,\n  \"signature_count\": 0,\n  \"signed\": false\n}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "[LOCAL_HOME]/GitHub/agent-evidence/.venv/bin/agent-evidence",
+        "verify-export",
+        "--bundle",
+        "reports/titmas-runs/2026-08-02-ca2a-pr-76-latest-head/agent-evidence-export/evidence-bundle.json"
+      ],
+      "exit_status": 0,
+      "success": true,
+      "stdout": "{\n  \"format\": \"json\",\n  \"issues\": [],\n  \"latest_chain_hash\": \"a06a13eb3f51a83a43071cf245c254135d1f8745754a2400d28927b7818be57d\",\n  \"ok\": true,\n  \"record_count\": 1,\n  \"required_role_signature_counts\": {},\n  \"required_signature_count\": 0,\n  \"signature_count\": 0,\n  \"signature_policy\": {\n    \"minimum_valid_signatures\": null,\n    \"minimum_valid_signatures_by_role\": {}\n  },\n  \"signature_present\": false,\n  \"signature_results\": [],\n  \"signature_verified\": null,\n  \"verified_role_signature_counts\": {},\n  \"verified_signature_count\": 0\n}\n",
+      "stderr": ""
+    }
+  ],
+  "unsupported_claims": [
+    "EVIDENCE_NE_TRUTH",
+    "VERIFICATION_NE_AUTHORIZATION",
+    "VERIFICATION_NE_CERTIFICATION",
+    "ACTOR_IDENTITY_NOT_AUTHENTICATED"
+  ]
+}

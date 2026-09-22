@@ -1,0 +1,16 @@
+{
+  "schema_version": "0.1",
+  "review_id": "2026-08-02-ca2a-pr-76-push-evidence-review",
+  "agent_identifier": "/root/push_evidence_review",
+  "model_runtime_identifier": "OpenAI Codex GPT-5",
+  "review_role": "EVIDENCE_REVIEWER",
+  "input_digest": "sha256:0f059a8d6ce43e0dced5c3bdb6eac023c2dfa8859ca0833475b2718c166b7f09",
+  "output_digest": "sha256:1ae7b76b7659e17890de4e4da90d746589cf584ac243961c49b17c46d507cdab",
+  "decision": "PASS",
+  "timestamp": "2026-08-02T06:26:44Z",
+  "ruleset_version": "0.1",
+  "reason_codes": ["HEAD_TREE_PARENTAGE_VERIFIED", "DIFF_DIGEST_VERIFIED", "CANONICAL_EVIDENCE_VERIFIED", "OLD_ALLOW_STALE"],
+  "findings": ["Local head, upstream parentage, personal-fork before-state, contribution diff, test evidence, and canonical structure/digest/chain verification were independently reproduced; the prior head-bound ALLOW cannot authorize this push."],
+  "blocking_reasons": [],
+  "evidence_references": ["git:ca2a@0a1ffa6710d25f58515b2dca7e0619e134c0a43e", "reports/titmas-runs/2026-08-02-ca2a-pr-76-latest-head/agent-evidence-verification.json", "reports/titmas-runs/2026-08-02-ca2a-pr-76-latest-head/ca2a-validation.json"]
+}

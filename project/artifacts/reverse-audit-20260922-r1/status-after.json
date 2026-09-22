@@ -1,0 +1,49 @@
+{
+  "schema_version": "1.0",
+  "job_id": "guanque-pilot",
+  "building": "鹳雀楼",
+  "stage": "NEEDS_REVISION",
+  "ready_for_user_review": false,
+  "publication": "USER_ONLY",
+  "gates": {
+    "sources": true,
+    "model_plan": true,
+    "technical": true,
+    "visual": false,
+    "titmas": false,
+    "video": true
+  },
+  "next_station": "visual",
+  "blockers": [
+    {
+      "code": "CHECK_FAILED",
+      "station": "visual",
+      "severity": "ERROR",
+      "detail": "visual check failed."
+    },
+    {
+      "code": "CHECK_NOT_PASSED",
+      "station": "visual",
+      "severity": "BLOCKER",
+      "detail": "visual: FAIL. Unrun or unknown is not a pass."
+    },
+    {
+      "code": "TITMAS_NOT_CONNECTED",
+      "station": "titmas",
+      "severity": "BLOCKER",
+      "detail": "Trusted TITMAS adapter and independent receipt verification are not implemented. READY_FOR_USER_REVIEW is disabled."
+    }
+  ],
+  "hashes": {
+    "request_sha256": "a0ef38da1a439a6bd821bc0e459a1a2c4afffff41bb0ea77ba229dc87606cf7b",
+    "sources_sha256": "a9841495b4c7db87a5d69e9085ff77a477ce83de2fda5a29a35eb1ab62195662",
+    "model_plan_sha256": "5d754eb806d22e5fc5716c4945f9a14984360dfc6f04aa67015281438302dcda",
+    "checks_sha256": "6335e49e3780afd2648db0ea08f1316567fbd7b1b05bd856501c3a997124a4fc",
+    "video_manifest_sha256": "17f17e0fbd0b25f6d08944b62828e3bce42ba7723298dbf615a163332e81941f"
+  },
+  "capabilities": {
+    "titmas_adapter": "NOT_IMPLEMENTED",
+    "release_gate": "DISABLED_UNTIL_TRUSTED_ADAPTER",
+    "network_calls": false
+  }
+}

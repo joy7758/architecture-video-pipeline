@@ -1,0 +1,35 @@
+{
+  "artifact_type": "TITMAS_SCOUT_CONVERSION_FINAL_VALIDATION",
+  "run_id": "2026-08-02-praxis-ai-194-agent-audit",
+  "recorded_at": "2026-08-02T08:15:00Z",
+  "tests": {
+    "all_scout_tests": "88 runs, 327 assertions, 0 failures, 0 errors, 0 skips",
+    "validator_tests": "13 runs, 44 assertions, 0 failures",
+    "review_aggregator_tests": "30 runs, 106 assertions, 0 failures",
+    "titmas_integration_tests": "10 runs, 39 assertions, 0 failures",
+    "feedback_loop_tests": "6 runs, 6 assertions, 0 failures",
+    "discovery_tests": "29 runs, 132 assertions, 0 failures"
+  },
+  "checks": {
+    "ruby_syntax": "PASS_32_FILES",
+    "json_parse": "PASS_143_FILES",
+    "yaml_parse": "PASS_12_FILES",
+    "markdownlint": "PASS_3_FILES",
+    "quorum_deterministic_replay": "PASS_DENY_EXIT_1",
+    "unknown_state_fail_closed": "PASS_BY_REVIEW_TEST_SUITE",
+    "authorization_source_change_invalidation": "PASS",
+    "authorization_payload_change_invalidation": "PASS",
+    "authorization_diff_change_invalidation": "PASS",
+    "agent_evidence_record": "PASS",
+    "agent_evidence_verify": "PASS",
+    "agent_evidence_export": "PASS",
+    "agent_evidence_verify_export": "PASS",
+    "sensitive_information_scan": "PASS",
+    "git_diff_check": "PASS"
+  },
+  "external_write_confirmation": {
+    "issue_comment_count_after_run": 0,
+    "praxis_worktree_clean": true,
+    "external_write_performed": false
+  }
+}

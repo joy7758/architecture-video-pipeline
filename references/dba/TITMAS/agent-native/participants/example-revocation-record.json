@@ -1,0 +1,8 @@
+{
+  "revocation_id": "PILOT-REVOCATION-NONE",
+  "subject_ref": "PILOT-ROLE-ASSIGNMENT-EXAMPLE",
+  "revoked_by_ref": "NOT_REVOKED",
+  "reason_code": "NOT_REVOKED_PLACEHOLDER",
+  "revoked_at": "NOT_APPLICABLE",
+  "effect": "NONE"
+}

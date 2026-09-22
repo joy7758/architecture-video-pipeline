@@ -1,0 +1,317 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "profile_id": "DBA-EXTERNAL-CAPABILITY-DISCOVERY-ABSORPTION-PROFILE-0.1",
+  "version": "0.1",
+  "status": "PROPOSED_NOT_ACTIVE",
+  "normative_owner": "DBA",
+  "implementation_owner": "UNASSIGNED",
+  "extends": [
+    "TITMAS-AGENT-NATIVE-DISCOVERY-SELF-HEALING-AND-EVOLUTION-D19-V2-1",
+    "DBA-EVOLUTION-POLICY-0.1",
+    "TITMAS-BUILD-VERSUS-ADOPT-AUDIT-1.0"
+  ],
+  "architecture_tracks": {
+    "problem_discovery": "UNCHANGED_D19_V2_1",
+    "capability_intelligence": "PROPOSED",
+    "bounded_absorption": "PROPOSED"
+  },
+  "source_classes": [
+    "PRIMARY_RESEARCH",
+    "OFFICIAL_REPOSITORY",
+    "OFFICIAL_DOCUMENTATION",
+    "OFFICIAL_RELEASE_OR_CHANGELOG",
+    "OFFICIAL_STANDARD",
+    "OFFICIAL_LICENSE",
+    "OFFICIAL_SECURITY_ADVISORY",
+    "INTERNAL_CANONICAL_EVIDENCE",
+    "MANUAL_DISCOVERY_INPUT"
+  ],
+  "discovery_event_types": [
+    "NEW_CAPABILITY",
+    "MATERIAL_VERSION_CHANGE",
+    "LICENSE_OR_TERMS_CHANGE",
+    "SECURITY_POSTURE_CHANGE",
+    "MAINTENANCE_DECAY",
+    "INTERNAL_CAPABILITY_GAP",
+    "NOVELTY_COLLISION",
+    "DUPLICATE_BUILD_RISK",
+    "REPLACEMENT_OPPORTUNITY"
+  ],
+  "required_objects": {
+    "ExternalCapabilityObservation": {
+      "required_fields": [
+        "observation_id",
+        "event_type",
+        "source_ref",
+        "source_kind",
+        "observed_at",
+        "upstream_identity",
+        "upstream_version_or_revision",
+        "claim_summary",
+        "fresh_until",
+        "limitations",
+        "status"
+      ]
+    },
+    "CapabilitySourceSnapshot": {
+      "required_fields": [
+        "snapshot_id",
+        "canonical_uri",
+        "source_owner",
+        "version_or_revision",
+        "content_sha256_or_stable_identifier",
+        "observed_at",
+        "retrieval_mode",
+        "license_source_ref",
+        "security_source_ref"
+      ]
+    },
+    "CapabilityFingerprint": {
+      "required_fields": [
+        "fingerprint_id",
+        "user_problem",
+        "capability_class",
+        "inputs",
+        "outputs",
+        "state_model",
+        "side_effects",
+        "data_access",
+        "authority_assumptions",
+        "evidence_support",
+        "replacement_semantics",
+        "rollback_semantics",
+        "resource_requirements",
+        "license_constraints",
+        "known_limitations"
+      ]
+    },
+    "InternalCapabilityNeed": {
+      "required_fields": [
+        "need_id",
+        "canonical_owner",
+        "problem_or_gap",
+        "evidence_refs",
+        "current_capability_refs",
+        "frozen_history_unchanged",
+        "implementation_authorized"
+      ]
+    },
+    "OverlapAssessment": {
+      "required_fields": [
+        "assessment_id",
+        "fingerprint_ref",
+        "internal_need_ref",
+        "existing_candidates",
+        "overlap_dimensions",
+        "differences",
+        "duplicate_build_risk",
+        "owner_resolution",
+        "limitations"
+      ]
+    },
+    "AbsorptionCandidate": {
+      "required_fields": [
+        "candidate_id",
+        "source_snapshot_refs",
+        "fingerprint_ref",
+        "overlap_assessment_ref",
+        "absorption_mode",
+        "risk_class",
+        "license_status",
+        "security_status",
+        "replaceability",
+        "sandbox_plan_ref",
+        "status"
+      ]
+    },
+    "AbsorptionEvaluation": {
+      "required_fields": [
+        "evaluation_id",
+        "candidate_ref",
+        "evaluator_independence",
+        "comparison_baseline",
+        "functional_fit",
+        "evidence_quality",
+        "resource_cost",
+        "operational_complexity",
+        "replaceability",
+        "license_and_security_result",
+        "failure_evidence_refs",
+        "recommendation",
+        "limitations"
+      ]
+    },
+    "AbsorptionDecisionReference": {
+      "required_fields": [
+        "decision_ref",
+        "candidate_ref",
+        "decision",
+        "decided_by_ref",
+        "decided_at",
+        "approved_scope",
+        "implementation_authorized",
+        "release_authorized",
+        "deployment_authorized"
+      ]
+    },
+    "AdoptionHandoff": {
+      "required_fields": [
+        "handoff_id",
+        "decision_ref",
+        "canonical_implementation_owner",
+        "allowed_scope",
+        "forbidden_scope",
+        "required_evidence",
+        "rollback_requirement",
+        "status"
+      ]
+    }
+  },
+  "capability_fingerprint_comparison": {
+    "required_dimensions": [
+      "USER_PROBLEM",
+      "INPUT_OUTPUT_CONTRACT",
+      "STATE_AND_PERSISTENCE",
+      "SIDE_EFFECTS",
+      "DATA_ACCESS",
+      "PERMISSION_AND_AUTHORITY",
+      "EVIDENCE_AND_PROVENANCE",
+      "VERSION_AND_REPLACEMENT",
+      "ROLLBACK_AND_EXIT",
+      "RESOURCE_AND_OPERATIONS",
+      "LICENSE_AND_SUPPLY_CHAIN",
+      "LIMITATIONS"
+    ],
+    "unknown_dimension_result": "NOT_ASSESSED",
+    "similarity_creates_equivalence": false,
+    "mapping_creates_adoption": false
+  },
+  "discovery_lifecycle": {
+    "main": [
+      "OBSERVED",
+      "SOURCE_VERIFIED",
+      "FINGERPRINTED",
+      "COMPARED",
+      "CANDIDATE"
+    ],
+    "side_states": [
+      "NOT_ASSESSED",
+      "SOURCE_CONFLICT",
+      "DUPLICATE",
+      "STALE",
+      "DEFERRED",
+      "REJECTED"
+    ]
+  },
+  "absorption_lifecycle": {
+    "main": [
+      "CANDIDATE",
+      "DUPLICATION_ASSESSED",
+      "LICENSE_SECURITY_REVIEWED",
+      "SANDBOX_EVALUATED",
+      "RECOMMENDATION_READY",
+      "HUMAN_DECISION_PENDING"
+    ],
+    "decision_states": [
+      "REFERENCE_ONLY",
+      "ADOPTION_PLANNED",
+      "DEFERRED",
+      "REJECTED"
+    ],
+    "handoff_state": "OWNER_HANDOFF_CREATED",
+    "adoption_planned_means_implemented": false
+  },
+  "absorption_modes": [
+    "IDEA_REFERENCE",
+    "INTERFACE_COMPATIBILITY",
+    "SANDBOX_ADAPTER_CANDIDATE",
+    "DEPENDENCY_ADOPTION_CANDIDATE",
+    "SOURCE_REUSE_OR_FORK_CANDIDATE"
+  ],
+  "automation_boundary": {
+    "candidate_automation_after_separate_implementation_authorization": [
+      "READ_ALLOWLISTED_PUBLIC_SOURCE",
+      "DETECT_SOURCE_CHANGE",
+      "BIND_SOURCE_METADATA_AND_DIGEST",
+      "NORMALIZE_CAPABILITY_FINGERPRINT",
+      "DEDUPLICATE_AND_COMPARE",
+      "FLAG_NOVELTY_COLLISION",
+      "PREPARE_SANDBOX_PLAN",
+      "GENERATE_RECOMMENDATION_PACKAGE",
+      "RETAIN_FAILED_REJECTED_STALE_AND_INCONCLUSIVE"
+    ],
+    "requires_separate_authorization": [
+      "UNBOUNDED_NETWORK_DISCOVERY",
+      "DOWNLOAD_OR_EXECUTE_EXTERNAL_CODE",
+      "INSTALL_PACKAGE_OR_ADD_DEPENDENCY",
+      "CREATE_ADAPTER_OR_DRAFT_PR",
+      "USE_PRIVATE_DATA_CREDENTIAL_OR_PAID_SERVICE",
+      "CHANGE_COMPONENT_SCHEMA_INTERFACE_OR_FROZEN_EXPERIMENT"
+    ],
+    "forbidden_automatic_actions": [
+      "PROMOTE_UPSTREAM_CLAIM_TO_TRUTH",
+      "APPROVE_LICENSE_OR_LEGAL_OBLIGATION",
+      "COPY_VENDOR_FORK_OR_RENAME_UPSTREAM_SOURCE",
+      "CHANGE_DCELL_CORE_IDENTITY_MISSION_OR_PROTECTED_STATE",
+      "REWRITE_FROZEN_EVIDENCE",
+      "GRANT_PERMISSION_AUTHORITY_OR_PRODUCTION_CREDENTIAL",
+      "MERGE_RELEASE_DEPLOY_OR_ACTIVATE",
+      "DELETE_FAILED_OR_REJECTED_HISTORY"
+    ]
+  },
+  "existing_cockpit_mapping": {
+    "new_cell_created": false,
+    "logical_cell_count_changed": false,
+    "Project Discovery": "LOCATE_CAPABILITY_CANDIDATES",
+    "Evidence Admission": "VERIFY_PRIMARY_SOURCE_VERSION_TIME_AND_LIMITATIONS",
+    "Security": "SURFACE_SUPPLY_CHAIN_AND_SECURITY_REVIEW",
+    "Upgrade": "COMPARE_COMPATIBILITY_REPLACEMENT_AND_VERSION_EFFECTS",
+    "Drift": "DETECT_SOURCE_LICENSE_INTERFACE_AND_MAINTENANCE_DRIFT",
+    "Memory": "RETAIN_COMPARISON_REJECTION_EXPIRY_AND_REFRESH_HISTORY",
+    "Handoff": "PREPARE_BOUNDED_OWNER_DECISION_PACKAGE"
+  },
+  "dcell_seed_case": {
+    "input_identity": "USER_SUPPLIED_DCELL_EXTERNAL_CAPABILITY_REPORT_V0.1",
+    "input_status": "MANUAL_DISCOVERY_INPUT_NOT_SOURCE_VERIFIED",
+    "candidate_families": [
+      "TEMPORAL_KNOWLEDGE",
+      "ENTITY_EVENT_AND_CONFLICT_ANALYSIS",
+      "MEMORY_CONSOLIDATION_AND_CONTEXT_BUDGET",
+      "ATOMIC_RECORD_AND_SEMANTIC_LINK"
+    ],
+    "named_upstream_adoption_status": "NOT_ASSESSED",
+    "proposer_priority_is_adopted_priority": false,
+    "dcell_core_change_allowed": false,
+    "replaceable_skill_relationship_required": true,
+    "old_tkde_experiment_change_allowed": false
+  },
+  "failure_codes": [
+    "SOURCE_UNAVAILABLE",
+    "SOURCE_IDENTITY_AMBIGUOUS",
+    "SOURCE_CONFLICT",
+    "VERSION_UNPINNED",
+    "LICENSE_NOT_ASSESSED",
+    "SECURITY_NOT_ASSESSED",
+    "CAPABILITY_FINGERPRINT_INCOMPLETE",
+    "INTERNAL_OWNER_UNRESOLVED",
+    "DUPLICATION_REVIEW_INCOMPLETE",
+    "BENCHMARK_NOT_COMPARABLE",
+    "STALE_OBSERVATION",
+    "HUMAN_DECISION_REQUIRED"
+  ],
+  "non_claims": {
+    "implementation_authorized": false,
+    "runtime_created": false,
+    "automatic_discovery_active": false,
+    "automatic_absorption_active": false,
+    "task_registry_changed": false,
+    "dependency_adopted": false,
+    "code_reused": false,
+    "dcell_core_changed": false,
+    "frozen_experiment_changed": false,
+    "scientific_validation_established": false,
+    "merge_authorized": false,
+    "release_authorized": false,
+    "deployment_authorized": false
+  }
+}

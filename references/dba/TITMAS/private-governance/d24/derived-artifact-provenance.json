@@ -1,0 +1,52 @@
+{
+  "provenance_id": "D24-DBA-DERIVED-ARTIFACT-PROVENANCE-001",
+  "problem_id": "D24-DBA-DERIVED-JSON-TEST-WORKTREE-MUTATION",
+  "canonical_owner_repository": "joy7758/digital-biosphere-architecture-specification",
+  "generator": "digital-biosphere-architecture/TITMAS/private-governance/build_stage5_protocol_surface.py",
+  "parent_revision": "64bb4dee4736c660f9247393d96ccbfa0217a340",
+  "artifacts": [
+    {
+      "path": "digital-biosphere-architecture/TITMAS/private-stage5-protocol-surface/task-catalog.json",
+      "primary_source": "digital-biosphere-architecture/TITMAS/agent-native/tasks/task-registry.json",
+      "source_sha256_before": "2af843368c68149c86c7afc598197f55561a6222d802f94a8619a1d7cf1c9b97",
+      "source_sha256_after": "2af843368c68149c86c7afc598197f55561a6222d802f94a8619a1d7cf1c9b97",
+      "tracked_sha256_before": "30ab302300d7538bd6e8aed53ce0ef33ff5e4ea86ff36aaa394a678f899bb07c",
+      "generated_sha256": "243757911133ce49fbe9b02cd5239b48c1f6ca080fa27fc186c29d2794ce8571",
+      "generated_semantics_changed_by_repair": false,
+      "tracked_expectation_synchronized_to_existing_generator": true
+    },
+    {
+      "path": "digital-biosphere-architecture/TITMAS/private-stage5-protocol-surface/protocol-surface-manifest.json",
+      "primary_source": "digital-biosphere-architecture/TITMAS/private-governance/build_stage5_protocol_surface.py and manifest source references",
+      "source_sha256_before": "2af843368c68149c86c7afc598197f55561a6222d802f94a8619a1d7cf1c9b97",
+      "source_sha256_after": "2af843368c68149c86c7afc598197f55561a6222d802f94a8619a1d7cf1c9b97",
+      "tracked_sha256_before": "514a4f4ae1a629c1f6a398fb6d1303136448c703358e1652a376b6c339f9d9da",
+      "generated_sha256": "698bd2fe9b143136e75c46f3e71114ee6d2c6f8623bb0f9fdae7fc1be70b259f",
+      "generated_semantics_changed_by_repair": false,
+      "tracked_expectation_synchronized_to_existing_generator": true
+    }
+  ],
+  "selected_test_behavior": {
+    "generation_target": "ephemeral temporary directory",
+    "comparison_target": "tracked expected protocol surface",
+    "tracked_write_during_test": false,
+    "byte_equality_required": true,
+    "generator_failure_swallowed": false
+  },
+  "risk_boundary": {
+    "risk_class": "ER-1",
+    "source_of_truth_unchanged": true,
+    "generator_output_semantics_unchanged": true,
+    "api_change_required": false,
+    "schema_change_required": false,
+    "authority_change_required": false,
+    "security_boundary_change_required": false,
+    "database_change_required": false,
+    "runtime_change_required": false,
+    "rollback_trivial": true
+  },
+  "limitations": [
+    "The parent revision tracked stale derived bytes; this repair synchronizes them once to the unchanged current generator before enforcing byte equality.",
+    "Passing tests do not authorize merge, release, deployment or production activation."
+  ]
+}

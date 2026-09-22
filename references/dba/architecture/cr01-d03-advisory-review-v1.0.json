@@ -1,0 +1,75 @@
+{
+  "schema_version": "1.0",
+  "review_id": "TITMAS-CR01-D03-ADVISORY-REVIEW",
+  "reviewed_artifacts": [
+    "TITMAS-COMMERCIAL-CR01-D03-DECISION-PACKET-v1.0.md",
+    "architecture/cr01-d03-implementation-readiness-v1.0.json"
+  ],
+  "review_boundary": {
+    "advisory_only": true,
+    "authority_created": false,
+    "implementation_authorized": false,
+    "migration_authorized": false,
+    "deployment_authorized": false,
+    "soak_authorized": false,
+    "private_data_shared": false,
+    "secret_shared": false
+  },
+  "reviews": [
+    {
+      "sequence": 1,
+      "model": "qwen3.7-max",
+      "role": "hostile_security_and_data_integrity",
+      "result": "FAIL_REMEDIATED",
+      "blocker_count": 4,
+      "disposition": [
+        "Defined RFC8785 plus SHA-256 legacy set binding and signed Receipt v1.1 transition fields.",
+        "Corrected the reviewer's false chain-break premise: two signatures remain UNVERIFIABLE_KEY_UNAVAILABLE while structural chain failures remain zero.",
+        "Defined the persisted cutover and failure state machine.",
+        "Replaced the filesystem key fallback with a non-exportable hardware-backed or managed-KMS boundary."
+      ]
+    },
+    {
+      "sequence": 2,
+      "model": "qwen3.7-max",
+      "role": "hostile_security_and_data_integrity_recheck",
+      "result": "PASS",
+      "blocker_count": 0,
+      "required_correction_count": 0,
+      "non_blocking_recommendations": [
+        "Bind private exception references to exact receipt indices.",
+        "Define bounded KMS unavailability handling.",
+        "Make ordered canonicalization rules explicit."
+      ],
+      "recommendations_integrated": true
+    },
+    {
+      "sequence": 3,
+      "model": "deepseek-v4-pro",
+      "role": "independent_model_lineage_adversarial_architecture",
+      "result": "PASS",
+      "blocker_count": 0,
+      "required_correction_count": 0,
+      "non_blocking_recommendations": [
+        "Make manifest byte canonicalization explicit.",
+        "Bind the hardware or KMS chain of trust to the public verification material.",
+        "Define permanent key unavailability behavior between MANIFEST_SIGNED and VERIFIED."
+      ],
+      "recommendations_integrated": true
+    }
+  ],
+  "aggregate": {
+    "qwen3_7_max_zero_blocker_review": "PASS",
+    "additional_model_lineage_review": "PASS_DEEPSEEK_V4_PRO",
+    "unresolved_architecture_blockers": 0,
+    "human_decision": "PENDING",
+    "decision_ready": true,
+    "execution_ready": false
+  },
+  "limitations": [
+    "Model review is advisory evidence and is not an Architecture or Operational Authority.",
+    "The additional lineage used the same API aggregation boundary; model lineage separation is not provider-infrastructure independence.",
+    "No reviewer observed an implementation, migration, database, deployment or restored runtime.",
+    "A PASS means the reviewed design has no reported architecture blocker; it is not implementation verification or production readiness."
+  ]
+}

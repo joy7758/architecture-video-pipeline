@@ -1,0 +1,25 @@
+{
+  "artifact_type": "TITMAS_SCOUT_SELF_IMPROVEMENT_BEFORE_RESULT",
+  "iteration": 1,
+  "timestamp": "2026-08-02T06:24:20Z",
+  "source_reference": "reports/latest-opportunities.json",
+  "commit_sha": "c32d545",
+  "digest_algorithm": "sha256",
+  "digest_value": "6914605a2bf2e53d6701940d792e4dcdc60b2cb1d95f024cd5c64d871c6af00f",
+  "ruleset_version": "0.1",
+  "action_scope": [
+    "DISCOVERY_REPLAY"
+  ],
+  "actor_type": "DETERMINISTIC_TOOL",
+  "result": "FAIL_CA2A_36_REDISCOVERED",
+  "uncertainty": [],
+  "unsupported_claims": [
+    "conversion_state_loaded"
+  ],
+  "observed_candidate": {
+    "repository": "agentrust-io/ca2a",
+    "number": 36,
+    "priority_position": 1,
+    "incorrect_queue": "NEW_DISCOVERY"
+  }
+}

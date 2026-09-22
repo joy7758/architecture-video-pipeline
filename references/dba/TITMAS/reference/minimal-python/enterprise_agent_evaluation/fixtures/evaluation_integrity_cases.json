@@ -1,0 +1,87 @@
+{
+  "fixture_id": "TITMAS-EVALUATION-INTEGRITY-SYNTHETIC-v0.1",
+  "synthetic_only": true,
+  "cases": [
+    {
+      "case_id": "A_ALL_DIMENSIONS_PASS",
+      "dimensions": {
+        "answer_correctness": "PASS",
+        "trace_validity": "PASS",
+        "artifact_linkage": "PASS",
+        "evidence_sufficiency": "PASS"
+      },
+      "semantic_grounding": true,
+      "comparable": true,
+      "identifiable": true,
+      "abstain_requested": false,
+      "stop_reason": null,
+      "missing_evidence": [],
+      "expected_outcome": "COMPLETE_FOR_DECLARED_SCOPE"
+    },
+    {
+      "case_id": "B_ANSWER_CORRECT_TRACE_INVALID",
+      "dimensions": {
+        "answer_correctness": "PASS",
+        "trace_validity": "FAIL",
+        "artifact_linkage": "PASS",
+        "evidence_sufficiency": "PASS"
+      },
+      "semantic_grounding": true,
+      "comparable": true,
+      "identifiable": true,
+      "abstain_requested": false,
+      "stop_reason": null,
+      "missing_evidence": [],
+      "expected_outcome": "ANSWER_CORRECT_TRACE_INVALID"
+    },
+    {
+      "case_id": "C_ANSWER_INCORRECT_TRACE_VALID",
+      "dimensions": {
+        "answer_correctness": "FAIL",
+        "trace_validity": "PASS",
+        "artifact_linkage": "PASS",
+        "evidence_sufficiency": "PASS"
+      },
+      "semantic_grounding": true,
+      "comparable": true,
+      "identifiable": true,
+      "abstain_requested": false,
+      "stop_reason": null,
+      "missing_evidence": [],
+      "expected_outcome": "ANSWER_INCORRECT_TRACE_VALID"
+    },
+    {
+      "case_id": "D_MISSING_ARTIFACT_BINDING",
+      "dimensions": {
+        "answer_correctness": "PASS",
+        "trace_validity": "PASS",
+        "artifact_linkage": "FAIL",
+        "evidence_sufficiency": "PASS"
+      },
+      "semantic_grounding": true,
+      "comparable": true,
+      "identifiable": true,
+      "abstain_requested": false,
+      "stop_reason": null,
+      "missing_evidence": [],
+      "expected_outcome": "INCOMPLETE_ARTIFACT_BINDING"
+    },
+    {
+      "case_id": "E_EVIDENCE_INSUFFICIENT",
+      "dimensions": {
+        "answer_correctness": "NOT_ASSESSED",
+        "trace_validity": "NOT_ASSESSED",
+        "artifact_linkage": "NOT_ASSESSED",
+        "evidence_sufficiency": "NOT_ASSESSED"
+      },
+      "semantic_grounding": true,
+      "comparable": true,
+      "identifiable": true,
+      "abstain_requested": false,
+      "stop_reason": "No artifact-bound observation is available.",
+      "missing_evidence": ["artifact_receipt", "trace_binding"],
+      "expected_outcome": "EVALUATION_STOPPED",
+      "expected_stop_state": "EVIDENCE_INSUFFICIENT"
+    }
+  ]
+}

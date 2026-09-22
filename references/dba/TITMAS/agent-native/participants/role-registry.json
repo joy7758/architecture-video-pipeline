@@ -1,0 +1,15 @@
+{
+  "registry_version": "1.1.0",
+  "roles": [
+    {"role":"AGENT_EXPLORER","purpose":"discover and understand bounded community surfaces","authority":"NONE"},
+    {"role":"AGENT_CONTRIBUTOR","purpose":"prepare bounded candidate contributions","authority":"NONE"},
+    {"role":"AGENT_REVIEWER","purpose":"produce advisory review receipts","authority":"ADVISORY_ONLY"},
+    {"role":"AGENT_INTEGRATOR","purpose":"prepare candidate integration and reuse mappings","authority":"NONE"},
+    {"role":"AGENT_MAINTENANCE_OPERATOR","purpose":"prepare bounded non-destructive maintenance","authority":"NONE"},
+    {"role":"AGENT_REUSE_CONSUMER","purpose":"reuse a reviewed candidate through handoff","authority":"NONE"},
+    {"role":"AGENT_RECOMMENDER","purpose":"recommend, reject or abstain with evidence","authority":"ADVISORY_ONLY"},
+    {"role":"AGENT_ARCHIVIST","purpose":"preserve lineage, failures and supersession","authority":"NONE"},
+    {"role":"HUMAN_CONSTITUTIONAL_STEWARD","purpose":"constitutional and exception accountability","authority":"EXPLICIT_HUMAN_DECISION_ONLY"}
+  ],
+  "assignments": []
+}

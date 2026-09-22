@@ -1,0 +1,28 @@
+{
+  "schema_version": "0.1",
+  "review_id": "iteration2-v3-discovery",
+  "agent_identifier": "/root/improvement_discovery_review",
+  "model_runtime_identifier": "OpenAI Codex GPT-5",
+  "review_role": "DISCOVERY_REVIEWER",
+  "input_digest": "sha256:1127f5b8187e798824487268f840368a23ceafc2b2337261af2bdaf71af1be06",
+  "output_digest": "sha256:a7c719010fdcb4a8f82804fdca7da898a8cadc6829042028452b553a35a0b6d6",
+  "decision": "PASS",
+  "timestamp": "2026-08-02T07:09:00Z",
+  "ruleset_version": "0.1",
+  "reason_codes": [
+    "FLAGS_ONLY_RECALL_FIX",
+    "GRAPHQL_REMOVAL_SAFE",
+    "STATUS_INDEX_CORRECT"
+  ],
+  "findings": [
+    "The Issue collector returns public Issues with flag-shaped queries, GraphQL removal does not affect it, and #36 remains tracked with no false #76."
+  ],
+  "blocking_reasons": [
+
+  ],
+  "evidence_references": [
+    "src/discovery/source_collector.rb",
+    "tests/discovery_test.rb",
+    "reports/self-improvement-runs/2026-08-02-iteration-2/test-result-v3.json"
+  ]
+}

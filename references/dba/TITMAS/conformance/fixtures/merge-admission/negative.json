@@ -1,0 +1,72 @@
+{
+  "fixture_version": "0.1.0",
+  "base_case_ref": "positive.json#SC-POSITIVE-CURRENT-DORMANT",
+  "cases": [
+    {
+      "id": "SC-01-STALE-DRAFT-LIMITATION",
+      "patch": {
+        "limitations": [
+          "DRAFT_PR_NOT_CREATED"
+        ]
+      },
+      "expected_error": "STALE_DRAFT_PR_NOT_CREATED"
+    },
+    {
+      "id": "SC-06-INSTALLED-WITHOUT-AUTHORIZATION",
+      "patch": {
+        "public_contribution_surface": {
+          "templates_installed": true
+        }
+      },
+      "expected_error": "TEMPLATES_INSTALLED_WITHOUT_AUTHORIZATION"
+    },
+    {
+      "id": "SC-07-ACTIVE-WITHOUT-SECURITY",
+      "patch": {
+        "public_contribution_surface": {
+          "active": true
+        }
+      },
+      "expected_error": "CONTRIBUTION_ACTIVE_WITHOUT_SECURITY_TRANSPORT"
+    },
+    {
+      "id": "SC-08-LAUNCH-WITHOUT-SECURITY",
+      "patch": {
+        "public_launch": {
+          "active": true
+        }
+      },
+      "expected_error": "PUBLIC_LAUNCH_WITHOUT_SECURITY_TRANSPORT"
+    },
+    {
+      "id": "SC-09-INTERIM-AS-FORMAL",
+      "patch": {
+        "maintainer": {
+          "formal_assigned": true
+        }
+      },
+      "expected_error": "INTERIM_MAINTAINER_AS_FORMAL_MAINTAINER"
+    },
+    {
+      "id": "SC-10-DRAFT-AS-MAIN",
+      "patch": {
+        "canonical_main_integration_complete": true
+      },
+      "expected_error": "OPEN_DRAFT_AS_CANONICAL_MAIN"
+    },
+    {
+      "id": "SC-13-DORMANT-IN-AUTO-DISCOVERABLE-PATH",
+      "patch": {
+        "dormant_path_auto_discoverable": true
+      },
+      "expected_error": "DORMANT_TEMPLATE_AUTO_DISCOVERABLE"
+    },
+    {
+      "id": "SC-14-ACTIVE-DESTINATION-OUTSIDE-ACTIVATION-PR",
+      "patch": {
+        "active_destination_used_outside_activation_pr": true
+      },
+      "expected_error": "ACTIVE_DESTINATION_OUTSIDE_ACTIVATION_PR"
+    }
+  ]
+}

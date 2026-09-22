@@ -1,0 +1,13 @@
+{
+  "artifact_type": "TITMAS_SCOUT_SELF_IMPROVEMENT_OBSERVATION",
+  "run_id": "2026-08-02-actionability-gate",
+  "observed_at": "2026-08-02T08:05:00Z",
+  "historical_report_reference": "reports/daily/2026-08-02-opportunity-report.json",
+  "historical_report_digest": "sha256:da45e9d2b29892cdfa04bdbdd5647dd12a9250ff43e48c422bbc572f33107487",
+  "observed_failure": {
+    "next_conversion_target": "https://github.com/syswonder/robonix/issues/189",
+    "action_pack_type": "OBSERVE",
+    "problem": "An observation-only candidate was selected ahead of actionable candidates."
+  },
+  "external_action_authorized": false
+}

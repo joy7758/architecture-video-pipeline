@@ -1,0 +1,66 @@
+{
+  "authorized_actions": [
+    "MARK_PR_READY_FOR_REVIEW"
+  ],
+  "blocked_actions": [
+
+  ],
+  "decision": "ALLOW",
+  "human_review_required": false,
+  "reason_codes": [
+    "ALL_REQUIRED_REVIEWERS_PASS"
+  ],
+  "reviewers": [
+    {
+      "agent_identifier": "/root/pr76_q_discovery",
+      "decision": "PASS",
+      "input_digest": "sha256:7b3867e1b1dfa0840beb912570b0039978d6f85dc99ca37e070420dfb2f1a686",
+      "model_runtime_identifier": "openai-codex/gpt-5",
+      "output_digest": "sha256:df7ecfba78008c81a9ec82d71241bdae7df00f0be6394fd035bc2337c9b2ab16",
+      "review_id": "ca2a-pr-76-action008-ordering-discovery-review",
+      "review_role": "DISCOVERY_REVIEWER",
+      "timestamp": "2026-08-02T03:52:48Z"
+    },
+    {
+      "agent_identifier": "/root/pr76_q_evidence",
+      "decision": "PASS",
+      "input_digest": "sha256:7b3867e1b1dfa0840beb912570b0039978d6f85dc99ca37e070420dfb2f1a686",
+      "model_runtime_identifier": "openai-codex/gpt-5",
+      "output_digest": "sha256:9d0cb7f16796a3cf12a9ca1008b563007682ada1fda565432ef42e75b3651a73",
+      "review_id": "ca2a-pr-76-action008-ordering-evidence-review",
+      "review_role": "EVIDENCE_REVIEWER",
+      "timestamp": "2026-08-02T03:52:46Z"
+    },
+    {
+      "agent_identifier": "/root/pr76_final_scope",
+      "decision": "PASS",
+      "input_digest": "sha256:7b3867e1b1dfa0840beb912570b0039978d6f85dc99ca37e070420dfb2f1a686",
+      "model_runtime_identifier": "openai-codex/gpt-5",
+      "output_digest": "sha256:9a73d9721a001bb5c7b065d96e250398302a3afa34f17cf91b3023bb1b4fdf81",
+      "review_id": "ca2a-pr-76-action008-ordering-scope-review",
+      "review_role": "SCOPE_REVIEWER",
+      "timestamp": "2026-08-02T03:53:45Z"
+    },
+    {
+      "agent_identifier": "quality-reviewer-gpt5-7b3867e1",
+      "decision": "PASS",
+      "input_digest": "sha256:7b3867e1b1dfa0840beb912570b0039978d6f85dc99ca37e070420dfb2f1a686",
+      "model_runtime_identifier": "openai-codex/gpt-5",
+      "output_digest": "sha256:38d3166e9de2bd963f681597f003eaee837d9d04a1f1ec2fd3a85fbde70b8899",
+      "review_id": "ca2a-pr-76-action008-ordering-quality-review",
+      "review_role": "QUALITY_REVIEWER",
+      "timestamp": "2026-08-02T03:56:29Z"
+    },
+    {
+      "agent_identifier": "/root/pr76_final_risk",
+      "decision": "PASS",
+      "input_digest": "sha256:7b3867e1b1dfa0840beb912570b0039978d6f85dc99ca37e070420dfb2f1a686",
+      "model_runtime_identifier": "openai-codex/gpt-5",
+      "output_digest": "sha256:32995327aa79dc951de019de6f35d9f097c184989d25eb4ae4fd8621ca36974f",
+      "review_id": "ca2a-pr-76-action008-ordering-risk-review",
+      "review_role": "RISK_REVIEWER",
+      "timestamp": "2026-08-02T03:58:59Z"
+    }
+  ],
+  "ruleset_version": "0.1"
+}

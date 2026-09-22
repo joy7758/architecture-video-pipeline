@@ -1,0 +1,15 @@
+{
+  "artifact_type": "TITMAS_SCOUT_DBA_HANDOFF",
+  "schema_version": "0.1",
+  "handoff_status": "READY_FOR_READ_ONLY_REVIEW_NOT_INTEGRATED",
+  "dba_repository_modified": false,
+  "dba_ingestion_observed": false,
+  "payload": {
+    "canonical_repository": "agent-evidence",
+    "canonical_commit": "911db6650547617c71331ddd9506811f04191656",
+    "verification_scope": "STRUCTURE_DIGEST_CHAIN_ONLY",
+    "verification": "reports/titmas-runs/2026-08-02-ca2a-pr-76-latest-head/agent-evidence-export/agent-evidence-verification.json",
+    "post_action": "reports/titmas-runs/2026-08-02-ca2a-pr-76-latest-head/post-action-evidence.json",
+    "authorization_from_evidence": false
+  }
+}

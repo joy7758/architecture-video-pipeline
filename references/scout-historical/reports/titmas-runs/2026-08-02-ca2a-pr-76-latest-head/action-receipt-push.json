@@ -1,0 +1,14 @@
+{
+  "action": "PUSH_PERSONAL_BRANCH",
+  "authorization_reference": "quorum-decision-push.json",
+  "authorization_binding_digest": "sha256:13b74d0a62b4210f05c38c667bf9ca757f364c9d2292504a795851f44cf86e4d",
+  "executed_at": "2026-08-02T06:35:57Z",
+  "force": false,
+  "remote": "fork",
+  "repository": "joy7758/ca2a",
+  "target": "refs/heads/contrib/issue-36-action-invalid-signature",
+  "remote_head_before": "9fb5c3b112c1f2d083bc97a12d55f7a583190b9f",
+  "remote_head_after": "0a1ffa6710d25f58515b2dca7e0619e134c0a43e",
+  "result": "SUCCESS",
+  "upstream_protected_branch_modified": false
+}

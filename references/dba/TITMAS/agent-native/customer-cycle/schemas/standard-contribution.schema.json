@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://titmas.cn/private-stage5/schemas/standard-contribution-checkpoint.schema.json",
+  "title": "TITMAS Stage 5 Standard Contribution Checkpoint Result v1.0",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "submission_id",
+    "contribution_type",
+    "submission",
+    "conformance_status",
+    "reason_codes",
+    "agent_recommendation",
+    "human_disposition_required",
+    "limitations",
+    "non_claims"
+  ],
+  "properties": {
+    "submission_id": {"type": "string", "pattern": "^stage5-submission-[A-Za-z0-9-]{4,64}$"},
+    "contribution_type": {
+      "enum": ["SPECIFICATION_PROPOSAL", "ADAPTER_MAPPING", "TEST_VECTOR"]
+    },
+    "submission": {"type": "object"},
+    "conformance_status": {
+      "enum": ["CONFORMANCE_PASS", "CONFORMANCE_FAIL"]
+    },
+    "reason_codes": {
+      "type": "array", "minItems": 1, "maxItems": 16, "uniqueItems": true,
+      "items": {"type": "string", "pattern": "^TITMAS-[A-Z0-9-]{3,96}$"}
+    },
+    "agent_recommendation": {
+      "enum": ["PROCEED_TO_HUMAN_REVIEW", "REVISION_REQUIRED", "DO_NOT_PROCEED"]
+    },
+    "human_disposition_required": {"const": true},
+    "limitations": {
+      "type": "array", "minItems": 1, "maxItems": 16,
+      "items": {"type": "string", "minLength": 3, "maxLength": 400}
+    },
+    "non_claims": {
+      "type": "array", "minItems": 1, "maxItems": 16,
+      "items": {"type": "string", "minLength": 3, "maxLength": 400}
+    }
+  }
+}

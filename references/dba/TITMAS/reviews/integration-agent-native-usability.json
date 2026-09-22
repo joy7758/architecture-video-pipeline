@@ -1,0 +1,26 @@
+{
+  "review_id": "TITMAS-INTEGRATION-REVIEW-AGENT-NATIVE-USABILITY-01",
+  "review_scope": "AGENT_NATIVE_USABILITY",
+  "provider": "Volcengine Ark",
+  "requested_model": "glm-5-2-260617",
+  "returned_model": "glm-5-2-260617",
+  "reviewer_lineage": "ARK-GLM52-INTEGRATION-USABILITY-20260729",
+  "verdict": "PASS",
+  "findings": [
+    {
+      "severity": "LOW",
+      "evidence": "Four integration receipts were pending when the advisory review was performed.",
+      "blocking": false,
+      "required_correction": "Create the four sanitized receipts and run the complete harness before final Draft PR creation."
+    }
+  ],
+  "blocking": false,
+  "required_correction": [],
+  "limitations": [
+    "FROZEN_FACT_SUMMARY_ONLY",
+    "NO_FULL_REPOSITORY_ACCESS",
+    "NO_INDEPENDENT_TEST_EXECUTION",
+    "AGENT_USABILITY_REVIEW_NE_AUTONOMOUS_AUTHORITY"
+  ],
+  "authority_effect": "NONE"
+}

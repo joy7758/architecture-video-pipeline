@@ -1,0 +1,426 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:titmas:schema:agent-evaluation-entry:0.1",
+  "title": "TITMAS Agent Evaluation Entry v0.1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "$schema",
+    "document_id",
+    "version",
+    "status",
+    "observed_at",
+    "evaluation_only",
+    "maturity",
+    "contract",
+    "discovery",
+    "artifact",
+    "validation",
+    "availability_observation",
+    "failure_classes",
+    "recommendation_policy",
+    "compatibility",
+    "effects"
+  ],
+  "properties": {
+    "$schema": {
+      "const": "./architecture/schemas/titmas-agent-evaluation-entry.schema.v0.1.json"
+    },
+    "document_id": {
+      "const": "TITMAS-AGENT-EVALUATION-ENTRY-0.1"
+    },
+    "version": {
+      "const": "0.1.0"
+    },
+    "status": {
+      "const": "DEVELOPMENT_CONTRACT_SOURCE_PREPARED_NOT_DEPLOYED"
+    },
+    "observed_at": {
+      "type": "string",
+      "format": "date"
+    },
+    "evaluation_only": {
+      "const": true
+    },
+    "maturity": {
+      "const": "Development"
+    },
+    "contract": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "human_reference",
+        "canonical_machine_source",
+        "decision_reference"
+      ],
+      "properties": {
+        "human_reference": {
+          "const": "architecture/titmas-agent-evaluation-entry-contract-v0.1.md"
+        },
+        "canonical_machine_source": {
+          "type": "string",
+          "format": "uri",
+          "pattern": "^https://raw\\.githubusercontent\\.com/joy7758/digital-biosphere-architecture-specification/"
+        },
+        "decision_reference": {
+          "const": "TITMAS-COMMERCIAL-EVALUATION-CE-G2"
+        }
+      }
+    },
+    "discovery": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "canonical_site",
+        "llms",
+        "agent_index",
+        "commercial_evaluation_page",
+        "commercial_evaluation_pack",
+        "contract_site_path",
+        "contract_site_deployed"
+      ],
+      "properties": {
+        "canonical_site": {
+          "const": "https://redcrag.cn/"
+        },
+        "llms": {
+          "const": "https://redcrag.cn/llms.txt"
+        },
+        "agent_index": {
+          "const": "https://redcrag.cn/agent-index.json"
+        },
+        "commercial_evaluation_page": {
+          "const": "https://redcrag.cn/commercial-evaluation/"
+        },
+        "commercial_evaluation_pack": {
+          "const": "https://redcrag.cn/TITMAS-COMMERCIAL-EVALUATION-PACK-v0.2.json"
+        },
+        "contract_site_path": {
+          "const": "https://redcrag.cn/TITMAS-AGENT-EVALUATION-ENTRY-v0.1.json"
+        },
+        "contract_site_deployed": {
+          "const": false
+        }
+      }
+    },
+    "artifact": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "distribution",
+        "version",
+        "filename",
+        "url",
+        "sha256",
+        "python_requires",
+        "install_mode",
+        "install_command",
+        "renaming_allowed",
+        "no_deps_allowed"
+      ],
+      "properties": {
+        "distribution": {
+          "const": "digital-biosphere-os-preview"
+        },
+        "version": {
+          "const": "0.1.0.dev0"
+        },
+        "filename": {
+          "const": "digital_biosphere_os_preview-0.1.0.dev0-py3-none-any.whl"
+        },
+        "url": {
+          "const": "https://github.com/joy7758/digital-biosphere-architecture-specification/releases/download/v0.1-developer-preview/digital_biosphere_os_preview-0.1.0.dev0-py3-none-any.whl"
+        },
+        "sha256": {
+          "const": "edf92e548860384b1416a612a7e319e0d994bb324f8621847d0d154624ae8f09"
+        },
+        "python_requires": {
+          "const": ">=3.11"
+        },
+        "install_mode": {
+          "const": "INSTALL_WITH_DECLARED_DEPENDENCIES"
+        },
+        "install_command": {
+          "type": "string",
+          "minLength": 120,
+          "pattern": "^python3 -m pip install https://github\\.com/"
+        },
+        "renaming_allowed": {
+          "const": false
+        },
+        "no_deps_allowed": {
+          "const": false
+        }
+      }
+    },
+    "validation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "fixture",
+        "command",
+        "expected_exit_code",
+        "expected_result",
+        "pass_meaning",
+        "real_agent_execution"
+      ],
+      "properties": {
+        "fixture": {
+          "const": "https://redcrag.cn/examples/titmas-first-run/entity-object.synthetic.v0.1.json"
+        },
+        "command": {
+          "const": "dbos-validate OBJECT_FILE"
+        },
+        "expected_exit_code": {
+          "const": 0
+        },
+        "expected_result": {
+          "const": "PASS"
+        },
+        "pass_meaning": {
+          "const": "LOCAL_STRUCTURE_AND_GOVERNANCE_CONSTRAINTS_PASS_ONLY"
+        },
+        "real_agent_execution": {
+          "const": false
+        }
+      }
+    },
+    "availability_observation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "classification",
+        "status",
+        "observations_count",
+        "failures_preserved",
+        "silent_retry_allowed",
+        "sla_defined",
+        "required_observation_fields"
+      ],
+      "properties": {
+        "classification": {
+          "const": "OBSERVATION_NOT_SLA"
+        },
+        "status": {
+          "const": "NOT_EXECUTED"
+        },
+        "observations_count": {
+          "const": 0
+        },
+        "failures_preserved": {
+          "const": true
+        },
+        "silent_retry_allowed": {
+          "const": false
+        },
+        "sla_defined": {
+          "const": false
+        },
+        "required_observation_fields": {
+          "type": "array",
+          "uniqueItems": true,
+          "minItems": 7,
+          "items": {
+            "enum": [
+              "observed_at",
+              "observer_reference",
+              "target_url",
+              "http_or_transport_result",
+              "latency_ms",
+              "artifact_digest",
+              "raw_receipt_reference"
+            ]
+          },
+          "allOf": [
+            {"contains": {"const": "observed_at"}},
+            {"contains": {"const": "observer_reference"}},
+            {"contains": {"const": "target_url"}},
+            {"contains": {"const": "http_or_transport_result"}},
+            {"contains": {"const": "latency_ms"}},
+            {"contains": {"const": "artifact_digest"}},
+            {"contains": {"const": "raw_receipt_reference"}}
+          ]
+        }
+      }
+    },
+    "failure_classes": {
+      "type": "array",
+      "minItems": 10,
+      "maxItems": 10,
+      "uniqueItems": true,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "code",
+          "stage",
+          "retryable",
+          "meaning"
+        ],
+        "properties": {
+          "code": {
+            "enum": [
+              "ENTRY_DISCOVERY_UNAVAILABLE",
+              "CONTRACT_VERSION_UNSUPPORTED",
+              "ASSET_FETCH_TRANSPORT_ERROR",
+              "ARTIFACT_HASH_MISMATCH",
+              "ARTIFACT_FILENAME_CHANGED",
+              "UNSUPPORTED_ENVIRONMENT",
+              "INSTALL_DEPENDENCY_RESOLUTION_FAILED",
+              "VALIDATOR_NOT_EXECUTABLE",
+              "VALIDATION_RESULT_FAIL",
+              "BOUNDARY_ASSERTION_FAILED"
+            ]
+          },
+          "stage": {
+            "enum": [
+              "discovery",
+              "fetch",
+              "integrity",
+              "install",
+              "validation",
+              "recommendation"
+            ]
+          },
+          "retryable": {
+            "enum": [
+              "YES_WITH_SEPARATE_AUTHORIZATION",
+              "NO",
+              "CONDITIONAL_WITH_SEPARATE_AUTHORIZATION"
+            ]
+          },
+          "meaning": {
+            "type": "string",
+            "minLength": 12
+          }
+        }
+      },
+      "allOf": [
+        {"contains": {"type": "object", "properties": {"code": {"const": "ENTRY_DISCOVERY_UNAVAILABLE"}}, "required": ["code"]}},
+        {"contains": {"type": "object", "properties": {"code": {"const": "CONTRACT_VERSION_UNSUPPORTED"}}, "required": ["code"]}},
+        {"contains": {"type": "object", "properties": {"code": {"const": "ASSET_FETCH_TRANSPORT_ERROR"}}, "required": ["code"]}},
+        {"contains": {"type": "object", "properties": {"code": {"const": "ARTIFACT_HASH_MISMATCH"}}, "required": ["code"]}},
+        {"contains": {"type": "object", "properties": {"code": {"const": "ARTIFACT_FILENAME_CHANGED"}}, "required": ["code"]}},
+        {"contains": {"type": "object", "properties": {"code": {"const": "UNSUPPORTED_ENVIRONMENT"}}, "required": ["code"]}},
+        {"contains": {"type": "object", "properties": {"code": {"const": "INSTALL_DEPENDENCY_RESOLUTION_FAILED"}}, "required": ["code"]}},
+        {"contains": {"type": "object", "properties": {"code": {"const": "VALIDATOR_NOT_EXECUTABLE"}}, "required": ["code"]}},
+        {"contains": {"type": "object", "properties": {"code": {"const": "VALIDATION_RESULT_FAIL"}}, "required": ["code"]}},
+        {"contains": {"type": "object", "properties": {"code": {"const": "BOUNDARY_ASSERTION_FAILED"}}, "required": ["code"]}}
+      ]
+    },
+    "recommendation_policy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "all_required_checks",
+        "evaluation_pass_result",
+        "production_result",
+        "failure_or_unknown_result",
+        "recommendation_creates_decision",
+        "recommendation_creates_permission"
+      ],
+      "properties": {
+        "all_required_checks": {
+          "type": "array",
+          "uniqueItems": true,
+          "minItems": 7,
+          "items": {
+            "enum": [
+              "CANONICAL_DISCOVERY_PASS",
+              "CONTRACT_VERSION_SUPPORTED",
+              "ARTIFACT_FETCH_PASS",
+              "ARTIFACT_SHA256_PASS",
+              "DEPENDENCY_AWARE_INSTALL_PASS",
+              "SYNTHETIC_VALIDATION_PASS",
+              "BOUNDARY_ASSERTION_PASS"
+            ]
+          },
+          "allOf": [
+            {"contains": {"const": "CANONICAL_DISCOVERY_PASS"}},
+            {"contains": {"const": "CONTRACT_VERSION_SUPPORTED"}},
+            {"contains": {"const": "ARTIFACT_FETCH_PASS"}},
+            {"contains": {"const": "ARTIFACT_SHA256_PASS"}},
+            {"contains": {"const": "DEPENDENCY_AWARE_INSTALL_PASS"}},
+            {"contains": {"const": "SYNTHETIC_VALIDATION_PASS"}},
+            {"contains": {"const": "BOUNDARY_ASSERTION_PASS"}}
+          ]
+        },
+        "evaluation_pass_result": {
+          "const": "RECOMMEND_FOR_OFFLINE_READ_ONLY_EVALUATION"
+        },
+        "production_result": {
+          "const": "DO_NOT_RECOMMEND_FOR_PRODUCTION"
+        },
+        "failure_or_unknown_result": {
+          "const": "DO_NOT_RECOMMEND_UNTIL_RESOLVED"
+        },
+        "recommendation_creates_decision": {
+          "const": false
+        },
+        "recommendation_creates_permission": {
+          "const": false
+        }
+      }
+    },
+    "compatibility": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "commercial_evaluation_pack",
+        "relationship",
+        "dbos_semantics_changed",
+        "saee_semantics_changed",
+        "unsupported_version_behavior"
+      ],
+      "properties": {
+        "commercial_evaluation_pack": {
+          "const": "0.2.0"
+        },
+        "relationship": {
+          "const": "ADDITIVE_MACHINE_ENTRY"
+        },
+        "dbos_semantics_changed": {
+          "const": false
+        },
+        "saee_semantics_changed": {
+          "const": false
+        },
+        "unsupported_version_behavior": {
+          "const": "FAIL_CLOSED_CONTRACT_VERSION_UNSUPPORTED"
+        }
+      }
+    },
+    "effects": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "authority",
+        "permission",
+        "runtime",
+        "api",
+        "agent",
+        "entity",
+        "capability",
+        "evidence_truth",
+        "certification",
+        "commercial_offer",
+        "sla",
+        "production_readiness"
+      ],
+      "properties": {
+        "authority": {"const": false},
+        "permission": {"const": false},
+        "runtime": {"const": false},
+        "api": {"const": false},
+        "agent": {"const": false},
+        "entity": {"const": false},
+        "capability": {"const": false},
+        "evidence_truth": {"const": false},
+        "certification": {"const": false},
+        "commercial_offer": {"const": false},
+        "sla": {"const": false},
+        "production_readiness": {"const": false}
+      }
+    }
+  }
+}

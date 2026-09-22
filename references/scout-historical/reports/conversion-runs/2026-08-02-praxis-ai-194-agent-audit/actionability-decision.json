@@ -1,0 +1,15 @@
+{
+  "artifact_type": "TITMAS_SCOUT_ACTIONABILITY_DECISION",
+  "run_id": "2026-08-02-praxis-ai-194-agent-audit",
+  "selected_path": "POST_BOUNDED_TECHNICAL_COMMENT",
+  "draft_pr_allowed_now": false,
+  "reasons": [
+    "Issue #194 spans multiple architecture boundaries and remains blocked by Issue #172.",
+    "The AI filters contain reusable metadata, but access_log belongs to the separate core repository.",
+    "The repository requires a contributor to comment and receive assignment before opening a PR.",
+    "The repository requires person-to-person words to be written by the person, so an agent-authored comment cannot be published."
+  ],
+  "execution_status": "BLOCKED_BY_REPOSITORY_HUMAN_COMMUNICATION_POLICY",
+  "human_action_required_by_repository_policy": true,
+  "external_action_authorized": false
+}

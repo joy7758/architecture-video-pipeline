@@ -1,0 +1,57 @@
+{
+  "artifact_type": "TITMAS_SCOUT_LOCAL_VALIDATION_EVIDENCE",
+  "schema_version": "0.1",
+  "observed_at": "2026-08-01T18:41:40Z",
+  "repository": "/Users/zhangbin/GitHub/ca2a",
+  "branch": "contrib/issue-36-action-invalid-signature",
+  "commit": "9fb5c3b112c1f2d083bc97a12d55f7a583190b9f",
+  "worktree_clean_after_commit": true,
+  "results": {
+    "target_conformance": {
+      "command": ".venv/bin/python -m pytest tests/conformance/test_profile_conformance.py -q",
+      "collected": 31,
+      "passed": 31,
+      "failed": 0,
+      "skipped": 0
+    },
+    "full_suite": {
+      "command": ".venv/bin/python -m pytest",
+      "execution_environment": "isolated local clone with the final diff applied",
+      "collected": 255,
+      "passed": 252,
+      "failed": 0,
+      "skipped_hardware_fixtures": 3
+    },
+    "ruff": {
+      "command": ".venv/bin/ruff check src/ tests/",
+      "result": "PASS"
+    },
+    "mypy": {
+      "command": ".venv/bin/mypy src/ca2a_runtime/ src/ca2a_verify/",
+      "result": "PASS",
+      "source_files_checked": 36
+    },
+    "bandit": {
+      "command": ".venv/bin/bandit -r src/ -c pyproject.toml",
+      "result": "PASS",
+      "issues": 0
+    },
+    "pip_audit": {
+      "command": ".venv/bin/pip-audit",
+      "result": "PASS",
+      "known_vulnerabilities": 0
+    },
+    "git_diff_check": "PASS"
+  },
+  "ordering_controls": {
+    "shared_evidence": {
+      "requested_capability": "robot.inspect",
+      "controller_decision": "rejected"
+    },
+    "valid_chain_restrictive_policy": "authorization_invalid/SCOPE_NOT_PERMITTED",
+    "valid_chain_permissive_policy": "valid_negative_outcome/CONTROLLER_REJECTED",
+    "invalid_signature_restrictive_policy": "provenance_invalid/INVALID_CREDENTIAL",
+    "invalid_signature_permissive_policy": "provenance_invalid/INVALID_CREDENTIAL"
+  },
+  "external_network_writes_performed_by_validation": false
+}

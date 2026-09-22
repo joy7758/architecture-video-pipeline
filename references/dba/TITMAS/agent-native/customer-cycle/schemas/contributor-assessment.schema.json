@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://titmas.cn/schemas/contributor-assessment.schema.json",
+  "title": "TITMAS Contributor Assessment Result v0.1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "contract_understood",
+    "operation_usable",
+    "result_contract_match",
+    "recommendation",
+    "recommendation_reason",
+    "commercial_blockers",
+    "repeat_evaluation_recommended",
+    "limitations",
+    "non_claims"
+  ],
+  "properties": {
+    "contract_understood": {"type": "boolean"},
+    "operation_usable": {"type": "boolean"},
+    "result_contract_match": {"type": "boolean"},
+    "recommendation": {
+      "enum": [
+        "RECOMMEND_SERVICE",
+        "CONDITIONALLY_RECOMMEND_SERVICE",
+        "DO_NOT_RECOMMEND_SERVICE",
+        "VALID_ABSTENTION"
+      ]
+    },
+    "recommendation_reason": {"type": "string", "minLength": 1, "maxLength": 1024},
+    "commercial_blockers": {
+      "type": "array",
+      "maxItems": 16,
+      "items": {"type": "string", "maxLength": 512}
+    },
+    "repeat_evaluation_recommended": {"type": "boolean"},
+    "limitations": {
+      "type": "array",
+      "maxItems": 16,
+      "items": {"type": "string", "maxLength": 512}
+    },
+    "non_claims": {
+      "type": "array",
+      "maxItems": 16,
+      "items": {"type": "string", "maxLength": 512}
+    }
+  }
+}

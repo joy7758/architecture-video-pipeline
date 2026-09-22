@@ -1,0 +1,32 @@
+{
+  "record_version": "0.1.0",
+  "project_id": "TITMAS-MEDIA-EVIDENCE",
+  "portfolio_admission": true,
+  "portfolio_classification": "ADJACENT_CANDIDATE",
+  "architecture_classification": "APPLICATION_PROFILE_AND_REFERENCE_IMPLEMENTATION_CANDIDATE",
+  "architecture_admission": "ACCEPTED_BOUNDED",
+  "implementation_version": "v0.1.0",
+  "implementation_tag_commit": "7eac452f66a2b7de525543f80b9a7cf1465ef9a1",
+  "governance_source_revision": "6ded0dd0d81f8a9fc0fe029f96906cc7bc43f446",
+  "canonical_repository": "joy7758/titmas-media-guard",
+  "canonical_status_source": "governance/project-status.json",
+  "freshness_maximum_age_days": 14,
+  "decision_reference": "../decisions/titmas-media-evidence-portfolio-admission-decision-v0.1.md",
+  "dbos_mapping_authorized": false,
+  "core_component": false,
+  "standard": false,
+  "production_ready": false,
+  "external_adoption": false,
+  "gates": {
+    "G0": "PASS_ADMITTED_AS_ADJACENT_CANDIDATE",
+    "G1": "PASS",
+    "G2": "PASS_BOUNDARY_ONLY_MAPPING_NOT_AUTHORIZED",
+    "G3": "NOT_ASSESSED",
+    "G4": "NOT_ASSESSED",
+    "G5": "NOT_AUTHORIZED",
+    "G6": "NOT_EXECUTED",
+    "G7": "NOT_ASSESSED",
+    "G8": "NOT_RELEASED_NOT_ADOPTED"
+  },
+  "observed_at": "2026-08-01"
+}

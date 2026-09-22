@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://titmas.cn/schemas/dba/cockpit-source-registry-v0.1.schema.json",
+  "title": "DBA Cockpit Read-only Source Registry",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["registry_version", "sources"],
+  "properties": {
+    "registry_version": { "const": "0.1" },
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "project_id", "display_name", "conversation_alias",
+          "source_repository", "source_repository_status", "source_branch",
+          "source_status_path", "source_schema_path", "access_mode",
+          "refresh_mode", "source_mode", "freshness_policy",
+          "dynamic_observation_mode", "source_revision",
+          "source_tree_digest", "status_digest"
+        ],
+        "properties": {
+          "project_id": { "const": "titmac-scout" },
+          "display_name": { "const": "titmac-scout" },
+          "conversation_alias": { "const": "tiamas-scout" },
+          "source_repository": { "const": "joy7758/titmac-scout" },
+          "source_repository_status": { "const": "VERIFIED_PRIVATE" },
+          "source_branch": { "const": "main" },
+          "source_status_path": { "const": "governance/project-status.json" },
+          "source_schema_path": { "const": "governance/project-status.schema.json" },
+          "access_mode": { "const": "READ_ONLY" },
+          "refresh_mode": { "const": "ON_DEMAND" },
+          "source_mode": { "const": "CANONICAL_MAIN_EXACT_REVISION" },
+          "freshness_policy": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "active_development_hours", "maintenance_days",
+              "dynamic_observation_max_age_seconds", "failure_mode"
+            ],
+            "properties": {
+              "active_development_hours": { "const": 72 },
+              "maintenance_days": { "const": 14 },
+              "dynamic_observation_max_age_seconds": { "type": "integer", "minimum": 1 },
+              "failure_mode": { "const": "FAIL_CLOSED" }
+            }
+          },
+          "dynamic_observation_mode": { "const": "GITHUB_API_READ_ONLY" },
+          "source_revision": { "type": "string", "pattern": "^[a-f0-9]{40}$" },
+          "source_tree_digest": { "type": "string", "pattern": "^[a-f0-9]{40}$" },
+          "status_digest": { "type": "string", "pattern": "^[a-f0-9]{64}$" }
+        }
+      }
+    }
+  }
+}

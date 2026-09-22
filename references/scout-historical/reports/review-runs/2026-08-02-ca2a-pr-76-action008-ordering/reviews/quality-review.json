@@ -1,0 +1,38 @@
+{
+  "schema_version": "0.1",
+  "review_id": "ca2a-pr-76-action008-ordering-quality-review",
+  "agent_identifier": "quality-reviewer-gpt5-7b3867e1",
+  "model_runtime_identifier": "openai-codex/gpt-5",
+  "review_role": "QUALITY_REVIEWER",
+  "input_digest": "sha256:7b3867e1b1dfa0840beb912570b0039978d6f85dc99ca37e070420dfb2f1a686",
+  "output_digest": "sha256:38d3166e9de2bd963f681597f003eaee837d9d04a1f1ec2fd3a85fbde70b8899",
+  "decision": "PASS",
+  "timestamp": "2026-08-02T03:56:29Z",
+  "ruleset_version": "0.1",
+  "reason_codes": [
+    "INPUT_DIGEST_VERIFIED",
+    "TARGET_AND_FULL_TESTS_PASS",
+    "STATIC_SECURITY_GATES_PASS",
+    "ACTION_008_ORDERING_EFFECTIVE",
+    "ACTION_008_REPEAT_DETERMINISTIC",
+    "PR_DIFF_SCOPED"
+  ],
+  "findings": [
+    "ACTION-008 establishes reachable authorization_invalid and valid_negative_outcome controls, then proves INVALID_CREDENTIAL preempts both.",
+    "The conformance target completed with 31 passed; the full suite completed with 252 passed, 3 hardware-only skips, and no failures.",
+    "Ruff, mypy, Bandit, pip-audit, and git diff checks passed.",
+    "ACTION-008 passed 20 repeated executions and does not depend on random behavior.",
+    "Upstream CI and CodeQL remain action_required and were not run; local validation is not represented as remote evidence.",
+    "Pre-existing full-suite demo tests regenerate tracked JSON nondeterministically, but the side effects were restored and this PR does not touch that area."
+  ],
+  "blocking_reasons": [],
+  "evidence_references": [
+    "reports/review-runs/2026-08-02-ca2a-pr-76-action008-ordering/input.json#sha256:7b3867e1b1dfa0840beb912570b0039978d6f85dc99ca37e070420dfb2f1a686",
+    "git:joy7758/ca2a@9fb5c3b112c1f2d083bc97a12d55f7a583190b9f",
+    "local-git-diff:sha256:82688a11ed0f103c75cabc80f6c7e16fbd51bee0766a52043d0894ff2d066731",
+    "tests/conformance/test_profile_conformance.py#sha256:034bb82405fceb8a0861fc6ddf91652d7f3e4ea5495f297c51c28ec9821796c2",
+    "pytest:tests/conformance/test_profile_conformance.py:31_passed",
+    "pytest:full-suite:252_passed_3_hardware_skipped",
+    "repeat:ACTION-008:20_of_20_passed"
+  ]
+}

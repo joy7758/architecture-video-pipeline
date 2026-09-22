@@ -1,0 +1,585 @@
+{
+  "$schema": "reusable-module-catalog.schema.json",
+  "catalog_id": "DBA-REUSABLE-MODULE-CATALOG-0.1",
+  "catalog_version": "0.1.0",
+  "status": "SOURCE_BOUND_CATALOG_NO_RUNTIME_AUTHORITY",
+  "primary_repository": "DBA",
+  "observed_at": "2026-09-23",
+  "reuse_levels": {
+    "DIRECT_REUSE": "The declared non-authoritative artifact or command can be reused within its exact verified scope.",
+    "ADAPTATION_REQUIRED": "The capability exists, but a new project needs an owner-approved adapter or contract mapping.",
+    "SPECIFICATION_ONLY": "Only a normative or planning contract exists; no callable implementation is claimed.",
+    "VERIFICATION_REQUIRED": "A prior audit identified the owner, but the canonical source must be re-read before use."
+  },
+  "capability_discovery_boundary": {
+    "capability_discovery": "Finds and compares reusable technical capabilities, source identities, versions, overlap and adopt-before-build options.",
+    "project_evidence_gap_completion": "Collects missing project facts such as photographs, dimensions, building identity and conflicting source material; it is a domain evidence intake task, not a GitHub capability search."
+  },
+  "consumer_links": [
+    {
+      "consumer_id": "3d-building-disassembly-pipeline",
+      "request_reference": "codex-thread:01a0c8de-3616-71e3-90ce-93d66f246f80",
+      "need_class": "PROJECT_EVIDENCE_GAP_COMPLETION_AND_CAPABILITY_REUSE_ASSESSMENT",
+      "required_evidence": [
+        "building photographs with source and viewpoint",
+        "dimensions and measurement provenance",
+        "building identity and location disambiguation",
+        "conflict-preserving source comparison"
+      ],
+      "recommended_module_ids": [
+        "DBA-MOD-GOVERNANCE-INTELLIGENCE-INTAKE-001",
+        "DBA-MOD-EXTERNAL-CAPABILITY-DISCOVERY-PROFILE-002",
+        "DBA-MOD-DISCOVERY-ABSORPTION-FIXTURE-001"
+      ],
+      "remaining_gap": "No verified building-domain evidence intake adapter is registered. GitHub code discovery alone cannot close the photographic, dimensional, identity or source-conflict gaps.",
+      "status": "REUSE_ASSESSMENT_COMPLETE_IMPLEMENTATION_NOT_REQUESTED"
+    }
+  ],
+  "modules": [
+    {
+      "module_id": "DBA-MOD-TITMAC-SCOUT-STATUS-BRIDGE-001",
+      "title": "titmac-scout read-only cockpit status bridge",
+      "responsibility": "Read a source-pinned titmac-scout status contract and produce a fail-closed DBA cockpit projection without writing to the owner repository.",
+      "applicable_scenarios": [
+        "observe titmac-scout source, CI and pull request status",
+        "reuse its source identity and freshness semantics when designing another read-only project bridge"
+      ],
+      "owner": "joy7758/titmac-scout for implementation and status; DBA for read-only projection",
+      "canonical_repository": "joy7758/titmac-scout",
+      "actual_entries": [
+        {
+          "entry_type": "SOURCE_REGISTRY",
+          "reference": "cockpit/source-registry.json",
+          "status": "ACTIVE_READ_ONLY"
+        },
+        {
+          "entry_type": "ADAPTER",
+          "reference": "cockpit/read_only_status_adapter.py",
+          "status": "CALLABLE_FOR_REGISTERED_SOURCE"
+        },
+        {
+          "entry_type": "PROJECTION",
+          "reference": "cockpit/projections/titmac-scout.json",
+          "status": "STALE_POINT_IN_TIME_PROJECTION"
+        },
+        {
+          "entry_type": "LOCAL_HISTORICAL_COPY",
+          "reference": "/Users/zhangbin/GitHub/tiamas-scout",
+          "status": "HEAD_0b2b4e5_NO_REMOTE_NOT_CANONICAL_CURRENT_PROOF"
+        }
+      ],
+      "input_contract": [
+        "project_id fixed to titmac-scout by the current source registry schema",
+        "canonical governance/project-status.json and schema",
+        "optional local repository or read-only GitHub observation"
+      ],
+      "output_contract": [
+        "source-bound cockpit projection",
+        "freshness, CI, pull request and authority-boundary fields",
+        "explicit UNKNOWN or fail-closed state on unavailable source"
+      ],
+      "dependencies": [
+        "Python 3",
+        "local Git or read-only GitHub access when dynamic refresh is requested"
+      ],
+      "invocation": "python3 cockpit/read_only_status_adapter.py --project-id titmac-scout --output cockpit/projections/titmac-scout.json",
+      "permissions_and_side_effects": [
+        "READ_ONLY against owner source",
+        "writes only the requested local DBA projection",
+        "does not repair, merge, deploy or activate titmac-scout"
+      ],
+      "identity": {
+        "version": "source-registry-0.1",
+        "source_revision": "e4adbbbbb149871f108fcf384369182d8c5765f4",
+        "revision_status": "PINNED_BY_COCKPIT_SOURCE_REGISTRY"
+      },
+      "verification": {
+        "status": "PASS_AT_PINNED_REVISION_DYNAMIC_OBSERVATION_STALE",
+        "observed_at": "2026-08-08T16:58:10.468511Z",
+        "evidence_references": [
+          "cockpit/projections/titmac-scout.json",
+          "cockpit/tests/test_titmac_scout_bridge.py",
+          "architecture/ADR-040-titmac-scout-canonical-identity-and-read-only-progress-bridge.md"
+        ]
+      },
+      "limitations": [
+        "tiamas-scout is a conversation alias only",
+        "the local tiamas-scout copy has no remote and cannot prove the canonical e4adbbb source is current",
+        "the current adapter and schema are not a generic multi-project discovery service",
+        "the stored dynamic observation is stale and must be refreshed before a current-state claim",
+        "Historical local copy /Users/zhangbin/GitHub/tiamas-scout has LICENSE=UNKNOWN; treat code reuse as DESIGN_REFERENCE_OR_LICENSE_VERIFICATION_REQUIRED, not as permission to copy."
+      ],
+      "reuse_level": "ADAPTATION_REQUIRED",
+      "reuse_reason": "Directly reusable for titmac-scout; other projects need a separately owned source-registry and schema extension rather than copying its identity."
+    },
+    {
+      "module_id": "DBA-MOD-TITMAC-SCOUT-GITHUB-OPPORTUNITY-DISCOVERY-001",
+      "title": "Historical titmac-scout GitHub opportunity discovery implementation",
+      "responsibility": "Discover GitHub Issue candidates from fixed queries and produce normalized, deduplicated opportunity records and reports; this is distinct from the DBA read-only Scout status bridge.",
+      "applicable_scenarios": [
+        "study a bounded GitHub Issue capability-discovery pipeline",
+        "adapt query budgeting, retry, normalization, hashing, coverage reporting and failure reporting after canonical source and license verification"
+      ],
+      "owner": "joy7758/titmac-scout is the declared canonical owner; canonical checkout and current owner state were not located in this review",
+      "canonical_repository": "joy7758/titmac-scout",
+      "actual_entries": [
+        {
+          "entry_type": "HISTORICAL_DISCOVERY_CLI",
+          "reference": "/Users/zhangbin/GitHub/tiamas-scout/src/discovery/cli.rb",
+          "status": "LOCAL_HISTORICAL_COPY_HEAD_0b2b4e5_NO_REMOTE"
+        },
+        {
+          "entry_type": "CANONICAL_CHECKOUT",
+          "reference": "joy7758/titmac-scout",
+          "status": "NOT_LOCATED_NOT_CURRENTLY_VERIFIED"
+        }
+      ],
+      "input_contract": [
+        "YAML configuration with fixed GitHub Issue search queries",
+        "GitHub API read access when executed",
+        "query budget and retry configuration"
+      ],
+      "output_contract": [
+        "normalized GitHub Issue candidate records",
+        "deduplicated opportunity list",
+        "coverage, missing-source and failure report",
+        "daily report and status index"
+      ],
+      "dependencies": [
+        "Ruby runtime and project dependencies from the historical copy",
+        "GitHub API network access and credentials when execution is separately authorized"
+      ],
+      "invocation": "HISTORICAL_REFERENCE_ONLY: ruby /Users/zhangbin/GitHub/tiamas-scout/src/discovery/cli.rb <configuration>; do not execute until canonical source, license, credentials and current contract are verified",
+      "permissions_and_side_effects": [
+        "static review only in this catalog task",
+        "network and GitHub credential use were not authorized or executed",
+        "historical report writing may overwrite a same-day fixed filename",
+        "does not collect building photos, dimensions, building identity or resolve domain-source conflicts"
+      ],
+      "identity": {
+        "version": "historical-local-head",
+        "source_revision": "0b2b4e5fab7ba4e3832786ce3d43704c782a778b",
+        "revision_status": "OBSERVED_LOCAL_HISTORICAL_COPY_CANONICAL_CURRENT_REVISION_UNKNOWN"
+      },
+      "verification": {
+        "status": "STATIC_REVIEW_ONLY_NOT_EXECUTED",
+        "observed_at": "2026-09-23",
+        "evidence_references": [
+          "/Users/zhangbin/GitHub/tiamas-scout/src/discovery/cli.rb",
+          "/Users/zhangbin/GitHub/tiamas-scout/src/discovery/deduplicator.rb",
+          "/Users/zhangbin/GitHub/tiamas-scout/src/discovery/daily_report.rb",
+          "/Users/zhangbin/GitHub/tiamas-scout/src/discovery/status_index.rb"
+        ]
+      },
+      "limitations": [
+        "LICENSE=UNKNOWN and code copying permission is not established",
+        "canonical checkout was not located and the local copy has no remote",
+        "the fixed-query GitHub Issue collector cannot consume a building evidence gap list",
+        "deduplication keeps the first record for a shared URL and merges query_ids only; it has no source-conflict or version semantics",
+        "daily report writing uses a same-day fixed filename and can overwrite prior same-day history",
+        "status inference depends on directory contents and highest status and has no version-expiry semantics",
+        "no execution, tests, network discovery or credential operation was performed in this review"
+      ],
+      "reuse_level": "VERIFICATION_REQUIRED",
+      "reuse_reason": "The support patterns are useful candidates, but source identity, license, current behavior and domain adaptation must be verified before reuse."
+    },
+    {
+      "module_id": "DBA-MOD-EXTERNAL-CAPABILITY-DISCOVERY-PROFILE-002",
+      "title": "external capability discovery and bounded absorption profile",
+      "responsibility": "Define source identity, capability fingerprinting, deduplication, autonomy classes, bounded absorption and result-only reporting.",
+      "applicable_scenarios": [
+        "compare external capabilities before building a duplicate",
+        "retain source identity and uncertainty",
+        "classify reference, sandbox, reversible adoption and exception paths"
+      ],
+      "owner": "DBA Architecture Governance",
+      "canonical_repository": "joy7758/digital-biosphere-architecture-specification",
+      "actual_entries": [
+        {
+          "entry_type": "MACHINE_PROFILE",
+          "reference": "architecture/external-capability-discovery-absorption-profile-v0.2.json",
+          "status": "REVISED_PROPOSAL_NOT_ACTIVE"
+        },
+        {
+          "entry_type": "NORMATIVE_AMENDMENT",
+          "reference": "architecture/titmas-external-capability-discovery-and-bounded-absorption-amendment-v0.2.md",
+          "status": "SPECIFICATION_ONLY"
+        },
+        {
+          "entry_type": "ADR",
+          "reference": "architecture/ADR-044-external-capability-discovery-and-bounded-absorption.md",
+          "status": "ARCHITECTURE_REFERENCE"
+        }
+      ],
+      "input_contract": [
+        "source-bound capability claim or DISCOVERY_HINT",
+        "internal capability need reference from the canonical child project",
+        "version, digest, source policy, constraints and no-change baseline"
+      ],
+      "output_contract": [
+        "CapabilityDiscoveryRecord",
+        "CapabilitySourceReference and CapabilityFingerprint",
+        "overlap and absorption assessments",
+        "AgentEvolutionReport with unknowns and exceptions"
+      ],
+      "dependencies": [
+        "primary or official sources",
+        "DBA authority boundaries",
+        "owner-specific review before implementation"
+      ],
+      "invocation": "NOT_CALLABLE_SPECIFICATION",
+      "permissions_and_side_effects": [
+        "creates architecture-planning metadata only",
+        "does not create DBOS Evidence, SAEE Evaluation, permission, release or deployment authority",
+        "implementation owner remains UNASSIGNED"
+      ],
+      "identity": {
+        "version": "0.2",
+        "source_revision": "UNKNOWN_NOT_LIVE_GIT_VERIFIED",
+        "revision_status": "FILE_VERSION_VERIFIED_COMMIT_NOT_ASSERTED"
+      },
+      "verification": {
+        "status": "SPECIFICATION_REVISED_TEST_CASE_AVAILABLE_NOT_ACTIVE",
+        "observed_at": "2026-09-23",
+        "evidence_references": [
+          "architecture/titmas-external-capability-discovery-and-bounded-absorption-architecture-review-v0.1.md",
+          "architecture/discovery-validation/dcell-external-capabilities-test-001/DISCOVERY-ABSORPTION-TEST-REPORT.md"
+        ]
+      },
+      "limitations": [
+        "no scheduled discovery runtime",
+        "no autonomous code integration mechanism",
+        "not a domain evidence collector",
+        "implementation authorization is false"
+      ],
+      "reuse_level": "SPECIFICATION_ONLY",
+      "reuse_reason": "Its object and boundary model can guide a project adapter, but no callable discovery or absorption service is active."
+    },
+    {
+      "module_id": "DBA-MOD-DISCOVERY-ABSORPTION-FIXTURE-001",
+      "title": "DCell external capability discovery and absorption validation fixture",
+      "responsibility": "Provide source-linked candidate records, overlap groups, negative identity cases and a reference-only absorption registry for bounded validation.",
+      "applicable_scenarios": [
+        "test candidate identity and deduplication",
+        "test that reference absorption does not become code adoption",
+        "compare a future discovery adapter with known positive and negative cases"
+      ],
+      "owner": "DBA Architecture Governance",
+      "canonical_repository": "joy7758/digital-biosphere-architecture-specification",
+      "actual_entries": [
+        {
+          "entry_type": "DISCOVERY_RECORDS",
+          "reference": "architecture/discovery-validation/dcell-external-capabilities-test-001/capability-discovery-records.json",
+          "status": "REFERENCE_FIXTURE"
+        },
+        {
+          "entry_type": "ABSORPTION_REGISTRY",
+          "reference": "architecture/discovery-validation/dcell-external-capabilities-test-001/reference-absorption-registry.json",
+          "status": "REFERENCE_ONLY"
+        },
+        {
+          "entry_type": "TEST_REPORT",
+          "reference": "architecture/discovery-validation/dcell-external-capabilities-test-001/DISCOVERY-ABSORPTION-TEST-REPORT.md",
+          "status": "PASS_WITH_PARTIAL_SOURCE_COVERAGE"
+        }
+      ],
+      "input_contract": [
+        "seven named external memory and evidence capability hints",
+        "source identity and capability fingerprint rules"
+      ],
+      "output_contract": [
+        "deduplicated candidate records",
+        "four overlap groups",
+        "reference-only absorption outcomes",
+        "retained limitations and unsafe-merge refusals"
+      ],
+      "dependencies": [
+        "DBA-MOD-EXTERNAL-CAPABILITY-DISCOVERY-PROFILE-002"
+      ],
+      "invocation": "READ_JSON_FIXTURES_AND_COMPARE_WITH_CANDIDATE_OUTPUT",
+      "permissions_and_side_effects": [
+        "local read only",
+        "no package installation",
+        "no external code execution",
+        "no dependency or runtime change"
+      ],
+      "identity": {
+        "version": "DCDAT-001",
+        "source_revision": "UNKNOWN_NOT_LIVE_GIT_VERIFIED",
+        "revision_status": "FIXTURE_IDENTITY_VERIFIED_COMMIT_NOT_ASSERTED"
+      },
+      "verification": {
+        "status": "PASS_WITH_PARTIAL_SOURCE_COVERAGE",
+        "observed_at": "2026-08-29T08:58:34Z",
+        "evidence_references": [
+          "architecture/discovery-validation/dcell-external-capabilities-test-001/DISCOVERY-ABSORPTION-TEST-REPORT.md"
+        ]
+      },
+      "limitations": [
+        "AC-2 sandbox not executed",
+        "no candidate marked implementation-ready",
+        "external benchmark claims not reproduced"
+      ],
+      "reuse_level": "DIRECT_REUSE",
+      "reuse_reason": "The static fixtures can be reused directly for non-executable identity and boundary tests; they cannot establish adoption or runtime compatibility."
+    },
+    {
+      "module_id": "DBA-MOD-GOVERNANCE-INTELLIGENCE-INTAKE-001",
+      "title": "source-pinned governance intelligence intake",
+      "responsibility": "Register external governance, protocol, security, ecosystem and research signals with source verification, version pinning, claim correction and authority routing.",
+      "applicable_scenarios": [
+        "external research intake",
+        "protocol and model version continuity",
+        "prior-art and duplication review",
+        "source conflict preservation"
+      ],
+      "owner": "DBA",
+      "canonical_repository": "joy7758/digital-biosphere-architecture-specification",
+      "actual_entries": [
+        {
+          "entry_type": "MACHINE_INDEX",
+          "reference": "intelligence/agent-index.json",
+          "status": "REFERENCE_ONLY_AGENT_ENTRY"
+        },
+        {
+          "entry_type": "HUMAN_ENTRY",
+          "reference": "intelligence/README.md",
+          "status": "ACTIVE_READING_ORDER"
+        },
+        {
+          "entry_type": "SCHEMA",
+          "reference": "intelligence/schemas/intelligence-agent-index.schema.json",
+          "status": "AVAILABLE"
+        }
+      ],
+      "input_contract": [
+        "primary or official source",
+        "version or stable identifier",
+        "observed date",
+        "claim and contradiction set"
+      ],
+      "output_contract": [
+        "source-pinned intelligence artifact",
+        "brief or crosswalk",
+        "status preserving candidate, stale, unknown and non-adoption semantics"
+      ],
+      "dependencies": [
+        "human or agent source research",
+        "primary-source availability",
+        "DBA source-truth discipline"
+      ],
+      "invocation": "READ intelligence/agent-index.json THEN THE REFERENCED CURRENT BUNDLE",
+      "permissions_and_side_effects": [
+        "reference-only repository writes when separately authorized",
+        "no model download",
+        "no asset scan",
+        "no external action",
+        "no automatic adoption"
+      ],
+      "identity": {
+        "version": "0.1.0",
+        "source_revision": "7808b9d20fb09a3223a3e4c26c2d70061b179a9a",
+        "revision_status": "DECLARED_BY_ROOT_AGENT_INDEX_NOT_CURRENT_GIT_READBACK"
+      },
+      "verification": {
+        "status": "CURRENT_BUNDLE_STALE_POINT_IN_TIME",
+        "observed_at": "2026-08-16",
+        "evidence_references": [
+          "intelligence/agent-index.json",
+          "intelligence/2026-08-16/intelligence-brief.md"
+        ]
+      },
+      "limitations": [
+        "not a continuous crawler",
+        "not an implementation or adoption engine",
+        "current bundle requires refresh before current-state claims"
+      ],
+      "reuse_level": "ADAPTATION_REQUIRED",
+      "reuse_reason": "The intake semantics are reusable, but every consuming project must define its domain sources, evidence gaps, owner and freshness policy."
+    },
+    {
+      "module_id": "DBA-MOD-TITMAS-CONFORMANCE-HARNESS-001",
+      "title": "TITMAS local conformance harness",
+      "responsibility": "Validate TITMAS schemas, registries and fail-closed semantic invariants without creating execution or certification authority.",
+      "applicable_scenarios": [
+        "validate TITMAS machine artifacts",
+        "check authority-boundary regressions",
+        "reuse negative fixtures for a mapped TITMAS contribution"
+      ],
+      "owner": "DBA TITMAS conformance surface",
+      "canonical_repository": "joy7758/digital-biosphere-architecture-specification",
+      "actual_entries": [
+        {
+          "entry_type": "HARNESS",
+          "reference": "TITMAS/conformance/harness.py",
+          "status": "CALLABLE_LOCAL_VALIDATOR"
+        },
+        {
+          "entry_type": "TESTS",
+          "reference": "TITMAS/conformance/tests/",
+          "status": "AVAILABLE"
+        },
+        {
+          "entry_type": "LATEST_REPORT",
+          "reference": "TITMAS/conformance/reports/latest.json",
+          "status": "POINT_IN_TIME_REPORT"
+        }
+      ],
+      "input_contract": [
+        "TITMAS registered artifacts and schemas",
+        "declared authority and maturity semantics"
+      ],
+      "output_contract": [
+        "local conformance result",
+        "fail-closed reason on missing or elevated semantics"
+      ],
+      "dependencies": [
+        "Python 3",
+        "current local TITMAS repository artifacts"
+      ],
+      "invocation": "python3 TITMAS/conformance/harness.py",
+      "permissions_and_side_effects": [
+        "reads local repository artifacts",
+        "may write local conformance reports",
+        "does not certify, merge, deploy or grant permission"
+      ],
+      "identity": {
+        "version": "root-agent-index-3.1.0",
+        "source_revision": "7808b9d20fb09a3223a3e4c26c2d70061b179a9a",
+        "revision_status": "DECLARED_BY_ROOT_AGENT_INDEX_NOT_CURRENT_GIT_READBACK"
+      },
+      "verification": {
+        "status": "EXISTING_HARNESS_AND_TEST_ENTRY_VERIFIED_EXECUTION_NOT_RUN_FOR_THIS_CATALOG",
+        "observed_at": "2026-09-23",
+        "evidence_references": [
+          "agent-index.json",
+          "TITMAS/conformance/reports/latest.json"
+        ]
+      },
+      "limitations": [
+        "TITMAS-specific",
+        "conformance is not certification",
+        "other projects require explicit schema and ownership mapping"
+      ],
+      "reuse_level": "ADAPTATION_REQUIRED",
+      "reuse_reason": "Direct for current TITMAS artifacts; a different project must map contracts into the existing harness rather than claim automatic compatibility."
+    },
+    {
+      "module_id": "DBA-MOD-AGENT-EVIDENCE-SEMANTIC-OWNER-001",
+      "title": "Agent Evidence canonical execution-evidence semantics",
+      "responsibility": "Own execution evidence object, recorder and adapter semantics referenced by DBA and DCell instead of duplicating an evidence core.",
+      "applicable_scenarios": [
+        "execution evidence object design",
+        "recorder or adapter reuse assessment",
+        "avoid a second evidence core"
+      ],
+      "owner": "joy7758/agent-evidence",
+      "canonical_repository": "joy7758/agent-evidence",
+      "actual_entries": [
+        {
+          "entry_type": "EXTERNAL_CANONICAL_REPOSITORY",
+          "reference": "https://github.com/joy7758/agent-evidence",
+          "status": "PRIOR_AUDIT_ONLY_REVERIFY_REQUIRED"
+        },
+        {
+          "entry_type": "DBA_AUDIT_REFERENCE",
+          "reference": "architecture/dba-titmas-constitution-reuse-compatibility-audit-v0.1.md",
+          "status": "SOURCE_INSPECTED_AT_PRIOR_REVISION"
+        }
+      ],
+      "input_contract": [
+        "execution event and provenance requirements"
+      ],
+      "output_contract": [
+        "canonical evidence object, recorder or adapter semantics as defined by owner repository"
+      ],
+      "dependencies": [
+        "owner repository access",
+        "fresh source and license verification"
+      ],
+      "invocation": "REVERIFY_CANONICAL_OWNER_SOURCE_BEFORE_USE",
+      "permissions_and_side_effects": [
+        "none created by this catalog",
+        "DBA reference does not authorize integration or evidence admission"
+      ],
+      "identity": {
+        "version": "prior-audit-2026-08-13",
+        "source_revision": "09385f47a33273d8c72bbca9d3ae57aff0d5c0d9",
+        "revision_status": "PRIOR_AUDIT_REVISION_NOT_CURRENTLY_REVERIFIED"
+      },
+      "verification": {
+        "status": "VERIFICATION_REQUIRED",
+        "observed_at": "2026-08-13",
+        "evidence_references": [
+          "architecture/dba-titmas-constitution-reuse-compatibility-audit-v0.1.md"
+        ]
+      },
+      "limitations": [
+        "current owner source was not re-read in this catalog task",
+        "Evidence does not create Truth, Permission or certification"
+      ],
+      "reuse_level": "VERIFICATION_REQUIRED",
+      "reuse_reason": "The canonical owner and prior revision are known, but actual current call surfaces must be verified in the owner repository."
+    },
+    {
+      "module_id": "DBA-MOD-SAEE-MODULE-DISCOVERY-MAPPING-001",
+      "title": "SAEE module registry discovery mapping",
+      "responsibility": "Provide evaluation, reliability, stability, risk and evolution-recommendation ownership plus a module-registry discovery mapping without module activation authority.",
+      "applicable_scenarios": [
+        "find evaluation ownership",
+        "map a candidate module to SAEE evaluation responsibilities",
+        "avoid duplicating an evaluation engine"
+      ],
+      "owner": "joy7758/SAEE",
+      "canonical_repository": "joy7758/SAEE",
+      "actual_entries": [
+        {
+          "entry_type": "EXTERNAL_CANONICAL_REPOSITORY",
+          "reference": "https://github.com/joy7758/SAEE",
+          "status": "PRIOR_AUDIT_ONLY_REVERIFY_REQUIRED"
+        },
+        {
+          "entry_type": "DBA_AUDIT_REFERENCE",
+          "reference": "architecture/dba-titmas-constitution-reuse-compatibility-audit-v0.1.md",
+          "status": "SOURCE_INSPECTED_AT_PRIOR_REVISION"
+        }
+      ],
+      "input_contract": [
+        "candidate module identity",
+        "evaluation need",
+        "evidence references and execution context"
+      ],
+      "output_contract": [
+        "owner-specific evaluation or recommendation as defined by SAEE",
+        "discovery mapping that does not activate the module"
+      ],
+      "dependencies": [
+        "owner repository access",
+        "fresh SAEE module-registry contract verification"
+      ],
+      "invocation": "REVERIFY_CANONICAL_OWNER_SOURCE_BEFORE_USE",
+      "permissions_and_side_effects": [
+        "none created by this catalog",
+        "selection and mapping do not grant activation or execution authority"
+      ],
+      "identity": {
+        "version": "prior-audit-2026-08-13",
+        "source_revision": "620230bd75b066b47885b092c35439ae0e5da4e9",
+        "revision_status": "PRIOR_AUDIT_REVISION_NOT_CURRENTLY_REVERIFIED"
+      },
+      "verification": {
+        "status": "VERIFICATION_REQUIRED",
+        "observed_at": "2026-08-13",
+        "evidence_references": [
+          "architecture/dba-titmas-constitution-reuse-compatibility-audit-v0.1.md"
+        ]
+      },
+      "limitations": [
+        "current SAEE source and actual module-registry path are UNKNOWN in this task",
+        "SAEE discovery mapping is not activation authority"
+      ],
+      "reuse_level": "VERIFICATION_REQUIRED",
+      "reuse_reason": "Prior audit confirms ownership and a discovery mapping, but the current concrete entry must be verified before another project calls it."
+    }
+  ]
+}

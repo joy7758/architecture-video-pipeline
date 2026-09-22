@@ -1,0 +1,12 @@
+{
+  "artifact_type": "TITMAS_SCOUT_PROPOSED_ACTION",
+  "run_id": "2026-08-02-praxis-ai-194-agent-audit",
+  "action": "POST_BOUNDED_TECHNICAL_COMMENT",
+  "target": "praxis-proxy/ai#194",
+  "draft_status": "DRAFT_REQUIRES_HUMAN_REWRITE_IN_OWN_WORDS",
+  "draft_body": "I reviewed the current MCP and A2A filters and the access-log boundary. The filters already retain bounded protocol metadata, while the final access-log contract appears to live in the core repository. Would a useful first slice for #194 be an integration contract test plus a small allowlist that exposes existing protocol method, task or context reference, and route or policy-decision reference to structured access logs? I would keep trace context correlation-only: it would not imply authorization, immutable evidence, identity proof, or execution success. Policy decisions would remain separate from attempted and completed outcomes, and raw credentials or full request bodies would stay out of the record. If that boundary fits the roadmap after #172, I would be willing to prepare a narrow test-first PR after assignment.",
+  "word_count": 126,
+  "exact_body_publishable_by_agent": false,
+  "reason": "CONTRIBUTING.md requires person-to-person words to be written by the contributor.",
+  "external_action_authorized": false
+}

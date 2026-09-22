@@ -1,0 +1,78 @@
+artifact_type: TITMAS_SCOUT_LOCAL_EXECUTION_RECEIPT_V0_1
+receipt_id: RECEIPT-REAL-RUN-GITHUB-HITL-636-20260801-084124Z
+classification: LOCAL_REPRODUCIBILITY_RECEIPT_UNATTESTED
+receipt_scope: VALIDATOR_PROCESS_ONLY
+
+execution:
+  executed_at: "2026-08-01T08:41:24Z"
+  timestamp_source: CALLER_SUPPLIED_LOCAL_UTC
+  timestamp_trust: UNATTESTED_CALLER_OR_LOCAL_CLOCK
+  working_directory: /Users/zhangbin/GitHub/tiamas-scout
+  command: >-
+    ruby src/validator/validate.rb
+    --timestamp 2026-08-01T08:41:24Z
+    examples/opportunities/example-github-agent-evidence.yaml
+  exit_code: 1
+  exit_code_meaning: EVALUATED_INVALID
+  stderr_observed_empty: true
+
+runtime:
+  language: Ruby
+  version: ruby 2.6.10p210 (2022-04-12 revision 67958)
+  platform: universal.arm64e-darwin25
+
+validator:
+  name: TITMAS Scout Validator Prototype
+  ruleset_version: TITMAS-SCOUT-VALIDATOR-PROTOTYPE-STRUCTURAL-SUBSET-V0.1
+  repository_commit: 00c47177e5416c6fcb4b96fd86e14b020bbed0c2
+  repository_worktree_clean_before_run: true
+  core_logic_modified_for_run: false
+  source_files:
+    - path: src/validator/schema_check.rb
+      content_digest: sha256:a4dbd1140bc29024da87a9466122ea4a34412fc3e482561241ae300399cea192
+    - path: src/validator/reference_check.rb
+      content_digest: sha256:0eec1a53fb7e53896069fc9cf0ee444690d5c2b2e9cc3a5169a156a6fd90ed7e
+    - path: src/validator/lifecycle_check.rb
+      content_digest: sha256:69cff9b9b58ee02a00f621f8ada629d09c2a28645d2b3cea984bdbab74924db9
+    - path: src/validator/validation_aggregator.rb
+      content_digest: sha256:4f2771b2bbc0ef3ae8fa74e92af15052b6fa9cefcdb846ca4a25942959e7803d
+    - path: src/validator/validate.rb
+      content_digest: sha256:28836c7496faaa541476778afb84d74e3d0b506a466e56da31d113157f2b105a
+
+input:
+  reference_id: EXAMPLE-GITHUB-AGENT-EVIDENCE-001
+  reference_type: TITMAS_SCOUT_OPPORTUNITY
+  reference_uri: examples/opportunities/example-github-agent-evidence.yaml
+  version: 0.1-draft
+  content_digest: sha256:a1dc96155713f2ac102da4208152d463f2bb40b8681802354f9f2406834c88df
+  remote_source_digests_recomputed: false
+
+output:
+  reference_uri: examples/validation-runs/2026-08-01-github-agent-hitl-issue-636/validation-result.json
+  content_digest: sha256:ac2a594c4a30c92619ec987dddde02a7bcc22feaef3bfa55cec5eddb0783e8f7
+  validation_status: INVALID
+  failed_rule_count: 2
+  authorization_granted: false
+  external_action_allowed: false
+
+io_boundary:
+  validator_input_mode: LOCAL_FILE_READ
+  validator_output_mode: STANDARD_OUTPUT_CAPTURED_AS_LOCAL_ARTIFACT
+  validator_network_isolation_enforced: false
+  validator_network_calls_observed: false
+  validator_external_api_calls: false
+  validator_external_actions: false
+  assurance: SOURCE_INSPECTION_AND_STATIC_SCAN_NOT_RUNTIME_NETWORK_SANDBOX
+
+replay:
+  deterministic_replay_expected: true
+  required_same_input_bytes: true
+  required_same_validator_commit: true
+  required_same_ruleset_version: true
+  required_same_explicit_timestamp: true
+
+limitations:
+  - Receipt is self-recorded and has no signature or trusted attestation.
+  - Local clock and execution environment are not independently verified.
+  - No operating-system network sandbox was applied to the Validator process.
+  - Receipt proves neither remote source bytes nor external public page state.

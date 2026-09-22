@@ -1,0 +1,33 @@
+name: Bug report
+description: Report a reproducible defect in TITMAS community infrastructure
+title: "[Bug] "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: "Do not submit secrets, personal data or vulnerability details here."
+  - type: input
+    id: version
+    attributes:
+      label: Version or commit
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Minimal reproduction
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected and actual result
+    validations:
+      required: true
+  - type: textarea
+    id: boundary
+    attributes:
+      label: Boundary and non-claims
+      description: State what this report does not prove or authorize.
+    validations:
+      required: true

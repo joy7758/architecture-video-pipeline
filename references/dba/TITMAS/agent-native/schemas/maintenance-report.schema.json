@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": ["maintenance_id", "participant_ref", "lease_ref", "source_revision", "scope", "findings", "proposed_changes", "tests", "rollback_path", "evidence_references", "review_required", "authority_effect"],
+  "properties": {
+    "maintenance_id": {"type": "string"},
+    "participant_ref": {"type": "string"},
+    "lease_ref": {"type": "string"},
+    "source_revision": {"type": "string"},
+    "scope": {"type": "array", "items": {"type": "string"}},
+    "findings": {"type": "array", "items": {"type": "string"}},
+    "proposed_changes": {"type": "array", "items": {"type": "string"}},
+    "tests": {"type": "array", "items": {"type": "string"}},
+    "rollback_path": {"type": "string"},
+    "evidence_references": {"type": "array", "items": {"type": "string"}},
+    "review_required": {"const": true},
+    "authority_effect": {"const": "NONE"}
+  },
+  "additionalProperties": false
+}

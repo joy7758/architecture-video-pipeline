@@ -1,0 +1,53 @@
+{
+  "artifact_type": "TITMAS_SCOUT_RELATED_WORK",
+  "run_id": "2026-08-02-praxis-ai-194-agent-audit",
+  "issues": [
+    {
+      "reference": "praxis-proxy/ai#92",
+      "state": "OPEN",
+      "assignees": [],
+      "comment_count": 0,
+      "relationship": "OpenTelemetry GenAI semantic conventions for inference spans and metrics."
+    },
+    {
+      "reference": "praxis-proxy/ai#184",
+      "state": "OPEN",
+      "assignees": [],
+      "comment_count": 1,
+      "relationship": "Policy evaluation chain and structured results for audit logging."
+    },
+    {
+      "reference": "praxis-proxy/ai#211",
+      "state": "OPEN",
+      "assignees": [],
+      "comment_count": 0,
+      "relationship": "Billing-grade usage and cost audit pipeline."
+    },
+    {
+      "reference": "praxis-proxy/ai#148",
+      "state": "OPEN",
+      "assignees": ["nerdalert"],
+      "relationship": "MCP and A2A protocol epic; existing filter metadata work overlaps the proposed observability boundary."
+    },
+    {
+      "reference": "praxis-proxy/ai#142",
+      "state": "OPEN",
+      "assignees": [],
+      "comment_count": 0,
+      "relationship": "Body redaction requirements for logs, traces, and audit records."
+    },
+    {
+      "reference": "praxis-proxy/ai#171",
+      "state": "OPEN",
+      "assignees": ["gdozortsev"],
+      "relationship": "Parent epic for Issue #194."
+    },
+    {
+      "reference": "praxis-proxy/ai#172",
+      "state": "OPEN",
+      "assignees": ["gdozortsev"],
+      "relationship": "OpenShell plus Praxis spike recorded as a blocker of Issue #194."
+    }
+  ],
+  "boundary": "Trace correlation does not establish authorization, immutable evidence, identity proof, or execution success."
+}

@@ -1,0 +1,7 @@
+{
+  "capability_id": "PILOT-CAP-STRUCTURED-REVIEW",
+  "description": "Produce structured advisory review output from supplied public-safe local context.",
+  "declared_scope": ["TITMAS/agent-native/**", "synthetic fixtures"],
+  "limitations": ["NO_FILESYSTEM_ACCESS", "NO_GITHUB_WRITE", "NO_AUTHORITY"],
+  "verified_status": "DECLARED_NOT_VERIFIED"
+}

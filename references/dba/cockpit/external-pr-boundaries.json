@@ -1,0 +1,34 @@
+{
+  "observed_at": "2026-08-02T08:35:15Z",
+  "repository": "joy7758/digital-biosphere-architecture-specification",
+  "pull_requests": [
+    {
+      "number": 105,
+      "url": "https://github.com/joy7758/digital-biosphere-architecture-specification/pull/105",
+      "state": "OPEN",
+      "is_draft": true,
+      "base_branch": "main",
+      "head_branch": "codex/titmas-agent-native-discovery-evolution-d19-v2-1",
+      "head_revision": "b79be7f1b68c95cb1f4bfc72530c1b5300db9931",
+      "ci_status": "PASS",
+      "ownership_review": "PENDING",
+      "implementation_owner": "titmac-scout",
+      "dba_owner": "ARCHITECTURE_AND_GOVERNANCE"
+    },
+    {
+      "number": 106,
+      "url": "https://github.com/joy7758/digital-biosphere-architecture-specification/pull/106",
+      "state": "OPEN",
+      "is_draft": true,
+      "base_branch": "codex/titmas-agent-native-discovery-evolution-d19-v2-1",
+      "head_branch": "repair/problem-d19-er1-demo-001",
+      "head_revision": "898416ccd9fc37241335e2b565ad0c620baba82a",
+      "ci_status": "PASS",
+      "migration_review": "PENDING",
+      "implementation_owner": "titmac-scout",
+      "dba_owner": "ARCHITECTURE_AND_GOVERNANCE"
+    }
+  ],
+  "merge_authorized": false,
+  "closure_authorized": false
+}

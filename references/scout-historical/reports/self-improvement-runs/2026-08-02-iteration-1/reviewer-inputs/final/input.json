@@ -1,0 +1,67 @@
+{
+  "artifact_type": "TITMAS_SCOUT_AGENT_REVIEW_INPUT",
+  "ruleset_version": "0.1",
+  "review_run_id": "2026-08-02-scout-self-improvement-iteration-1-final",
+  "observed_at": "2026-08-02T06:41:30Z",
+  "requested_action": "UPDATE_SCOUT_STATUS",
+  "target": {
+    "type": "LOCAL_SCOUT_CHANGE",
+    "reference": "tiamas-scout:self-improvement:iteration-1",
+    "url": "local://tiamas-scout/self-improvement/2026-08-02-iteration-1"
+  },
+  "source_issue": {
+    "reference": "reports/latest-opportunities.json",
+    "state": "REPRODUCED",
+    "observed_defect": "ca2a#36 ranked as new after conversion, publication, and review"
+  },
+  "duplicate_check": {
+    "existing_status_index": false,
+    "parallel_status_system_added": false,
+    "linking_basis": "EXACT_GITHUB_ISSUE_OR_PR_REFERENCE_ONLY"
+  },
+  "pull_request": {
+    "repository": "tiamas-scout",
+    "external_pull_request": false,
+    "external_write_requested": false,
+    "base_commit": "c32d545",
+    "worktree_only": true
+  },
+  "diff": {
+    "content_digest": "sha256:86a7654609b073a349a64145506d2d80c91eae5d4c496c74b6c811d736b52e85",
+    "content_representation": "reports/self-improvement-runs/2026-08-02-iteration-1/code-diff.patch",
+    "files": ["src/discovery/status_index.rb", "src/discovery/cli.rb", "src/discovery/daily_report.rb", "src/discovery/opportunity_ranker.rb", "tests/discovery_test.rb"],
+    "validator_or_governance_model_changed": false,
+    "ranking_factors_changed": false
+  },
+  "local_validation": {
+    "record_reference": "reports/self-improvement-runs/2026-08-02-iteration-1/test-result.json",
+    "record_digest": "sha256:ce7bf0a0655b1b876ddb52d812c86f926ed7a3989a9471cfaab340c269fc2e1a",
+    "result": "69_RUNS_253_ASSERTIONS_PASS"
+  },
+  "github_checks": [],
+  "automation": {
+    "iteration": 1,
+    "maximum_iterations": 3,
+    "new_quorum_required": true,
+    "live_read_only_rerun_pending": true
+  },
+  "risk_evidence": {
+    "external_write_requested": false,
+    "historical_files_modified": false,
+    "constitution_modified": false,
+    "dba_modified": false,
+    "agent_evidence_modified": false,
+    "exact_reference_linking_only": true
+  },
+  "history_references": [
+    {"path":"reports/self-improvement-runs/2026-08-02-iteration-1/observation.json","content_digest":"sha256:9df3d51dbe47f4f68f64138851ab38e6fb8152d162808fe65f9b4023c7a480ce"},
+    {"path":"reports/self-improvement-runs/2026-08-02-iteration-1/diagnosis.json","content_digest":"sha256:98c287231fd4cce9825a0a059f2c3ed84942c8c3d4dcb2cccb3adc90edaa5283"},
+    {"path":"reports/self-improvement-runs/2026-08-02-iteration-1/before-result.json","content_digest":"sha256:388fda700c8b9e301fae58aec2e2ca23cbad90669434c2c54b09128faeaaa37d"},
+    {"path":"reports/self-improvement-runs/2026-08-02-iteration-1/code-diff.patch","content_digest":"sha256:86a7654609b073a349a64145506d2d80c91eae5d4c496c74b6c811d736b52e85"}
+  ],
+  "known_limits": [
+    "Exact source references are linked; semantic title similarity is intentionally not inferred.",
+    "A live read-only discovery rerun is still required before the iteration is complete.",
+    "UPDATE_SCOUT_STATUS authorizes only local Scout output and never external GitHub action."
+  ]
+}

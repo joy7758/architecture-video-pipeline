@@ -1,0 +1,52 @@
+{
+  "risk_model_id": "TITMAS-D19-EVOLUTION-RISK-2.1",
+  "version": "2.1.0",
+  "classes": [
+    {
+      "id": "ER-0",
+      "name": "OBSERVATION",
+      "change_allowed": false,
+      "autonomous_actions": ["OBSERVE", "REPORT"],
+      "human_authorization_required": false
+    },
+    {
+      "id": "ER-1",
+      "name": "DETERMINISTIC_DERIVED_REPAIR",
+      "change_allowed": true,
+      "autonomous_actions": ["IMPLEMENT_IN_SANDBOX", "TEST", "CREATE_DRAFT_PR"],
+      "human_authorization_required": false,
+      "merge_requires_standing_policy": true,
+      "conditions": ["NO_SEMANTIC_CHANGE", "NO_AUTHORITY_CHANGE", "NO_SECURITY_BOUNDARY_CHANGE", "DETERMINISTIC_REGENERATION", "ROLLBACK", "CI_PASS"]
+    },
+    {
+      "id": "ER-2",
+      "name": "REVERSIBLE_NON_SEMANTIC_REPAIR",
+      "change_allowed": true,
+      "autonomous_actions": ["IMPLEMENT_IN_SANDBOX", "TEST", "CREATE_DRAFT_PR"],
+      "human_authorization_required": true,
+      "autonomous_merge": false
+    },
+    {
+      "id": "ER-3",
+      "name": "SEMANTIC_OR_ARCHITECTURE_EVOLUTION",
+      "change_allowed": true,
+      "autonomous_actions": ["DISCOVER", "EVIDENCE", "DESIGN", "IMPLEMENT_IN_SANDBOX", "TEST", "EVALUATE", "SUBMIT_PROPOSAL"],
+      "human_authorization_required": true,
+      "autonomous_merge": false,
+      "autonomous_release": false,
+      "autonomous_deploy": false
+    },
+    {
+      "id": "ER-4",
+      "name": "HIGH_RISK_OR_IRREVERSIBLE",
+      "change_allowed": true,
+      "autonomous_actions": ["OBSERVE", "EVIDENCE", "PROPOSE"],
+      "human_authorization_required": true,
+      "independent_agent_review_required": true,
+      "automatic_activation": false,
+      "rollback_or_compensating_control_required": true
+    }
+  ],
+  "classification_precedence": ["ER-4", "ER-3", "ER-2", "ER-1", "ER-0"],
+  "semantic_change_is_self_healing": false
+}

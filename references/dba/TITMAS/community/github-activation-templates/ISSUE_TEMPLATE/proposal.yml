@@ -1,0 +1,35 @@
+name: Specification proposal
+description: Propose a bounded TITMAS specification or governance change
+title: "[Proposal] "
+labels: ["proposal"]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Developer problem and value
+    validations:
+      required: true
+  - type: textarea
+    id: scope
+    attributes:
+      label: Scope and non-goals
+    validations:
+      required: true
+  - type: textarea
+    id: ownership
+    attributes:
+      label: Object ownership, sources and versions
+    validations:
+      required: true
+  - type: textarea
+    id: validation
+    attributes:
+      label: Positive, negative and failure cases
+    validations:
+      required: true
+  - type: textarea
+    id: authority
+    attributes:
+      label: Human decisions still required
+    validations:
+      required: true

@@ -1,0 +1,30 @@
+{
+  "artifact_type": "TITMAS_SCOUT_SELECTED_SLICE",
+  "run_id": "2026-08-02-praxis-ai-194-agent-audit",
+  "slice_id": "ISSUE_194_ACCESS_LOG_METADATA_CONTRACT_CONFIRMATION",
+  "slice_type": "BOUNDED_SCOPE_CONFIRMATION",
+  "proposal": "Confirm whether the first independently reviewable slice should expose a bounded allowlist of existing MCP and A2A filter metadata to structured access logs, backed by an integration contract test, or whether maintainers prefer a dedicated AI audit filter.",
+  "candidate_fields": [
+    "protocol method",
+    "bounded task or context reference",
+    "route or policy decision reference",
+    "trace correlation reference"
+  ],
+  "required_safety_properties": [
+    "allowlist only",
+    "bounded cardinality",
+    "no raw credentials",
+    "no full request or response bodies",
+    "redaction compatible",
+    "policy decision separated from execution outcome"
+  ],
+  "non_goals": [
+    "implement all of Issue #194",
+    "introduce TITMAS-branded schema fields",
+    "claim that trace context is authorization or evidence",
+    "claim that an allow decision proves execution",
+    "record chain-of-thought"
+  ],
+  "code_change_prepared": false,
+  "maintainer_scope_confirmation_required": true
+}

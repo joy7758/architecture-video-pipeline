@@ -1,0 +1,5 @@
+{
+  "artifact_type":"TITMAS_SCOUT_SELF_IMPROVEMENT_TEST_RESULT","iteration":2,"revision":2,"timestamp":"2026-08-02T07:04:00Z","diff_digest":"sha256:ca85bb2d19c38ec4caed22d5a13e6a304cfec36c4e0f4465fe0d5b5f57966e9a","result":"PASS_WITH_LIVE_COMMAND_CONTROL",
+  "tests":{"discovery":{"runs":14,"assertions":81,"failures":0},"all_scout":{"runs":70,"assertions":264,"failures":0},"yaml_parse":"PASS_9_QUERIES","git_diff_check":"PASS","gh_cli_argument_contract":"PASS_NO_EMBEDDED_QUALIFIERS","live_flag_shaped_agent_audit_limit_5":"RETURNED_5"},
+  "live_full_rerun_pending":true
+}

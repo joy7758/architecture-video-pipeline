@@ -1,0 +1,36 @@
+{
+  "artifact_type": "TITMAS_SCOUT_REPOSITORY_OBSERVATION",
+  "run_id": "2026-08-02-praxis-ai-194-agent-audit",
+  "repository": "praxis-proxy/ai",
+  "local_read_only_checkout": "/Users/zhangbin/GitHub/praxis-ai",
+  "default_branch": "main",
+  "observed_commit": "4a9a8659b1b5d61ae2ad7203fbcdcc7666ae5995",
+  "license": "MIT",
+  "cla_found": false,
+  "dco_signed_off_required": true,
+  "signed_commits_required": true,
+  "contribution_policy": {
+    "comment_before_work": true,
+    "assignment_required_before_pr": true,
+    "unassigned_pr_closed": true,
+    "all_code_human_reviewed_before_submission": true,
+    "bot_or_tool_prs_accepted": false,
+    "person_to_person_words_must_be_human_authored": true
+  },
+  "observed_components": {
+    "mcp_metadata": ["mcp.method", "mcp.name", "mcp.session_id", "mcp.protocol_version"],
+    "a2a_metadata": ["a2a.method", "a2a.family", "a2a.task_id", "a2a.context_id", "a2a.streaming"],
+    "access_log_boundary": "Implemented in the separate praxis-proxy/praxis core repository; current AI repository does not define the final logging contract.",
+    "policy_evaluation_audit_mapping": "NOT_IMPLEMENTED_AS_A_COMPLETE_ISSUE_194_CONTRACT"
+  },
+  "evidence_references": [
+    "CONTRIBUTING.md",
+    "AGENTS.md",
+    ".github/PULL_REQUEST_TEMPLATE.md",
+    "filters/src/agentic/mcp/mod.rs",
+    "filters/src/agentic/mcp/tests.rs",
+    "filters/src/agentic/a2a/mod.rs",
+    "filters/src/agentic/a2a/tests.rs"
+  ],
+  "external_write_performed": false
+}

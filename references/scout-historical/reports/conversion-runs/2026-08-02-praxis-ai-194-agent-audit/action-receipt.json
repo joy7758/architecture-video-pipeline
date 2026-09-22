@@ -1,0 +1,24 @@
+{
+  "artifact_type": "TITMAS_SCOUT_ACTION_RECEIPT",
+  "run_id": "2026-08-02-praxis-ai-194-agent-audit",
+  "action": "POST_BOUNDED_TECHNICAL_COMMENT",
+  "target": "praxis-proxy/ai#194",
+  "attempted": false,
+  "executed": false,
+  "status": "NOT_EXECUTED",
+  "reason_code": "BLOCKED_BY_REPOSITORY_HUMAN_COMMUNICATION_POLICY",
+  "quorum_decision": "DENY",
+  "human_review_required": true,
+  "external_action_allowed": false,
+  "external_write_performed": false,
+  "comment_url": null,
+  "pull_request_url": null,
+  "recorded_at": "2026-08-02T08:15:00Z",
+  "confirmation": [
+    "No Issue comment was posted.",
+    "No branch or fork was created.",
+    "No commit was made in praxis-proxy/ai.",
+    "No pull request was opened.",
+    "No maintainer was contacted by an agent."
+  ]
+}

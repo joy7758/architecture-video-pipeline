@@ -1,0 +1,31 @@
+{
+  "schema_version": "0.1",
+  "review_id": "2026-08-02-praxis-ai-194-discovery-review-attempt-2",
+  "agent_identifier": "/root/pr76_final_discovery",
+  "model_runtime_identifier": "OpenAI Codex GPT-5",
+  "review_role": "DISCOVERY_REVIEWER",
+  "input_digest": "sha256:8a31c48c73f94a1fd71b9ddf50baf6cf8da4cdcc62d9d026198f5a3d2a3ce097",
+  "output_digest": "sha256:9a53625f6a742de5b78787274fc18384b9be36ba270329ed628a08dd2b341101",
+  "decision": "BLOCKING_FAIL",
+  "timestamp": "2026-08-02T08:11:56Z",
+  "ruleset_version": "0.1",
+  "reason_codes": [
+    "ISSUE_OPEN_PUBLIC_ENTRY_CONFIRMED",
+    "NO_EXACT_DUPLICATE_PR_FOUND",
+    "SCOPE_CONFIRMATION_REQUIRED",
+    "REPOSITORY_PERSON_TO_PERSON_AUTHORSHIP_REQUIRED"
+  ],
+  "findings": [
+    "Issue #194 is open, unassigned, has zero comments, and retains a public participation entry.",
+    "No exact open pull request implementing Issue #194 was found; overlapping Issues still require maintainer scope confirmation.",
+    "The selected comment path is appropriate only when written by the contributor under the repository communication policy."
+  ],
+  "blocking_reasons": [
+    "HUMAN_REVIEW_REQUIRED:REPOSITORY_PERSON_TO_PERSON_AUTHORSHIP"
+  ],
+  "evidence_references": [
+    "reports/conversion-runs/2026-08-02-praxis-ai-194-agent-audit/reviewer-inputs/input.json",
+    "https://github.com/praxis-proxy/ai/issues/194",
+    "https://github.com/praxis-proxy/ai/blob/main/CONTRIBUTING.md"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "artifact_type":"TITMAS_SCOUT_SELF_IMPROVEMENT_TEST_RESULT",
+  "iteration":1,
+  "revision":3,
+  "timestamp":"2026-08-02T06:52:10Z",
+  "source_reference":"tests/discovery_test.rb",
+  "commit_sha":"WORKTREE_AFTER_c32d545",
+  "digest_algorithm":"sha256",
+  "digest_value":"08c572ffb7bf8a39cf9c190cc6bf7781dca82c8faf21f19983f8406a367fd77e",
+  "ruleset_version":"0.1",
+  "action_scope":["LOCAL_TEST"],
+  "actor_type":"DETERMINISTIC_TOOL",
+  "result":"PASS_WITH_MUTATION_CONTROL",
+  "uncertainty":["live_discovery_rerun_pending"],
+  "unsupported_claims":["production_safety","semantic_duplicate_detection"],
+  "tests":{"discovery":{"runs":13,"assertions":72,"failures":0,"errors":0,"skips":0},"all_scout":{"runs":69,"assertions":255,"failures":0,"errors":0,"skips":0},"mutation":{"runs":1,"assertions":8,"expected_failures":1},"git_diff_check":"PASS"}
+}

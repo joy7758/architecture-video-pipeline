@@ -1,0 +1,41 @@
+{
+  "schema_version": "0.1",
+  "review_id": "ca2a-pr-76-action008-ordering-discovery-review",
+  "agent_identifier": "/root/pr76_q_discovery",
+  "model_runtime_identifier": "openai-codex/gpt-5",
+  "review_role": "DISCOVERY_REVIEWER",
+  "input_digest": "sha256:7b3867e1b1dfa0840beb912570b0039978d6f85dc99ca37e070420dfb2f1a686",
+  "output_digest": "sha256:df7ecfba78008c81a9ec82d71241bdae7df00f0be6394fd035bc2337c9b2ab16",
+  "decision": "PASS",
+  "timestamp": "2026-08-02T03:52:48Z",
+  "ruleset_version": "0.1",
+  "reason_codes": [
+    "INPUT_DIGEST_MATCH",
+    "CURRENT_HEAD_MATCH",
+    "ACTION_008_SCOPE_MATCH",
+    "NO_DUPLICATE_IMPLEMENTATION",
+    "ORDERING_CONTROLS_PRESENT",
+    "READY_STATE_ALREADY_SATISFIED",
+    "CI_CODEQL_NOT_RUN",
+    "MAIN_DRIFT_REQUIRES_MERGE_TIME_REVALIDATION",
+    "NO_CURRENT_HEAD_MAINTAINER_APPROVAL"
+  ],
+  "findings": [
+    "Issue #36 remains open and PR #76 remains an open public contribution entry at head 9fb5c3b112c1f2d083bc97a12d55f7a583190b9f.",
+    "The remediation addresses the ACTION-008 ordering gap without selecting another checklist item.",
+    "PR #80 covers ACTION-009 through ACTION-011 and is not a duplicate implementation of ACTION-008.",
+    "PR #76 is already Ready, so this review only assesses retention of that state and requests no state transition.",
+    "Current main has advanced and upstream CI and CodeQL have not run; both require revalidation before merge rather than blocking Ready retention."
+  ],
+  "blocking_reasons": [],
+  "evidence_references": [
+    "reports/review-runs/2026-08-02-ca2a-pr-76-action008-ordering/input.json#sha256:7b3867e1b1dfa0840beb912570b0039978d6f85dc99ca37e070420dfb2f1a686",
+    "https://github.com/agentrust-io/ca2a/issues/36",
+    "https://github.com/agentrust-io/ca2a/pull/76",
+    "https://github.com/agentrust-io/ca2a/pull/80",
+    "git:agentrust-io/ca2a@9fb5c3b112c1f2d083bc97a12d55f7a583190b9f",
+    "git:agentrust-io/ca2a@c0be574c6af4fca464659eed559e611f8f9d92ce",
+    "https://github.com/agentrust-io/ca2a/actions/runs/30713051643",
+    "https://github.com/agentrust-io/ca2a/actions/runs/30713051626"
+  ]
+}

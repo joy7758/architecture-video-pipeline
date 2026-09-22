@@ -1,0 +1,74 @@
+{
+  "authorized_actions": [
+
+  ],
+  "blocked_actions": [
+    "POST_BOUNDED_TECHNICAL_COMMENT"
+  ],
+  "decision": "DENY",
+  "human_review_required": true,
+  "reason_codes": [
+    "DISCOVERY_REVIEWER:HUMAN_REVIEW_REQUIRED:REPOSITORY_PERSON_TO_PERSON_AUTHORSHIP",
+    "EVIDENCE_REVIEWER:HUMAN_REVIEW_REQUIRED:REPOSITORY_PERSON_TO_PERSON_AUTHORSHIP",
+    "EVIDENCE_REVIEWER:NO_HUMAN_AUTHORED_EXACT_COMMENT_BODY_PRESENT",
+    "QUALITY_REVIEWER:HUMAN_REVIEW_REQUIRED:REPOSITORY_PERSON_TO_PERSON_AUTHORSHIP",
+    "RISK_REVIEWER:AGENT_DRAFT_CONTAINS_FIRST_PERSON_ATTRIBUTION_AND_COMMITMENT",
+    "RISK_REVIEWER:EXTERNAL_ACTION_EXPLICITLY_UNAUTHORIZED",
+    "RISK_REVIEWER:HUMAN_REVIEW_REQUIRED:REPOSITORY_PERSON_TO_PERSON_AUTHORSHIP",
+    "SCOPE_REVIEWER:ASSIGNMENT_REQUIRED_BEFORE_ANY_PULL_REQUEST",
+    "SCOPE_REVIEWER:HUMAN_REVIEW_REQUIRED:REPOSITORY_PERSON_TO_PERSON_AUTHORSHIP"
+  ],
+  "reviewers": [
+    {
+      "agent_identifier": "/root/pr76_final_discovery",
+      "decision": "BLOCKING_FAIL",
+      "input_digest": "sha256:8a31c48c73f94a1fd71b9ddf50baf6cf8da4cdcc62d9d026198f5a3d2a3ce097",
+      "model_runtime_identifier": "OpenAI Codex GPT-5",
+      "output_digest": "sha256:9a53625f6a742de5b78787274fc18384b9be36ba270329ed628a08dd2b341101",
+      "review_id": "2026-08-02-praxis-ai-194-discovery-review-attempt-2",
+      "review_role": "DISCOVERY_REVIEWER",
+      "timestamp": "2026-08-02T08:11:56Z"
+    },
+    {
+      "agent_identifier": "codex-evidence-reviewer",
+      "decision": "BLOCKING_FAIL",
+      "input_digest": "sha256:8a31c48c73f94a1fd71b9ddf50baf6cf8da4cdcc62d9d026198f5a3d2a3ce097",
+      "model_runtime_identifier": "openai-codex/gpt-5.6-sol",
+      "output_digest": "sha256:ab7489d1706964949254f9e967fb1aa2567ab2cd3d8780f7cfd6a8a64aa104be",
+      "review_id": "2026-08-02-praxis-ai-194-evidence-review-attempt-2",
+      "review_role": "EVIDENCE_REVIEWER",
+      "timestamp": "2026-08-02T08:11:56Z"
+    },
+    {
+      "agent_identifier": "/root/comment_scope_review",
+      "decision": "BLOCKING_FAIL",
+      "input_digest": "sha256:8a31c48c73f94a1fd71b9ddf50baf6cf8da4cdcc62d9d026198f5a3d2a3ce097",
+      "model_runtime_identifier": "OpenAI Codex GPT-5",
+      "output_digest": "sha256:2e5038ba3cb491f959dcebe3c091a997f8815588c3400b684da5133a2e071024",
+      "review_id": "2026-08-02-praxis-ai-194-scope-review-attempt-2",
+      "review_role": "SCOPE_REVIEWER",
+      "timestamp": "2026-08-02T08:11:56Z"
+    },
+    {
+      "agent_identifier": "/root/comment_quality_review",
+      "decision": "BLOCKING_FAIL",
+      "input_digest": "sha256:8a31c48c73f94a1fd71b9ddf50baf6cf8da4cdcc62d9d026198f5a3d2a3ce097",
+      "model_runtime_identifier": "OpenAI Codex GPT-5",
+      "output_digest": "sha256:ec8bd3e6270681338248881fd42235b09719b71f21bba92280a509e532711a7a",
+      "review_id": "2026-08-02-praxis-ai-194-quality-review-attempt-2",
+      "review_role": "QUALITY_REVIEWER",
+      "timestamp": "2026-08-02T08:12:30Z"
+    },
+    {
+      "agent_identifier": "/root/pr76_final_risk",
+      "decision": "BLOCKING_FAIL",
+      "input_digest": "sha256:8a31c48c73f94a1fd71b9ddf50baf6cf8da4cdcc62d9d026198f5a3d2a3ce097",
+      "model_runtime_identifier": "OpenAI Codex GPT-5",
+      "output_digest": "sha256:51c8bfe440ec8f2bbf7afe357c465c4d6d59db83feede0d8e6d8772daa3812ba",
+      "review_id": "2026-08-02-praxis-ai-194-risk-review-attempt-2",
+      "review_role": "RISK_REVIEWER",
+      "timestamp": "2026-08-02T08:14:10Z"
+    }
+  ],
+  "ruleset_version": "0.1"
+}

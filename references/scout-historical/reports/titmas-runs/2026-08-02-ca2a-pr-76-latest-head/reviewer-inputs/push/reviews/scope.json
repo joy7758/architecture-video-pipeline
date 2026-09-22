@@ -1,0 +1,16 @@
+{
+  "schema_version": "0.1",
+  "review_id": "2026-08-02-ca2a-pr-76-push-scope-review",
+  "agent_identifier": "/root/push_scope_review",
+  "model_runtime_identifier": "OpenAI Codex GPT-5",
+  "review_role": "SCOPE_REVIEWER",
+  "input_digest": "sha256:0f059a8d6ce43e0dced5c3bdb6eac023c2dfa8859ca0833475b2718c166b7f09",
+  "output_digest": "sha256:14799b3ec4da6d8fab0572cf25157f722d00db9cfeebc691ec37b095299f1ea2",
+  "decision": "PASS",
+  "timestamp": "2026-08-02T06:26:16Z",
+  "ruleset_version": "0.1",
+  "reason_codes": ["TEST_AND_DOCS_ONLY", "NO_PROTOCOL_OR_DEPENDENCY_CHANGE", "FORK_BRANCH_ONLY"],
+  "findings": ["The contribution remains limited to ACTION-008 conformance coverage and its README row; the upstream merge contributes no additional feature diff and the requested write targets only the existing personal-fork branch."],
+  "blocking_reasons": [],
+  "evidence_references": ["git-diff:upstream/main..0a1ffa6710d25f58515b2dca7e0619e134c0a43e#sha256:82688a11ed0f103c75cabc80f6c7e16fbd51bee0766a52043d0894ff2d066731", "tests/conformance/test_profile_conformance.py", "tests/conformance/README.md"]
+}

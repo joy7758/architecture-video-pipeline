@@ -1,0 +1,34 @@
+name: Integration request
+description: Request an experimental framework or service Adapter profile
+title: "[Integration] "
+labels: ["adapter", "experimental"]
+body:
+  - type: input
+    id: source
+    attributes:
+      label: Official source, version and license
+    validations:
+      required: true
+  - type: textarea
+    id: mapping
+    attributes:
+      label: Source semantics and proposed TITMAS bindings
+    validations:
+      required: true
+  - type: textarea
+    id: unknowns
+    attributes:
+      label: Unsupported, unknown and conflicting fields
+    validations:
+      required: true
+  - type: checkboxes
+    id: nonclaims
+    attributes:
+      label: Non-claims
+      options:
+        - label: Mapping does not claim adoption.
+          required: true
+        - label: Observation does not claim Evidence.
+          required: true
+        - label: The Adapter does not replace the source Runtime.
+          required: true

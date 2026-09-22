@@ -1,0 +1,965 @@
+{
+  "schema_version": "review-contract.v1",
+  "job_id": "guanque-pilot",
+  "revision": "20260923-r1",
+  "scope": "Local review of original guanque pilot and current correction requirements; old video still FAIL, no new model/render acceptance.",
+  "source_checklist": {
+    "path": "artifacts/reverse-audit-20260922-r1/acceptance-checklist.json",
+    "sha256": "3bf84ac9190bc38147059e97868f4a37daa74dc2d89bce2bcdacf56d61661069"
+  },
+  "input_bindings": [
+    {
+      "id": "photo01",
+      "path": "docs/references/guanque-user-01.png",
+      "sha256": "e03f001b1ab6e31eea997b2fe8ce346237276e033648b2a4b261fdb5afec32d0",
+      "role": "reference",
+      "kind": "image"
+    },
+    {
+      "id": "photo02",
+      "path": "docs/references/guanque-user-02.png",
+      "sha256": "d6fe50eb5e20dd789a2cc95925c0a3ed21b2f8f927e3a248155fd8dc8ad9c8e3",
+      "role": "reference",
+      "kind": "image"
+    },
+    {
+      "id": "source_corrections",
+      "path": "docs/user-reference.md",
+      "sha256": "53d5fb6d6a73055e90225b3908eeb72ba25391af030c8e06c477d8da4eb3f78e",
+      "role": "requirements",
+      "kind": "document"
+    },
+    {
+      "id": "reported_dimensions",
+      "path": "docs/user-reference.md",
+      "sha256": "53d5fb6d6a73055e90225b3908eeb72ba25391af030c8e06c477d8da4eb3f78e",
+      "role": "requirements",
+      "kind": "document"
+    },
+    {
+      "id": "r3",
+      "path": "docs/photo-comparison-r3.md",
+      "sha256": "260375bdf56aa52fdcade201cf370e4bfdbdd342fbf024640234e8e78da3147c",
+      "role": "requirements",
+      "kind": "document"
+    },
+    {
+      "id": "project_visual_state",
+      "path": "docs/governance/project-intake.json",
+      "sha256": "e154b5a85abe5dfa160dd5cf1c6931ae1827fd1b284c6182524c01dc4ae3d625",
+      "role": "requirements",
+      "kind": "document"
+    },
+    {
+      "id": "stale_provenance",
+      "path": "jobs/guanque-pilot/references/provenance.md",
+      "sha256": "120caef8193bd7ca6cbe3a2a21d93a4091459b34a17e30a958208f77f2efe4c5",
+      "role": "source",
+      "kind": "document"
+    },
+    {
+      "id": "skill",
+      "path": "vendor/architecture-skill/SKILL.md",
+      "sha256": "deb2d1687f5b7a7b4845cbbbeb799087990a06ff451d25f546e0546cb0ad825a",
+      "role": "requirements",
+      "kind": "document"
+    },
+    {
+      "id": "upstream_demo",
+      "path": "vendor/threejs-architecture-effects/assets/preview.mp4",
+      "sha256": "6039c15e6f03df0801ca730ebd4fc1c8f897950c0bf6b17571fc168ac93fe712",
+      "role": "reference",
+      "kind": "video"
+    },
+    {
+      "id": "delivered_video",
+      "path": "jobs/guanque-pilot/delivery/guanque-pilot-preview.mp4",
+      "sha256": "37ce5076a7c7cb9342df309eb69a00bd5c35b5684c0606079aaa69ea6472eeb6",
+      "role": "output",
+      "kind": "video"
+    },
+    {
+      "id": "prior_visual",
+      "path": "artifacts/reverse-audit-20260922-r1/frozen/jobs/guanque-pilot/qa/visual-review.json",
+      "sha256": "bf7c7a921721df246bb712f3e536f88cee306df76e77f6bf2b00a5e40f7e5a0f",
+      "role": "source",
+      "kind": "document"
+    },
+    {
+      "id": "prior_checks",
+      "path": "artifacts/reverse-audit-20260922-r1/frozen/jobs/guanque-pilot/checks.json",
+      "sha256": "30e642742cd313d806bd396927aa44b74d7b81ae84b29851033d54baab808dbe",
+      "role": "source",
+      "kind": "document"
+    },
+    {
+      "id": "prior_status",
+      "path": "artifacts/reverse-audit-20260922-r1/frozen/jobs/guanque-pilot/qa/final-status.json",
+      "sha256": "c5c43b3789cb95cbc8d1f09ad94e5913b70b7df8d140e3ae73d56be01b3bdb9a",
+      "role": "source",
+      "kind": "document"
+    },
+    {
+      "id": "prior_model_plan",
+      "path": "artifacts/reverse-audit-20260922-r1/frozen/jobs/guanque-pilot/model-plan.json",
+      "sha256": "5d754eb806d22e5fc5716c4945f9a14984360dfc6f04aa67015281438302dcda",
+      "role": "source",
+      "kind": "document"
+    },
+    {
+      "id": "film_plan",
+      "path": "pipeline/video/guanque-pilot-wide.json",
+      "sha256": "7516ea85624189a161beb217e5ee3e869b7a2607c8930decdc08760c142e4a0c",
+      "role": "camera",
+      "kind": "document"
+    },
+    {
+      "id": "titmas_discovery",
+      "path": "docs/governance/titmas-service-discovery.json",
+      "sha256": "81a33cf2fdb43c382e425daea29ce1d29ff6c8c0163c8513a1f8e080a5debb5f",
+      "role": "source",
+      "kind": "document"
+    },
+    {
+      "id": "titmas_scope",
+      "path": "artifacts/reverse-audit-20260922-r1/checklist-evidence/pipeline/titmas-handoff.json",
+      "sha256": "58a0bc03ab3a6711b22d23249a8e6406e854c6dc855e31a86f1bc931efcbea03",
+      "role": "source",
+      "kind": "document"
+    },
+    {
+      "id": "evaluator",
+      "path": "artifacts/reverse-audit-20260922-r1/frozen/pipeline/lib.mjs",
+      "sha256": "ee59002335f82197f1156d1b6944f5385922f47d59ddfab1d0071bf9ce9df72d",
+      "role": "source",
+      "kind": "document"
+    },
+    {
+      "id": "user_rejection",
+      "path": "artifacts/reverse-audit-20260922-r1/acceptance-checklist.json",
+      "sha256": "3bf84ac9190bc38147059e97868f4a37daa74dc2d89bce2bcdacf56d61661069",
+      "role": "requirements",
+      "kind": "document"
+    },
+    {
+      "id": "current-request",
+      "path": "jobs/guanque-pilot/request.json",
+      "sha256": "a0ef38da1a439a6bd821bc0e459a1a2c4afffff41bb0ea77ba229dc87606cf7b",
+      "role": "source",
+      "kind": "document"
+    },
+    {
+      "id": "current-sources",
+      "path": "jobs/guanque-pilot/sources.json",
+      "sha256": "a9841495b4c7db87a5d69e9085ff77a477ce83de2fda5a29a35eb1ab62195662",
+      "role": "source",
+      "kind": "document"
+    },
+    {
+      "id": "current-model-plan",
+      "path": "jobs/guanque-pilot/model-plan.json",
+      "sha256": "5d754eb806d22e5fc5716c4945f9a14984360dfc6f04aa67015281438302dcda",
+      "role": "model",
+      "kind": "document"
+    },
+    {
+      "id": "current-video-manifest",
+      "path": "jobs/guanque-pilot/video-manifest.json",
+      "sha256": "17f17e0fbd0b25f6d08944b62828e3bce42ba7723298dbf615a163332e81941f",
+      "role": "source",
+      "kind": "document"
+    },
+    {
+      "id": "current-checks",
+      "path": "jobs/guanque-pilot/checks.json",
+      "sha256": "6335e49e3780afd2648db0ea08f1316567fbd7b1b05bd856501c3a997124a4fc",
+      "role": "source",
+      "kind": "document"
+    },
+    {
+      "id": "current-code-0",
+      "path": "app/src/App.tsx",
+      "sha256": "b17b23f42fbb567b9340c80821f9043b67f6508e2183f4c0ffc5c2a2cdc68d76",
+      "role": "model",
+      "kind": "source"
+    },
+    {
+      "id": "current-code-1",
+      "path": "app/src/PagodaThreeScene.tsx",
+      "sha256": "d4ee3e54ffc6acc44f693f6b36cd48943d747c6a26e2bd0abed7e1873330bd68",
+      "role": "model",
+      "kind": "source"
+    },
+    {
+      "id": "current-code-2",
+      "path": "app/src/export-contract.ts",
+      "sha256": "515cd03ac3a0cbebbed27078bb52baf434e989bdb602c002324493484f63f031",
+      "role": "model",
+      "kind": "source"
+    },
+    {
+      "id": "current-code-4",
+      "path": "app/src/heritage/architecture.ts",
+      "sha256": "c4f8fe2d48b6bbcac8a0c781b7a77c802494e0488a550ce903fe98dd9c9f701f",
+      "role": "model",
+      "kind": "source"
+    },
+    {
+      "id": "current-code-5",
+      "path": "app/src/heritage/builder.ts",
+      "sha256": "61cee6b0b70352e5b0a330fd7975757f882c57ab49cb6a25e981b72a2c085d7f",
+      "role": "model",
+      "kind": "source"
+    },
+    {
+      "id": "current-code-6",
+      "path": "app/src/heritage/facade.ts",
+      "sha256": "a1a0f24134c3fe991eeb8da6fa6fa0f3647e27a750fae404b2722e8b80073ae4",
+      "role": "model",
+      "kind": "source"
+    },
+    {
+      "id": "current-code-7",
+      "path": "app/src/heritage/guanque.ts",
+      "sha256": "5b1b5462f680a66d820bca7bc16529944ba3dc3a62ef7d4d12f2f407c914662c",
+      "role": "model",
+      "kind": "source"
+    },
+    {
+      "id": "current-code-8",
+      "path": "app/src/heritage/materials.ts",
+      "sha256": "d55067e72813ba4dc94f17a34ed3a43b92c60c8762f92006f6a38a59e1d3f5ce",
+      "role": "model",
+      "kind": "source"
+    },
+    {
+      "id": "current-code-9",
+      "path": "app/src/heritage/roof.ts",
+      "sha256": "2268b7eff4f1437448c04d21dc4050b7bc0ee415ce94073dd367620abbfb3ddc",
+      "role": "model",
+      "kind": "source"
+    },
+    {
+      "id": "current-code-10",
+      "path": "app/src/main.tsx",
+      "sha256": "1411490ded30f203ea8d24183d9adf5c734984f1d6df8934f7fde5c56745eab5",
+      "role": "model",
+      "kind": "source"
+    },
+    {
+      "id": "current-code-11",
+      "path": "app/src/style.css",
+      "sha256": "762d60c8bbd596163251b2a6756a4823fed9ddbfa9d15bbaec4d261cbd6a9bf2",
+      "role": "model",
+      "kind": "source"
+    },
+    {
+      "id": "current-code-12",
+      "path": "app/src/timeline.ts",
+      "sha256": "43b99e428c7f2a3768f1cb31f95a52d7f1b149b81bd8c73c3187a4a62e4d7da1",
+      "role": "model",
+      "kind": "source"
+    },
+    {
+      "id": "app-package.json",
+      "path": "app/package.json",
+      "sha256": "97d2be15eb4d146fe7c031fecc71b3013882fee2056a481ef01cc0bc251e718f",
+      "role": "model",
+      "kind": "source"
+    },
+    {
+      "id": "app-package-lock.json",
+      "path": "app/package-lock.json",
+      "sha256": "9fb276d39c7a1ef6a6c2c40e569518a3a2fc0400bff183f79715b3ad28fc9830",
+      "role": "model",
+      "kind": "source"
+    },
+    {
+      "id": "app-tsconfig.json",
+      "path": "app/tsconfig.json",
+      "sha256": "da31f78ff412bdf1b9d8230f63eb99d74452f118dd2c02172776a521b762d3f8",
+      "role": "model",
+      "kind": "source"
+    },
+    {
+      "id": "app-vite.config.ts",
+      "path": "app/vite.config.ts",
+      "sha256": "0ea84b4e2909b04e4c1cb1b92392a9f85bcb46605472763b15935d3498ba8ed3",
+      "role": "model",
+      "kind": "source"
+    },
+    {
+      "id": "source-snapshot",
+      "path": "artifacts/pipeline/source-snapshots/2026-09-22T12-27-10-638Z-0fb796b3/source-manifest.json",
+      "sha256": "25504eedabbe8be7e75e463ffc367eb54f9169756c7cd0bed2b41d8c5d4a5a64",
+      "role": "source",
+      "kind": "document"
+    },
+    {
+      "id": "render-run",
+      "path": "artifacts/pipeline/guanque-pilot/2026-09-22T12-33-26-809Z-film-0152d1ca/run.json",
+      "sha256": "156d939327f7131ff400d8c05cc9767e9034fb24fdc358ef366da8e52c60350b",
+      "role": "source",
+      "kind": "document"
+    },
+    {
+      "id": "actual-video",
+      "path": "artifacts/pipeline/guanque-pilot/2026-09-22T12-33-26-809Z-film-0152d1ca/guanque-pilot.mp4",
+      "sha256": "37ce5076a7c7cb9342df309eb69a00bd5c35b5684c0606079aaa69ea6472eeb6",
+      "role": "output",
+      "kind": "video"
+    },
+    {
+      "id": "delivered-complete-frame",
+      "path": "artifacts/reverse-audit-20260922-r1/frames/delivered-000.0s.png",
+      "sha256": "731d54ae49b2c4105ad2766a2a804234e058f2321b85c1394b02263943729ce3",
+      "role": "output",
+      "kind": "image"
+    },
+    {
+      "id": "snapshot-file-0",
+      "role": "source",
+      "kind": "source",
+      "path": "artifacts/pipeline/source-snapshots/2026-09-22T12-27-10-638Z-0fb796b3/app/index.html",
+      "sha256": "0e562ea6e6ac62aea27fa8b100a3b62de4095500c8df5cf049fb2bddce2c4468"
+    },
+    {
+      "id": "snapshot-file-1",
+      "role": "source",
+      "kind": "source",
+      "path": "artifacts/pipeline/source-snapshots/2026-09-22T12-27-10-638Z-0fb796b3/app/LICENSE",
+      "sha256": "f8457dda7413c93ba7257cecd2d70e755c1f7025bd852c5d5ab1dbf5e225ebcb"
+    },
+    {
+      "id": "snapshot-file-2",
+      "role": "source",
+      "kind": "source",
+      "path": "artifacts/pipeline/source-snapshots/2026-09-22T12-27-10-638Z-0fb796b3/app/package-lock.json",
+      "sha256": "9fb276d39c7a1ef6a6c2c40e569518a3a2fc0400bff183f79715b3ad28fc9830"
+    },
+    {
+      "id": "snapshot-file-3",
+      "role": "source",
+      "kind": "source",
+      "path": "artifacts/pipeline/source-snapshots/2026-09-22T12-27-10-638Z-0fb796b3/app/package.json",
+      "sha256": "97d2be15eb4d146fe7c031fecc71b3013882fee2056a481ef01cc0bc251e718f"
+    },
+    {
+      "id": "snapshot-file-4",
+      "role": "source",
+      "kind": "source",
+      "path": "artifacts/pipeline/source-snapshots/2026-09-22T12-27-10-638Z-0fb796b3/app/scripts/check-model.mjs",
+      "sha256": "d928a629b675f5a5afc13af15fdb1fe4434db01899aeda65afc24a5ff0bc7a37"
+    },
+    {
+      "id": "snapshot-file-5",
+      "role": "source",
+      "kind": "source",
+      "path": "artifacts/pipeline/source-snapshots/2026-09-22T12-27-10-638Z-0fb796b3/app/src/App.tsx",
+      "sha256": "b17b23f42fbb567b9340c80821f9043b67f6508e2183f4c0ffc5c2a2cdc68d76"
+    },
+    {
+      "id": "snapshot-file-6",
+      "role": "source",
+      "kind": "source",
+      "path": "artifacts/pipeline/source-snapshots/2026-09-22T12-27-10-638Z-0fb796b3/app/src/export-contract.ts",
+      "sha256": "515cd03ac3a0cbebbed27078bb52baf434e989bdb602c002324493484f63f031"
+    },
+    {
+      "id": "snapshot-file-7",
+      "role": "source",
+      "kind": "source",
+      "path": "artifacts/pipeline/source-snapshots/2026-09-22T12-27-10-638Z-0fb796b3/app/src/heritage/architecture.ts",
+      "sha256": "c4f8fe2d48b6bbcac8a0c781b7a77c802494e0488a550ce903fe98dd9c9f701f"
+    },
+    {
+      "id": "snapshot-file-8",
+      "role": "source",
+      "kind": "source",
+      "path": "artifacts/pipeline/source-snapshots/2026-09-22T12-27-10-638Z-0fb796b3/app/src/heritage/builder.ts",
+      "sha256": "61cee6b0b70352e5b0a330fd7975757f882c57ab49cb6a25e981b72a2c085d7f"
+    },
+    {
+      "id": "snapshot-file-9",
+      "role": "source",
+      "kind": "source",
+      "path": "artifacts/pipeline/source-snapshots/2026-09-22T12-27-10-638Z-0fb796b3/app/src/heritage/facade.ts",
+      "sha256": "a1a0f24134c3fe991eeb8da6fa6fa0f3647e27a750fae404b2722e8b80073ae4"
+    },
+    {
+      "id": "snapshot-file-10",
+      "role": "source",
+      "kind": "source",
+      "path": "artifacts/pipeline/source-snapshots/2026-09-22T12-27-10-638Z-0fb796b3/app/src/heritage/guanque.ts",
+      "sha256": "5b1b5462f680a66d820bca7bc16529944ba3dc3a62ef7d4d12f2f407c914662c"
+    },
+    {
+      "id": "snapshot-file-11",
+      "role": "source",
+      "kind": "source",
+      "path": "artifacts/pipeline/source-snapshots/2026-09-22T12-27-10-638Z-0fb796b3/app/src/heritage/materials.ts",
+      "sha256": "d55067e72813ba4dc94f17a34ed3a43b92c60c8762f92006f6a38a59e1d3f5ce"
+    },
+    {
+      "id": "snapshot-file-12",
+      "role": "source",
+      "kind": "source",
+      "path": "artifacts/pipeline/source-snapshots/2026-09-22T12-27-10-638Z-0fb796b3/app/src/heritage/roof.ts",
+      "sha256": "2268b7eff4f1437448c04d21dc4050b7bc0ee415ce94073dd367620abbfb3ddc"
+    },
+    {
+      "id": "snapshot-file-13",
+      "role": "source",
+      "kind": "source",
+      "path": "artifacts/pipeline/source-snapshots/2026-09-22T12-27-10-638Z-0fb796b3/app/src/main.tsx",
+      "sha256": "1411490ded30f203ea8d24183d9adf5c734984f1d6df8934f7fde5c56745eab5"
+    },
+    {
+      "id": "snapshot-file-14",
+      "role": "source",
+      "kind": "source",
+      "path": "artifacts/pipeline/source-snapshots/2026-09-22T12-27-10-638Z-0fb796b3/app/src/PagodaThreeScene.tsx",
+      "sha256": "d4ee3e54ffc6acc44f693f6b36cd48943d747c6a26e2bd0abed7e1873330bd68"
+    },
+    {
+      "id": "snapshot-file-15",
+      "role": "source",
+      "kind": "source",
+      "path": "artifacts/pipeline/source-snapshots/2026-09-22T12-27-10-638Z-0fb796b3/app/src/style.css",
+      "sha256": "762d60c8bbd596163251b2a6756a4823fed9ddbfa9d15bbaec4d261cbd6a9bf2"
+    },
+    {
+      "id": "snapshot-file-16",
+      "role": "source",
+      "kind": "source",
+      "path": "artifacts/pipeline/source-snapshots/2026-09-22T12-27-10-638Z-0fb796b3/app/src/timeline.ts",
+      "sha256": "43b99e428c7f2a3768f1cb31f95a52d7f1b149b81bd8c73c3187a4a62e4d7da1"
+    },
+    {
+      "id": "snapshot-file-17",
+      "role": "source",
+      "kind": "source",
+      "path": "artifacts/pipeline/source-snapshots/2026-09-22T12-27-10-638Z-0fb796b3/app/tsconfig.json",
+      "sha256": "da31f78ff412bdf1b9d8230f63eb99d74452f118dd2c02172776a521b762d3f8"
+    },
+    {
+      "id": "snapshot-file-18",
+      "role": "source",
+      "kind": "source",
+      "path": "artifacts/pipeline/source-snapshots/2026-09-22T12-27-10-638Z-0fb796b3/app/vite.config.ts",
+      "sha256": "0ea84b4e2909b04e4c1cb1b92392a9f85bcb46605472763b15935d3498ba8ed3"
+    }
+  ],
+  "criteria": [
+    {
+      "id": "AF-001",
+      "group": "architectural_fidelity",
+      "required": true,
+      "external": false,
+      "severity": "P1",
+      "title": "用户否定与当前资料纠错进入所有下游工位",
+      "expected": [
+        "新资料包必须包含当前用户纠错及R3状态，标明旧provenance被何版本取代",
+        "旧艺术预览PASS保持历史范围，不能压过当前VISUAL_REVIEW_REQUIRED或用户否定",
+        "同建筑出现新增纠错时，模型方案、视觉检查、视频交付均明确失效或待复核"
+      ],
+      "input_ids": [
+        "user_rejection",
+        "source_corrections",
+        "project_visual_state",
+        "stale_provenance",
+        "current-model-plan"
+      ],
+      "required_evidence_roles": [
+        "requirements",
+        "model"
+      ]
+    },
+    {
+      "id": "AF-002",
+      "group": "architectural_fidelity",
+      "required": true,
+      "external": false,
+      "severity": "P1",
+      "title": "照片、文字事实与艺术选择可追溯",
+      "expected": [
+        "将每个关键形制和尺寸标为observed、source_reported、artistic_choice或unknown",
+        "用户转述的73.9m、台基/楼身与开间资料需保留来源级别；缺原始附件不能升格为实测",
+        "两张相近正面斜视不代表背面、内部或所有方位已有依据"
+      ],
+      "input_ids": [
+        "photo01",
+        "photo02",
+        "reported_dimensions",
+        "r3",
+        "source_corrections",
+        "current-model-plan",
+        "delivered-complete-frame",
+        "actual-video"
+      ],
+      "required_evidence_roles": [
+        "reference",
+        "output",
+        "requirements"
+      ]
+    },
+    {
+      "id": "AF-003",
+      "group": "architectural_fidelity",
+      "required": true,
+      "external": false,
+      "severity": "P1",
+      "title": "整体轮廓、三层四檐与竖向层次",
+      "expected": [
+        "先固定完成态轮廓再做材质与镜头",
+        "按原图逐项核查三组主要明层、四道主要檐线、上下平座及低暗构架带关系",
+        "不能把三层重复大厅或“像鹳雀楼”作为合格依据"
+      ],
+      "input_ids": [
+        "photo01",
+        "photo02",
+        "r3",
+        "reported_dimensions",
+        "source_corrections",
+        "current-model-plan",
+        "delivered-complete-frame",
+        "actual-video"
+      ],
+      "required_evidence_roles": [
+        "reference",
+        "output",
+        "requirements"
+      ]
+    },
+    {
+      "id": "AF-004",
+      "group": "architectural_fidelity",
+      "required": true,
+      "external": false,
+      "severity": "P1",
+      "title": "主顶、抱厦、腰檐坡度及接缝",
+      "expected": [
+        "核查可见瓦坡而非隐藏坡段，主顶高于抱厦的关系由原图支持",
+        "主顶与抱厦交接、谷线、屋面厚度和飞檐曲线需在近景可解释",
+        "照片R3像素图谱仅供相对关系，不当作测绘标高"
+      ],
+      "input_ids": [
+        "photo01",
+        "photo02",
+        "r3",
+        "source_corrections",
+        "current-model-plan",
+        "delivered-complete-frame",
+        "actual-video"
+      ],
+      "required_evidence_roles": [
+        "reference",
+        "output",
+        "requirements"
+      ]
+    },
+    {
+      "id": "AF-005",
+      "group": "architectural_fidelity",
+      "required": true,
+      "external": false,
+      "severity": "P1",
+      "title": "平座、承托带、开间与层间比例",
+      "expected": [
+        "核查两层平座近等宽、顶平座与顶檐相对宽度及支承带连续性",
+        "逐项核对下/中层7×5与顶层5×3开间的资料属性和模型映射",
+        "避免层间“细脖子”与平座无承托；不把回归常量断言当作照片保真证明"
+      ],
+      "input_ids": [
+        "photo01",
+        "photo02",
+        "r3",
+        "reported_dimensions",
+        "source_corrections",
+        "current-model-plan",
+        "delivered-complete-frame",
+        "actual-video"
+      ],
+      "required_evidence_roles": [
+        "reference",
+        "output",
+        "requirements"
+      ]
+    },
+    {
+      "id": "AF-006",
+      "group": "architectural_fidelity",
+      "required": true,
+      "external": false,
+      "severity": "P1",
+      "title": "台基、月台、登台阶和栏杆比例/搭接",
+      "expected": [
+        "按照片区别长短不同登台阶、前伸平台及低楼身台基",
+        "检查台阶后缘、栏杆、侧梯与台基的可见连接及遮挡",
+        "几何不穿插只证明连接正确；仍须单独比较照片中的宽高与轮廓关系"
+      ],
+      "input_ids": [
+        "photo01",
+        "photo02",
+        "r3",
+        "source_corrections",
+        "current-model-plan",
+        "delivered-complete-frame",
+        "actual-video"
+      ],
+      "required_evidence_roles": [
+        "reference",
+        "output",
+        "requirements"
+      ]
+    },
+    {
+      "id": "AF-007",
+      "group": "architectural_fidelity",
+      "required": true,
+      "external": false,
+      "severity": "P1",
+      "title": "门窗、回廊、牌匾位置与可辨识性",
+      "expected": [
+        "对照朱褐隔扇、后退暗部、向上起拱门头及完整底层回廊",
+        "入口横匾与顶层竖匾仅用已定位证据，检查层位、方向与可见尺度",
+        "不能用同款白色栅栏替代不同楼层立面"
+      ],
+      "input_ids": [
+        "photo01",
+        "photo02",
+        "r3",
+        "source_corrections",
+        "current-model-plan",
+        "delivered-complete-frame",
+        "actual-video"
+      ],
+      "required_evidence_roles": [
+        "reference",
+        "output",
+        "requirements"
+      ]
+    },
+    {
+      "id": "AF-008",
+      "group": "architectural_fidelity",
+      "required": true,
+      "external": false,
+      "severity": "P1",
+      "title": "柱联方位、未见立面及装饰资料不足",
+      "expected": [
+        "R3记载柱联文本有报道，但挂置立面与西门归属待核；必须补定位证据或从验收范围中显式处理",
+        "未见背面、其他方向题字与隐蔽部位保持UNKNOWN，不能镜像复制当作事实",
+        "关键可见部位的证据缺口未解决不得把整个外观标为PASS"
+      ],
+      "input_ids": [
+        "r3",
+        "reported_dimensions",
+        "photo01",
+        "photo02",
+        "source_corrections",
+        "current-model-plan",
+        "delivered-complete-frame",
+        "actual-video"
+      ],
+      "required_evidence_roles": [
+        "reference",
+        "output",
+        "requirements"
+      ]
+    },
+    {
+      "id": "AF-009",
+      "group": "architectural_fidelity",
+      "required": true,
+      "external": false,
+      "severity": "P1",
+      "title": "屋瓦、斗栱彩画、屋脊鸱吻与材料观感",
+      "expected": [
+        "依据实景对照灰青瓦与绿剪边、木色立面、石台和栏杆的颜色/粗糙度/尺度感",
+        "记录斗栱彩画、屋脊鸱吻及格心的实际差异；不得仅以“艺术简化”关闭用户指出的偏差",
+        "先修可见几何、屋面厚度和支承，再加装饰密度；不能以雾、亮度或滤镜遮盖"
+      ],
+      "input_ids": [
+        "photo01",
+        "photo02",
+        "r3",
+        "skill",
+        "source_corrections",
+        "current-model-plan",
+        "delivered-complete-frame",
+        "actual-video"
+      ],
+      "required_evidence_roles": [
+        "reference",
+        "output",
+        "requirements"
+      ]
+    },
+    {
+      "id": "RD-001",
+      "group": "reference_demo_match",
+      "required": true,
+      "external": false,
+      "severity": "P1",
+      "title": "冻结GitHub演示与明确可迁移的表现规则",
+      "expected": [
+        "固定指定skill版本、演示原文件hash及已观察关键帧",
+        "从演示分别记录构件出现方式、运动距离、节奏、镜头、光照与画面组织",
+        "把楼型差异与表现差异分开，不能要求鹳雀楼复制钟楼建筑，也不能以用了skill名称替代效果核对"
+      ],
+      "input_ids": [
+        "upstream_demo",
+        "skill",
+        "user_rejection",
+        "actual-video",
+        "film_plan"
+      ],
+      "required_evidence_roles": [
+        "reference",
+        "output",
+        "camera"
+      ]
+    },
+    {
+      "id": "RD-002",
+      "group": "reference_demo_match",
+      "required": true,
+      "external": false,
+      "severity": "P1",
+      "title": "施工与拆解动作语义匹配",
+      "expected": [
+        "按演示观察确认逐构件/逐砌层出现、行程、停留和装配顺序，并映射到新镜头脚本",
+        "当前完成态→倒放→重建脚本是已知选择，必须单独检验是否满足用户要求的上游效果",
+        "如果需要真正分层爆炸拆解，另订构件组位移与层间关系；倒放不能直接签成已实现"
+      ],
+      "input_ids": [
+        "upstream_demo",
+        "skill",
+        "film_plan",
+        "prior_model_plan",
+        "actual-video"
+      ],
+      "required_evidence_roles": [
+        "reference",
+        "output",
+        "camera"
+      ]
+    },
+    {
+      "id": "RD-003",
+      "group": "reference_demo_match",
+      "required": true,
+      "external": false,
+      "severity": "P1",
+      "title": "构件粒度、支承依赖与运动连续性",
+      "expected": [
+        "基座、框架、砌筑、楼面、上层、檐瓦、装饰需有清楚依赖",
+        "区别真实承托楼面与晚安装屋面，检查上层是否在支承形成前悬空",
+        "逐块运动的可见粒度与演示对照；整层突现/整体缩放/渐隐不自动等价"
+      ],
+      "input_ids": [
+        "upstream_demo",
+        "skill",
+        "prior_visual",
+        "actual-video",
+        "film_plan"
+      ],
+      "required_evidence_roles": [
+        "reference",
+        "output",
+        "camera"
+      ]
+    },
+    {
+      "id": "RD-004",
+      "group": "reference_demo_match",
+      "required": true,
+      "external": false,
+      "severity": "P1",
+      "title": "镜头节奏、主体占比与细节可读性",
+      "expected": [
+        "分镜对照上游展示节奏、观看角度、主体尺寸与近景机会",
+        "竖屏规格可保留，但必须证明关键构件在最终画幅中可看清",
+        "避免只扩大取景而让建筑主体过小；不能只检查没裁切就签镜头效果PASS"
+      ],
+      "input_ids": [
+        "upstream_demo",
+        "film_plan",
+        "delivered_video",
+        "actual-video"
+      ],
+      "required_evidence_roles": [
+        "reference",
+        "output",
+        "camera"
+      ]
+    },
+    {
+      "id": "RD-005",
+      "group": "reference_demo_match",
+      "required": true,
+      "external": false,
+      "severity": "P1",
+      "title": "演示中的材质、灯光与成品微缩建筑质感",
+      "expected": [
+        "提炼上游不同材质的色彩、粗糙度、微表面和地面接触关系，再用鹳雀楼资料约束外观",
+        "檐下细节可读且有接触阴影，亮度不能吞没细部",
+        "具体颜色/曝光/镜头参数属于待比对的艺术参数，当前不填虚构相似度"
+      ],
+      "input_ids": [
+        "upstream_demo",
+        "skill",
+        "delivered_video",
+        "actual-video",
+        "film_plan"
+      ],
+      "required_evidence_roles": [
+        "reference",
+        "output",
+        "camera"
+      ]
+    },
+    {
+      "id": "TE-001",
+      "group": "technical",
+      "required": true,
+      "external": false,
+      "severity": "P1",
+      "title": "完整输入依赖与纠错失效传播",
+      "expected": [
+        "来源、用户纠错、skill、演示、验收合同、模型计划、源码快照、镜头、视频及报告形成可追溯hash图",
+        "验证嵌套的provenance.evidence/source_snapshot/render_evidence及其下游有效性",
+        "原始资料更新、用户否定或模型/镜头变更后相关视觉/视频审批失效，并保留旧证据"
+      ],
+      "input_ids": [
+        "evaluator",
+        "source_corrections",
+        "project_visual_state",
+        "prior_checks",
+        "current-sources",
+        "source-snapshot",
+        "render-run",
+        "actual-video"
+      ],
+      "required_evidence_roles": [
+        "source"
+      ]
+    },
+    {
+      "id": "TE-002",
+      "group": "technical",
+      "required": true,
+      "external": false,
+      "severity": "P1",
+      "title": "确定性、装配阴影与实际构建绑定",
+      "expected": [
+        "新源码先检查数值与时序，再验证实际服务bundle来自指定快照",
+        "进度回退、暂停、重播及同帧重访确定；颜色与深度shader同进度",
+        "历史技术PASS仅属于旧视频hash；修订后重新检查受影响项，不改写旧记录"
+      ],
+      "input_ids": [
+        "skill",
+        "prior_checks",
+        "current-sources",
+        "source-snapshot",
+        "render-run",
+        "actual-video"
+      ],
+      "required_evidence_roles": [
+        "source"
+      ]
+    },
+    {
+      "id": "TE-003",
+      "group": "technical",
+      "required": true,
+      "external": false,
+      "severity": "P1",
+      "title": "实际MP4与交付包一致",
+      "expected": [
+        "检查新视频完整解码、宽高、帧率、时长、缺帧/异常帧和静音状态",
+        "打开实际MP4检查全片及关键帧，不能仅审浏览器或PNG",
+        "封面、文案、视频与QA清单绑定同一run；未过门禁交付保持PREVIEW_ONLY"
+      ],
+      "input_ids": [
+        "delivered_video",
+        "prior_checks",
+        "film_plan",
+        "current-sources",
+        "source-snapshot",
+        "render-run",
+        "actual-video"
+      ],
+      "required_evidence_roles": [
+        "source"
+      ]
+    },
+    {
+      "id": "TE-004",
+      "group": "technical",
+      "required": true,
+      "external": false,
+      "severity": "P1",
+      "title": "独立审查、明确问题与状态汇总",
+      "expected": [
+        "建筑保真、演示匹配、技术、TITMAS分别记录；审查者不能是对应施工作者",
+        "逐项issue_id/严重度/证据/处置；任一P1未关闭或必需项UNKNOWN时不得视觉PASS",
+        "总状态必须反映当前用户否定与资料纠错，不能将唯一next_station错误指向TITMAS"
+      ],
+      "input_ids": [
+        "prior_visual",
+        "prior_status",
+        "project_visual_state",
+        "evaluator",
+        "current-sources",
+        "source-snapshot",
+        "render-run",
+        "actual-video"
+      ],
+      "required_evidence_roles": [
+        "source"
+      ]
+    },
+    {
+      "id": "TM-001",
+      "group": "titmas_evidence",
+      "required": true,
+      "external": true,
+      "severity": "P1",
+      "title": "真实服务身份、能力与项目兼容合同",
+      "expected": [
+        "当前保持NOT_CONNECTED/NOT_RUN，前次网络记录不冒称本次存活检查",
+        "接入前取得当前canonical入口、服务版本与真实能力合同，分清公共v1与sandbox/v0.1",
+        "仅使用已获项目授权的实际服务能力，不把本地验证器更名成TITMAS"
+      ],
+      "input_ids": [
+        "titmas_discovery",
+        "titmas_scope"
+      ],
+      "required_evidence_roles": [
+        "source"
+      ]
+    },
+    {
+      "id": "TM-002",
+      "group": "titmas_evidence",
+      "required": true,
+      "external": true,
+      "severity": "P1",
+      "title": "真实回执、独立核验与有限结论",
+      "expected": [
+        "仅在真实服务执行后登记原始回执与独立验证证据，绑定本次来源/模型/镜头/视频/检查摘要",
+        "回执完整性或schema通过不代表建筑真实、照片相似或演示效果匹配",
+        "身份、签名、版本、过期或摘要不匹配必须拒绝；具体机制以实际合同为准，当前不虚构回执"
+      ],
+      "input_ids": [
+        "titmas_scope",
+        "prior_checks"
+      ],
+      "required_evidence_roles": [
+        "source"
+      ]
+    }
+  ]
+}

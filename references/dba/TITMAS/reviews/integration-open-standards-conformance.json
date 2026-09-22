@@ -1,0 +1,19 @@
+{
+  "review_id": "TITMAS-INTEGRATION-REVIEW-OPEN-STANDARDS-CONFORMANCE-01",
+  "review_scope": "OPEN_STANDARDS_AND_CONFORMANCE",
+  "provider": "Volcengine Ark",
+  "requested_model": "deepseek-v4-pro-260425",
+  "returned_model": "deepseek-v4-pro-260425",
+  "reviewer_lineage": "ARK-DEEPSEEKV4PRO-INTEGRATION-CONFORMANCE-20260729",
+  "verdict": "PASS",
+  "findings": [],
+  "blocking": false,
+  "required_correction": [],
+  "limitations": [
+    "SUMMARIZED_FACTS_ONLY",
+    "NO_REPOSITORY_ACCESS",
+    "NO_TEST_EXECUTION",
+    "CONFORMANCE_REVIEW_NE_ADOPTION"
+  ],
+  "authority_effect": "NONE"
+}

@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": ["assignment_id", "participant_ref", "role", "issued_by_ref", "allowed_scope", "prohibited_scope", "valid_from", "expires_at", "revocation_ref"],
+  "properties": {
+    "assignment_id": {"type": "string"},
+    "participant_ref": {"type": "string"},
+    "role": {"enum": ["AGENT_EXPLORER", "AGENT_CONTRIBUTOR", "AGENT_REVIEWER", "AGENT_INTEGRATOR", "AGENT_MAINTENANCE_OPERATOR", "AGENT_REUSE_CONSUMER", "AGENT_RECOMMENDER", "AGENT_ARCHIVIST", "HUMAN_CONSTITUTIONAL_STEWARD"]},
+    "issued_by_ref": {"type": "string"},
+    "allowed_scope": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+    "prohibited_scope": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+    "valid_from": {"type": "string"},
+    "expires_at": {"type": "string"},
+    "revocation_ref": {"type": "string"}
+  },
+  "additionalProperties": false
+}

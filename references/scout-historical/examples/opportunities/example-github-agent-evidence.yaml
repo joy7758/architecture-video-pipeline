@@ -1,0 +1,155 @@
+# EXAMPLE ONLY - NOT A CUSTOMER RECORD OR PRODUCT CLAIM
+# Draft-schema instance for agent-readable, fail-closed model inspection.
+
+_meta:
+  artifact_type: opportunity_object_example
+  example_only: true
+  normative: false
+  machine_validatable: false
+  validation_scope: MANUAL_DRAFT_CONTRACT_CHECK_ONLY
+  schema_validator_available: false
+  schema_document: docs/opportunity-object-schema-v0.1.md
+  contract_id: TITMAS-SCOUT-OPPORTUNITY-V0
+
+schema_version: 0.1-draft
+id: EXAMPLE-GITHUB-AGENT-EVIDENCE-001
+
+source:
+  type: issue
+  reference: https://github.com/openai/openai-agents-python/issues/636
+  timestamp: "2025-05-01T02:34:47Z"
+  retrieved_at: "2026-08-01T03:56:36Z"
+  content_digest: "sha256:9cd28fc1e717949860bbeb4a646c7a6775c3126f3a195a898b59e0a6e575f8a9"
+  trust_level: PUBLIC_SOURCE_OBSERVED
+  admission_status: DISCOVERY_ONLY
+  source_state: closed
+  signal_scope: HISTORICAL_DISCOVERY_SIGNAL_ONLY
+  current_relevance: UNVERIFIED
+  closure_reason_assessed: false
+  usage_constraints:
+    - public_reference_only
+    - not_customer_confirmation
+    - not_authorization
+
+problem: >-
+  Bounded, unvalidated hypothesis: "Agent execution lacks verifiable audit
+  evidence." The cited public sources indicate an auditability and traceability
+  need signal, but they do not establish an ecosystem-wide absence, a real
+  customer requirement, or commercial demand.
+
+domain: public-ai-agent-ecosystem-execution-audit
+
+stakeholders:
+  - role: public_agent_framework_maintainer
+    identifier: null
+    confirmation_status: UNCONFIRMED
+  - role: public_agent_framework_user
+    identifier: null
+    confirmation_status: UNCONFIRMED
+  - role: execution_audit_reviewer
+    identifier: null
+    confirmation_status: UNCONFIRMED
+
+titmas_alignment:
+  status: PENDING
+  capability_refs:
+    - capability_id: ARO
+      assessment_status: PENDING
+      alignment_evidence_refs: []
+    - capability_id: Agent Evidence
+      assessment_status: PENDING
+      alignment_evidence_refs: []
+    - capability_id: Execution Audit
+      assessment_status: PENDING
+      alignment_evidence_refs: []
+  rationale: >-
+    These are candidate conceptual associations requested for evaluation. No
+    compatibility, effectiveness, interoperability, customer-fit, or commercial
+    validation has been performed.
+  evidence_refs: []
+
+evidence:
+  - evidence_id: EV-OPENAI-AGENTS-HITL-ISSUE-636
+    evidence_type: public_github_issue
+    reference: https://github.com/openai/openai-agents-python/issues/636
+    observed_at: "2025-05-01T02:34:47Z"
+    retrieved_at: "2026-08-01T03:56:36Z"
+    content_digest: "sha256:9cd28fc1e717949860bbeb4a646c7a6775c3126f3a195a898b59e0a6e575f8a9"
+    supported_claim: >-
+      A public ecosystem participant requested auditability and traceability for
+      human intervention in agent runs.
+    limitations:
+      - issue_state_is_closed
+      - issue_closure_reason_not_assessed
+      - current_relevance_unverified
+      - not_a_customer_interview
+      - not_evidence_of_commercial_demand
+      - not_proof_of_ecosystem_wide_absence
+  - evidence_id: EV-OPENAI-AGENTS-TRACING-DOC
+    evidence_type: public_repository_document
+    reference: https://github.com/openai/openai-agents-python/blob/21c88f582cdf7a8cbd96c33398eefe166a791d5c/docs/tracing.md
+    observed_at: "2026-08-01T02:37:59Z"
+    retrieved_at: "2026-08-01T03:56:36Z"
+    content_digest: "sha256:bbf7fcc22d84b61fc213ec95b7b241e0997e5a9d192aea097ebeec1d687caf32"
+    supported_claim: >-
+      The referenced SDK documents built-in tracing for agent runs and related
+      execution events.
+    limitations:
+      - tracing_is_not_assumed_to_be_independent_verification
+      - no_cross_framework_comparison_performed
+      - no_titmas_interoperability_test_performed
+
+scoring:
+  model_reference: docs/matching-score-v0.1.md
+  reference_status: UNVERIFIED
+  assessment_status: PENDING
+  status: NOT_COMPUTABLE
+  method: NOT_DEFINED
+  assessed_at: null
+  model_version: null
+  score_value: null
+  dimension_statuses:
+    capability_fit: PENDING
+    evidence_quality: PENDING
+    constraint_fit: PENDING
+    freshness: PENDING
+    risk: PENDING
+  reason_codes:
+    - NO_REAL_VALIDATION_DATA
+    - SCORING_MODEL_UNAVAILABLE
+    - TITMAS_ALIGNMENT_UNVERIFIED
+  match_eligible: false
+  review_required: true
+
+validation:
+  status: NOT_VALIDATED
+  method: MANUAL_DRAFT_CONTRACT_CHECK_ONLY
+  schema_validator_available: false
+  review_eligible: false
+  matching_allowed: false
+  on_failure:
+    lifecycle_status: rejected
+    reason_code: DRAFT_CONTRACT_VALIDATION_FAILED
+    external_action_allowed: false
+
+recommended_action:
+  status: NOT_AUTHORIZED
+  action_type: NONE
+  authoritative: false
+  external_action_allowed: false
+  human_review_required: true
+  reason: >-
+    The object is newly discovered, scoring is not computable, TITMAS alignment
+    is unverified, and no separate review or action authority exists.
+
+status: discovered
+
+truth_boundary:
+  real_customer_identified: false
+  customer_need_validated: false
+  commercial_success_claimed: false
+  commercial_value_validated: false
+  automatic_decision_available: false
+  automatic_outreach_authorized: false
+  product_deliverable_available: false
+  deployment_validated: false

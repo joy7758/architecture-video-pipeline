@@ -1,0 +1,40 @@
+{
+  "schema_version": "0.1",
+  "review_id": "ca2a-pr-76-risk-review",
+  "agent_identifier": "codex-risk-reviewer-ca2a-pr-76",
+  "model_runtime_identifier": "openai-codex/gpt-5",
+  "review_role": "RISK_REVIEWER",
+  "input_digest": "sha256:1b390b08b327c6fe315f7ffe9af007c0454227f753b8249dbf1aed07df30fcd9",
+  "output_digest": "sha256:1455fbdf33683784918fed8e858ac4e682fc811f50b5bc9c56ffb8ac227a47f0",
+  "decision": "PASS",
+  "timestamp": "2026-08-01T17:42:16Z",
+  "ruleset_version": "0.1",
+  "reason_codes": [
+    "INPUT_DIGEST_VERIFIED",
+    "SENSITIVE_MATERIAL_SCAN_PASS",
+    "NO_PERSONAL_DATA_ADDED",
+    "NO_LICENSE_CONFLICT_EVIDENCE",
+    "NO_IDENTITY_CLAIM_OR_IMPERSONATION",
+    "NO_MARKETING_OR_SPAM_CONTENT",
+    "NO_PROTECTED_BRANCH_MODIFICATION",
+    "NO_IRREVERSIBLE_ACTION_REQUESTED",
+    "REQUESTED_ACTION_WITHIN_AGENT_AUTHORIZABLE_SCOPE",
+    "CONTRIBUTOR_CHECK_NOT_A_BLOCKING_RISK",
+    "MAINTAINER_GATE_IS_EXTERNAL_ACCEPTANCE_GATE"
+  ],
+  "findings": [
+    "Sensitive-material scanning passed and no personal data was added.",
+    "No license, dependency, production code, identity claim, impersonation, marketing, or outreach content changed.",
+    "MARK_PR_READY_FOR_REVIEW does not merge, modify the protected upstream branch, delete an asset, disclose a secret, or make a binding commitment.",
+    "Contributor Check HIGH with credential NONE is routing metadata from a successful workflow, not a code, test, security, license, identity, or legal failure.",
+    "The maintainer approval gate controls upstream merge acceptance and is not the internal Ready-for-review authorization gate."
+  ],
+  "blocking_reasons": [],
+  "evidence_references": [
+    "reports/review-runs/2026-08-02-ca2a-pr-76-ready/input.json#sha256:1b390b08b327c6fe315f7ffe9af007c0454227f753b8249dbf1aed07df30fcd9",
+    "https://github.com/agentrust-io/ca2a/pull/76",
+    "https://github.com/agentrust-io/ca2a/actions/runs/30709610843",
+    "https://github.com/agentrust-io/ca2a/actions/runs/30709610909",
+    "git-diff:sha256:ccb41d771598f125319fd76e9cb66cda40636d4677aba05b42104ccf540eb8a4"
+  ]
+}

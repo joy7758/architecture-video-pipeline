@@ -1,0 +1,2421 @@
+{
+  "artifact_type": "TITMAS_SCOUT_DAILY_OPPORTUNITY_REPORT",
+  "candidate_counts": {
+    "duplicate_count": 0,
+    "eligible_count": 58,
+    "excluded_count": 36,
+    "raw_retrieved_count": 94,
+    "selected_count": 5,
+    "tracked_conversion_count": 1,
+    "unique_count": 94
+  },
+  "collection": {
+    "backend": "GH_CLI_AUTHENTICATED",
+    "collection_status": "PARTIAL_ISSUES_ONLY",
+    "command_events": [
+      {
+        "arguments": [
+          "gh",
+          "version"
+        ],
+        "exit_status": 0,
+        "kind": "GH_VERSION",
+        "read_only": true
+      },
+      {
+        "arguments": [
+          "gh",
+          "auth",
+          "status",
+          "--hostname",
+          "github.com"
+        ],
+        "exit_status": 0,
+        "kind": "GH_AUTH_STATUS",
+        "read_only": true
+      },
+      {
+        "arguments": [
+          "gh",
+          "search",
+          "issues",
+          "agent audit",
+          "--archived=false",
+          "--state",
+          "open",
+          "--updated",
+          ">=2026-05-04",
+          "--visibility",
+          "public",
+          "--limit",
+          "15",
+          "--json",
+          "author,authorAssociation,body,commentsCount,createdAt,id,isLocked,isPullRequest,labels,number,repository,state,title,updatedAt,url"
+        ],
+        "exit_status": 0,
+        "kind": "GH_SEARCH_ISSUES",
+        "read_only": true
+      },
+      {
+        "arguments": [
+          "gh",
+          "search",
+          "issues",
+          "\"execution evidence\"",
+          "--archived=false",
+          "--state",
+          "open",
+          "--updated",
+          ">=2026-05-04",
+          "--visibility",
+          "public",
+          "--limit",
+          "15",
+          "--json",
+          "author,authorAssociation,body,commentsCount,createdAt,id,isLocked,isPullRequest,labels,number,repository,state,title,updatedAt,url"
+        ],
+        "exit_status": 0,
+        "kind": "GH_SEARCH_ISSUES",
+        "read_only": true
+      },
+      {
+        "arguments": [
+          "gh",
+          "search",
+          "issues",
+          "\"verifiable trace\" agent",
+          "--archived=false",
+          "--state",
+          "open",
+          "--updated",
+          ">=2026-05-04",
+          "--visibility",
+          "public",
+          "--limit",
+          "15",
+          "--json",
+          "author,authorAssociation,body,commentsCount,createdAt,id,isLocked,isPullRequest,labels,number,repository,state,title,updatedAt,url"
+        ],
+        "exit_status": 0,
+        "kind": "GH_SEARCH_ISSUES",
+        "read_only": true
+      },
+      {
+        "arguments": [
+          "gh",
+          "search",
+          "issues",
+          "human-in-the-loop agent",
+          "--archived=false",
+          "--state",
+          "open",
+          "--updated",
+          ">=2026-05-04",
+          "--visibility",
+          "public",
+          "--limit",
+          "15",
+          "--json",
+          "author,authorAssociation,body,commentsCount,createdAt,id,isLocked,isPullRequest,labels,number,repository,state,title,updatedAt,url"
+        ],
+        "exit_status": 0,
+        "kind": "GH_SEARCH_ISSUES",
+        "read_only": true
+      },
+      {
+        "arguments": [
+          "gh",
+          "search",
+          "issues",
+          "agent authorization",
+          "--archived=false",
+          "--state",
+          "open",
+          "--updated",
+          ">=2026-05-04",
+          "--visibility",
+          "public",
+          "--limit",
+          "15",
+          "--json",
+          "author,authorAssociation,body,commentsCount,createdAt,id,isLocked,isPullRequest,labels,number,repository,state,title,updatedAt,url"
+        ],
+        "exit_status": 0,
+        "kind": "GH_SEARCH_ISSUES",
+        "read_only": true
+      },
+      {
+        "arguments": [
+          "gh",
+          "search",
+          "issues",
+          "MCP security",
+          "--archived=false",
+          "--state",
+          "open",
+          "--updated",
+          ">=2026-05-04",
+          "--visibility",
+          "public",
+          "--limit",
+          "15",
+          "--json",
+          "author,authorAssociation,body,commentsCount,createdAt,id,isLocked,isPullRequest,labels,number,repository,state,title,updatedAt,url"
+        ],
+        "exit_status": 0,
+        "kind": "GH_SEARCH_ISSUES",
+        "read_only": true
+      },
+      {
+        "arguments": [
+          "gh",
+          "search",
+          "issues",
+          "agent governance",
+          "--archived=false",
+          "--state",
+          "open",
+          "--updated",
+          ">=2026-05-04",
+          "--visibility",
+          "public",
+          "--limit",
+          "15",
+          "--json",
+          "author,authorAssociation,body,commentsCount,createdAt,id,isLocked,isPullRequest,labels,number,repository,state,title,updatedAt,url"
+        ],
+        "exit_status": 0,
+        "kind": "GH_SEARCH_ISSUES",
+        "read_only": true
+      },
+      {
+        "arguments": [
+          "gh",
+          "search",
+          "issues",
+          "provenance replay agent",
+          "--archived=false",
+          "--state",
+          "open",
+          "--updated",
+          ">=2026-05-04",
+          "--visibility",
+          "public",
+          "--limit",
+          "15",
+          "--json",
+          "author,authorAssociation,body,commentsCount,createdAt,id,isLocked,isPullRequest,labels,number,repository,state,title,updatedAt,url"
+        ],
+        "exit_status": 0,
+        "kind": "GH_SEARCH_ISSUES",
+        "read_only": true
+      },
+      {
+        "arguments": [
+          "gh",
+          "search",
+          "issues",
+          "tamper-evident agent",
+          "--archived=false",
+          "--state",
+          "open",
+          "--updated",
+          ">=2026-05-04",
+          "--visibility",
+          "public",
+          "--limit",
+          "15",
+          "--json",
+          "author,authorAssociation,body,commentsCount,createdAt,id,isLocked,isPullRequest,labels,number,repository,state,title,updatedAt,url"
+        ],
+        "exit_status": 0,
+        "kind": "GH_SEARCH_ISSUES",
+        "read_only": true
+      }
+    ],
+    "discussion_coverage": {
+      "reason_code": "GLOBAL_DISCUSSION_COLLECTION_NOT_ENABLED_V0_1",
+      "status": "NOT_COLLECTED"
+    },
+    "external_write_operations_observed": 0,
+    "gh_cli": {
+      "auth_status": "AUTHENTICATED",
+      "installed": true,
+      "reason_code": null,
+      "search_available": true,
+      "version": "gh version 2.92.0 (2026-04-28)"
+    },
+    "http_events": [
+
+    ],
+    "queries": [
+      {
+        "backend": "GH_CLI_AUTHENTICATED",
+        "github_total_count": null,
+        "query": "agent audit is:issue is:open archived:false updated:>=2026-05-04",
+        "query_id": "Q-AI-AGENT-AUDIT",
+        "rate_limit": {
+        },
+        "retrieved_at": "2026-08-02T07:15:00Z",
+        "retrieved_count": 15,
+        "status": "SUCCESS",
+        "topic": "AI_AGENT_AUDIT",
+        "topic_query": "agent audit"
+      },
+      {
+        "backend": "GH_CLI_AUTHENTICATED",
+        "github_total_count": null,
+        "query": "\"execution evidence\" is:issue is:open archived:false updated:>=2026-05-04",
+        "query_id": "Q-EXECUTION-EVIDENCE",
+        "rate_limit": {
+        },
+        "retrieved_at": "2026-08-02T07:15:00Z",
+        "retrieved_count": 15,
+        "status": "SUCCESS",
+        "topic": "EXECUTION_EVIDENCE",
+        "topic_query": "\"execution evidence\""
+      },
+      {
+        "backend": "GH_CLI_AUTHENTICATED",
+        "github_total_count": null,
+        "query": "\"verifiable trace\" agent is:issue is:open archived:false updated:>=2026-05-04",
+        "query_id": "Q-VERIFIABLE-TRACE",
+        "rate_limit": {
+        },
+        "retrieved_at": "2026-08-02T07:15:00Z",
+        "retrieved_count": 0,
+        "status": "SUCCESS",
+        "topic": "VERIFIABLE_TRACE",
+        "topic_query": "\"verifiable trace\" agent"
+      },
+      {
+        "backend": "GH_CLI_AUTHENTICATED",
+        "github_total_count": null,
+        "query": "human-in-the-loop agent is:issue is:open archived:false updated:>=2026-05-04",
+        "query_id": "Q-HUMAN-IN-THE-LOOP",
+        "rate_limit": {
+        },
+        "retrieved_at": "2026-08-02T07:15:00Z",
+        "retrieved_count": 15,
+        "status": "SUCCESS",
+        "topic": "HUMAN_IN_THE_LOOP",
+        "topic_query": "human-in-the-loop agent"
+      },
+      {
+        "backend": "GH_CLI_AUTHENTICATED",
+        "github_total_count": null,
+        "query": "agent authorization is:issue is:open archived:false updated:>=2026-05-04",
+        "query_id": "Q-AGENT-AUTHORIZATION",
+        "rate_limit": {
+        },
+        "retrieved_at": "2026-08-02T07:15:00Z",
+        "retrieved_count": 15,
+        "status": "SUCCESS",
+        "topic": "AGENT_AUTHORIZATION",
+        "topic_query": "agent authorization"
+      },
+      {
+        "backend": "GH_CLI_AUTHENTICATED",
+        "github_total_count": null,
+        "query": "MCP security is:issue is:open archived:false updated:>=2026-05-04",
+        "query_id": "Q-MCP-SECURITY-AUDIT",
+        "rate_limit": {
+        },
+        "retrieved_at": "2026-08-02T07:15:00Z",
+        "retrieved_count": 15,
+        "status": "SUCCESS",
+        "topic": "MCP_SECURITY_AUDIT",
+        "topic_query": "MCP security"
+      },
+      {
+        "backend": "GH_CLI_AUTHENTICATED",
+        "github_total_count": null,
+        "query": "agent governance is:issue is:open archived:false updated:>=2026-05-04",
+        "query_id": "Q-AGENT-GOVERNANCE",
+        "rate_limit": {
+        },
+        "retrieved_at": "2026-08-02T07:15:00Z",
+        "retrieved_count": 15,
+        "status": "SUCCESS",
+        "topic": "AGENT_GOVERNANCE_COMPLIANCE",
+        "topic_query": "agent governance"
+      },
+      {
+        "backend": "GH_CLI_AUTHENTICATED",
+        "github_total_count": null,
+        "query": "provenance replay agent is:issue is:open archived:false updated:>=2026-05-04",
+        "query_id": "Q-PROVENANCE-REPLAY",
+        "rate_limit": {
+        },
+        "retrieved_at": "2026-08-02T07:15:00Z",
+        "retrieved_count": 0,
+        "status": "SUCCESS",
+        "topic": "PROVENANCE_REPLAY",
+        "topic_query": "provenance replay agent"
+      },
+      {
+        "backend": "GH_CLI_AUTHENTICATED",
+        "github_total_count": null,
+        "query": "tamper-evident agent is:issue is:open archived:false updated:>=2026-05-04",
+        "query_id": "Q-TAMPER-EVIDENCE",
+        "rate_limit": {
+        },
+        "retrieved_at": "2026-08-02T07:15:00Z",
+        "retrieved_count": 4,
+        "status": "SUCCESS",
+        "topic": "TAMPER_EVIDENCE",
+        "topic_query": "tamper-evident agent"
+      }
+    ],
+    "retrieved_at": "2026-08-02T07:15:00Z",
+    "source_types_collected": [
+      "GITHUB_ISSUE"
+    ],
+    "source_types_missing": [
+      "GITHUB_DISCUSSION"
+    ],
+    "successful_query_count": 9,
+    "total_query_count": 9
+  },
+  "config": {
+    "content_digest": "sha256:7eb2f81b488e3dd52024c468a5dd04ae12459c804ca84945c4ec89f5aaff4db8",
+    "path": "config/discovery-sources.yaml"
+  },
+  "external_action_authorized": false,
+  "filter_reason_counts": {
+    "OUTSIDE_TITMAS_CAPABILITY_BOUNDARY": 35,
+    "PAIN_POINT_NOT_CLASSIFIED": 9
+  },
+  "filtered_candidates": [
+    {
+      "number": 40,
+      "reasons": [
+        "OUTSIDE_TITMAS_CAPABILITY_BOUNDARY"
+      ],
+      "related_entries": null,
+      "repository": "AIM-Intelligence/awesome-mcp-security",
+      "root_problem_id": null,
+      "source": "https://github.com/AIM-Intelligence/awesome-mcp-security/issues/40",
+      "status_evidence_paths": null,
+      "title": "Resource suggestion: MCP Security Checklist",
+      "tracked_status": null
+    },
+    {
+      "number": 17,
+      "reasons": [
+        "OUTSIDE_TITMAS_CAPABILITY_BOUNDARY"
+      ],
+      "related_entries": null,
+      "repository": "AnkitParekh007/ai-tools-cheatsheets",
+      "root_problem_id": null,
+      "source": "https://github.com/AnkitParekh007/ai-tools-cheatsheets/issues/17",
+      "status_evidence_paths": null,
+      "title": "Add GitHub MCP security notes",
+      "tracked_status": null
+    },
+    {
+      "number": 18,
+      "reasons": [
+        "OUTSIDE_TITMAS_CAPABILITY_BOUNDARY"
+      ],
+      "related_entries": null,
+      "repository": "AnkitParekh007/ai-tools-cheatsheets",
+      "root_problem_id": null,
+      "source": "https://github.com/AnkitParekh007/ai-tools-cheatsheets/issues/18",
+      "status_evidence_paths": null,
+      "title": "Add Jira MCP security notes",
+      "tracked_status": null
+    },
+    {
+      "number": 25,
+      "reasons": [
+        "OUTSIDE_TITMAS_CAPABILITY_BOUNDARY"
+      ],
+      "related_entries": null,
+      "repository": "CoderSufiyan/mcp-risk",
+      "root_problem_id": null,
+      "source": "https://github.com/CoderSufiyan/mcp-risk/issues/25",
+      "status_evidence_paths": null,
+      "title": "Add Markdown MCP security cards",
+      "tracked_status": null
+    },
+    {
+      "number": 49,
+      "reasons": [
+        "OUTSIDE_TITMAS_CAPABILITY_BOUNDARY"
+      ],
+      "related_entries": null,
+      "repository": "CoderSufiyan/mcp-risk",
+      "root_problem_id": null,
+      "source": "https://github.com/CoderSufiyan/mcp-risk/issues/49",
+      "status_evidence_paths": null,
+      "title": "Define MCP security scoring standard",
+      "tracked_status": null
+    },
+    {
+      "number": 11,
+      "reasons": [
+        "OUTSIDE_TITMAS_CAPABILITY_BOUNDARY"
+      ],
+      "related_entries": null,
+      "repository": "DataSynther/LeadGenie-AI",
+      "root_problem_id": null,
+      "source": "https://github.com/DataSynther/LeadGenie-AI/issues/11",
+      "status_evidence_paths": null,
+      "title": "AI: Conversation Agent & Governance Validators",
+      "tracked_status": null
+    },
+    {
+      "number": 7,
+      "reasons": [
+        "OUTSIDE_TITMAS_CAPABILITY_BOUNDARY"
+      ],
+      "related_entries": null,
+      "repository": "Dev-Atmos/AgentFence",
+      "root_problem_id": null,
+      "source": "https://github.com/Dev-Atmos/AgentFence/issues/7",
+      "status_evidence_paths": null,
+      "title": "Publish MCP security checklist page",
+      "tracked_status": null
+    },
+    {
+      "number": 1,
+      "reasons": [
+        "OUTSIDE_TITMAS_CAPABILITY_BOUNDARY"
+      ],
+      "related_entries": null,
+      "repository": "HirongVSuen/ai-web3-school-cohort-0",
+      "root_problem_id": null,
+      "source": "https://github.com/HirongVSuen/ai-web3-school-cohort-0/issues/1",
+      "status_evidence_paths": null,
+      "title": "🎯 AI × Web3 School 学习计划总览",
+      "tracked_status": null
+    },
+    {
+      "number": 401,
+      "reasons": [
+        "OUTSIDE_TITMAS_CAPABILITY_BOUNDARY"
+      ],
+      "related_entries": null,
+      "repository": "JudgmentLabs/judgeval",
+      "root_problem_id": null,
+      "source": "https://github.com/JudgmentLabs/judgeval/issues/401",
+      "status_evidence_paths": null,
+      "title": "Missing Human-in-the-Loop Tracing Support",
+      "tracked_status": null
+    },
+    {
+      "number": 334,
+      "reasons": [
+        "OUTSIDE_TITMAS_CAPABILITY_BOUNDARY"
+      ],
+      "related_entries": null,
+      "repository": "KatsuyaITO/indx-autoresearch-financeaiready",
+      "root_problem_id": null,
+      "source": "https://github.com/KatsuyaITO/indx-autoresearch-financeaiready/issues/334",
+      "status_evidence_paths": null,
+      "title": "Latest: Morgan Stanley AskResearchGPT and Debrief — Production Agentic Deployment at Scale",
+      "tracked_status": null
+    },
+    {
+      "number": 3751,
+      "reasons": [
+        "OUTSIDE_TITMAS_CAPABILITY_BOUNDARY"
+      ],
+      "related_entries": null,
+      "repository": "Mont9165/arxiv-issue-bot",
+      "root_problem_id": null,
+      "source": "https://github.com/Mont9165/arxiv-issue-bot/issues/3751",
+      "status_evidence_paths": null,
+      "title": "[2605.00424v1] Skills as Verifiable Artifacts: A Trust Schema and a Biconditional Correctness Criterion for Human-in-the-Loop Agent Runtimes",
+      "tracked_status": null
+    },
+    {
+      "number": 46,
+      "reasons": [
+        "OUTSIDE_TITMAS_CAPABILITY_BOUNDARY"
+      ],
+      "related_entries": null,
+      "repository": "ParaDevs-Brasil/XiaoLee",
+      "root_problem_id": null,
+      "source": "https://github.com/ParaDevs-Brasil/XiaoLee/issues/46",
+      "status_evidence_paths": null,
+      "title": "[P3-02] README — mapear critérios do hackathon Lepton para o júri",
+      "tracked_status": null
+    },
+    {
+      "number": 214,
+      "reasons": [
+        "OUTSIDE_TITMAS_CAPABILITY_BOUNDARY"
+      ],
+      "related_entries": null,
+      "repository": "Puliczek/awesome-mcp-security",
+      "root_problem_id": null,
+      "source": "https://github.com/Puliczek/awesome-mcp-security/issues/214",
+      "status_evidence_paths": null,
+      "title": "Resource suggestion: MCP Security Checklist",
+      "tracked_status": null
+    },
+    {
+      "number": 53,
+      "reasons": [
+        "OUTSIDE_TITMAS_CAPABILITY_BOUNDARY"
+      ],
+      "related_entries": null,
+      "repository": "TestingInPractice/CodeAI",
+      "root_problem_id": null,
+      "source": "https://github.com/TestingInPractice/CodeAI/issues/53",
+      "status_evidence_paths": null,
+      "title": "[P1] Security agent (audit bezopasnosti)",
+      "tracked_status": null
+    },
+    {
+      "number": 2,
+      "reasons": [
+        "OUTSIDE_TITMAS_CAPABILITY_BOUNDARY",
+        "PAIN_POINT_NOT_CLASSIFIED"
+      ],
+      "related_entries": null,
+      "repository": "Vastv4lent/cloud_go_rev_01",
+      "root_problem_id": null,
+      "source": "https://github.com/Vastv4lent/cloud_go_rev_01/issues/2",
+      "status_evidence_paths": null,
+      "title": "Update 05-AdvancedTopics/mcp-security-entra/README.md",
+      "tracked_status": null
+    },
+    {
+      "number": 3449,
+      "reasons": [
+        "OUTSIDE_TITMAS_CAPABILITY_BOUNDARY",
+        "PAIN_POINT_NOT_CLASSIFIED"
+      ],
+      "related_entries": null,
+      "repository": "anthony-chaudhary/fak",
+      "root_problem_id": null,
+      "source": "https://github.com/anthony-chaudhary/fak/issues/3449",
+      "status_evidence_paths": null,
+      "title": "idea-scout: google/mcp-security",
+      "tracked_status": null
+    },
+    {
+      "number": 5342,
+      "reasons": [
+        "OUTSIDE_TITMAS_CAPABILITY_BOUNDARY",
+        "PAIN_POINT_NOT_CLASSIFIED"
+      ],
+      "related_entries": null,
+      "repository": "anthony-chaudhary/fak",
+      "root_problem_id": null,
+      "source": "https://github.com/anthony-chaudhary/fak/issues/5342",
+      "status_evidence_paths": null,
+      "title": "idea-scout: google/mcp-security",
+      "tracked_status": null
+    },
+    {
+      "number": 3112,
+      "reasons": [
+        "PAIN_POINT_NOT_CLASSIFIED"
+      ],
+      "related_entries": null,
+      "repository": "bobmatnyc/trusty-tools",
+      "root_problem_id": null,
+      "source": "https://github.com/bobmatnyc/trusty-tools/issues/3112",
+      "status_evidence_paths": null,
+      "title": "epic(trusty-agents): audit and conformance layer",
+      "tracked_status": null
+    },
+    {
+      "number": 1,
+      "reasons": [
+        "OUTSIDE_TITMAS_CAPABILITY_BOUNDARY",
+        "PAIN_POINT_NOT_CLASSIFIED"
+      ],
+      "related_entries": null,
+      "repository": "chatmcp/mcpso",
+      "root_problem_id": null,
+      "source": "https://github.com/chatmcp/mcpso/issues/1",
+      "status_evidence_paths": null,
+      "title": "Submit Your MCP Servers here",
+      "tracked_status": null
+    },
+    {
+      "number": 692,
+      "reasons": [
+        "OUTSIDE_TITMAS_CAPABILITY_BOUNDARY"
+      ],
+      "related_entries": null,
+      "repository": "elasticdotventures/_b00t_",
+      "root_problem_id": null,
+      "source": "https://github.com/elasticdotventures/_b00t_/issues/692",
+      "status_evidence_paths": null,
+      "title": "feat: multi-role session manager — b00t session start --as=worker",
+      "tracked_status": null
+    },
+    {
+      "number": 9,
+      "reasons": [
+        "OUTSIDE_TITMAS_CAPABILITY_BOUNDARY"
+      ],
+      "related_entries": null,
+      "repository": "fuzzywigg/g0p-agents",
+      "root_problem_id": null,
+      "source": "https://github.com/fuzzywigg/g0p-agents/issues/9",
+      "status_evidence_paths": null,
+      "title": "[Docs] Add README badges and public agent-governance wiki",
+      "tracked_status": null
+    },
+    {
+      "number": 7428,
+      "reasons": [
+        "OUTSIDE_TITMAS_CAPABILITY_BOUNDARY",
+        "PAIN_POINT_NOT_CLASSIFIED"
+      ],
+      "related_entries": null,
+      "repository": "google/syzkaller",
+      "root_problem_id": null,
+      "source": "https://github.com/google/syzkaller/issues/7428",
+      "status_evidence_paths": null,
+      "title": "syz-agent: authorization bugs",
+      "tracked_status": null
+    },
+    {
+      "number": 51,
+      "reasons": [
+        "OUTSIDE_TITMAS_CAPABILITY_BOUNDARY"
+      ],
+      "related_entries": null,
+      "repository": "hirobius/ops",
+      "root_problem_id": null,
+      "source": "https://github.com/hirobius/ops/issues/51",
+      "status_evidence_paths": null,
+      "title": "Human-in-the-loop: agent → \"needs you\" unblock protocol (label + Discord pager + issue conversation)",
+      "tracked_status": null
+    },
+    {
+      "number": 443,
+      "reasons": [
+        "OUTSIDE_TITMAS_CAPABILITY_BOUNDARY"
+      ],
+      "related_entries": null,
+      "repository": "kapilvirenahuja/garura",
+      "root_problem_id": null,
+      "source": "https://github.com/kapilvirenahuja/garura/issues/443",
+      "status_evidence_paths": null,
+      "title": "Redesign /review-change: thorough, category-aware, externally-grounded PR review",
+      "tracked_status": null
+    },
+    {
+      "number": 5,
+      "reasons": [
+        "OUTSIDE_TITMAS_CAPABILITY_BOUNDARY"
+      ],
+      "related_entries": null,
+      "repository": "kyryl-opens-ml/mcp-server-dagster",
+      "root_problem_id": null,
+      "source": "https://github.com/kyryl-opens-ml/mcp-server-dagster/issues/5",
+      "status_evidence_paths": null,
+      "title": "Request: MCP Security Scanning",
+      "tracked_status": null
+    },
+    {
+      "number": 1425,
+      "reasons": [
+        "OUTSIDE_TITMAS_CAPABILITY_BOUNDARY"
+      ],
+      "related_entries": null,
+      "repository": "leisure3318/agents-radar",
+      "root_problem_id": null,
+      "source": "https://github.com/leisure3318/agents-radar/issues/1425",
+      "status_evidence_paths": null,
+      "title": "💬 技术社区 AI 动态日报 2026-07-28",
+      "tracked_status": null
+    },
+    {
+      "number": 21,
+      "reasons": [
+        "OUTSIDE_TITMAS_CAPABILITY_BOUNDARY",
+        "PAIN_POINT_NOT_CLASSIFIED"
+      ],
+      "related_entries": null,
+      "repository": "mattiasutancykeln/gems",
+      "root_problem_id": null,
+      "source": "https://github.com/mattiasutancykeln/gems/issues/21",
+      "status_evidence_paths": null,
+      "title": "[ext] SciAgentArena — benchmarking AI agents on scientific challenges across scales",
+      "tracked_status": null
+    },
+    {
+      "number": 3346,
+      "reasons": [
+        "OUTSIDE_TITMAS_CAPABILITY_BOUNDARY"
+      ],
+      "related_entries": null,
+      "repository": "microsoft/agent-governance-toolkit",
+      "root_problem_id": null,
+      "source": "https://github.com/microsoft/agent-governance-toolkit/issues/3346",
+      "status_evidence_paths": null,
+      "title": "[Feature]: agent-governance for vscode agentic development",
+      "tracked_status": null
+    },
+    {
+      "number": 610,
+      "reasons": [
+        "OUTSIDE_TITMAS_CAPABILITY_BOUNDARY"
+      ],
+      "related_entries": null,
+      "repository": "msaad00/cloud-ai-security-skills",
+      "root_problem_id": null,
+      "source": "https://github.com/msaad00/cloud-ai-security-skills/issues/610",
+      "status_evidence_paths": null,
+      "title": "Continue MCP security agent example",
+      "tracked_status": null
+    },
+    {
+      "number": 79,
+      "reasons": [
+        "OUTSIDE_TITMAS_CAPABILITY_BOUNDARY"
+      ],
+      "related_entries": null,
+      "repository": "onsager-ai/telegramable",
+      "root_problem_id": null,
+      "source": "https://github.com/onsager-ai/telegramable/issues/79",
+      "status_evidence_paths": null,
+      "title": "spec(channels): bidirectional agent-to-human communication — inbound notify API",
+      "tracked_status": null
+    },
+    {
+      "number": 180,
+      "reasons": [
+        "OUTSIDE_TITMAS_CAPABILITY_BOUNDARY",
+        "PAIN_POINT_NOT_CLASSIFIED"
+      ],
+      "related_entries": null,
+      "repository": "open-telemetry/semantic-conventions-genai",
+      "root_problem_id": null,
+      "source": "https://github.com/open-telemetry/semantic-conventions-genai/issues/180",
+      "status_evidence_paths": null,
+      "title": "Agentic authorization SemConv: agent.trust_score, agent.drift_score, fga.* (sub-issue under #35)",
+      "tracked_status": null
+    },
+    {
+      "number": 5,
+      "reasons": [
+        "OUTSIDE_TITMAS_CAPABILITY_BOUNDARY"
+      ],
+      "related_entries": null,
+      "repository": "ps-sridhar-s/opsguardian-ai",
+      "root_problem_id": null,
+      "source": "https://github.com/ps-sridhar-s/opsguardian-ai/issues/5",
+      "status_evidence_paths": null,
+      "title": "Epic 5: LangGraph Workflow",
+      "tracked_status": null
+    },
+    {
+      "number": 9,
+      "reasons": [
+        "OUTSIDE_TITMAS_CAPABILITY_BOUNDARY"
+      ],
+      "related_entries": null,
+      "repository": "sihendra13/Larisi",
+      "root_problem_id": null,
+      "source": "https://github.com/sihendra13/Larisi/issues/9",
+      "status_evidence_paths": null,
+      "title": "🧠 [EPIC] AI Campaign Planner — Human-in-the-Loop Agentic",
+      "tracked_status": null
+    },
+    {
+      "number": 2078,
+      "reasons": [
+        "OUTSIDE_TITMAS_CAPABILITY_BOUNDARY",
+        "PAIN_POINT_NOT_CLASSIFIED"
+      ],
+      "related_entries": null,
+      "repository": "sytone/botnexus",
+      "root_problem_id": null,
+      "source": "https://github.com/sytone/botnexus/issues/2078",
+      "status_evidence_paths": null,
+      "title": "[Agents] Audit normalized LLM events for evolving model semantics",
+      "tracked_status": null
+    },
+    {
+      "number": 143,
+      "reasons": [
+        "OUTSIDE_TITMAS_CAPABILITY_BOUNDARY"
+      ],
+      "related_entries": null,
+      "repository": "udin-io/ex_athena",
+      "root_problem_id": null,
+      "source": "https://github.com/udin-io/ex_athena/issues/143",
+      "status_evidence_paths": null,
+      "title": "runtime: human-in-the-loop interrupt/approve with durable pause, across all modes",
+      "tracked_status": null
+    },
+    {
+      "number": 4116,
+      "reasons": [
+        "OUTSIDE_TITMAS_CAPABILITY_BOUNDARY"
+      ],
+      "related_entries": null,
+      "repository": "uibm/trending-watcher",
+      "root_problem_id": null,
+      "source": "https://github.com/uibm/trending-watcher/issues/4116",
+      "status_evidence_paths": null,
+      "title": "Check trending repo: microsoft/agent-governance-toolkit",
+      "tracked_status": null
+    }
+  ],
+  "generated_at": "2026-08-02T07:15:00Z",
+  "heuristic_model": "heuristic_unvalidated_v0.1",
+  "local_output_paths": {
+    "json": "reports/daily/2026-08-02-opportunity-report.json",
+    "latest": "reports/latest-opportunities.json",
+    "markdown": "reports/daily/2026-08-02-opportunity-report.md"
+  },
+  "no_write_evidence": {
+    "all_observed_http_methods_are_get": true,
+    "external_write_operations_observed": 0,
+    "github_commands_declared_read_only": true,
+    "observed_http_methods": [
+
+    ],
+    "output_scope": "LOCAL_REPORT_FILES_ONLY"
+  },
+  "non_claims": [
+    "ranking_is_not_calibrated",
+    "no_success_probability",
+    "no_customer_or_revenue_claim",
+    "open_issue_does_not_imply_contribution_acceptance",
+    "report_does_not_authorize_external_action"
+  ],
+  "opportunities": [
+    {
+      "action_entry": {
+        "entry_type": "GITHUB_ISSUE",
+        "is_locked": false,
+        "public_url": "https://github.com/mnemonik-dev/nightly-research/issues/27",
+        "state": "OPEN"
+      },
+      "action_pack": {
+        "estimated_effort": "NEEDS_REVIEW",
+        "external_action_authorized": false,
+        "human_exception_decisions_required": [
+
+        ],
+        "key_risks": [
+          "Keyword mapping can overstate relevance and is unvalidated.",
+          "Open state does not imply permission to implement or contact anyone.",
+          "Effort, license, and security facts require evidence; legal, payment, identity, privacy, deletion, and account-security exceptions require human review.",
+          "Source freshness is limited to updated_at=2026-07-25T00:12:52Z."
+        ],
+        "minimum_contribution": "Prepare an evidence-backed scope question and a bounded component-mapping note for Agent Review Quorum; do not post automatically.",
+        "opportunity_summary": "[arXiv] ZK-proved agent authorization gate (R CVA / Groth16) — Toward cryptographically verifiable authorization for autonomous AI agents",
+        "original_source": "https://github.com/mnemonik-dev/nightly-research/issues/27",
+        "pain_point": "[arXiv] ZK-proved agent authorization gate (R CVA / Groth16) — Toward cryptographically verifiable authorization for autonomous AI agents: [arxiv] zk-proved agent authorization gate (r cva / groth16) — toward cryptographically verifiable authorization for autonomous ai agents paper - title: toward cryptographically verifiable…",
+        "possible_acceptance_reasons": [
+          "The public source states a problem aligned with AGENT_AUTHORIZATION, AGENT_GOVERNANCE_COMPLIANCE, PROVENANCE_REPLAY.",
+          "A bounded existing component role may support a small, reviewable contribution."
+        ],
+        "possible_rejection_reasons": [
+          "Maintainer interest and preferred contribution path are unconfirmed.",
+          "The mapped TITMAS role may not fit repository architecture or scope.",
+          "A similar fix may already exist outside the retrieved Issue record."
+        ],
+        "reusable_components": [
+          {
+            "bounded_role": "bounded intent, action, and result semantics",
+            "capability_id": "AGENT_INTENT_PROTOCOL",
+            "mapping_evidence": "[arxiv] zk-proved agent authorization gate (r cva / groth16) — toward cryptographically verifiable authorization for autonomous ai agents paper - title: toward cryptographically verifiable…",
+            "repository": "joy7758/agent-intent-protocol"
+          },
+          {
+            "bounded_role": "post-execution audit and replay-oriented review",
+            "capability_id": "ARO_AUDIT",
+            "mapping_evidence": "(authorization soundness, principal/request/policy binding, replay resistance) and ships an executable zero-knowledge proof-of-concept over a groth16 zk-snark. approach model authorization as a…",
+            "repository": "joy7758/aro-audit"
+          },
+          {
+            "bounded_role": "execution-integrity reference work",
+            "capability_id": "FDO_KERNEL_MVK",
+            "mapping_evidence": "leave the prover. versus tee-based authorization it removes hardware-attestation dependence; versus re-execution it removes the need for the verifier to hold policy inputs. implementable? yes —…",
+            "repository": "joy7758/fdo-kernel-mvk"
+          },
+          {
+            "bounded_role": "runtime policy, permission, and execution constraints",
+            "capability_id": "TOKEN_GOVERNOR",
+            "mapping_evidence": "[arxiv] zk-proved agent authorization gate (r cva / groth16) — toward cryptographically verifiable authorization for autonomous ai agents paper - title: toward cryptographically verifiable…",
+            "repository": "joy7758/token-governor"
+          }
+        ],
+        "suggested_action_type": "COMMENT"
+      },
+      "author": "mnemonik-dev",
+      "author_association": "OWNER",
+      "capability_mappings": [
+        {
+          "bounded_role": "bounded intent, action, and result semantics",
+          "capability_id": "AGENT_INTENT_PROTOCOL",
+          "evidence_snippet": "[arxiv] zk-proved agent authorization gate (r cva / groth16) — toward cryptographically verifiable authorization for autonomous ai agents paper - title: toward cryptographically verifiable…",
+          "matched_keywords": [
+            "agent authorization"
+          ],
+          "repository": "joy7758/agent-intent-protocol"
+        },
+        {
+          "bounded_role": "post-execution audit and replay-oriented review",
+          "capability_id": "ARO_AUDIT",
+          "evidence_snippet": "(authorization soundness, principal/request/policy binding, replay resistance) and ships an executable zero-knowledge proof-of-concept over a groth16 zk-snark. approach model authorization as a…",
+          "matched_keywords": [
+            "replay"
+          ],
+          "repository": "joy7758/aro-audit"
+        },
+        {
+          "bounded_role": "execution-integrity reference work",
+          "capability_id": "FDO_KERNEL_MVK",
+          "evidence_snippet": "leave the prover. versus tee-based authorization it removes hardware-attestation dependence; versus re-execution it removes the need for the verifier to hold policy inputs. implementable? yes —…",
+          "matched_keywords": [
+            "attestation"
+          ],
+          "repository": "joy7758/fdo-kernel-mvk"
+        },
+        {
+          "bounded_role": "runtime policy, permission, and execution constraints",
+          "capability_id": "TOKEN_GOVERNOR",
+          "evidence_snippet": "[arxiv] zk-proved agent authorization gate (r cva / groth16) — toward cryptographically verifiable authorization for autonomous ai agents paper - title: toward cryptographically verifiable…",
+          "matched_keywords": [
+            "agent authorization"
+          ],
+          "repository": "joy7758/token-governor"
+        }
+      ],
+      "comments_count": 0,
+      "created_at": "2026-07-25T00:12:52Z",
+      "heuristic_model": "heuristic_unvalidated_v0.1",
+      "heuristic_unvalidated": true,
+      "id": "I_kwDOTGS_Jc8AAAABKGzD9A",
+      "is_locked": false,
+      "is_pull_request": false,
+      "labels": [
+
+      ],
+      "number": 27,
+      "ordering_basis": [
+        {
+          "band": "HIGH",
+          "factor": "titmas_relevance"
+        },
+        {
+          "band": "HIGH",
+          "factor": "actionability"
+        },
+        {
+          "band": "HIGH",
+          "factor": "pain_explicitness"
+        },
+        {
+          "band": "HIGH",
+          "factor": "expected_learning"
+        },
+        {
+          "band": "HIGH",
+          "factor": "freshness"
+        },
+        {
+          "band": "HIGH",
+          "factor": "evidence_quality"
+        },
+        {
+          "band": "NEEDS_REVIEW",
+          "factor": "potential_value"
+        },
+        {
+          "band": "NEEDS_REVIEW",
+          "factor": "effort"
+        }
+      ],
+      "pain_classifications": [
+        {
+          "classification": "AGENT_AUTHORIZATION",
+          "evidence_snippet": "[arxiv] zk-proved agent authorization gate (r cva / groth16) — toward cryptographically verifiable authorization for autonomous ai agents paper - title: toward cryptographically verifiable…",
+          "matched_keywords": [
+            "agent authorization"
+          ]
+        },
+        {
+          "classification": "AGENT_GOVERNANCE_COMPLIANCE",
+          "evidence_snippet": "of zero-trust authorization using snarks\" and \"privacy-preserving compliance on public ledgers via selective disclosure\" (arxiv 2606.20760, [public-link-omitted] — both use groth16-style proofs to…",
+          "matched_keywords": [
+            "compliance"
+          ]
+        },
+        {
+          "classification": "PROVENANCE_REPLAY",
+          "evidence_snippet": "(authorization soundness, principal/request/policy binding, replay resistance) and ships an executable zero-knowledge proof-of-concept over a groth16 zk-snark. approach model authorization as a…",
+          "matched_keywords": [
+            "replay"
+          ]
+        }
+      ],
+      "pain_point": "[arXiv] ZK-proved agent authorization gate (R CVA / Groth16) — Toward cryptographically verifiable authorization for autonomous AI agents: [arxiv] zk-proved agent authorization gate (r cva / groth16) — toward cryptographically verifiable authorization for autonomous ai agents paper - title: toward cryptographically verifiable…",
+      "priority_position": 1,
+      "query_ids": [
+        "Q-AGENT-AUTHORIZATION"
+      ],
+      "ranking_factors": {
+        "actionability": {
+          "band": "HIGH",
+          "evidence": [
+            "https://github.com/mnemonik-dev/nightly-research/issues/27",
+            "OWNER"
+          ],
+          "reason": "Open unlocked Issue was authored by a repository owner, member, or collaborator."
+        },
+        "effort": {
+          "band": "NEEDS_REVIEW",
+          "evidence": [
+
+          ],
+          "reason": "Repository code and contribution scope were not inspected."
+        },
+        "evidence_quality": {
+          "band": "HIGH",
+          "evidence": [
+            "https://github.com/mnemonik-dev/nightly-research/issues/27",
+            "body_characters=6072",
+            "OWNER"
+          ],
+          "reason": "Public source metadata and a bounded source excerpt are available."
+        },
+        "expected_learning": {
+          "band": "HIGH",
+          "evidence": [
+            "test",
+            "implementation",
+            "policy",
+            "security",
+            "agent authorization"
+          ],
+          "reason": "A bounded contribution could test existing components; actual scope needs policy-selected review."
+        },
+        "freshness": {
+          "band": "HIGH",
+          "evidence": [
+            "2026-07-25T00:12:52Z"
+          ],
+          "reason": "Source was updated 8 day(s) before the run date."
+        },
+        "pain_explicitness": {
+          "band": "HIGH",
+          "evidence": [
+            "[arxiv] zk-proved agent authorization gate (r cva / groth16) — toward cryptographically verifiable authorization for autonomous ai agents paper - title: toward cryptographically verifiable…",
+            "of zero-trust authorization using snarks\" and \"privacy-preserving compliance on public ledgers via selective disclosure\" (arxiv 2606.20760, [public-link-omitted] — both use groth16-style proofs to…",
+            "(authorization soundness, principal/request/policy binding, replay resistance) and ships an executable zero-knowledge proof-of-concept over a groth16 zk-snark. approach model authorization as a…"
+          ],
+          "reason": "Source body length and explicit matched pain terms are reviewable."
+        },
+        "potential_value": {
+          "band": "NEEDS_REVIEW",
+          "evidence": [
+            "https://github.com/mnemonik-dev/nightly-research/issues/27"
+          ],
+          "reason": "The Issue record does not establish adoption, collaboration, reputation, or revenue value."
+        },
+        "titmas_relevance": {
+          "band": "HIGH",
+          "evidence": [
+            "[arxiv] zk-proved agent authorization gate (r cva / groth16) — toward cryptographically verifiable authorization for autonomous ai agents paper - title: toward cryptographically verifiable…",
+            "(authorization soundness, principal/request/policy binding, replay resistance) and ships an executable zero-knowledge proof-of-concept over a groth16 zk-snark. approach model authorization as a…",
+            "leave the prover. versus tee-based authorization it removes hardware-attestation dependence; versus re-execution it removes the need for the verifier to hold policy inputs. implementable? yes —…",
+            "[arxiv] zk-proved agent authorization gate (r cva / groth16) — toward cryptographically verifiable authorization for autonomous ai agents paper - title: toward cryptographically verifiable…"
+          ],
+          "reason": "4 bounded role mapping(s); direct title terms: agent authorization."
+        }
+      },
+      "ranking_status": "NEEDS_REVIEW",
+      "repository": "mnemonik-dev/nightly-research",
+      "retention_reason": "Retained because the public entry is open, unlocked, fresh, and maps AGENT_AUTHORIZATION, AGENT_GOVERNANCE_COMPLIANCE, PROVENANCE_REPLAY to existing bounded TITMAS roles; all acceptance and value claims remain unconfirmed.",
+      "source_evidence_excerpt": "[arxiv] zk-proved agent authorization gate (r cva / groth16) — toward cryptographically verifiable authorization for autonomous ai agents paper - title: toward cryptographically verifiable…",
+      "source_type": "GITHUB_ISSUE",
+      "state": "OPEN",
+      "success_probability": null,
+      "title": "[arXiv] ZK-proved agent authorization gate (R_CVA / Groth16) — Toward cryptographically verifiable authorization for autonomous AI agents",
+      "unconfirmed_facts": [
+        "maintainer_interest",
+        "contribution_acceptance",
+        "current_unresolved_scope_beyond_open_state",
+        "implementation_effort",
+        "customer_demand",
+        "commercial_budget_or_value",
+        "legal_and_license_fit"
+      ],
+      "updated_at": "2026-07-25T00:12:52Z",
+      "url": "https://github.com/mnemonik-dev/nightly-research/issues/27"
+    },
+    {
+      "action_entry": {
+        "entry_type": "GITHUB_ISSUE",
+        "is_locked": false,
+        "public_url": "https://github.com/praxis-proxy/ai/issues/194",
+        "state": "OPEN"
+      },
+      "action_pack": {
+        "estimated_effort": "NEEDS_REVIEW",
+        "external_action_authorized": false,
+        "human_exception_decisions_required": [
+
+        ],
+        "key_risks": [
+          "Keyword mapping can overstate relevance and is unvalidated.",
+          "Open state does not imply permission to implement or contact anyone.",
+          "Effort, license, and security facts require evidence; legal, payment, identity, privacy, deletion, and account-security exceptions require human review.",
+          "Source freshness is limited to updated_at=2026-07-23T09:23:12Z."
+        ],
+        "minimum_contribution": "Prepare an evidence-backed scope question and a bounded component-mapping note for Agent Review Quorum; do not post automatically.",
+        "opportunity_summary": "Agent audit trail and observability",
+        "original_source": "https://github.com/praxis-proxy/ai/issues/194",
+        "pain_point": "Agent audit trail and observability: agent audit trail and observability every agent action through the gateway produces an auditable record. full task lifecycle tracing across the grid. scope - propagate opentelemetry trace context…",
+        "possible_acceptance_reasons": [
+          "The public source states a problem aligned with AI_AGENT_AUDIT.",
+          "A bounded existing component role may support a small, reviewable contribution."
+        ],
+        "possible_rejection_reasons": [
+          "Maintainer interest and preferred contribution path are unconfirmed.",
+          "The mapped TITMAS role may not fit repository architecture or scope.",
+          "A similar fix may already exist outside the retrieved Issue record."
+        ],
+        "reusable_components": [
+          {
+            "bounded_role": "execution evidence packaging and offline verification",
+            "capability_id": "AGENT_EVIDENCE",
+            "mapping_evidence": "agent audit trail and observability every agent action through the gateway produces an auditable record. full task lifecycle tracing across the grid. scope - propagate opentelemetry trace context…",
+            "repository": "joy7758/agent-evidence"
+          },
+          {
+            "bounded_role": "bounded intent, action, and result semantics",
+            "capability_id": "AGENT_INTENT_PROTOCOL",
+            "mapping_evidence": "agent audit trail and observability every agent action through the gateway produces an auditable record. full task lifecycle tracing across the grid. scope - propagate opentelemetry trace context…",
+            "repository": "joy7758/agent-intent-protocol"
+          },
+          {
+            "bounded_role": "post-execution audit and replay-oriented review",
+            "capability_id": "ARO_AUDIT",
+            "mapping_evidence": "agent audit trail and observability every agent action through the gateway produces an auditable record. full task lifecycle tracing across the grid. scope - propagate opentelemetry trace context…",
+            "repository": "joy7758/aro-audit"
+          }
+        ],
+        "suggested_action_type": "COMMENT"
+      },
+      "author": "shaneutt",
+      "author_association": "MEMBER",
+      "capability_mappings": [
+        {
+          "bounded_role": "execution evidence packaging and offline verification",
+          "capability_id": "AGENT_EVIDENCE",
+          "evidence_snippet": "agent audit trail and observability every agent action through the gateway produces an auditable record. full task lifecycle tracing across the grid. scope - propagate opentelemetry trace context…",
+          "matched_keywords": [
+            "audit trail"
+          ],
+          "repository": "joy7758/agent-evidence"
+        },
+        {
+          "bounded_role": "bounded intent, action, and result semantics",
+          "capability_id": "AGENT_INTENT_PROTOCOL",
+          "evidence_snippet": "agent audit trail and observability every agent action through the gateway produces an auditable record. full task lifecycle tracing across the grid. scope - propagate opentelemetry trace context…",
+          "matched_keywords": [
+            "agent action"
+          ],
+          "repository": "joy7758/agent-intent-protocol"
+        },
+        {
+          "bounded_role": "post-execution audit and replay-oriented review",
+          "capability_id": "ARO_AUDIT",
+          "evidence_snippet": "agent audit trail and observability every agent action through the gateway produces an auditable record. full task lifecycle tracing across the grid. scope - propagate opentelemetry trace context…",
+          "matched_keywords": [
+            "agent audit",
+            "audit trail"
+          ],
+          "repository": "joy7758/aro-audit"
+        }
+      ],
+      "comments_count": 0,
+      "created_at": "2026-06-22T19:09:44Z",
+      "heuristic_model": "heuristic_unvalidated_v0.1",
+      "heuristic_unvalidated": true,
+      "id": "I_kwDOTJ5-zM8AAAABHXJduA",
+      "is_locked": false,
+      "is_pull_request": false,
+      "labels": [
+        "enhancement"
+      ],
+      "number": 194,
+      "ordering_basis": [
+        {
+          "band": "HIGH",
+          "factor": "titmas_relevance"
+        },
+        {
+          "band": "HIGH",
+          "factor": "actionability"
+        },
+        {
+          "band": "HIGH",
+          "factor": "pain_explicitness"
+        },
+        {
+          "band": "HIGH",
+          "factor": "expected_learning"
+        },
+        {
+          "band": "HIGH",
+          "factor": "freshness"
+        },
+        {
+          "band": "HIGH",
+          "factor": "evidence_quality"
+        },
+        {
+          "band": "NEEDS_REVIEW",
+          "factor": "potential_value"
+        },
+        {
+          "band": "NEEDS_REVIEW",
+          "factor": "effort"
+        }
+      ],
+      "pain_classifications": [
+        {
+          "classification": "AI_AGENT_AUDIT",
+          "evidence_snippet": "agent audit trail and observability every agent action through the gateway produces an auditable record. full task lifecycle tracing across the grid. scope - propagate opentelemetry trace context…",
+          "matched_keywords": [
+            "agent audit",
+            "audit trail"
+          ]
+        }
+      ],
+      "pain_point": "Agent audit trail and observability: agent audit trail and observability every agent action through the gateway produces an auditable record. full task lifecycle tracing across the grid. scope - propagate opentelemetry trace context…",
+      "priority_position": 2,
+      "query_ids": [
+        "Q-AI-AGENT-AUDIT"
+      ],
+      "ranking_factors": {
+        "actionability": {
+          "band": "HIGH",
+          "evidence": [
+            "https://github.com/praxis-proxy/ai/issues/194",
+            "enhancement",
+            "MEMBER"
+          ],
+          "reason": "Open unlocked Issue was authored by a repository owner, member, or collaborator."
+        },
+        "effort": {
+          "band": "NEEDS_REVIEW",
+          "evidence": [
+
+          ],
+          "reason": "Repository code and contribution scope were not inspected."
+        },
+        "evidence_quality": {
+          "band": "HIGH",
+          "evidence": [
+            "https://github.com/praxis-proxy/ai/issues/194",
+            "body_characters=679",
+            "MEMBER"
+          ],
+          "reason": "Public source metadata and a bounded source excerpt are available."
+        },
+        "expected_learning": {
+          "band": "HIGH",
+          "evidence": [
+            "trace",
+            "audit",
+            "policy",
+            "audit trail"
+          ],
+          "reason": "A bounded contribution could test existing components; actual scope needs policy-selected review."
+        },
+        "freshness": {
+          "band": "HIGH",
+          "evidence": [
+            "2026-07-23T09:23:12Z"
+          ],
+          "reason": "Source was updated 10 day(s) before the run date."
+        },
+        "pain_explicitness": {
+          "band": "HIGH",
+          "evidence": [
+            "agent audit trail and observability every agent action through the gateway produces an auditable record. full task lifecycle tracing across the grid. scope - propagate opentelemetry trace context…"
+          ],
+          "reason": "Source body length and explicit matched pain terms are reviewable."
+        },
+        "potential_value": {
+          "band": "NEEDS_REVIEW",
+          "evidence": [
+            "https://github.com/praxis-proxy/ai/issues/194"
+          ],
+          "reason": "The Issue record does not establish adoption, collaboration, reputation, or revenue value."
+        },
+        "titmas_relevance": {
+          "band": "HIGH",
+          "evidence": [
+            "agent audit trail and observability every agent action through the gateway produces an auditable record. full task lifecycle tracing across the grid. scope - propagate opentelemetry trace context…",
+            "agent audit trail and observability every agent action through the gateway produces an auditable record. full task lifecycle tracing across the grid. scope - propagate opentelemetry trace context…",
+            "agent audit trail and observability every agent action through the gateway produces an auditable record. full task lifecycle tracing across the grid. scope - propagate opentelemetry trace context…"
+          ],
+          "reason": "3 bounded role mapping(s); direct title terms: audit trail."
+        }
+      },
+      "ranking_status": "NEEDS_REVIEW",
+      "repository": "praxis-proxy/ai",
+      "retention_reason": "Retained because the public entry is open, unlocked, fresh, and maps AI_AGENT_AUDIT to existing bounded TITMAS roles; all acceptance and value claims remain unconfirmed.",
+      "source_evidence_excerpt": "agent audit trail and observability every agent action through the gateway produces an auditable record. full task lifecycle tracing across the grid. scope - propagate opentelemetry trace context…",
+      "source_type": "GITHUB_ISSUE",
+      "state": "OPEN",
+      "success_probability": null,
+      "title": "Agent audit trail and observability",
+      "unconfirmed_facts": [
+        "maintainer_interest",
+        "contribution_acceptance",
+        "current_unresolved_scope_beyond_open_state",
+        "implementation_effort",
+        "customer_demand",
+        "commercial_budget_or_value",
+        "legal_and_license_fit"
+      ],
+      "updated_at": "2026-07-23T09:23:12Z",
+      "url": "https://github.com/praxis-proxy/ai/issues/194"
+    },
+    {
+      "action_entry": {
+        "entry_type": "GITHUB_ISSUE",
+        "is_locked": false,
+        "public_url": "https://github.com/ptone/scion/issues/482",
+        "state": "OPEN"
+      },
+      "action_pack": {
+        "estimated_effort": "NEEDS_REVIEW",
+        "external_action_authorized": false,
+        "human_exception_decisions_required": [
+
+        ],
+        "key_risks": [
+          "Keyword mapping can overstate relevance and is unvalidated.",
+          "Open state does not imply permission to implement or contact anyone.",
+          "Effort, license, and security facts require evidence; legal, payment, identity, privacy, deletion, and account-security exceptions require human review.",
+          "Source freshness is limited to updated_at=2026-07-27T18:19:52Z."
+        ],
+        "minimum_contribution": "Prepare an evidence-backed scope question and a bounded component-mapping note for Agent Review Quorum; do not post automatically.",
+        "opportunity_summary": "feat: tiered agent authorization roles and sub-agent scope inheritance",
+        "original_source": "https://github.com/ptone/scion/issues/482",
+        "pain_point": "feat: tiered agent authorization roles and sub-agent scope inheritance: feat: tiered agent authorization roles and sub-agent scope inheritance summary agents currently receive a fixed set of hub api scopes with no mechanism for project admins or user roles to constrain…",
+        "possible_acceptance_reasons": [
+          "The public source states a problem aligned with AGENT_AUTHORIZATION.",
+          "A bounded existing component role may support a small, reviewable contribution."
+        ],
+        "possible_rejection_reasons": [
+          "Maintainer interest and preferred contribution path are unconfirmed.",
+          "The mapped TITMAS role may not fit repository architecture or scope.",
+          "A similar fix may already exist outside the retrieved Issue record."
+        ],
+        "reusable_components": [
+          {
+            "bounded_role": "bounded intent, action, and result semantics",
+            "capability_id": "AGENT_INTENT_PROTOCOL",
+            "mapping_evidence": "feat: tiered agent authorization roles and sub-agent scope inheritance summary agents currently receive a fixed set of hub api scopes with no mechanism for project admins or user roles to constrain…",
+            "repository": "joy7758/agent-intent-protocol"
+          },
+          {
+            "bounded_role": "runtime policy, permission, and execution constraints",
+            "capability_id": "TOKEN_GOVERNOR",
+            "mapping_evidence": "feat: tiered agent authorization roles and sub-agent scope inheritance summary agents currently receive a fixed set of hub api scopes with no mechanism for project admins or user roles to constrain…",
+            "repository": "joy7758/token-governor"
+          }
+        ],
+        "suggested_action_type": "COMMENT"
+      },
+      "author": "ptone",
+      "author_association": "OWNER",
+      "capability_mappings": [
+        {
+          "bounded_role": "bounded intent, action, and result semantics",
+          "capability_id": "AGENT_INTENT_PROTOCOL",
+          "evidence_snippet": "feat: tiered agent authorization roles and sub-agent scope inheritance summary agents currently receive a fixed set of hub api scopes with no mechanism for project admins or user roles to constrain…",
+          "matched_keywords": [
+            "agent authorization"
+          ],
+          "repository": "joy7758/agent-intent-protocol"
+        },
+        {
+          "bounded_role": "runtime policy, permission, and execution constraints",
+          "capability_id": "TOKEN_GOVERNOR",
+          "evidence_snippet": "feat: tiered agent authorization roles and sub-agent scope inheritance summary agents currently receive a fixed set of hub api scopes with no mechanism for project admins or user roles to constrain…",
+          "matched_keywords": [
+            "agent authorization"
+          ],
+          "repository": "joy7758/token-governor"
+        }
+      ],
+      "comments_count": 5,
+      "created_at": "2026-07-17T04:52:28Z",
+      "heuristic_model": "heuristic_unvalidated_v0.1",
+      "heuristic_unvalidated": true,
+      "id": "I_kwDORvdnm88AAAABJIzJOA",
+      "is_locked": false,
+      "is_pull_request": false,
+      "labels": [
+        "enhancement",
+        "type:feature",
+        "area:auth"
+      ],
+      "number": 482,
+      "ordering_basis": [
+        {
+          "band": "HIGH",
+          "factor": "titmas_relevance"
+        },
+        {
+          "band": "HIGH",
+          "factor": "actionability"
+        },
+        {
+          "band": "HIGH",
+          "factor": "pain_explicitness"
+        },
+        {
+          "band": "HIGH",
+          "factor": "expected_learning"
+        },
+        {
+          "band": "HIGH",
+          "factor": "freshness"
+        },
+        {
+          "band": "HIGH",
+          "factor": "evidence_quality"
+        },
+        {
+          "band": "NEEDS_REVIEW",
+          "factor": "potential_value"
+        },
+        {
+          "band": "NEEDS_REVIEW",
+          "factor": "effort"
+        }
+      ],
+      "pain_classifications": [
+        {
+          "classification": "AGENT_AUTHORIZATION",
+          "evidence_snippet": "feat: tiered agent authorization roles and sub-agent scope inheritance summary agents currently receive a fixed set of hub api scopes with no mechanism for project admins or user roles to constrain…",
+          "matched_keywords": [
+            "agent authorization",
+            "permission"
+          ]
+        }
+      ],
+      "pain_point": "feat: tiered agent authorization roles and sub-agent scope inheritance: feat: tiered agent authorization roles and sub-agent scope inheritance summary agents currently receive a fixed set of hub api scopes with no mechanism for project admins or user roles to constrain…",
+      "priority_position": 3,
+      "query_ids": [
+        "Q-AGENT-AUTHORIZATION"
+      ],
+      "ranking_factors": {
+        "actionability": {
+          "band": "HIGH",
+          "evidence": [
+            "https://github.com/ptone/scion/issues/482",
+            "enhancement, type:feature, area:auth",
+            "OWNER"
+          ],
+          "reason": "Open unlocked Issue was authored by a repository owner, member, or collaborator."
+        },
+        "effort": {
+          "band": "NEEDS_REVIEW",
+          "evidence": [
+
+          ],
+          "reason": "Repository code and contribution scope were not inspected."
+        },
+        "evidence_quality": {
+          "band": "HIGH",
+          "evidence": [
+            "https://github.com/ptone/scion/issues/482",
+            "body_characters=1090",
+            "OWNER"
+          ],
+          "reason": "Public source metadata and a bounded source excerpt are available."
+        },
+        "expected_learning": {
+          "band": "HIGH",
+          "evidence": [
+            "agent authorization"
+          ],
+          "reason": "A bounded contribution could test existing components; actual scope needs policy-selected review."
+        },
+        "freshness": {
+          "band": "HIGH",
+          "evidence": [
+            "2026-07-27T18:19:52Z"
+          ],
+          "reason": "Source was updated 6 day(s) before the run date."
+        },
+        "pain_explicitness": {
+          "band": "HIGH",
+          "evidence": [
+            "feat: tiered agent authorization roles and sub-agent scope inheritance summary agents currently receive a fixed set of hub api scopes with no mechanism for project admins or user roles to constrain…"
+          ],
+          "reason": "Source body length and explicit matched pain terms are reviewable."
+        },
+        "potential_value": {
+          "band": "NEEDS_REVIEW",
+          "evidence": [
+            "https://github.com/ptone/scion/issues/482"
+          ],
+          "reason": "The Issue record does not establish adoption, collaboration, reputation, or revenue value."
+        },
+        "titmas_relevance": {
+          "band": "HIGH",
+          "evidence": [
+            "feat: tiered agent authorization roles and sub-agent scope inheritance summary agents currently receive a fixed set of hub api scopes with no mechanism for project admins or user roles to constrain…",
+            "feat: tiered agent authorization roles and sub-agent scope inheritance summary agents currently receive a fixed set of hub api scopes with no mechanism for project admins or user roles to constrain…"
+          ],
+          "reason": "2 bounded role mapping(s); direct title terms: agent authorization."
+        }
+      },
+      "ranking_status": "NEEDS_REVIEW",
+      "repository": "ptone/scion",
+      "retention_reason": "Retained because the public entry is open, unlocked, fresh, and maps AGENT_AUTHORIZATION to existing bounded TITMAS roles; all acceptance and value claims remain unconfirmed.",
+      "source_evidence_excerpt": "feat: tiered agent authorization roles and sub-agent scope inheritance summary agents currently receive a fixed set of hub api scopes with no mechanism for project admins or user roles to constrain…",
+      "source_type": "GITHUB_ISSUE",
+      "state": "OPEN",
+      "success_probability": null,
+      "title": "feat: tiered agent authorization roles and sub-agent scope inheritance",
+      "unconfirmed_facts": [
+        "maintainer_interest",
+        "contribution_acceptance",
+        "current_unresolved_scope_beyond_open_state",
+        "implementation_effort",
+        "customer_demand",
+        "commercial_budget_or_value",
+        "legal_and_license_fit"
+      ],
+      "updated_at": "2026-07-27T18:19:52Z",
+      "url": "https://github.com/ptone/scion/issues/482"
+    },
+    {
+      "action_entry": {
+        "entry_type": "GITHUB_ISSUE",
+        "is_locked": false,
+        "public_url": "https://github.com/source-inc/gents/issues/461",
+        "state": "OPEN"
+      },
+      "action_pack": {
+        "estimated_effort": "NEEDS_REVIEW",
+        "external_action_authorized": false,
+        "human_exception_decisions_required": [
+
+        ],
+        "key_risks": [
+          "Keyword mapping can overstate relevance and is unvalidated.",
+          "Open state does not imply permission to implement or contact anyone.",
+          "Effort, license, and security facts require evidence; legal, payment, identity, privacy, deletion, and account-security exceptions require human review.",
+          "Source freshness is limited to updated_at=2026-07-20T17:05:21Z."
+        ],
+        "minimum_contribution": "Prepare an evidence-backed scope question and a bounded component-mapping note for Agent Review Quorum; do not post automatically.",
+        "opportunity_summary": "DefraDB ACP integration for defra-agent authorization (experimental major feature)",
+        "original_source": "https://github.com/source-inc/gents/issues/461",
+        "pain_point": "DefraDB ACP integration for defra-agent authorization (experimental major feature): defradb acp integration for defra-agent authorization (experimental major feature) goal integrate defradb acp as a first-class authorization substrate across defra-agent . high-level design goal:…",
+        "possible_acceptance_reasons": [
+          "The public source states a problem aligned with AGENT_AUTHORIZATION.",
+          "A bounded existing component role may support a small, reviewable contribution."
+        ],
+        "possible_rejection_reasons": [
+          "Maintainer interest and preferred contribution path are unconfirmed.",
+          "The mapped TITMAS role may not fit repository architecture or scope.",
+          "A similar fix may already exist outside the retrieved Issue record."
+        ],
+        "reusable_components": [
+          {
+            "bounded_role": "bounded intent, action, and result semantics",
+            "capability_id": "AGENT_INTENT_PROTOCOL",
+            "mapping_evidence": "defradb acp integration for defra-agent authorization (experimental major feature) goal integrate defradb acp as a first-class authorization substrate across defra-agent . high-level design goal:…",
+            "repository": "joy7758/agent-intent-protocol"
+          },
+          {
+            "bounded_role": "post-execution audit and replay-oriented review",
+            "capability_id": "ARO_AUDIT",
+            "mapping_evidence": "feature , not a small cleanup. it needs design work, lean/conformance coverage, and careful runtime integration. current state - the principal/behavior split from 193 shipped: behaviors route…",
+            "repository": "joy7758/aro-audit"
+          },
+          {
+            "bounded_role": "runtime policy, permission, and execution constraints",
+            "capability_id": "TOKEN_GOVERNOR",
+            "mapping_evidence": "defradb acp integration for defra-agent authorization (experimental major feature) goal integrate defradb acp as a first-class authorization substrate across defra-agent . high-level design goal:…",
+            "repository": "joy7758/token-governor"
+          }
+        ],
+        "suggested_action_type": "COMMENT"
+      },
+      "author": "jackzampolin",
+      "author_association": "COLLABORATOR",
+      "capability_mappings": [
+        {
+          "bounded_role": "bounded intent, action, and result semantics",
+          "capability_id": "AGENT_INTENT_PROTOCOL",
+          "evidence_snippet": "defradb acp integration for defra-agent authorization (experimental major feature) goal integrate defradb acp as a first-class authorization substrate across defra-agent . high-level design goal:…",
+          "matched_keywords": [
+            "agent authorization",
+            "delegation"
+          ],
+          "repository": "joy7758/agent-intent-protocol"
+        },
+        {
+          "bounded_role": "post-execution audit and replay-oriented review",
+          "capability_id": "ARO_AUDIT",
+          "evidence_snippet": "feature , not a small cleanup. it needs design work, lean/conformance coverage, and careful runtime integration. current state - the principal/behavior split from 193 shipped: behaviors route…",
+          "matched_keywords": [
+            "conformance"
+          ],
+          "repository": "joy7758/aro-audit"
+        },
+        {
+          "bounded_role": "runtime policy, permission, and execution constraints",
+          "capability_id": "TOKEN_GOVERNOR",
+          "evidence_snippet": "defradb acp integration for defra-agent authorization (experimental major feature) goal integrate defradb acp as a first-class authorization substrate across defra-agent . high-level design goal:…",
+          "matched_keywords": [
+            "agent authorization"
+          ],
+          "repository": "joy7758/token-governor"
+        }
+      ],
+      "comments_count": 0,
+      "created_at": "2026-06-10T14:08:18Z",
+      "heuristic_model": "heuristic_unvalidated_v0.1",
+      "heuristic_unvalidated": true,
+      "id": "I_kwDOR9hJjM8AAAABFBbiug",
+      "is_locked": false,
+      "is_pull_request": false,
+      "labels": [
+        "enhancement",
+        "lean",
+        "runtime",
+        "design",
+        "cluster: tools-control-plane",
+        "roadmap: later"
+      ],
+      "number": 461,
+      "ordering_basis": [
+        {
+          "band": "HIGH",
+          "factor": "titmas_relevance"
+        },
+        {
+          "band": "HIGH",
+          "factor": "actionability"
+        },
+        {
+          "band": "HIGH",
+          "factor": "pain_explicitness"
+        },
+        {
+          "band": "HIGH",
+          "factor": "expected_learning"
+        },
+        {
+          "band": "HIGH",
+          "factor": "freshness"
+        },
+        {
+          "band": "HIGH",
+          "factor": "evidence_quality"
+        },
+        {
+          "band": "NEEDS_REVIEW",
+          "factor": "potential_value"
+        },
+        {
+          "band": "NEEDS_REVIEW",
+          "factor": "effort"
+        }
+      ],
+      "pain_classifications": [
+        {
+          "classification": "AGENT_AUTHORIZATION",
+          "evidence_snippet": "defradb acp integration for defra-agent authorization (experimental major feature) goal integrate defradb acp as a first-class authorization substrate across defra-agent . high-level design goal:…",
+          "matched_keywords": [
+            "agent authorization",
+            "permission"
+          ]
+        }
+      ],
+      "pain_point": "DefraDB ACP integration for defra-agent authorization (experimental major feature): defradb acp integration for defra-agent authorization (experimental major feature) goal integrate defradb acp as a first-class authorization substrate across defra-agent . high-level design goal:…",
+      "priority_position": 4,
+      "query_ids": [
+        "Q-AGENT-AUTHORIZATION"
+      ],
+      "ranking_factors": {
+        "actionability": {
+          "band": "HIGH",
+          "evidence": [
+            "https://github.com/source-inc/gents/issues/461",
+            "enhancement, lean, runtime, design, cluster: tools-control-plane, roadmap: later",
+            "COLLABORATOR"
+          ],
+          "reason": "Open unlocked Issue was authored by a repository owner, member, or collaborator."
+        },
+        "effort": {
+          "band": "NEEDS_REVIEW",
+          "evidence": [
+
+          ],
+          "reason": "Repository code and contribution scope were not inspected."
+        },
+        "evidence_quality": {
+          "band": "HIGH",
+          "evidence": [
+            "https://github.com/source-inc/gents/issues/461",
+            "body_characters=2922",
+            "COLLABORATOR"
+          ],
+          "reason": "Public source metadata and a bounded source excerpt are available."
+        },
+        "expected_learning": {
+          "band": "HIGH",
+          "evidence": [
+            "policy",
+            "feature",
+            "agent authorization"
+          ],
+          "reason": "A bounded contribution could test existing components; actual scope needs policy-selected review."
+        },
+        "freshness": {
+          "band": "HIGH",
+          "evidence": [
+            "2026-07-20T17:05:21Z"
+          ],
+          "reason": "Source was updated 13 day(s) before the run date."
+        },
+        "pain_explicitness": {
+          "band": "HIGH",
+          "evidence": [
+            "defradb acp integration for defra-agent authorization (experimental major feature) goal integrate defradb acp as a first-class authorization substrate across defra-agent . high-level design goal:…"
+          ],
+          "reason": "Source body length and explicit matched pain terms are reviewable."
+        },
+        "potential_value": {
+          "band": "NEEDS_REVIEW",
+          "evidence": [
+            "https://github.com/source-inc/gents/issues/461"
+          ],
+          "reason": "The Issue record does not establish adoption, collaboration, reputation, or revenue value."
+        },
+        "titmas_relevance": {
+          "band": "HIGH",
+          "evidence": [
+            "defradb acp integration for defra-agent authorization (experimental major feature) goal integrate defradb acp as a first-class authorization substrate across defra-agent . high-level design goal:…",
+            "feature , not a small cleanup. it needs design work, lean/conformance coverage, and careful runtime integration. current state - the principal/behavior split from 193 shipped: behaviors route…",
+            "defradb acp integration for defra-agent authorization (experimental major feature) goal integrate defradb acp as a first-class authorization substrate across defra-agent . high-level design goal:…"
+          ],
+          "reason": "3 bounded role mapping(s); direct title terms: agent authorization."
+        }
+      },
+      "ranking_status": "NEEDS_REVIEW",
+      "repository": "source-inc/gents",
+      "retention_reason": "Retained because the public entry is open, unlocked, fresh, and maps AGENT_AUTHORIZATION to existing bounded TITMAS roles; all acceptance and value claims remain unconfirmed.",
+      "source_evidence_excerpt": "defradb acp integration for defra-agent authorization (experimental major feature) goal integrate defradb acp as a first-class authorization substrate across defra-agent . high-level design goal:…",
+      "source_type": "GITHUB_ISSUE",
+      "state": "OPEN",
+      "success_probability": null,
+      "title": "DefraDB ACP integration for defra-agent authorization (experimental major feature)",
+      "unconfirmed_facts": [
+        "maintainer_interest",
+        "contribution_acceptance",
+        "current_unresolved_scope_beyond_open_state",
+        "implementation_effort",
+        "customer_demand",
+        "commercial_budget_or_value",
+        "legal_and_license_fit"
+      ],
+      "updated_at": "2026-07-20T17:05:21Z",
+      "url": "https://github.com/source-inc/gents/issues/461"
+    },
+    {
+      "action_entry": {
+        "entry_type": "GITHUB_ISSUE",
+        "is_locked": false,
+        "public_url": "https://github.com/syswonder/robonix/issues/189",
+        "state": "OPEN"
+      },
+      "action_pack": {
+        "estimated_effort": "NEEDS_REVIEW",
+        "external_action_authorized": false,
+        "human_exception_decisions_required": [
+
+        ],
+        "key_risks": [
+          "Keyword mapping can overstate relevance and is unvalidated.",
+          "Open state does not imply permission to implement or contact anyone.",
+          "Effort, license, and security facts require evidence; legal, payment, identity, privacy, deletion, and account-security exceptions require human review.",
+          "Source freshness is limited to updated_at=2026-07-27T03:06:25Z."
+        ],
+        "minimum_contribution": "Prepare an evidence-backed scope question and a bounded component-mapping note for Agent Review Quorum; do not post automatically.",
+        "opportunity_summary": "[BUG] Pilot can falsely complete embodied tasks without execution evidence",
+        "original_source": "https://github.com/syswonder/robonix/issues/189",
+        "pain_point": "[BUG] Pilot can falsely complete embodied tasks without execution evidence: [bug] pilot can falsely complete embodied tasks without execution evidence problem pilot can mark an embodied task as complete based on the planning model's own task update=done response even when…",
+        "possible_acceptance_reasons": [
+          "The public source states a problem aligned with EXECUTION_EVIDENCE, PROVENANCE_REPLAY.",
+          "A bounded existing component role may support a small, reviewable contribution."
+        ],
+        "possible_rejection_reasons": [
+          "Maintainer interest and preferred contribution path are unconfirmed.",
+          "The mapped TITMAS role may not fit repository architecture or scope.",
+          "A similar fix may already exist outside the retrieved Issue record."
+        ],
+        "reusable_components": [
+          {
+            "bounded_role": "execution evidence packaging and offline verification",
+            "capability_id": "AGENT_EVIDENCE",
+            "mapping_evidence": "[bug] pilot can falsely complete embodied tasks without execution evidence problem pilot can mark an embodied task as complete based on the planning model's own task update=done response even when…",
+            "repository": "joy7758/agent-evidence"
+          },
+          {
+            "bounded_role": "post-execution audit and replay-oriented review",
+            "capability_id": "ARO_AUDIT",
+            "mapping_evidence": "success; success requires an independent verification verdict. - replaying the reported trace is rejected because required physical completion evidence is absent. - replaying the earlier successful…",
+            "repository": "joy7758/aro-audit"
+          }
+        ],
+        "suggested_action_type": "COMMENT"
+      },
+      "author": "enkerewpo",
+      "author_association": "MEMBER",
+      "capability_mappings": [
+        {
+          "bounded_role": "execution evidence packaging and offline verification",
+          "capability_id": "AGENT_EVIDENCE",
+          "evidence_snippet": "[bug] pilot can falsely complete embodied tasks without execution evidence problem pilot can mark an embodied task as complete based on the planning model's own task update=done response even when…",
+          "matched_keywords": [
+            "execution evidence"
+          ],
+          "repository": "joy7758/agent-evidence"
+        },
+        {
+          "bounded_role": "post-execution audit and replay-oriented review",
+          "capability_id": "ARO_AUDIT",
+          "evidence_snippet": "success; success requires an independent verification verdict. - replaying the reported trace is rejected because required physical completion evidence is absent. - replaying the earlier successful…",
+          "matched_keywords": [
+            "replay"
+          ],
+          "repository": "joy7758/aro-audit"
+        }
+      ],
+      "comments_count": 0,
+      "created_at": "2026-07-27T03:06:16Z",
+      "heuristic_model": "heuristic_unvalidated_v0.1",
+      "heuristic_unvalidated": true,
+      "id": "I_kwDOP2gIzs8AAAABKRCg5A",
+      "is_locked": false,
+      "is_pull_request": false,
+      "labels": [
+        "bug",
+        "comp:executor",
+        "comp:pilot"
+      ],
+      "number": 189,
+      "ordering_basis": [
+        {
+          "band": "HIGH",
+          "factor": "titmas_relevance"
+        },
+        {
+          "band": "HIGH",
+          "factor": "actionability"
+        },
+        {
+          "band": "HIGH",
+          "factor": "pain_explicitness"
+        },
+        {
+          "band": "HIGH",
+          "factor": "expected_learning"
+        },
+        {
+          "band": "HIGH",
+          "factor": "freshness"
+        },
+        {
+          "band": "HIGH",
+          "factor": "evidence_quality"
+        },
+        {
+          "band": "NEEDS_REVIEW",
+          "factor": "potential_value"
+        },
+        {
+          "band": "NEEDS_REVIEW",
+          "factor": "effort"
+        }
+      ],
+      "pain_classifications": [
+        {
+          "classification": "EXECUTION_EVIDENCE",
+          "evidence_snippet": "[bug] pilot can falsely complete embodied tasks without execution evidence problem pilot can mark an embodied task as complete based on the planning model's own task update=done response even when…",
+          "matched_keywords": [
+            "execution evidence",
+            "receipt"
+          ]
+        },
+        {
+          "classification": "PROVENANCE_REPLAY",
+          "evidence_snippet": "success; success requires an independent verification verdict. - replaying the reported trace is rejected because required physical completion evidence is absent. - replaying the earlier successful…",
+          "matched_keywords": [
+            "replay"
+          ]
+        }
+      ],
+      "pain_point": "[BUG] Pilot can falsely complete embodied tasks without execution evidence: [bug] pilot can falsely complete embodied tasks without execution evidence problem pilot can mark an embodied task as complete based on the planning model's own task update=done response even when…",
+      "priority_position": 5,
+      "query_ids": [
+        "Q-EXECUTION-EVIDENCE"
+      ],
+      "ranking_factors": {
+        "actionability": {
+          "band": "HIGH",
+          "evidence": [
+            "https://github.com/syswonder/robonix/issues/189",
+            "bug, comp:executor, comp:pilot",
+            "MEMBER"
+          ],
+          "reason": "Open unlocked Issue was authored by a repository owner, member, or collaborator."
+        },
+        "effort": {
+          "band": "NEEDS_REVIEW",
+          "evidence": [
+
+          ],
+          "reason": "Repository code and contribution scope were not inspected."
+        },
+        "evidence_quality": {
+          "band": "HIGH",
+          "evidence": [
+            "https://github.com/syswonder/robonix/issues/189",
+            "body_characters=6285",
+            "MEMBER"
+          ],
+          "reason": "Public source metadata and a bounded source excerpt are available."
+        },
+        "expected_learning": {
+          "band": "HIGH",
+          "evidence": [
+            "test",
+            "trace",
+            "policy",
+            "execution evidence"
+          ],
+          "reason": "A bounded contribution could test existing components; actual scope needs policy-selected review."
+        },
+        "freshness": {
+          "band": "HIGH",
+          "evidence": [
+            "2026-07-27T03:06:25Z"
+          ],
+          "reason": "Source was updated 6 day(s) before the run date."
+        },
+        "pain_explicitness": {
+          "band": "HIGH",
+          "evidence": [
+            "[bug] pilot can falsely complete embodied tasks without execution evidence problem pilot can mark an embodied task as complete based on the planning model's own task update=done response even when…",
+            "success; success requires an independent verification verdict. - replaying the reported trace is rejected because required physical completion evidence is absent. - replaying the earlier successful…"
+          ],
+          "reason": "Source body length and explicit matched pain terms are reviewable."
+        },
+        "potential_value": {
+          "band": "NEEDS_REVIEW",
+          "evidence": [
+            "https://github.com/syswonder/robonix/issues/189"
+          ],
+          "reason": "The Issue record does not establish adoption, collaboration, reputation, or revenue value."
+        },
+        "titmas_relevance": {
+          "band": "HIGH",
+          "evidence": [
+            "[bug] pilot can falsely complete embodied tasks without execution evidence problem pilot can mark an embodied task as complete based on the planning model's own task update=done response even when…",
+            "success; success requires an independent verification verdict. - replaying the reported trace is rejected because required physical completion evidence is absent. - replaying the earlier successful…"
+          ],
+          "reason": "2 bounded role mapping(s); direct title terms: execution evidence."
+        }
+      },
+      "ranking_status": "NEEDS_REVIEW",
+      "repository": "syswonder/robonix",
+      "retention_reason": "Retained because the public entry is open, unlocked, fresh, and maps EXECUTION_EVIDENCE, PROVENANCE_REPLAY to existing bounded TITMAS roles; all acceptance and value claims remain unconfirmed.",
+      "source_evidence_excerpt": "[bug] pilot can falsely complete embodied tasks without execution evidence problem pilot can mark an embodied task as complete based on the planning model's own task update=done response even when…",
+      "source_type": "GITHUB_ISSUE",
+      "state": "OPEN",
+      "success_probability": null,
+      "title": "[BUG] Pilot can falsely complete embodied tasks without execution evidence",
+      "unconfirmed_facts": [
+        "maintainer_interest",
+        "contribution_acceptance",
+        "current_unresolved_scope_beyond_open_state",
+        "implementation_effort",
+        "customer_demand",
+        "commercial_budget_or_value",
+        "legal_and_license_fit"
+      ],
+      "updated_at": "2026-07-27T03:06:25Z",
+      "url": "https://github.com/syswonder/robonix/issues/189"
+    }
+  ],
+  "report_date": "2026-08-02",
+  "run_status": "LIVE_READ_ONLY_PARTIAL_SOURCE_COVERAGE",
+  "schema_version": "0.1",
+  "tracked_opportunities": [
+    {
+      "evidence_paths": [
+        "reports/review-runs/2026-08-02-ca2a-pr-76-action008-ordering/input.json",
+        "reports/review-runs/2026-08-02-ca2a-pr-76-action008-ordering/reviews/discovery-review.json",
+        "reports/review-runs/2026-08-02-ca2a-pr-76-ready/input.json",
+        "reports/review-runs/2026-08-02-ca2a-pr-76-ready/reviews/discovery-review.json",
+        "reports/review-runs/2026-08-02-ca2a-pr-76-ready/reviews/scope-review.json",
+        "reports/self-improvement-runs/2026-08-02-iteration-1/observation.json",
+        "reports/titmas-runs/2026-08-02-ca2a-pr-76-latest-head/opportunity-reference.json",
+        "reports/titmas-runs/2026-08-02-ca2a-pr-76-latest-head/reviewer-inputs/comment/reviews/discovery.json",
+        "reports/titmas-runs/2026-08-02-ca2a-pr-76-latest-head/reviewer-inputs/push/input.json",
+        "reports/titmas-runs/2026-08-02-ca2a-pr-76-latest-head/reviewer-inputs/push/reviews/discovery.json"
+      ],
+      "number": 36,
+      "related_entries": [
+        "github:agentrust-io/ca2a:pull:76",
+        "github:agentrust-io/ca2a:pull:80"
+      ],
+      "repository": "agentrust-io/ca2a",
+      "root_problem_id": "github:agentrust-io/ca2a:issue:36",
+      "source": "https://github.com/agentrust-io/ca2a/issues/36",
+      "source_observed_in_current_run": false,
+      "tracked_status": "READY_FOR_REVIEW"
+    }
+  ],
+  "trust_guard": {
+    "invoked": false,
+    "reason": "Discovery report generation does not itself invoke review authorization or external action.",
+    "status": "FROZEN_AUXILIARY_GUARD",
+    "version": "TITMAS_SCOUT_TRUST_GUARD_V0.1"
+  },
+  "unselected_candidates": [
+    {
+      "reason": "REPORT_LIMIT_MAX_FIVE",
+      "repository": "pillyshi/navdoc-py",
+      "source": "https://github.com/pillyshi/navdoc-py/issues/14",
+      "title": "feat: implement agent authorization endpoints"
+    },
+    {
+      "reason": "REPORT_LIMIT_MAX_FIVE",
+      "repository": "agentnameservice/ans",
+      "source": "https://github.com/agentnameservice/ans/issues/96",
+      "title": "Proposal: Linking Agent Identity with Runtime Execution Evidence"
+    },
+    {
+      "reason": "REPORT_LIMIT_MAX_FIVE",
+      "repository": "idolum-ai/kenogram",
+      "source": "https://github.com/idolum-ai/kenogram/issues/37",
+      "title": "Epic: governed ephemeral jobs and independently verifiable execution evidence"
+    },
+    {
+      "reason": "REPORT_LIMIT_MAX_FIVE",
+      "repository": "rossoctl/rossoctl",
+      "source": "https://github.com/rossoctl/rossoctl/issues/2331",
+      "title": "Agent-to-agent authorization: topology allowlist + Istio ambient identity (blocked on ADR-0003/MultiAgent)"
+    },
+    {
+      "reason": "REPORT_LIMIT_MAX_FIVE",
+      "repository": "use-crux/crux",
+      "source": "https://github.com/use-crux/crux/issues/286",
+      "title": "RFC: Execution evidence: intent, authority, change, verification, and recovery"
+    },
+    {
+      "reason": "REPORT_LIMIT_MAX_FIVE",
+      "repository": "use-crux/crux",
+      "source": "https://github.com/use-crux/crux/issues/287",
+      "title": "Epic: Execution evidence implementation and native coverage"
+    },
+    {
+      "reason": "REPORT_LIMIT_MAX_FIVE",
+      "repository": "OWASP/CheatSheetSeries",
+      "source": "https://github.com/OWASP/CheatSheetSeries/issues/2313",
+      "title": "Proposal: Verifying Third-Party Agent Execution Evidence Cheat Sheet"
+    },
+    {
+      "reason": "REPORT_LIMIT_MAX_FIVE",
+      "repository": "nextlevelbuilder/goclaw",
+      "source": "https://github.com/nextlevelbuilder/goclaw/issues/1217",
+      "title": "[Security] Cross-Agent Authorization Bypass in `/v1/tools/invoke` Allows Unauthorized Cron Binding to Foreign Agents"
+    },
+    {
+      "reason": "REPORT_LIMIT_MAX_FIVE",
+      "repository": "cline/mcp-marketplace",
+      "source": "https://github.com/cline/mcp-marketplace/issues/1960",
+      "title": "Server Submission: mastyf.ai — MCP Security Proxy"
+    },
+    {
+      "reason": "REPORT_LIMIT_MAX_FIVE",
+      "repository": "Basic-Data-Infrastructure/BDI-change-requests",
+      "source": "https://github.com/Basic-Data-Infrastructure/BDI-change-requests/issues/34",
+      "title": "[BDI RfC] BDI Agent Authorization and Delegation Protocol (AAuth)"
+    },
+    {
+      "reason": "REPORT_LIMIT_MAX_FIVE",
+      "repository": "bitwarden/clients",
+      "source": "https://github.com/bitwarden/clients/issues/13998",
+      "title": "Want the ssh agent authorization dialog to be modal"
+    },
+    {
+      "reason": "REPORT_LIMIT_MAX_FIVE",
+      "repository": "forge-trust/AppSurface",
+      "source": "https://github.com/forge-trust/AppSurface/issues/426",
+      "title": "design(auth-agent): plan delegated agent authorization"
+    },
+    {
+      "reason": "REPORT_LIMIT_MAX_FIVE",
+      "repository": "FlowiseAI/Flowise",
+      "source": "https://github.com/FlowiseAI/Flowise/issues/5918",
+      "title": "Feature: Signed action receipts for enterprise flow audit trails (AAR)"
+    },
+    {
+      "reason": "REPORT_LIMIT_MAX_FIVE",
+      "repository": "krakenfx/kraken-cli",
+      "source": "https://github.com/krakenfx/kraken-cli/issues/42",
+      "title": "Verifiable agent authorization: is mandate scoping CLI-owned, or a layer above the venue?"
+    },
+    {
+      "reason": "REPORT_LIMIT_MAX_FIVE",
+      "repository": "ossf/security-reviews",
+      "source": "https://github.com/ossf/security-reviews/issues/102",
+      "title": "Review request: Rava V0 draft Rust agent authorization protocol"
+    },
+    {
+      "reason": "REPORT_LIMIT_MAX_FIVE",
+      "repository": "powerhouse-inc/powerhouse",
+      "source": "https://github.com/powerhouse-inc/powerhouse/issues/2788",
+      "title": "Agent authorization is clunky, blocking the agent to show doc spec"
+    },
+    {
+      "reason": "REPORT_LIMIT_MAX_FIVE",
+      "repository": "Budibase/budibase",
+      "source": "https://github.com/Budibase/budibase/issues/19352",
+      "title": "Agent audit logging & lifecycle management"
+    },
+    {
+      "reason": "REPORT_LIMIT_MAX_FIVE",
+      "repository": "EthereumPhone/PQ1",
+      "source": "https://github.com/EthereumPhone/PQ1/issues/613",
+      "title": "Owner decision: second-opinion external agentic audit (Almanax / Nethermind AuditAgent)"
+    },
+    {
+      "reason": "REPORT_LIMIT_MAX_FIVE",
+      "repository": "Gildado/PayD",
+      "source": "https://github.com/Gildado/PayD/issues/1342",
+      "title": "Add report agent audit logging"
+    },
+    {
+      "reason": "REPORT_LIMIT_MAX_FIVE",
+      "repository": "NodeJSmith/hassette",
+      "source": "https://github.com/NodeJSmith/hassette/issues/1250",
+      "title": "Connect logs to handler and execution evidence"
+    },
+    {
+      "reason": "REPORT_LIMIT_MAX_FIVE",
+      "repository": "RanSolo/shield-workspace",
+      "source": "https://github.com/RanSolo/shield-workspace/issues/171",
+      "title": "Provide durable May execution-evidence adapters for governed local dispatch"
+    },
+    {
+      "reason": "REPORT_LIMIT_MAX_FIVE",
+      "repository": "adamgell/cmtraceopen",
+      "source": "https://github.com/adamgell/cmtraceopen/issues/359",
+      "title": "Intune Windows: model platform-script execution evidence"
+    },
+    {
+      "reason": "REPORT_LIMIT_MAX_FIVE",
+      "repository": "atpaawej/deep-viz",
+      "source": "https://github.com/atpaawej/deep-viz/issues/5",
+      "title": "The agent audit protocol"
+    },
+    {
+      "reason": "REPORT_LIMIT_MAX_FIVE",
+      "repository": "descipar/stickerfolio",
+      "source": "https://github.com/descipar/stickerfolio/issues/80",
+      "title": "Add the MCP security, audit, and abuse-prevention baseline"
+    },
+    {
+      "reason": "REPORT_LIMIT_MAX_FIVE",
+      "repository": "eluckey2002/Threadlight",
+      "source": "https://github.com/eluckey2002/Threadlight/issues/5",
+      "title": "How should execution evidence be revealed without overwhelming the UI?"
+    },
+    {
+      "reason": "REPORT_LIMIT_MAX_FIVE",
+      "repository": "liuh886/alpha_engine",
+      "source": "https://github.com/liuh886/alpha_engine/issues/348",
+      "title": "research: collect prospective v4.2 alert and execution evidence"
+    },
+    {
+      "reason": "REPORT_LIMIT_MAX_FIVE",
+      "repository": "oota-sushikuitee/oota-sushikuitee.net",
+      "source": "https://github.com/oota-sushikuitee/oota-sushikuitee.net/issues/19",
+      "title": "[Tech] Code-audit findings from portfolio multi-agent audit"
+    },
+    {
+      "reason": "REPORT_LIMIT_MAX_FIVE",
+      "repository": "openvibely/openvibely",
+      "source": "https://github.com/openvibely/openvibely/issues/138",
+      "title": "Expose per-run execution evidence on task detail pages"
+    },
+    {
+      "reason": "REPORT_LIMIT_MAX_FIVE",
+      "repository": "skotnikovv24-hub/500vso",
+      "source": "https://github.com/skotnikovv24-hub/500vso/issues/736",
+      "title": "MAGL WP0-WP1: model and agent governance foundation from R1 specification"
+    },
+    {
+      "reason": "REPORT_LIMIT_MAX_FIVE",
+      "repository": "vinkrene-jpg/forge-core",
+      "source": "https://github.com/vinkrene-jpg/forge-core/issues/1",
+      "title": "Route generic-build through workspace planner/executor with execution evidence"
+    },
+    {
+      "reason": "REPORT_LIMIT_MAX_FIVE",
+      "repository": "vivary-dev/vivary",
+      "source": "https://github.com/vivary-dev/vivary/issues/204",
+      "title": "feat(exo): integrate claims, leases, conflicts, handoffs, and execution evidence"
+    },
+    {
+      "reason": "REPORT_LIMIT_MAX_FIVE",
+      "repository": "PaulKov/dpone",
+      "source": "https://github.com/PaulKov/dpone/issues/290",
+      "title": "break-glass: merge PR #289 agent governance gate"
+    },
+    {
+      "reason": "REPORT_LIMIT_MAX_FIVE",
+      "repository": "Tr3kkR/Yuzu",
+      "source": "https://github.com/Tr3kkR/Yuzu/issues/1187",
+      "title": "Compliance evidence: post-fix verdict audit + policy_status history retention (SOC 2)"
+    },
+    {
+      "reason": "REPORT_LIMIT_MAX_FIVE",
+      "repository": "microsoft/entrabot",
+      "source": "https://github.com/microsoft/entrabot/issues/108",
+      "title": "security: validate Conditional Access and agent governance matrix"
+    },
+    {
+      "reason": "REPORT_LIMIT_MAX_FIVE",
+      "repository": "skiboy10/agentbase",
+      "source": "https://github.com/skiboy10/agentbase/issues/4",
+      "title": "Feature: Agentic knowledge curation — auto-discover sources and build collections"
+    },
+    {
+      "reason": "REPORT_LIMIT_MAX_FIVE",
+      "repository": "Hedgehogues/awesome-claude",
+      "source": "https://github.com/Hedgehogues/awesome-claude/issues/14",
+      "title": "Epic: AI Agent Governance"
+    },
+    {
+      "reason": "REPORT_LIMIT_MAX_FIVE",
+      "repository": "edgestream/AI.Agent",
+      "source": "https://github.com/edgestream/AI.Agent/issues/27",
+      "title": "Human-in-the-loop agent flows"
+    },
+    {
+      "reason": "REPORT_LIMIT_MAX_FIVE",
+      "repository": "kevinhongfr-star/lyc-intelligence",
+      "source": "https://github.com/kevinhongfr-star/lyc-intelligence/issues/120",
+      "title": "[G2] Cross-Agent Audit"
+    },
+    {
+      "reason": "REPORT_LIMIT_MAX_FIVE",
+      "repository": "oota-sushikuitee/nigiri",
+      "source": "https://github.com/oota-sushikuitee/nigiri/issues/103",
+      "title": "[Tech] Code-audit findings from portfolio multi-agent audit"
+    },
+    {
+      "reason": "REPORT_LIMIT_MAX_FIVE",
+      "repository": "vfi64/agentic-project-kit",
+      "source": "https://github.com/vfi64/agentic-project-kit/issues/1866",
+      "title": "Adopt the Agentic Governance Framework after Lab validation"
+    },
+    {
+      "reason": "REPORT_LIMIT_MAX_FIVE",
+      "repository": "safal207/LS",
+      "source": "https://github.com/safal207/LS/issues/765",
+      "title": "Grant track: Agent Governance Conformance Lab"
+    },
+    {
+      "reason": "REPORT_LIMIT_MAX_FIVE",
+      "repository": "BernydotJar/OS-Electoral",
+      "source": "https://github.com/BernydotJar/OS-Electoral/issues/63",
+      "title": "C2-TEST-001 — Cross-Tenant Adversarial Integration Harness"
+    },
+    {
+      "reason": "REPORT_LIMIT_MAX_FIVE",
+      "repository": "decentralized-identity/trusted-ai-agents",
+      "source": "https://github.com/decentralized-identity/trusted-ai-agents/issues/41",
+      "title": "Cross-ecosystem vocabulary for agent governance"
+    },
+    {
+      "reason": "REPORT_LIMIT_MAX_FIVE",
+      "repository": "ouijit/ouijit",
+      "source": "https://github.com/ouijit/ouijit/issues/238",
+      "title": "Consider integrating re_gent for agent auditability"
+    },
+    {
+      "reason": "REPORT_LIMIT_MAX_FIVE",
+      "repository": "rapid7/attackerkb",
+      "source": "https://github.com/rapid7/attackerkb/issues/80",
+      "title": "Addendum: Live Kernel Execution Evidence – “The Smoking Gun”"
+    },
+    {
+      "reason": "REPORT_LIMIT_MAX_FIVE",
+      "repository": "aaif/project-proposals",
+      "source": "https://github.com/aaif/project-proposals/issues/38",
+      "title": "Agent Governance & Accountability Working Group"
+    },
+    {
+      "reason": "REPORT_LIMIT_MAX_FIVE",
+      "repository": "dativo-io/talon",
+      "source": "https://github.com/dativo-io/talon/issues/153",
+      "title": "Full multi-agent governance (without orchestration)"
+    },
+    {
+      "reason": "REPORT_LIMIT_MAX_FIVE",
+      "repository": "rackhead-security/ai-security-research-notes",
+      "source": "https://github.com/rackhead-security/ai-security-research-notes/issues/3",
+      "title": "Add MCP security source digest"
+    },
+    {
+      "reason": "REPORT_LIMIT_MAX_FIVE",
+      "repository": "inkeep/agents",
+      "source": "https://github.com/inkeep/agents/issues/3463",
+      "title": "CCS Protocol Integration - TypeScript SDK for Agent Governance"
+    },
+    {
+      "reason": "REPORT_LIMIT_MAX_FIVE",
+      "repository": "DecapodLabs/decapod",
+      "source": "https://github.com/DecapodLabs/decapod/issues/870",
+      "title": "Specify a versioned agent-governance interoperability profile"
+    },
+    {
+      "reason": "REPORT_LIMIT_MAX_FIVE",
+      "repository": "Justin0504/federated-agent-audit",
+      "source": "https://github.com/Justin0504/federated-agent-audit/issues/8",
+      "title": "Governance layer for federated-agent-audit?"
+    },
+    {
+      "reason": "REPORT_LIMIT_MAX_FIVE",
+      "repository": "SecureBananaLabs/bug-bounty",
+      "source": "https://github.com/SecureBananaLabs/bug-bounty/issues/11464",
+      "title": "[AI-Agent-Audit] Optimize Bug Detection Workflow & Recursive Audit Matrix"
+    },
+    {
+      "reason": "REPORT_LIMIT_MAX_FIVE",
+      "repository": "qqwert1122/stock-industry-dashboard",
+      "source": "https://github.com/qqwert1122/stock-industry-dashboard/issues/2",
+      "title": "Future readings agent audit readings-agent-2026-07-15"
+    }
+  ]
+}

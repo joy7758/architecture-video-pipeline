@@ -1,0 +1,141 @@
+{
+  "schemaVersion": "architecture-film.v1",
+  "adapterId": "guanque",
+  "title": "鹳雀楼 · 一砖一瓦",
+  "width": 720,
+  "height": 1280,
+  "fps": 30,
+  "durationSeconds": 24,
+  "audio": "silent",
+  "assemblySemantics": "Reverse and forward playback of the existing per-component assembly schedule; not an exploded-layer structural model.",
+  "shots": [
+    {
+      "id": "finished-opening",
+      "label": "四檐凌空 · 一楼入画",
+      "start": 0,
+      "end": 3,
+      "from": {
+        "progress": 1,
+        "position": [
+          52.8,
+          36.15,
+          89.9
+        ],
+        "target": [
+          0,
+          12.5,
+          3
+        ]
+      },
+      "to": {
+        "progress": 1,
+        "position": [
+          47.3,
+          36.15,
+          94.3
+        ],
+        "target": [
+          0,
+          12.5,
+          3
+        ]
+      }
+    },
+    {
+      "id": "reverse-assembly",
+      "label": "循序拆解 · 回望一砖一瓦",
+      "start": 3,
+      "end": 9,
+      "from": {
+        "progress": 1,
+        "position": [
+          47.3,
+          36.15,
+          94.3
+        ],
+        "target": [
+          0,
+          12.5,
+          3
+        ]
+      },
+      "to": {
+        "progress": 0,
+        "position": [
+          23.1,
+          31.75,
+          103.1
+        ],
+        "target": [
+          0,
+          12.5,
+          3
+        ]
+      }
+    },
+    {
+      "id": "forward-assembly",
+      "label": "循序营造 · 更上一层楼",
+      "start": 9,
+      "end": 21,
+      "from": {
+        "progress": 0,
+        "position": [
+          23.1,
+          31.75,
+          103.1
+        ],
+        "target": [
+          0,
+          12.5,
+          3
+        ]
+      },
+      "to": {
+        "progress": 1,
+        "position": [
+          -37.4,
+          35.05,
+          97.6
+        ],
+        "target": [
+          0,
+          12.5,
+          3
+        ]
+      }
+    },
+    {
+      "id": "finished-closing",
+      "label": "更上一层楼",
+      "start": 21,
+      "end": 24,
+      "from": {
+        "progress": 1,
+        "position": [
+          -37.4,
+          35.05,
+          97.6
+        ],
+        "target": [
+          0,
+          12.5,
+          3
+        ]
+      },
+      "to": {
+        "progress": 1,
+        "position": [
+          -53.9,
+          36.15,
+          89.9
+        ],
+        "target": [
+          0,
+          12.5,
+          3
+        ]
+      }
+    }
+  ]
+}

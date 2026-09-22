@@ -1,0 +1,100 @@
+{
+  "manifest": {
+    "artifact_digest": "68181ce9a27509da21ed8e3a4fb7817aa00893fd97b25c9f04e49cd045830f7f",
+    "chain_hash_list_digest": "8bb93060587add4abafebffea04ad8ff3d728aaa43f2f4a49fa40d5cc0d20a49",
+    "digest_algorithm": "sha256",
+    "event_hash_list_digest": "ff38fcbd7b83fd9501fcdd1987b57e52b7d678a1c87687ede07edfd1ac2680f5",
+    "export_format": "json",
+    "filters": {},
+    "first_event_hash": "a0621853a56931b36e3a966afb063cee43cd1334fb7fdc9ebececacf2dad516e",
+    "generated_at": "2026-08-02T08:09:34.091394+00:00",
+    "last_event_hash": "a0621853a56931b36e3a966afb063cee43cd1334fb7fdc9ebececacf2dad516e",
+    "latest_chain_hash": "0d638283c887f1719cea0de150cc198a14ae4de81debf13fa038670e47a61ab2",
+    "record_count": 1,
+    "schema_version": "1.4.0",
+    "signature_policy": {
+      "minimum_valid_signatures": null,
+      "minimum_valid_signatures_by_role": {}
+    }
+  },
+  "records": [
+    {
+      "event": {
+        "actor": "AGENT_QUORUM",
+        "context": {
+          "ancestor_span_ids": [],
+          "attributes": {
+            "artifact_family": "EVIDENCE_ENVELOPE_EXPORT",
+            "canonical_commit": "911db6650547617c71331ddd9506811f04191656",
+            "canonical_repository": "agent-evidence"
+          },
+          "component": "titmas-evidence-adapter",
+          "name": null,
+          "parent_span_id": null,
+          "source": "tiamas-scout",
+          "source_event_type": null,
+          "span_id": null,
+          "tags": [
+            "titmas-scout",
+            "run:2026-08-02-praxis-ai-194-agent-audit"
+          ]
+        },
+        "event_id": "be4052b9-d1b4-4e35-b061-314f7a33c483",
+        "event_type": "titmas.scout.pre_action",
+        "inputs": {
+          "action_scope": [
+            "POST_BOUNDED_TECHNICAL_COMMENT"
+          ],
+          "actor_type": "AGENT_QUORUM",
+          "commit_sha": "4a9a8659b1b5d61ae2ad7203fbcdcc7666ae5995",
+          "digest_algorithm": "sha256",
+          "digest_value": "8a31c48c73f94a1fd71b9ddf50baf6cf8da4cdcc62d9d026198f5a3d2a3ce097",
+          "result": "PRE_ACTION_EVIDENCE_CAPTURED_PENDING_QUORUM",
+          "ruleset_version": "0.1",
+          "run_id": "2026-08-02-praxis-ai-194-agent-audit",
+          "source_reference": "https://github.com/praxis-proxy/ai/issues/194",
+          "timestamp": "2026-08-02T07:56:47Z",
+          "uncertainty": [
+            "maintainer_scope_acceptance_unknown",
+            "assignment_not_granted",
+            "repository_human_authorship_policy_applies"
+          ],
+          "unsupported_claims": [
+            "authorization_granted",
+            "comment_published",
+            "maintainer_acceptance",
+            "adoption",
+            "revenue",
+            "production_safety",
+            "actor_identity_authenticated"
+          ]
+        },
+        "metadata": {
+          "actor_authentication": "NOT_ESTABLISHED",
+          "authorization_granted": false,
+          "unsupported_claims": [
+            "authorization_granted",
+            "comment_published",
+            "maintainer_acceptance",
+            "adoption",
+            "revenue",
+            "production_safety",
+            "actor_identity_authenticated"
+          ],
+          "verification_scope": "STRUCTURE_DIGEST_CHAIN_ONLY"
+        },
+        "outputs": {
+          "result": "PRE_ACTION_EVIDENCE_CAPTURED_PENDING_QUORUM"
+        },
+        "timestamp": "2026-08-02T08:09:32.334487Z"
+      },
+      "hashes": {
+        "chain_hash": "0d638283c887f1719cea0de150cc198a14ae4de81debf13fa038670e47a61ab2",
+        "event_hash": "a0621853a56931b36e3a966afb063cee43cd1334fb7fdc9ebececacf2dad516e",
+        "previous_event_hash": null
+      },
+      "schema_version": "2.0.0"
+    }
+  ],
+  "signatures": []
+}

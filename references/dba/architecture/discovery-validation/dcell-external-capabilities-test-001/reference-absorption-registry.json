@@ -1,0 +1,91 @@
+{
+  "schema": "dba.reference_absorption_registry.v0.1",
+  "registry_id": "RAR-DCDAT-001",
+  "derived_from_test": "DCDAT-001",
+  "created_at": "2026-08-29T08:58:34Z",
+  "record_role": "ISOLATED_REFERENCE_LIBRARY_NOT_IMPLEMENTATION_STATE",
+  "absorption_policy": "AC-1_REFERENCE_ONLY",
+  "overall_status": "PASS_WITH_PARTIAL_SOURCE_COVERAGE",
+  "entries": [
+    {
+      "candidate_id": "CAP-A-MEM-001",
+      "absorption_status": "REFERENCE_ABSORBED",
+      "target_concept": "Digital Cell Memory: dynamic linking and memory evolution",
+      "implementation_status": "NOT_ADOPTED"
+    },
+    {
+      "candidate_id": "CAP-APEX-MEM-001",
+      "absorption_status": "REFERENCE_ABSORBED",
+      "target_concept": "Digital Cell Memory and Evidence: append-only temporal event history",
+      "implementation_status": "NOT_ADOPTED"
+    },
+    {
+      "candidate_id": "CAP-GRAPHITI-001",
+      "absorption_status": "REFERENCE_ABSORBED",
+      "target_concept": "Digital Cell Memory and Evidence: temporal facts and source provenance",
+      "implementation_status": "NOT_ADOPTED"
+    },
+    {
+      "candidate_id": "CAP-STRUCTMEM-001",
+      "absorption_status": "REFERENCE_ABSORBED",
+      "target_concept": "Digital Cell Memory: hierarchical semantic consolidation",
+      "implementation_status": "NOT_ADOPTED"
+    },
+    {
+      "candidate_id": "CAP-TIMEM-001",
+      "absorption_status": "REFERENCE_ABSORBED",
+      "target_concept": "Digital Cell Memory: temporal hierarchy and complexity-aware recall",
+      "implementation_status": "NOT_ADOPTED"
+    },
+    {
+      "candidate_id": "CAP-EMBER-001",
+      "absorption_status": "REFERENCE_ABSORBED",
+      "target_concept": "Digital Cell Evidence: budgeted source-backed evidence retention",
+      "implementation_status": "NOT_ADOPTED"
+    },
+    {
+      "candidate_id": "CAP-LIGHTMEM-001",
+      "absorption_status": "REFERENCE_ABSORBED",
+      "target_concept": "Digital Cell Memory: lightweight consolidation and retrieval",
+      "implementation_status": "NOT_ADOPTED"
+    }
+  ],
+  "overlap_groups": [
+    {
+      "group": "ATOMIC_DYNAMIC_LINKED_MEMORY",
+      "members": ["CAP-A-MEM-001"]
+    },
+    {
+      "group": "TEMPORAL_EVENT_GRAPH_MEMORY",
+      "members": ["CAP-APEX-MEM-001", "CAP-GRAPHITI-001"]
+    },
+    {
+      "group": "HIERARCHICAL_MEMORY_CONSOLIDATION",
+      "members": ["CAP-STRUCTMEM-001", "CAP-TIMEM-001", "CAP-LIGHTMEM-001"]
+    },
+    {
+      "group": "BUDGETED_SOURCE_EVIDENCE_RETENTION",
+      "members": ["CAP-EMBER-001"]
+    }
+  ],
+  "identity_guardrails": [
+    "GRAPHITI_IS_NOT_ZEP_MANAGED_INFRASTRUCTURE",
+    "STRUCTMEM_IS_NOT_LIGHTMEM_METHOD",
+    "SHARED_REPOSITORY_DOES_NOT_IMPLY_SHARED_METHOD_IDENTITY",
+    "EMBER_PAPER_IS_NOT_AN_UNRELATED_EMBER_PRODUCT",
+    "LIGHTMEM_NAME_MATCH_ALONE_IS_NOT_IDENTITY_PROOF"
+  ],
+  "effects": {
+    "reference_library_changed": true,
+    "source_code_changed": false,
+    "dependency_graph_changed": false,
+    "runtime_behavior_changed": false,
+    "evidence_schema_changed": false,
+    "frozen_history_changed": false
+  },
+  "next_gate": {
+    "level": "AC-2_SANDBOX",
+    "status": "NOT_EXECUTED",
+    "reason": "External code execution and package adoption are outside this bounded reference-absorption test."
+  }
+}

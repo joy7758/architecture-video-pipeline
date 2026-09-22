@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://titmas.cn/schemas/core-developer-surface-0.1.json",
+  "type": "object",
+  "required": ["profile_version","profile_status","identity_ref","boundary","event","evidence_binding","verification_result","evaluation_handoff","limitations","claims"],
+  "properties": {
+    "profile_version": {"type":"string"},
+    "profile_status": {"type":"string","enum":["DEVELOPMENT_DRAFT","EXPERIMENTAL_PROPOSAL"]},
+    "identity_ref": {
+      "type":"object",
+      "required":["id","source","version"]
+    },
+    "boundary": {
+      "type":"object",
+      "required":["allowed_actions","forbidden_actions","constraints"]
+    },
+    "event": {
+      "type":"object",
+      "required":["event_id","action","result","timestamp"]
+    },
+    "evidence_binding": {
+      "type":"object",
+      "required":["evidence_ref","source","source_kind","admission_status"]
+    },
+    "verification_result": {
+      "type":"object",
+      "required":["verification_ref","status","verifier_ref"]
+    },
+    "evaluation_handoff": {
+      "type":"object",
+      "required":["status","input_refs"]
+    },
+    "limitations": {"type":"array"},
+    "claims": {"type":"array"}
+  }
+}

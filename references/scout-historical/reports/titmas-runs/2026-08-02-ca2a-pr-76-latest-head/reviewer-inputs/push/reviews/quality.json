@@ -1,0 +1,16 @@
+{
+  "schema_version": "0.1",
+  "review_id": "2026-08-02-ca2a-pr-76-push-quality-review",
+  "agent_identifier": "/root/push_quality_review",
+  "model_runtime_identifier": "OpenAI Codex GPT-5",
+  "review_role": "QUALITY_REVIEWER",
+  "input_digest": "sha256:0f059a8d6ce43e0dced5c3bdb6eac023c2dfa8859ca0833475b2718c166b7f09",
+  "output_digest": "sha256:fabb681079bd727a913773475a352aedf07898705eeb5a0fb92c3d1bc5730a86",
+  "decision": "PASS",
+  "timestamp": "2026-08-02T06:30:17Z",
+  "ruleset_version": "0.1",
+  "reason_codes": ["ACTION008_CONTROLS_VERIFIED", "FULL_SUITE_PASS", "STATIC_AND_SECURITY_CHECKS_PASS"],
+  "findings": ["ACTION-008 proves invalid provenance precedes both authorization-invalid and valid-negative-outcome controls; 252 tests passed with 3 hardware skips, 86.87% coverage, and ruff, mypy, Bandit, pip-audit, and diff checks passed."],
+  "blocking_reasons": [],
+  "evidence_references": ["reports/titmas-runs/2026-08-02-ca2a-pr-76-latest-head/ca2a-validation.json", "git:ca2a@0a1ffa6710d25f58515b2dca7e0619e134c0a43e", "tests/conformance/test_profile_conformance.py"]
+}

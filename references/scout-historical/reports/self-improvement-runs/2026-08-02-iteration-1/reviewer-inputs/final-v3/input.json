@@ -1,0 +1,20 @@
+{
+  "artifact_type":"TITMAS_SCOUT_AGENT_REVIEW_INPUT","ruleset_version":"0.1","review_run_id":"2026-08-02-scout-self-improvement-iteration-1-final-v3","observed_at":"2026-08-02T06:52:30Z","requested_action":"UPDATE_SCOUT_STATUS",
+  "target":{"type":"LOCAL_SCOUT_CHANGE","reference":"tiamas-scout:self-improvement:iteration-1-revision-3","url":"local://tiamas-scout/self-improvement/2026-08-02-iteration-1-v3"},
+  "source_issue":{"reference":"reports/latest-opportunities.json","state":"REPRODUCED","observed_defect":"ca2a#36 rediscovered; ambiguous PR shorthand false-positive and weak regression subsequently found by quorum"},
+  "duplicate_check":{"issue_identity_source":"UNAMBIGUOUS_GITHUB_ISSUE_URL_ONLY","pr_identity_source":"UNAMBIGUOUS_GITHUB_PULL_URL_ONLY","ambiguous_literal_fixture":"agentrust-io/ca2a#76","semantic_title_linking":false},
+  "pull_request":{"repository":"tiamas-scout","external_pull_request":false,"external_write_requested":false,"base_commit":"c32d545","worktree_only":true},
+  "diff":{"content_digest":"sha256:08c572ffb7bf8a39cf9c190cc6bf7781dca82c8faf21f19983f8406a367fd77e","content_representation":"reports/self-improvement-runs/2026-08-02-iteration-1/code-diff-v3.patch","files":["src/discovery/status_index.rb","src/discovery/cli.rb","src/discovery/daily_report.rb","src/discovery/opportunity_ranker.rb","tests/discovery_test.rb"],"validator_or_governance_model_changed":false,"ranking_factors_changed":false},
+  "local_validation":{"record_reference":"reports/self-improvement-runs/2026-08-02-iteration-1/test-result-v3.json","record_digest":"sha256:550497e6de500c39e73c5c9d196c684f013fdaec3c8014f3454d58b95eb3b68e","result":"69_RUNS_255_ASSERTIONS_PASS_AND_MUTATION_FAILS_AS_EXPECTED"},
+  "github_checks":[],
+  "automation":{"iteration":1,"revision":3,"maximum_iterations":3,"prior_blocking_reviews_preserved":true,"live_read_only_rerun_pending":true},
+  "risk_evidence":{"external_write_requested":false,"historical_files_modified":false,"constitution_modified":false,"dba_modified":false,"agent_evidence_modified":false,"temporary_mutation_removed":true},
+  "history_references":[
+    {"path":"reports/self-improvement-runs/2026-08-02-iteration-1/observation.json","content_digest":"sha256:9df3d51dbe47f4f68f64138851ab38e6fb8152d162808fe65f9b4023c7a480ce"},
+    {"path":"reports/self-improvement-runs/2026-08-02-iteration-1/reviewer-inputs/final/discovery-blocking-fail.json","content_digest":"sha256:37ad2138b028c0747b87cf533a25a981dfc9943e7c7c276abaf153804dbb0c52"},
+    {"path":"reports/self-improvement-runs/2026-08-02-iteration-1/reviewer-inputs/final-v2/quality-blocking-fail.json","content_digest":"sha256:de55b70f4cee5e29b70f1692bf015da8f2373a9fa6174570e4cc8ce70978375f"},
+    {"path":"reports/self-improvement-runs/2026-08-02-iteration-1/mutation-test-result.json","content_digest":"sha256:f13a9448a71bf02902686e94023b4bf334405ce544fb4a365926334d569d1057"},
+    {"path":"reports/self-improvement-runs/2026-08-02-iteration-1/code-diff-v3.patch","content_digest":"sha256:08c572ffb7bf8a39cf9c190cc6bf7781dca82c8faf21f19983f8406a367fd77e"}
+  ],
+  "known_limits":["Only unambiguous source URLs are linked; shorthand and title similarity are ignored.","A live read-only discovery rerun is required before completion.","UPDATE_SCOUT_STATUS never authorizes external GitHub action."]
+}

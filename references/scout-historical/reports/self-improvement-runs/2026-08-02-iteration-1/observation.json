@@ -1,0 +1,29 @@
+{
+  "artifact_type": "TITMAS_SCOUT_SELF_IMPROVEMENT_OBSERVATION",
+  "iteration": 1,
+  "timestamp": "2026-08-02T06:24:00Z",
+  "source_reference": "reports/latest-opportunities.json",
+  "commit_sha": "c32d545",
+  "digest_algorithm": "sha256",
+  "digest_value": "6914605a2bf2e53d6701940d792e4dcdc60b2cb1d95f024cd5c64d871c6af00f",
+  "ruleset_version": "0.1",
+  "action_scope": [
+    "LOCAL_SELF_IMPROVEMENT"
+  ],
+  "actor_type": "FEEDBACK_ANALYST",
+  "result": "REAL_DUPLICATE_DISCOVERY_DEFECT_OBSERVED",
+  "uncertainty": [],
+  "unsupported_claims": [
+    "general_semantic_deduplication_solved",
+    "production_readiness"
+  ],
+  "evidence": {
+    "existing_top_candidate": "https://github.com/agentrust-io/ca2a/issues/36",
+    "existing_priority_position": 1,
+    "conversion_record_present": true,
+    "publication_record_present": true,
+    "review_record_present": true,
+    "expected_status": "READY_FOR_REVIEW",
+    "incorrect_status": "DISCOVERED"
+  }
+}

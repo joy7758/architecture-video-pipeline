@@ -1,0 +1,37 @@
+{
+  "inventory_id": "D24-DBA-TARGET-TEST-INVENTORY-001",
+  "problem_id": "D24-DBA-DERIVED-JSON-TEST-WORKTREE-MUTATION",
+  "target_repository": "joy7758/digital-biosphere-architecture-specification",
+  "parent_revision": "64bb4dee4736c660f9247393d96ccbfa0217a340",
+  "parent_tree": "8098a328b777704e0bd9421c3f55538fe57bbc40",
+  "target_test_command": "python3 -m unittest digital-biosphere-architecture/TITMAS/private-governance/tests/test_stage5_protocol_surface.py -v",
+  "target_test_file": "digital-biosphere-architecture/TITMAS/private-governance/tests/test_stage5_protocol_surface.py",
+  "generator": "digital-biosphere-architecture/TITMAS/private-governance/build_stage5_protocol_surface.py",
+  "generation_command": "python3 digital-biosphere-architecture/TITMAS/private-governance/build_stage5_protocol_surface.py",
+  "source_of_truth_inputs": [
+    "digital-biosphere-architecture/TITMAS/agent-native/tasks/task-registry.json",
+    "digital-biosphere-architecture/TITMAS/specifications/registry.yaml",
+    "digital-biosphere-architecture/TITMAS/conformance/schemas/stage5-adapter-mapping.schema.json",
+    "digital-biosphere-architecture/TITMAS/conformance/schemas/stage5-contribution-result.schema.json",
+    "digital-biosphere-architecture/TITMAS/conformance/schemas/stage5-review.schema.json",
+    "digital-biosphere-architecture/TITMAS/conformance/schemas/stage5-specification-proposal.schema.json",
+    "digital-biosphere-architecture/TITMAS/conformance/schemas/stage5-test-vector.schema.json"
+  ],
+  "changed_tracked_derived_json_paths": [
+    "digital-biosphere-architecture/TITMAS/private-stage5-protocol-surface/protocol-surface-manifest.json",
+    "digital-biosphere-architecture/TITMAS/private-stage5-protocol-surface/task-catalog.json"
+  ],
+  "reproduction": {
+    "attempts": 2,
+    "results_agree": true,
+    "target_test_passed_each_attempt": true,
+    "changed_path_set_identical": true,
+    "post_test_digests_identical": true,
+    "source_inputs_unchanged": true
+  },
+  "non_claims": [
+    "INVENTORY_NE_AUTHORIZATION",
+    "TEST_PASS_NE_REPAIR_ACCEPTANCE",
+    "DERIVED_ARTIFACT_NE_SOURCE_OF_TRUTH"
+  ]
+}

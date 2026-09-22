@@ -1,0 +1,41 @@
+integration_version: "0.1"
+integration_id: TITMAS-SCOUT-INTEGRATION-V0.1
+
+canonical_sources:
+  constitution:
+    repository: titmas-ecosystem
+    path: docs/governance/open-infrastructure-strategy-constitution.md
+  architecture_hub:
+    repository: digital-biosphere-architecture
+  evidence:
+    repository: agent-evidence
+    local_repository_path: /Users/zhangbin/GitHub/agent-evidence
+    expected_commit: 911db6650547617c71331ddd9506811f04191656
+    expected_package_version: 0.1.0rc3
+    cli_relative_path: .venv/bin/agent-evidence
+    artifact_family: EVIDENCE_ENVELOPE_EXPORT
+    verification_scope: STRUCTURE_DIGEST_CHAIN_ONLY
+    signature_required: false
+
+responsibility:
+  discovery: tiamas-scout
+  authorization: tiamas-scout-agent-quorum
+  execution_evidence: agent-evidence
+  architecture_handoff: digital-biosphere-architecture
+
+fail_closed:
+  missing_agent_evidence: true
+  failed_evidence_verification: true
+  stale_head_sha: true
+  digest_mismatch: true
+  unauthorized_action: true
+  unknown_action: true
+
+self_improvement:
+  max_iterations: 3
+  require_git_diff: true
+  require_tests: true
+  require_new_quorum: true
+  preserve_history: true
+
+handoff_status: READY_FOR_READ_ONLY_REVIEW_NOT_INTEGRATED

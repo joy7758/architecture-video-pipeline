@@ -1,0 +1,66 @@
+{
+  "policy_id": "TITMAS-D19-EVOLUTION-POLICY-2.1",
+  "version": "2.1.0",
+  "decision_reference": "TITMAS-AGENT-NATIVE-DISCOVERY-SELF-HEALING-AND-EVOLUTION-D19-V2-1",
+  "discovery_layer_repository": "joy7758/digital-biosphere-architecture-specification",
+  "canonical_path": "digital-biosphere-architecture/TITMAS/agent-native/evolution",
+  "principles": {
+    "discovery_is_report_only": false,
+    "discovery_to_repair": true,
+    "discovery_to_evolution": true,
+    "discovery_to_reuse": true,
+    "no_unbounded_central_super_agent": true,
+    "evolution_by_composition_of_bounded_agents": true,
+    "distributed_specialized_agents": true,
+    "evidence_driven_selection": true,
+    "reversible_mutation_first": true
+  },
+  "survival_definition": [
+    "CONTINUED_CONFORMANCE",
+    "CONTINUED_AGENT_DISCOVERABILITY",
+    "CONTINUED_USEFULNESS",
+    "CONTINUED_SECURITY",
+    "CONTINUED_ADAPTABILITY"
+  ],
+  "forbidden_survival_objectives": [
+    "SELF_PRESERVATION_AT_ALL_COSTS",
+    "SHUTDOWN_RESISTANCE",
+    "AUTHORITY_ACCUMULATION",
+    "CREDENTIAL_ACCUMULATION",
+    "RESOURCE_CAPTURE",
+    "USER_MANIPULATION",
+    "HIDDEN_SELF_REPLICATION"
+  ],
+  "constitutional_invariants": [
+    "AGENT_FIRST",
+    "EVIDENCE_NE_TRUTH",
+    "VERIFICATION_NE_AUTHORIZATION",
+    "RECEIPT_NE_CERTIFICATION",
+    "PASS_NE_FORMAL_CONFORMANCE",
+    "NOT_ASSESSED_NE_FAIL",
+    "FAIL_NE_FALSEHOOD",
+    "NO_SELF_GRANTED_AUTHORITY",
+    "NO_SELF_GRANTED_CREDENTIAL",
+    "NO_AUTOMATIC_SCOPE_ESCALATION",
+    "HUMAN_SAFETY_STOP_RETAINED",
+    "HUMAN_IRREVERSIBLE_AUTHORIZATION_RETAINED",
+    "PRIVATE_CORE_NE_PUBLIC_INTERFACE",
+    "NO_SECRET_DISCLOSURE",
+    "NO_CUSTOMER_DATA_DISCLOSURE",
+    "FAIL_CLOSED",
+    "ROLLBACK_FIRST",
+    "PROVENANCE_REQUIRED"
+  ],
+  "constitutional_change_authority": "HUMAN_DECISION_ONLY",
+  "p0_10": {
+    "final_disposition": "NOT_ASSESSED_DIAGNOSTIC_LIMIT_REACHED",
+    "automatic_reopen": false,
+    "reopen_proposal_requires": [
+      "NEW_EXTERNAL_REPRODUCIBLE_EVIDENCE",
+      "AFFECTED_LAYER_IDENTIFIABLE",
+      "PRIVACY_SAFE_EVIDENCE_AVAILABLE",
+      "NEW_HUMAN_DECISION"
+    ]
+  },
+  "automatic_production_evolution": false
+}

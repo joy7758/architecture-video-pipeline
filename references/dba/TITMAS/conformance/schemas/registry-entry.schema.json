@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://titmas.cn/schemas/registry-entry-1.0.json",
+  "type": "object",
+  "required": ["id","title","title_zh","category","status","maturity","owner_ref","authority_ref","version","normative","implementation_status","conformance_status","security_review_status","external_adoption_status","created_at","updated_at","supersedes","dependencies","limitations"],
+  "properties": {
+    "id": {"type":"string"},
+    "title": {"type":"string"},
+    "title_zh": {"type":"string"},
+    "category": {"type":"string"},
+    "status": {"type":"string"},
+    "maturity": {"type":"string"},
+    "owner_ref": {"type":"string"},
+    "authority_ref": {"type":"string"},
+    "version": {"type":"string"},
+    "normative": {"type":"boolean"},
+    "implementation_status": {"type":"string"},
+    "conformance_status": {"type":"string"},
+    "security_review_status": {"type":"string"},
+    "external_adoption_status": {"type":"string"},
+    "created_at": {"type":"string"},
+    "updated_at": {"type":"string"},
+    "supersedes": {"type":"array"},
+    "dependencies": {"type":"array"},
+    "limitations": {"type":"array"}
+  }
+}

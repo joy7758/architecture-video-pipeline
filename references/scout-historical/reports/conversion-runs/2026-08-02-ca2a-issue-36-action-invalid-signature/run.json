@@ -1,0 +1,130 @@
+{
+  "artifact_type": "TITMAS_SCOUT_OPPORTUNITY_CONVERSION_RUN",
+  "schema_version": "0.1-local-record",
+  "run_id": "2026-08-02-ca2a-issue-36-action-invalid-signature",
+  "recorded_at": "2026-08-01T16:48:53Z",
+  "opportunity": {
+    "source_url": "https://github.com/agentrust-io/ca2a/issues/36",
+    "title": "test(conformance): add delegation-link action evidence fixtures",
+    "source_state_at_selection": "OPEN",
+    "source_report": {
+      "path": "reports/daily/2026-08-01-opportunity-report.json",
+      "content_digest": "sha256:02267824caebdb80443f07cebb67b90b3f7636198fcf4048a705353db5ec4007",
+      "priority_position": 1,
+      "ranking_status": "NEEDS_REVIEW",
+      "heuristic_model": "heuristic_unvalidated_v0.1"
+    }
+  },
+  "selection": {
+    "state": "SELECTED",
+    "reason": "The open maintainer-authored residual checklist explicitly requests ACTION-path invalid-signature coverage, the current main branch lacks it, and the change can be isolated to conformance tests without production or dependency changes.",
+    "selected_checklist_item": "Add an ACTION-path invalid-signature case that asserts the resulting provenance-invalid classification.",
+    "duplicate_check": {
+      "pull_request_37": "MERGED_ACTION_001_THROUGH_ACTION_007_ONLY",
+      "current_main": "TARGET_CASE_NOT_PRESENT",
+      "open_pull_requests": "NO_RELATED_OPEN_PULL_REQUEST_FOUND"
+    }
+  },
+  "local_implementation": {
+    "state": "LOCAL_IMPLEMENTATION_COMPLETED",
+    "repository": "/Users/zhangbin/GitHub/ca2a",
+    "remote_reference": "https://github.com/agentrust-io/ca2a.git",
+    "branch": "contrib/issue-36-action-invalid-signature",
+    "base_commit": "76c1a31193ff6a70b732cf8f668935808002e273",
+    "local_commit": "b223ee41ac9e3b635651f9636a08061801b5c826",
+    "commit_signed_off": true,
+    "changed_files": [
+      "tests/conformance/README.md",
+      "tests/conformance/test_profile_conformance.py"
+    ],
+    "production_code_changed": false,
+    "dependencies_changed": false,
+    "test_id": "ACTION-008",
+    "expected_result": {
+      "classification": "provenance_invalid",
+      "code": "INVALID_CREDENTIAL"
+    }
+  },
+  "validation": {
+    "environment": {
+      "python": "3.13.12",
+      "pytest": "9.1.1"
+    },
+    "results": [
+      {
+        "scope": "NEW_TEST",
+        "command": ".venv/bin/pytest tests/conformance/test_profile_conformance.py::test_action_008_invalid_delegation_signature_is_provenance_invalid -v",
+        "passed": 1,
+        "failed": 0,
+        "skipped": 0
+      },
+      {
+        "scope": "ACTION_AND_DELEGATION_SELECTION",
+        "command": ".venv/bin/pytest tests/conformance/test_profile_conformance.py -k 'action or deleg' -v",
+        "passed": 16,
+        "failed": 0,
+        "skipped": 0,
+        "deselected": 15
+      },
+      {
+        "scope": "DELEGATION_AND_VERIFY_UNIT",
+        "command": ".venv/bin/pytest tests/unit/test_delegation.py tests/unit/test_verify.py -v",
+        "passed": 21,
+        "failed": 0,
+        "skipped": 0
+      },
+      {
+        "scope": "CONFORMANCE",
+        "command": ".venv/bin/pytest tests/conformance/ -v",
+        "passed": 31,
+        "failed": 0,
+        "skipped": 0
+      },
+      {
+        "scope": "CI_EQUIVALENT_FULL_TEST",
+        "command": ".venv/bin/pytest tests/unit/ tests/conformance/ -v --tb=short --cov=src --cov-report=term",
+        "collected": 255,
+        "passed": 252,
+        "failed": 0,
+        "skipped": 3,
+        "coverage_percent": 87.01,
+        "execution_isolation": "DISPOSABLE_LOCAL_WORKTREE"
+      }
+    ],
+    "skips": [
+      "Real SEV-SNP capture fixture is not present.",
+      "Real TDX quote fixture is not present.",
+      "Real TPM capture fixture is not present."
+    ],
+    "assertion_count": "NOT_REPORTED_BY_PYTEST",
+    "mutation_check": "EXPECTED_FAILURE_CONFIRMED_WHEN_CLASSIFICATION_EXPECTATION_WAS_CHANGED_TO_AUTHORIZATION_INVALID",
+    "ruff_check": "PASS",
+    "changed_code_formatter_check": "PASS",
+    "mypy": "PASS_36_SOURCE_FILES",
+    "bandit": "PASS_ZERO_ISSUES",
+    "pip_audit": "PASS_NO_KNOWN_VULNERABILITIES",
+    "git_diff_check": "PASS"
+  },
+  "external_action": {
+    "authorized": false,
+    "push_performed": false,
+    "pull_request_created": false,
+    "issue_comment_created": false,
+    "remote_issue_modified": false,
+    "remote_branch_modified": false,
+    "maintainer_feedback_received": false,
+    "next_gate": "HUMAN_REVIEW_AND_EXPLICIT_EXTERNAL_ACTION_AUTHORIZATION"
+  },
+  "claims": {
+    "adoption_demonstrated": false,
+    "customer_acquired": false,
+    "revenue_generated": false,
+    "commercial_validation_demonstrated": false,
+    "production_safety_demonstrated": false
+  },
+  "pr_draft": {
+    "status": "PREPARED_NOT_SENT",
+    "path": "reports/conversion-runs/2026-08-02-ca2a-issue-36-action-invalid-signature/pr-draft.md",
+    "reference_syntax": "Refs agentrust-io/ca2a#36"
+  }
+}

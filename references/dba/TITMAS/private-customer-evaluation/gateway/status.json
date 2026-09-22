@@ -1,0 +1,15 @@
+{
+  "version": "0.1.0",
+  "mode": "LOCAL_EPHEMERAL_PRIVATE_EVALUATION",
+  "private_evaluation_gateway_ready": true,
+  "private_evaluation_gateway_tested": true,
+  "loopback_only": true,
+  "customer_workspace_isolated": true,
+  "response_capture_bound": true,
+  "real_model_call_count": 0,
+  "real_provider_call_count": 0,
+  "d02_execution_ready": true,
+  "d02_authorized": false,
+  "commercial_access_granted": false,
+  "deployment_executed": false
+}

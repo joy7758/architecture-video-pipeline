@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": ["lease_id", "participant_ref", "task_ref", "authority_ref", "issued_by_ref", "allowed_files", "forbidden_files", "issued_at", "expires_at", "status", "revocation_ref", "rollback_path"],
+  "properties": {
+    "lease_id": {"type": "string"},
+    "participant_ref": {"type": "string"},
+    "task_ref": {"type": "string"},
+    "authority_ref": {"type": "string"},
+    "issued_by_ref": {"type": "string"},
+    "allowed_files": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+    "forbidden_files": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+    "issued_at": {"type": "string"},
+    "expires_at": {"type": "string"},
+    "status": {"enum": ["CLAIMED", "RELEASED", "EXPIRED", "REVOKED"]},
+    "revocation_ref": {"type": "string"},
+    "rollback_path": {"type": "string"}
+  },
+  "additionalProperties": false
+}

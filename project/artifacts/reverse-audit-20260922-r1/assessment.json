@@ -1,0 +1,130 @@
+{
+  "schema_version": "architecture-reverse-audit.v1",
+  "job_id": "guanque-pilot",
+  "checked_at": "2026-09-22T15:08:52.107097+00:00",
+  "reviewer_id": "/root",
+  "independent_reviewers": [
+    "/root/skill_audit",
+    "/root/building_fidelity_audit",
+    "/root/qa_titmas_audit"
+  ],
+  "status": "NEEDS_REVISION",
+  "scope": "REFERENCE_FIDELITY_AND_DEMO_PRESENTATION_AUDIT",
+  "dimensions": {
+    "architectural_fidelity": "FAIL",
+    "reference_demo_match": "FAIL",
+    "reference_lineage": "FAIL",
+    "skill_file_integrity": "VERIFIED_MATCH",
+    "technical": "HISTORICAL_PASS_RETAINED_FOR_SAME_VIDEO_BYTES",
+    "titmas_evidence": "NOT_RUN"
+  },
+  "bindings": {
+    "request_sha256": "a0ef38da1a439a6bd821bc0e459a1a2c4afffff41bb0ea77ba229dc87606cf7b",
+    "sources_sha256": "a9841495b4c7db87a5d69e9085ff77a477ce83de2fda5a29a35eb1ab62195662",
+    "model_plan_sha256": "5d754eb806d22e5fc5716c4945f9a14984360dfc6f04aa67015281438302dcda",
+    "video_manifest_sha256": "17f17e0fbd0b25f6d08944b62828e3bce42ba7723298dbf615a163332e81941f"
+  },
+  "supersedes": {
+    "scope": "Current job visual acceptance; historical artistic-preview opinion preserved",
+    "historical_review": {
+      "path": "jobs/guanque-pilot/qa/visual-review.json",
+      "sha256": "bf7c7a921721df246bb712f3e536f88cee306df76e77f6bf2b00a5e40f7e5a0f"
+    },
+    "historical_checks": {
+      "path": "artifacts/reverse-audit-20260922-r1/frozen/jobs/guanque-pilot/checks.json",
+      "sha256": "30e642742cd313d806bd396927aa44b74d7b81ae84b29851033d54baab808dbe"
+    },
+    "historical_status": {
+      "path": "artifacts/reverse-audit-20260922-r1/frozen/jobs/guanque-pilot/qa/final-status.json",
+      "sha256": "c5c43b3789cb95cbc8d1f09ad94e5913b70b7df8d140e3ae73d56be01b3bdb9a"
+    },
+    "reason": "用户指出照片与原演示偏差；旧视觉检查范围不足，且漏掉现行纠错与待复核状态。"
+  },
+  "evidence": [
+    {
+      "path": "artifacts/reverse-audit-20260922-r1/inputs.json",
+      "sha256": "7c10cefef3c9ab6f853c9609d37d5d5139601cff1a1888811ea8a6d4d752da42"
+    },
+    {
+      "path": "artifacts/reverse-audit-20260922-r1/code-inputs.json",
+      "sha256": "6bc5315bf9a220df4123b3177804ccd605d0240cdb7a427efcf6798308773d7f"
+    },
+    {
+      "path": "artifacts/reverse-audit-20260922-r1/report.md",
+      "sha256": "732205851e8077cfcb7241f747c4583b92f9f66edfd1405311b8d5e0eaaf5216"
+    },
+    {
+      "path": "artifacts/reverse-audit-20260922-r1/building-findings.md",
+      "sha256": "ec936c5518f0b4d620b2ee02faa083c8523a2f2228069bff178367e2bcabcbb1"
+    },
+    {
+      "path": "artifacts/reverse-audit-20260922-r1/geometry-observations.json",
+      "sha256": "760870489aefc056983397ae563c4efe6cfa3da00bcfe882c0ebedf097d9ea82"
+    },
+    {
+      "path": "artifacts/reverse-audit-20260922-r1/acceptance-checklist.json",
+      "sha256": "3bf84ac9190bc38147059e97868f4a37daa74dc2d89bce2bcdacf56d61661069"
+    }
+  ],
+  "findings": [
+    {
+      "id": "AUD-01",
+      "severity": "P1",
+      "dimension": "architectural_fidelity",
+      "status": "FAIL",
+      "finding": "檐下承托/斗栱/彩画、主顶抱厦、门窗栏杆和台基细节与原图存在明显简化偏差。"
+    },
+    {
+      "id": "AUD-02",
+      "severity": "P1",
+      "dimension": "reference_demo_match",
+      "status": "FAIL",
+      "finding": "远景竖屏构图、倒放再营造、完整檩椽简化为短椽尾、瓦片时序为本地改写，未建立原演示效果验收合同。"
+    },
+    {
+      "id": "AUD-03",
+      "severity": "P1",
+      "dimension": "reference_lineage",
+      "status": "FAIL",
+      "finding": "job文字出处复制件缺失用户追加纠错与R3视觉待验收状态。"
+    },
+    {
+      "id": "AUD-04",
+      "severity": "P1",
+      "dimension": "visual_acceptance",
+      "status": "FAIL",
+      "finding": "旧艺术预览PASS被汇总成visual=true，未阻断用户未接受及源项目VISUAL_REVIEW_REQUIRED。"
+    },
+    {
+      "id": "AUD-05",
+      "severity": "P1",
+      "dimension": "titmas_evidence",
+      "status": "NOT_RUN",
+      "finding": "本任务未连接真实TITMAS、无执行和原始回执；所查schema预检实现不判断照片保真。"
+    },
+    {
+      "id": "AUD-06",
+      "severity": "P2",
+      "dimension": "implementation",
+      "status": "OBSERVED",
+      "finding": "抱厦配置rise=1.18被肩高约束钳制为0.9568846，约小18.91%；不是实物误差。"
+    }
+  ],
+  "not_implemented": [
+    "Geometry corrections",
+    "New video render",
+    "Automated feature-level visual gate",
+    "Trusted TITMAS adapter"
+  ],
+  "measurement_boundaries": [
+    "No calibrated photo camera; no real-world error score",
+    "0.13 percent is code ratio vs unverified user-provided dimension ratio, not reconstruction accuracy",
+    "Video occupancy values are manual estimates of two different aspect-ratio frames"
+  ],
+  "publication": "USER_ONLY_NOT_RUN",
+  "audit_review": {
+    "reviewer": "/root/skill_audit",
+    "verdict": "SUITABLE_AS_AUDIT_REPORT_NOT_MODEL_ACCEPTANCE",
+    "correction": "Upstream also has a continuous roof shell; only support simplification and tile timing are attributed as changed behavior."
+  }
+}

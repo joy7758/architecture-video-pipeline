@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "handoff_id", "from_participant_ref", "to_participant_ref", "task_ref",
+    "authority_ref", "object_ids", "source_revision", "provenance",
+    "limitations", "experimental_status", "unresolved_uncertainty",
+    "review_results", "negative_findings", "rejected_alternatives",
+    "failure_records", "not_assessed_records"
+  ],
+  "properties": {
+    "handoff_id": {"type": "string"},
+    "from_participant_ref": {"type": "string"},
+    "to_participant_ref": {"type": "string"},
+    "task_ref": {"type": "string"},
+    "authority_ref": {"type": "string"},
+    "object_ids": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+    "source_revision": {"type": "string"},
+    "provenance": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+    "limitations": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+    "experimental_status": {"const": "Development"},
+    "unresolved_uncertainty": {"type": "array", "items": {"type": "string"}},
+    "review_results": {"type": "array", "items": {"type": "string"}},
+    "negative_findings": {"type": "array", "items": {"type": "string"}},
+    "rejected_alternatives": {"type": "array", "items": {"type": "string"}},
+    "failure_records": {"type": "array", "items": {"type": "string"}},
+    "not_assessed_records": {"type": "array", "items": {"type": "string"}}
+  },
+  "additionalProperties": false
+}

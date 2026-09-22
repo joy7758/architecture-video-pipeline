@@ -1,0 +1,84 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://redcrag.cn/schemas/commercial-program-state-v1.0.schema.json",
+  "title": "TITMAS Commercial Program State v1.0",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "program_version",
+    "program_id",
+    "current_phase",
+    "phase_status",
+    "started_at",
+    "last_updated_at",
+    "source_commits",
+    "deployment_releases",
+    "completed_gates",
+    "gate_descriptions",
+    "blocked_gates",
+    "human_decisions_required",
+    "commercial_technical_ready",
+    "paid_beta_ready",
+    "production_ready",
+    "mature_commercial_infrastructure",
+    "limitations",
+    "next_action"
+  ],
+  "properties": {
+    "$schema": {"type": "string"},
+    "program_version": {"const": "1.0"},
+    "program_id": {"const": "TITMAS-AGENT-NATIVE-COMMERCIAL-MATURITY-PROGRAM"},
+    "current_phase": {"type": "string", "minLength": 1},
+    "phase_status": {
+      "enum": [
+        "NOT_STARTED",
+        "IN_PROGRESS",
+        "PASS",
+        "PASS_WITH_LIMITATIONS",
+        "BLOCKED",
+        "WAITING_FOR_ELAPSED_TIME",
+        "WAITING_FOR_EXTERNAL_AGENT_USAGE",
+        "WAITING_FOR_HUMAN_DECISION",
+        "FAILED_RETAINED"
+      ]
+    },
+    "started_at": {"type": "string", "format": "date-time"},
+    "last_updated_at": {"type": "string", "format": "date-time"},
+    "source_commits": {
+      "type": "object",
+      "additionalProperties": {"type": "string", "pattern": "^[0-9a-f]{40}$"}
+    },
+    "deployment_releases": {
+      "type": "object",
+      "additionalProperties": {"type": ["string", "null"]}
+    },
+    "completed_gates": {
+      "type": "array",
+      "items": {"type": "string"},
+      "uniqueItems": true
+    },
+    "gate_descriptions": {
+      "type": "object",
+      "additionalProperties": {"type": "string", "minLength": 1}
+    },
+    "blocked_gates": {
+      "type": "array",
+      "items": {"type": "string"},
+      "uniqueItems": true
+    },
+    "human_decisions_required": {
+      "type": "array",
+      "items": {"type": "string"},
+      "uniqueItems": true
+    },
+    "commercial_technical_ready": {"type": "boolean"},
+    "paid_beta_ready": {"type": "boolean"},
+    "production_ready": {"type": "boolean"},
+    "mature_commercial_infrastructure": {"type": "boolean"},
+    "limitations": {
+      "type": "array",
+      "items": {"type": "string"}
+    },
+    "next_action": {"type": "string", "minLength": 1}
+  }
+}

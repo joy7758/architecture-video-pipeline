@@ -1,0 +1,23 @@
+{
+  "artifact_type":"TITMAS_SCOUT_AGENT_REVIEW_INPUT",
+  "ruleset_version":"0.1",
+  "review_run_id":"2026-08-02-scout-self-improvement-iteration-1-final-v2",
+  "observed_at":"2026-08-02T06:45:30Z",
+  "requested_action":"UPDATE_SCOUT_STATUS",
+  "target":{"type":"LOCAL_SCOUT_CHANGE","reference":"tiamas-scout:self-improvement:iteration-1-revision-2","url":"local://tiamas-scout/self-improvement/2026-08-02-iteration-1-v2"},
+  "source_issue":{"reference":"reports/latest-opportunities.json","state":"REPRODUCED","observed_defect":"ca2a#36 ranked as new after conversion; first patch also misclassified ambiguous PR shorthand"},
+  "duplicate_check":{"issue_identity_source":"UNAMBIGUOUS_GITHUB_ISSUE_URL_ONLY","pr_identity_source":"UNAMBIGUOUS_GITHUB_PULL_URL_ONLY","semantic_title_linking":false},
+  "pull_request":{"repository":"tiamas-scout","external_pull_request":false,"external_write_requested":false,"base_commit":"c32d545","worktree_only":true},
+  "diff":{"content_digest":"sha256:077c96ebbc623b76b688c1a11e1f60dc61f45a0f2f21ab4ae5e1da69ff733717","content_representation":"reports/self-improvement-runs/2026-08-02-iteration-1/code-diff-v2.patch","files":["src/discovery/status_index.rb","src/discovery/cli.rb","src/discovery/daily_report.rb","src/discovery/opportunity_ranker.rb","tests/discovery_test.rb"],"validator_or_governance_model_changed":false,"ranking_factors_changed":false},
+  "local_validation":{"record_reference":"reports/self-improvement-runs/2026-08-02-iteration-1/test-result-v2.json","record_digest":"sha256:817a710ceb30a2ba37b4c5fdfb92d803656fb608ace083d1c7e5ba138726724e","result":"69_RUNS_255_ASSERTIONS_PASS"},
+  "github_checks":[],
+  "automation":{"iteration":1,"revision":2,"maximum_iterations":3,"previous_review":"BLOCKING_FAIL_RESOLVED","live_read_only_rerun_pending":true},
+  "risk_evidence":{"external_write_requested":false,"historical_files_modified":false,"constitution_modified":false,"dba_modified":false,"agent_evidence_modified":false,"ambiguous_shorthand_rejected":true},
+  "history_references":[
+    {"path":"reports/self-improvement-runs/2026-08-02-iteration-1/observation.json","content_digest":"sha256:9df3d51dbe47f4f68f64138851ab38e6fb8152d162808fe65f9b4023c7a480ce"},
+    {"path":"reports/self-improvement-runs/2026-08-02-iteration-1/diagnosis.json","content_digest":"sha256:98c287231fd4cce9825a0a059f2c3ed84942c8c3d4dcb2cccb3adc90edaa5283"},
+    {"path":"reports/self-improvement-runs/2026-08-02-iteration-1/reviewer-inputs/final/discovery-blocking-fail.json","content_digest":"sha256:37ad2138b028c0747b87cf533a25a981dfc9943e7c7c276abaf153804dbb0c52"},
+    {"path":"reports/self-improvement-runs/2026-08-02-iteration-1/code-diff-v2.patch","content_digest":"sha256:077c96ebbc623b76b688c1a11e1f60dc61f45a0f2f21ab4ae5e1da69ff733717"}
+  ],
+  "known_limits":["Only unambiguous source URLs are linked; shorthand and title similarity are ignored.","A live read-only discovery rerun is required before completion.","UPDATE_SCOUT_STATUS never authorizes external GitHub action."]
+}

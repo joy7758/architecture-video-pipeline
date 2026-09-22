@@ -1,0 +1,10 @@
+{
+  "artifact_type":"TITMAS_SCOUT_SELF_IMPROVEMENT_OBSERVATION",
+  "iteration":2,
+  "timestamp":"2026-08-02T06:56:30Z",
+  "source_reference":"reports/daily/2026-08-02-opportunity-report.json",
+  "source_digest":"sha256:11492ec980cb039c36b2114d2971c2390956f55299c660ca16ef72ec57294ab1",
+  "result":"REAL_QUERY_RECALL_DEFECT_OBSERVED",
+  "evidence":{"configured_queries":9,"configured_raw_candidates":0,"read_only_control_query":"agent audit updated:>=2026-05-04","control_query_candidates_observed":5,"second_control_query":"MCP security","second_control_candidates_observed":5},
+  "unsupported_claims":["control_results_are_ranked_opportunities","query_recall_is_calibrated"]
+}

@@ -1,0 +1,25 @@
+{
+  "schema_version": "delivery-current-status.v1",
+  "job_id": "guanque-pilot",
+  "updated_at": "2026-09-22T15:08:52.107097+00:00",
+  "stage": "NEEDS_REVISION",
+  "video_classification": "PREVIEW_ONLY_REQUIRES_VISUAL_REWORK",
+  "assessment": {
+    "path": "artifacts/reverse-audit-20260922-r1/assessment.json",
+    "sha256": "5456d4bc0879bf3015f065949543887492e5b0b80da8dda10d2be0846622c4f4"
+  },
+  "current_status": {
+    "path": "jobs/guanque-pilot/qa/final-status.json",
+    "sha256": "ca09f92ebf09a7222dd7a93a6c4236be66b13b4a02831f7e97b1d71dfe92345f"
+  },
+  "historical_delivery_manifest": {
+    "path": "jobs/guanque-pilot/delivery/delivery-manifest.json",
+    "sha256": "fd508c37e141848169a786ee7ddd93848f508cfe34e5a16f8b6a5ee9fa872225"
+  },
+  "historical_manifest_is_current_acceptance": false,
+  "video_bytes_unchanged": true,
+  "technical_status": "PASS_FOR_ORIGINAL_VIDEO_ONLY",
+  "visual_status": "FAIL",
+  "titmas_status": "NOT_CONNECTED",
+  "publication": "USER_ONLY_NOT_RUN"
+}

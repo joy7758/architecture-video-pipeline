@@ -1,0 +1,20 @@
+{
+  "artifact_type": "TITMAS_SCOUT_DBA_HANDOFF",
+  "schema_version": "0.1",
+  "handoff_status": "READY_FOR_READ_ONLY_REVIEW_NOT_INTEGRATED",
+  "dba_repository_modified": false,
+  "dba_ingestion_observed": false,
+  "payload": {
+    "source": "reports/latest-opportunities.json",
+    "source_digest": "sha256:14f698d5343a502f7345437bf27413a4cd2ff8d5f117b226fca4052eb2f7efa6",
+    "selected_count": 5,
+    "tracked_conversion": "github:praxis-proxy/ai:issue:194",
+    "tracked_conversions": [
+      "github:agentrust-io/ca2a:issue:36",
+      "github:praxis-proxy/ai:issue:194"
+    ],
+    "local_analysis_selection": "https://github.com/praxis-proxy/ai/issues/194",
+    "conversion_run": "reports/conversion-runs/2026-08-02-praxis-ai-194-agent-audit",
+    "conversion_status": "BLOCKED_BY_REPOSITORY_HUMAN_COMMUNICATION_POLICY"
+  }
+}

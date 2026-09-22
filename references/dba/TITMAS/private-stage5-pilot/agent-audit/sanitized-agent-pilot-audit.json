@@ -1,0 +1,145 @@
+{
+  "audit_type": "TITMAS_STAGE5_PRIVATE_AGENT_PILOT",
+  "audit_version": "1.0",
+  "cycle_id": "TITMAS-STAGE5-PRIVATE-AGENT-PILOT-001",
+  "source_main": "8848f2c87f30f14b4ec211c9fb2529b3f542cdaa",
+  "data_classification": "PRIVATE_AUDIT_SYNTHETIC",
+  "agent_selected_contribution_without_hint": true,
+  "selected_contribution_type": "TEST_VECTOR",
+  "selected_task_id": "AN-04-OBJECT-GENERATION",
+  "submission_id": "stage5-submission-AGENT-001",
+  "agent_output_submitted_through_sdk_by_local_controller": true,
+  "sandbox_key_sent_to_provider": false,
+  "conformance_completed": true,
+  "conformance_status": "CONFORMANCE_PASS",
+  "conformance_reason_codes": [
+    "TITMAS-STAGE5-CONTRIBUTION-CONFORMANT"
+  ],
+  "independent_agent_review_complete": true,
+  "review_result": "PASS",
+  "review_id": "STAGE5-REVIEW-A04-001",
+  "review_submission_status": "HUMAN_DISPOSITION_REQUIRED",
+  "authorized_review_attempts": 3,
+  "confirmed_review_responses": 1,
+  "semantic_plan_durable": true,
+  "semantic_contribution_durable": true,
+  "semantic_review_durable": true,
+  "checkpoint_ids": [
+    "stage5-contributor-plan",
+    "stage5-standard-contribution",
+    "stage5-standard-review-a04-deepseek"
+  ],
+  "checkpoint_hashes": [
+    "dd3db27b50a9c4a32ef0f526dcaaf0f7a9541685a5f6c91eeac411bdfeed18cf",
+    "af5fe38eeaef4b03e07edb753085be6850a083f3f63fbf39801d60e5f1643b62",
+    "dd51594360093216e23250e835e2f818ecc9ab82ff27f94441e0fe3850653517"
+  ],
+  "sanitized_payload_hashes": [
+    "9373f5cb59deb2bd025359985c6e6056e17ab8ce8e893d59d479a6f09e8cbda7",
+    "193d76e12b6518d9d5ff6c5d5f921d4e48aecb8f165520e78bf515233b4f0c14",
+    "bcc73d38ff68b2cee628c57f5b63cdb5dc176e9b6aada88a9b0cd4f2fc80a1dd"
+  ],
+  "model_calls": 5,
+  "provider_calls": 5,
+  "automatic_retry_count": 0,
+  "models": [
+    {
+      "provider": "ALIBABA_DASHSCOPE",
+      "requested_model": "qwen3.7-max",
+      "returned_model": "qwen3.7-max",
+      "model_identity_status": "MATCH",
+      "capture_state": "FINALIZED_SUCCESS",
+      "response_body_sha256": "f96f229b544c99609e423832d9321a76b9f15385415cb5c786c1df5d024f787a",
+      "usage_input_tokens": 1872,
+      "usage_output_tokens": 2121,
+      "usage_total_tokens": 3993
+    },
+    {
+      "provider": "ALIBABA_DASHSCOPE",
+      "requested_model": "qwen3.7-max",
+      "returned_model": "qwen3.7-max",
+      "model_identity_status": "MATCH",
+      "capture_state": "FINALIZED_SUCCESS",
+      "response_body_sha256": "087822c72b5e972599cfcfdb1a084224027c8c38b03a0e7cba482291282fa9e1",
+      "usage_input_tokens": 1386,
+      "usage_output_tokens": 581,
+      "usage_total_tokens": 1967
+    },
+    {
+      "provider": "BAIDU_QIANFAN",
+      "requested_model": "kimi-k2.6",
+      "returned_model": "",
+      "model_identity_status": "NOT_ASSESSED",
+      "capture_state": "FAILED_AFTER_DISPATCH_OUTCOME_UNKNOWN",
+      "response_body_sha256": "",
+      "usage_input_tokens": 0,
+      "usage_output_tokens": 0,
+      "usage_total_tokens": 0
+    },
+    {
+      "provider": "BAIDU_QIANFAN",
+      "requested_model": "kimi-k2.6",
+      "returned_model": "",
+      "model_identity_status": "NOT_ASSESSED",
+      "capture_state": "FAILED_AFTER_DISPATCH_OUTCOME_UNKNOWN",
+      "response_body_sha256": "",
+      "usage_input_tokens": 0,
+      "usage_output_tokens": 0,
+      "usage_total_tokens": 0,
+      "decision_reference": "TITMAS-STAGE-5-PRIVATE-AGENT-CONTRIBUTION-PILOT-A02"
+    },
+    {
+      "provider": "BAIDU_QIANFAN",
+      "requested_model": "deepseek-v3.2",
+      "returned_model": "deepseek-v3.2",
+      "model_identity_status": "MATCH",
+      "capture_state": "FINALIZED_SUCCESS",
+      "response_body_sha256": "4a86f28805522302de1967c9cb73ed12c2d5d5c55cda93925b06b678df2199a2",
+      "usage_input_tokens": 1579,
+      "usage_output_tokens": 351,
+      "usage_total_tokens": 1930,
+      "decision_reference": "TITMAS-STAGE-5-PRIVATE-AGENT-CONTRIBUTION-PILOT-A04"
+    }
+  ],
+  "token_usage_observed": {
+    "input_tokens": 4837,
+    "output_tokens": 3053,
+    "total_tokens": 7890,
+    "unknown_usage_attempts": 2
+  },
+  "cost": {
+    "observed_qwen_standard_list_rate_estimate_cny": 0.136368,
+    "observed_deepseek_token_plan_estimate_cny": 0.004211,
+    "observed_known_total_estimate_cny": 0.140579,
+    "kimi_attempts_actual_cost_cny": "UNKNOWN_POST_DISPATCH_OUTCOME_FOR_BOTH_AUTHORIZED_ATTEMPTS",
+    "a01_conservative_total_upper_bound_cny": 7.409256,
+    "a01_authorized_max_cny": 10,
+    "a02_authorization_basis": "ONE_ADDITIONAL_HUMAN_AUTHORIZED_CALL_WITHOUT_BILLING_TRUTH",
+    "billing_truth_available": false
+  },
+  "human_disposition": "ACCEPT_PILOT",
+  "human_disposition_completed": true,
+  "specification_candidate_disposition": "DEFER",
+  "private_preview_disposition": "ACCEPT_STAGE5_PRIVATE_PREVIEW",
+  "pilot_status": "PILOT_ACCEPTED",
+  "stage5_private_agent_pilot_complete": true,
+  "stage5_private_preview_operational": true,
+  "core_access_count": 0,
+  "private_repository_access_granted": false,
+  "raw_prompt_retained": false,
+  "raw_response_retained": false,
+  "hidden_reasoning_retained": false,
+  "credential_material_retained": false,
+  "public_export_executed": false,
+  "formal_specification_registry_modified": false,
+  "further_review_authorized": false,
+  "limitations": [
+    "A01_AND_A02_PROVIDER_OUTCOMES_REMAIN_UNKNOWN",
+    "A04_WAS_A_NEW_HUMAN_AUTHORIZED_ATTEMPT_NOT_AN_AUTOMATIC_RETRY",
+    "ONE_PRIVATE_SYNTHETIC_AGENT_PILOT",
+    "POSITIVE_ONLY_TEST_VECTOR_HAS_NON_BLOCKING_NEGATIVE_COVERAGE_GAP",
+    "PILOT_ACCEPTANCE_NE_STANDARD_ADOPTION",
+    "PRIVATE_PREVIEW_NE_COMMERCIAL_ECOSYSTEM",
+    "COST_IS_ESTIMATED_NOT_BILLING_TRUTH"
+  ]
+}

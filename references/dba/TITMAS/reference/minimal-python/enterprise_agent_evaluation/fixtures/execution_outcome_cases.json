@@ -1,0 +1,109 @@
+{
+  "fixture_id": "TITMAS-EXECUTION-OUTCOME-SYNTHETIC-v0.1",
+  "synthetic_only": true,
+  "cases": [
+    {
+      "case_id": "A_REPORT_AND_EFFECT_SUCCESS",
+      "source_statement_id": "eeoap:synthetic:A",
+      "legacy_success": true,
+      "legacy_success_maps_to": "reported_state",
+      "layers": {
+        "command_accepted": {"state": "VERIFIED", "evidence_refs": ["A-command"]},
+        "execution_completed": {"state": "VERIFIED", "evidence_refs": ["A-completed"]},
+        "reported_state": {"state": "VERIFIED", "evidence_refs": ["A-reported"]},
+        "observed_effect": {"state": "VERIFIED", "evidence_refs": ["A-observed"]},
+        "settled_outcome": {"state": "VERIFIED", "evidence_refs": ["A-settled"]}
+      },
+      "evidence_sources": [
+        {"evidence_ref": "A-command", "witness_type": "SYSTEM_REPORT", "observer_id": "synthetic-runner", "claim_scope": "command_accepted", "observation_window": null, "settlement_delay_ms": 0, "verifier_independence": "NOT_ASSESSED", "shared_dependency": null},
+        {"evidence_ref": "A-completed", "witness_type": "SYSTEM_REPORT", "observer_id": "synthetic-runner", "claim_scope": "execution_completed", "observation_window": null, "settlement_delay_ms": 0, "verifier_independence": "NOT_ASSESSED", "shared_dependency": null},
+        {"evidence_ref": "A-reported", "witness_type": "SYSTEM_REPORT", "observer_id": "synthetic-service", "claim_scope": "reported_state", "observation_window": null, "settlement_delay_ms": 0, "verifier_independence": "NOT_ASSESSED", "shared_dependency": null},
+        {"evidence_ref": "A-observed", "witness_type": "INDEPENDENT_OBSERVER", "observer_id": "synthetic-observer-a", "claim_scope": "observed_effect", "observation_window": {"start": "T+1s", "end": "T+2s"}, "settlement_delay_ms": 1000, "verifier_independence": "INDEPENDENT", "shared_dependency": null},
+        {"evidence_ref": "A-settled", "witness_type": "INDEPENDENT_OBSERVER", "observer_id": "synthetic-observer-b", "claim_scope": "settled_outcome", "observation_window": {"start": "T+30s", "end": "T+60s"}, "settlement_delay_ms": 30000, "verifier_independence": "INDEPENDENT", "shared_dependency": null}
+      ],
+      "expected_projection_status": "VALID"
+    },
+    {
+      "case_id": "B_REPORT_SUCCESS_EFFECT_CONTRADICTED",
+      "source_statement_id": "eeoap:synthetic:B",
+      "legacy_success": true,
+      "legacy_success_maps_to": "reported_state",
+      "layers": {
+        "command_accepted": {"state": "VERIFIED", "evidence_refs": ["B-command"]},
+        "execution_completed": {"state": "VERIFIED", "evidence_refs": ["B-completed"]},
+        "reported_state": {"state": "VERIFIED", "evidence_refs": ["B-reported"]},
+        "observed_effect": {"state": "CONTRADICTED", "evidence_refs": ["B-observed"]},
+        "settled_outcome": {"state": "CONTRADICTED", "evidence_refs": ["B-settled"]}
+      },
+      "evidence_sources": [
+        {"evidence_ref": "B-command", "witness_type": "SYSTEM_REPORT", "observer_id": "synthetic-runner", "claim_scope": "command_accepted", "observation_window": null, "settlement_delay_ms": 0, "verifier_independence": "NOT_ASSESSED", "shared_dependency": null},
+        {"evidence_ref": "B-completed", "witness_type": "SYSTEM_REPORT", "observer_id": "synthetic-runner", "claim_scope": "execution_completed", "observation_window": null, "settlement_delay_ms": 0, "verifier_independence": "NOT_ASSESSED", "shared_dependency": null},
+        {"evidence_ref": "B-reported", "witness_type": "SYSTEM_REPORT", "observer_id": "synthetic-service", "claim_scope": "reported_state", "observation_window": null, "settlement_delay_ms": 0, "verifier_independence": "NOT_ASSESSED", "shared_dependency": null},
+        {"evidence_ref": "B-observed", "witness_type": "INDEPENDENT_OBSERVER", "observer_id": "synthetic-observer-a", "claim_scope": "observed_effect", "observation_window": {"start": "T+1s", "end": "T+2s"}, "settlement_delay_ms": 1000, "verifier_independence": "INDEPENDENT", "shared_dependency": null},
+        {"evidence_ref": "B-settled", "witness_type": "INDEPENDENT_OBSERVER", "observer_id": "synthetic-observer-b", "claim_scope": "settled_outcome", "observation_window": {"start": "T+30s", "end": "T+60s"}, "settlement_delay_ms": 30000, "verifier_independence": "INDEPENDENT", "shared_dependency": null}
+      ],
+      "expected_projection_status": "VALID"
+    },
+    {
+      "case_id": "C_TRANSIENT_EFFECT_ROLLED_BACK",
+      "source_statement_id": "eeoap:synthetic:C",
+      "legacy_success": true,
+      "legacy_success_maps_to": "reported_state",
+      "layers": {
+        "command_accepted": {"state": "VERIFIED", "evidence_refs": ["C-command"]},
+        "execution_completed": {"state": "VERIFIED", "evidence_refs": ["C-completed"]},
+        "reported_state": {"state": "VERIFIED", "evidence_refs": ["C-reported"]},
+        "observed_effect": {"state": "VERIFIED", "evidence_refs": ["C-observed"]},
+        "settled_outcome": {"state": "CONTRADICTED", "evidence_refs": ["C-settled"]}
+      },
+      "evidence_sources": [
+        {"evidence_ref": "C-command", "witness_type": "SYSTEM_REPORT", "observer_id": "synthetic-runner", "claim_scope": "command_accepted", "observation_window": null, "settlement_delay_ms": 0, "verifier_independence": "NOT_ASSESSED", "shared_dependency": null},
+        {"evidence_ref": "C-completed", "witness_type": "SYSTEM_REPORT", "observer_id": "synthetic-runner", "claim_scope": "execution_completed", "observation_window": null, "settlement_delay_ms": 0, "verifier_independence": "NOT_ASSESSED", "shared_dependency": null},
+        {"evidence_ref": "C-reported", "witness_type": "SYSTEM_REPORT", "observer_id": "synthetic-service", "claim_scope": "reported_state", "observation_window": null, "settlement_delay_ms": 0, "verifier_independence": "NOT_ASSESSED", "shared_dependency": null},
+        {"evidence_ref": "C-observed", "witness_type": "SENSOR", "observer_id": "synthetic-sensor-a", "claim_scope": "observed_effect", "observation_window": {"start": "T+1s", "end": "T+5s"}, "settlement_delay_ms": 1000, "verifier_independence": "INDEPENDENT", "shared_dependency": null},
+        {"evidence_ref": "C-settled", "witness_type": "INDEPENDENT_OBSERVER", "observer_id": "synthetic-observer-b", "claim_scope": "settled_outcome", "observation_window": {"start": "T+60s", "end": "T+90s"}, "settlement_delay_ms": 60000, "verifier_independence": "INDEPENDENT", "shared_dependency": null}
+      ],
+      "expected_projection_status": "VALID"
+    },
+    {
+      "case_id": "D_TWO_VERIFIERS_SHARE_DEPENDENCY",
+      "source_statement_id": "eeoap:synthetic:D",
+      "legacy_success": true,
+      "legacy_success_maps_to": "reported_state",
+      "layers": {
+        "command_accepted": {"state": "VERIFIED", "evidence_refs": ["D-command"]},
+        "execution_completed": {"state": "VERIFIED", "evidence_refs": ["D-completed"]},
+        "reported_state": {"state": "VERIFIED", "evidence_refs": ["D-reported"]},
+        "observed_effect": {"state": "VERIFIED", "evidence_refs": ["D-observer-one", "D-observer-two"]},
+        "settled_outcome": {"state": "UNVERIFIED", "evidence_refs": []}
+      },
+      "evidence_sources": [
+        {"evidence_ref": "D-command", "witness_type": "SYSTEM_REPORT", "observer_id": "synthetic-runner", "claim_scope": "command_accepted", "observation_window": null, "settlement_delay_ms": 0, "verifier_independence": "NOT_ASSESSED", "shared_dependency": null},
+        {"evidence_ref": "D-completed", "witness_type": "SYSTEM_REPORT", "observer_id": "synthetic-runner", "claim_scope": "execution_completed", "observation_window": null, "settlement_delay_ms": 0, "verifier_independence": "NOT_ASSESSED", "shared_dependency": null},
+        {"evidence_ref": "D-reported", "witness_type": "SYSTEM_REPORT", "observer_id": "synthetic-service", "claim_scope": "reported_state", "observation_window": null, "settlement_delay_ms": 0, "verifier_independence": "NOT_ASSESSED", "shared_dependency": null},
+        {"evidence_ref": "D-observer-one", "witness_type": "STATE_STORE", "observer_id": "synthetic-observer-one", "claim_scope": "observed_effect", "observation_window": {"start": "T+1s", "end": "T+2s"}, "settlement_delay_ms": 1000, "verifier_independence": "SHARED_DEPENDENCY", "shared_dependency": "synthetic-state-db-a"},
+        {"evidence_ref": "D-observer-two", "witness_type": "STATE_STORE", "observer_id": "synthetic-observer-two", "claim_scope": "observed_effect", "observation_window": {"start": "T+2s", "end": "T+3s"}, "settlement_delay_ms": 2000, "verifier_independence": "SHARED_DEPENDENCY", "shared_dependency": "synthetic-state-db-a"}
+      ],
+      "expected_projection_status": "VALID"
+    },
+    {
+      "case_id": "E_NO_REALITY_OBSERVATION",
+      "source_statement_id": "eeoap:synthetic:E",
+      "legacy_success": true,
+      "legacy_success_maps_to": "reported_state",
+      "layers": {
+        "command_accepted": {"state": "VERIFIED", "evidence_refs": ["E-command"]},
+        "execution_completed": {"state": "VERIFIED", "evidence_refs": ["E-completed"]},
+        "reported_state": {"state": "VERIFIED", "evidence_refs": ["E-reported"]},
+        "observed_effect": {"state": "NOT_OBSERVED", "evidence_refs": []},
+        "settled_outcome": {"state": "UNVERIFIED", "evidence_refs": []}
+      },
+      "evidence_sources": [
+        {"evidence_ref": "E-command", "witness_type": "SYSTEM_REPORT", "observer_id": "synthetic-runner", "claim_scope": "command_accepted", "observation_window": null, "settlement_delay_ms": 0, "verifier_independence": "NOT_ASSESSED", "shared_dependency": null},
+        {"evidence_ref": "E-completed", "witness_type": "SYSTEM_REPORT", "observer_id": "synthetic-runner", "claim_scope": "execution_completed", "observation_window": null, "settlement_delay_ms": 0, "verifier_independence": "NOT_ASSESSED", "shared_dependency": null},
+        {"evidence_ref": "E-reported", "witness_type": "SYSTEM_REPORT", "observer_id": "synthetic-service", "claim_scope": "reported_state", "observation_window": null, "settlement_delay_ms": 0, "verifier_independence": "NOT_ASSESSED", "shared_dependency": null}
+      ],
+      "expected_projection_status": "VALID"
+    }
+  ]
+}

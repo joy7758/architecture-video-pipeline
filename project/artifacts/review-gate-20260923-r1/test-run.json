@@ -1,0 +1,14 @@
+{
+  "command": "npm run pipeline:check",
+  "observed_at": "2026-09-22T16:33:04.595711+00:00",
+  "exit_code": 0,
+  "tests": 34,
+  "pass": 34,
+  "fail": 0,
+  "skipped": 0,
+  "scope": "SYNTHETIC_PROTOCOL_CONTROLS_NOT_VISUAL_QUALITY",
+  "raw_output": {
+    "path": "artifacts/review-gate-20260923-r1/test-output.txt",
+    "sha256": "8eb51cca82b10df9ab5e09c71ef4aaa7d6bc8147c109ed461d6c20f0119987a5"
+  }
+}

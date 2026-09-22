@@ -1,0 +1,46 @@
+
+> pipeline:check
+> node --test pipeline/test/*.test.mjs
+
+✔ initialization is an unrun DRAFT and never overwrites existing files (6.307333ms)
+✔ IDs, traversal, other jobs and symlink escapes are rejected (2.190709ms)
+✔ one view is insufficient; two attributable distinct views and a bound plan are ready to build (5.991042ms)
+✔ USER_PROVIDED references preserve original provenance without inventing a URL (3.426125ms)
+✔ unknown building location or era cannot enter construction (5.125375ms)
+✔ valid local checks and rendered video remain PREVIEW_ONLY without TITMAS (7.646334ms)
+✔ handwritten TITMAS PASS and invented connector cannot open the release gate (7.951375ms)
+✔ changed source or video bytes invalidate previously passing evidence (8.717125ms)
+✔ builder cannot sign the independent visual check (6.011167ms)
+✔ missing files, absent visual evidence and UNKNOWN cannot become completed checks (8.701583ms)
+✔ renaming the request invalidates every downstream identity binding (7.913833ms)
+✔ legacy visual PASS cannot pass without scoped criteria and real input access records (5.391542ms)
+✔ nested provenance, source snapshot and render evidence are checked independently of their parent files (8.34975ms)
+✔ switching the current output while retaining old files cannot reuse the old scoped review (9.53825ms)
+✔ complete synthetic protocol records open only scoped content review; external TITMAS remains unrun (7.534583ms)
+✔ absent contract/results and explicit NOT_RUN stay unrun and never throw (6.2105ms)
+✔ each required outcome and omitted criterion are reported in separate coverage lists (19.878125ms)
+✔ all UNKNOWN records cannot satisfy content review (4.337417ms)
+✔ duplicate or undeclared result IDs fail closed even when every normal result passes (7.669208ms)
+✔ conflicting duplicate result cannot remain valid, counted as passed or display group PASS (4.1915ms)
+✔ strict runtime contract validation rejects empty, malformed, missing groups and binding IDs (35.914541ms)
+✔ builder self-signature and unknown builder cannot pass independent review (4.961541ms)
+✔ open P1 cannot be hidden by PASS; closure needs matching current evidence (7.393291ms)
+✔ PASS requires actual bound evidence roles and valid observation metadata (28.68475ms)
+✔ media access cannot be a document read or a record for a different input/reviewer/time (20.398916ms)
+✔ future review and matching future access records cannot claim completed work (3.11775ms)
+✔ FRAME_EXTRACTION supports video access, and document bytes cannot impersonate media (4.293792ms)
+✔ user corrections, source, checklist and output changes invalidate even unused bound inputs (25.219459ms)
+✔ contract changes require results bound to its exact new bytes (2.5895ms)
+✔ absolute/traversal/cross-job paths and symlink escapes are rejected (20.662333ms)
+✔ source checklist adapter prevents omitted, downgraded or weakened known requirements (14.221125ms)
+✔ job context cannot select new artifacts while a complete old contract stays present (7.237625ms)
+✔ external handwritten TITMAS PASS cannot override a content failure or become authentication (4.043125ms)
+✔ malformed JSON, invalid results envelope and extra fields never become PASS (16.2435ms)
+ℹ tests 34
+ℹ suites 0
+ℹ pass 34
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 317.036083

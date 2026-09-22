@@ -1,0 +1,19 @@
+{
+  "artifact_type": "TITMAS_SCOUT_CONVERSION_FEEDBACK_ANALYSIS",
+  "run_id": "2026-08-02-praxis-ai-194-agent-audit",
+  "conversion_state": "BLOCKED",
+  "feedback_type": "REPOSITORY_POLICY_BLOCKER",
+  "observed_feedback": [
+    "The repository requires assignment before a pull request.",
+    "The repository requires the contributor to write person-to-person Issue comments in their own words.",
+    "The five-role quorum denied the exact agent-authored draft and required human action."
+  ],
+  "scout_learning": [
+    "Discovery ACTIONABLE_NOW means a public entry exists; it does not mean an agent may author the required communication.",
+    "Repository-specific authorship policy must be applied after discovery and before external action.",
+    "Exact source, slice, body, and diff digests must bind an authorization; newline and file-vs-object digest ambiguity must fail closed.",
+    "A technical comment does not establish collaboration, acceptance, adoption, or revenue."
+  ],
+  "next_valid_step": "A person may independently write a short scope-confirmation comment in their own words. That exact new body must receive a fresh digest, evidence capture, and quorum decision before posting.",
+  "automatic_retry_allowed": false
+}

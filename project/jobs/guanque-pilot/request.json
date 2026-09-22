@@ -1,0 +1,22 @@
+{
+  "schema_version": "1.0",
+  "id": "guanque-pilot",
+  "building": {
+    "name": "鹳雀楼",
+    "location": "山西省永济市",
+    "era": "现存重建建筑"
+  },
+  "created_at": "2026-09-22T11:36:37.955Z",
+  "intent": "LOCAL_ARTISTIC_ARCHITECTURAL_BREAKDOWN_VIDEO",
+  "publication": "USER_ONLY",
+  "measured_accuracy_claim": false,
+  "pilot_type": "EXISTING_MODEL_PIPELINE_VALIDATION",
+  "target_video": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 30,
+    "duration_seconds": 24,
+    "audio": "SILENT"
+  },
+  "titmas_requirement": "SPECIFIED_SERVICE_LOCATED_FROM_DBA_BUT_CURRENT_ENDPOINTS_UNAVAILABLE"
+}

@@ -1,0 +1,45 @@
+diff --git a/config/discovery-sources.yaml b/config/discovery-sources.yaml
+index 7e250e8..e964216 100644
+--- a/config/discovery-sources.yaml
++++ b/config/discovery-sources.yaml
+@@ -30,31 +30,31 @@ source_types:
+ queries:
+   - query_id: Q-AI-AGENT-AUDIT
+     topic: AI_AGENT_AUDIT
+-    query: '"AI agent" audit'
++    query: 'agent audit'
+   - query_id: Q-EXECUTION-EVIDENCE
+     topic: EXECUTION_EVIDENCE
+-    query: 'agent "execution evidence"'
++    query: '"execution evidence"'
+   - query_id: Q-VERIFIABLE-TRACE
+     topic: VERIFIABLE_TRACE
+-    query: 'agent "verifiable trace"'
++    query: '"verifiable trace" agent'
+   - query_id: Q-HUMAN-IN-THE-LOOP
+     topic: HUMAN_IN_THE_LOOP
+-    query: '"human in the loop" agent'
++    query: 'human-in-the-loop agent'
+   - query_id: Q-AGENT-AUTHORIZATION
+     topic: AGENT_AUTHORIZATION
+-    query: '"agent authorization"'
++    query: 'agent authorization'
+   - query_id: Q-MCP-SECURITY-AUDIT
+     topic: MCP_SECURITY_AUDIT
+-    query: 'MCP security audit'
++    query: 'MCP security'
+   - query_id: Q-AGENT-GOVERNANCE
+     topic: AGENT_GOVERNANCE_COMPLIANCE
+-    query: '"agent governance" compliance'
++    query: 'agent governance'
+   - query_id: Q-PROVENANCE-REPLAY
+     topic: PROVENANCE_REPLAY
+-    query: 'agent provenance replay'
++    query: 'provenance replay agent'
+   - query_id: Q-TAMPER-EVIDENCE
+     topic: TAMPER_EVIDENCE
+-    query: 'agent "tamper evidence"'
++    query: 'tamper-evident agent'
+ 
+ pain_point_taxonomy:
+   AI_AGENT_AUDIT:

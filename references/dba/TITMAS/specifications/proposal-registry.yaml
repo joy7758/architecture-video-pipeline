@@ -1,0 +1,62 @@
+{
+  "registry_version": "1.0.0",
+  "entries": [
+    {
+      "id": "DRAFT-ID-CORE-INTEROP-001",
+      "title": "TITMAS Core Developer Interoperability Surface v0.1",
+      "title_zh": "TITMAS 核心开发者互操作表面 v0.1",
+      "category": "INTEROPERABILITY",
+      "status": "DEVELOPMENT_DRAFT",
+      "maturity": "Development",
+      "owner_ref": "DBA_STEWARDSHIP",
+      "authority_ref": "HUMAN_ARCHITECTURE_DECISION_REQUIRED",
+      "version": "0.1.0",
+      "normative": false,
+      "implementation_status": "REFERENCE_IMPLEMENTATION_AVAILABLE",
+      "conformance_status": "LOCAL_HARNESS_PASS",
+      "security_review_status": "INTERNAL_ADVISORY_REVIEW_PASS",
+      "external_adoption_status": "NONE",
+      "created_at": "2026-07-28",
+      "updated_at": "2026-07-28",
+      "supersedes": [],
+      "dependencies": ["EEOAP", "VEAP_DRAFT", "DBOS_CONTRACT", "SAEE_HANDOFF"],
+      "limitations": ["NOT_STABLE", "NOT_ADOPTED"],
+      "document_ref": "proposals/titmas-core-developer-interoperability-surface-v0.1.md"
+    },
+    {
+      "id": "TITMAS-PROP-20260801-MEDIA-EVIDENCE-001",
+      "title": "TITMAS Media Evidence Profile Architecture Admission Request v0.1",
+      "title_zh": "TITMAS 媒体证据场景配置架构接纳请求 v0.1",
+      "category": "REFERENCE_CANDIDATE",
+      "status": "ACCEPTED_BOUNDED",
+      "maturity": "Development",
+      "owner_ref": "ZHANGBIN",
+      "authority_ref": "TITMAS-DEC-20260801-MEDIA-EVIDENCE-PORTFOLIO-001",
+      "version": "0.1.0",
+      "normative": false,
+      "implementation_status": "EXISTING_REFERENCE_IMPLEMENTATION",
+      "conformance_status": "LOCAL_TESTS_PASS_CROSS_PROJECT_NOT_EXECUTED",
+      "security_review_status": "NOT_ASSESSED",
+      "external_adoption_status": "NONE",
+      "review_result": "ACCEPTED_BOUNDED",
+      "decision_result": "ADMITTED_AS_ADJACENT_CANDIDATE",
+      "adopted_version": "NOT_APPLICABLE",
+      "portfolio_status": "ADMITTED_ADJACENT_CANDIDATE",
+      "dbos_mapping_status": "NOT_AUTHORIZED",
+      "release_status": "NOT_RELEASED_BY_THIS_DECISION",
+      "created_at": "2026-08-01",
+      "updated_at": "2026-08-01",
+      "supersedes": [],
+      "dependencies": ["DBA_CHARTERS", "DBOS_EVIDENCE_OWNERSHIP", "AGENT_EVIDENCE_BOUNDARY"],
+      "limitations": [
+        "PORTFOLIO_ADMITTED_ONLY",
+        "DBOS_MAPPING_NOT_AUTHORIZED",
+        "NOT_CORE_COMPONENT",
+        "NOT_STANDARD",
+        "NOT_PRODUCTION_READY",
+        "POST_TAG_COMPETITION_ASSETS_OUTSIDE_V0_1_0"
+      ],
+      "document_ref": "proposals/titmas-media-evidence-profile-admission-v0.1.md"
+    }
+  ]
+}

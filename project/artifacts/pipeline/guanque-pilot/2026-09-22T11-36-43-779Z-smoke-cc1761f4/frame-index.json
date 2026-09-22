@@ -1,0 +1,2690 @@
+[
+  {
+    "index": 0,
+    "seconds": 0,
+    "shotId": "finished-opening",
+    "label": "四檐凌空 · 一楼入画",
+    "pose": {
+      "progress": 1,
+      "position": [
+        48,
+        34,
+        82
+      ],
+      "target": [
+        0,
+        12.5,
+        3
+      ]
+    },
+    "file": "frames/frame-000000.png",
+    "sha256": "7e97e57c3c77aadea7c9e40c363b337e822bde74a9c81a4f8bf6ff3cf64beb3c",
+    "stats": {
+      "progress": 1,
+      "width": 360,
+      "height": 467,
+      "calls": 38,
+      "triangles": 1175480
+    }
+  },
+  {
+    "index": 1,
+    "seconds": 0.25,
+    "shotId": "finished-opening",
+    "label": "四檐凌空 · 一楼入画",
+    "pose": {
+      "progress": 1,
+      "position": [
+        47.901620370370374,
+        34,
+        82.07870370370371
+      ],
+      "target": [
+        0,
+        12.5,
+        3
+      ]
+    },
+    "file": "frames/frame-000001.png",
+    "sha256": "09b644e46914e62958f516504a2422a6927f431d80fee9abee0de2553b36c6fb",
+    "stats": {
+      "progress": 1,
+      "width": 360,
+      "height": 467,
+      "calls": 38,
+      "triangles": 1175480
+    }
+  },
+  {
+    "index": 2,
+    "seconds": 0.5,
+    "shotId": "finished-opening",
+    "label": "四檐凌空 · 一楼入画",
+    "pose": {
+      "progress": 1,
+      "position": [
+        47.629629629629626,
+        34,
+        82.29629629629629
+      ],
+      "target": [
+        0,
+        12.5,
+        3
+      ]
+    },
+    "file": "frames/frame-000002.png",
+    "sha256": "6f54da70b9a40685ed1f83605d6507ec92b71df0842ee5e270cb164225d9d65a",
+    "stats": {
+      "progress": 1,
+      "width": 360,
+      "height": 467,
+      "calls": 38,
+      "triangles": 1175480
+    }
+  },
+  {
+    "index": 3,
+    "seconds": 0.75,
+    "shotId": "finished-opening",
+    "label": "四檐凌空 · 一楼入画",
+    "pose": {
+      "progress": 1,
+      "position": [
+        47.21875,
+        34,
+        82.625
+      ],
+      "target": [
+        0,
+        12.5,
+        3
+      ]
+    },
+    "file": "frames/frame-000003.png",
+    "sha256": "b0c952403e7f9f63b2866edc6fe40a2317a98afac509d803a274247aa0212657",
+    "stats": {
+      "progress": 1,
+      "width": 360,
+      "height": 467,
+      "calls": 38,
+      "triangles": 1175480
+    }
+  },
+  {
+    "index": 4,
+    "seconds": 1,
+    "shotId": "finished-opening",
+    "label": "四檐凌空 · 一楼入画",
+    "pose": {
+      "progress": 1,
+      "position": [
+        46.7037037037037,
+        34,
+        83.03703703703704
+      ],
+      "target": [
+        0,
+        12.5,
+        3
+      ]
+    },
+    "file": "frames/frame-000004.png",
+    "sha256": "f0848169774866c221a4333a3e44cc3e1fc93bb411896a8fd3c6bebb9dc04e81",
+    "stats": {
+      "progress": 1,
+      "width": 360,
+      "height": 467,
+      "calls": 38,
+      "triangles": 1175480
+    }
+  },
+  {
+    "index": 5,
+    "seconds": 1.25,
+    "shotId": "finished-opening",
+    "label": "四檐凌空 · 一楼入画",
+    "pose": {
+      "progress": 1,
+      "position": [
+        46.11921296296296,
+        34,
+        83.50462962962963
+      ],
+      "target": [
+        0,
+        12.5,
+        3
+      ]
+    },
+    "file": "frames/frame-000005.png",
+    "sha256": "4642a93b1e6ec4fda65b5f786f86d183632e645638094d9b740de03a6e1744b3",
+    "stats": {
+      "progress": 1,
+      "width": 360,
+      "height": 467,
+      "calls": 38,
+      "triangles": 1175480
+    }
+  },
+  {
+    "index": 6,
+    "seconds": 1.5,
+    "shotId": "finished-opening",
+    "label": "四檐凌空 · 一楼入画",
+    "pose": {
+      "progress": 1,
+      "position": [
+        45.5,
+        34,
+        84
+      ],
+      "target": [
+        0,
+        12.5,
+        3
+      ]
+    },
+    "file": "frames/frame-000006.png",
+    "sha256": "a1edb6ad371ecf240351bde419ebe5250b3f52481d1aa690c8cd89ba0b12cf43",
+    "stats": {
+      "progress": 1,
+      "width": 360,
+      "height": 467,
+      "calls": 38,
+      "triangles": 1175480
+    }
+  },
+  {
+    "index": 7,
+    "seconds": 1.75,
+    "shotId": "finished-opening",
+    "label": "四檐凌空 · 一楼入画",
+    "pose": {
+      "progress": 1,
+      "position": [
+        44.88078703703704,
+        34,
+        84.49537037037037
+      ],
+      "target": [
+        0,
+        12.5,
+        3
+      ]
+    },
+    "file": "frames/frame-000007.png",
+    "sha256": "94f038a24257429be0237bd8a11d7b7bec0ec9b4fe950c7ce5a76b386b3cbc18",
+    "stats": {
+      "progress": 1,
+      "width": 360,
+      "height": 467,
+      "calls": 38,
+      "triangles": 1175480
+    }
+  },
+  {
+    "index": 8,
+    "seconds": 2,
+    "shotId": "finished-opening",
+    "label": "四檐凌空 · 一楼入画",
+    "pose": {
+      "progress": 1,
+      "position": [
+        44.2962962962963,
+        34,
+        84.96296296296296
+      ],
+      "target": [
+        0,
+        12.5,
+        3
+      ]
+    },
+    "file": "frames/frame-000008.png",
+    "sha256": "cc327b74c0386addbe62a1d88c2aee31d8cc2dfabf3b42bee95446bbd67ea14e",
+    "stats": {
+      "progress": 1,
+      "width": 360,
+      "height": 467,
+      "calls": 38,
+      "triangles": 1175480
+    }
+  },
+  {
+    "index": 9,
+    "seconds": 2.25,
+    "shotId": "finished-opening",
+    "label": "四檐凌空 · 一楼入画",
+    "pose": {
+      "progress": 1,
+      "position": [
+        43.78125,
+        34,
+        85.375
+      ],
+      "target": [
+        0,
+        12.5,
+        3
+      ]
+    },
+    "file": "frames/frame-000009.png",
+    "sha256": "af72029667465d7f7871ba07586a2b0fe1b2375c709461aefa4f6608a0f93ed7",
+    "stats": {
+      "progress": 1,
+      "width": 360,
+      "height": 467,
+      "calls": 38,
+      "triangles": 1175480
+    }
+  },
+  {
+    "index": 10,
+    "seconds": 2.5,
+    "shotId": "finished-opening",
+    "label": "四檐凌空 · 一楼入画",
+    "pose": {
+      "progress": 1,
+      "position": [
+        43.37037037037037,
+        34,
+        85.70370370370371
+      ],
+      "target": [
+        0,
+        12.5,
+        3
+      ]
+    },
+    "file": "frames/frame-000010.png",
+    "sha256": "f9721997d22d8b6752c40e2309f705b0f37821ecbd675601900f1ab4fc2508b8",
+    "stats": {
+      "progress": 1,
+      "width": 360,
+      "height": 467,
+      "calls": 38,
+      "triangles": 1175480
+    }
+  },
+  {
+    "index": 11,
+    "seconds": 2.75,
+    "shotId": "finished-opening",
+    "label": "四檐凌空 · 一楼入画",
+    "pose": {
+      "progress": 1,
+      "position": [
+        43.09837962962963,
+        34,
+        85.92129629629629
+      ],
+      "target": [
+        0,
+        12.5,
+        3
+      ]
+    },
+    "file": "frames/frame-000011.png",
+    "sha256": "a546f9aed31296e3613b4ad9b979246ee290281b23eae24af81959fa310b0ac1",
+    "stats": {
+      "progress": 1,
+      "width": 360,
+      "height": 467,
+      "calls": 38,
+      "triangles": 1175480
+    }
+  },
+  {
+    "index": 12,
+    "seconds": 3,
+    "shotId": "reverse-assembly",
+    "label": "循序拆解 · 回望一砖一瓦",
+    "pose": {
+      "progress": 1,
+      "position": [
+        43,
+        34,
+        86
+      ],
+      "target": [
+        0,
+        12.5,
+        3
+      ]
+    },
+    "file": "frames/frame-000012.png",
+    "sha256": "202debd0cab2a5255cc44aeaf8315aa911e58587ae1759a761c7596393a3479a",
+    "stats": {
+      "progress": 1,
+      "width": 360,
+      "height": 467,
+      "calls": 38,
+      "triangles": 1175480
+    }
+  },
+  {
+    "index": 13,
+    "seconds": 3.25,
+    "shotId": "reverse-assembly",
+    "label": "循序拆解 · 回望一砖一瓦",
+    "pose": {
+      "progress": 0.9583333333333334,
+      "position": [
+        42.88859953703704,
+        33.979745370370374,
+        86.04050925925925
+      ],
+      "target": [
+        0,
+        12.5,
+        3
+      ]
+    },
+    "file": "frames/frame-000013.png",
+    "sha256": "7f3e4d833c8c416f9718eadbf07585fb23546d81b06e3f6c5a621829c03a7a80",
+    "stats": {
+      "progress": 0.9583333333333334,
+      "width": 360,
+      "height": 467,
+      "calls": 38,
+      "triangles": 1175480
+    }
+  },
+  {
+    "index": 14,
+    "seconds": 3.5,
+    "shotId": "reverse-assembly",
+    "label": "循序拆解 · 回望一砖一瓦",
+    "pose": {
+      "progress": 0.9166666666666666,
+      "position": [
+        42.567129629629626,
+        33.9212962962963,
+        86.1574074074074
+      ],
+      "target": [
+        0,
+        12.5,
+        3
+      ]
+    },
+    "file": "frames/frame-000014.png",
+    "sha256": "2f05fe674672586ed9abb213b7e8972647d562e20a9ad6258d373fd5c3c6ab19",
+    "stats": {
+      "progress": 0.9166666666666666,
+      "width": 360,
+      "height": 467,
+      "calls": 38,
+      "triangles": 1175480
+    }
+  },
+  {
+    "index": 15,
+    "seconds": 3.75,
+    "shotId": "reverse-assembly",
+    "label": "循序拆解 · 回望一砖一瓦",
+    "pose": {
+      "progress": 0.875,
+      "position": [
+        42.0546875,
+        33.828125,
+        86.34375
+      ],
+      "target": [
+        0,
+        12.5,
+        3
+      ]
+    },
+    "file": "frames/frame-000015.png",
+    "sha256": "00fb79b7bff0517626432170e0b4963238d292052cfac6acd5f15ffae265feca",
+    "stats": {
+      "progress": 0.875,
+      "width": 360,
+      "height": 467,
+      "calls": 38,
+      "triangles": 1175480
+    }
+  },
+  {
+    "index": 16,
+    "seconds": 4,
+    "shotId": "reverse-assembly",
+    "label": "循序拆解 · 回望一砖一瓦",
+    "pose": {
+      "progress": 0.8333333333333334,
+      "position": [
+        41.370370370370374,
+        33.7037037037037,
+        86.5925925925926
+      ],
+      "target": [
+        0,
+        12.5,
+        3
+      ]
+    },
+    "file": "frames/frame-000016.png",
+    "sha256": "06e5de89fe5bd8fdebfe15e1e64d3fef94145cdc71d6fb2dc4e331e645157240",
+    "stats": {
+      "progress": 0.8333333333333334,
+      "width": 360,
+      "height": 467,
+      "calls": 38,
+      "triangles": 1175480
+    }
+  },
+  {
+    "index": 17,
+    "seconds": 4.25,
+    "shotId": "reverse-assembly",
+    "label": "循序拆解 · 回望一砖一瓦",
+    "pose": {
+      "progress": 0.7916666666666666,
+      "position": [
+        40.53327546296296,
+        33.551504629629626,
+        86.89699074074075
+      ],
+      "target": [
+        0,
+        12.5,
+        3
+      ]
+    },
+    "file": "frames/frame-000017.png",
+    "sha256": "0d6fa3c6e286437b491e9729343ef65f5f59e28dcc54ceb482ae008359c7a3f9",
+    "stats": {
+      "progress": 0.7916666666666666,
+      "width": 360,
+      "height": 467,
+      "calls": 38,
+      "triangles": 1175480
+    }
+  },
+  {
+    "index": 18,
+    "seconds": 4.5,
+    "shotId": "reverse-assembly",
+    "label": "循序拆解 · 回望一砖一瓦",
+    "pose": {
+      "progress": 0.75,
+      "position": [
+        39.5625,
+        33.375,
+        87.25
+      ],
+      "target": [
+        0,
+        12.5,
+        3
+      ]
+    },
+    "file": "frames/frame-000018.png",
+    "sha256": "81cb1af391087e8969fdc2d4cfad432c2a499bdba18091d7b42cb93e8f6877b0",
+    "stats": {
+      "progress": 0.75,
+      "width": 360,
+      "height": 467,
+      "calls": 38,
+      "triangles": 1175480
+    }
+  },
+  {
+    "index": 19,
+    "seconds": 4.75,
+    "shotId": "reverse-assembly",
+    "label": "循序拆解 · 回望一砖一瓦",
+    "pose": {
+      "progress": 0.7083333333333333,
+      "position": [
+        38.4771412037037,
+        33.17766203703704,
+        87.64467592592592
+      ],
+      "target": [
+        0,
+        12.5,
+        3
+      ]
+    },
+    "file": "frames/frame-000019.png",
+    "sha256": "827fb9b71ec4bf9c522927846f11753dc1df54bc2f033796e05042142c2437dc",
+    "stats": {
+      "progress": 0.7083333333333333,
+      "width": 360,
+      "height": 467,
+      "calls": 38,
+      "triangles": 1175480
+    }
+  },
+  {
+    "index": 20,
+    "seconds": 5,
+    "shotId": "reverse-assembly",
+    "label": "循序拆解 · 回望一砖一瓦",
+    "pose": {
+      "progress": 0.6666666666666667,
+      "position": [
+        37.2962962962963,
+        32.96296296296296,
+        88.07407407407408
+      ],
+      "target": [
+        0,
+        12.5,
+        3
+      ]
+    },
+    "file": "frames/frame-000020.png",
+    "sha256": "6e4095f693cc4abe77924fae30fc6919733c4956169594d2a7e279f062cad791",
+    "stats": {
+      "progress": 0.6666666666666667,
+      "width": 360,
+      "height": 467,
+      "calls": 38,
+      "triangles": 1175480
+    }
+  },
+  {
+    "index": 21,
+    "seconds": 5.25,
+    "shotId": "reverse-assembly",
+    "label": "循序拆解 · 回望一砖一瓦",
+    "pose": {
+      "progress": 0.625,
+      "position": [
+        36.0390625,
+        32.734375,
+        88.53125
+      ],
+      "target": [
+        0,
+        12.5,
+        3
+      ]
+    },
+    "file": "frames/frame-000021.png",
+    "sha256": "cc44f0a00187c5c2167668162ccc2c280af5e6fa8e0f52d96e69e030f4f1ec47",
+    "stats": {
+      "progress": 0.625,
+      "width": 360,
+      "height": 467,
+      "calls": 38,
+      "triangles": 1175480
+    }
+  },
+  {
+    "index": 22,
+    "seconds": 5.5,
+    "shotId": "reverse-assembly",
+    "label": "循序拆解 · 回望一砖一瓦",
+    "pose": {
+      "progress": 0.5833333333333333,
+      "position": [
+        34.72453703703704,
+        32.49537037037037,
+        89.00925925925927
+      ],
+      "target": [
+        0,
+        12.5,
+        3
+      ]
+    },
+    "file": "frames/frame-000022.png",
+    "sha256": "214967cca6f6ba7ad05bb954a192710b3337c67e181f5c5e46287fd1aaa05343",
+    "stats": {
+      "progress": 0.5833333333333333,
+      "width": 360,
+      "height": 467,
+      "calls": 38,
+      "triangles": 1175480
+    }
+  },
+  {
+    "index": 23,
+    "seconds": 5.75,
+    "shotId": "reverse-assembly",
+    "label": "循序拆解 · 回望一砖一瓦",
+    "pose": {
+      "progress": 0.5416666666666667,
+      "position": [
+        33.37181712962963,
+        32.2494212962963,
+        89.5011574074074
+      ],
+      "target": [
+        0,
+        12.5,
+        3
+      ]
+    },
+    "file": "frames/frame-000023.png",
+    "sha256": "e07ac850a0e84abb3d3db1d2132abf8fc362c8901935a4dd81dac3c35e579ede",
+    "stats": {
+      "progress": 0.5416666666666667,
+      "width": 360,
+      "height": 467,
+      "calls": 38,
+      "triangles": 1175480
+    }
+  },
+  {
+    "index": 24,
+    "seconds": 6,
+    "shotId": "reverse-assembly",
+    "label": "循序拆解 · 回望一砖一瓦",
+    "pose": {
+      "progress": 0.5,
+      "position": [
+        32,
+        32,
+        90
+      ],
+      "target": [
+        0,
+        12.5,
+        3
+      ]
+    },
+    "file": "frames/frame-000024.png",
+    "sha256": "9892db8123fe054f72630df29547cd595df778ea70b3249a9d53cf88b23db468",
+    "stats": {
+      "progress": 0.5,
+      "width": 360,
+      "height": 467,
+      "calls": 38,
+      "triangles": 1175480
+    }
+  },
+  {
+    "index": 25,
+    "seconds": 6.25,
+    "shotId": "reverse-assembly",
+    "label": "循序拆解 · 回望一砖一瓦",
+    "pose": {
+      "progress": 0.45833333333333337,
+      "position": [
+        30.628182870370374,
+        31.750578703703702,
+        90.4988425925926
+      ],
+      "target": [
+        0,
+        12.5,
+        3
+      ]
+    },
+    "file": "frames/frame-000025.png",
+    "sha256": "c29f9cf826dd2f9e84a32142688b40080ccd74e36bbe8b4501beae93dbd31d2e",
+    "stats": {
+      "progress": 0.45833333333333337,
+      "width": 360,
+      "height": 467,
+      "calls": 38,
+      "triangles": 1175480
+    }
+  },
+  {
+    "index": 26,
+    "seconds": 6.5,
+    "shotId": "reverse-assembly",
+    "label": "循序拆解 · 回望一砖一瓦",
+    "pose": {
+      "progress": 0.41666666666666663,
+      "position": [
+        29.275462962962962,
+        31.50462962962963,
+        90.99074074074075
+      ],
+      "target": [
+        0,
+        12.5,
+        3
+      ]
+    },
+    "file": "frames/frame-000026.png",
+    "sha256": "4bb3842c5cf81eaf2a14f7642d20b69a9e84b3e364f72ff80dc8bb09b3b86390",
+    "stats": {
+      "progress": 0.41666666666666663,
+      "width": 360,
+      "height": 467,
+      "calls": 38,
+      "triangles": 1175480
+    }
+  },
+  {
+    "index": 27,
+    "seconds": 6.75,
+    "shotId": "reverse-assembly",
+    "label": "循序拆解 · 回望一砖一瓦",
+    "pose": {
+      "progress": 0.375,
+      "position": [
+        27.9609375,
+        31.265625,
+        91.46875
+      ],
+      "target": [
+        0,
+        12.5,
+        3
+      ]
+    },
+    "file": "frames/frame-000027.png",
+    "sha256": "6ac37905b6502ab067739a8dabceded944e9fd1a94eaf73f799d25992940f511",
+    "stats": {
+      "progress": 0.375,
+      "width": 360,
+      "height": 467,
+      "calls": 14,
+      "triangles": 1175432
+    }
+  },
+  {
+    "index": 28,
+    "seconds": 7,
+    "shotId": "reverse-assembly",
+    "label": "循序拆解 · 回望一砖一瓦",
+    "pose": {
+      "progress": 0.33333333333333337,
+      "position": [
+        26.703703703703706,
+        31.037037037037038,
+        91.92592592592592
+      ],
+      "target": [
+        0,
+        12.5,
+        3
+      ]
+    },
+    "file": "frames/frame-000028.png",
+    "sha256": "a9d1b774bf3a04378a9deb6e6b371d660164f9ab0619527d06885e6f99c4d71a",
+    "stats": {
+      "progress": 0.33333333333333337,
+      "width": 360,
+      "height": 467,
+      "calls": 14,
+      "triangles": 1175432
+    }
+  },
+  {
+    "index": 29,
+    "seconds": 7.25,
+    "shotId": "reverse-assembly",
+    "label": "循序拆解 · 回望一砖一瓦",
+    "pose": {
+      "progress": 0.29166666666666663,
+      "position": [
+        25.522858796296294,
+        30.822337962962962,
+        92.35532407407408
+      ],
+      "target": [
+        0,
+        12.5,
+        3
+      ]
+    },
+    "file": "frames/frame-000029.png",
+    "sha256": "f16727c6e8c751a5e120ec4c06bde962a37b606179b61dad90b03ee85f012011",
+    "stats": {
+      "progress": 0.29166666666666663,
+      "width": 360,
+      "height": 467,
+      "calls": 14,
+      "triangles": 1175432
+    }
+  },
+  {
+    "index": 30,
+    "seconds": 7.5,
+    "shotId": "reverse-assembly",
+    "label": "循序拆解 · 回望一砖一瓦",
+    "pose": {
+      "progress": 0.25,
+      "position": [
+        24.4375,
+        30.625,
+        92.75
+      ],
+      "target": [
+        0,
+        12.5,
+        3
+      ]
+    },
+    "file": "frames/frame-000030.png",
+    "sha256": "5275158b95e9aab3117c6d6f8f41a75edf7303aed8b63dac76d80692478efb03",
+    "stats": {
+      "progress": 0.25,
+      "width": 360,
+      "height": 467,
+      "calls": 14,
+      "triangles": 1175432
+    }
+  },
+  {
+    "index": 31,
+    "seconds": 7.75,
+    "shotId": "reverse-assembly",
+    "label": "循序拆解 · 回望一砖一瓦",
+    "pose": {
+      "progress": 0.20833333333333337,
+      "position": [
+        23.466724537037038,
+        30.44849537037037,
+        93.10300925925925
+      ],
+      "target": [
+        0,
+        12.5,
+        3
+      ]
+    },
+    "file": "frames/frame-000031.png",
+    "sha256": "740764e40e90fdd158d4b69804f05c86b42f04fe260f2a0bebf4fdf88867f4dd",
+    "stats": {
+      "progress": 0.20833333333333337,
+      "width": 360,
+      "height": 467,
+      "calls": 14,
+      "triangles": 1175432
+    }
+  },
+  {
+    "index": 32,
+    "seconds": 8,
+    "shotId": "reverse-assembly",
+    "label": "循序拆解 · 回望一砖一瓦",
+    "pose": {
+      "progress": 0.16666666666666663,
+      "position": [
+        22.629629629629626,
+        30.296296296296298,
+        93.4074074074074
+      ],
+      "target": [
+        0,
+        12.5,
+        3
+      ]
+    },
+    "file": "frames/frame-000032.png",
+    "sha256": "412a76297596f79123dc8588bb4d3fb6c1abd37bc75b2d205b900a42247ec398",
+    "stats": {
+      "progress": 0.16666666666666663,
+      "width": 360,
+      "height": 467,
+      "calls": 14,
+      "triangles": 1175432
+    }
+  },
+  {
+    "index": 33,
+    "seconds": 8.25,
+    "shotId": "reverse-assembly",
+    "label": "循序拆解 · 回望一砖一瓦",
+    "pose": {
+      "progress": 0.125,
+      "position": [
+        21.9453125,
+        30.171875,
+        93.65625
+      ],
+      "target": [
+        0,
+        12.5,
+        3
+      ]
+    },
+    "file": "frames/frame-000033.png",
+    "sha256": "5dddcd27c969902d39415fb85d7bd94ef7b7d6bf2550a606c2024934550c4379",
+    "stats": {
+      "progress": 0.125,
+      "width": 360,
+      "height": 467,
+      "calls": 14,
+      "triangles": 1175432
+    }
+  },
+  {
+    "index": 34,
+    "seconds": 8.5,
+    "shotId": "reverse-assembly",
+    "label": "循序拆解 · 回望一砖一瓦",
+    "pose": {
+      "progress": 0.08333333333333337,
+      "position": [
+        21.43287037037037,
+        30.078703703703702,
+        93.8425925925926
+      ],
+      "target": [
+        0,
+        12.5,
+        3
+      ]
+    },
+    "file": "frames/frame-000034.png",
+    "sha256": "860f055cf702fd0e1debd818b4afc4f130c07048ecde9a720665a344b6226a48",
+    "stats": {
+      "progress": 0.08333333333333337,
+      "width": 360,
+      "height": 467,
+      "calls": 14,
+      "triangles": 1175432
+    }
+  },
+  {
+    "index": 35,
+    "seconds": 8.75,
+    "shotId": "reverse-assembly",
+    "label": "循序拆解 · 回望一砖一瓦",
+    "pose": {
+      "progress": 0.04166666666666663,
+      "position": [
+        21.111400462962962,
+        30.02025462962963,
+        93.95949074074075
+      ],
+      "target": [
+        0,
+        12.5,
+        3
+      ]
+    },
+    "file": "frames/frame-000035.png",
+    "sha256": "5712be1b2abc85c325cf23f9c34025ca8138520f3644c8f7203cff1295913969",
+    "stats": {
+      "progress": 0.04166666666666663,
+      "width": 360,
+      "height": 467,
+      "calls": 14,
+      "triangles": 1175432
+    }
+  },
+  {
+    "index": 36,
+    "seconds": 9,
+    "shotId": "forward-assembly",
+    "label": "循序营造 · 更上一层楼",
+    "pose": {
+      "progress": 0,
+      "position": [
+        21,
+        30,
+        94
+      ],
+      "target": [
+        0,
+        12.5,
+        3
+      ]
+    },
+    "file": "frames/frame-000036.png",
+    "sha256": "707cad148eda57b16ccf4055215616c5aec9d7cdf55de6a1217506cdd5a58772",
+    "stats": {
+      "progress": 0,
+      "width": 360,
+      "height": 467,
+      "calls": 14,
+      "triangles": 1175432
+    }
+  },
+  {
+    "index": 37,
+    "seconds": 9.25,
+    "shotId": "forward-assembly",
+    "label": "循序营造 · 更上一层楼",
+    "pose": {
+      "progress": 0.020833333333333332,
+      "position": [
+        20.92938006365741,
+        30.00385199652778,
+        93.99358000578704
+      ],
+      "target": [
+        0,
+        12.5,
+        3
+      ]
+    },
+    "file": "frames/frame-000037.png",
+    "sha256": "921ab5978e6a932d432e2c942affff2a2aa8f160e4d457f670cb57e39c51b5fa",
+    "stats": {
+      "progress": 0.020833333333333332,
+      "width": 360,
+      "height": 467,
+      "calls": 14,
+      "triangles": 1175432
+    }
+  },
+  {
+    "index": 38,
+    "seconds": 9.5,
+    "shotId": "forward-assembly",
+    "label": "循序营造 · 更上一层楼",
+    "pose": {
+      "progress": 0.041666666666666664,
+      "position": [
+        20.72149884259259,
+        30.01519097222222,
+        93.97468171296296
+      ],
+      "target": [
+        0,
+        12.5,
+        3
+      ]
+    },
+    "file": "frames/frame-000038.png",
+    "sha256": "d92a97aa07588a2237161ee5cf7fb8ab98cbf84a22ded5921265f425ff45e37d",
+    "stats": {
+      "progress": 0.041666666666666664,
+      "width": 360,
+      "height": 467,
+      "calls": 14,
+      "triangles": 1175432
+    }
+  },
+  {
+    "index": 39,
+    "seconds": 9.75,
+    "shotId": "forward-assembly",
+    "label": "循序营造 · 更上一层楼",
+    "pose": {
+      "progress": 0.0625,
+      "position": [
+        20.38232421875,
+        30.03369140625,
+        93.94384765625
+      ],
+      "target": [
+        0,
+        12.5,
+        3
+      ]
+    },
+    "file": "frames/frame-000039.png",
+    "sha256": "70b850feacf94ac3312caad1953813b29f938da05532dbe2895205160baa949f",
+    "stats": {
+      "progress": 0.0625,
+      "width": 360,
+      "height": 467,
+      "calls": 14,
+      "triangles": 1175432
+    }
+  },
+  {
+    "index": 40,
+    "seconds": 10,
+    "shotId": "forward-assembly",
+    "label": "循序营造 · 更上一层楼",
+    "pose": {
+      "progress": 0.08333333333333333,
+      "position": [
+        19.917824074074073,
+        30.05902777777778,
+        93.90162037037037
+      ],
+      "target": [
+        0,
+        12.5,
+        3
+      ]
+    },
+    "file": "frames/frame-000040.png",
+    "sha256": "a52db127d3f16ed466265addfcc08099135154cbd4d879bd36ee645823ce1d0e",
+    "stats": {
+      "progress": 0.08333333333333333,
+      "width": 360,
+      "height": 467,
+      "calls": 14,
+      "triangles": 1175432
+    }
+  },
+  {
+    "index": 41,
+    "seconds": 10.25,
+    "shotId": "forward-assembly",
+    "label": "循序营造 · 更上一层楼",
+    "pose": {
+      "progress": 0.10416666666666667,
+      "position": [
+        19.33396629050926,
+        30.09087456597222,
+        93.84854239004629
+      ],
+      "target": [
+        0,
+        12.5,
+        3
+      ]
+    },
+    "file": "frames/frame-000041.png",
+    "sha256": "7a0522adf4716af85c173085acd8171bddc8a96773acbafd196ee838e72e8275",
+    "stats": {
+      "progress": 0.10416666666666667,
+      "width": 360,
+      "height": 467,
+      "calls": 14,
+      "triangles": 1175432
+    }
+  },
+  {
+    "index": 42,
+    "seconds": 10.5,
+    "shotId": "forward-assembly",
+    "label": "循序营造 · 更上一层楼",
+    "pose": {
+      "progress": 0.125,
+      "position": [
+        18.63671875,
+        30.12890625,
+        93.78515625
+      ],
+      "target": [
+        0,
+        12.5,
+        3
+      ]
+    },
+    "file": "frames/frame-000042.png",
+    "sha256": "4bc70290855e3bc00520d8dbd2f5454e572314a82331caef151000a16c676858",
+    "stats": {
+      "progress": 0.125,
+      "width": 360,
+      "height": 467,
+      "calls": 14,
+      "triangles": 1175432
+    }
+  },
+  {
+    "index": 43,
+    "seconds": 10.75,
+    "shotId": "forward-assembly",
+    "label": "循序营造 · 更上一层楼",
+    "pose": {
+      "progress": 0.14583333333333334,
+      "position": [
+        17.83204933449074,
+        30.17279730902778,
+        93.71200448495371
+      ],
+      "target": [
+        0,
+        12.5,
+        3
+      ]
+    },
+    "file": "frames/frame-000043.png",
+    "sha256": "6ef4604e348218c6d9f98a0881972d5cee692122a410841acc7be312e341df50",
+    "stats": {
+      "progress": 0.14583333333333334,
+      "width": 360,
+      "height": 467,
+      "calls": 14,
+      "triangles": 1175432
+    }
+  },
+  {
+    "index": 44,
+    "seconds": 11,
+    "shotId": "forward-assembly",
+    "label": "循序营造 · 更上一层楼",
+    "pose": {
+      "progress": 0.16666666666666666,
+      "position": [
+        16.925925925925927,
+        30.22222222222222,
+        93.62962962962963
+      ],
+      "target": [
+        0,
+        12.5,
+        3
+      ]
+    },
+    "file": "frames/frame-000044.png",
+    "sha256": "39d14aa3f69ad4d4fc95469c3f7c2850d0b6bbcc0450c2ee8c468e6869bb89a1",
+    "stats": {
+      "progress": 0.16666666666666666,
+      "width": 360,
+      "height": 467,
+      "calls": 14,
+      "triangles": 1175432
+    }
+  },
+  {
+    "index": 45,
+    "seconds": 11.25,
+    "shotId": "forward-assembly",
+    "label": "循序营造 · 更上一层楼",
+    "pose": {
+      "progress": 0.1875,
+      "position": [
+        15.92431640625,
+        30.27685546875,
+        93.53857421875
+      ],
+      "target": [
+        0,
+        12.5,
+        3
+      ]
+    },
+    "file": "frames/frame-000045.png",
+    "sha256": "04231e2443f8627a01875fbe9a0b74fb23a359d179208140a2421fdea3a1fd19",
+    "stats": {
+      "progress": 0.1875,
+      "width": 360,
+      "height": 467,
+      "calls": 14,
+      "triangles": 1175432
+    }
+  },
+  {
+    "index": 46,
+    "seconds": 11.5,
+    "shotId": "forward-assembly",
+    "label": "循序营造 · 更上一层楼",
+    "pose": {
+      "progress": 0.20833333333333334,
+      "position": [
+        14.833188657407407,
+        30.33637152777778,
+        93.43938078703704
+      ],
+      "target": [
+        0,
+        12.5,
+        3
+      ]
+    },
+    "file": "frames/frame-000046.png",
+    "sha256": "d6dc809a99b5e2274624c6365c48a9bbce25fcec5a3b23dbc9e41ba4f29b24e3",
+    "stats": {
+      "progress": 0.20833333333333334,
+      "width": 360,
+      "height": 467,
+      "calls": 14,
+      "triangles": 1175432
+    }
+  },
+  {
+    "index": 47,
+    "seconds": 11.75,
+    "shotId": "forward-assembly",
+    "label": "循序营造 · 更上一层楼",
+    "pose": {
+      "progress": 0.22916666666666666,
+      "position": [
+        13.658510561342593,
+        30.40044487847222,
+        93.33259186921296
+      ],
+      "target": [
+        0,
+        12.5,
+        3
+      ]
+    },
+    "file": "frames/frame-000047.png",
+    "sha256": "63ca466f63f8db3aed4d1c1af71d8335cdcb4bc713f3d75583a778b844cb6179",
+    "stats": {
+      "progress": 0.22916666666666666,
+      "width": 360,
+      "height": 467,
+      "calls": 14,
+      "triangles": 1175432
+    }
+  },
+  {
+    "index": 48,
+    "seconds": 12,
+    "shotId": "forward-assembly",
+    "label": "循序营造 · 更上一层楼",
+    "pose": {
+      "progress": 0.25,
+      "position": [
+        12.40625,
+        30.46875,
+        93.21875
+      ],
+      "target": [
+        0,
+        12.5,
+        3
+      ]
+    },
+    "file": "frames/frame-000048.png",
+    "sha256": "3f28923495cc207a184e2b9fec3bb86ee8085ae4b56a93c2586e8416540d04b0",
+    "stats": {
+      "progress": 0.25,
+      "width": 360,
+      "height": 467,
+      "calls": 14,
+      "triangles": 1175432
+    }
+  },
+  {
+    "index": 49,
+    "seconds": 12.25,
+    "shotId": "forward-assembly",
+    "label": "循序营造 · 更上一层楼",
+    "pose": {
+      "progress": 0.2708333333333333,
+      "position": [
+        11.082374855324076,
+        30.54096137152778,
+        93.09839771412037
+      ],
+      "target": [
+        0,
+        12.5,
+        3
+      ]
+    },
+    "file": "frames/frame-000049.png",
+    "sha256": "f072456751e3ea39afe12153d0edc821eb069db431cff1af5b3c13ffa31a92a4",
+    "stats": {
+      "progress": 0.2708333333333333,
+      "width": 360,
+      "height": 467,
+      "calls": 14,
+      "triangles": 1175432
+    }
+  },
+  {
+    "index": 50,
+    "seconds": 12.5,
+    "shotId": "forward-assembly",
+    "label": "循序营造 · 更上一层楼",
+    "pose": {
+      "progress": 0.2916666666666667,
+      "position": [
+        9.692853009259258,
+        30.61675347222222,
+        92.97207754629629
+      ],
+      "target": [
+        0,
+        12.5,
+        3
+      ]
+    },
+    "file": "frames/frame-000050.png",
+    "sha256": "9bb84c3eec88afea98e519097fcfb4e290f07e1eb59ad3ac677218ab83099e93",
+    "stats": {
+      "progress": 0.2916666666666667,
+      "width": 360,
+      "height": 467,
+      "calls": 14,
+      "triangles": 1175432
+    }
+  },
+  {
+    "index": 51,
+    "seconds": 12.75,
+    "shotId": "forward-assembly",
+    "label": "循序营造 · 更上一层楼",
+    "pose": {
+      "progress": 0.3125,
+      "position": [
+        8.24365234375,
+        30.69580078125,
+        92.84033203125
+      ],
+      "target": [
+        0,
+        12.5,
+        3
+      ]
+    },
+    "file": "frames/frame-000051.png",
+    "sha256": "b4cecffa5830acc5e204e565c3a8ff0343026196efbf61e01dad179167804108",
+    "stats": {
+      "progress": 0.3125,
+      "width": 360,
+      "height": 467,
+      "calls": 14,
+      "triangles": 1175432
+    }
+  },
+  {
+    "index": 52,
+    "seconds": 13,
+    "shotId": "forward-assembly",
+    "label": "循序营造 · 更上一层楼",
+    "pose": {
+      "progress": 0.3333333333333333,
+      "position": [
+        6.740740740740742,
+        30.77777777777778,
+        92.70370370370371
+      ],
+      "target": [
+        0,
+        12.5,
+        3
+      ]
+    },
+    "file": "frames/frame-000052.png",
+    "sha256": "4cf495fa273fb7249d99636a0dbe6f2ca3bff1d0b02ff87b20f2047524376d5d",
+    "stats": {
+      "progress": 0.3333333333333333,
+      "width": 360,
+      "height": 467,
+      "calls": 14,
+      "triangles": 1175432
+    }
+  },
+  {
+    "index": 53,
+    "seconds": 13.25,
+    "shotId": "forward-assembly",
+    "label": "循序营造 · 更上一层楼",
+    "pose": {
+      "progress": 0.3541666666666667,
+      "position": [
+        5.190086082175926,
+        30.86235894097222,
+        92.56273509837963
+      ],
+      "target": [
+        0,
+        12.5,
+        3
+      ]
+    },
+    "file": "frames/frame-000053.png",
+    "sha256": "bf0569d5e18bfad8ada34789d9de017e87b3b87dbf6bd3227afbda126a0b9428",
+    "stats": {
+      "progress": 0.3541666666666667,
+      "width": 360,
+      "height": 467,
+      "calls": 14,
+      "triangles": 1175432
+    }
+  },
+  {
+    "index": 54,
+    "seconds": 13.5,
+    "shotId": "forward-assembly",
+    "label": "循序营造 · 更上一层楼",
+    "pose": {
+      "progress": 0.375,
+      "position": [
+        3.59765625,
+        30.94921875,
+        92.41796875
+      ],
+      "target": [
+        0,
+        12.5,
+        3
+      ]
+    },
+    "file": "frames/frame-000054.png",
+    "sha256": "2d28f06cbaa2182f1c8dcb241663cdaaba6c3e02dcb162fe1f8ee4806c2026a4",
+    "stats": {
+      "progress": 0.375,
+      "width": 360,
+      "height": 467,
+      "calls": 14,
+      "triangles": 1175432
+    }
+  },
+  {
+    "index": 55,
+    "seconds": 13.75,
+    "shotId": "forward-assembly",
+    "label": "循序营造 · 更上一层楼",
+    "pose": {
+      "progress": 0.3958333333333333,
+      "position": [
+        1.9694191261574083,
+        31.03803168402778,
+        92.26994719328704
+      ],
+      "target": [
+        0,
+        12.5,
+        3
+      ]
+    },
+    "file": "frames/frame-000055.png",
+    "sha256": "c20122398de3e1812eda99cbea35d2c80a22152d5a281d4d33ef965667e05143",
+    "stats": {
+      "progress": 0.3958333333333333,
+      "width": 360,
+      "height": 467,
+      "calls": 38,
+      "triangles": 1175480
+    }
+  },
+  {
+    "index": 56,
+    "seconds": 14,
+    "shotId": "forward-assembly",
+    "label": "循序营造 · 更上一层楼",
+    "pose": {
+      "progress": 0.4166666666666667,
+      "position": [
+        0.31134259259259167,
+        31.12847222222222,
+        92.11921296296296
+      ],
+      "target": [
+        0,
+        12.5,
+        3
+      ]
+    },
+    "file": "frames/frame-000056.png",
+    "sha256": "822bebec527037b7ffbbbad7eb2dae38f76948e27ac0d2502f9239163957d544",
+    "stats": {
+      "progress": 0.4166666666666667,
+      "width": 360,
+      "height": 467,
+      "calls": 38,
+      "triangles": 1175480
+    }
+  },
+  {
+    "index": 57,
+    "seconds": 14.25,
+    "shotId": "forward-assembly",
+    "label": "循序营造 · 更上一层楼",
+    "pose": {
+      "progress": 0.4375,
+      "position": [
+        -1.37060546875,
+        31.22021484375,
+        91.96630859375
+      ],
+      "target": [
+        0,
+        12.5,
+        3
+      ]
+    },
+    "file": "frames/frame-000057.png",
+    "sha256": "692f2bcd1ad9addda2426b085465f3883e672a2710db0bf790e293023ae86322",
+    "stats": {
+      "progress": 0.4375,
+      "width": 360,
+      "height": 467,
+      "calls": 38,
+      "triangles": 1175480
+    }
+  },
+  {
+    "index": 58,
+    "seconds": 14.5,
+    "shotId": "forward-assembly",
+    "label": "循序营造 · 更上一层楼",
+    "pose": {
+      "progress": 0.4583333333333333,
+      "position": [
+        -3.0704571759259274,
+        31.31293402777778,
+        91.81177662037037
+      ],
+      "target": [
+        0,
+        12.5,
+        3
+      ]
+    },
+    "file": "frames/frame-000058.png",
+    "sha256": "efdf1f18e1e38adda471cad978191b3c65a0cf558a57a6ce7e661eac628ac7d6",
+    "stats": {
+      "progress": 0.4583333333333333,
+      "width": 360,
+      "height": 467,
+      "calls": 38,
+      "triangles": 1175480
+    }
+  },
+  {
+    "index": 59,
+    "seconds": 14.75,
+    "shotId": "forward-assembly",
+    "label": "循序营造 · 更上一层楼",
+    "pose": {
+      "progress": 0.4791666666666667,
+      "position": [
+        -4.7822446469907405,
+        31.40630425347222,
+        91.65615957754629
+      ],
+      "target": [
+        0,
+        12.5,
+        3
+      ]
+    },
+    "file": "frames/frame-000059.png",
+    "sha256": "7380a8c15f7554599b32c5e0a3363ff9952acb4b648f77dddfdfd802a34d24b7",
+    "stats": {
+      "progress": 0.4791666666666667,
+      "width": 360,
+      "height": 467,
+      "calls": 38,
+      "triangles": 1175480
+    }
+  },
+  {
+    "index": 60,
+    "seconds": 15,
+    "shotId": "forward-assembly",
+    "label": "循序营造 · 更上一层楼",
+    "pose": {
+      "progress": 0.5,
+      "position": [
+        -6.5,
+        31.5,
+        91.5
+      ],
+      "target": [
+        0,
+        12.5,
+        3
+      ]
+    },
+    "file": "frames/frame-000060.png",
+    "sha256": "bc18d86df4c33bf78f1ef19f147f469f7cce0a0ecaf28c6c6f5da4c8b12df310",
+    "stats": {
+      "progress": 0.5,
+      "width": 360,
+      "height": 467,
+      "calls": 38,
+      "triangles": 1175480
+    }
+  },
+  {
+    "index": 61,
+    "seconds": 15.25,
+    "shotId": "forward-assembly",
+    "label": "循序营造 · 更上一层楼",
+    "pose": {
+      "progress": 0.5208333333333334,
+      "position": [
+        -8.217755353009263,
+        31.59369574652778,
+        91.34384042245371
+      ],
+      "target": [
+        0,
+        12.5,
+        3
+      ]
+    },
+    "file": "frames/frame-000061.png",
+    "sha256": "3dc348cebebacdc9b8f1f4439d72fc96e38ad35f76052566fe3059b3e74363f7",
+    "stats": {
+      "progress": 0.5208333333333334,
+      "width": 360,
+      "height": 467,
+      "calls": 38,
+      "triangles": 1175480
+    }
+  },
+  {
+    "index": 62,
+    "seconds": 15.5,
+    "shotId": "forward-assembly",
+    "label": "循序营造 · 更上一层楼",
+    "pose": {
+      "progress": 0.5416666666666666,
+      "position": [
+        -9.929542824074069,
+        31.68706597222222,
+        91.18822337962963
+      ],
+      "target": [
+        0,
+        12.5,
+        3
+      ]
+    },
+    "file": "frames/frame-000062.png",
+    "sha256": "5d4d6f20781e877bf5264d0c7677fd75771988623b1450d3b6f5ecb249ab62d6",
+    "stats": {
+      "progress": 0.5416666666666666,
+      "width": 360,
+      "height": 467,
+      "calls": 38,
+      "triangles": 1175480
+    }
+  },
+  {
+    "index": 63,
+    "seconds": 15.75,
+    "shotId": "forward-assembly",
+    "label": "循序营造 · 更上一层楼",
+    "pose": {
+      "progress": 0.5625,
+      "position": [
+        -11.62939453125,
+        31.77978515625,
+        91.03369140625
+      ],
+      "target": [
+        0,
+        12.5,
+        3
+      ]
+    },
+    "file": "frames/frame-000063.png",
+    "sha256": "1b1e11ab549b5584d3b2780b36f1da6b1f64f9491cb2e6f575f3d1451829395e",
+    "stats": {
+      "progress": 0.5625,
+      "width": 360,
+      "height": 467,
+      "calls": 38,
+      "triangles": 1175480
+    }
+  },
+  {
+    "index": 64,
+    "seconds": 16,
+    "shotId": "forward-assembly",
+    "label": "循序营造 · 更上一层楼",
+    "pose": {
+      "progress": 0.5833333333333334,
+      "position": [
+        -13.311342592592595,
+        31.87152777777778,
+        90.88078703703704
+      ],
+      "target": [
+        0,
+        12.5,
+        3
+      ]
+    },
+    "file": "frames/frame-000064.png",
+    "sha256": "f061622a144e034dd2aa7a5b3b43a9cd6679f3eb7933c0adae00e8aa157f5b73",
+    "stats": {
+      "progress": 0.5833333333333334,
+      "width": 360,
+      "height": 467,
+      "calls": 38,
+      "triangles": 1175480
+    }
+  },
+  {
+    "index": 65,
+    "seconds": 16.25,
+    "shotId": "forward-assembly",
+    "label": "循序营造 · 更上一层楼",
+    "pose": {
+      "progress": 0.6041666666666666,
+      "position": [
+        -14.969419126157405,
+        31.96196831597222,
+        90.73005280671296
+      ],
+      "target": [
+        0,
+        12.5,
+        3
+      ]
+    },
+    "file": "frames/frame-000065.png",
+    "sha256": "7067c8dc3952e471b0e47374d5c2ab940114c7a9376389406ca2a713e29113bb",
+    "stats": {
+      "progress": 0.6041666666666666,
+      "width": 360,
+      "height": 467,
+      "calls": 38,
+      "triangles": 1175480
+    }
+  },
+  {
+    "index": 66,
+    "seconds": 16.5,
+    "shotId": "forward-assembly",
+    "label": "循序营造 · 更上一层楼",
+    "pose": {
+      "progress": 0.625,
+      "position": [
+        -16.59765625,
+        32.05078125,
+        90.58203125
+      ],
+      "target": [
+        0,
+        12.5,
+        3
+      ]
+    },
+    "file": "frames/frame-000066.png",
+    "sha256": "92930e8ccae3324a5f498cc02631126cc8871b6183df3256c6e68807a838bee1",
+    "stats": {
+      "progress": 0.625,
+      "width": 360,
+      "height": 467,
+      "calls": 38,
+      "triangles": 1175480
+    }
+  },
+  {
+    "index": 67,
+    "seconds": 16.75,
+    "shotId": "forward-assembly",
+    "label": "循序营造 · 更上一层楼",
+    "pose": {
+      "progress": 0.6458333333333334,
+      "position": [
+        -18.190086082175924,
+        32.13764105902778,
+        90.43726490162037
+      ],
+      "target": [
+        0,
+        12.5,
+        3
+      ]
+    },
+    "file": "frames/frame-000067.png",
+    "sha256": "c1773287196af3fb720d59b5222b65d287d578e195fbb8ebf22f870e12ed2553",
+    "stats": {
+      "progress": 0.6458333333333334,
+      "width": 360,
+      "height": 467,
+      "calls": 38,
+      "triangles": 1175480
+    }
+  },
+  {
+    "index": 68,
+    "seconds": 17,
+    "shotId": "forward-assembly",
+    "label": "循序营造 · 更上一层楼",
+    "pose": {
+      "progress": 0.6666666666666666,
+      "position": [
+        -19.74074074074074,
+        32.22222222222222,
+        90.29629629629629
+      ],
+      "target": [
+        0,
+        12.5,
+        3
+      ]
+    },
+    "file": "frames/frame-000068.png",
+    "sha256": "352304a525f201b5b353ac37dab98e235c93a8454dd253ea3a92d2c7494939b1",
+    "stats": {
+      "progress": 0.6666666666666666,
+      "width": 360,
+      "height": 467,
+      "calls": 38,
+      "triangles": 1175480
+    }
+  },
+  {
+    "index": 69,
+    "seconds": 17.25,
+    "shotId": "forward-assembly",
+    "label": "循序营造 · 更上一层楼",
+    "pose": {
+      "progress": 0.6875,
+      "position": [
+        -21.24365234375,
+        32.30419921875,
+        90.15966796875
+      ],
+      "target": [
+        0,
+        12.5,
+        3
+      ]
+    },
+    "file": "frames/frame-000069.png",
+    "sha256": "8e894b2ae6dc3f45a3fffb8fb0bc8c551af1c27c071c628e636d5ad8d0bd85db",
+    "stats": {
+      "progress": 0.6875,
+      "width": 360,
+      "height": 467,
+      "calls": 38,
+      "triangles": 1175480
+    }
+  },
+  {
+    "index": 70,
+    "seconds": 17.5,
+    "shotId": "forward-assembly",
+    "label": "循序营造 · 更上一层楼",
+    "pose": {
+      "progress": 0.7083333333333334,
+      "position": [
+        -22.69285300925926,
+        32.38324652777778,
+        90.02792245370371
+      ],
+      "target": [
+        0,
+        12.5,
+        3
+      ]
+    },
+    "file": "frames/frame-000070.png",
+    "sha256": "e5ff735f6271f873293678ad5f92ec21d71e6a4ea9d11fc6e3717e2d7535a0b3",
+    "stats": {
+      "progress": 0.7083333333333334,
+      "width": 360,
+      "height": 467,
+      "calls": 38,
+      "triangles": 1175480
+    }
+  },
+  {
+    "index": 71,
+    "seconds": 17.75,
+    "shotId": "forward-assembly",
+    "label": "循序营造 · 更上一层楼",
+    "pose": {
+      "progress": 0.7291666666666666,
+      "position": [
+        -24.08237485532407,
+        32.45903862847222,
+        89.90160228587963
+      ],
+      "target": [
+        0,
+        12.5,
+        3
+      ]
+    },
+    "file": "frames/frame-000071.png",
+    "sha256": "25186987a021429b84be2e2db982259d3197ff59d1e7eb24c0730a04a277bf4b",
+    "stats": {
+      "progress": 0.7291666666666666,
+      "width": 360,
+      "height": 467,
+      "calls": 38,
+      "triangles": 1175480
+    }
+  },
+  {
+    "index": 72,
+    "seconds": 18,
+    "shotId": "forward-assembly",
+    "label": "循序营造 · 更上一层楼",
+    "pose": {
+      "progress": 0.75,
+      "position": [
+        -25.40625,
+        32.53125,
+        89.78125
+      ],
+      "target": [
+        0,
+        12.5,
+        3
+      ]
+    },
+    "file": "frames/frame-000072.png",
+    "sha256": "10dd4512d0c35cc04e43549007316730b390e88d87b29d6c81da70000c7565bd",
+    "stats": {
+      "progress": 0.75,
+      "width": 360,
+      "height": 467,
+      "calls": 38,
+      "triangles": 1175480
+    }
+  },
+  {
+    "index": 73,
+    "seconds": 18.25,
+    "shotId": "forward-assembly",
+    "label": "循序营造 · 更上一层楼",
+    "pose": {
+      "progress": 0.7708333333333334,
+      "position": [
+        -26.658510561342588,
+        32.59955512152778,
+        89.66740813078704
+      ],
+      "target": [
+        0,
+        12.5,
+        3
+      ]
+    },
+    "file": "frames/frame-000073.png",
+    "sha256": "38195cd2b657e33b84802188b543fdd0c6bc56330ffb91ceebc698de3e696c77",
+    "stats": {
+      "progress": 0.7708333333333334,
+      "width": 360,
+      "height": 467,
+      "calls": 38,
+      "triangles": 1175480
+    }
+  },
+  {
+    "index": 74,
+    "seconds": 18.5,
+    "shotId": "forward-assembly",
+    "label": "循序营造 · 更上一层楼",
+    "pose": {
+      "progress": 0.7916666666666666,
+      "position": [
+        -27.833188657407405,
+        32.66362847222222,
+        89.56061921296296
+      ],
+      "target": [
+        0,
+        12.5,
+        3
+      ]
+    },
+    "file": "frames/frame-000074.png",
+    "sha256": "9ed6667a34a49035f3824a0dd47d4bd00bfaec3612206e4acd1a080a8f7b1f2e",
+    "stats": {
+      "progress": 0.7916666666666666,
+      "width": 360,
+      "height": 467,
+      "calls": 38,
+      "triangles": 1175480
+    }
+  },
+  {
+    "index": 75,
+    "seconds": 18.75,
+    "shotId": "forward-assembly",
+    "label": "循序营造 · 更上一层楼",
+    "pose": {
+      "progress": 0.8125,
+      "position": [
+        -28.92431640625,
+        32.72314453125,
+        89.46142578125
+      ],
+      "target": [
+        0,
+        12.5,
+        3
+      ]
+    },
+    "file": "frames/frame-000075.png",
+    "sha256": "2b8df938027d00fcdd9aad5be03bc7572d367c16d25ea5cd348bb3c8d66fd5e5",
+    "stats": {
+      "progress": 0.8125,
+      "width": 360,
+      "height": 467,
+      "calls": 38,
+      "triangles": 1175480
+    }
+  },
+  {
+    "index": 76,
+    "seconds": 19,
+    "shotId": "forward-assembly",
+    "label": "循序营造 · 更上一层楼",
+    "pose": {
+      "progress": 0.8333333333333334,
+      "position": [
+        -29.92592592592593,
+        32.77777777777778,
+        89.37037037037037
+      ],
+      "target": [
+        0,
+        12.5,
+        3
+      ]
+    },
+    "file": "frames/frame-000076.png",
+    "sha256": "7c36130427a32ba0d79bb03c51e95d60153f2d0c2b30a190f49c98e9cc49bcba",
+    "stats": {
+      "progress": 0.8333333333333334,
+      "width": 360,
+      "height": 467,
+      "calls": 38,
+      "triangles": 1175480
+    }
+  },
+  {
+    "index": 77,
+    "seconds": 19.25,
+    "shotId": "forward-assembly",
+    "label": "循序营造 · 更上一层楼",
+    "pose": {
+      "progress": 0.8541666666666666,
+      "position": [
+        -30.832049334490748,
+        32.82720269097222,
+        89.28799551504629
+      ],
+      "target": [
+        0,
+        12.5,
+        3
+      ]
+    },
+    "file": "frames/frame-000077.png",
+    "sha256": "760e2d213ed2675bc021156893b1caf64b958fe78bcc9ecaaeeff1767771df16",
+    "stats": {
+      "progress": 0.8541666666666666,
+      "width": 360,
+      "height": 467,
+      "calls": 38,
+      "triangles": 1175480
+    }
+  },
+  {
+    "index": 78,
+    "seconds": 19.5,
+    "shotId": "forward-assembly",
+    "label": "循序营造 · 更上一层楼",
+    "pose": {
+      "progress": 0.875,
+      "position": [
+        -31.63671875,
+        32.87109375,
+        89.21484375
+      ],
+      "target": [
+        0,
+        12.5,
+        3
+      ]
+    },
+    "file": "frames/frame-000078.png",
+    "sha256": "e394a58bc6f646c2aa4b740cde43ea44ac5deb21fd42dbcd76939a8a1762b3be",
+    "stats": {
+      "progress": 0.875,
+      "width": 360,
+      "height": 467,
+      "calls": 38,
+      "triangles": 1175480
+    }
+  },
+  {
+    "index": 79,
+    "seconds": 19.75,
+    "shotId": "forward-assembly",
+    "label": "循序营造 · 更上一层楼",
+    "pose": {
+      "progress": 0.8958333333333334,
+      "position": [
+        -32.33396629050926,
+        32.90912543402778,
+        89.15145760995371
+      ],
+      "target": [
+        0,
+        12.5,
+        3
+      ]
+    },
+    "file": "frames/frame-000079.png",
+    "sha256": "c5abe19c3638f3e8a973880217b99a309d793175ec9347a01bfe21a1eff911ce",
+    "stats": {
+      "progress": 0.8958333333333334,
+      "width": 360,
+      "height": 467,
+      "calls": 38,
+      "triangles": 1175480
+    }
+  },
+  {
+    "index": 80,
+    "seconds": 20,
+    "shotId": "forward-assembly",
+    "label": "循序营造 · 更上一层楼",
+    "pose": {
+      "progress": 0.9166666666666666,
+      "position": [
+        -32.917824074074076,
+        32.94097222222222,
+        89.09837962962963
+      ],
+      "target": [
+        0,
+        12.5,
+        3
+      ]
+    },
+    "file": "frames/frame-000080.png",
+    "sha256": "e4ad3625cdf75df40441abb01cb6d7bdb5e29bf0a0e2603ea80808fa13fa5e65",
+    "stats": {
+      "progress": 0.9166666666666666,
+      "width": 360,
+      "height": 467,
+      "calls": 38,
+      "triangles": 1175480
+    }
+  },
+  {
+    "index": 81,
+    "seconds": 20.25,
+    "shotId": "forward-assembly",
+    "label": "循序营造 · 更上一层楼",
+    "pose": {
+      "progress": 0.9375,
+      "position": [
+        -33.38232421875,
+        32.96630859375,
+        89.05615234375
+      ],
+      "target": [
+        0,
+        12.5,
+        3
+      ]
+    },
+    "file": "frames/frame-000081.png",
+    "sha256": "b8f26fb529559df76233a2ec7b1e8aaa6eb0109ea22e92acc6c0e0012bee24a2",
+    "stats": {
+      "progress": 0.9375,
+      "width": 360,
+      "height": 467,
+      "calls": 38,
+      "triangles": 1175480
+    }
+  },
+  {
+    "index": 82,
+    "seconds": 20.5,
+    "shotId": "forward-assembly",
+    "label": "循序营造 · 更上一层楼",
+    "pose": {
+      "progress": 0.9583333333333334,
+      "position": [
+        -33.721498842592595,
+        32.98480902777778,
+        89.02531828703704
+      ],
+      "target": [
+        0,
+        12.5,
+        3
+      ]
+    },
+    "file": "frames/frame-000082.png",
+    "sha256": "9c7debd536779866846a6d9b31781b306934098b52f673487fc87143fac89fb6",
+    "stats": {
+      "progress": 0.9583333333333334,
+      "width": 360,
+      "height": 467,
+      "calls": 38,
+      "triangles": 1175480
+    }
+  },
+  {
+    "index": 83,
+    "seconds": 20.75,
+    "shotId": "forward-assembly",
+    "label": "循序营造 · 更上一层楼",
+    "pose": {
+      "progress": 0.9791666666666666,
+      "position": [
+        -33.92938006365741,
+        32.99614800347222,
+        89.00641999421296
+      ],
+      "target": [
+        0,
+        12.5,
+        3
+      ]
+    },
+    "file": "frames/frame-000083.png",
+    "sha256": "026f790735bbe3ce531cba21bad3db8bff7cf0b36fe6c3c3c634e01d556086e1",
+    "stats": {
+      "progress": 0.9791666666666666,
+      "width": 360,
+      "height": 467,
+      "calls": 38,
+      "triangles": 1175480
+    }
+  },
+  {
+    "index": 84,
+    "seconds": 21,
+    "shotId": "finished-closing",
+    "label": "更上一层楼",
+    "pose": {
+      "progress": 1,
+      "position": [
+        -34,
+        33,
+        89
+      ],
+      "target": [
+        0,
+        12.5,
+        3
+      ]
+    },
+    "file": "frames/frame-000084.png",
+    "sha256": "0e8e7c36567875df09442e703e12fdc34fa9a1d41573520c8e22f8154978a733",
+    "stats": {
+      "progress": 1,
+      "width": 360,
+      "height": 467,
+      "calls": 38,
+      "triangles": 1175480
+    }
+  },
+  {
+    "index": 85,
+    "seconds": 21.25,
+    "shotId": "finished-closing",
+    "label": "更上一层楼",
+    "pose": {
+      "progress": 1,
+      "position": [
+        -34.295138888888886,
+        33.019675925925924,
+        88.86226851851852
+      ],
+      "target": [
+        0,
+        12.5,
+        3
+      ]
+    },
+    "file": "frames/frame-000085.png",
+    "sha256": "615d6ce62de213759b5b992911debbf44f122720f24303aa06c51963532ed82d",
+    "stats": {
+      "progress": 1,
+      "width": 360,
+      "height": 467,
+      "calls": 38,
+      "triangles": 1175480
+    }
+  },
+  {
+    "index": 86,
+    "seconds": 21.5,
+    "shotId": "finished-closing",
+    "label": "更上一层楼",
+    "pose": {
+      "progress": 1,
+      "position": [
+        -35.111111111111114,
+        33.074074074074076,
+        88.48148148148148
+      ],
+      "target": [
+        0,
+        12.5,
+        3
+      ]
+    },
+    "file": "frames/frame-000086.png",
+    "sha256": "acfe334d23903d3001b4964c1294be6bb62411890c60bc738a4e36da72704a2b",
+    "stats": {
+      "progress": 1,
+      "width": 360,
+      "height": 467,
+      "calls": 38,
+      "triangles": 1175480
+    }
+  },
+  {
+    "index": 87,
+    "seconds": 21.75,
+    "shotId": "finished-closing",
+    "label": "更上一层楼",
+    "pose": {
+      "progress": 1,
+      "position": [
+        -36.34375,
+        33.15625,
+        87.90625
+      ],
+      "target": [
+        0,
+        12.5,
+        3
+      ]
+    },
+    "file": "frames/frame-000087.png",
+    "sha256": "0c076db9514f01bc3be879d84dde4bc75960160d569b657a12c14a83b2fb286a",
+    "stats": {
+      "progress": 1,
+      "width": 360,
+      "height": 467,
+      "calls": 38,
+      "triangles": 1175480
+    }
+  },
+  {
+    "index": 88,
+    "seconds": 22,
+    "shotId": "finished-closing",
+    "label": "更上一层楼",
+    "pose": {
+      "progress": 1,
+      "position": [
+        -37.888888888888886,
+        33.25925925925926,
+        87.18518518518519
+      ],
+      "target": [
+        0,
+        12.5,
+        3
+      ]
+    },
+    "file": "frames/frame-000088.png",
+    "sha256": "eed4442a199655060fa6328cadacad1bc7f330fd1b5fa6729bfa1839b2df995a",
+    "stats": {
+      "progress": 1,
+      "width": 360,
+      "height": 467,
+      "calls": 38,
+      "triangles": 1175480
+    }
+  },
+  {
+    "index": 89,
+    "seconds": 22.25,
+    "shotId": "finished-closing",
+    "label": "更上一层楼",
+    "pose": {
+      "progress": 1,
+      "position": [
+        -39.642361111111114,
+        33.376157407407405,
+        86.36689814814815
+      ],
+      "target": [
+        0,
+        12.5,
+        3
+      ]
+    },
+    "file": "frames/frame-000089.png",
+    "sha256": "b48692b4850f00614fa11ccc91480fc20cfebbe34edf0b6dd6cd41511720f883",
+    "stats": {
+      "progress": 1,
+      "width": 360,
+      "height": 467,
+      "calls": 38,
+      "triangles": 1175480
+    }
+  },
+  {
+    "index": 90,
+    "seconds": 22.5,
+    "shotId": "finished-closing",
+    "label": "更上一层楼",
+    "pose": {
+      "progress": 1,
+      "position": [
+        -41.5,
+        33.5,
+        85.5
+      ],
+      "target": [
+        0,
+        12.5,
+        3
+      ]
+    },
+    "file": "frames/frame-000090.png",
+    "sha256": "07ace8d40548ef65beb29fd5d86a54e6dd2a90c5e2d775e13822465defc00f2c",
+    "stats": {
+      "progress": 1,
+      "width": 360,
+      "height": 467,
+      "calls": 38,
+      "triangles": 1175480
+    }
+  },
+  {
+    "index": 91,
+    "seconds": 22.75,
+    "shotId": "finished-closing",
+    "label": "更上一层楼",
+    "pose": {
+      "progress": 1,
+      "position": [
+        -43.357638888888886,
+        33.623842592592595,
+        84.63310185185185
+      ],
+      "target": [
+        0,
+        12.5,
+        3
+      ]
+    },
+    "file": "frames/frame-000091.png",
+    "sha256": "497a06b5e3d4a6211c9f39d63c7ad0f3a65b099df4e176b984b313a3ced3729d",
+    "stats": {
+      "progress": 1,
+      "width": 360,
+      "height": 467,
+      "calls": 38,
+      "triangles": 1175480
+    }
+  },
+  {
+    "index": 92,
+    "seconds": 23,
+    "shotId": "finished-closing",
+    "label": "更上一层楼",
+    "pose": {
+      "progress": 1,
+      "position": [
+        -45.111111111111114,
+        33.74074074074074,
+        83.81481481481481
+      ],
+      "target": [
+        0,
+        12.5,
+        3
+      ]
+    },
+    "file": "frames/frame-000092.png",
+    "sha256": "3b84c408079f1c0d8d5d55a543f4d37a0f35e4e71512df059629126170d5b8fb",
+    "stats": {
+      "progress": 1,
+      "width": 360,
+      "height": 467,
+      "calls": 38,
+      "triangles": 1175480
+    }
+  },
+  {
+    "index": 93,
+    "seconds": 23.25,
+    "shotId": "finished-closing",
+    "label": "更上一层楼",
+    "pose": {
+      "progress": 1,
+      "position": [
+        -46.65625,
+        33.84375,
+        83.09375
+      ],
+      "target": [
+        0,
+        12.5,
+        3
+      ]
+    },
+    "file": "frames/frame-000093.png",
+    "sha256": "e74d9c28715f95b4495f24e729bc8af6a418df41f0010b2cf007ab1de29c513b",
+    "stats": {
+      "progress": 1,
+      "width": 360,
+      "height": 467,
+      "calls": 38,
+      "triangles": 1175480
+    }
+  },
+  {
+    "index": 94,
+    "seconds": 23.5,
+    "shotId": "finished-closing",
+    "label": "更上一层楼",
+    "pose": {
+      "progress": 1,
+      "position": [
+        -47.88888888888889,
+        33.925925925925924,
+        82.51851851851852
+      ],
+      "target": [
+        0,
+        12.5,
+        3
+      ]
+    },
+    "file": "frames/frame-000094.png",
+    "sha256": "d3ebf851f26f84a6605fb7e8d106e668dcae146d120ce8f149f5ed10aec43ab7",
+    "stats": {
+      "progress": 1,
+      "width": 360,
+      "height": 467,
+      "calls": 38,
+      "triangles": 1175480
+    }
+  },
+  {
+    "index": 95,
+    "seconds": 23.75,
+    "shotId": "finished-closing",
+    "label": "更上一层楼",
+    "pose": {
+      "progress": 1,
+      "position": [
+        -48.704861111111114,
+        33.980324074074076,
+        82.13773148148148
+      ],
+      "target": [
+        0,
+        12.5,
+        3
+      ]
+    },
+    "file": "frames/frame-000095.png",
+    "sha256": "8e9a6fab27c896940855b52ffc4a4fbb6e93c76e83db34024bbc1c3f2cda9c18",
+    "stats": {
+      "progress": 1,
+      "width": 360,
+      "height": 467,
+      "calls": 38,
+      "triangles": 1175480
+    }
+  }
+]

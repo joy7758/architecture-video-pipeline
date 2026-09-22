@@ -1,0 +1,161 @@
+{
+  "artifact_type": "TITMAS_SCOUT_AGENT_REVIEW_INPUT",
+  "ruleset_version": "0.1",
+  "review_run_id": "2026-08-02-ca2a-pr-76-ready",
+  "observed_at": "2026-08-01T17:32:24Z",
+  "requested_action": "MARK_PR_READY_FOR_REVIEW",
+  "target": {
+    "type": "GITHUB_PULL_REQUEST",
+    "reference": "agentrust-io/ca2a#76",
+    "url": "https://github.com/agentrust-io/ca2a/pull/76"
+  },
+  "source_issue": {
+    "reference": "agentrust-io/ca2a#36",
+    "url": "https://github.com/agentrust-io/ca2a/issues/36",
+    "state": "OPEN",
+    "locked": false,
+    "comments": 1,
+    "updated_at": "2026-07-29T07:27:29Z",
+    "selected_checklist_item": "ACTION-path invalid-signature case classified as provenance-invalid"
+  },
+  "duplicate_check": {
+    "base_commit": "76c1a31193ff6a70b732cf8f668935808002e273",
+    "target_case_present_on_base": false,
+    "open_pull_request_search": "ONLY_TARGET_PR_76_FOUND",
+    "search_terms": "ACTION-008 invalid signature"
+  },
+  "pull_request": {
+    "number": 76,
+    "state": "OPEN",
+    "draft": true,
+    "title": "test: cover invalid delegation signature in action evidence",
+    "title_and_body_match_authorized_submission": true,
+    "body_digest": "sha256:a87c1075c95dbb3b638eac02affe164115cae36350fd869d3453cd21e116011e",
+    "maintainer_can_modify": true,
+    "mergeable": true,
+    "mergeable_state": "BLOCKED",
+    "base": {
+      "repository": "agentrust-io/ca2a",
+      "branch": "main",
+      "commit": "76c1a31193ff6a70b732cf8f668935808002e273"
+    },
+    "head": {
+      "repository": "joy7758/ca2a",
+      "branch": "contrib/issue-36-action-invalid-signature",
+      "commit": "b223ee41ac9e3b635651f9636a08061801b5c826",
+      "tree": "8e7d98bdf25d6ffffa3fa31288a2f93d5ecb1233"
+    },
+    "commit_count": 1,
+    "changed_file_count": 2,
+    "additions": 17,
+    "deletions": 1,
+    "requested_reviewers": [],
+    "requested_teams": [],
+    "human_reviews": [],
+    "auto_merge": null
+  },
+  "diff": {
+    "content_digest": "sha256:ccb41d771598f125319fd76e9cb66cda40636d4677aba05b42104ccf540eb8a4",
+    "check": "PASS",
+    "commit_signed_off": true,
+    "files": [
+      "tests/conformance/README.md",
+      "tests/conformance/test_profile_conformance.py"
+    ],
+    "production_code_changed": false,
+    "dependencies_changed": false,
+    "runtime_verifier_changed": false
+  },
+  "local_validation": {
+    "record_reference": "reports/conversion-runs/2026-08-02-ca2a-issue-36-action-invalid-signature/run.json",
+    "record_digest": "sha256:9e2a65a787278b3feb532245225037d21fee902f89d4fa898c5ac182c112de75",
+    "new_test": {
+      "passed": 1,
+      "failed": 0
+    },
+    "action_and_delegation_selection": {
+      "passed": 16,
+      "failed": 0,
+      "deselected": 15
+    },
+    "delegation_and_verifier_unit": {
+      "passed": 21,
+      "failed": 0
+    },
+    "conformance": {
+      "passed": 31,
+      "failed": 0
+    },
+    "full_suite": {
+      "collected": 255,
+      "passed": 252,
+      "failed": 0,
+      "skipped_hardware_fixtures": 3,
+      "coverage_percent": 87.01
+    },
+    "mutation_check": "EXPECTED_FAILURE_CONFIRMED",
+    "ruff": "PASS",
+    "mypy": "PASS",
+    "bandit": "PASS",
+    "pip_audit": "PASS",
+    "git_diff_check": "PASS"
+  },
+  "github_checks": [
+    {
+      "name": "Contributor reputation check / check",
+      "status": "COMPLETED",
+      "conclusion": "SUCCESS",
+      "url": "https://github.com/agentrust-io/ca2a/actions/runs/30709610843"
+    },
+    {
+      "name": "Require maintainer approval / gate",
+      "status": "COMPLETED",
+      "conclusion": "FAILURE",
+      "url": "https://github.com/agentrust-io/ca2a/actions/runs/30709610909",
+      "failure_message": "Waiting for maintainer approval of the current head commit before merging.",
+      "meaning": "UPSTREAM_MERGE_ACCEPTANCE_GATE_NOT_INTERNAL_RELEASE_AUTHORIZATION",
+      "code_failure": false,
+      "security_failure": false,
+      "test_failure": false
+    }
+  ],
+  "automation": {
+    "bot_comment_count": 1,
+    "bot_actor": "github-actions[bot]",
+    "contributor_check": {
+      "profile": "HIGH",
+      "credential": "NONE",
+      "overall": "HIGH"
+    },
+    "automated_labels": [
+      "needs-review:HIGH"
+    ],
+    "human_maintainer_feedback": "NONE"
+  },
+  "risk_evidence": {
+    "sensitive_material_scan": "PASS",
+    "license_file": "LICENSE",
+    "license_or_dependency_file_changed": false,
+    "personal_data_added": false,
+    "identity_claim_added": false,
+    "marketing_or_outreach_content_added": false,
+    "protected_upstream_branch_modified": false,
+    "irreversible_action_requested": false
+  },
+  "history_references": [
+    {
+      "path": "reports/conversion-runs/2026-08-02-ca2a-issue-36-action-invalid-signature/run.json",
+      "content_digest": "sha256:9e2a65a787278b3feb532245225037d21fee902f89d4fa898c5ac182c112de75"
+    },
+    {
+      "path": "reports/publication-runs/2026-08-02-ca2a-issue-36-draft-pr/run.json",
+      "content_digest": "sha256:70ac56fdb2a992d476ca055906c592468e6220febe7db742e7e2e659e02688e6"
+    }
+  ],
+  "known_limits": [
+    "No human maintainer has reviewed or approved the pull request.",
+    "The upstream maintainer approval gate remains failed until an eligible maintainer approves the current head.",
+    "The remote workflows expose contributor reputation and maintainer approval checks, not a separate upstream test or lint workflow.",
+    "Agent quorum authorization does not establish maintainer acceptance, merge, adoption, production safety, customer acquisition, or revenue."
+  ]
+}

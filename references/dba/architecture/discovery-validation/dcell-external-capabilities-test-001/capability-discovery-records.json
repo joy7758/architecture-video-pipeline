@@ -1,0 +1,157 @@
+{
+  "schema": "dba.capability_discovery_test.v0.1",
+  "test_id": "DCDAT-001",
+  "record_role": "DBA_PLANNING_METADATA_NOT_RUNTIME_EVIDENCE",
+  "observed_at": "2026-08-29T08:58:34Z",
+  "input": {
+    "reference": "/Users/zhangbin/.codex/attachments/20260630-e686-424d-9851-aba5796b2034/pasted-text.txt",
+    "classification": "DISCOVERY_HINT",
+    "content_digest": "NOT_COMPUTED_THIS_RUN"
+  },
+  "policy_references": [
+    "architecture/titmas-external-capability-discovery-and-bounded-absorption-amendment-v0.2.md",
+    "architecture/external-capability-discovery-absorption-profile-v0.2.json"
+  ],
+  "execution_boundary": {
+    "discovery_level": "AC-0",
+    "absorption_ceiling": "AC-1_REFERENCE_ONLY",
+    "external_code_executed": false,
+    "dependency_installed": false,
+    "runtime_modified": false,
+    "dcell_core_modified": false,
+    "frozen_experiment_modified": false
+  },
+  "summary": {
+    "named_candidates": 7,
+    "source_verified_at_paper_or_repository_level": 7,
+    "implementation_ready_candidates": 0,
+    "identity_or_packaging_conflicts": 4,
+    "capability_overlap_groups": 4
+  },
+  "candidates": [
+    {
+      "candidate_id": "CAP-A-MEM-001",
+      "candidate_fingerprint_sha256": "3cf6c84c3c466c7f6be100ff717d7aec489960c1dcd2b8a8dc68d29355e85d28",
+      "canonical_identity": "a-mem|arxiv:2502.12110|github:WujiangXu/A-mem",
+      "name": "A-MEM",
+      "capability_group": "ATOMIC_DYNAMIC_LINKED_MEMORY",
+      "capability_claim": "Structured notes, contextual tags, dynamic links, and evolving memory organization.",
+      "sources": [
+        "https://arxiv.org/abs/2502.12110",
+        "https://github.com/WujiangXu/A-mem"
+      ],
+      "source_status": "SOURCE_VERIFIED_WITH_IMPLEMENTATION_IDENTITY_LIMITATION",
+      "source_revision": "NOT_PINNED",
+      "code_source_status": "REPRODUCTION_REPOSITORY_POINTS_TO_A_SEPARATE_IMPLEMENTATION",
+      "license_status": "REPOSITORY_UI_INDICATES_MIT_NOT_FILE_REVIEWED",
+      "identity_risk": "Paper reproduction and agent-facing implementation must not be treated as one pinned artifact.",
+      "eligible_transition": "REFERENCE_ONLY"
+    },
+    {
+      "candidate_id": "CAP-APEX-MEM-001",
+      "candidate_fingerprint_sha256": "1f5d8ee3b6ab36d622b8100131d0ca9ae281fb8cf56710718ce77d00dadede1c",
+      "canonical_identity": "apex-mem|arxiv:2604.14362|code:not_assessed",
+      "name": "APEX-MEM",
+      "capability_group": "TEMPORAL_EVENT_GRAPH_MEMORY",
+      "capability_claim": "Entity-centric property graph, temporally grounded events, append-only history, and query-time conflict handling.",
+      "sources": [
+        "https://arxiv.org/abs/2604.14362"
+      ],
+      "source_status": "PAPER_SOURCE_VERIFIED",
+      "source_revision": "ARXIV_VERSION_NOT_PINNED",
+      "code_source_status": "NOT_ASSESSED",
+      "license_status": "NOT_ASSESSED",
+      "identity_risk": "No implementation artifact was established in this test.",
+      "eligible_transition": "REFERENCE_ONLY"
+    },
+    {
+      "candidate_id": "CAP-GRAPHITI-001",
+      "candidate_fingerprint_sha256": "a7de4c0280168fca2c0dabd9049040c27cdcf5afff13d6a42bbf48cb117e57b9",
+      "canonical_identity": "graphiti|github:getzep/graphiti|zep:managed-related-not-identical",
+      "name": "Graphiti",
+      "capability_group": "TEMPORAL_EVENT_GRAPH_MEMORY",
+      "capability_claim": "Temporal facts, episode provenance, incremental graph construction, and hybrid retrieval.",
+      "sources": [
+        "https://github.com/getzep/graphiti",
+        "https://www.getzep.com/platform/graphiti/"
+      ],
+      "source_status": "SOURCE_VERIFIED_WITH_PRODUCT_BOUNDARY",
+      "source_revision": "NOT_PINNED",
+      "code_source_status": "PUBLIC_REPOSITORY_IDENTIFIED_NOT_EXECUTED",
+      "license_status": "NOT_REVIEWED",
+      "identity_risk": "Graphiti open-source framework and Zep managed infrastructure are related but not identical artifacts.",
+      "eligible_transition": "REFERENCE_ONLY"
+    },
+    {
+      "candidate_id": "CAP-STRUCTMEM-001",
+      "candidate_fingerprint_sha256": "d92f7f16d4dca924bc92d5a6e3a48294920e638d4684c4e58f007b78c28f435c",
+      "canonical_identity": "structmem|arxiv:2604.21748|github:zjunlp/LightMem",
+      "name": "StructMem",
+      "capability_group": "HIERARCHICAL_MEMORY_CONSOLIDATION",
+      "capability_claim": "Event-level bindings, cross-event connections, temporal anchoring, and periodic semantic consolidation.",
+      "sources": [
+        "https://arxiv.org/abs/2604.21748",
+        "https://github.com/zjunlp/LightMem"
+      ],
+      "source_status": "SOURCE_VERIFIED_WITH_SHARED_REPOSITORY_BOUNDARY",
+      "source_revision": "NOT_PINNED",
+      "code_source_status": "METHOD_HOSTED_INSIDE_MULTI_METHOD_REPOSITORY_NOT_EXECUTED",
+      "license_status": "REPOSITORY_UI_INDICATES_MIT_NOT_FILE_BOUNDARY_REVIEWED",
+      "identity_risk": "StructMem and LightMem share a repository but are distinct methods.",
+      "eligible_transition": "REFERENCE_ONLY"
+    },
+    {
+      "candidate_id": "CAP-TIMEM-001",
+      "candidate_fingerprint_sha256": "7d6bb0fa17b318f25b2b9021f6c9509aa403db275012638e07ab7179f91df390",
+      "canonical_identity": "timem|arxiv:2601.02845|github:TiMEM-AI/timem",
+      "name": "TiMem",
+      "capability_group": "HIERARCHICAL_MEMORY_CONSOLIDATION",
+      "capability_claim": "Temporal hierarchical memory tree, semantic-guided consolidation, and complexity-aware recall.",
+      "sources": [
+        "https://arxiv.org/abs/2601.02845",
+        "https://github.com/TiMEM-AI/timem"
+      ],
+      "source_status": "SOURCE_VERIFIED_WITH_PACKAGING_LIMITATION",
+      "source_revision": "NOT_PINNED",
+      "code_source_status": "PUBLIC_REPOSITORY_IDENTIFIED_NOT_EXECUTED",
+      "license_status": "NOT_REVIEWED",
+      "identity_risk": "Repository, self-hosted package, and managed service boundaries require separate review.",
+      "eligible_transition": "REFERENCE_ONLY"
+    },
+    {
+      "candidate_id": "CAP-EMBER-001",
+      "candidate_fingerprint_sha256": "0a4a3f914369c95dcdd5f6ea0aab274cb1e44e9d2736bc0a7a91b27e336c3765",
+      "canonical_identity": "ember|arxiv:2606.05894|code:not_assessed",
+      "name": "EMBER",
+      "capability_group": "BUDGETED_SOURCE_EVIDENCE_RETENTION",
+      "capability_claim": "Source-backed evidence capsules retained under a fixed token budget with outcome-informed retention.",
+      "sources": [
+        "https://arxiv.org/abs/2606.05894"
+      ],
+      "source_status": "PAPER_SOURCE_VERIFIED",
+      "source_revision": "ARXIV_V2_OBSERVED_NOT_CONTENT_PINNED",
+      "code_source_status": "NOT_ASSESSED",
+      "license_status": "NOT_ASSESSED",
+      "identity_risk": "Unrelated products using the Ember name must not be merged with this paper identity.",
+      "eligible_transition": "REFERENCE_ONLY"
+    },
+    {
+      "candidate_id": "CAP-LIGHTMEM-001",
+      "candidate_fingerprint_sha256": "63251c37fba2e1b5bbf8c95a311c94accc592c5dfc35327be50ffc042cac51bf",
+      "canonical_identity": "lightmem|arxiv:2510.18866|github:zjunlp/LightMem",
+      "name": "LightMem",
+      "capability_group": "HIERARCHICAL_MEMORY_CONSOLIDATION",
+      "capability_claim": "Lightweight memory storage, retrieval, update, and consolidation for long-context agents.",
+      "sources": [
+        "https://arxiv.org/abs/2510.18866",
+        "https://github.com/zjunlp/LightMem"
+      ],
+      "source_status": "SOURCE_VERIFIED_WITH_NAME_COLLISION_RISK",
+      "source_revision": "NOT_PINNED",
+      "code_source_status": "PUBLIC_MULTI_METHOD_REPOSITORY_IDENTIFIED_NOT_EXECUTED",
+      "license_status": "REPOSITORY_UI_INDICATES_MIT_NOT_FILE_REVIEWED",
+      "identity_risk": "Other papers and projects use the LightMem name; arXiv and repository identity must remain bound.",
+      "eligible_transition": "REFERENCE_ONLY"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "artifact_type":"TITMAS_SCOUT_AGENT_REVIEW_INPUT","ruleset_version":"0.1","review_run_id":"2026-08-02-scout-self-improvement-iteration-2-final-v2","observed_at":"2026-08-02T07:04:30Z","requested_action":"UPDATE_SCOUT_STATUS",
+  "target":{"type":"LOCAL_SCOUT_CHANGE","reference":"tiamas-scout:self-improvement:cumulative-final","url":"local://tiamas-scout/self-improvement/2026-08-02-final"},
+  "source_issue":{"reference":"reports/daily/2026-08-02-opportunity-report.json","state":"ROOT_CAUSE_CORRECTED","observed_defect":"GH CLI backend received conflicting embedded qualifiers and flags, causing zero recall"},
+  "duplicate_check":{"iterations":2,"maximum_iterations":3,"third_iteration_not_used":true,"same_read_only_collector_retained":true},
+  "pull_request":{"repository":"tiamas-scout","external_pull_request":false,"external_write_requested":false,"base_commit":"c32d545","worktree_only":true},
+  "diff":{"content_digest":"sha256:ca85bb2d19c38ec4caed22d5a13e6a304cfec36c4e0f4465fe0d5b5f57966e9a","content_representation":"reports/self-improvement-runs/2026-08-02-iteration-2/cumulative-code-diff-v2.patch","files":["config/discovery-sources.yaml","src/discovery/cli.rb","src/discovery/daily_report.rb","src/discovery/opportunity_ranker.rb","src/discovery/source_collector.rb","src/discovery/status_index.rb","tests/discovery_test.rb"],"ranking_factors_changed":false,"validator_or_governance_changed":false},
+  "local_validation":{"record_reference":"reports/self-improvement-runs/2026-08-02-iteration-2/test-result-v2.json","record_digest":"sha256:0ddf0de6f0bba266fec3e44cd1e6a6846df657c78835b2166fa9ca3754725c6f","result":"70_RUNS_264_ASSERTIONS_AND_LIVE_FLAG_SHAPED_CONTROL_PASS"},
+  "github_checks":[],
+  "automation":{"iteration":2,"revision":2,"new_quorum_required":true,"live_full_read_only_rerun_pending":true},
+  "risk_evidence":{"external_write_requested":false,"gh_cli_flags_only_for_filters":true,"rest_qualifiers_retained":true,"historical_files_modified":false,"heuristic_ranking_unchanged":true},
+  "history_references":[
+    {"path":"reports/self-improvement-runs/2026-08-02-iteration-2/observation.json","content_digest":"sha256:d7515064fb7ea83452c29bf4957d87f3bea2d26bf1d98af320ef01714e60c9dd"},
+    {"path":"reports/self-improvement-runs/2026-08-02-iteration-2/reviewer-inputs/discovery-blocking-fail.json","content_digest":"sha256:c2a599c09f76c103451249f4069f6421e7ce4c385d7e8640f481349ba7edbe5c"},
+    {"path":"reports/self-improvement-runs/2026-08-02-iteration-2/cumulative-code-diff-v2.patch","content_digest":"sha256:ca85bb2d19c38ec4caed22d5a13e6a304cfec36c4e0f4465fe0d5b5f57966e9a"}
+  ],
+  "known_limits":["Broader terms can increase noise and live full rerun remains required.","Discussions remain unavailable in v0.1.","Ranking remains heuristic_unvalidated.","UPDATE_SCOUT_STATUS grants no external action."]
+}

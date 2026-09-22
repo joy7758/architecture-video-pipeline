@@ -1,0 +1,12 @@
+{
+  "artifact_type":"TITMAS_SCOUT_LOCAL_ANALYSIS_ACTION_PACK","schema_version":"0.1","state":"SELECTED_FOR_LOCAL_ANALYSIS","selected_at":"2026-08-02T07:16:00Z","source":"https://github.com/syswonder/robonix/issues/189","repository":"syswonder/robonix","issue_number":189,"title":"[BUG] Pilot can falsely complete embodied tasks without execution evidence","source_state":"OPEN","source_updated_at":"2026-07-27T03:06:25Z","assignee":"enkerewpo","open_related_prs_found":0,
+  "real_pain_point":"The planner can self-declare task completion even when no physical action or execution receipt exists; the proposed acceptance criteria require independent verification and exact evidence identifiers.",
+  "titmas_reusable_components":[{"component":"agent-evidence","bounded_role":"execution receipt packaging and offline structure/digest/chain verification"},{"component":"aro-audit","bounded_role":"replay-oriented audit of missing-action and stale-observation traces"}],
+  "why_accept":"A small fixture or test matrix for missing actions, failed actions, stale observations, and alternate successful traces closely matches the published acceptance criteria.",
+  "why_reject":"The Issue is assigned to its author, preferred architecture is unresolved, repository-specific RTDL semantics may not match TITMAS artifacts, and no help-wanted signal was observed.",
+  "minimum_contribution":"Locally map one reported failed trace and one successful trace into a bounded evidence-gap test proposal without changing the upstream repository.",
+  "suggested_action_type":"OBSERVE","estimated_effort":"NEEDS_REVIEW","key_risks":["assigned internal work may already be underway","robotics domain semantics may exceed current TITMAS evidence adapters","no maintainer interest or contribution permission established"],
+  "human_or_agent_decisions_required":["whether to perform a local repository architecture audit","whether any later comment or PR is worth a new independent quorum"],
+  "unconfirmed_facts":["maintainer interest","current implementation progress","license fit for reusable fixtures","acceptance of external contributions","commercial value"],
+  "external_action_authorized":false,"external_action_performed":false
+}

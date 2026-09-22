@@ -1,0 +1,14 @@
+{
+  "lease_id": "PILOT-LEASE-EXAMPLE",
+  "participant_ref": "PILOT-PARTICIPANT-EXAMPLE",
+  "task_ref": "AN-03-ZERO-HUMAN-QUICKSTART",
+  "authority_ref": "TITMAS-AGENT-NATIVE-COMMUNITY-D01",
+  "issued_by_ref": "zhangbin",
+  "allowed_files": ["TITMAS/agent-native/**", "TITMAS/conformance/**"],
+  "forbidden_files": [".git/**", ".github/**", "external repositories"],
+  "issued_at": "2026-07-29T00:00:00+08:00",
+  "expires_at": "2026-07-29T01:00:00+08:00",
+  "status": "CLAIMED",
+  "revocation_ref": "PILOT-REVOCATION-NONE",
+  "rollback_path": "discard synthetic candidate output"
+}

@@ -1,0 +1,16 @@
+{
+  "schema_version":"0.1",
+  "review_id":"2026-08-02-ca2a-pr-76-comment-evidence-review",
+  "agent_identifier":"/root/comment_evidence_review",
+  "model_runtime_identifier":"OpenAI Codex GPT-5",
+  "review_role":"EVIDENCE_REVIEWER",
+  "input_digest":"sha256:5532305a50fd3177920965118ab24cb989ac2121a70eb4ee3724693e967d4af0",
+  "output_digest":"sha256:cc931341a3b2c8b05b28433905a5b00e6dc26a7b1f6aec79632b7f704b53e3c4",
+  "decision":"PASS",
+  "timestamp":"2026-08-02T06:40:55Z",
+  "ruleset_version":"0.1",
+  "reason_codes":["PUSH_RECEIPT_VERIFIED","DIFF_AND_TEST_RECORD_VERIFIED","CANONICAL_EVIDENCE_VERIFIED","LIVE_REVIEW_STATE_VERIFIED"],
+  "findings":["The pushed head, exact contribution digest, test record, canonical structure/digest/chain evidence, and absence of an exact request or current-head Codex review were independently verified."],
+  "blocking_reasons":[],
+  "evidence_references":["reports/titmas-runs/2026-08-02-ca2a-pr-76-latest-head/action-receipt-push.json","reports/titmas-runs/2026-08-02-ca2a-pr-76-latest-head/ca2a-validation.json","https://github.com/agentrust-io/ca2a/pull/76"]
+}

@@ -1,0 +1,32 @@
+{
+  "review_id": "TITMAS-INTEGRATION-REVIEW-CANONICAL-ARCHITECTURE-01",
+  "review_scope": "CANONICAL_ARCHITECTURE",
+  "provider": "Alibaba Cloud Model Studio",
+  "requested_model": "qwen3.7-plus",
+  "returned_model": "qwen3.7-plus",
+  "reviewer_lineage": "ALIBABA-QWEN37PLUS-INTEGRATION-ARCH-20260729",
+  "verdict": "PASS",
+  "findings": [
+    {
+      "severity": "LOW",
+      "evidence": "Inactive security transport and undecided Human decisions are truthfully preserved as post-Draft blockers.",
+      "blocking": false,
+      "required_correction": "Keep the public contribution, public launch and merge gates closed."
+    },
+    {
+      "severity": "LOW",
+      "evidence": "Temporary roles are time-limited, revocable and explicitly do not grant domain, merge, release or Stable-promotion authority.",
+      "blocking": false,
+      "required_correction": "Retain expiry and non-authority statements."
+    }
+  ],
+  "blocking": false,
+  "required_correction": [],
+  "limitations": [
+    "FROZEN_FACT_SUMMARY_ONLY",
+    "NO_FULL_REPOSITORY_ACCESS",
+    "NO_TEST_EXECUTION",
+    "ADVISORY_REVIEW_NE_HUMAN_AUTHORITY"
+  ],
+  "authority_effect": "NONE"
+}

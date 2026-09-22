@@ -1,0 +1,154 @@
+{
+  "$schema": "schemas/intelligence-agent-index.schema.json",
+  "format_version": "0.1.0",
+  "canonical_agent_entry": true,
+  "primary_repository": "DBA",
+  "purpose": "Machine-readable entry for source-pinned external governance intelligence and explicitly adopted DBA governance profiles.",
+  "current_bundle": {
+    "observed_at": "2026-08-16",
+    "status": "PRIMARY_SOURCE_RECONCILED_CANDIDATE_DEFERRED_BY_D16",
+    "brief": "2026-08-16/intelligence-brief.md"
+  },
+  "artifacts": [
+    {
+      "artifact_id": "DBA-INTELLIGENCE-BRIEF-2026-08-16",
+      "kind": "intelligence_brief",
+      "path": "2026-08-16/intelligence-brief.md",
+      "status": "PRIMARY_SOURCE_RECONCILED_CANDIDATE_DEFERRED_BY_D16"
+    },
+    {
+      "artifact_id": "DBA-AGENT-BASELINE-CHECK-CANDIDATE-0.1",
+      "kind": "deferred_capability_candidate_with_reference_fixtures",
+      "path": "2026-08-16/agent-baseline-check-candidate-v0.1.json",
+      "status": "REFERENCE_ONLY_CANDIDATE_DEFERRED_BY_D16_NO_TOOL_CREATED"
+    },
+    {
+      "artifact_id": "DBA-GBZ185-MCP-A2A-SPIFFE-SAEE-CROSSWALK-0.1",
+      "kind": "standards_and_protocol_responsibility_crosswalk",
+      "path": "2026-08-16/gbz185-mcp-a2a-spiffe-saee-crosswalk-v0.1.json",
+      "status": "TITLE_LEVEL_AND_PUBLIC_PROTOCOL_REFERENCE_ONLY_NO_CONFORMANCE_CLAIM"
+    },
+    {
+      "artifact_id": "DBA-INTELLIGENCE-BRIEF-2026-08-15",
+      "kind": "intelligence_brief",
+      "path": "2026-08-15/intelligence-brief.md",
+      "status": "PRIMARY_SOURCE_RECONCILED_COMPATIBILITY_CROSSWALK_ADDED"
+    },
+    {
+      "artifact_id": "DBA-TRUST-CONTINUITY-COMPATIBILITY-CROSSWALK-0.1",
+      "kind": "compatibility_crosswalk",
+      "path": "2026-08-15/trust-continuity-compatibility-crosswalk-v0.1.json",
+      "status": "PRIMARY_SOURCE_RECONCILED_REFERENCE_CASES_NO_NEW_CAPABILITY"
+    },
+    {
+      "artifact_id": "DBA-INTELLIGENCE-BRIEF-2026-08-01",
+      "kind": "intelligence_brief",
+      "path": "2026-08-01/intelligence-brief.md",
+      "status": "PRIMARY_SOURCE_RECONCILED_GOVERNANCE_PROFILE_ADOPTED"
+    },
+    {
+      "artifact_id": "DBA-EXECUTION-CONTEXT-TRUST-INVALIDATION-0.1",
+      "kind": "research_profile",
+      "path": "2026-08-01/execution-context-trust-invalidation-profile.md",
+      "status": "ACCEPTED_DBA_GOVERNANCE_PROFILE_IMPLEMENTATION_NOT_REQUIRED"
+    },
+    {
+      "artifact_id": "DBA-CYBER-EVALUATION-CONTAINMENT-CASE-2026-08-01",
+      "kind": "security_case_card",
+      "path": "2026-08-01/cyber-evaluation-containment-case-card.json",
+      "status": "PRIMARY_SOURCES_PRELIMINARY_INVESTIGATION_OPEN"
+    },
+    {
+      "artifact_id": "DBA-EU-AI-ACT-APPLICABILITY-MATRIX-2026-08-01",
+      "kind": "legal_applicability_matrix",
+      "path": "2026-08-01/eu-ai-act-applicability-matrix.json",
+      "status": "SCREENING_ONLY_LEGAL_REVIEW_REQUIRED"
+    },
+    {
+      "artifact_id": "DBA-MCP-VERSION-CONTINUITY-STATE-2026-08-01",
+      "kind": "protocol_version_continuity_state",
+      "path": "2026-08-01/mcp-version-continuity-state.json",
+      "status": "STABLE_RELEASE_RECONFIRMED_NOT_ADOPTED"
+    },
+    {
+      "artifact_id": "DBA-ITU-SECURE-AGENTIC-AI-CONTRIBUTION-ONE-PAGER-2026-08-01",
+      "kind": "internal_contribution_concept",
+      "path": "2026-08-01/itu-secure-agentic-ai-contribution-one-pager.md",
+      "status": "INTERNAL_DRAFT_NOT_SUBMITTED"
+    },
+    {
+      "artifact_id": "DBA-IBM-MIGRATION-EVALUATION-INHERITANCE-CASE-2026-08-01",
+      "kind": "migration_reassessment_case",
+      "path": "2026-08-01/ibm-migration-evaluation-inheritance-case.json",
+      "status": "REFERENCE_CASE_REASSESSMENT_REQUIRED"
+    },
+    {
+      "artifact_id": "DBA-EXECUTION-CONTEXT-COMPETITIVE-RESEARCH-CROSSWALK-2026-08-01",
+      "kind": "competitive_research_crosswalk",
+      "path": "2026-08-01/competitive-and-research-crosswalk.md",
+      "status": "GOVERNANCE_SEMANTICS_ADOPTED_NO_RUNTIME_IMPLEMENTATION"
+    },
+    {
+      "artifact_id": "DBA-INTELLIGENCE-BRIEF-2026-07-29",
+      "kind": "intelligence_brief",
+      "path": "2026-07-29/intelligence-brief.md",
+      "status": "REFERENCE_ONLY_PRIMARY_SOURCE_CORRECTED"
+    },
+    {
+      "artifact_id": "DBA-CAPABILITY-PROVENANCE-REASSESSMENT-0.1",
+      "kind": "research_profile",
+      "path": "2026-07-29/capability-provenance-reassessment-profile.md",
+      "status": "PROPOSED_REFERENCE_ONLY"
+    },
+    {
+      "artifact_id": "DBA-KIMI-K3-CAPABILITY-IDENTITY-REFERENCE-0.1",
+      "kind": "source_pin",
+      "path": "2026-07-29/kimi-k3-capability-identity-reference.json",
+      "status": "PINNED_NOT_ADOPTED_NOT_EXECUTED"
+    },
+    {
+      "artifact_id": "DBA-OPEN-SECURE-AI-ALLIANCE-COMPETITIVE-MAP-2026-07-29",
+      "kind": "competitive_map",
+      "path": "2026-07-29/open-secure-ai-alliance-competitive-map.md",
+      "status": "REFERENCE_ONLY_NO_MEMBERSHIP_NO_ADOPTION"
+    },
+    {
+      "artifact_id": "DBA-MCP-PROTOCOL-AUTHORITY-STATE-2026-07-29",
+      "kind": "protocol_authority_state",
+      "path": "2026-07-29/mcp-protocol-authority-state.json",
+      "status": "FINAL_STABLE_RELEASE_VERIFIED_NOT_ADOPTED"
+    },
+    {
+      "artifact_id": "DBA-COUNTEREXAMPLE-CVE-2026-44192",
+      "kind": "security_counterexample",
+      "path": "2026-07-29/cve-2026-44192-counterexample.json",
+      "status": "PUBLIC_RECORD_AWAITING_NVD_ENRICHMENT"
+    },
+    {
+      "artifact_id": "DBA-RESEARCH-SIGNAL-ARXIV-2607.21495",
+      "kind": "research_signal",
+      "path": "2026-07-29/continuous-assurance-research-signal.json",
+      "status": "PREPRINT_REFERENCE_ONLY"
+    }
+  ],
+  "authority_boundaries": [
+    "INTELLIGENCE_NE_ADOPTION",
+    "REFERENCE_NE_INTEGRATION",
+    "RECOMMENDATION_NE_DECISION",
+    "PROTOCOL_VERSION_NE_AUTHORITY",
+    "MODEL_CAPABILITY_NE_PERMISSION",
+    "EXECUTION_CONTEXT_NE_MODEL_IDENTITY",
+    "VALID_NE_SAFE_OR_TRUSTED",
+    "STALE_NE_FAILED",
+    "UNKNOWN_NE_DENIED",
+    "CANDIDATE_NE_CAPABILITY",
+    "REFERENCE_FIXTURE_NE_EXECUTABLE_TEST",
+    "GBZ_TITLE_MAPPING_NE_CLAUSE_LEVEL_CONFORMANCE",
+    "AGENT_VERSION_NE_EFFECTIVE_SESSION_STATE",
+    "REGISTRY_LATEST_REVISION_NE_APPROVED_OR_EXECUTED_REVISION",
+    "OBSERVATION_ORIGIN_NE_SIGNER_ACCOUNTABILITY",
+    "OBSERVABILITY_NE_EVIDENCE_SUFFICIENCY",
+    "LEGAL_SCREENING_NE_COMPLIANCE_DETERMINATION",
+    "EVIDENCE_NE_TRUTH"
+  ]
+}

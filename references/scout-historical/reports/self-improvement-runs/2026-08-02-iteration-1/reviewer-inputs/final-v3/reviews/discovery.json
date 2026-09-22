@@ -1,0 +1,29 @@
+{
+  "schema_version": "0.1",
+  "review_id": "2026-08-02-scout-self-improvement-v3-discovery-review",
+  "agent_identifier": "/root/improvement_discovery_review",
+  "model_runtime_identifier": "OpenAI Codex GPT-5",
+  "review_role": "DISCOVERY_REVIEWER",
+  "input_digest": "sha256:6d1205bb56da39d049619cd9b9b683fd20d37e7be0b9a737fa705ab69a2e73f6",
+  "output_digest": "sha256:1abd9193433ed9ac947f2baf7955b85207ee4e387dc3d62355fff8336a32b159",
+  "decision": "PASS",
+  "timestamp": "2026-08-02T06:54:00Z",
+  "ruleset_version": "0.1",
+  "reason_codes": [
+    "ISSUE36_TRACKED_NOT_RANKED",
+    "FALSE_ISSUE76_ABSENT",
+    "MUTATION_CATCHES_REGRESSION",
+    "NORMAL_DISCOVERY_PRESERVED"
+  ],
+  "findings": [
+    "Issue #36 is tracked as READY_FOR_REVIEW with PR #76 related; literal shorthand does not create Issue #76, normal discovery passes, and restoring the defect makes the target test fail."
+  ],
+  "blocking_reasons": [
+
+  ],
+  "evidence_references": [
+    "reports/self-improvement-runs/2026-08-02-iteration-1/test-result-v3.json",
+    "reports/self-improvement-runs/2026-08-02-iteration-1/mutation-test-result.json",
+    "src/discovery/status_index.rb"
+  ]
+}

@@ -1,0 +1,138 @@
+artifact_type: TITMAS_SCOUT_VALIDATION_RUN_MANIFEST_V0_1
+run_id: REAL-RUN-GITHUB-AGENT-HITL-636-20260801-001
+display_title: "Research-only validation run: public GitHub issue signal"
+run_type: RESEARCH_ONLY_PUBLIC_SIGNAL_REFERENCE
+run_status: COMPLETED_INVALID_PENDING_HUMAN_REVIEW
+customer_evidence_status: NOT_CUSTOMER_EVIDENCE
+recorded_at: "2026-08-01T08:44:21Z"
+
+scope:
+  real_meaning: PUBLIC_SIGNAL_EXISTS_AND_LOCAL_VALIDATOR_WAS_EXECUTED
+  not_real_customer_record: true
+  not_full_real_world_object_chain: true
+  not_production_validation: true
+  not_market_validation: true
+  not_completed_human_governance: true
+
+source_signal:
+  signal_id: PUBLIC-GITHUB-ISSUE-OPENAI-AGENTS-636
+  source_reference: https://github.com/openai/openai-agents-python/issues/636
+  source_type: PUBLIC_GITHUB_ISSUE
+  source_observation_reference:
+    path: examples/validation-runs/2026-08-01-github-agent-hitl-issue-636/source-observation.yaml
+    content_digest: sha256:278717f86ed2a739a177e8c4ebad6b55eed53d7cd629f5493093d683a6f81580
+    binding_strength: UNARCHIVED_OBSERVATION
+  observed_date: "2026-08-01"
+  observed_state: Closed
+  current_relevance: UNVERIFIED
+
+opportunity_object_reference:
+  reference_id: EXAMPLE-GITHUB-AGENT-EVIDENCE-001
+  reference_type: TITMAS_SCOUT_OPPORTUNITY
+  reference_uri: examples/opportunities/example-github-agent-evidence.yaml
+  version: 0.1-draft
+  content_digest: sha256:a1dc96155713f2ac102da4208152d463f2bb40b8681802354f9f2406834c88df
+  example_only: true
+  normative: false
+  machine_validatable_under_formal_schema: false
+  lifecycle_status: discovered
+  scoring_status: NOT_COMPUTABLE
+  existing_validation_status: NOT_VALIDATED
+  recommended_action_status: NOT_AUTHORIZED
+
+validator:
+  name: TITMAS Scout Validator Prototype
+  ruleset_version: TITMAS-SCOUT-VALIDATOR-PROTOTYPE-STRUCTURAL-SUBSET-V0.1
+  repository_commit: 00c47177e5416c6fcb4b96fd86e14b020bbed0c2
+  runtime: ruby 2.6.10p210
+  core_logic_modified_for_run: false
+  execution_mode: LOCAL_OFFLINE_READ_ONLY_INPUT
+
+execution_receipt_reference:
+  path: examples/validation-runs/2026-08-01-github-agent-hitl-issue-636/execution-receipt.yaml
+  content_digest: sha256:270db20370b26bfff9de240e1d8d8d1610aae026d2bad8d2cb67079e6d97528a
+  attestation_status: SELF_RECORDED_UNATTESTED
+
+validation_result:
+  path: examples/validation-runs/2026-08-01-github-agent-hitl-issue-636/validation-result.json
+  content_digest: sha256:ac2a594c4a30c92619ec987dddde02a7bcc22feaef3bfa55cec5eddb0783e8f7
+  validation_status: INVALID
+  validation_scope: PROTOTYPE_STRUCTURAL_SUBSET_POST_ACTION_CHAIN
+  evaluated_at: "2026-08-01T08:41:24Z"
+  timestamp_trust: UNATTESTED_CALLER_OR_LOCAL_CLOCK
+  failed_rules:
+    - rule_id: TVP-AUT-001
+      reason_code: APPROVAL_MISSING
+      severity: CRITICAL
+      path: $.approval
+    - rule_id: TVP-LIF-003
+      reason_code: MATCHING_ASSESSMENT_MISSING
+      severity: HIGH
+      path: $.assessment
+
+human_review:
+  notes_path: examples/validation-runs/2026-08-01-github-agent-hitl-issue-636/human-review.md
+  content_digest: sha256:5488c8f9b517244055501a22d69b71688325b8a5858a124bc6a6096c8055a5e2
+  review_status: PENDING_HUMAN_REVIEW
+  reviewer_identity: null
+  human_decision_recorded: false
+
+readme_reference:
+  path: examples/validation-runs/2026-08-01-github-agent-hitl-issue-636/README.md
+  content_digest: sha256:ff67478d2fac0663cc55c5967189aba16049428d605b681def9900a9199e8047
+
+evidence_classes:
+  observed_public_facts:
+    authoritative_artifact: source-observation.yaml
+    authority_scope: UNARCHIVED_DATE_SCOPED_BROWSER_OBSERVATION
+  source_authored_claims:
+    authoritative_artifact: source-observation.yaml
+    authority_scope: CLAIMS_ATTRIBUTED_TO_ISSUE_AUTHOR_OR_REPOSITORY_DOCUMENT
+  local_assertions:
+    authoritative_artifacts:
+      - examples/opportunities/example-github-agent-evidence.yaml
+      - run-manifest.yaml
+      - human-review.md
+    authority_scope: LOCAL_RESEARCH_RECORD_ONLY
+  validator_outputs:
+    authoritative_artifacts:
+      - validation-result.json
+      - execution-receipt.yaml
+    authority_scope: LOCAL_PROTOTYPE_EXECUTION_ONLY
+
+safety_invariants:
+  fail_closed: true
+  validation_failure_ignored: false
+  authorization_granted: false
+  external_action_allowed: false
+  executor_instruction: NONE
+  automatic_api_call_allowed: false
+  automatic_outreach_allowed: false
+
+not_established:
+  - CURRENT_UNRESOLVED_NEED
+  - REAL_CUSTOMER_DEMAND
+  - ECOSYSTEM_WIDE_CAPABILITY_ABSENCE
+  - MERGED_PR_FULLY_RESOLVES_ISSUE
+  - IMPLEMENTATION_COMPLETENESS
+  - COMMERCIAL_VALUE
+  - TITMAS_FIT
+  - HUMAN_APPROVAL
+  - AUTHORIZATION
+  - PRODUCTION_READINESS
+
+unimplemented_capabilities:
+  - FORMAL_SCHEMA_VALIDATION
+  - FULL_VALIDATION_MODEL_CONFORMANCE
+  - EXTERNAL_REFERENCE_RESOLUTION
+  - REMOTE_SOURCE_DIGEST_RECOMPUTATION
+  - CRYPTOGRAPHIC_VERIFICATION
+  - TRUSTED_TIME_ATTESTATION
+  - EVIDENCE_PROVENANCE_AND_ADMISSIBILITY_VERIFICATION
+  - REVIEWER_IDENTITY_AND_AUTHORITY_VERIFICATION
+  - POLICY_SCOPE_CONSTRAINT_AND_REPLAY_EVALUATION
+  - IMMUTABLE_SIGNED_RUN_STORAGE
+  - AUTOMATIC_EXECUTION
+  - GITHUB_API_ACCESS
+  - EXTERNAL_ACTION
+  - PRODUCTION_DEPLOYMENT

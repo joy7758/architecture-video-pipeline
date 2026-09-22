@@ -1,0 +1,206 @@
+{
+  "candidate_id": "DBA-AGENT-BASELINE-CHECK-CANDIDATE-0.1",
+  "format_version": "0.1.0",
+  "title": "Agent Baseline Check v0.1 Candidate",
+  "title_zh": "智能体评估基线检查器 v0.1 候选",
+  "status": "REFERENCE_ONLY_CANDIDATE_DEFERRED_BY_D16_NO_TOOL_CREATED",
+  "observed_at": "2026-08-16",
+  "verified_at": "2026-08-16",
+  "primary_repository": "DBA",
+  "candidate_implementation_owner": "SAEE",
+  "extends": "../2026-08-01/execution-context-trust-invalidation-profile.md",
+  "decision_reference": "../../architecture/ADR-039-verified-correction-and-execution-context-continuity.md",
+  "purpose": "Describe a deterministic claim-scoped compatibility candidate that could identify which prior evaluation conclusions require reassessment after a bounded configuration change.",
+  "candidate_contract_is_schema": false,
+  "candidate_contract_is_current_capability": false,
+  "input_dimensions": [
+    "MODEL",
+    "PROMPT",
+    "TOOL_OR_MCP",
+    "PERMISSION",
+    "RUNTIME"
+  ],
+  "candidate_outputs": {
+    "VALID": "Every dependency declared by the claim is present, comparable and unchanged. This means only that the prior evaluation remains applicable to the declared scope.",
+    "STALE": "At least one dependency declared by the claim changed. The prior conclusion must not be inherited without reassessment.",
+    "UNKNOWN": "At least one required dependency value or comparison is missing, ambiguous or not comparable. The checker must fail closed without guessing."
+  },
+  "existing_dba_state_mapping": {
+    "VALID": "UNCHANGED",
+    "STALE": "REASSESSMENT_REQUIRED",
+    "UNKNOWN": "HOLD_MISSING_EVIDENCE"
+  },
+  "prohibited_outputs": [
+    "SAFE",
+    "TRUSTED",
+    "AUTHORIZED"
+  ],
+  "claim_dependency_rule": "Only a changed dimension that the individual claim explicitly depends on can make that claim STALE. Unrelated claims remain VALID only when all of their own declared dependencies are known and unchanged.",
+  "compatibility_fixtures": [
+    {
+      "fixture_id": "ABC-IBM-RUNTIME-MIGRATION-001",
+      "source_kind": "OFFICIAL_PRODUCT_CHANGE_RECORD",
+      "event": "RUNTIME_CHANGED",
+      "prior_state": {
+        "runtime": "watsonx.ai Agent Lab"
+      },
+      "current_state": {
+        "runtime": "watsonx Orchestrate Agent Lab or Builder"
+      },
+      "claims": [
+        {
+          "claim_id": "runtime_behavior_evaluated_under_prior_environment",
+          "depends_on": [
+            "RUNTIME"
+          ],
+          "expected_result": "STALE"
+        }
+      ],
+      "source_refs": [
+        "https://www.ibm.com/docs/en/watsonx/saas?topic=watsonx-whats-new"
+      ],
+      "limits": [
+        "The official change record establishes the migration date and replacement offering; no IBM tenant or migrated Agent was inspected.",
+        "The fixture does not claim that every evaluation changes in the same way."
+      ]
+    },
+    {
+      "fixture_id": "ABC-AWS-APPROVED-REVISION-002",
+      "source_kind": "OFFICIAL_REGISTRY_LIFECYCLE",
+      "event": "TOOL_OR_CAPABILITY_CHANGED",
+      "prior_state": {
+        "approved_effective_revision": "revision-a"
+      },
+      "current_state": {
+        "approved_effective_revision": "revision-b"
+      },
+      "claims": [
+        {
+          "claim_id": "approved_tool_behavior_evaluated_at_revision_a",
+          "depends_on": [
+            "TOOL_OR_MCP"
+          ],
+          "expected_result": "STALE"
+        }
+      ],
+      "source_refs": [
+        "https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/registry-record-lifecycle.html"
+      ],
+      "limits": [
+        "A new Draft alone does not change the approved effective revision returned by Search or the Registry MCP endpoint.",
+        "The fixture does not call AWS or assert that the namespace migration is complete."
+      ]
+    },
+    {
+      "fixture_id": "ABC-MCP-CLAIM-SCOPED-TOOL-LIST-003",
+      "source_kind": "MCP_STABLE_PROTOCOL_SIGNAL",
+      "event": "TOOL_OR_MCP_CHANGED",
+      "prior_state": {
+        "tool_manifest": [
+          "lookup_customer",
+          "summarize_case"
+        ]
+      },
+      "current_state": {
+        "tool_manifest": [
+          "lookup_customer",
+          "summarize_case_v2"
+        ]
+      },
+      "claims": [
+        {
+          "claim_id": "case_summary_tool_behavior",
+          "depends_on": [
+            "TOOL_OR_MCP"
+          ],
+          "dependency_selector": [
+            "summarize_case"
+          ],
+          "expected_result": "STALE"
+        },
+        {
+          "claim_id": "prompt_language_requirement",
+          "depends_on": [
+            "PROMPT"
+          ],
+          "expected_result": "VALID"
+        }
+      ],
+      "source_refs": [
+        "https://modelcontextprotocol.io/specification/2026-07-28/server/tools"
+      ],
+      "limits": [
+        "The fixture consumes tools/list and notifications/tools/list_changed semantics; it does not implement an MCP scanner, client or server.",
+        "VALID is prohibited when the prompt digest required by the unrelated claim is missing or incomparable."
+      ]
+    }
+  ],
+  "targeted_adopt_before_build_audit": {
+    "result": "NO_COMPLETE_EQUIVALENT_VERIFIED_IN_BOUNDED_PRIMARY_SOURCE_AUDIT",
+    "global_absence_proven": false,
+    "overlaps": [
+      {
+        "system": "IBM watsonx.governance Governance Graph",
+        "verified_overlap": "Visualizes related governance objects and helps identify possible downstream impact after an asset changes.",
+        "unverified_gap": "No inspected official page established deterministic per-claim VALID, STALE or UNKNOWN evaluation inheritance."
+      },
+      {
+        "system": "Google ADK conformance testing",
+        "verified_overlap": "Creates and replays recorded Agent baselines to detect behavioral deviations.",
+        "unverified_gap": "No inspected official page established cross-framework dependency selection that avoids unrelated evaluation reruns."
+      },
+      {
+        "system": "MLflow and LangSmith evaluation",
+        "verified_overlap": "Track versions, evaluation runs, datasets and regressions across application changes.",
+        "unverified_gap": "No inspected official page established deterministic claim-scoped invalidation over all five candidate dimensions."
+      },
+      {
+        "system": "Microsoft Agent Governance Toolkit",
+        "verified_overlap": "Provides runtime policy, identity, sandbox, audit and SRE governance surfaces.",
+        "unverified_gap": "Its published limitations do not establish historical evaluation inheritance after dependency changes."
+      },
+      {
+        "system": "Agentic Engineering Manifesto",
+        "verified_overlap": "Defines event-triggered evidence freshness and marks an evaluation run stale after model, prompt, tool-manifest or retrieval-corpus change.",
+        "unverified_gap": "The inspected publication is guidance, not a verified cross-framework claim-dependency checker; its rule is broader than selective claim-scoped invalidation."
+      }
+    ],
+    "stop_build_condition": "Stop the candidate if a maintained, deterministic and cross-framework tool is verified to bind individual claims to the five dimensions and produce equivalent fail-closed selective invalidation."
+  },
+  "agent_recommendation_gate": {
+    "advisory_provider": "ALIBABA_QWEN",
+    "raw_decision_normalized": "DO_NOT_RECOMMEND_IMPLEMENTATION_NOW",
+    "advisory_only": true,
+    "reasons_retained": [
+      "The advisor preferred composing IBM governance relationships with Registry, evaluation and telemetry products.",
+      "The advisor identified the D16 development freeze as a blocking condition.",
+      "The advisor assumed that useful output requires automatic external retest execution."
+    ],
+    "corrections": [
+      "The complete-equivalent claim remains NOT_PROVEN because the inspected primary sources establish component capabilities, not the end-to-end claim-scoped state machine.",
+      "The candidate boundary does not require executing tests or invoking external systems; it would only route reassessment.",
+      "The D16 freeze remains decisive, so implementation is deferred even though the narrow gap was not eliminated."
+    ]
+  },
+  "implementation_decision": {
+    "state": "DEFERRED_BY_D16_FREEZE",
+    "implementation_started": false,
+    "saee_repository_changed": false,
+    "third_public_mcp_tool_registered": false,
+    "new_runtime_created": false,
+    "new_schema_created": false,
+    "new_protocol_created": false,
+    "external_retest_trigger_created": false,
+    "next_decision_required": "After the D16 mainline freeze is lifted, re-run the adopt-before-build audit and obtain a separate SAEE implementation decision before any behavior or capability change."
+  },
+  "authority_boundaries": [
+    "VALID_NE_SAFE_OR_TRUSTED",
+    "STALE_NE_FAILED",
+    "UNKNOWN_NE_DENIED",
+    "REASSESSMENT_NE_PERMISSION_REVOCATION",
+    "CANDIDATE_NE_CAPABILITY",
+    "REFERENCE_FIXTURE_NE_EXECUTABLE_TEST",
+    "ADVISORY_RECOMMENDATION_NE_DECISION",
+    "NO_RUNTIME_OR_EXTERNAL_ACTION"
+  ]
+}

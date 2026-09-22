@@ -1,0 +1,143 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://redcrag.cn/schemas/dba-reusable-module-catalog-v0.1.schema.json",
+  "title": "DBA Reusable Module Catalog v0.1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "catalog_id",
+    "catalog_version",
+    "status",
+    "primary_repository",
+    "observed_at",
+    "reuse_levels",
+    "capability_discovery_boundary",
+    "consumer_links",
+    "modules"
+  ],
+  "properties": {
+    "$schema": {"const": "reusable-module-catalog.schema.json"},
+    "catalog_id": {"const": "DBA-REUSABLE-MODULE-CATALOG-0.1"},
+    "catalog_version": {"const": "0.1.0"},
+    "status": {"const": "SOURCE_BOUND_CATALOG_NO_RUNTIME_AUTHORITY"},
+    "primary_repository": {"const": "DBA"},
+    "observed_at": {"type": "string", "format": "date"},
+    "reuse_levels": {
+      "type": "object",
+      "additionalProperties": {"type": "string"}
+    },
+    "capability_discovery_boundary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["capability_discovery", "project_evidence_gap_completion"],
+      "properties": {
+        "capability_discovery": {"type": "string", "minLength": 1},
+        "project_evidence_gap_completion": {"type": "string", "minLength": 1}
+      }
+    },
+    "consumer_links": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "consumer_id",
+          "request_reference",
+          "need_class",
+          "required_evidence",
+          "recommended_module_ids",
+          "remaining_gap",
+          "status"
+        ],
+        "properties": {
+          "consumer_id": {"type": "string", "minLength": 1},
+          "request_reference": {"type": "string", "minLength": 1},
+          "need_class": {"type": "string", "minLength": 1},
+          "required_evidence": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+          "recommended_module_ids": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+          "remaining_gap": {"type": "string", "minLength": 1},
+          "status": {"type": "string", "minLength": 1}
+        }
+      }
+    },
+    "modules": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/$defs/module"}
+    }
+  },
+  "$defs": {
+    "entry": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["entry_type", "reference", "status"],
+      "properties": {
+        "entry_type": {"type": "string", "minLength": 1},
+        "reference": {"type": "string", "minLength": 1},
+        "status": {"type": "string", "minLength": 1}
+      }
+    },
+    "module": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "module_id",
+        "title",
+        "responsibility",
+        "applicable_scenarios",
+        "owner",
+        "canonical_repository",
+        "actual_entries",
+        "input_contract",
+        "output_contract",
+        "dependencies",
+        "invocation",
+        "permissions_and_side_effects",
+        "identity",
+        "verification",
+        "limitations",
+        "reuse_level",
+        "reuse_reason"
+      ],
+      "properties": {
+        "module_id": {"type": "string", "pattern": "^DBA-MOD-[A-Z0-9-]+$"},
+        "title": {"type": "string", "minLength": 1},
+        "responsibility": {"type": "string", "minLength": 1},
+        "applicable_scenarios": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+        "owner": {"type": "string", "minLength": 1},
+        "canonical_repository": {"type": "string", "minLength": 1},
+        "actual_entries": {"type": "array", "items": {"$ref": "#/$defs/entry"}, "minItems": 1},
+        "input_contract": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+        "output_contract": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+        "dependencies": {"type": "array", "items": {"type": "string"}},
+        "invocation": {"type": "string", "minLength": 1},
+        "permissions_and_side_effects": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+        "identity": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["version", "source_revision", "revision_status"],
+          "properties": {
+            "version": {"type": "string", "minLength": 1},
+            "source_revision": {"type": "string", "minLength": 1},
+            "revision_status": {"type": "string", "minLength": 1}
+          }
+        },
+        "verification": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["status", "observed_at", "evidence_references"],
+          "properties": {
+            "status": {"type": "string", "minLength": 1},
+            "observed_at": {"type": "string", "minLength": 1},
+            "evidence_references": {"type": "array", "items": {"type": "string"}, "minItems": 1}
+          }
+        },
+        "limitations": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+        "reuse_level": {
+          "enum": ["DIRECT_REUSE", "ADAPTATION_REQUIRED", "SPECIFICATION_ONLY", "VERIFICATION_REQUIRED"]
+        },
+        "reuse_reason": {"type": "string", "minLength": 1}
+      }
+    }
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://titmas.cn/schemas/d19/evolution-lineage-2.1.json",
+  "title": "TITMAS EvolutionLineageObject v2.1",
+  "type": "object",
+  "required": [
+    "lineage_id",
+    "parent_revision",
+    "child_revision",
+    "mutation_id",
+    "trigger_evidence",
+    "selected_variant",
+    "rejected_variants",
+    "authorization_reference",
+    "release_reference",
+    "outcome_evidence",
+    "rollback_reference",
+    "fitness_before",
+    "fitness_after",
+    "retention_status"
+  ],
+  "properties": {
+    "lineage_id": {"type": "string"},
+    "parent_revision": {"type": "string", "minLength": 7},
+    "child_revision": {"type": "string", "minLength": 7},
+    "mutation_id": {"type": "string"},
+    "trigger_evidence": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+    "selected_variant": {"type": "string"},
+    "rejected_variants": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+    "authorization_reference": {"type": "string"},
+    "release_reference": {"type": "string"},
+    "outcome_evidence": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+    "rollback_reference": {"type": "string"},
+    "fitness_before": {"type": "object"},
+    "fitness_after": {"type": "object"},
+    "retention_status": {"enum": ["RETAINED", "ROLLED_BACK", "REJECTED", "NOT_ASSESSED", "SUPERSEDED"]}
+  },
+  "additionalProperties": false
+}

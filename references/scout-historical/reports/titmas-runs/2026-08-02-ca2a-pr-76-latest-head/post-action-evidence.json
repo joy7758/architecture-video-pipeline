@@ -1,0 +1,8 @@
+{
+  "artifact_type":"TITMAS_SCOUT_POST_ACTION_EVIDENCE","observed_at":"2026-08-02T07:16:30Z","pull_request":"https://github.com/agentrust-io/ca2a/pull/76","state":"OPEN","draft":false,"head_sha":"0a1ffa6710d25f58515b2dca7e0619e134c0a43e","base_sha":"566e587cd46ef6b88a9701531c96313f0518923d","mergeable":true,"merge_state":"BLOCKED",
+  "authorized_actions_executed":["PUSH_PERSONAL_BRANCH","POST_BOUNDED_TECHNICAL_COMMENT"],"exact_review_request_comment_count":1,"review_request_comment":"https://github.com/agentrust-io/ca2a/pull/76#issuecomment-5156010029",
+  "codex_current_head_result":{"classification":"NO_MAJOR_ISSUES_FOUND","reviewed_commit_abbreviation":"0a1ffa6710","comment_id":5156018960,"url":"https://github.com/agentrust-io/ca2a/pull/76#issuecomment-5156018960","created_at":"2026-08-02T06:49:21Z"},
+  "old_p2_thread":{"status":"OUTDATED_UNRESOLVED","reviewed_commit":"b223ee41ac9e3b635651f9636a08061801b5c826","thread_id":"PRRT_kwDOTKDUgc6VqFgJ"},
+  "checks":[{"name":"CI","conclusion":"action_required","run":30736208654,"executed":false},{"name":"CodeQL","conclusion":"action_required","run":30736208663,"executed":false},{"name":"Require maintainer approval","conclusion":"failure","run":30736207989,"classification":"EXTERNAL_POLICY_BLOCKER"}],
+  "maintainer_review_present":false,"merged":false,"adoption_established":false,"customer_or_revenue_established":false,"production_safety_established":false
+}

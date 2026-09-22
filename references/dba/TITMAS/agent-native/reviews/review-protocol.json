@@ -1,0 +1,32 @@
+{
+  "protocol_version": "1.1.0",
+  "review_roles": [
+    "Architecture Reviewer",
+    "Security and Privacy Reviewer",
+    "Specification Consistency Reviewer",
+    "Agent Usability Reviewer",
+    "Conformance Reviewer",
+    "Recommendation and Claims Reviewer",
+    "Contribution Value Reviewer"
+  ],
+  "independence_levels": {
+    "LEVEL_0_SELF_REVIEW": "prohibited for acceptance",
+    "LEVEL_1_SAME_SESSION_ROLE_SWITCH": "prohibited for acceptance",
+    "LEVEL_2_SAME_MODEL_ISOLATED_SESSION": "allowed in controlled pilot and disclosed",
+    "LEVEL_3_DIFFERENT_MODEL_SAME_PROVIDER": "allowed in controlled pilot and disclosed",
+    "LEVEL_4_DIFFERENT_MODEL_DIFFERENT_PROVIDER": "allowed in controlled pilot and disclosed",
+    "LEVEL_5_INDEPENDENT_HUMAN_OR_INSTITUTIONAL_REVIEW": "not created by model review"
+  },
+  "prohibitions": [
+    "SELF_REVIEW_APPROVAL",
+    "SAME_SESSION_SELF_APPROVAL",
+    "CONTRIBUTOR_AS_SOLE_ACCEPTING_REVIEWER",
+    "MODEL_REVIEW_AS_HUMAN_DECISION"
+  ],
+  "conflict_flow": {
+    "no_conflict": "CANDIDATE",
+    "machine_resolvable": "REVISION_REQUIRED",
+    "high_risk_or_persistent": "HUMAN_EXCEPTION_QUEUE",
+    "uncertain": "HOLD"
+  }
+}

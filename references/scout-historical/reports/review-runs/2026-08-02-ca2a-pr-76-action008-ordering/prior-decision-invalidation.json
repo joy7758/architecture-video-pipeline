@@ -1,0 +1,15 @@
+{
+  "artifact_type": "TITMAS_SCOUT_REVIEW_DECISION_INVALIDATION",
+  "schema_version": "0.1",
+  "recorded_at": "2026-08-01T18:41:40Z",
+  "target": "agentrust-io/ca2a#76",
+  "prior_run": "reports/review-runs/2026-08-02-ca2a-pr-76-ready/run.json",
+  "prior_decision": "ALLOW",
+  "prior_action": "MARK_PR_READY_FOR_REVIEW",
+  "prior_input_digest": "sha256:1b390b08b327c6fe315f7ffe9af007c0454227f753b8249dbf1aed07df30fcd9",
+  "prior_head_commit": "b223ee41ac9e3b635651f9636a08061801b5c826",
+  "current_head_commit": "9fb5c3b112c1f2d083bc97a12d55f7a583190b9f",
+  "invalidation_reason": "HEAD_SHA_AND_DIFF_CHANGED_AFTER_ACTION008_ORDERING_REMEDIATION",
+  "prior_allow_effective_for_current_head": false,
+  "historical_run_modified": false
+}

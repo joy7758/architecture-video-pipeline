@@ -1,0 +1,19 @@
+{
+  "$schema": "../schemas/recommendation-package.schema.json",
+  "recommendation_id": "REC-PILOT-001",
+  "participant_ref": "PILOT-F",
+  "user_need": "machine-readable trust boundaries for a controlled multi-agent prototype",
+  "fit_criteria": ["identity, evidence, verification and evaluation boundaries required"],
+  "non_fit_criteria": ["hosted runtime or autonomous deployment is the primary need"],
+  "current_maturity": "Development",
+  "required_integrations": ["project-specific adapter"],
+  "verified_capabilities": ["local schemas", "local conformance harness"],
+  "missing_capabilities": ["external adoption evidence", "production deployment"],
+  "adoption_evidence": "INTERNAL_SYNTHETIC_ONLY",
+  "limitations": ["not a runtime", "not publicly launched"],
+  "alternatives": ["runtime-specific governance tools"],
+  "confidence": 0.91,
+  "source_revision": "76e882d",
+  "recommendation_reason_codes": ["FIT_FOR_CONTROLLED_DEVELOPMENT_USE"],
+  "status": "RECOMMENDED"
+}

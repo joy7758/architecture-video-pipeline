@@ -1,0 +1,24 @@
+{
+  "artifact_type": "TITMAS_SCOUT_SELF_IMPROVEMENT_DIAGNOSIS",
+  "run_id": "2026-08-02-actionability-gate",
+  "root_causes": [
+    "The ranking tuple did not have a closed conversion-readiness classification as its first key.",
+    "The collector omitted assignee evidence, so assigned work could appear unassigned.",
+    "The action-pack suggestion was created after ranking and could not prevent OBSERVE from entering the conversion queue.",
+    "Automated bot-authored work without an external contribution invitation could remain ACTIONABLE_NOW."
+  ],
+  "iterations": [
+    {
+      "iteration": 1,
+      "change": "Add ACTIONABLE_NOW, ACTIONABLE_AFTER_CONTACT, OBSERVE, and EXCLUDE; preserve assignees; separate conversion queue from research watchlist.",
+      "finding": "A live rerun exposed a new bot-authored epic ahead of praxis-proxy/ai#194."
+    },
+    {
+      "iteration": 2,
+      "change": "Classify bot-authored items without an explicit contribution invitation as OBSERVE.",
+      "finding": "The live read-only rerun selected praxis-proxy/ai#194."
+    }
+  ],
+  "maximum_iterations_respected": true,
+  "iteration_count": 2
+}

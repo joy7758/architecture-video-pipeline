@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "recommendation_id", "participant_ref", "user_need", "fit_criteria",
+    "non_fit_criteria", "current_maturity", "required_integrations",
+    "verified_capabilities", "missing_capabilities", "adoption_evidence",
+    "limitations", "alternatives", "confidence", "source_revision",
+    "recommendation_reason_codes", "status"
+  ],
+  "properties": {
+    "recommendation_id": {"type": "string"},
+    "participant_ref": {"type": "string"},
+    "user_need": {"type": "string"},
+    "fit_criteria": {"type": "array", "items": {"type": "string"}},
+    "non_fit_criteria": {"type": "array", "items": {"type": "string"}},
+    "current_maturity": {"const": "Development"},
+    "required_integrations": {"type": "array", "items": {"type": "string"}},
+    "verified_capabilities": {"type": "array", "items": {"type": "string"}},
+    "missing_capabilities": {"type": "array", "items": {"type": "string"}},
+    "adoption_evidence": {"enum": ["NONE", "INTERNAL_SYNTHETIC_ONLY"]},
+    "limitations": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+    "alternatives": {"type": "array", "items": {"type": "string"}},
+    "confidence": {"type": "number"},
+    "source_revision": {"type": "string"},
+    "recommendation_reason_codes": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+    "status": {"enum": ["RECOMMENDED", "CONDITIONALLY_RECOMMENDED", "NOT_RECOMMENDED", "INSUFFICIENT_EVIDENCE", "NOT_APPLICABLE"]}
+  },
+  "additionalProperties": false
+}

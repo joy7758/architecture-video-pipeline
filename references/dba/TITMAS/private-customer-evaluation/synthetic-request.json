@@ -1,0 +1,18 @@
+{
+  "synthetic_request_id": "SYNTHETIC-EVAL-001",
+  "declared_object": {
+    "kind": "synthetic-agent-candidate",
+    "need": "Assess a bounded execution-provenance contract.",
+    "constraints": [
+      "NO_REAL_CUSTOMER_DATA",
+      "NO_PROVIDER_CREDENTIALS",
+      "NO_EXTERNAL_WRITE",
+      "NO_AUTHORITY_CREATION"
+    ]
+  },
+  "declared_profile": "TITMAS-SYNTHETIC-CANDIDATE-v0.1",
+  "contract_version": "0.1.0",
+  "options": {
+    "include_limitations": true
+  }
+}

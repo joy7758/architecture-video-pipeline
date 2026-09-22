@@ -1,0 +1,45 @@
+{
+  "signal_id": "DBA-RESEARCH-SIGNAL-ARXIV-2607.21495",
+  "artifact_kind": "research_signal",
+  "status": "PREPRINT_REFERENCE_ONLY",
+  "observed_at": "2026-07-29",
+  "primary_repository": "DBA",
+  "paper": {
+    "title": "Toward Continuous Assurance for the Democratization of AI Agent Creation in Industry",
+    "authors": ["Natan Levy", "Harel Berger"],
+    "arxiv_id": "2607.21495",
+    "version": "v1",
+    "submitted_at": "2026-07-23T16:41:56Z",
+    "url": "https://arxiv.org/abs/2607.21495v1",
+    "peer_review_verified": false
+  },
+  "author_reported_framework_elements": [
+    "dependency mapping",
+    "readiness contracts",
+    "scheduled checks",
+    "diagnostics",
+    "lifecycle governance",
+    "prototype auditor",
+    "scenario-based assessment"
+  ],
+  "competitive_overlap": {
+    "capability_provenance_reassessment": "HIGH",
+    "agent_health_static_diagnostics": "HIGH",
+    "dbos_runtime_or_evidence": "NOT_DEMONSTRATED_BY_PREPRINT",
+    "saee_evaluation_authority": "NOT_CREATED_BY_PREPRINT"
+  },
+  "differentiation_required": [
+    "exact capability identity across model, code, license, protocol and environment",
+    "Recommendation, Decision, Authority, Permission, Evidence and Truth separation",
+    "cross-project source-of-truth routing",
+    "bounded invalidation that cannot directly change runtime state"
+  ],
+  "routing": {
+    "research_reference_added": true,
+    "agent_immune_revival_authorized": false,
+    "new_auditor_development_authorized": false,
+    "saee_code_change_authorized": false,
+    "dbos_code_change_authorized": false
+  },
+  "next_action": "COMPARE_METHOD_AND_FAILURE_CASES_ONLY_IF_A_SEPARATE_RESEARCH_REVIEW_IS_AUTHORIZED"
+}

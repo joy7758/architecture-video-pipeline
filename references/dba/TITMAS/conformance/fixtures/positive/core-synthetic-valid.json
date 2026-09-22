@@ -1,0 +1,13 @@
+{
+  "$schema": "../../schemas/core-developer-surface.schema.json",
+  "profile_version": "0.1.0",
+  "profile_status": "DEVELOPMENT_DRAFT",
+  "identity_ref": {"id":"synthetic-agent-001","source":"synthetic://identity-registry","version":"0.1"},
+  "boundary": {"allowed_actions":["summarize"],"forbidden_actions":["publish","modify_source"],"constraints":["LOCAL_ONLY","SYNTHETIC_DATA_ONLY"]},
+  "event": {"event_id":"synthetic-event-001","action":"summarize","result":"COMPLETED","timestamp":"2026-07-28T00:00:00Z"},
+  "evidence_binding": {"evidence_ref":"synthetic://agent-evidence/ae-001","source":"Agent Evidence synthetic fixture","source_kind":"EVIDENCE_REFERENCE","admission_status":"REFERENCE_ONLY_NOT_DBOS_ADMITTED"},
+  "verification_result": {"verification_ref":"synthetic://verifier/vr-001","status":"STRUCTURE_PASS","verifier_ref":"TITMAS_LOCAL_REFERENCE"},
+  "evaluation_handoff": {"status":"READY_FOR_OPTIONAL_READ_ONLY_EVALUATION","input_refs":["synthetic-event-001","synthetic://agent-evidence/ae-001","synthetic://verifier/vr-001"]},
+  "limitations": ["SYNTHETIC_ONLY","NO_TRUTH_CLAIM","NO_AUTHORIZATION","NO_DBOS_ADMISSION","NO_SAEE_EXECUTION"],
+  "claims": ["STRUCTURE_VALIDATED"]
+}

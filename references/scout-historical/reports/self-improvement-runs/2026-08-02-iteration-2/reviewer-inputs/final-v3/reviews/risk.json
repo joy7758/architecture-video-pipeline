@@ -1,0 +1,30 @@
+{
+  "schema_version": "0.1",
+  "review_id": "iteration2-v3-risk",
+  "agent_identifier": "/root/comment_risk_review",
+  "model_runtime_identifier": "OpenAI Codex GPT-5",
+  "review_role": "RISK_REVIEWER",
+  "input_digest": "sha256:1127f5b8187e798824487268f840368a23ceafc2b2337261af2bdaf71af1be06",
+  "output_digest": "sha256:03e2e8f0929e8103697237007ee5adefa9a3c29bc52ae239462fa43d4d85a447",
+  "decision": "PASS",
+  "timestamp": "2026-08-02T07:09:11Z",
+  "ruleset_version": "0.1",
+  "reason_codes": [
+    "GRAPHQL_REMOVED",
+    "MUTATION_FAILS_CLOSED",
+    "GH_SEARCH_READ_ONLY",
+    "REST_GET_ONLY",
+    "NO_EXTERNAL_ACTION"
+  ],
+  "findings": [
+    "The CLI allowlist contains no GraphQL, mutation-shaped input is rejected, REST is GET-only, and no external action is authorized."
+  ],
+  "blocking_reasons": [
+
+  ],
+  "evidence_references": [
+    "src/discovery/source_collector.rb",
+    "tests/discovery_test.rb",
+    "config/discovery-sources.yaml"
+  ]
+}

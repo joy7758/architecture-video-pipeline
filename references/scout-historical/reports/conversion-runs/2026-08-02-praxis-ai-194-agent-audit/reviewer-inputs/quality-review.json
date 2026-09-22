@@ -1,0 +1,32 @@
+{
+  "schema_version": "0.1",
+  "review_id": "2026-08-02-praxis-ai-194-quality-review-attempt-2",
+  "agent_identifier": "/root/comment_quality_review",
+  "model_runtime_identifier": "OpenAI Codex GPT-5",
+  "review_role": "QUALITY_REVIEWER",
+  "input_digest": "sha256:8a31c48c73f94a1fd71b9ddf50baf6cf8da4cdcc62d9d026198f5a3d2a3ce097",
+  "output_digest": "sha256:ec8bd3e6270681338248881fd42235b09719b71f21bba92280a509e532711a7a",
+  "decision": "BLOCKING_FAIL",
+  "timestamp": "2026-08-02T08:12:30Z",
+  "ruleset_version": "0.1",
+  "reason_codes": [
+    "DIGEST_BINDINGS_VERIFIED",
+    "FULL_SUITE_VERIFIED",
+    "CANONICAL_EVIDENCE_REPLAY_VERIFIED",
+    "REPOSITORY_PERSON_TO_PERSON_AUTHORSHIP_REQUIRED"
+  ],
+  "findings": [
+    "The selected slice, exact draft body, and 126-word count are bound consistently.",
+    "The full suite passes with 88 runs and 327 assertions.",
+    "Canonical agent-evidence attempt 2 verifies structure, digest chain, export, and replay without granting authorization.",
+    "The exact draft remains agent-authored and non-publishable by an agent."
+  ],
+  "blocking_reasons": [
+    "HUMAN_REVIEW_REQUIRED:REPOSITORY_PERSON_TO_PERSON_AUTHORSHIP"
+  ],
+  "evidence_references": [
+    "reports/conversion-runs/2026-08-02-praxis-ai-194-agent-audit/reviewer-inputs/input.json",
+    "reports/conversion-runs/2026-08-02-praxis-ai-194-agent-audit/agent-evidence-verification.json",
+    "reports/self-improvement-runs/2026-08-02-actionability-gate/test-result.json"
+  ]
+}

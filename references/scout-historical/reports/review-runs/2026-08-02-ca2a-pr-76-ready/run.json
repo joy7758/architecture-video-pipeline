@@ -1,0 +1,83 @@
+{
+  "artifact_type": "TITMAS_SCOUT_AGENT_REVIEW_RUN",
+  "schema_version": "0.1",
+  "run_id": "2026-08-02-ca2a-pr-76-ready",
+  "target": "agentrust-io/ca2a#76",
+  "requested_action": "MARK_PR_READY_FOR_REVIEW",
+  "policy_reference": {
+    "path": "config/agent-review-policy.yaml",
+    "content_digest": "sha256:b749b56f7223a416c257b15f9a127065c90282aa7dedc919b08ab3722a7dedff"
+  },
+  "ruleset_version": "0.1",
+  "input": {
+    "path": "reports/review-runs/2026-08-02-ca2a-pr-76-ready/input.json",
+    "content_digest": "sha256:1b390b08b327c6fe315f7ffe9af007c0454227f753b8249dbf1aed07df30fcd9"
+  },
+  "review_results": [
+    {
+      "role": "DISCOVERY_REVIEWER",
+      "path": "reports/review-runs/2026-08-02-ca2a-pr-76-ready/reviews/discovery-review.json",
+      "file_digest": "sha256:86a72454306e4da1d92d0aa98422013edcc126d92a67279b6b08b28f9c99eed9",
+      "decision": "PASS"
+    },
+    {
+      "role": "EVIDENCE_REVIEWER",
+      "path": "reports/review-runs/2026-08-02-ca2a-pr-76-ready/reviews/evidence-review.json",
+      "file_digest": "sha256:e8294f5ee51a200601cd801fed6db348481f665f31d4addd1ae38658cc16cf0a",
+      "decision": "PASS"
+    },
+    {
+      "role": "SCOPE_REVIEWER",
+      "path": "reports/review-runs/2026-08-02-ca2a-pr-76-ready/reviews/scope-review.json",
+      "file_digest": "sha256:b28ac7ffba23b3195df71defe2c0a64d4263e2b649a704b1647aab929e18fd96",
+      "decision": "PASS"
+    },
+    {
+      "role": "QUALITY_REVIEWER",
+      "path": "reports/review-runs/2026-08-02-ca2a-pr-76-ready/reviews/quality-review.json",
+      "file_digest": "sha256:a530470be685565e38e0658733c027251258000f425d517bda016b2a2778b11d",
+      "decision": "PASS"
+    },
+    {
+      "role": "RISK_REVIEWER",
+      "path": "reports/review-runs/2026-08-02-ca2a-pr-76-ready/reviews/risk-review.json",
+      "file_digest": "sha256:5f3785b326a621cd0d5b28b18b6149163923b043c960ffd3d9ef2100c9dc6001",
+      "decision": "PASS"
+    }
+  ],
+  "aggregate_decision": {
+    "path": "reports/review-runs/2026-08-02-ca2a-pr-76-ready/decision.json",
+    "content_digest": "sha256:6e9e005ba9847876d542e7cb61e369746d0e7ff8c6104d532461b5f0230350cf",
+    "decision": "ALLOW",
+    "human_review_required": false,
+    "authorized_actions": [
+      "MARK_PR_READY_FOR_REVIEW"
+    ],
+    "blocked_actions": []
+  },
+  "acceptance_boundary": {
+    "upstream_maintainer_review_is_internal_authorization_prerequisite": false,
+    "upstream_maintainer_review_controls_merge_acceptance": true,
+    "maintainer_approval_observed": false,
+    "merge_or_adoption_established": false
+  },
+  "pre_commit_read_only_revalidation": {
+    "observed_at": "2026-08-01T18:08:41Z",
+    "issue_state": "OPEN",
+    "pr_state": "OPEN",
+    "pr_is_draft": true,
+    "head_commit": "b223ee41ac9e3b635651f9636a08061801b5c826",
+    "base_commit": "76c1a31193ff6a70b732cf8f668935808002e273",
+    "human_review_count": 0,
+    "contributor_check": "PASS",
+    "maintainer_gate": "FAIL_WAITING_FOR_MAINTAINER_APPROVAL",
+    "material_input_state_unchanged": true,
+    "external_write_operations_performed": false
+  },
+  "execution_boundary": {
+    "pr_state_change_performed": false,
+    "pr_remains_draft_at_review_time": true,
+    "external_comment_performed": false,
+    "ready_transition_requires_separate_execution_task": true
+  }
+}

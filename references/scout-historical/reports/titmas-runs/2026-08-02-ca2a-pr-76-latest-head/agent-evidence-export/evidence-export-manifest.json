@@ -1,0 +1,21 @@
+{
+  "manifest": {
+    "artifact_digest": "8bda2b2ef61d3acd234d6f8bcd4edc9e4e9b9e077d9d088e72faa20a73a808ec",
+    "chain_hash_list_digest": "b1ad0d4b54f417c7b89904cb1415cb62455f1b2e4519e29f26471fca6ea52344",
+    "digest_algorithm": "sha256",
+    "event_hash_list_digest": "d2daa9a01b70ec3e11cc6b6056d7c81059eb03aa06e62799d8df77a698e96287",
+    "export_format": "json",
+    "filters": {},
+    "first_event_hash": "c90d3263501832612aae662a433f1c1db953f9d572c933097931182bdeab5cf1",
+    "generated_at": "2026-08-02T06:22:44.571399+00:00",
+    "last_event_hash": "c90d3263501832612aae662a433f1c1db953f9d572c933097931182bdeab5cf1",
+    "latest_chain_hash": "a06a13eb3f51a83a43071cf245c254135d1f8745754a2400d28927b7818be57d",
+    "record_count": 1,
+    "schema_version": "1.4.0",
+    "signature_policy": {
+      "minimum_valid_signatures": null,
+      "minimum_valid_signatures_by_role": {}
+    }
+  },
+  "signatures": []
+}

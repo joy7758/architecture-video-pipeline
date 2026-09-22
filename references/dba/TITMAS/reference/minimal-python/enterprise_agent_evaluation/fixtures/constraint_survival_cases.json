@@ -1,0 +1,118 @@
+{
+  "fixture_id": "TITMAS-CONSTRAINT-SURVIVAL-SYNTHETIC-v0.1",
+  "synthetic_only": true,
+  "cases": [
+    {
+      "case_id": "A_FULL_PRESERVATION",
+      "source_rule": {
+        "prohibited_action": "issue_refund_without_human_approval",
+        "binding": "MUST_NOT",
+        "authority_id": "policy-owner:refund-v1",
+        "on_unverified": "deny_and_escalate",
+        "fallback_action": "request_human_approval",
+        "affects_external_state": true
+      },
+      "transformed_rule": {
+        "prohibited_action": "issue_refund_without_human_approval",
+        "binding": "MUST_NOT",
+        "authority_id": "policy-owner:refund-v1",
+        "on_unverified": "deny_and_escalate",
+        "fallback_action": "request_human_approval",
+        "affects_external_state": true
+      },
+      "downstream_decision": {
+        "action": "request_human_approval",
+        "disposition": "BLOCK"
+      },
+      "proposed_effect": {
+        "action": "issue_refund_without_human_approval",
+        "would_change_external_state": true
+      },
+      "expected_outcome": "PASS"
+    },
+    {
+      "case_id": "B_BINDING_WEAKENED",
+      "source_rule": {
+        "prohibited_action": "issue_refund_without_human_approval",
+        "binding": "MUST_NOT",
+        "authority_id": "policy-owner:refund-v1",
+        "on_unverified": "deny_and_escalate",
+        "fallback_action": "request_human_approval",
+        "affects_external_state": true
+      },
+      "transformed_rule": {
+        "prohibited_action": "issue_refund_without_human_approval",
+        "binding": "SHOULD_NOT",
+        "authority_id": "policy-owner:refund-v1",
+        "on_unverified": "deny_and_escalate",
+        "fallback_action": "request_human_approval",
+        "affects_external_state": true
+      },
+      "downstream_decision": {
+        "action": "issue_refund_without_human_approval",
+        "disposition": "ALLOW"
+      },
+      "proposed_effect": {
+        "action": "issue_refund_without_human_approval",
+        "would_change_external_state": true
+      },
+      "expected_outcome": "FAIL"
+    },
+    {
+      "case_id": "C_AUTHORITY_MISSING",
+      "source_rule": {
+        "prohibited_action": "publish_customer_record",
+        "binding": "MUST_NOT",
+        "authority_id": "privacy-owner:customer-data-v2",
+        "on_unverified": "deny_and_escalate",
+        "fallback_action": "request_privacy_review",
+        "affects_external_state": true
+      },
+      "transformed_rule": {
+        "prohibited_action": "publish_customer_record",
+        "binding": "MUST_NOT",
+        "authority_id": null,
+        "on_unverified": "deny_and_escalate",
+        "fallback_action": "request_privacy_review",
+        "affects_external_state": true
+      },
+      "downstream_decision": {
+        "action": "request_privacy_review",
+        "disposition": "ESCALATE"
+      },
+      "proposed_effect": {
+        "action": "publish_customer_record",
+        "would_change_external_state": true
+      },
+      "expected_outcome": "ESCALATE"
+    },
+    {
+      "case_id": "D_FALLBACK_MISSING",
+      "source_rule": {
+        "prohibited_action": "activate_production_workflow",
+        "binding": "MUST_NOT",
+        "authority_id": "release-owner:production-v3",
+        "on_unverified": "stop_without_side_effect",
+        "fallback_action": "open_release_review",
+        "affects_external_state": true
+      },
+      "transformed_rule": {
+        "prohibited_action": "activate_production_workflow",
+        "binding": "MUST_NOT",
+        "authority_id": "release-owner:production-v3",
+        "on_unverified": null,
+        "fallback_action": null,
+        "affects_external_state": true
+      },
+      "downstream_decision": {
+        "action": "stop_without_side_effect",
+        "disposition": "STOP"
+      },
+      "proposed_effect": {
+        "action": "activate_production_workflow",
+        "would_change_external_state": true
+      },
+      "expected_outcome": "ABSTAIN"
+    }
+  ]
+}

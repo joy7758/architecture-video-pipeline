@@ -1,0 +1,18 @@
+{
+  "authorized_actions":["UPDATE_SCOUT_STATUS"],
+  "blocked_actions":[],
+  "decision":"ALLOW",
+  "human_review_required":false,
+  "input_digest":"sha256:6d1205bb56da39d049619cd9b9b683fd20d37e7be0b9a737fa705ab69a2e73f6",
+  "reason_codes":["ALL_REQUIRED_REVIEWERS_PASS"],
+  "reviewers":[
+    {"review_role":"DISCOVERY_REVIEWER","agent_identifier":"/root/improvement_discovery_review","decision":"PASS","output_digest":"sha256:1abd9193433ed9ac947f2baf7955b85207ee4e387dc3d62355fff8336a32b159"},
+    {"review_role":"EVIDENCE_REVIEWER","agent_identifier":"/root/comment_evidence_review","decision":"PASS","output_digest":"sha256:c500cdc05005cb9d2c3eb56ac5bff476cc1ed4926e8fe11ec087c8e45d61c00c"},
+    {"review_role":"SCOPE_REVIEWER","agent_identifier":"/root/comment_scope_review","decision":"PASS","output_digest":"sha256:53c5cb01f54eba24198eee525b660afdbf9ecf5f08d9feb1da93c1dfd4743ceb"},
+    {"review_role":"QUALITY_REVIEWER","agent_identifier":"/root/comment_quality_review","decision":"PASS","output_digest":"sha256:e6a54478a260a8455dfcbf7e4a33ebd2ba2a2a9a0af13f63a7b35f35dd994d14"},
+    {"review_role":"RISK_REVIEWER","agent_identifier":"/root/comment_risk_review","decision":"PASS","output_digest":"sha256:3bdc6e8d9e4496a952d111fe62eadc66e18c4c068dd7a3ebfa7a0a5bfd8b1ea4"}
+  ],
+  "ruleset_version":"0.1",
+  "scope":"LOCAL_SCOUT_REPORT_AND_STATUS_OUTPUT_ONLY",
+  "external_action_allowed":false
+}

@@ -1,0 +1,26 @@
+{
+  "artifact_type": "TITMAS_SCOUT_SOURCE_OBSERVATION",
+  "run_id": "2026-08-02-praxis-ai-194-agent-audit",
+  "observed_at": "2026-08-02T07:56:47Z",
+  "source_snapshot": {
+    "repository": "praxis-proxy/ai",
+    "issue_number": 194,
+    "url": "https://github.com/praxis-proxy/ai/issues/194",
+    "title": "Agent audit trail and observability",
+    "state": "OPEN",
+    "assignees": [],
+    "comment_count": 0,
+    "labels": ["enhancement"],
+    "updated_at": "2026-07-23T09:23:12Z",
+    "scope": [
+      "OpenTelemetry trace context across agent interactions",
+      "policy decision audit events",
+      "complete task lifecycle tracing",
+      "cost and delegation attribution",
+      "access_log and observability integration"
+    ]
+  },
+  "source_digest_algorithm": "sha256",
+  "source_digest": "sha256:35264b36651fe9cef29a396c2a2ca942e7cdba6bb2ff4d7ab48f4ef1121e0849",
+  "external_write_performed": false
+}

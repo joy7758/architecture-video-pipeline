@@ -1,0 +1,63 @@
+{
+  "projection_version": "0.1.0",
+  "projection_type": "SANITIZED_CANONICAL_ENTRY_PROJECTION",
+  "source_repository": "joy7758/digital-biosphere-architecture-specification",
+  "source_issue_number": 43,
+  "source_issue_url": "https://github.com/joy7758/digital-biosphere-architecture-specification/issues/43",
+  "source_issue_title": "Welcome to the TITMAS Agent-Native Standards Community Preview",
+  "source_issue_state": "OPEN",
+  "source_issue_updated_at": "2026-07-29T01:31:34Z",
+  "source_body_sha256": "24bbbfe13bce04de9a1fafafb2c28bfaad2a5e85c4f743c857333546d1881e6e",
+  "source_branch": "main",
+  "live_verified_at": "2026-07-29T01:33:00Z",
+  "repository_entries": [
+    {
+      "id": "HUMAN_ENTRY",
+      "repository_path": "TITMAS/README.md"
+    },
+    {
+      "id": "CONTRIBUTING",
+      "repository_path": "CONTRIBUTING.md"
+    },
+    {
+      "id": "FIRST_CONTRIBUTION",
+      "repository_path": "TITMAS/FIRST_CONTRIBUTION.md"
+    },
+    {
+      "id": "AGENT_ENTRY",
+      "repository_path": "agent-index.json"
+    },
+    {
+      "id": "LLMS_ENTRY",
+      "repository_path": "llms.txt"
+    },
+    {
+      "id": "STARTER_TASKS",
+      "repository_path": "TITMAS/community/STARTER_TASKS.md"
+    },
+    {
+      "id": "SPECIFICATION_REGISTRY",
+      "repository_path": "TITMAS/specifications/registry.yaml"
+    }
+  ],
+  "conformance": {
+    "working_directory": "digital-biosphere-architecture",
+    "command": "python3 TITMAS/conformance/harness.py",
+    "script_path": "TITMAS/conformance/harness.py"
+  },
+  "task_registry": "TITMAS/agent-native/tasks/task-registry.json",
+  "security": {
+    "transport": "GITHUB_PRIVATE_VULNERABILITY_REPORTING",
+    "url": "https://github.com/joy7758/digital-biosphere-architecture-specification/security/advisories/new",
+    "active_at_live_verification": true
+  },
+  "non_claims": {
+    "community_established": false,
+    "first_external_contribution_cycle_complete": false,
+    "stable_standard_available": false,
+    "certification_available": false,
+    "commercial_offer_available": false
+  },
+  "live_github_truth": false,
+  "live_verification_required": true
+}

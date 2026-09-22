@@ -1,0 +1,15 @@
+{
+  "artifact_type": "TITMAS_SCOUT_POST_ACTION_OBSERVATION",
+  "run_id": "2026-08-02-praxis-ai-194-agent-audit",
+  "observed_at": "2026-08-02T08:15:00Z",
+  "source": "https://github.com/praxis-proxy/ai/issues/194",
+  "state": "OPEN",
+  "assignees": [],
+  "comment_count": 0,
+  "updated_at": "2026-07-23T09:23:12Z",
+  "external_action_observed": false,
+  "maintainer_feedback_observed": false,
+  "acceptance_observed": false,
+  "adoption_observed": false,
+  "revenue_observed": false
+}

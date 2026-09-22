@@ -1,0 +1,53 @@
+{
+  "record_id": "TITMAS-COMMUNITY-INTEGRATION-ROLE-ASSIGNMENT-2026-07-29",
+  "decision_reference": "TITMAS-OPEN-STANDARDS-COMMUNITY-INTEGRATION-D01",
+  "status": "ACTIVE_FOR_INTEGRATION_CANDIDATE_ONLY",
+  "term_start": "2026-07-29",
+  "term_expires": "2026-09-30T23:59:59+08:00",
+  "revocable": true,
+  "assignments": [
+    {
+      "role": "INTERIM_MAINTAINER",
+      "assignee_ref": "zhangbin",
+      "public_id": "Bin_Zhang",
+      "github_ref": "joy7758"
+    },
+    {
+      "role": "SECURITY_PROCESS_OWNER",
+      "assignee_ref": "zhangbin",
+      "public_id": "Bin_Zhang",
+      "github_ref": "joy7758"
+    },
+    {
+      "role": "APPEAL_AND_EMERGENCY_OWNER",
+      "assignee_ref": "zhangbin",
+      "public_id": "Bin_Zhang",
+      "github_ref": "joy7758"
+    }
+  ],
+  "allowed_responsibilities": [
+    "PROPOSAL_TRIAGE",
+    "INTEGRATION_CANDIDATE_REVIEW",
+    "CONFORMANCE_FAILURE_DISPOSITION",
+    "SECURITY_REPORT_ROUTING",
+    "COMMUNITY_EMERGENCY_STOP",
+    "HUMAN_APPEAL_HANDLING",
+    "DRAFT_PR_MERGE_RECOMMENDATION"
+  ],
+  "not_granted": [
+    "DBOS_AUTHORITY",
+    "SAEE_AUTHORITY",
+    "EVIDENCE_TRUTH_OWNERSHIP",
+    "CERTIFICATION_AUTHORITY",
+    "COMMERCIAL_AUTHORITY",
+    "RELEASE_AUTHORITY",
+    "PERMANENT_MAINTAINER_STATUS",
+    "AUTOMATIC_MERGE",
+    "AUTOMATIC_STABLE_PROMOTION"
+  ],
+  "invariants": [
+    "TEMPORARY_ROLE_NE_PERMANENT_AUTHORITY",
+    "MAINTAINER_NE_ARCHITECTURE_AUTHORITY",
+    "SECURITY_OWNER_NE_SECURITY_CERTIFIER"
+  ]
+}

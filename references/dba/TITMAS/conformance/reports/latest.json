@@ -1,0 +1,136 @@
+{
+  "report_version": "1.0.0",
+  "profile": "TITMAS_DEVELOPMENT_CONFORMANCE",
+  "status": "PASS",
+  "checks": [
+    {
+      "id": "registries",
+      "status": "PASS",
+      "details": {
+        "registry_entries_checked": 11,
+        "maturity_states_checked": 7
+      }
+    },
+    {
+      "id": "frontmatter",
+      "status": "PASS",
+      "details": {
+        "proposal_frontmatter_checked": 3
+      }
+    },
+    {
+      "id": "fixtures",
+      "status": "PASS",
+      "details": {
+        "positive_cases_passed": 1,
+        "negative_cases_rejected": 8
+      }
+    },
+    {
+      "id": "stage5_contributions",
+      "status": "PASS",
+      "details": {
+        "stage5_contribution_schemas_checked": 5,
+        "canonical_conformance_reused": true,
+        "prohibited_elevation_states": 4
+      }
+    },
+    {
+      "id": "community_status",
+      "status": "PASS",
+      "details": {
+        "community_invariants_checked": 30,
+        "interim_role_assignments_checked": 3
+      }
+    },
+    {
+      "id": "merge_admission_boundary",
+      "status": "PASS",
+      "details": {
+        "stage_consistency_checks": 15,
+        "active_titmas_issue_template_count": 4,
+        "active_titmas_pull_request_template_count": 1,
+        "dormant_template_hashes_checked": 5,
+        "dormant_issue_templates_structurally_checked": 4,
+        "dormant_pr_templates_structurally_checked": 1,
+        "positive_cases_passed": 2,
+        "negative_cases_rejected": 8
+      }
+    },
+    {
+      "id": "internal_reviews",
+      "status": "PASS",
+      "details": {
+        "review_sessions_checked": 4,
+        "independent_lineages_checked": 4,
+        "findings_checked": 3
+      }
+    },
+    {
+      "id": "agent_native_surfaces",
+      "status": "PASS",
+      "details": {
+        "canonical_machine_entries": 1,
+        "agent_participants_checked": 0,
+        "independent_lineages_checked": 0,
+        "agent_tasks_checked": 18,
+        "agent_protocol_examples_checked": 10,
+        "authority_invariants_checked": 9
+      }
+    },
+    {
+      "id": "agent_native_adversarial",
+      "status": "PASS",
+      "details": {
+        "adversarial_cases_rejected": 22,
+        "adversarial_cases_executed": 22
+      }
+    },
+    {
+      "id": "bounded_evolution_surfaces",
+      "status": "PASS",
+      "details": {
+        "machine_surfaces_checked": 8,
+        "normative_schemas_checked": 7,
+        "architecture_only": true,
+        "executable_engine_files": 0,
+        "evolution_run_files": 0
+      }
+    },
+    {
+      "id": "public_entry_consistency",
+      "status": "PASS",
+      "details": {
+        "public_entry_consistency_tests_passed": 10,
+        "checks": [
+          "PE-01",
+          "PE-02",
+          "PE-03",
+          "PE-04",
+          "PE-05",
+          "PE-06",
+          "PE-07",
+          "PE-08",
+          "PE-09",
+          "PE-10"
+        ],
+        "repository_entries_checked": 7,
+        "welcome_issue_body_sha256": "24bbbfe13bce04de9a1fafafb2c28bfaad2a5e85c4f743c857333546d1881e6e",
+        "live_github_truth": false
+      }
+    },
+    {
+      "id": "local_links",
+      "status": "PASS",
+      "details": {
+        "local_links_checked": 133
+      }
+    }
+  ],
+  "non_claims": [
+    "CONFORMANCE_NE_TRUTH",
+    "CONFORMANCE_NE_AUTHORIZATION",
+    "CONFORMANCE_NE_ADOPTION",
+    "CONFORMANCE_NE_CERTIFICATION"
+  ]
+}

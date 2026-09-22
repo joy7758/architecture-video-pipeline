@@ -1,0 +1,21 @@
+{
+  "limits_id": "TITMAS-D19-MUTATION-LIMITS-2.1",
+  "version": "2.1.0",
+  "max_discovery_retries": 2,
+  "max_reproduction_attempts": 2,
+  "max_variant_generation_rounds": 1,
+  "max_patch_variants_per_problem": 3,
+  "required_variant_kinds": ["MINIMAL_REPAIR", "ALTERNATIVE_REPAIR", "NO_CHANGE_BASELINE"],
+  "max_patch_prs": 1,
+  "max_canary_attempts": 1,
+  "max_autonomous_rollback_attempts": 1,
+  "limit_reached_status": "BLOCKED_LIMIT_REACHED",
+  "human_review_required_after_limit": true,
+  "forbidden_loops": [
+    "INFINITE_RETRY",
+    "INFINITE_PR_GENERATION",
+    "PROMPT_ONLY_RETRY_LOOP",
+    "MODEL_SWITCH_LOOP",
+    "OBSERVABILITY_EXPANSION_LOOP"
+  ]
+}

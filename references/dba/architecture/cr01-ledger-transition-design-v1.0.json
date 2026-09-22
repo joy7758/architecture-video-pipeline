@@ -1,0 +1,56 @@
+{
+  "schema_version": "1.0",
+  "design_id": "TITMAS-CR01-LEDGER-TRANSITION-DESIGN",
+  "decision_reference": "CR01-D02",
+  "decision_status": "ACCEPTED_DESIGN_ONLY",
+  "decided_by_ref": "zhangbin",
+  "decided_at": "2026-07-31T18:44:30+08:00",
+  "retained_facts": {
+    "historical_receipts": 1661,
+    "signatures_valid": 1659,
+    "signatures_unverifiable": 2,
+    "chain_failures": 0,
+    "missing_key_reference": "postgres-integration-key",
+    "legacy_verification": "INCOMPLETE_KEY_UNAVAILABLE"
+  },
+  "options": {
+    "A_QUARANTINE_ONLY": "REJECTED_AS_SUFFICIENT_REMEDY",
+    "B_UNANCHORED_CLEAN_LEDGER": "REJECTED",
+    "C_IMMUTABLE_MANIFEST_AND_ANCHORED_CLEAN_EPOCH": "RECOMMENDED_NOT_AUTHORIZED"
+  },
+  "recommended_option": {
+    "id": "C_IMMUTABLE_MANIFEST_AND_ANCHORED_CLEAN_EPOCH",
+    "legacy_ledger_mode": "IMMUTABLE_READ_ONLY",
+    "exception_recording": "SIGNED_PRIVATE_TRANSITION_MANIFEST",
+    "new_epoch_scope": "ONE_ACTIVE_EPOCH_PER_TENANT",
+    "anchor": [
+      "LEGACY_TENANT_CHAIN_TIP_HASH",
+      "TRANSITION_MANIFEST_DIGEST"
+    ],
+    "legacy_validity_override": false,
+    "second_truth_source_created": false
+  },
+  "agent_review": {
+    "model": "qwen3.7-max",
+    "role_scoped_sessions": 3,
+    "option_c_selections": 3,
+    "authority_effect": false
+  },
+  "authorization": {
+    "implementation": false,
+    "gateway_code_change": false,
+    "database_migration": false,
+    "second_deployment_retry": false,
+    "cr01_restart": false,
+    "soak_execution": false,
+    "production_ready": false
+  },
+  "next_human_decision": "CR01-D03_AUTHORIZE_OR_REJECT_OPTION_C_IMPLEMENTATION_AND_CAP_EXCEPTION",
+  "authority_boundaries": {
+    "evidence_is_truth": false,
+    "verification_is_authorization": false,
+    "design_is_implementation": false,
+    "legacy_anchor_is_legacy_verification": false,
+    "quarantine_is_allowlist": false
+  }
+}

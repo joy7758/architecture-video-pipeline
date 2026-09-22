@@ -1,0 +1,42 @@
+{
+  "contract_version": "0.1.0",
+  "status": "LOCAL_EPHEMERAL_IMPLEMENTED_NOT_DEPLOYED",
+  "version_prefix": "/v1",
+  "operations": [
+    "GET /health",
+    "GET /v1/capabilities",
+    "POST /v1/evaluate",
+    "POST /v1/verify"
+  ],
+  "input_schema": {
+    "required": [
+      "synthetic_request_id",
+      "declared_object",
+      "declared_profile",
+      "contract_version",
+      "options"
+    ],
+    "data_policy": "SYNTHETIC_ONLY"
+  },
+  "output_schema": {
+    "required": [
+      "accepted_request_id",
+      "result_status",
+      "public_reason_code",
+      "limitations",
+      "correlation_id"
+    ],
+    "result_status_values": [
+      "CONDITIONALLY_RECOMMENDED",
+      "NOT_RECOMMENDED",
+      "NOT_ASSESSED"
+    ]
+  },
+  "authority_effect": "NONE",
+  "core_source_returned": false,
+  "endpoint_implemented": true,
+  "endpoint_persisted": false,
+  "endpoint_deployed": false,
+  "loopback_only": true,
+  "real_model_call_authorized": false
+}

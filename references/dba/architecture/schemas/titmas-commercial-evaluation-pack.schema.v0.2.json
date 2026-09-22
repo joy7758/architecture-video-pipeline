@@ -1,0 +1,165 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:titmas:schema:commercial-evaluation-pack:0.2",
+  "title": "TITMAS Commercial Evaluation Pack Schema v0.2",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "$schema",
+    "document_id",
+    "version",
+    "status",
+    "observed_at",
+    "supersedes",
+    "compatibility",
+    "positioning",
+    "evaluation_scope",
+    "public_artifact",
+    "object_contracts",
+    "first_run",
+    "external_agent_first_run_validation",
+    "commercial_truth",
+    "next_gate",
+    "effects"
+  ],
+  "properties": {
+    "$schema": {"const": "./architecture/schemas/titmas-commercial-evaluation-pack.schema.v0.2.json"},
+    "document_id": {"const": "TITMAS-COMMERCIAL-EVALUATION-PACK-0.2"},
+    "version": {"const": "0.2.0"},
+    "status": {"const": "AGENT_FIRST_RUN_VALIDATED_NOT_AVAILABLE_OFFERING"},
+    "observed_at": {"type": "string", "format": "date"},
+    "supersedes": {"const": "TITMAS-COMMERCIAL-EVALUATION-PACK-v0.1.json"},
+    "compatibility": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["core_evaluation_contract_backward_compatible", "new_required_surface", "runtime_or_permission_effect"],
+      "properties": {
+        "core_evaluation_contract_backward_compatible": {"const": true},
+        "new_required_surface": {"const": "external_agent_first_run_validation"},
+        "runtime_or_permission_effect": {"const": false}
+      }
+    },
+    "positioning": {
+      "type": "object",
+      "required": ["en", "zh", "value_problem", "primary_customer"],
+      "properties": {
+        "en": {"const": "Trusted Multi-Agent Infrastructure"},
+        "zh": {"const": "可信多智能体基础设施"},
+        "value_problem": {"const": "AGENT_EXECUTION_ACCOUNTABILITY"},
+        "primary_customer": {"const": "AI_AGENT"}
+      }
+    },
+    "evaluation_scope": {
+      "type": "object",
+      "required": ["can_evaluate", "cannot_evaluate"],
+      "properties": {
+        "can_evaluate": {"type": "array", "minItems": 5, "uniqueItems": true, "items": {"type": "string"}},
+        "cannot_evaluate": {"type": "array", "minItems": 9, "uniqueItems": true, "items": {"type": "string"}}
+      }
+    },
+    "public_artifact": {
+      "type": "object",
+      "required": ["distribution", "version", "python_requires", "url", "sha256", "install_command", "cli_entry"],
+      "properties": {
+        "distribution": {"const": "digital-biosphere-os-preview"},
+        "version": {"const": "0.1.0.dev0"},
+        "python_requires": {"const": ">=3.11"},
+        "url": {"type": "string", "format": "uri"},
+        "sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+        "install_command": {"type": "string", "minLength": 50},
+        "cli_entry": {"type": "string", "minLength": 10}
+      }
+    },
+    "object_contracts": {"type": "array", "minItems": 5, "maxItems": 5, "uniqueItems": true, "items": {"type": "string"}},
+    "first_run": {
+      "type": "object",
+      "required": ["guide", "synthetic_fixture", "command", "expected_result", "pass_meaning", "exact_wheel_filename_required", "dependency_installation_required"],
+      "properties": {
+        "guide": {"const": "TITMAS-FIRST-RUN-v0.1.md"},
+        "synthetic_fixture": {"const": "examples/titmas-first-run/entity-object.synthetic.v0.1.json"},
+        "command": {"type": "string", "minLength": 10},
+        "expected_result": {"const": "PASS"},
+        "pass_meaning": {"const": "LOCAL_STRUCTURE_AND_GOVERNANCE_CONSTRAINTS_PASS_ONLY"},
+        "exact_wheel_filename_required": {"const": true},
+        "dependency_installation_required": {"const": true}
+      }
+    },
+    "external_agent_first_run_validation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "protocol",
+        "report",
+        "composite_result",
+        "technical_final_run_pass",
+        "technical_failed_attempts_preserved",
+        "public_transport_failures_preserved",
+        "sessions_executed",
+        "schema_valid_sessions",
+        "distinct_providers",
+        "evaluation_recommended",
+        "production_not_recommended",
+        "critical_boundary_failures",
+        "retry_fallback_substitution_json_repair"
+      ],
+      "properties": {
+        "status": {"const": "PASS_EVALUATION_ENTRY_AGENT_RECOMMENDABLE"},
+        "protocol": {"type": "string", "minLength": 1},
+        "report": {"type": "string", "minLength": 1},
+        "composite_result": {"type": "string", "minLength": 1},
+        "technical_final_run_pass": {"const": true},
+        "technical_failed_attempts_preserved": {"const": 2},
+        "public_transport_failures_preserved": {"const": 3},
+        "sessions_executed": {"const": 4},
+        "schema_valid_sessions": {"const": 4},
+        "distinct_providers": {"const": 2},
+        "evaluation_recommended": {"const": 4},
+        "production_not_recommended": {"const": 4},
+        "critical_boundary_failures": {"const": 0},
+        "retry_fallback_substitution_json_repair": {"const": 0}
+      }
+    },
+    "commercial_truth": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["evaluation_package_prepared", "evaluation_entry_agent_recommendable", "available_offering", "customers_verified", "contracts_created", "revenue_verified", "sla_defined", "production_ready", "certification_available"],
+      "properties": {
+        "evaluation_package_prepared": {"const": true},
+        "evaluation_entry_agent_recommendable": {"const": true},
+        "available_offering": {"const": false},
+        "customers_verified": {"const": 0},
+        "contracts_created": {"const": 0},
+        "revenue_verified": {"const": false},
+        "sla_defined": {"const": false},
+        "production_ready": {"const": false},
+        "certification_available": {"const": false}
+      }
+    },
+    "next_gate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name", "execution_authorized", "success_requires"],
+      "properties": {
+        "name": {"const": "PUBLIC_ENTRY_AVAILABILITY_AND_AGENT_AUTOMATION_HARDENING"},
+        "execution_authorized": {"const": false},
+        "success_requires": {"type": "array", "minItems": 5, "uniqueItems": true, "items": {"type": "string"}}
+      }
+    },
+    "effects": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["authority", "permission", "runtime", "agent", "entity", "evidence_truth", "certification", "commercial_offer"],
+      "properties": {
+        "authority": {"const": false},
+        "permission": {"const": false},
+        "runtime": {"const": false},
+        "agent": {"const": false},
+        "entity": {"const": false},
+        "evidence_truth": {"const": false},
+        "certification": {"const": false},
+        "commercial_offer": {"const": false}
+      }
+    }
+  }
+}

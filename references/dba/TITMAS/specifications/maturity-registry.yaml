@@ -1,0 +1,18 @@
+{
+  "registry_version": "1.0.0",
+  "default": "Development",
+  "states": [
+    {"id":"Development","order":0,"breaking_changes_allowed":true},
+    {"id":"Alpha","order":1,"breaking_changes_allowed":true},
+    {"id":"Beta","order":2,"breaking_changes_allowed":"WITH_MIGRATION_NOTICE"},
+    {"id":"Release Candidate","order":3,"breaking_changes_allowed":"EXCEPTION_ONLY"},
+    {"id":"Stable","order":4,"breaking_changes_allowed":false},
+    {"id":"Deprecated","order":5,"history_retained":true},
+    {"id":"Archived","order":6,"history_retained":true}
+  ],
+  "invariants": [
+    "DOCUMENT_MATURITY_NE_IMPLEMENTATION_STATUS",
+    "EXPERIMENTAL_NE_STABLE",
+    "DEPRECATED_NE_DELETED"
+  ]
+}

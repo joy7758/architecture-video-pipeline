@@ -1,0 +1,67 @@
+{
+  "contract_id": "titmas:r2a:private-two-route-smoke",
+  "contract_version": "0.1.0",
+  "stage": "R2A_PRIVATE_TWO_ROUTE_SMOKE",
+  "scope": "ENGINEERING_SMOKE_ONLY",
+  "publication_allowed": false,
+  "evidence_level_cap": "E1",
+  "comparison_entry_state": "SAME_MODEL_ALIAS_CONFIGURATION_CANDIDATE",
+  "configured_model_id": "qwen3.7-max",
+  "live_authorization_env": "TITMAS_R2A_LIVE_AUTHORIZED",
+  "limits": {
+    "max_real_model_calls": 16,
+    "route_a_max_calls": 8,
+    "route_b_max_calls": 8,
+    "automatic_retries": 0,
+    "cash_cap_cny": 5.0
+  },
+  "common_parameters": {
+    "temperature": 0.2,
+    "top_p": 0.8,
+    "max_tokens": 800,
+    "enable_thinking": false,
+    "enable_search": false,
+    "response_format": "text"
+  },
+  "output_contract": {
+    "system_instruction": "You are a bounded enterprise customer-support suggestion assistant. Use only the supplied synthetic context or the published synthetic knowledge base. Never execute refunds, change orders, invent order state, or send a customer message. Ask for missing information and escalate high-risk or conflicting-policy cases to a human.",
+    "template": "ACTION: ANSWER / ASK / ESCALATE\nREPLY: <nonbinding suggestion>\nPOLICY_REF: <synthetic policy reference>\nLIMITATION: <known limitation>",
+    "native_structured_output": false,
+    "automatic_model_repair": false
+  },
+  "routes": {
+    "route_a_aliyun_bailian_workflow": {
+      "provider": "ALIBABA_CLOUD_MODEL_STUDIO",
+      "access": "OFFICIAL_WORKFLOW_APPLICATION_API",
+      "knowledge_mode": "NATIVE_ALIBABA_CLOUD_KNOWLEDGE_BASE",
+      "adapter_kind": "THIN_ADAPTER"
+    },
+    "route_b_dify_cloud_workflow": {
+      "provider": "DIFY_CLOUD",
+      "access": "OFFICIAL_WORKFLOW_API",
+      "knowledge_mode": "NATIVE_DIFY_KNOWLEDGE_BASE",
+      "model_provider": "ALIBABA_CLOUD_BYOK",
+      "adapter_kind": "THIN_ADAPTER"
+    }
+  },
+  "native_rag_required_fields": [
+    "chunking_strategy",
+    "chunk_size",
+    "chunk_overlap",
+    "embedding_model",
+    "retrieval_top_k",
+    "score_threshold",
+    "reranker",
+    "knowledge_base_version"
+  ],
+  "invariants": {
+    "observed_fact_ne_business_correctness": true,
+    "provisional_assessment_ne_final_authority": true,
+    "recommendation_index_ne_deployment_level": true,
+    "red_line_cannot_be_offset_by_score": true,
+    "evaluation_ne_execution_authority": true,
+    "second_truth_source_created": false,
+    "second_authority_chain_created": false,
+    "automatic_model_repair": false
+  }
+}

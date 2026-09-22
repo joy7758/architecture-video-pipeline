@@ -1,0 +1,86 @@
+{
+  "artifact_type": "TITMAS_SCOUT_AGENT_REVIEW_INPUT",
+  "ruleset_version": "0.1",
+  "review_run_id": "2026-08-02-ca2a-pr-76-current-head-codex-review-request",
+  "observed_at": "2026-08-02T06:36:30Z",
+  "requested_action": "POST_BOUNDED_TECHNICAL_COMMENT",
+  "target": {
+    "type": "GITHUB_PULL_REQUEST_COMMENT",
+    "reference": "agentrust-io/ca2a#76",
+    "url": "https://github.com/agentrust-io/ca2a/pull/76"
+  },
+  "source_issue": {
+    "reference": "agentrust-io/ca2a#36",
+    "state": "OPEN",
+    "selected_checklist_item": "ACTION-008 invalid delegation signature ordering"
+  },
+  "duplicate_check": {
+    "existing_exact_comment_count": 0,
+    "current_head_codex_review_count": 0,
+    "duplicate_action008_implementation_found": false
+  },
+  "pull_request": {
+    "state": "OPEN",
+    "draft": false,
+    "head_sha": "0a1ffa6710d25f58515b2dca7e0619e134c0a43e",
+    "base_sha": "566e587cd46ef6b88a9701531c96313f0518923d",
+    "mergeable": true,
+    "merge_state": "BLOCKED",
+    "fork_branch_updated": true
+  },
+  "diff": {
+    "content_digest": "sha256:82688a11ed0f103c75cabc80f6c7e16fbd51bee0766a52043d0894ff2d066731",
+    "files": ["tests/conformance/README.md", "tests/conformance/test_profile_conformance.py"],
+    "production_code_changed_by_contribution": false
+  },
+  "local_validation": {
+    "record_reference": "reports/titmas-runs/2026-08-02-ca2a-pr-76-latest-head/ca2a-validation.json",
+    "record_digest": "sha256:0f6c7280f84fe7d0f481a66180e2c2dc2817a5aecfbc527f576ca3a46fc162d4",
+    "result": "252_PASS_3_HARDWARE_SKIP_STATIC_SECURITY_PASS"
+  },
+  "github_checks": [
+    {
+      "name": "Require maintainer approval",
+      "conclusion": "FAILURE",
+      "classification": "EXTERNAL_POLICY_BLOCKER",
+      "run_id": 30736207989
+    },
+    {
+      "name": "CI and CodeQL",
+      "conclusion": "PENDING_OR_ACTION_REQUIRED",
+      "classification": "NOT_LOCAL_CODE_FAILURE"
+    }
+  ],
+  "automation": {
+    "comment_body": "@codex review",
+    "comment_body_digest": "sha256:7750379659fbba413136c8bf4f500a59f1e03f0c36c0ab16b0a2475eb13ecb1a",
+    "codex_reviewed_commit": "b223ee41ac9e3b635651f9636a08061801b5c826",
+    "current_head_review_present": false,
+    "old_review_is_stale": true
+  },
+  "risk_evidence": {
+    "allowed_action_only": "POST_BOUNDED_TECHNICAL_COMMENT",
+    "exact_body_only": "@codex review",
+    "comment_count_limit": 1,
+    "no_issue_comment": true,
+    "no_pr_state_change": true,
+    "no_merge": true,
+    "no_secret": true
+  },
+  "history_references": [
+    {
+      "path": "reports/titmas-runs/2026-08-02-ca2a-pr-76-latest-head/action-receipt-push.json",
+      "content_digest": "sha256:fd902e52f4e14e8dbc2e482318b8c96c57c34f2a567e2be1b768fef9b0457da8"
+    },
+    {
+      "path": "reports/titmas-runs/2026-08-02-ca2a-pr-76-latest-head/agent-evidence-export/agent-evidence-verification.json",
+      "content_digest": "sha256:1806479a3ecc575773785aeba9e1865445accd8c447bc8ae70c23d1013e84180"
+    }
+  ],
+  "known_limits": [
+    "The comment requests automated review only and does not establish a passing review.",
+    "Remote CI and CodeQL have not produced passing evidence for the current head.",
+    "Maintainer acceptance, merge, adoption, revenue, and production safety remain unestablished.",
+    "No second comment is authorized even if the bot does not respond."
+  ]
+}

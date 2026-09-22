@@ -1,0 +1,42 @@
+{
+  "checkpoint_id": "stage5-contributor-plan",
+  "checkpoint_state": "DURABLE",
+  "checkpoint_payload_sha256": "dd3db27b50a9c4a32ef0f526dcaaf0f7a9541685a5f6c91eeac411bdfeed18cf",
+  "sanitized_payload_sha256": "9373f5cb59deb2bd025359985c6e6056e17ab8ce8e893d59d479a6f09e8cbda7",
+  "stage": "CONTRIBUTOR_PLAN",
+  "provider": "ALIBABA_DASHSCOPE",
+  "requested_model": "qwen3.7-max",
+  "returned_model": "qwen3.7-max",
+  "model_identity_status": "MATCH",
+  "structured_result": {
+    "problem_understood": "The sandbox requires machine-readable synthetic inputs to validate the conformance client schema preflight and loopback submission without relying on private core validation algorithms or real-world state.",
+    "contract_version": "1.0.0",
+    "relevance_preassessment": "RELEVANT",
+    "selected_operation": "EVALUATE",
+    "request_body": {
+      "selected_contribution_type": "TEST_VECTOR",
+      "task_id": "AN-04-OBJECT-GENERATION",
+      "selection_rationale": "A TEST_VECTOR directly satisfies the AN-04 expected outputs of a synthetic object and validation result by defining bounded inputs, expected conformance passes, and explicit failure behaviors for malformed payloads."
+    },
+    "expected_public_result_shape": {
+      "conformance_status": "CONFORMANCE_PASS_OR_FAIL",
+      "human_disposition_required": true
+    },
+    "decision_criteria": [
+      "The contribution is Schema-valid.",
+      "No Authority or adoption claim is created.",
+      "The customer-visible Conformance result is interpreted."
+    ],
+    "limitations": [
+      "Requires ephemeral sandbox key for loopback execution",
+      "Does not validate private core algorithms",
+      "Conformance pass does not imply standard adoption"
+    ],
+    "non_claims": [
+      "NOT_PUBLIC_RELEASE",
+      "NOT_STANDARD_ADOPTION",
+      "NO_RUNTIME_COMPATIBILITY_CLAIM",
+      "CONFORMANCE_PASS_NE_ADOPTION"
+    ]
+  }
+}

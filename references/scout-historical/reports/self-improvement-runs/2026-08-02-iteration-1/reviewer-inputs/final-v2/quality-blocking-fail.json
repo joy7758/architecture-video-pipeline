@@ -1,0 +1,9 @@
+{
+  "review_role":"QUALITY_REVIEWER",
+  "decision":"BLOCKING_FAIL",
+  "input_digest":"sha256:6a6f929b34dacf637f614bba65e24fcecdf5ef668b3958f1402ca6ce41b00fc7",
+  "timestamp":"2026-08-02T06:48:00Z",
+  "blocking_reason":"REGRESSION_FIXTURE_DID_NOT_EXERCISE_AMBIGUOUS_SHORTHAND",
+  "required_fix":"Include literal agentrust-io/ca2a#76 and prove restored shorthand matching fails the test.",
+  "external_write_performed":false
+}

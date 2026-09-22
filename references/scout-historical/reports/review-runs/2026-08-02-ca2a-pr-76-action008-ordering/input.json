@@ -1,0 +1,207 @@
+{
+  "artifact_type": "TITMAS_SCOUT_AGENT_REVIEW_INPUT",
+  "ruleset_version": "0.1",
+  "review_run_id": "2026-08-02-ca2a-pr-76-action008-ordering",
+  "observed_at": "2026-08-02T03:49:51Z",
+  "requested_action": "MARK_PR_READY_FOR_REVIEW",
+  "target": {
+    "type": "GITHUB_PULL_REQUEST",
+    "reference": "agentrust-io/ca2a#76",
+    "url": "https://github.com/agentrust-io/ca2a/pull/76"
+  },
+  "source_issue": {
+    "reference": "agentrust-io/ca2a#36",
+    "url": "https://github.com/agentrust-io/ca2a/issues/36",
+    "state": "OPEN",
+    "locked": false,
+    "comments": 1,
+    "updated_at": "2026-07-29T07:27:29Z",
+    "selected_checklist_item": "ACTION-path invalid-signature case classified as provenance-invalid with ordering coverage"
+  },
+  "duplicate_check": {
+    "base_commit": "76c1a31193ff6a70b732cf8f668935808002e273",
+    "target_case_present_on_base": false,
+    "open_pull_request_search": "ONLY_TARGET_PR_76_FOUND",
+    "search_terms": "ACTION-008 invalid signature",
+    "related_open_pr_80_scope": "ACTION-009_THROUGH_ACTION-011_NOT_DUPLICATE",
+    "codex_feedback_duplicate_implementation_found": false
+  },
+  "pull_request": {
+    "number": 76,
+    "state": "OPEN",
+    "draft": false,
+    "action_already_satisfied": true,
+    "action_execution_requested": false,
+    "review_purpose": "REVALIDATE_CURRENT_HEAD_FOR_READY_RETENTION",
+    "title": "test: cover invalid delegation signature in action evidence",
+    "title_and_body_match_bounded_scope": true,
+    "body_digest": "sha256:a87c1075c95dbb3b638eac02affe164115cae36350fd869d3453cd21e116011e",
+    "maintainer_can_modify": true,
+    "mergeable": true,
+    "mergeable_state": "BLOCKED",
+    "base": {
+      "repository": "agentrust-io/ca2a",
+      "branch": "main",
+      "pr_base_ref_commit": "76c1a31193ff6a70b732cf8f668935808002e273",
+      "current_branch_tip": "c0be574c6af4fca464659eed559e611f8f9d92ce",
+      "merge_base_with_head": "76c1a31193ff6a70b732cf8f668935808002e273",
+      "head_ahead_by": 2,
+      "head_behind_by": 2
+    },
+    "head": {
+      "repository": "joy7758/ca2a",
+      "branch": "contrib/issue-36-action-invalid-signature",
+      "commit": "9fb5c3b112c1f2d083bc97a12d55f7a583190b9f",
+      "tree": "b831d2d3ff12b7a171a1996fdba96fec13dfecfe"
+    },
+    "prior_reviewed_head": "b223ee41ac9e3b635651f9636a08061801b5c826",
+    "commit_count": 2,
+    "changed_file_count": 2,
+    "additions": 33,
+    "deletions": 1,
+    "requested_reviewers": [],
+    "requested_teams": [],
+    "human_reviews": [],
+    "auto_merge": null
+  },
+  "diff": {
+    "content_digest": "sha256:134716257464e3b7fdb72402855e74dca58031dcbfc133c6e628fe2057352bfb",
+    "content_representation": "GET /repos/agentrust-io/ca2a/pulls/76 with Accept: application/vnd.github.v3.diff; exact response bytes",
+    "local_git_diff_digest": "sha256:82688a11ed0f103c75cabc80f6c7e16fbd51bee0766a52043d0894ff2d066731",
+    "local_git_diff_representation": "git diff --no-ext-diff --no-color --no-renames 76c1a31193ff6a70b732cf8f668935808002e273..9fb5c3b112c1f2d083bc97a12d55f7a583190b9f; exact stdout bytes",
+    "action_test_file_digest": "sha256:034bb82405fceb8a0861fc6ddf91652d7f3e4ea5495f297c51c28ec9821796c2",
+    "check": "PASS",
+    "commit_signed_off": true,
+    "files": [
+      "tests/conformance/README.md",
+      "tests/conformance/test_profile_conformance.py"
+    ],
+    "latest_commit_files": [
+      "tests/conformance/test_profile_conformance.py"
+    ],
+    "production_code_changed": false,
+    "dependencies_changed": false,
+    "runtime_verifier_changed": false,
+    "protocol_fields_changed": false,
+    "issue_scope_expanded": false
+  },
+  "local_validation": {
+    "record_reference": "reports/review-runs/2026-08-02-ca2a-pr-76-action008-ordering/local-validation.json",
+    "record_digest": "sha256:44578dada59ad0981e81fa0d0335e2835c8f9230b3bb5d20dc40a6cdd0062a47",
+    "new_test": {
+      "passed": 1,
+      "failed": 0
+    },
+    "conformance": {
+      "passed": 31,
+      "failed": 0,
+      "skipped": 0
+    },
+    "full_suite": {
+      "collected": 255,
+      "passed": 252,
+      "failed": 0,
+      "skipped_hardware_fixtures": 3
+    },
+    "ordering_controls": {
+      "authorization_invalid_reachable": true,
+      "valid_negative_outcome_reachable": true,
+      "invalid_provenance_preempts_both": true
+    },
+    "ruff": "PASS",
+    "mypy": "PASS",
+    "bandit": "PASS",
+    "pip_audit": "PASS",
+    "git_diff_check": "PASS"
+  },
+  "github_checks": [
+    {
+      "name": "Require maintainer approval / gate",
+      "head_commit": "9fb5c3b112c1f2d083bc97a12d55f7a583190b9f",
+      "status": "COMPLETED",
+      "conclusion": "FAILURE",
+      "url": "https://github.com/agentrust-io/ca2a/actions/runs/30713050214",
+      "failure_message": "Waiting for maintainer approval of the current head commit before merging.",
+      "meaning": "UPSTREAM_MERGE_ACCEPTANCE_GATE_NOT_INTERNAL_READY_RETENTION_FAILURE",
+      "code_failure": false,
+      "security_failure": false,
+      "test_failure": false
+    },
+    {
+      "name": "CI",
+      "head_commit": "9fb5c3b112c1f2d083bc97a12d55f7a583190b9f",
+      "status": "COMPLETED",
+      "conclusion": "ACTION_REQUIRED",
+      "url": "https://github.com/agentrust-io/ca2a/actions/runs/30713051643",
+      "meaning": "UPSTREAM_WORKFLOW_AWAITS_MAINTAINER_APPROVAL_TO_RUN",
+      "code_failure": false,
+      "test_failure": false,
+      "remote_tests_executed": false
+    },
+    {
+      "name": "CodeQL",
+      "head_commit": "9fb5c3b112c1f2d083bc97a12d55f7a583190b9f",
+      "status": "COMPLETED",
+      "conclusion": "ACTION_REQUIRED",
+      "url": "https://github.com/agentrust-io/ca2a/actions/runs/30713051626",
+      "meaning": "UPSTREAM_WORKFLOW_AWAITS_MAINTAINER_APPROVAL_TO_RUN",
+      "security_failure": false,
+      "remote_scan_executed": false
+    }
+  ],
+  "automation": {
+    "bot_comment_count": 1,
+    "contributor_check_from_prior_head": {
+      "profile": "HIGH",
+      "credential": "NONE",
+      "overall": "HIGH",
+      "not_reexecuted_for_current_head": true
+    },
+    "codex_review": {
+      "reviewed_commit": "b223ee41ac9e3b635651f9636a08061801b5c826",
+      "severity": "P2",
+      "summary": "Exercise competing downstream outcomes",
+      "thread_resolved": false,
+      "thread_outdated_after_new_commit": true,
+      "remediation_commit": "9fb5c3b112c1f2d083bc97a12d55f7a583190b9f"
+    },
+    "human_maintainer_feedback": "NONE"
+  },
+  "risk_evidence": {
+    "sensitive_material_scan": "PASS",
+    "license_file": "LICENSE",
+    "license_or_dependency_file_changed": false,
+    "personal_or_restricted_data_added_to_file_diff": false,
+    "dco_signoff_present_on_new_commit": true,
+    "explicit_user_commit_and_push_instruction_present": true,
+    "marketing_or_outreach_content_added": false,
+    "protected_upstream_branch_modified": false,
+    "force_push_used": false,
+    "pr_comment_or_review_thread_write_performed": false,
+    "pr_state_transition_performed": false,
+    "irreversible_action_requested_by_review": false
+  },
+  "history_references": [
+    {
+      "path": "reports/review-runs/2026-08-02-ca2a-pr-76-ready/run.json",
+      "content_digest": "sha256:78b9f0036bd4f3064d35230b43655ff698b507870a7fb198d16262177325bbb2"
+    },
+    {
+      "path": "reports/review-runs/2026-08-02-ca2a-pr-76-ready/decision.json",
+      "content_digest": "sha256:6e9e005ba9847876d542e7cb61e369746d0e7ff8c6104d532461b5f0230350cf"
+    },
+    {
+      "path": "reports/review-runs/2026-08-02-ca2a-pr-76-action008-ordering/prior-decision-invalidation.json",
+      "content_digest": "sha256:8731457fcec22368b0b6e1829162f0b9a7de4a0c62344a5b594d42cc031d3ed0"
+    }
+  ],
+  "known_limits": [
+    "PR #76 was already Ready for review before this remediation task began; no state transition is requested by this review run.",
+    "No human maintainer has reviewed or approved the current head.",
+    "The upstream maintainer approval gate remains failed until an eligible maintainer approves the current head.",
+    "The prior contributor reputation check did not re-run for the new head.",
+    "Upstream CI and CodeQL are action_required and have not executed for the current head; local validation passed but is not remote CI evidence.",
+    "Current upstream main advanced to c0be574c6af4fca464659eed559e611f8f9d92ce after the PR base snapshot; the PR is two commits behind and remains GitHub-mergeable, but merge-time revalidation is required.",
+    "Agent quorum ALLOW does not resolve the outdated Codex thread, establish maintainer acceptance, merge, adoption, production safety, customer acquisition, or revenue."
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "map_id": "TITMAS-D19-CANONICAL-OWNER-MAP-2.1",
+  "version": "2.1.0",
+  "source_policy": "DBA_RESPONSIBILITY_ROUTING_ONLY",
+  "normative_owner_repository": "joy7758/digital-biosphere-architecture-specification",
+  "implementation_owner_repository": "joy7758/titmac-scout",
+  "default_resolution": "HOLD_OWNER_REVIEW_REQUIRED",
+  "routes": [
+    {
+      "problem_types": ["MACHINE_ENTRY_DRIFT", "SCHEMA_INDEX_DRIFT", "BROKEN_PUBLIC_LINK", "STALE_CAPABILITY_REGISTRY", "STALE_TASK_REGISTRY", "STALE_COMMUNITY_STATUS", "STANDARD_ALIGNMENT_GAP", "AUTHORITY_BOUNDARY_OVERCLAIM"],
+      "canonical_component": "DBA_TITMAS_GOVERNANCE_SURFACES",
+      "canonical_owner_repository": "joy7758/digital-biosphere-architecture-specification",
+      "authorized_change_path": "BOUNDED_BRANCH_AND_DRAFT_PR",
+      "authority_reference": "TITMAS-AGENT-NATIVE-DISCOVERY-SELF-HEALING-AND-EVOLUTION-D19-V2-1"
+    },
+    {
+      "problem_types": ["SDK_CONTRACT_DRIFT", "MCP_MAPPING_DRIFT", "AGENT_INTEGRATION_FAILURE", "AGENT_REUSE_FAILURE"],
+      "canonical_component": "TITMAS_PUBLIC_INTEGRATIONS",
+      "canonical_owner_repository": "joy7758/titmas-integrations",
+      "authorized_change_path": "CROSS_REPOSITORY_PATCH_PROPOSAL_AND_DRAFT_PR",
+      "authority_reference": "OWNER_REPOSITORY_SCOPE_REVIEW_REQUIRED"
+    },
+    {
+      "problem_types": ["CONTRACT_RUNTIME_DRIFT", "PERFORMANCE_REGRESSION", "RESOURCE_EXHAUSTION_RISK", "ROLLBACK_FAILURE"],
+      "canonical_component": "TITMAS_GATEWAY_RUNTIME",
+      "canonical_owner_repository": "joy7758/titmas-sandbox-gateway",
+      "authorized_change_path": "PROBLEM_EVIDENCE_ONLY_UNTIL_RUNTIME_AUTHORIZATION",
+      "authority_reference": "NEW_HUMAN_DECISION_REQUIRED"
+    },
+    {
+      "problem_types": ["EVIDENCE_CHAIN_INCONSISTENCY"],
+      "canonical_component": "DBOS_EXISTENCE_AND_EVIDENCE_BOUNDARY",
+      "canonical_owner_repository": "joy7758/digital-biosphere-os",
+      "authorized_change_path": "CROSS_REPOSITORY_PATCH_PROPOSAL_AND_DRAFT_PR",
+      "authority_reference": "DBOS_OWNER_SCOPE_REVIEW_REQUIRED"
+    },
+    {
+      "problem_types": ["AGENT_CAPABILITY_MISMATCH", "AGENT_SCHEMA_CONFUSION", "AGENT_TOOL_SELECTION_FAILURE", "PROTOCOL_INCOMPATIBILITY", "DEPENDENCY_CHANGE", "SECURITY_REPORT", "CORRECTNESS_REPORT", "TEST_REGRESSION", "SECURITY_REGRESSION", "EXTERNAL_REPRODUCIBLE_EVIDENCE"],
+      "canonical_component": "UNRESOLVED_UNTIL_AFFECTED_COMPONENT_IDENTIFIED",
+      "canonical_owner_repository": "HOLD_OWNER_REVIEW_REQUIRED",
+      "authorized_change_path": "NO_PATCH_UNTIL_OWNER_RESOLVED",
+      "authority_reference": "DBA_ROUTING_REVIEW_REQUIRED"
+    }
+  ],
+  "discovery_layer_is_owner_of_all_components": false,
+  "foreign_implementation_copy_allowed": false,
+  "duplicate_core_creation_allowed": false
+}

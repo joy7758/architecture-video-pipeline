@@ -1,0 +1,16 @@
+{
+  "artifact_type":"TITMAS_SCOUT_MUTATION_TEST_RESULT",
+  "iteration":1,
+  "revision":3,
+  "timestamp":"2026-08-02T06:52:00Z",
+  "mutation":"RESTORE_AMBIGUOUS_REPOSITORY_NUMBER_AS_ISSUE_MATCH",
+  "test":"DiscoveryPrototypeTest#test_existing_publication_and_review_are_not_rediscovered",
+  "result":"EXPECTED_FAILURE_OBSERVED",
+  "runs":1,
+  "assertions":8,
+  "failures":1,
+  "errors":0,
+  "failure_fact":"agentrust-io/ca2a#76 became false github:agentrust-io/ca2a:issue:76",
+  "mutation_committed":false,
+  "temporary_worktree_removed":true
+}

@@ -1,0 +1,17 @@
+{
+  "action": "PUSH_PERSONAL_BRANCH",
+  "authorization_binding": {
+    "run_id": "2026-08-02-ca2a-pr-76-latest-head",
+    "repository": "joy7758/ca2a",
+    "target": "refs/heads/contrib/issue-36-action-invalid-signature",
+    "head_sha": "0a1ffa6710d25f58515b2dca7e0619e134c0a43e",
+    "diff_digest": "sha256:82688a11ed0f103c75cabc80f6c7e16fbd51bee0766a52043d0894ff2d066731",
+    "input_digest": "sha256:0f059a8d6ce43e0dced5c3bdb6eac023c2dfa8859ca0833475b2718c166b7f09",
+    "ruleset_version": "0.1",
+    "action": "PUSH_PERSONAL_BRANCH",
+    "expires_at": "2026-08-02T08:00:00Z"
+  },
+  "force": false,
+  "remote": "fork",
+  "repository": "joy7758/ca2a"
+}

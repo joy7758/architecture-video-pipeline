@@ -1,0 +1,65 @@
+{
+  "state_id": "DBA-MCP-PROTOCOL-AUTHORITY-STATE-2026-07-29",
+  "artifact_kind": "protocol_authority_state",
+  "status": "FINAL_STABLE_RELEASE_VERIFIED_NOT_ADOPTED",
+  "observed_at": "2026-07-29",
+  "primary_repository": "DBA",
+  "source": {
+    "repository": "https://github.com/modelcontextprotocol/modelcontextprotocol",
+    "releases": "https://github.com/modelcontextprotocol/modelcontextprotocol/releases"
+  },
+  "versions": {
+    "previous_stable": {
+      "version": "2025-11-25",
+      "tag_commit": "38c84e9f93ad191d9eb26d92b945d17bd0efcaf3"
+    },
+    "release_candidate": {
+      "version": "2026-07-28-RC",
+      "tag_commit": "9d700ed62dcf86cb77475c9b81930611a9182f46",
+      "release_class": "PRE_RELEASE"
+    },
+    "current_stable": {
+      "version": "2026-07-28",
+      "tag_commit": "5f5440bb26a62e2cf3440b92da5a667efa03b267",
+      "release_class": "STABLE",
+      "verified": true
+    }
+  },
+  "correction": {
+    "superseded_claim": "2026-07-28 remains only a release candidate and 2025-11-25 remains the latest stable release",
+    "corrected_claim": "2026-07-28 is the current stable MCP specification release",
+    "effective_source": "official GitHub stable release and exact tag"
+  },
+  "sdk_observations": [
+    {
+      "sdk": "modelcontextprotocol/go-sdk",
+      "release": "v1.7.0",
+      "support_claim": "full support for protocol version 2026-07-28 as of an exact specification commit",
+      "supported_spec_commit": "f817239f4d6b1efff2c4dfc2f7af85c985d73076",
+      "support_scope": "COMMIT_BOUND_NOT_PROOF_OF_CHANGES_AFTER_PIN",
+      "source": "https://github.com/modelcontextprotocol/go-sdk/releases/tag/v1.7.0"
+    }
+  ],
+  "delta_review": {
+    "stable_release_verified": true,
+    "rc_to_final_repository_delta_observed": true,
+    "exact_semantic_delta_review_complete": false,
+    "last_release_path_fix_observed": "subscriptions/listen envelope and MetaObject rename applied before stable tag",
+    "implementation_change_required": "UNKNOWN"
+  },
+  "digital_biosphere_state": {
+    "reference_adopted": false,
+    "runtime_connected": false,
+    "compatibility_tested": false,
+    "conformance_pass": false,
+    "implementation_authorized": false
+  },
+  "authority_boundaries": [
+    "PROTOCOL_VERSION_NE_IDENTITY",
+    "DISCOVERED_TOOL_NE_CAPABILITY_OR_PERMISSION",
+    "OAUTH_RESULT_NE_PERSONA_OR_DELEGATION_TRUTH",
+    "TRACE_CONTEXT_NE_COMPLETE_EVIDENCE",
+    "MCP_RELEASE_NE_DIGITAL_BIOSPHERE_ADOPTION"
+  ],
+  "next_action": "EXACT_FINAL_SEMANTIC_DELTA_REVIEW_BEFORE_ANY_RUNTIME_OR_ADAPTER_PROPOSAL"
+}

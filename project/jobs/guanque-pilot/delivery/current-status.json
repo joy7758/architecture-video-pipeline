@@ -1,0 +1,36 @@
+{
+  "schema_version": "delivery-current-status.v1",
+  "job_id": "guanque-pilot",
+  "updated_at": "2026-09-22T16:33:04.595711+00:00",
+  "stage": "NEEDS_REVISION",
+  "video_classification": "PREVIEW_ONLY_REQUIRES_VISUAL_REWORK",
+  "assessment": {
+    "path": "artifacts/reverse-audit-20260922-r1/assessment.json",
+    "sha256": "5456d4bc0879bf3015f065949543887492e5b0b80da8dda10d2be0846622c4f4"
+  },
+  "current_status": {
+    "path": "jobs/guanque-pilot/qa/final-status.json",
+    "sha256": "68b2e6a79204101f2337bc80ec9dd2908c0cd983f8ed96972d64b14603cd3d57"
+  },
+  "historical_delivery_manifest": {
+    "path": "jobs/guanque-pilot/delivery/delivery-manifest.json",
+    "sha256": "fd508c37e141848169a786ee7ddd93848f508cfe34e5a16f8b6a5ee9fa872225"
+  },
+  "historical_manifest_is_current_acceptance": false,
+  "video_bytes_unchanged": true,
+  "technical_status": "PASS_FOR_ORIGINAL_VIDEO_ONLY",
+  "visual_status": "FAIL",
+  "titmas_status": "NOT_CONNECTED",
+  "publication": "USER_ONLY_NOT_RUN",
+  "review_gate": {
+    "implementation": "LOCAL_RECORD_GATE_VERIFIED",
+    "report": "artifacts/review-gate-20260923-r1/report.md",
+    "contract": {
+      "path": "jobs/guanque-pilot/review-contract.json",
+      "sha256": "2b0723ff040b778234796734cd9e47dd08204e1f9f6bb70300bed38e386e8c71"
+    },
+    "semantic_review": "NOT_RUN",
+    "required_local_criteria": 18,
+    "completed_local_criteria": 0
+  }
+}

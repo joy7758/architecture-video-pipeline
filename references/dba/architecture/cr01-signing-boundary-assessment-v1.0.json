@@ -1,0 +1,50 @@
+{
+  "schema_version": "1.0",
+  "assessment_id": "TITMAS-CR01-TRANSITION-SIGNING-BOUNDARY",
+  "observed_at": "2026-07-31T19:40:00+08:00",
+  "status": "EXISTING_RESOURCE_NOT_CONFIRMED",
+  "required_algorithm": "Ed25519",
+  "required_key_property": "NON_EXPORTABLE",
+  "provider_documentation": [
+    {
+      "provider": "Baidu AI Cloud",
+      "source": "https://cloud.baidu.com/doc/KMS/s/zldmp36fn",
+      "documented_asymmetric_specs": [
+        "RSA_1024",
+        "RSA_2048",
+        "RSA_4096",
+        "SM2_256"
+      ],
+      "documented_ed25519_support": false,
+      "finding": "The documented Baidu KMS asymmetric list does not satisfy the proposed Ed25519 profile."
+    },
+    {
+      "provider": "Alibaba Cloud",
+      "source": "https://help.aliyun.com/en/kms/key-management-service/user-guide/key-types-and-specifications",
+      "documented_ed25519_support": true,
+      "documented_signature_algorithm": "EdDSA",
+      "documented_key_management_type": "SOFTWARE_PROTECTED",
+      "documented_hardware_protected_ed25519_support": false,
+      "documented_private_key_export": false,
+      "finding": "The documented managed software-protected KMS profile can satisfy non-exportable Ed25519, but no existing TITMAS resource or authorization is confirmed."
+    }
+  ],
+  "account_state": {
+    "existing_approved_ed25519_signer_confirmed": false,
+    "provider_account_inventory_inspected": false,
+    "new_paid_cloud_resource_authorized": false,
+    "new_provider_purchase_authorized": false
+  },
+  "disposition": {
+    "automatic_provider_selection": false,
+    "automatic_resource_creation": false,
+    "automatic_algorithm_change": false,
+    "implementation_entry_allowed": false,
+    "next_step": "READ_ONLY_EXISTING_RESOURCE_PREFLIGHT_OR_SEPARATE_HUMAN_DECISION"
+  },
+  "limitations": [
+    "Provider documentation is capability evidence, not proof of enabled account inventory or procurement status.",
+    "No KMS console, billing account, credential, key or provider resource was accessed or changed.",
+    "Changing from Ed25519 to another signature profile would require a separate architecture decision and verifier review."
+  ]
+}

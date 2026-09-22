@@ -1,0 +1,2024 @@
+{
+  "schema_version": "architecture-rework-acceptance-proposal.v1",
+  "document_id": "guanque-reverse-audit-20260922-r1-acceptance",
+  "created_at": "2026-09-22T15:01:03.661077+00:00",
+  "job_id": "guanque-pilot",
+  "status": "PROPOSED_REWORK_CONTRACT",
+  "implementation_state": "NOT_IMPLEMENTED_IN_CLI",
+  "purpose": "供下一轮施工与独立审查使用的返工验收草案；不签发本轮PASS，不宣称已经实现自动门禁。",
+  "scope": [
+    "architectural_fidelity",
+    "reference_demo_match",
+    "technical",
+    "titmas_evidence"
+  ],
+  "ownership_note": "本任务仅更新acceptance-checklist.json、acceptance-checklist.md及新建checklist-evidence/稳定引用；未修改CLI、模型或其他报告。",
+  "baseline_manifest": {
+    "path": "artifacts/reverse-audit-20260922-r1/checklist-evidence/artifacts/reverse-audit-20260922-r1/inputs.json",
+    "sha256": "7c10cefef3c9ab6f853c9609d37d5d5139601cff1a1888811ea8a6d4d752da42",
+    "original_path": "artifacts/reverse-audit-20260922-r1/inputs.json"
+  },
+  "gate_policy": {
+    "enforcement": "PROPOSED_NOT_ACTIVE",
+    "p1_rule": "任一P1未关闭，或必需审查项UNKNOWN，不得签发建筑保真/演示匹配视觉PASS。",
+    "separate_decisions": [
+      "architectural_fidelity",
+      "reference_demo_match",
+      "technical",
+      "titmas_evidence"
+    ],
+    "truth_boundary": "technical PASS或TITMAS证据校验均不能覆盖建筑保真/演示匹配失败。",
+    "current_media_label": "PREVIEW_ONLY",
+    "proposed_active_job_stage": "NEEDS_REVISION",
+    "user_acceptance": "NOT_ACCEPTED_USER_REPORTED_DEVIATION",
+    "invalidation_events": [
+      "用户否定当前外观或演示效果",
+      "原始资料新增/纠错/被取代",
+      "skill或演示版本变更",
+      "模型、材质、灯光、镜头、渲染源码或视频字节变化",
+      "验收合同或关键问题列表变化"
+    ],
+    "invalidation_action": "保留历史回执及其hash，新增superseding assessment；相关当前门禁降级，重验受影响项，不悄悄覆盖旧PASS。",
+    "camera_policy": "未完成相机标定且未声明误差来源前，所有measurement_tolerance保持null；相近机位不等于精确透视配准，也不能推出实测尺寸。",
+    "reference_use": "原图及冻结资料仅本地研究；不得因制作合同而自动上传、打包进入网页或公开交付。",
+    "service_boundary": "本草案不启动TITMAS、不读取凭据、不发远程请求；仅在真实合同与既有项目授权允许范围内另行接入。"
+  },
+  "source_evidence_registry": {
+    "photo01": {
+      "path": "artifacts/reverse-audit-20260922-r1/frozen/docs/references/guanque-user-01.png",
+      "sha256": "e03f001b1ab6e31eea997b2fe8ce346237276e033648b2a4b261fdb5afec32d0",
+      "note": "用户原图01的倒查冻结副本；本地研究用途",
+      "original_path": "docs/references/guanque-user-01.png"
+    },
+    "photo02": {
+      "path": "artifacts/reverse-audit-20260922-r1/frozen/docs/references/guanque-user-02.png",
+      "sha256": "d6fe50eb5e20dd789a2cc95925c0a3ed21b2f8f927e3a248155fd8dc8ad9c8e3",
+      "note": "用户原图02的倒查冻结副本；本地研究用途",
+      "original_path": "docs/references/guanque-user-02.png"
+    },
+    "source_corrections": {
+      "path": "artifacts/reverse-audit-20260922-r1/frozen/docs/user-reference.md",
+      "sha256": "53d5fb6d6a73055e90225b3908eeb72ba25391af030c8e06c477d8da4eb3f78e",
+      "line_range": [
+        14,
+        20
+      ],
+      "note": "第二轮及第三轮纠错取代旧结论",
+      "original_path": "docs/user-reference.md"
+    },
+    "reported_dimensions": {
+      "path": "artifacts/reverse-audit-20260922-r1/frozen/docs/user-reference.md",
+      "sha256": "53d5fb6d6a73055e90225b3908eeb72ba25391af030c8e06c477d8da4eb3f78e",
+      "line_range": [
+        3,
+        9
+      ],
+      "note": "用户转述尺寸与体系；未取得原始页码/附件，非独立核实",
+      "original_path": "docs/user-reference.md"
+    },
+    "r3": {
+      "path": "artifacts/reverse-audit-20260922-r1/frozen/docs/photo-comparison-r3.md",
+      "sha256": "260375bdf56aa52fdcade201cf370e4bfdbdd342fbf024640234e8e78da3147c",
+      "line_range": [
+        3,
+        64
+      ],
+      "note": "已记录差异、相对图谱、待核与VISUAL_REVIEW_REQUIRED",
+      "original_path": "docs/photo-comparison-r3.md"
+    },
+    "project_visual_state": {
+      "path": "artifacts/reverse-audit-20260922-r1/frozen/docs/governance/project-intake.json",
+      "sha256": "e154b5a85abe5dfa160dd5cf1c6931ae1827fd1b284c6182524c01dc4ae3d625",
+      "line_range": [
+        29,
+        49
+      ],
+      "note": "user_accepted=false",
+      "original_path": "docs/governance/project-intake.json"
+    },
+    "stale_provenance": {
+      "path": "artifacts/reverse-audit-20260922-r1/frozen/jobs/guanque-pilot/references/provenance.md",
+      "sha256": "120caef8193bd7ca6cbe3a2a21d93a4091459b34a17e30a958208f77f2efe4c5",
+      "line_range": [
+        1,
+        12
+      ],
+      "note": "旧复制件漏掉后续纠错段落",
+      "original_path": "jobs/guanque-pilot/references/provenance.md"
+    },
+    "skill": {
+      "path": "artifacts/reverse-audit-20260922-r1/frozen/vendor/architecture-skill/SKILL.md",
+      "sha256": "deb2d1687f5b7a7b4845cbbbeb799087990a06ff451d25f546e0546cb0ad825a",
+      "line_range": [
+        29,
+        39
+      ],
+      "note": "稳定最终轮廓、真实构件装配、材质、灯光与实景检查要求",
+      "original_path": "vendor/architecture-skill/SKILL.md"
+    },
+    "upstream_demo": {
+      "path": "artifacts/reverse-audit-20260922-r1/frozen/vendor/threejs-architecture-effects/assets/preview.mp4",
+      "sha256": "6039c15e6f03df0801ca730ebd4fc1c8f897950c0bf6b17571fc168ac93fe712",
+      "note": "GitHub仓库自带演示视频；应先分镜观察再订可执行标准",
+      "original_path": "vendor/threejs-architecture-effects/assets/preview.mp4"
+    },
+    "delivered_video": {
+      "path": "artifacts/reverse-audit-20260922-r1/frozen/jobs/guanque-pilot/delivery/guanque-pilot-preview.mp4",
+      "sha256": "37ce5076a7c7cb9342df309eb69a00bd5c35b5684c0606079aaa69ea6472eeb6",
+      "note": "被用户指出偏差的历史交付；保留作before证据",
+      "original_path": "jobs/guanque-pilot/delivery/guanque-pilot-preview.mp4"
+    },
+    "prior_visual": {
+      "path": "artifacts/reverse-audit-20260922-r1/frozen/jobs/guanque-pilot/qa/visual-review.json",
+      "sha256": "bf7c7a921721df246bb712f3e536f88cee306df76e77f6bf2b00a5e40f7e5a0f",
+      "line_range": [
+        4,
+        57
+      ],
+      "note": "历史艺术预览PASS；不能升级为照片保真PASS",
+      "original_path": "jobs/guanque-pilot/qa/visual-review.json"
+    },
+    "prior_checks": {
+      "path": "artifacts/reverse-audit-20260922-r1/frozen/jobs/guanque-pilot/checks.json",
+      "sha256": "30e642742cd313d806bd396927aa44b74d7b81ae84b29851033d54baab808dbe",
+      "line_range": [
+        4,
+        89
+      ],
+      "note": "历史技术检查与未执行TITMAS",
+      "original_path": "jobs/guanque-pilot/checks.json"
+    },
+    "prior_status": {
+      "path": "artifacts/reverse-audit-20260922-r1/frozen/jobs/guanque-pilot/qa/final-status.json",
+      "sha256": "c5c43b3789cb95cbc8d1f09ad94e5913b70b7df8d140e3ae73d56be01b3bdb9a",
+      "line_range": [
+        5,
+        22
+      ],
+      "note": "旧聚合状态遗漏外观返工，仅列TITMAS阻塞",
+      "original_path": "jobs/guanque-pilot/qa/final-status.json"
+    },
+    "prior_model_plan": {
+      "path": "artifacts/reverse-audit-20260922-r1/frozen/jobs/guanque-pilot/model-plan.json",
+      "sha256": "5d754eb806d22e5fc5716c4945f9a14984360dfc6f04aa67015281438302dcda",
+      "line_range": [
+        25,
+        40
+      ],
+      "note": "旧方案声明倒放装配、非独立分层爆炸图",
+      "original_path": "jobs/guanque-pilot/model-plan.json"
+    },
+    "film_plan": {
+      "path": "artifacts/reverse-audit-20260922-r1/frozen/pipeline/video/guanque-pilot-wide.json",
+      "sha256": "7516ea85624189a161beb217e5ee3e869b7a2607c8930decdc08760c142e4a0c",
+      "line_range": [
+        10,
+        141
+      ],
+      "note": "当前镜头与时间分配；不自动代表上游演示匹配",
+      "original_path": "pipeline/video/guanque-pilot-wide.json"
+    },
+    "titmas_discovery": {
+      "path": "artifacts/reverse-audit-20260922-r1/checklist-evidence/docs/governance/titmas-service-discovery.json",
+      "sha256": "81a33cf2fdb43c382e425daea29ce1d29ff6c8c0163c8513a1f8e080a5debb5f",
+      "line_range": [
+        21,
+        40
+      ],
+      "note": "前次公共入口发现记录；本次未重新远程探测",
+      "original_path": "docs/governance/titmas-service-discovery.json"
+    },
+    "titmas_scope": {
+      "path": "artifacts/reverse-audit-20260922-r1/checklist-evidence/pipeline/titmas-handoff.json",
+      "sha256": "58a0bc03ab3a6711b22d23249a8e6406e854c6dc855e31a86f1bc931efcbea03",
+      "line_range": [
+        10,
+        39
+      ],
+      "note": "服务查验执行证据合同，不承担建筑照片保真判断",
+      "original_path": "pipeline/titmas-handoff.json"
+    },
+    "evaluator": {
+      "path": "artifacts/reverse-audit-20260922-r1/frozen/pipeline/lib.mjs",
+      "sha256": "ee59002335f82197f1156d1b6944f5385922f47d59ddfab1d0071bf9ce9df72d",
+      "line_range": [
+        160,
+        281
+      ],
+      "note": "现行CLI门禁实现；本合同尚未接入",
+      "original_path": "pipeline/lib.mjs"
+    },
+    "user_rejection": {
+      "source_type": "CURRENT_TASK_USER_MESSAGE",
+      "text": "好的，现在开始倒查。主要检查titmas和skill，或原始文件 。 我们生成的效果，和图片以及给提供的资料。有偏差。生成的视频也和ini的github演示不一样。",
+      "text_sha256": "3556bf9b424fda44a2d7fb96fb1e4f6703f3d0aa3f7ddf787c94a90c38154ee5",
+      "note": "本次倒查触发；ini按本会话确认指指定threejs-architecture-effects skill，不另造服务"
+    }
+  },
+  "item_status_semantics": {
+    "OPEN": "已知需返工/补验，本合同未完成关闭。",
+    "UNKNOWN": "缺少证据、明确位置或真实服务执行，不能判定通过。"
+  },
+  "items": [
+    {
+      "id": "AF-001",
+      "group": "architectural_fidelity",
+      "priority": "P1",
+      "feature": "用户否定与当前资料纠错进入所有下游工位",
+      "status": "OPEN",
+      "source_evidence": [
+        "user_rejection",
+        "source_corrections",
+        "project_visual_state",
+        "stale_provenance"
+      ],
+      "expected": [
+        "新资料包必须包含当前用户纠错及R3状态，标明旧provenance被何版本取代",
+        "旧艺术预览PASS保持历史范围，不能压过当前VISUAL_REVIEW_REQUIRED或用户否定",
+        "同建筑出现新增纠错时，模型方案、视觉检查、视频交付均明确失效或待复核"
+      ],
+      "model_binding": {
+        "state": "FROZEN_AUDIT_BASELINE_NEXT_REVISION_NOT_BOUND",
+        "next_revision_required": [
+          "source_snapshot_sha256",
+          "model_plan_sha256",
+          "acceptance_contract_sha256",
+          "camera_record_sha256",
+          "render_or_video_sha256"
+        ],
+        "note": "path与sha256仅绑定冻结审计证据；original_path/target_path指向施工入口，不声称当前工作区仍与旧字节相同。未来修订必须另建源码/模型/相机/输出绑定。",
+        "baseline_candidates": [
+          {
+            "path": "artifacts/reverse-audit-20260922-r1/frozen/pipeline/lib.mjs",
+            "sha256": "ee59002335f82197f1156d1b6944f5385922f47d59ddfab1d0071bf9ce9df72d",
+            "symbol_or_surface": "evaluateJob",
+            "original_path": "pipeline/lib.mjs",
+            "target_path": "pipeline/lib.mjs"
+          },
+          {
+            "path": "artifacts/reverse-audit-20260922-r1/checklist-evidence/pipeline/schemas/contract.schema.json",
+            "sha256": "82bf2507a277e1ca5ff448beb80e3ebb34839272cc4148f9b75ea9059a984fb6",
+            "symbol_or_surface": "$defs",
+            "original_path": "pipeline/schemas/contract.schema.json",
+            "target_path": "pipeline/schemas/contract.schema.json"
+          },
+          {
+            "path": "artifacts/reverse-audit-20260922-r1/checklist-evidence/pipeline/snapshot-app.mjs",
+            "sha256": "c061110187adadb819e49c51d6705f77bdbe1e30bc9c5e051ea9fbb8395abc7c",
+            "symbol_or_surface": "源码快照输入清单",
+            "original_path": "pipeline/snapshot-app.mjs",
+            "target_path": "pipeline/snapshot-app.mjs"
+          },
+          {
+            "path": "artifacts/reverse-audit-20260922-r1/checklist-evidence/pipeline/render-video.mjs",
+            "sha256": "b50695a5523f34483586bf37b42dbcc90e15322093f74156582cb41d5391093a",
+            "symbol_or_surface": "固定帧与实际bundle检查",
+            "original_path": "pipeline/render-video.mjs",
+            "target_path": "pipeline/render-video.mjs"
+          },
+          {
+            "path": "artifacts/reverse-audit-20260922-r1/frozen/jobs/guanque-pilot/sources.json",
+            "sha256": "a9841495b4c7db87a5d69e9085ff77a477ce83de2fda5a29a35eb1ab62195662",
+            "symbol_or_surface": "entries; views; bindings",
+            "original_path": "jobs/guanque-pilot/sources.json",
+            "target_path": "jobs/guanque-pilot/sources.json"
+          },
+          {
+            "path": "artifacts/reverse-audit-20260922-r1/frozen/jobs/guanque-pilot/model-plan.json",
+            "sha256": "5d754eb806d22e5fc5716c4945f9a14984360dfc6f04aa67015281438302dcda",
+            "symbol_or_surface": "recognizable_features; components; assembly; camera; bindings",
+            "original_path": "jobs/guanque-pilot/model-plan.json",
+            "target_path": "jobs/guanque-pilot/model-plan.json"
+          },
+          {
+            "path": "artifacts/reverse-audit-20260922-r1/frozen/jobs/guanque-pilot/checks.json",
+            "sha256": "30e642742cd313d806bd396927aa44b74d7b81ae84b29851033d54baab808dbe",
+            "symbol_or_surface": "technical; visual; titmas; video",
+            "original_path": "jobs/guanque-pilot/checks.json",
+            "target_path": "jobs/guanque-pilot/checks.json"
+          }
+        ]
+      },
+      "required_view": [
+        "冻结资料全文对照",
+        "完整依赖清单与当前状态readback"
+      ],
+      "measurement_tolerance": null,
+      "measurement_policy": "未经相机标定不填写像素相似度、尺寸误差或测量容差；当前仅作可复查的定性与相对关系审查。",
+      "closure_evidence_required": [
+        "独立审查者逐项查看所需原图/演示与同版模型或视频，记录实际差异",
+        "提交对应视图、模型/相机/输出hash及未确认项",
+        "所有相关P1问题关闭；不能只用“可辨识”或构建成功替代"
+      ]
+    },
+    {
+      "id": "AF-002",
+      "group": "architectural_fidelity",
+      "priority": "P1",
+      "feature": "照片、文字事实与艺术选择可追溯",
+      "status": "OPEN",
+      "source_evidence": [
+        "photo01",
+        "photo02",
+        "reported_dimensions",
+        "r3"
+      ],
+      "expected": [
+        "将每个关键形制和尺寸标为observed、source_reported、artistic_choice或unknown",
+        "用户转述的73.9m、台基/楼身与开间资料需保留来源级别；缺原始附件不能升格为实测",
+        "两张相近正面斜视不代表背面、内部或所有方位已有依据"
+      ],
+      "model_binding": {
+        "state": "FROZEN_AUDIT_BASELINE_NEXT_REVISION_NOT_BOUND",
+        "next_revision_required": [
+          "source_snapshot_sha256",
+          "model_plan_sha256",
+          "acceptance_contract_sha256",
+          "camera_record_sha256",
+          "render_or_video_sha256"
+        ],
+        "note": "path与sha256仅绑定冻结审计证据；original_path/target_path指向施工入口，不声称当前工作区仍与旧字节相同。未来修订必须另建源码/模型/相机/输出绑定。",
+        "baseline_candidates": [
+          {
+            "path": "artifacts/reverse-audit-20260922-r1/frozen/jobs/guanque-pilot/sources.json",
+            "sha256": "a9841495b4c7db87a5d69e9085ff77a477ce83de2fda5a29a35eb1ab62195662",
+            "symbol_or_surface": "entries; views; bindings",
+            "original_path": "jobs/guanque-pilot/sources.json",
+            "target_path": "jobs/guanque-pilot/sources.json"
+          },
+          {
+            "path": "artifacts/reverse-audit-20260922-r1/frozen/jobs/guanque-pilot/model-plan.json",
+            "sha256": "5d754eb806d22e5fc5716c4945f9a14984360dfc6f04aa67015281438302dcda",
+            "symbol_or_surface": "recognizable_features; components; assembly; camera; bindings",
+            "original_path": "jobs/guanque-pilot/model-plan.json",
+            "target_path": "jobs/guanque-pilot/model-plan.json"
+          },
+          {
+            "path": "artifacts/reverse-audit-20260922-r1/frozen/jobs/guanque-pilot/checks.json",
+            "sha256": "30e642742cd313d806bd396927aa44b74d7b81ae84b29851033d54baab808dbe",
+            "symbol_or_surface": "technical; visual; titmas; video",
+            "original_path": "jobs/guanque-pilot/checks.json",
+            "target_path": "jobs/guanque-pilot/checks.json"
+          },
+          {
+            "path": "artifacts/reverse-audit-20260922-r1/frozen/app/src/heritage/guanque.ts",
+            "sha256": "5b1b5462f680a66d820bca7bc16529944ba3dc3a62ef7d4d12f2f407c914662c",
+            "symbol_or_surface": "TOWER; buildArchitecture; hall; lowerCorridor",
+            "original_path": "app/src/heritage/guanque.ts",
+            "target_path": "app/src/heritage/guanque.ts"
+          }
+        ]
+      },
+      "required_view": [
+        "照片01全景",
+        "照片02近景",
+        "来源事实表与模型参数映射"
+      ],
+      "measurement_tolerance": null,
+      "measurement_policy": "未经相机标定不填写像素相似度、尺寸误差或测量容差；当前仅作可复查的定性与相对关系审查。",
+      "closure_evidence_required": [
+        "独立审查者逐项查看所需原图/演示与同版模型或视频，记录实际差异",
+        "提交对应视图、模型/相机/输出hash及未确认项",
+        "所有相关P1问题关闭；不能只用“可辨识”或构建成功替代"
+      ]
+    },
+    {
+      "id": "AF-003",
+      "group": "architectural_fidelity",
+      "priority": "P1",
+      "feature": "整体轮廓、三层四檐与竖向层次",
+      "status": "OPEN",
+      "source_evidence": [
+        "photo01",
+        "photo02",
+        "r3",
+        "reported_dimensions"
+      ],
+      "expected": [
+        "先固定完成态轮廓再做材质与镜头",
+        "按原图逐项核查三组主要明层、四道主要檐线、上下平座及低暗构架带关系",
+        "不能把三层重复大厅或“像鹳雀楼”作为合格依据"
+      ],
+      "model_binding": {
+        "state": "FROZEN_AUDIT_BASELINE_NEXT_REVISION_NOT_BOUND",
+        "next_revision_required": [
+          "source_snapshot_sha256",
+          "model_plan_sha256",
+          "acceptance_contract_sha256",
+          "camera_record_sha256",
+          "render_or_video_sha256"
+        ],
+        "note": "path与sha256仅绑定冻结审计证据；original_path/target_path指向施工入口，不声称当前工作区仍与旧字节相同。未来修订必须另建源码/模型/相机/输出绑定。",
+        "baseline_candidates": [
+          {
+            "path": "artifacts/reverse-audit-20260922-r1/frozen/app/src/heritage/guanque.ts",
+            "sha256": "5b1b5462f680a66d820bca7bc16529944ba3dc3a62ef7d4d12f2f407c914662c",
+            "symbol_or_surface": "TOWER; buildArchitecture; hall; lowerCorridor",
+            "original_path": "app/src/heritage/guanque.ts",
+            "target_path": "app/src/heritage/guanque.ts"
+          },
+          {
+            "path": "artifacts/reverse-audit-20260922-r1/frozen/app/src/heritage/roof.ts",
+            "sha256": "2268b7eff4f1437448c04d21dc4050b7bc0ee415ce94073dd367620abbfb3ddc",
+            "symbol_or_surface": "hipRoof; ringRoof",
+            "original_path": "app/src/heritage/roof.ts",
+            "target_path": "app/src/heritage/roof.ts"
+          },
+          {
+            "path": "artifacts/reverse-audit-20260922-r1/frozen/app/src/heritage/guanque.ts",
+            "sha256": "5b1b5462f680a66d820bca7bc16529944ba3dc3a62ef7d4d12f2f407c914662c",
+            "symbol_or_surface": "TOWER.halls; lowerCorridor; buildArchitecture",
+            "original_path": "app/src/heritage/guanque.ts",
+            "target_path": "app/src/heritage/guanque.ts"
+          },
+          {
+            "path": "artifacts/reverse-audit-20260922-r1/frozen/app/src/PagodaThreeScene.tsx",
+            "sha256": "d4ee3e54ffc6acc44f693f6b36cd48943d747c6a26e2bd0abed7e1873330bd68",
+            "symbol_or_surface": "相机预设与export相机",
+            "original_path": "app/src/PagodaThreeScene.tsx",
+            "target_path": "app/src/PagodaThreeScene.tsx"
+          },
+          {
+            "path": "artifacts/reverse-audit-20260922-r1/checklist-evidence/app/src/export-contract.ts",
+            "sha256": "515cd03ac3a0cbebbed27078bb52baf434e989bdb602c002324493484f63f031",
+            "symbol_or_surface": "ArchitectureExport; ExportFrame",
+            "original_path": "app/src/export-contract.ts",
+            "target_path": "app/src/export-contract.ts"
+          },
+          {
+            "path": "artifacts/reverse-audit-20260922-r1/frozen/pipeline/video/guanque-pilot-wide.json",
+            "sha256": "7516ea85624189a161beb217e5ee3e869b7a2607c8930decdc08760c142e4a0c",
+            "symbol_or_surface": "shots",
+            "original_path": "pipeline/video/guanque-pilot-wide.json",
+            "target_path": "pipeline/video/guanque-pilot-wide.json"
+          }
+        ]
+      },
+      "required_view": [
+        "正面完成态",
+        "两张照片对应的斜正面完成态",
+        "可读各层边界的无装饰遮挡图"
+      ],
+      "measurement_tolerance": null,
+      "measurement_policy": "未经相机标定不填写像素相似度、尺寸误差或测量容差；当前仅作可复查的定性与相对关系审查。",
+      "closure_evidence_required": [
+        "独立审查者逐项查看所需原图/演示与同版模型或视频，记录实际差异",
+        "提交对应视图、模型/相机/输出hash及未确认项",
+        "所有相关P1问题关闭；不能只用“可辨识”或构建成功替代"
+      ]
+    },
+    {
+      "id": "AF-004",
+      "group": "architectural_fidelity",
+      "priority": "P1",
+      "feature": "主顶、抱厦、腰檐坡度及接缝",
+      "status": "OPEN",
+      "source_evidence": [
+        "photo01",
+        "photo02",
+        "r3"
+      ],
+      "expected": [
+        "核查可见瓦坡而非隐藏坡段，主顶高于抱厦的关系由原图支持",
+        "主顶与抱厦交接、谷线、屋面厚度和飞檐曲线需在近景可解释",
+        "照片R3像素图谱仅供相对关系，不当作测绘标高"
+      ],
+      "model_binding": {
+        "state": "FROZEN_AUDIT_BASELINE_NEXT_REVISION_NOT_BOUND",
+        "next_revision_required": [
+          "source_snapshot_sha256",
+          "model_plan_sha256",
+          "acceptance_contract_sha256",
+          "camera_record_sha256",
+          "render_or_video_sha256"
+        ],
+        "note": "path与sha256仅绑定冻结审计证据；original_path/target_path指向施工入口，不声称当前工作区仍与旧字节相同。未来修订必须另建源码/模型/相机/输出绑定。",
+        "baseline_candidates": [
+          {
+            "path": "artifacts/reverse-audit-20260922-r1/frozen/app/src/heritage/roof.ts",
+            "sha256": "2268b7eff4f1437448c04d21dc4050b7bc0ee415ce94073dd367620abbfb3ddc",
+            "symbol_or_surface": "hipRoof; ringRoof",
+            "original_path": "app/src/heritage/roof.ts",
+            "target_path": "app/src/heritage/roof.ts"
+          },
+          {
+            "path": "artifacts/reverse-audit-20260922-r1/frozen/app/src/heritage/guanque.ts",
+            "sha256": "5b1b5462f680a66d820bca7bc16529944ba3dc3a62ef7d4d12f2f407c914662c",
+            "symbol_or_surface": "TOWER.halls; lowerCorridor; buildArchitecture",
+            "original_path": "app/src/heritage/guanque.ts",
+            "target_path": "app/src/heritage/guanque.ts"
+          },
+          {
+            "path": "artifacts/reverse-audit-20260922-r1/frozen/app/src/heritage/guanque.ts",
+            "sha256": "5b1b5462f680a66d820bca7bc16529944ba3dc3a62ef7d4d12f2f407c914662c",
+            "symbol_or_surface": "TOWER; buildArchitecture; hall; lowerCorridor",
+            "original_path": "app/src/heritage/guanque.ts",
+            "target_path": "app/src/heritage/guanque.ts"
+          }
+        ]
+      },
+      "required_view": [
+        "屋顶正面与斜侧特写",
+        "檐下视图",
+        "主頂抱厦交接局部"
+      ],
+      "measurement_tolerance": null,
+      "measurement_policy": "未经相机标定不填写像素相似度、尺寸误差或测量容差；当前仅作可复查的定性与相对关系审查。",
+      "closure_evidence_required": [
+        "独立审查者逐项查看所需原图/演示与同版模型或视频，记录实际差异",
+        "提交对应视图、模型/相机/输出hash及未确认项",
+        "所有相关P1问题关闭；不能只用“可辨识”或构建成功替代"
+      ]
+    },
+    {
+      "id": "AF-005",
+      "group": "architectural_fidelity",
+      "priority": "P1",
+      "feature": "平座、承托带、开间与层间比例",
+      "status": "OPEN",
+      "source_evidence": [
+        "photo01",
+        "photo02",
+        "r3",
+        "reported_dimensions"
+      ],
+      "expected": [
+        "核查两层平座近等宽、顶平座与顶檐相对宽度及支承带连续性",
+        "逐项核对下/中层7×5与顶层5×3开间的资料属性和模型映射",
+        "避免层间“细脖子”与平座无承托；不把回归常量断言当作照片保真证明"
+      ],
+      "model_binding": {
+        "state": "FROZEN_AUDIT_BASELINE_NEXT_REVISION_NOT_BOUND",
+        "next_revision_required": [
+          "source_snapshot_sha256",
+          "model_plan_sha256",
+          "acceptance_contract_sha256",
+          "camera_record_sha256",
+          "render_or_video_sha256"
+        ],
+        "note": "path与sha256仅绑定冻结审计证据；original_path/target_path指向施工入口，不声称当前工作区仍与旧字节相同。未来修订必须另建源码/模型/相机/输出绑定。",
+        "baseline_candidates": [
+          {
+            "path": "artifacts/reverse-audit-20260922-r1/frozen/app/src/heritage/guanque.ts",
+            "sha256": "5b1b5462f680a66d820bca7bc16529944ba3dc3a62ef7d4d12f2f407c914662c",
+            "symbol_or_surface": "TOWER; buildArchitecture; hall; lowerCorridor",
+            "original_path": "app/src/heritage/guanque.ts",
+            "target_path": "app/src/heritage/guanque.ts"
+          },
+          {
+            "path": "artifacts/reverse-audit-20260922-r1/frozen/app/src/heritage/facade.ts",
+            "sha256": "a1a0f24134c3fe991eeb8da6fa6fa0f3647e27a750fae404b2722e8b80073ae4",
+            "symbol_or_surface": "门窗构件与立面工厂",
+            "original_path": "app/src/heritage/facade.ts",
+            "target_path": "app/src/heritage/facade.ts"
+          },
+          {
+            "path": "artifacts/reverse-audit-20260922-r1/frozen/app/src/heritage/guanque.ts",
+            "sha256": "5b1b5462f680a66d820bca7bc16529944ba3dc3a62ef7d4d12f2f407c914662c",
+            "symbol_or_surface": "hall; lowerCorridor; PLAQUES; addPlaques",
+            "original_path": "app/src/heritage/guanque.ts",
+            "target_path": "app/src/heritage/guanque.ts"
+          },
+          {
+            "path": "artifacts/reverse-audit-20260922-r1/frozen/app/src/heritage/roof.ts",
+            "sha256": "2268b7eff4f1437448c04d21dc4050b7bc0ee415ce94073dd367620abbfb3ddc",
+            "symbol_or_surface": "hipRoof; ringRoof",
+            "original_path": "app/src/heritage/roof.ts",
+            "target_path": "app/src/heritage/roof.ts"
+          },
+          {
+            "path": "artifacts/reverse-audit-20260922-r1/frozen/app/src/heritage/guanque.ts",
+            "sha256": "5b1b5462f680a66d820bca7bc16529944ba3dc3a62ef7d4d12f2f407c914662c",
+            "symbol_or_surface": "TOWER.halls; lowerCorridor; buildArchitecture",
+            "original_path": "app/src/heritage/guanque.ts",
+            "target_path": "app/src/heritage/guanque.ts"
+          }
+        ]
+      },
+      "required_view": [
+        "各层平座同机位截图",
+        "顶层正面及侧面开间",
+        "承托带与檐下近景"
+      ],
+      "measurement_tolerance": null,
+      "measurement_policy": "未经相机标定不填写像素相似度、尺寸误差或测量容差；当前仅作可复查的定性与相对关系审查。",
+      "closure_evidence_required": [
+        "独立审查者逐项查看所需原图/演示与同版模型或视频，记录实际差异",
+        "提交对应视图、模型/相机/输出hash及未确认项",
+        "所有相关P1问题关闭；不能只用“可辨识”或构建成功替代"
+      ]
+    },
+    {
+      "id": "AF-006",
+      "group": "architectural_fidelity",
+      "priority": "P1",
+      "feature": "台基、月台、登台阶和栏杆比例/搭接",
+      "status": "OPEN",
+      "source_evidence": [
+        "photo01",
+        "photo02",
+        "r3"
+      ],
+      "expected": [
+        "按照片区别长短不同登台阶、前伸平台及低楼身台基",
+        "检查台阶后缘、栏杆、侧梯与台基的可见连接及遮挡",
+        "几何不穿插只证明连接正确；仍须单独比较照片中的宽高与轮廓关系"
+      ],
+      "model_binding": {
+        "state": "FROZEN_AUDIT_BASELINE_NEXT_REVISION_NOT_BOUND",
+        "next_revision_required": [
+          "source_snapshot_sha256",
+          "model_plan_sha256",
+          "acceptance_contract_sha256",
+          "camera_record_sha256",
+          "render_or_video_sha256"
+        ],
+        "note": "path与sha256仅绑定冻结审计证据；original_path/target_path指向施工入口，不声称当前工作区仍与旧字节相同。未来修订必须另建源码/模型/相机/输出绑定。",
+        "baseline_candidates": [
+          {
+            "path": "artifacts/reverse-audit-20260922-r1/frozen/app/src/heritage/guanque.ts",
+            "sha256": "5b1b5462f680a66d820bca7bc16529944ba3dc3a62ef7d4d12f2f407c914662c",
+            "symbol_or_surface": "TOWER; buildArchitecture; hall; lowerCorridor",
+            "original_path": "app/src/heritage/guanque.ts",
+            "target_path": "app/src/heritage/guanque.ts"
+          },
+          {
+            "path": "artifacts/reverse-audit-20260922-r1/frozen/app/src/PagodaThreeScene.tsx",
+            "sha256": "d4ee3e54ffc6acc44f693f6b36cd48943d747c6a26e2bd0abed7e1873330bd68",
+            "symbol_or_surface": "相机预设与export相机",
+            "original_path": "app/src/PagodaThreeScene.tsx",
+            "target_path": "app/src/PagodaThreeScene.tsx"
+          },
+          {
+            "path": "artifacts/reverse-audit-20260922-r1/checklist-evidence/app/src/export-contract.ts",
+            "sha256": "515cd03ac3a0cbebbed27078bb52baf434e989bdb602c002324493484f63f031",
+            "symbol_or_surface": "ArchitectureExport; ExportFrame",
+            "original_path": "app/src/export-contract.ts",
+            "target_path": "app/src/export-contract.ts"
+          },
+          {
+            "path": "artifacts/reverse-audit-20260922-r1/frozen/pipeline/video/guanque-pilot-wide.json",
+            "sha256": "7516ea85624189a161beb217e5ee3e869b7a2607c8930decdc08760c142e4a0c",
+            "symbol_or_surface": "shots",
+            "original_path": "pipeline/video/guanque-pilot-wide.json",
+            "target_path": "pipeline/video/guanque-pilot-wide.json"
+          }
+        ]
+      },
+      "required_view": [
+        "完整台基斜正面",
+        "阶梯接平台局部",
+        "两侧梯及栏杆近景"
+      ],
+      "measurement_tolerance": null,
+      "measurement_policy": "未经相机标定不填写像素相似度、尺寸误差或测量容差；当前仅作可复查的定性与相对关系审查。",
+      "closure_evidence_required": [
+        "独立审查者逐项查看所需原图/演示与同版模型或视频，记录实际差异",
+        "提交对应视图、模型/相机/输出hash及未确认项",
+        "所有相关P1问题关闭；不能只用“可辨识”或构建成功替代"
+      ]
+    },
+    {
+      "id": "AF-007",
+      "group": "architectural_fidelity",
+      "priority": "P1",
+      "feature": "门窗、回廊、牌匾位置与可辨识性",
+      "status": "OPEN",
+      "source_evidence": [
+        "photo01",
+        "photo02",
+        "r3",
+        "source_corrections"
+      ],
+      "expected": [
+        "对照朱褐隔扇、后退暗部、向上起拱门头及完整底层回廊",
+        "入口横匾与顶层竖匾仅用已定位证据，检查层位、方向与可见尺度",
+        "不能用同款白色栅栏替代不同楼层立面"
+      ],
+      "model_binding": {
+        "state": "FROZEN_AUDIT_BASELINE_NEXT_REVISION_NOT_BOUND",
+        "next_revision_required": [
+          "source_snapshot_sha256",
+          "model_plan_sha256",
+          "acceptance_contract_sha256",
+          "camera_record_sha256",
+          "render_or_video_sha256"
+        ],
+        "note": "path与sha256仅绑定冻结审计证据；original_path/target_path指向施工入口，不声称当前工作区仍与旧字节相同。未来修订必须另建源码/模型/相机/输出绑定。",
+        "baseline_candidates": [
+          {
+            "path": "artifacts/reverse-audit-20260922-r1/frozen/app/src/heritage/facade.ts",
+            "sha256": "a1a0f24134c3fe991eeb8da6fa6fa0f3647e27a750fae404b2722e8b80073ae4",
+            "symbol_or_surface": "门窗构件与立面工厂",
+            "original_path": "app/src/heritage/facade.ts",
+            "target_path": "app/src/heritage/facade.ts"
+          },
+          {
+            "path": "artifacts/reverse-audit-20260922-r1/frozen/app/src/heritage/guanque.ts",
+            "sha256": "5b1b5462f680a66d820bca7bc16529944ba3dc3a62ef7d4d12f2f407c914662c",
+            "symbol_or_surface": "hall; lowerCorridor; PLAQUES; addPlaques",
+            "original_path": "app/src/heritage/guanque.ts",
+            "target_path": "app/src/heritage/guanque.ts"
+          },
+          {
+            "path": "artifacts/reverse-audit-20260922-r1/frozen/app/src/heritage/guanque.ts",
+            "sha256": "5b1b5462f680a66d820bca7bc16529944ba3dc3a62ef7d4d12f2f407c914662c",
+            "symbol_or_surface": "TOWER; buildArchitecture; hall; lowerCorridor",
+            "original_path": "app/src/heritage/guanque.ts",
+            "target_path": "app/src/heritage/guanque.ts"
+          },
+          {
+            "path": "artifacts/reverse-audit-20260922-r1/frozen/app/src/heritage/materials.ts",
+            "sha256": "d55067e72813ba4dc94f17a34ed3a43b92c60c8762f92006f6a38a59e1d3f5ce",
+            "symbol_or_surface": "createHeritageMaterials",
+            "original_path": "app/src/heritage/materials.ts",
+            "target_path": "app/src/heritage/materials.ts"
+          },
+          {
+            "path": "artifacts/reverse-audit-20260922-r1/frozen/app/src/PagodaThreeScene.tsx",
+            "sha256": "d4ee3e54ffc6acc44f693f6b36cd48943d747c6a26e2bd0abed7e1873330bd68",
+            "symbol_or_surface": "scene renderer; lighting; camera",
+            "original_path": "app/src/PagodaThreeScene.tsx",
+            "target_path": "app/src/PagodaThreeScene.tsx"
+          }
+        ]
+      },
+      "required_view": [
+        "首层正面近景",
+        "中层和顶层立面近景",
+        "牌匾可读近景"
+      ],
+      "measurement_tolerance": null,
+      "measurement_policy": "未经相机标定不填写像素相似度、尺寸误差或测量容差；当前仅作可复查的定性与相对关系审查。",
+      "closure_evidence_required": [
+        "独立审查者逐项查看所需原图/演示与同版模型或视频，记录实际差异",
+        "提交对应视图、模型/相机/输出hash及未确认项",
+        "所有相关P1问题关闭；不能只用“可辨识”或构建成功替代"
+      ]
+    },
+    {
+      "id": "AF-008",
+      "group": "architectural_fidelity",
+      "priority": "P1",
+      "feature": "柱联方位、未见立面及装饰资料不足",
+      "status": "UNKNOWN",
+      "source_evidence": [
+        "r3",
+        "reported_dimensions",
+        "photo01",
+        "photo02"
+      ],
+      "expected": [
+        "R3记载柱联文本有报道，但挂置立面与西门归属待核；必须补定位证据或从验收范围中显式处理",
+        "未见背面、其他方向题字与隐蔽部位保持UNKNOWN，不能镜像复制当作事实",
+        "关键可见部位的证据缺口未解决不得把整个外观标为PASS"
+      ],
+      "model_binding": {
+        "state": "FROZEN_AUDIT_BASELINE_NEXT_REVISION_NOT_BOUND",
+        "next_revision_required": [
+          "source_snapshot_sha256",
+          "model_plan_sha256",
+          "acceptance_contract_sha256",
+          "camera_record_sha256",
+          "render_or_video_sha256"
+        ],
+        "note": "path与sha256仅绑定冻结审计证据；original_path/target_path指向施工入口，不声称当前工作区仍与旧字节相同。未来修订必须另建源码/模型/相机/输出绑定。",
+        "baseline_candidates": [
+          {
+            "path": "artifacts/reverse-audit-20260922-r1/frozen/app/src/heritage/facade.ts",
+            "sha256": "a1a0f24134c3fe991eeb8da6fa6fa0f3647e27a750fae404b2722e8b80073ae4",
+            "symbol_or_surface": "门窗构件与立面工厂",
+            "original_path": "app/src/heritage/facade.ts",
+            "target_path": "app/src/heritage/facade.ts"
+          },
+          {
+            "path": "artifacts/reverse-audit-20260922-r1/frozen/app/src/heritage/guanque.ts",
+            "sha256": "5b1b5462f680a66d820bca7bc16529944ba3dc3a62ef7d4d12f2f407c914662c",
+            "symbol_or_surface": "hall; lowerCorridor; PLAQUES; addPlaques",
+            "original_path": "app/src/heritage/guanque.ts",
+            "target_path": "app/src/heritage/guanque.ts"
+          },
+          {
+            "path": "artifacts/reverse-audit-20260922-r1/frozen/app/src/heritage/guanque.ts",
+            "sha256": "5b1b5462f680a66d820bca7bc16529944ba3dc3a62ef7d4d12f2f407c914662c",
+            "symbol_or_surface": "TOWER; buildArchitecture; hall; lowerCorridor",
+            "original_path": "app/src/heritage/guanque.ts",
+            "target_path": "app/src/heritage/guanque.ts"
+          },
+          {
+            "path": "artifacts/reverse-audit-20260922-r1/frozen/jobs/guanque-pilot/sources.json",
+            "sha256": "a9841495b4c7db87a5d69e9085ff77a477ce83de2fda5a29a35eb1ab62195662",
+            "symbol_or_surface": "entries; views; bindings",
+            "original_path": "jobs/guanque-pilot/sources.json",
+            "target_path": "jobs/guanque-pilot/sources.json"
+          },
+          {
+            "path": "artifacts/reverse-audit-20260922-r1/frozen/jobs/guanque-pilot/model-plan.json",
+            "sha256": "5d754eb806d22e5fc5716c4945f9a14984360dfc6f04aa67015281438302dcda",
+            "symbol_or_surface": "recognizable_features; components; assembly; camera; bindings",
+            "original_path": "jobs/guanque-pilot/model-plan.json",
+            "target_path": "jobs/guanque-pilot/model-plan.json"
+          },
+          {
+            "path": "artifacts/reverse-audit-20260922-r1/frozen/jobs/guanque-pilot/checks.json",
+            "sha256": "30e642742cd313d806bd396927aa44b74d7b81ae84b29851033d54baab808dbe",
+            "symbol_or_surface": "technical; visual; titmas; video",
+            "original_path": "jobs/guanque-pilot/checks.json",
+            "target_path": "jobs/guanque-pilot/checks.json"
+          }
+        ]
+      },
+      "required_view": [
+        "入口柱联与对应来源方位对照",
+        "有新增证据时的侧后面视图"
+      ],
+      "measurement_tolerance": null,
+      "measurement_policy": "未经相机标定不填写像素相似度、尺寸误差或测量容差；当前仅作可复查的定性与相对关系审查。",
+      "closure_evidence_required": [
+        "独立审查者逐项查看所需原图/演示与同版模型或视频，记录实际差异",
+        "提交对应视图、模型/相机/输出hash及未确认项",
+        "所有相关P1问题关闭；不能只用“可辨识”或构建成功替代"
+      ]
+    },
+    {
+      "id": "AF-009",
+      "group": "architectural_fidelity",
+      "priority": "P1",
+      "feature": "屋瓦、斗栱彩画、屋脊鸱吻与材料观感",
+      "status": "OPEN",
+      "source_evidence": [
+        "photo01",
+        "photo02",
+        "r3",
+        "skill"
+      ],
+      "expected": [
+        "依据实景对照灰青瓦与绿剪边、木色立面、石台和栏杆的颜色/粗糙度/尺度感",
+        "记录斗栱彩画、屋脊鸱吻及格心的实际差异；不得仅以“艺术简化”关闭用户指出的偏差",
+        "先修可见几何、屋面厚度和支承，再加装饰密度；不能以雾、亮度或滤镜遮盖"
+      ],
+      "model_binding": {
+        "state": "FROZEN_AUDIT_BASELINE_NEXT_REVISION_NOT_BOUND",
+        "next_revision_required": [
+          "source_snapshot_sha256",
+          "model_plan_sha256",
+          "acceptance_contract_sha256",
+          "camera_record_sha256",
+          "render_or_video_sha256"
+        ],
+        "note": "path与sha256仅绑定冻结审计证据；original_path/target_path指向施工入口，不声称当前工作区仍与旧字节相同。未来修订必须另建源码/模型/相机/输出绑定。",
+        "baseline_candidates": [
+          {
+            "path": "artifacts/reverse-audit-20260922-r1/frozen/app/src/heritage/materials.ts",
+            "sha256": "d55067e72813ba4dc94f17a34ed3a43b92c60c8762f92006f6a38a59e1d3f5ce",
+            "symbol_or_surface": "createHeritageMaterials",
+            "original_path": "app/src/heritage/materials.ts",
+            "target_path": "app/src/heritage/materials.ts"
+          },
+          {
+            "path": "artifacts/reverse-audit-20260922-r1/frozen/app/src/PagodaThreeScene.tsx",
+            "sha256": "d4ee3e54ffc6acc44f693f6b36cd48943d747c6a26e2bd0abed7e1873330bd68",
+            "symbol_or_surface": "scene renderer; lighting; camera",
+            "original_path": "app/src/PagodaThreeScene.tsx",
+            "target_path": "app/src/PagodaThreeScene.tsx"
+          },
+          {
+            "path": "artifacts/reverse-audit-20260922-r1/frozen/app/src/heritage/roof.ts",
+            "sha256": "2268b7eff4f1437448c04d21dc4050b7bc0ee415ce94073dd367620abbfb3ddc",
+            "symbol_or_surface": "hipRoof; ringRoof",
+            "original_path": "app/src/heritage/roof.ts",
+            "target_path": "app/src/heritage/roof.ts"
+          },
+          {
+            "path": "artifacts/reverse-audit-20260922-r1/frozen/app/src/heritage/guanque.ts",
+            "sha256": "5b1b5462f680a66d820bca7bc16529944ba3dc3a62ef7d4d12f2f407c914662c",
+            "symbol_or_surface": "TOWER.halls; lowerCorridor; buildArchitecture",
+            "original_path": "app/src/heritage/guanque.ts",
+            "target_path": "app/src/heritage/guanque.ts"
+          },
+          {
+            "path": "artifacts/reverse-audit-20260922-r1/frozen/app/src/heritage/facade.ts",
+            "sha256": "a1a0f24134c3fe991eeb8da6fa6fa0f3647e27a750fae404b2722e8b80073ae4",
+            "symbol_or_surface": "门窗构件与立面工厂",
+            "original_path": "app/src/heritage/facade.ts",
+            "target_path": "app/src/heritage/facade.ts"
+          },
+          {
+            "path": "artifacts/reverse-audit-20260922-r1/frozen/app/src/heritage/guanque.ts",
+            "sha256": "5b1b5462f680a66d820bca7bc16529944ba3dc3a62ef7d4d12f2f407c914662c",
+            "symbol_or_surface": "hall; lowerCorridor; PLAQUES; addPlaques",
+            "original_path": "app/src/heritage/guanque.ts",
+            "target_path": "app/src/heritage/guanque.ts"
+          },
+          {
+            "path": "artifacts/reverse-audit-20260922-r1/frozen/app/src/heritage/guanque.ts",
+            "sha256": "5b1b5462f680a66d820bca7bc16529944ba3dc3a62ef7d4d12f2f407c914662c",
+            "symbol_or_surface": "TOWER; buildArchitecture; hall; lowerCorridor",
+            "original_path": "app/src/heritage/guanque.ts",
+            "target_path": "app/src/heritage/guanque.ts"
+          }
+        ]
+      },
+      "required_view": [
+        "相同光照设置下的全景",
+        "屋瓦与檐下特写",
+        "斗栱彩画及屋脊特写"
+      ],
+      "measurement_tolerance": null,
+      "measurement_policy": "未经相机标定不填写像素相似度、尺寸误差或测量容差；当前仅作可复查的定性与相对关系审查。",
+      "closure_evidence_required": [
+        "独立审查者逐项查看所需原图/演示与同版模型或视频，记录实际差异",
+        "提交对应视图、模型/相机/输出hash及未确认项",
+        "所有相关P1问题关闭；不能只用“可辨识”或构建成功替代"
+      ]
+    },
+    {
+      "id": "RD-001",
+      "group": "reference_demo_match",
+      "priority": "P1",
+      "feature": "冻结GitHub演示与明确可迁移的表现规则",
+      "status": "OPEN",
+      "source_evidence": [
+        "upstream_demo",
+        "skill",
+        "user_rejection"
+      ],
+      "expected": [
+        "固定指定skill版本、演示原文件hash及已观察关键帧",
+        "从演示分别记录构件出现方式、运动距离、节奏、镜头、光照与画面组织",
+        "把楼型差异与表现差异分开，不能要求鹳雀楼复制钟楼建筑，也不能以用了skill名称替代效果核对"
+      ],
+      "model_binding": {
+        "state": "FROZEN_AUDIT_BASELINE_NEXT_REVISION_NOT_BOUND",
+        "next_revision_required": [
+          "source_snapshot_sha256",
+          "model_plan_sha256",
+          "acceptance_contract_sha256",
+          "camera_record_sha256",
+          "render_or_video_sha256"
+        ],
+        "note": "path与sha256仅绑定冻结审计证据；original_path/target_path指向施工入口，不声称当前工作区仍与旧字节相同。未来修订必须另建源码/模型/相机/输出绑定。",
+        "baseline_candidates": [
+          {
+            "path": "artifacts/reverse-audit-20260922-r1/frozen/jobs/guanque-pilot/sources.json",
+            "sha256": "a9841495b4c7db87a5d69e9085ff77a477ce83de2fda5a29a35eb1ab62195662",
+            "symbol_or_surface": "entries; views; bindings",
+            "original_path": "jobs/guanque-pilot/sources.json",
+            "target_path": "jobs/guanque-pilot/sources.json"
+          },
+          {
+            "path": "artifacts/reverse-audit-20260922-r1/frozen/jobs/guanque-pilot/model-plan.json",
+            "sha256": "5d754eb806d22e5fc5716c4945f9a14984360dfc6f04aa67015281438302dcda",
+            "symbol_or_surface": "recognizable_features; components; assembly; camera; bindings",
+            "original_path": "jobs/guanque-pilot/model-plan.json",
+            "target_path": "jobs/guanque-pilot/model-plan.json"
+          },
+          {
+            "path": "artifacts/reverse-audit-20260922-r1/frozen/jobs/guanque-pilot/checks.json",
+            "sha256": "30e642742cd313d806bd396927aa44b74d7b81ae84b29851033d54baab808dbe",
+            "symbol_or_surface": "technical; visual; titmas; video",
+            "original_path": "jobs/guanque-pilot/checks.json",
+            "target_path": "jobs/guanque-pilot/checks.json"
+          },
+          {
+            "path": "artifacts/reverse-audit-20260922-r1/frozen/pipeline/lib.mjs",
+            "sha256": "ee59002335f82197f1156d1b6944f5385922f47d59ddfab1d0071bf9ce9df72d",
+            "symbol_or_surface": "evaluateJob",
+            "original_path": "pipeline/lib.mjs",
+            "target_path": "pipeline/lib.mjs"
+          },
+          {
+            "path": "artifacts/reverse-audit-20260922-r1/checklist-evidence/pipeline/schemas/contract.schema.json",
+            "sha256": "82bf2507a277e1ca5ff448beb80e3ebb34839272cc4148f9b75ea9059a984fb6",
+            "symbol_or_surface": "$defs",
+            "original_path": "pipeline/schemas/contract.schema.json",
+            "target_path": "pipeline/schemas/contract.schema.json"
+          },
+          {
+            "path": "artifacts/reverse-audit-20260922-r1/checklist-evidence/pipeline/snapshot-app.mjs",
+            "sha256": "c061110187adadb819e49c51d6705f77bdbe1e30bc9c5e051ea9fbb8395abc7c",
+            "symbol_or_surface": "源码快照输入清单",
+            "original_path": "pipeline/snapshot-app.mjs",
+            "target_path": "pipeline/snapshot-app.mjs"
+          },
+          {
+            "path": "artifacts/reverse-audit-20260922-r1/checklist-evidence/pipeline/render-video.mjs",
+            "sha256": "b50695a5523f34483586bf37b42dbcc90e15322093f74156582cb41d5391093a",
+            "symbol_or_surface": "固定帧与实际bundle检查",
+            "original_path": "pipeline/render-video.mjs",
+            "target_path": "pipeline/render-video.mjs"
+          }
+        ]
+      },
+      "required_view": [
+        "上游演示全片",
+        "上游各结构阶段关键帧",
+        "同阶段候选视频对照"
+      ],
+      "measurement_tolerance": null,
+      "measurement_policy": "未经相机标定不填写像素相似度、尺寸误差或测量容差；当前仅作可复查的定性与相对关系审查。",
+      "closure_evidence_required": [
+        "独立审查者逐项查看所需原图/演示与同版模型或视频，记录实际差异",
+        "提交对应视图、模型/相机/输出hash及未确认项",
+        "所有相关P1问题关闭；不能只用“可辨识”或构建成功替代"
+      ]
+    },
+    {
+      "id": "RD-002",
+      "group": "reference_demo_match",
+      "priority": "P1",
+      "feature": "施工与拆解动作语义匹配",
+      "status": "OPEN",
+      "source_evidence": [
+        "upstream_demo",
+        "skill",
+        "film_plan",
+        "prior_model_plan"
+      ],
+      "expected": [
+        "按演示观察确认逐构件/逐砌层出现、行程、停留和装配顺序，并映射到新镜头脚本",
+        "当前完成态→倒放→重建脚本是已知选择，必须单独检验是否满足用户要求的上游效果",
+        "如果需要真正分层爆炸拆解，另订构件组位移与层间关系；倒放不能直接签成已实现"
+      ],
+      "model_binding": {
+        "state": "FROZEN_AUDIT_BASELINE_NEXT_REVISION_NOT_BOUND",
+        "next_revision_required": [
+          "source_snapshot_sha256",
+          "model_plan_sha256",
+          "acceptance_contract_sha256",
+          "camera_record_sha256",
+          "render_or_video_sha256"
+        ],
+        "note": "path与sha256仅绑定冻结审计证据；original_path/target_path指向施工入口，不声称当前工作区仍与旧字节相同。未来修订必须另建源码/模型/相机/输出绑定。",
+        "baseline_candidates": [
+          {
+            "path": "artifacts/reverse-audit-20260922-r1/checklist-evidence/app/src/heritage/builder.ts",
+            "sha256": "61cee6b0b70352e5b0a330fd7975757f882c57ab49cb6a25e981b72a2c085d7f",
+            "symbol_or_surface": "HeritageBuilder.add; finish; aBuild; uBuildProgress",
+            "original_path": "app/src/heritage/builder.ts",
+            "target_path": "app/src/heritage/builder.ts"
+          },
+          {
+            "path": "artifacts/reverse-audit-20260922-r1/frozen/app/src/heritage/guanque.ts",
+            "sha256": "5b1b5462f680a66d820bca7bc16529944ba3dc3a62ef7d4d12f2f407c914662c",
+            "symbol_or_surface": "构件start/duration/lift与支承关系",
+            "original_path": "app/src/heritage/guanque.ts",
+            "target_path": "app/src/heritage/guanque.ts"
+          },
+          {
+            "path": "artifacts/reverse-audit-20260922-r1/checklist-evidence/app/src/timeline.ts",
+            "sha256": "43b99e428c7f2a3768f1cb31f95a52d7f1b149b81bd8c73c3187a4a62e4d7da1",
+            "symbol_or_surface": "共享进度时序",
+            "original_path": "app/src/timeline.ts",
+            "target_path": "app/src/timeline.ts"
+          },
+          {
+            "path": "artifacts/reverse-audit-20260922-r1/frozen/app/src/PagodaThreeScene.tsx",
+            "sha256": "d4ee3e54ffc6acc44f693f6b36cd48943d747c6a26e2bd0abed7e1873330bd68",
+            "symbol_or_surface": "相机预设与export相机",
+            "original_path": "app/src/PagodaThreeScene.tsx",
+            "target_path": "app/src/PagodaThreeScene.tsx"
+          },
+          {
+            "path": "artifacts/reverse-audit-20260922-r1/checklist-evidence/app/src/export-contract.ts",
+            "sha256": "515cd03ac3a0cbebbed27078bb52baf434e989bdb602c002324493484f63f031",
+            "symbol_or_surface": "ArchitectureExport; ExportFrame",
+            "original_path": "app/src/export-contract.ts",
+            "target_path": "app/src/export-contract.ts"
+          },
+          {
+            "path": "artifacts/reverse-audit-20260922-r1/frozen/pipeline/video/guanque-pilot-wide.json",
+            "sha256": "7516ea85624189a161beb217e5ee3e869b7a2607c8930decdc08760c142e4a0c",
+            "symbol_or_surface": "shots",
+            "original_path": "pipeline/video/guanque-pilot-wide.json",
+            "target_path": "pipeline/video/guanque-pilot-wide.json"
+          },
+          {
+            "path": "artifacts/reverse-audit-20260922-r1/frozen/jobs/guanque-pilot/sources.json",
+            "sha256": "a9841495b4c7db87a5d69e9085ff77a477ce83de2fda5a29a35eb1ab62195662",
+            "symbol_or_surface": "entries; views; bindings",
+            "original_path": "jobs/guanque-pilot/sources.json",
+            "target_path": "jobs/guanque-pilot/sources.json"
+          },
+          {
+            "path": "artifacts/reverse-audit-20260922-r1/frozen/jobs/guanque-pilot/model-plan.json",
+            "sha256": "5d754eb806d22e5fc5716c4945f9a14984360dfc6f04aa67015281438302dcda",
+            "symbol_or_surface": "recognizable_features; components; assembly; camera; bindings",
+            "original_path": "jobs/guanque-pilot/model-plan.json",
+            "target_path": "jobs/guanque-pilot/model-plan.json"
+          },
+          {
+            "path": "artifacts/reverse-audit-20260922-r1/frozen/jobs/guanque-pilot/checks.json",
+            "sha256": "30e642742cd313d806bd396927aa44b74d7b81ae84b29851033d54baab808dbe",
+            "symbol_or_surface": "technical; visual; titmas; video",
+            "original_path": "jobs/guanque-pilot/checks.json",
+            "target_path": "jobs/guanque-pilot/checks.json"
+          }
+        ]
+      },
+      "required_view": [
+        "每个结构阶段的连续短片",
+        "拆解段与重建段逐帧对照",
+        "关键支承形成前后截图"
+      ],
+      "measurement_tolerance": null,
+      "measurement_policy": "未经相机标定不填写像素相似度、尺寸误差或测量容差；当前仅作可复查的定性与相对关系审查。",
+      "closure_evidence_required": [
+        "独立审查者逐项查看所需原图/演示与同版模型或视频，记录实际差异",
+        "提交对应视图、模型/相机/输出hash及未确认项",
+        "所有相关P1问题关闭；不能只用“可辨识”或构建成功替代"
+      ]
+    },
+    {
+      "id": "RD-003",
+      "group": "reference_demo_match",
+      "priority": "P1",
+      "feature": "构件粒度、支承依赖与运动连续性",
+      "status": "OPEN",
+      "source_evidence": [
+        "upstream_demo",
+        "skill",
+        "prior_visual"
+      ],
+      "expected": [
+        "基座、框架、砌筑、楼面、上层、檐瓦、装饰需有清楚依赖",
+        "区别真实承托楼面与晚安装屋面，检查上层是否在支承形成前悬空",
+        "逐块运动的可见粒度与演示对照；整层突现/整体缩放/渐隐不自动等价"
+      ],
+      "model_binding": {
+        "state": "FROZEN_AUDIT_BASELINE_NEXT_REVISION_NOT_BOUND",
+        "next_revision_required": [
+          "source_snapshot_sha256",
+          "model_plan_sha256",
+          "acceptance_contract_sha256",
+          "camera_record_sha256",
+          "render_or_video_sha256"
+        ],
+        "note": "path与sha256仅绑定冻结审计证据；original_path/target_path指向施工入口，不声称当前工作区仍与旧字节相同。未来修订必须另建源码/模型/相机/输出绑定。",
+        "baseline_candidates": [
+          {
+            "path": "artifacts/reverse-audit-20260922-r1/checklist-evidence/app/src/heritage/builder.ts",
+            "sha256": "61cee6b0b70352e5b0a330fd7975757f882c57ab49cb6a25e981b72a2c085d7f",
+            "symbol_or_surface": "HeritageBuilder.add; finish; aBuild; uBuildProgress",
+            "original_path": "app/src/heritage/builder.ts",
+            "target_path": "app/src/heritage/builder.ts"
+          },
+          {
+            "path": "artifacts/reverse-audit-20260922-r1/frozen/app/src/heritage/guanque.ts",
+            "sha256": "5b1b5462f680a66d820bca7bc16529944ba3dc3a62ef7d4d12f2f407c914662c",
+            "symbol_or_surface": "构件start/duration/lift与支承关系",
+            "original_path": "app/src/heritage/guanque.ts",
+            "target_path": "app/src/heritage/guanque.ts"
+          },
+          {
+            "path": "artifacts/reverse-audit-20260922-r1/checklist-evidence/app/src/timeline.ts",
+            "sha256": "43b99e428c7f2a3768f1cb31f95a52d7f1b149b81bd8c73c3187a4a62e4d7da1",
+            "symbol_or_surface": "共享进度时序",
+            "original_path": "app/src/timeline.ts",
+            "target_path": "app/src/timeline.ts"
+          },
+          {
+            "path": "artifacts/reverse-audit-20260922-r1/frozen/app/src/heritage/guanque.ts",
+            "sha256": "5b1b5462f680a66d820bca7bc16529944ba3dc3a62ef7d4d12f2f407c914662c",
+            "symbol_or_surface": "TOWER; buildArchitecture; hall; lowerCorridor",
+            "original_path": "app/src/heritage/guanque.ts",
+            "target_path": "app/src/heritage/guanque.ts"
+          },
+          {
+            "path": "artifacts/reverse-audit-20260922-r1/frozen/app/src/heritage/roof.ts",
+            "sha256": "2268b7eff4f1437448c04d21dc4050b7bc0ee415ce94073dd367620abbfb3ddc",
+            "symbol_or_surface": "hipRoof; ringRoof",
+            "original_path": "app/src/heritage/roof.ts",
+            "target_path": "app/src/heritage/roof.ts"
+          },
+          {
+            "path": "artifacts/reverse-audit-20260922-r1/frozen/app/src/heritage/guanque.ts",
+            "sha256": "5b1b5462f680a66d820bca7bc16529944ba3dc3a62ef7d4d12f2f407c914662c",
+            "symbol_or_surface": "TOWER.halls; lowerCorridor; buildArchitecture",
+            "original_path": "app/src/heritage/guanque.ts",
+            "target_path": "app/src/heritage/guanque.ts"
+          }
+        ]
+      },
+      "required_view": [
+        "地基至主体的连续镜头",
+        "各层启动点前后帧",
+        "檐下与梁柱接点局部"
+      ],
+      "measurement_tolerance": null,
+      "measurement_policy": "未经相机标定不填写像素相似度、尺寸误差或测量容差；当前仅作可复查的定性与相对关系审查。",
+      "closure_evidence_required": [
+        "独立审查者逐项查看所需原图/演示与同版模型或视频，记录实际差异",
+        "提交对应视图、模型/相机/输出hash及未确认项",
+        "所有相关P1问题关闭；不能只用“可辨识”或构建成功替代"
+      ]
+    },
+    {
+      "id": "RD-004",
+      "group": "reference_demo_match",
+      "priority": "P1",
+      "feature": "镜头节奏、主体占比与细节可读性",
+      "status": "OPEN",
+      "source_evidence": [
+        "upstream_demo",
+        "film_plan",
+        "delivered_video"
+      ],
+      "expected": [
+        "分镜对照上游展示节奏、观看角度、主体尺寸与近景机会",
+        "竖屏规格可保留，但必须证明关键构件在最终画幅中可看清",
+        "避免只扩大取景而让建筑主体过小；不能只检查没裁切就签镜头效果PASS"
+      ],
+      "model_binding": {
+        "state": "FROZEN_AUDIT_BASELINE_NEXT_REVISION_NOT_BOUND",
+        "next_revision_required": [
+          "source_snapshot_sha256",
+          "model_plan_sha256",
+          "acceptance_contract_sha256",
+          "camera_record_sha256",
+          "render_or_video_sha256"
+        ],
+        "note": "path与sha256仅绑定冻结审计证据；original_path/target_path指向施工入口，不声称当前工作区仍与旧字节相同。未来修订必须另建源码/模型/相机/输出绑定。",
+        "baseline_candidates": [
+          {
+            "path": "artifacts/reverse-audit-20260922-r1/frozen/app/src/PagodaThreeScene.tsx",
+            "sha256": "d4ee3e54ffc6acc44f693f6b36cd48943d747c6a26e2bd0abed7e1873330bd68",
+            "symbol_or_surface": "相机预设与export相机",
+            "original_path": "app/src/PagodaThreeScene.tsx",
+            "target_path": "app/src/PagodaThreeScene.tsx"
+          },
+          {
+            "path": "artifacts/reverse-audit-20260922-r1/checklist-evidence/app/src/export-contract.ts",
+            "sha256": "515cd03ac3a0cbebbed27078bb52baf434e989bdb602c002324493484f63f031",
+            "symbol_or_surface": "ArchitectureExport; ExportFrame",
+            "original_path": "app/src/export-contract.ts",
+            "target_path": "app/src/export-contract.ts"
+          },
+          {
+            "path": "artifacts/reverse-audit-20260922-r1/frozen/pipeline/video/guanque-pilot-wide.json",
+            "sha256": "7516ea85624189a161beb217e5ee3e869b7a2607c8930decdc08760c142e4a0c",
+            "symbol_or_surface": "shots",
+            "original_path": "pipeline/video/guanque-pilot-wide.json",
+            "target_path": "pipeline/video/guanque-pilot-wide.json"
+          },
+          {
+            "path": "artifacts/reverse-audit-20260922-r1/frozen/jobs/guanque-pilot/sources.json",
+            "sha256": "a9841495b4c7db87a5d69e9085ff77a477ce83de2fda5a29a35eb1ab62195662",
+            "symbol_or_surface": "entries; views; bindings",
+            "original_path": "jobs/guanque-pilot/sources.json",
+            "target_path": "jobs/guanque-pilot/sources.json"
+          },
+          {
+            "path": "artifacts/reverse-audit-20260922-r1/frozen/jobs/guanque-pilot/model-plan.json",
+            "sha256": "5d754eb806d22e5fc5716c4945f9a14984360dfc6f04aa67015281438302dcda",
+            "symbol_or_surface": "recognizable_features; components; assembly; camera; bindings",
+            "original_path": "jobs/guanque-pilot/model-plan.json",
+            "target_path": "jobs/guanque-pilot/model-plan.json"
+          },
+          {
+            "path": "artifacts/reverse-audit-20260922-r1/frozen/jobs/guanque-pilot/checks.json",
+            "sha256": "30e642742cd313d806bd396927aa44b74d7b81ae84b29851033d54baab808dbe",
+            "symbol_or_surface": "technical; visual; titmas; video",
+            "original_path": "jobs/guanque-pilot/checks.json",
+            "target_path": "jobs/guanque-pilot/checks.json"
+          }
+        ]
+      },
+      "required_view": [
+        "上下游完整画幅并排",
+        "开场/施工/完成阶段对应帧",
+        "最终MP4细节可读抽样"
+      ],
+      "measurement_tolerance": null,
+      "measurement_policy": "未经相机标定不填写像素相似度、尺寸误差或测量容差；当前仅作可复查的定性与相对关系审查。",
+      "closure_evidence_required": [
+        "独立审查者逐项查看所需原图/演示与同版模型或视频，记录实际差异",
+        "提交对应视图、模型/相机/输出hash及未确认项",
+        "所有相关P1问题关闭；不能只用“可辨识”或构建成功替代"
+      ]
+    },
+    {
+      "id": "RD-005",
+      "group": "reference_demo_match",
+      "priority": "P1",
+      "feature": "演示中的材质、灯光与成品微缩建筑质感",
+      "status": "OPEN",
+      "source_evidence": [
+        "upstream_demo",
+        "skill",
+        "delivered_video"
+      ],
+      "expected": [
+        "提炼上游不同材质的色彩、粗糙度、微表面和地面接触关系，再用鹳雀楼资料约束外观",
+        "檐下细节可读且有接触阴影，亮度不能吞没细部",
+        "具体颜色/曝光/镜头参数属于待比对的艺术参数，当前不填虚构相似度"
+      ],
+      "model_binding": {
+        "state": "FROZEN_AUDIT_BASELINE_NEXT_REVISION_NOT_BOUND",
+        "next_revision_required": [
+          "source_snapshot_sha256",
+          "model_plan_sha256",
+          "acceptance_contract_sha256",
+          "camera_record_sha256",
+          "render_or_video_sha256"
+        ],
+        "note": "path与sha256仅绑定冻结审计证据；original_path/target_path指向施工入口，不声称当前工作区仍与旧字节相同。未来修订必须另建源码/模型/相机/输出绑定。",
+        "baseline_candidates": [
+          {
+            "path": "artifacts/reverse-audit-20260922-r1/frozen/app/src/heritage/materials.ts",
+            "sha256": "d55067e72813ba4dc94f17a34ed3a43b92c60c8762f92006f6a38a59e1d3f5ce",
+            "symbol_or_surface": "createHeritageMaterials",
+            "original_path": "app/src/heritage/materials.ts",
+            "target_path": "app/src/heritage/materials.ts"
+          },
+          {
+            "path": "artifacts/reverse-audit-20260922-r1/frozen/app/src/PagodaThreeScene.tsx",
+            "sha256": "d4ee3e54ffc6acc44f693f6b36cd48943d747c6a26e2bd0abed7e1873330bd68",
+            "symbol_or_surface": "scene renderer; lighting; camera",
+            "original_path": "app/src/PagodaThreeScene.tsx",
+            "target_path": "app/src/PagodaThreeScene.tsx"
+          },
+          {
+            "path": "artifacts/reverse-audit-20260922-r1/frozen/app/src/PagodaThreeScene.tsx",
+            "sha256": "d4ee3e54ffc6acc44f693f6b36cd48943d747c6a26e2bd0abed7e1873330bd68",
+            "symbol_or_surface": "相机预设与export相机",
+            "original_path": "app/src/PagodaThreeScene.tsx",
+            "target_path": "app/src/PagodaThreeScene.tsx"
+          },
+          {
+            "path": "artifacts/reverse-audit-20260922-r1/checklist-evidence/app/src/export-contract.ts",
+            "sha256": "515cd03ac3a0cbebbed27078bb52baf434e989bdb602c002324493484f63f031",
+            "symbol_or_surface": "ArchitectureExport; ExportFrame",
+            "original_path": "app/src/export-contract.ts",
+            "target_path": "app/src/export-contract.ts"
+          },
+          {
+            "path": "artifacts/reverse-audit-20260922-r1/frozen/pipeline/video/guanque-pilot-wide.json",
+            "sha256": "7516ea85624189a161beb217e5ee3e869b7a2607c8930decdc08760c142e4a0c",
+            "symbol_or_surface": "shots",
+            "original_path": "pipeline/video/guanque-pilot-wide.json",
+            "target_path": "pipeline/video/guanque-pilot-wide.json"
+          }
+        ]
+      },
+      "required_view": [
+        "完成态对应角度",
+        "檐下近景",
+        "石/木/瓦材质同光照比较"
+      ],
+      "measurement_tolerance": null,
+      "measurement_policy": "未经相机标定不填写像素相似度、尺寸误差或测量容差；当前仅作可复查的定性与相对关系审查。",
+      "closure_evidence_required": [
+        "独立审查者逐项查看所需原图/演示与同版模型或视频，记录实际差异",
+        "提交对应视图、模型/相机/输出hash及未确认项",
+        "所有相关P1问题关闭；不能只用“可辨识”或构建成功替代"
+      ]
+    },
+    {
+      "id": "TE-001",
+      "group": "technical",
+      "priority": "P1",
+      "feature": "完整输入依赖与纠错失效传播",
+      "status": "OPEN",
+      "source_evidence": [
+        "evaluator",
+        "source_corrections",
+        "project_visual_state",
+        "prior_checks"
+      ],
+      "expected": [
+        "来源、用户纠错、skill、演示、验收合同、模型计划、源码快照、镜头、视频及报告形成可追溯hash图",
+        "验证嵌套的provenance.evidence/source_snapshot/render_evidence及其下游有效性",
+        "原始资料更新、用户否定或模型/镜头变更后相关视觉/视频审批失效，并保留旧证据"
+      ],
+      "model_binding": {
+        "state": "FROZEN_AUDIT_BASELINE_NEXT_REVISION_NOT_BOUND",
+        "next_revision_required": [
+          "source_snapshot_sha256",
+          "model_plan_sha256",
+          "acceptance_contract_sha256",
+          "camera_record_sha256",
+          "render_or_video_sha256"
+        ],
+        "note": "path与sha256仅绑定冻结审计证据；original_path/target_path指向施工入口，不声称当前工作区仍与旧字节相同。未来修订必须另建源码/模型/相机/输出绑定。",
+        "baseline_candidates": [
+          {
+            "path": "artifacts/reverse-audit-20260922-r1/frozen/pipeline/lib.mjs",
+            "sha256": "ee59002335f82197f1156d1b6944f5385922f47d59ddfab1d0071bf9ce9df72d",
+            "symbol_or_surface": "evaluateJob",
+            "original_path": "pipeline/lib.mjs",
+            "target_path": "pipeline/lib.mjs"
+          },
+          {
+            "path": "artifacts/reverse-audit-20260922-r1/checklist-evidence/pipeline/schemas/contract.schema.json",
+            "sha256": "82bf2507a277e1ca5ff448beb80e3ebb34839272cc4148f9b75ea9059a984fb6",
+            "symbol_or_surface": "$defs",
+            "original_path": "pipeline/schemas/contract.schema.json",
+            "target_path": "pipeline/schemas/contract.schema.json"
+          },
+          {
+            "path": "artifacts/reverse-audit-20260922-r1/checklist-evidence/pipeline/snapshot-app.mjs",
+            "sha256": "c061110187adadb819e49c51d6705f77bdbe1e30bc9c5e051ea9fbb8395abc7c",
+            "symbol_or_surface": "源码快照输入清单",
+            "original_path": "pipeline/snapshot-app.mjs",
+            "target_path": "pipeline/snapshot-app.mjs"
+          },
+          {
+            "path": "artifacts/reverse-audit-20260922-r1/checklist-evidence/pipeline/render-video.mjs",
+            "sha256": "b50695a5523f34483586bf37b42dbcc90e15322093f74156582cb41d5391093a",
+            "symbol_or_surface": "固定帧与实际bundle检查",
+            "original_path": "pipeline/render-video.mjs",
+            "target_path": "pipeline/render-video.mjs"
+          },
+          {
+            "path": "artifacts/reverse-audit-20260922-r1/frozen/jobs/guanque-pilot/sources.json",
+            "sha256": "a9841495b4c7db87a5d69e9085ff77a477ce83de2fda5a29a35eb1ab62195662",
+            "symbol_or_surface": "entries; views; bindings",
+            "original_path": "jobs/guanque-pilot/sources.json",
+            "target_path": "jobs/guanque-pilot/sources.json"
+          },
+          {
+            "path": "artifacts/reverse-audit-20260922-r1/frozen/jobs/guanque-pilot/model-plan.json",
+            "sha256": "5d754eb806d22e5fc5716c4945f9a14984360dfc6f04aa67015281438302dcda",
+            "symbol_or_surface": "recognizable_features; components; assembly; camera; bindings",
+            "original_path": "jobs/guanque-pilot/model-plan.json",
+            "target_path": "jobs/guanque-pilot/model-plan.json"
+          },
+          {
+            "path": "artifacts/reverse-audit-20260922-r1/frozen/jobs/guanque-pilot/checks.json",
+            "sha256": "30e642742cd313d806bd396927aa44b74d7b81ae84b29851033d54baab808dbe",
+            "symbol_or_surface": "technical; visual; titmas; video",
+            "original_path": "jobs/guanque-pilot/checks.json",
+            "target_path": "jobs/guanque-pilot/checks.json"
+          }
+        ]
+      },
+      "required_view": [
+        "依赖图readback",
+        "变更/否定传播的真实门禁负例结果"
+      ],
+      "measurement_tolerance": null,
+      "measurement_policy": "未经相机标定不填写像素相似度、尺寸误差或测量容差；当前仅作可复查的定性与相对关系审查。",
+      "closure_evidence_required": [
+        "独立审查者逐项查看所需原图/演示与同版模型或视频，记录实际差异",
+        "提交对应视图、模型/相机/输出hash及未确认项",
+        "所有相关P1问题关闭；不能只用“可辨识”或构建成功替代"
+      ]
+    },
+    {
+      "id": "TE-002",
+      "group": "technical",
+      "priority": "P1",
+      "feature": "确定性、装配阴影与实际构建绑定",
+      "status": "OPEN",
+      "source_evidence": [
+        "skill",
+        "prior_checks"
+      ],
+      "expected": [
+        "新源码先检查数值与时序，再验证实际服务bundle来自指定快照",
+        "进度回退、暂停、重播及同帧重访确定；颜色与深度shader同进度",
+        "历史技术PASS仅属于旧视频hash；修订后重新检查受影响项，不改写旧记录"
+      ],
+      "model_binding": {
+        "state": "FROZEN_AUDIT_BASELINE_NEXT_REVISION_NOT_BOUND",
+        "next_revision_required": [
+          "source_snapshot_sha256",
+          "model_plan_sha256",
+          "acceptance_contract_sha256",
+          "camera_record_sha256",
+          "render_or_video_sha256"
+        ],
+        "note": "path与sha256仅绑定冻结审计证据；original_path/target_path指向施工入口，不声称当前工作区仍与旧字节相同。未来修订必须另建源码/模型/相机/输出绑定。",
+        "baseline_candidates": [
+          {
+            "path": "artifacts/reverse-audit-20260922-r1/checklist-evidence/app/src/heritage/builder.ts",
+            "sha256": "61cee6b0b70352e5b0a330fd7975757f882c57ab49cb6a25e981b72a2c085d7f",
+            "symbol_or_surface": "HeritageBuilder.add; finish; aBuild; uBuildProgress",
+            "original_path": "app/src/heritage/builder.ts",
+            "target_path": "app/src/heritage/builder.ts"
+          },
+          {
+            "path": "artifacts/reverse-audit-20260922-r1/frozen/app/src/heritage/guanque.ts",
+            "sha256": "5b1b5462f680a66d820bca7bc16529944ba3dc3a62ef7d4d12f2f407c914662c",
+            "symbol_or_surface": "构件start/duration/lift与支承关系",
+            "original_path": "app/src/heritage/guanque.ts",
+            "target_path": "app/src/heritage/guanque.ts"
+          },
+          {
+            "path": "artifacts/reverse-audit-20260922-r1/checklist-evidence/app/src/timeline.ts",
+            "sha256": "43b99e428c7f2a3768f1cb31f95a52d7f1b149b81bd8c73c3187a4a62e4d7da1",
+            "symbol_or_surface": "共享进度时序",
+            "original_path": "app/src/timeline.ts",
+            "target_path": "app/src/timeline.ts"
+          },
+          {
+            "path": "artifacts/reverse-audit-20260922-r1/frozen/app/src/PagodaThreeScene.tsx",
+            "sha256": "d4ee3e54ffc6acc44f693f6b36cd48943d747c6a26e2bd0abed7e1873330bd68",
+            "symbol_or_surface": "相机预设与export相机",
+            "original_path": "app/src/PagodaThreeScene.tsx",
+            "target_path": "app/src/PagodaThreeScene.tsx"
+          },
+          {
+            "path": "artifacts/reverse-audit-20260922-r1/checklist-evidence/app/src/export-contract.ts",
+            "sha256": "515cd03ac3a0cbebbed27078bb52baf434e989bdb602c002324493484f63f031",
+            "symbol_or_surface": "ArchitectureExport; ExportFrame",
+            "original_path": "app/src/export-contract.ts",
+            "target_path": "app/src/export-contract.ts"
+          },
+          {
+            "path": "artifacts/reverse-audit-20260922-r1/frozen/pipeline/video/guanque-pilot-wide.json",
+            "sha256": "7516ea85624189a161beb217e5ee3e869b7a2607c8930decdc08760c142e4a0c",
+            "symbol_or_surface": "shots",
+            "original_path": "pipeline/video/guanque-pilot-wide.json",
+            "target_path": "pipeline/video/guanque-pilot-wide.json"
+          },
+          {
+            "path": "artifacts/reverse-audit-20260922-r1/frozen/pipeline/lib.mjs",
+            "sha256": "ee59002335f82197f1156d1b6944f5385922f47d59ddfab1d0071bf9ce9df72d",
+            "symbol_or_surface": "evaluateJob",
+            "original_path": "pipeline/lib.mjs",
+            "target_path": "pipeline/lib.mjs"
+          },
+          {
+            "path": "artifacts/reverse-audit-20260922-r1/checklist-evidence/pipeline/schemas/contract.schema.json",
+            "sha256": "82bf2507a277e1ca5ff448beb80e3ebb34839272cc4148f9b75ea9059a984fb6",
+            "symbol_or_surface": "$defs",
+            "original_path": "pipeline/schemas/contract.schema.json",
+            "target_path": "pipeline/schemas/contract.schema.json"
+          },
+          {
+            "path": "artifacts/reverse-audit-20260922-r1/checklist-evidence/pipeline/snapshot-app.mjs",
+            "sha256": "c061110187adadb819e49c51d6705f77bdbe1e30bc9c5e051ea9fbb8395abc7c",
+            "symbol_or_surface": "源码快照输入清单",
+            "original_path": "pipeline/snapshot-app.mjs",
+            "target_path": "pipeline/snapshot-app.mjs"
+          },
+          {
+            "path": "artifacts/reverse-audit-20260922-r1/checklist-evidence/pipeline/render-video.mjs",
+            "sha256": "b50695a5523f34483586bf37b42dbcc90e15322093f74156582cb41d5391093a",
+            "symbol_or_surface": "固定帧与实际bundle检查",
+            "original_path": "pipeline/render-video.mjs",
+            "target_path": "pipeline/render-video.mjs"
+          }
+        ]
+      },
+      "required_view": [
+        "0/中间阶段/1进度截图",
+        "同帧重访对照",
+        "浏览器运行记录与实际bundle hash"
+      ],
+      "measurement_tolerance": null,
+      "measurement_policy": "未经相机标定不填写像素相似度、尺寸误差或测量容差；当前仅作可复查的定性与相对关系审查。",
+      "closure_evidence_required": [
+        "独立审查者逐项查看所需原图/演示与同版模型或视频，记录实际差异",
+        "提交对应视图、模型/相机/输出hash及未确认项",
+        "所有相关P1问题关闭；不能只用“可辨识”或构建成功替代"
+      ]
+    },
+    {
+      "id": "TE-003",
+      "group": "technical",
+      "priority": "P1",
+      "feature": "实际MP4与交付包一致",
+      "status": "OPEN",
+      "source_evidence": [
+        "delivered_video",
+        "prior_checks",
+        "film_plan"
+      ],
+      "expected": [
+        "检查新视频完整解码、宽高、帧率、时长、缺帧/异常帧和静音状态",
+        "打开实际MP4检查全片及关键帧，不能仅审浏览器或PNG",
+        "封面、文案、视频与QA清单绑定同一run；未过门禁交付保持PREVIEW_ONLY"
+      ],
+      "model_binding": {
+        "state": "FROZEN_AUDIT_BASELINE_NEXT_REVISION_NOT_BOUND",
+        "next_revision_required": [
+          "source_snapshot_sha256",
+          "model_plan_sha256",
+          "acceptance_contract_sha256",
+          "camera_record_sha256",
+          "render_or_video_sha256"
+        ],
+        "note": "path与sha256仅绑定冻结审计证据；original_path/target_path指向施工入口，不声称当前工作区仍与旧字节相同。未来修订必须另建源码/模型/相机/输出绑定。",
+        "baseline_candidates": [
+          {
+            "path": "artifacts/reverse-audit-20260922-r1/frozen/pipeline/lib.mjs",
+            "sha256": "ee59002335f82197f1156d1b6944f5385922f47d59ddfab1d0071bf9ce9df72d",
+            "symbol_or_surface": "evaluateJob",
+            "original_path": "pipeline/lib.mjs",
+            "target_path": "pipeline/lib.mjs"
+          },
+          {
+            "path": "artifacts/reverse-audit-20260922-r1/checklist-evidence/pipeline/schemas/contract.schema.json",
+            "sha256": "82bf2507a277e1ca5ff448beb80e3ebb34839272cc4148f9b75ea9059a984fb6",
+            "symbol_or_surface": "$defs",
+            "original_path": "pipeline/schemas/contract.schema.json",
+            "target_path": "pipeline/schemas/contract.schema.json"
+          },
+          {
+            "path": "artifacts/reverse-audit-20260922-r1/checklist-evidence/pipeline/snapshot-app.mjs",
+            "sha256": "c061110187adadb819e49c51d6705f77bdbe1e30bc9c5e051ea9fbb8395abc7c",
+            "symbol_or_surface": "源码快照输入清单",
+            "original_path": "pipeline/snapshot-app.mjs",
+            "target_path": "pipeline/snapshot-app.mjs"
+          },
+          {
+            "path": "artifacts/reverse-audit-20260922-r1/checklist-evidence/pipeline/render-video.mjs",
+            "sha256": "b50695a5523f34483586bf37b42dbcc90e15322093f74156582cb41d5391093a",
+            "symbol_or_surface": "固定帧与实际bundle检查",
+            "original_path": "pipeline/render-video.mjs",
+            "target_path": "pipeline/render-video.mjs"
+          },
+          {
+            "path": "artifacts/reverse-audit-20260922-r1/frozen/app/src/PagodaThreeScene.tsx",
+            "sha256": "d4ee3e54ffc6acc44f693f6b36cd48943d747c6a26e2bd0abed7e1873330bd68",
+            "symbol_or_surface": "相机预设与export相机",
+            "original_path": "app/src/PagodaThreeScene.tsx",
+            "target_path": "app/src/PagodaThreeScene.tsx"
+          },
+          {
+            "path": "artifacts/reverse-audit-20260922-r1/checklist-evidence/app/src/export-contract.ts",
+            "sha256": "515cd03ac3a0cbebbed27078bb52baf434e989bdb602c002324493484f63f031",
+            "symbol_or_surface": "ArchitectureExport; ExportFrame",
+            "original_path": "app/src/export-contract.ts",
+            "target_path": "app/src/export-contract.ts"
+          },
+          {
+            "path": "artifacts/reverse-audit-20260922-r1/frozen/pipeline/video/guanque-pilot-wide.json",
+            "sha256": "7516ea85624189a161beb217e5ee3e869b7a2607c8930decdc08760c142e4a0c",
+            "symbol_or_surface": "shots",
+            "original_path": "pipeline/video/guanque-pilot-wide.json",
+            "target_path": "pipeline/video/guanque-pilot-wide.json"
+          },
+          {
+            "path": "artifacts/reverse-audit-20260922-r1/frozen/jobs/guanque-pilot/sources.json",
+            "sha256": "a9841495b4c7db87a5d69e9085ff77a477ce83de2fda5a29a35eb1ab62195662",
+            "symbol_or_surface": "entries; views; bindings",
+            "original_path": "jobs/guanque-pilot/sources.json",
+            "target_path": "jobs/guanque-pilot/sources.json"
+          },
+          {
+            "path": "artifacts/reverse-audit-20260922-r1/frozen/jobs/guanque-pilot/model-plan.json",
+            "sha256": "5d754eb806d22e5fc5716c4945f9a14984360dfc6f04aa67015281438302dcda",
+            "symbol_or_surface": "recognizable_features; components; assembly; camera; bindings",
+            "original_path": "jobs/guanque-pilot/model-plan.json",
+            "target_path": "jobs/guanque-pilot/model-plan.json"
+          },
+          {
+            "path": "artifacts/reverse-audit-20260922-r1/frozen/jobs/guanque-pilot/checks.json",
+            "sha256": "30e642742cd313d806bd396927aa44b74d7b81ae84b29851033d54baab808dbe",
+            "symbol_or_surface": "technical; visual; titmas; video",
+            "original_path": "jobs/guanque-pilot/checks.json",
+            "target_path": "jobs/guanque-pilot/checks.json"
+          }
+        ]
+      },
+      "required_view": [
+        "实际新MP4全片",
+        "编码元数据",
+        "首中末及问题发生时间点截图"
+      ],
+      "measurement_tolerance": null,
+      "measurement_policy": "未经相机标定不填写像素相似度、尺寸误差或测量容差；当前仅作可复查的定性与相对关系审查。",
+      "closure_evidence_required": [
+        "独立审查者逐项查看所需原图/演示与同版模型或视频，记录实际差异",
+        "提交对应视图、模型/相机/输出hash及未确认项",
+        "所有相关P1问题关闭；不能只用“可辨识”或构建成功替代"
+      ]
+    },
+    {
+      "id": "TE-004",
+      "group": "technical",
+      "priority": "P1",
+      "feature": "独立审查、明确问题与状态汇总",
+      "status": "OPEN",
+      "source_evidence": [
+        "prior_visual",
+        "prior_status",
+        "project_visual_state",
+        "evaluator"
+      ],
+      "expected": [
+        "建筑保真、演示匹配、技术、TITMAS分别记录；审查者不能是对应施工作者",
+        "逐项issue_id/严重度/证据/处置；任一P1未关闭或必需项UNKNOWN时不得视觉PASS",
+        "总状态必须反映当前用户否定与资料纠错，不能将唯一next_station错误指向TITMAS"
+      ],
+      "model_binding": {
+        "state": "FROZEN_AUDIT_BASELINE_NEXT_REVISION_NOT_BOUND",
+        "next_revision_required": [
+          "source_snapshot_sha256",
+          "model_plan_sha256",
+          "acceptance_contract_sha256",
+          "camera_record_sha256",
+          "render_or_video_sha256"
+        ],
+        "note": "path与sha256仅绑定冻结审计证据；original_path/target_path指向施工入口，不声称当前工作区仍与旧字节相同。未来修订必须另建源码/模型/相机/输出绑定。",
+        "baseline_candidates": [
+          {
+            "path": "artifacts/reverse-audit-20260922-r1/frozen/pipeline/lib.mjs",
+            "sha256": "ee59002335f82197f1156d1b6944f5385922f47d59ddfab1d0071bf9ce9df72d",
+            "symbol_or_surface": "evaluateJob",
+            "original_path": "pipeline/lib.mjs",
+            "target_path": "pipeline/lib.mjs"
+          },
+          {
+            "path": "artifacts/reverse-audit-20260922-r1/checklist-evidence/pipeline/schemas/contract.schema.json",
+            "sha256": "82bf2507a277e1ca5ff448beb80e3ebb34839272cc4148f9b75ea9059a984fb6",
+            "symbol_or_surface": "$defs",
+            "original_path": "pipeline/schemas/contract.schema.json",
+            "target_path": "pipeline/schemas/contract.schema.json"
+          },
+          {
+            "path": "artifacts/reverse-audit-20260922-r1/checklist-evidence/pipeline/snapshot-app.mjs",
+            "sha256": "c061110187adadb819e49c51d6705f77bdbe1e30bc9c5e051ea9fbb8395abc7c",
+            "symbol_or_surface": "源码快照输入清单",
+            "original_path": "pipeline/snapshot-app.mjs",
+            "target_path": "pipeline/snapshot-app.mjs"
+          },
+          {
+            "path": "artifacts/reverse-audit-20260922-r1/checklist-evidence/pipeline/render-video.mjs",
+            "sha256": "b50695a5523f34483586bf37b42dbcc90e15322093f74156582cb41d5391093a",
+            "symbol_or_surface": "固定帧与实际bundle检查",
+            "original_path": "pipeline/render-video.mjs",
+            "target_path": "pipeline/render-video.mjs"
+          },
+          {
+            "path": "artifacts/reverse-audit-20260922-r1/frozen/jobs/guanque-pilot/sources.json",
+            "sha256": "a9841495b4c7db87a5d69e9085ff77a477ce83de2fda5a29a35eb1ab62195662",
+            "symbol_or_surface": "entries; views; bindings",
+            "original_path": "jobs/guanque-pilot/sources.json",
+            "target_path": "jobs/guanque-pilot/sources.json"
+          },
+          {
+            "path": "artifacts/reverse-audit-20260922-r1/frozen/jobs/guanque-pilot/model-plan.json",
+            "sha256": "5d754eb806d22e5fc5716c4945f9a14984360dfc6f04aa67015281438302dcda",
+            "symbol_or_surface": "recognizable_features; components; assembly; camera; bindings",
+            "original_path": "jobs/guanque-pilot/model-plan.json",
+            "target_path": "jobs/guanque-pilot/model-plan.json"
+          },
+          {
+            "path": "artifacts/reverse-audit-20260922-r1/frozen/jobs/guanque-pilot/checks.json",
+            "sha256": "30e642742cd313d806bd396927aa44b74d7b81ae84b29851033d54baab808dbe",
+            "symbol_or_surface": "technical; visual; titmas; video",
+            "original_path": "jobs/guanque-pilot/checks.json",
+            "target_path": "jobs/guanque-pilot/checks.json"
+          }
+        ]
+      },
+      "required_view": [
+        "新检查逐项记录",
+        "聚合状态readback",
+        "历史与当前状态并列审计"
+      ],
+      "measurement_tolerance": null,
+      "measurement_policy": "未经相机标定不填写像素相似度、尺寸误差或测量容差；当前仅作可复查的定性与相对关系审查。",
+      "closure_evidence_required": [
+        "独立审查者逐项查看所需原图/演示与同版模型或视频，记录实际差异",
+        "提交对应视图、模型/相机/输出hash及未确认项",
+        "所有相关P1问题关闭；不能只用“可辨识”或构建成功替代"
+      ]
+    },
+    {
+      "id": "TM-001",
+      "group": "titmas_evidence",
+      "priority": "P1",
+      "feature": "真实服务身份、能力与项目兼容合同",
+      "status": "UNKNOWN",
+      "source_evidence": [
+        "titmas_discovery",
+        "titmas_scope"
+      ],
+      "expected": [
+        "当前保持NOT_CONNECTED/NOT_RUN，前次网络记录不冒称本次存活检查",
+        "接入前取得当前canonical入口、服务版本与真实能力合同，分清公共v1与sandbox/v0.1",
+        "仅使用已获项目授权的实际服务能力，不把本地验证器更名成TITMAS"
+      ],
+      "model_binding": {
+        "state": "FROZEN_AUDIT_BASELINE_NEXT_REVISION_NOT_BOUND",
+        "next_revision_required": [
+          "source_snapshot_sha256",
+          "model_plan_sha256",
+          "acceptance_contract_sha256",
+          "camera_record_sha256",
+          "render_or_video_sha256"
+        ],
+        "note": "path与sha256仅绑定冻结审计证据；original_path/target_path指向施工入口，不声称当前工作区仍与旧字节相同。未来修订必须另建源码/模型/相机/输出绑定。",
+        "baseline_candidates": [
+          {
+            "path": "artifacts/reverse-audit-20260922-r1/frozen/jobs/guanque-pilot/sources.json",
+            "sha256": "a9841495b4c7db87a5d69e9085ff77a477ce83de2fda5a29a35eb1ab62195662",
+            "symbol_or_surface": "entries; views; bindings",
+            "original_path": "jobs/guanque-pilot/sources.json",
+            "target_path": "jobs/guanque-pilot/sources.json"
+          },
+          {
+            "path": "artifacts/reverse-audit-20260922-r1/frozen/jobs/guanque-pilot/model-plan.json",
+            "sha256": "5d754eb806d22e5fc5716c4945f9a14984360dfc6f04aa67015281438302dcda",
+            "symbol_or_surface": "recognizable_features; components; assembly; camera; bindings",
+            "original_path": "jobs/guanque-pilot/model-plan.json",
+            "target_path": "jobs/guanque-pilot/model-plan.json"
+          },
+          {
+            "path": "artifacts/reverse-audit-20260922-r1/frozen/jobs/guanque-pilot/checks.json",
+            "sha256": "30e642742cd313d806bd396927aa44b74d7b81ae84b29851033d54baab808dbe",
+            "symbol_or_surface": "technical; visual; titmas; video",
+            "original_path": "jobs/guanque-pilot/checks.json",
+            "target_path": "jobs/guanque-pilot/checks.json"
+          },
+          {
+            "path": "artifacts/reverse-audit-20260922-r1/frozen/pipeline/lib.mjs",
+            "sha256": "ee59002335f82197f1156d1b6944f5385922f47d59ddfab1d0071bf9ce9df72d",
+            "symbol_or_surface": "evaluateJob",
+            "original_path": "pipeline/lib.mjs",
+            "target_path": "pipeline/lib.mjs"
+          },
+          {
+            "path": "artifacts/reverse-audit-20260922-r1/checklist-evidence/pipeline/schemas/contract.schema.json",
+            "sha256": "82bf2507a277e1ca5ff448beb80e3ebb34839272cc4148f9b75ea9059a984fb6",
+            "symbol_or_surface": "$defs",
+            "original_path": "pipeline/schemas/contract.schema.json",
+            "target_path": "pipeline/schemas/contract.schema.json"
+          },
+          {
+            "path": "artifacts/reverse-audit-20260922-r1/checklist-evidence/pipeline/snapshot-app.mjs",
+            "sha256": "c061110187adadb819e49c51d6705f77bdbe1e30bc9c5e051ea9fbb8395abc7c",
+            "symbol_or_surface": "源码快照输入清单",
+            "original_path": "pipeline/snapshot-app.mjs",
+            "target_path": "pipeline/snapshot-app.mjs"
+          },
+          {
+            "path": "artifacts/reverse-audit-20260922-r1/checklist-evidence/pipeline/render-video.mjs",
+            "sha256": "b50695a5523f34483586bf37b42dbcc90e15322093f74156582cb41d5391093a",
+            "symbol_or_surface": "固定帧与实际bundle检查",
+            "original_path": "pipeline/render-video.mjs",
+            "target_path": "pipeline/render-video.mjs"
+          }
+        ]
+      },
+      "required_view": [
+        "真实服务能力/身份回读；当前尚未取得"
+      ],
+      "measurement_tolerance": null,
+      "measurement_policy": "未经相机标定不填写像素相似度、尺寸误差或测量容差；当前仅作可复查的定性与相对关系审查。",
+      "closure_evidence_required": [
+        "独立审查者逐项查看所需原图/演示与同版模型或视频，记录实际差异",
+        "提交对应视图、模型/相机/输出hash及未确认项",
+        "所有相关P1问题关闭；不能只用“可辨识”或构建成功替代"
+      ]
+    },
+    {
+      "id": "TM-002",
+      "group": "titmas_evidence",
+      "priority": "P1",
+      "feature": "真实回执、独立核验与有限结论",
+      "status": "UNKNOWN",
+      "source_evidence": [
+        "titmas_scope",
+        "prior_checks"
+      ],
+      "expected": [
+        "仅在真实服务执行后登记原始回执与独立验证证据，绑定本次来源/模型/镜头/视频/检查摘要",
+        "回执完整性或schema通过不代表建筑真实、照片相似或演示效果匹配",
+        "身份、签名、版本、过期或摘要不匹配必须拒绝；具体机制以实际合同为准，当前不虚构回执"
+      ],
+      "model_binding": {
+        "state": "FROZEN_AUDIT_BASELINE_NEXT_REVISION_NOT_BOUND",
+        "next_revision_required": [
+          "source_snapshot_sha256",
+          "model_plan_sha256",
+          "acceptance_contract_sha256",
+          "camera_record_sha256",
+          "render_or_video_sha256"
+        ],
+        "note": "path与sha256仅绑定冻结审计证据；original_path/target_path指向施工入口，不声称当前工作区仍与旧字节相同。未来修订必须另建源码/模型/相机/输出绑定。",
+        "baseline_candidates": [
+          {
+            "path": "artifacts/reverse-audit-20260922-r1/frozen/jobs/guanque-pilot/sources.json",
+            "sha256": "a9841495b4c7db87a5d69e9085ff77a477ce83de2fda5a29a35eb1ab62195662",
+            "symbol_or_surface": "entries; views; bindings",
+            "original_path": "jobs/guanque-pilot/sources.json",
+            "target_path": "jobs/guanque-pilot/sources.json"
+          },
+          {
+            "path": "artifacts/reverse-audit-20260922-r1/frozen/jobs/guanque-pilot/model-plan.json",
+            "sha256": "5d754eb806d22e5fc5716c4945f9a14984360dfc6f04aa67015281438302dcda",
+            "symbol_or_surface": "recognizable_features; components; assembly; camera; bindings",
+            "original_path": "jobs/guanque-pilot/model-plan.json",
+            "target_path": "jobs/guanque-pilot/model-plan.json"
+          },
+          {
+            "path": "artifacts/reverse-audit-20260922-r1/frozen/jobs/guanque-pilot/checks.json",
+            "sha256": "30e642742cd313d806bd396927aa44b74d7b81ae84b29851033d54baab808dbe",
+            "symbol_or_surface": "technical; visual; titmas; video",
+            "original_path": "jobs/guanque-pilot/checks.json",
+            "target_path": "jobs/guanque-pilot/checks.json"
+          },
+          {
+            "path": "artifacts/reverse-audit-20260922-r1/frozen/pipeline/lib.mjs",
+            "sha256": "ee59002335f82197f1156d1b6944f5385922f47d59ddfab1d0071bf9ce9df72d",
+            "symbol_or_surface": "evaluateJob",
+            "original_path": "pipeline/lib.mjs",
+            "target_path": "pipeline/lib.mjs"
+          },
+          {
+            "path": "artifacts/reverse-audit-20260922-r1/checklist-evidence/pipeline/schemas/contract.schema.json",
+            "sha256": "82bf2507a277e1ca5ff448beb80e3ebb34839272cc4148f9b75ea9059a984fb6",
+            "symbol_or_surface": "$defs",
+            "original_path": "pipeline/schemas/contract.schema.json",
+            "target_path": "pipeline/schemas/contract.schema.json"
+          },
+          {
+            "path": "artifacts/reverse-audit-20260922-r1/checklist-evidence/pipeline/snapshot-app.mjs",
+            "sha256": "c061110187adadb819e49c51d6705f77bdbe1e30bc9c5e051ea9fbb8395abc7c",
+            "symbol_or_surface": "源码快照输入清单",
+            "original_path": "pipeline/snapshot-app.mjs",
+            "target_path": "pipeline/snapshot-app.mjs"
+          },
+          {
+            "path": "artifacts/reverse-audit-20260922-r1/checklist-evidence/pipeline/render-video.mjs",
+            "sha256": "b50695a5523f34483586bf37b42dbcc90e15322093f74156582cb41d5391093a",
+            "symbol_or_surface": "固定帧与实际bundle检查",
+            "original_path": "pipeline/render-video.mjs",
+            "target_path": "pipeline/render-video.mjs"
+          }
+        ]
+      },
+      "required_view": [
+        "实际原始回执",
+        "独立验证结果及失效负例；当前均无"
+      ],
+      "measurement_tolerance": null,
+      "measurement_policy": "未经相机标定不填写像素相似度、尺寸误差或测量容差；当前仅作可复查的定性与相对关系审查。",
+      "closure_evidence_required": [
+        "独立审查者逐项查看所需原图/演示与同版模型或视频，记录实际差异",
+        "提交对应视图、模型/相机/输出hash及未确认项",
+        "所有相关P1问题关闭；不能只用“可辨识”或构建成功替代"
+      ]
+    }
+  ],
+  "future_closure_record_required": [
+    "issue_id",
+    "decision",
+    "reviewer_id",
+    "checked_at",
+    "acceptance_contract_sha256",
+    "source_evidence_digests",
+    "source_snapshot_sha256",
+    "model_plan_sha256",
+    "camera_record_sha256",
+    "render_or_video_sha256",
+    "observed_difference",
+    "remaining_unknowns",
+    "closure_reason"
+  ],
+  "not_done": [
+    "未修复模型或镜头",
+    "未重渲染视频",
+    "未更新CLI或schema",
+    "未执行自动门禁",
+    "未执行TITMAS",
+    "未关闭任何本清单项目",
+    "未替代用户发布决定"
+  ],
+  "evidence_freeze": {
+    "state": "HASH_MATCHED_IMMUTABLE_REFERENCES",
+    "recorded_at": "2026-09-22T15:06:53.617732+00:00",
+    "reused_frozen_paths": [
+      "artifacts/reverse-audit-20260922-r1/frozen/app/src/PagodaThreeScene.tsx",
+      "artifacts/reverse-audit-20260922-r1/frozen/app/src/heritage/facade.ts",
+      "artifacts/reverse-audit-20260922-r1/frozen/app/src/heritage/guanque.ts",
+      "artifacts/reverse-audit-20260922-r1/frozen/app/src/heritage/materials.ts",
+      "artifacts/reverse-audit-20260922-r1/frozen/app/src/heritage/roof.ts",
+      "artifacts/reverse-audit-20260922-r1/frozen/docs/governance/project-intake.json",
+      "artifacts/reverse-audit-20260922-r1/frozen/docs/photo-comparison-r3.md",
+      "artifacts/reverse-audit-20260922-r1/frozen/docs/references/guanque-user-01.png",
+      "artifacts/reverse-audit-20260922-r1/frozen/docs/references/guanque-user-02.png",
+      "artifacts/reverse-audit-20260922-r1/frozen/docs/user-reference.md",
+      "artifacts/reverse-audit-20260922-r1/frozen/jobs/guanque-pilot/checks.json",
+      "artifacts/reverse-audit-20260922-r1/frozen/jobs/guanque-pilot/delivery/guanque-pilot-preview.mp4",
+      "artifacts/reverse-audit-20260922-r1/frozen/jobs/guanque-pilot/model-plan.json",
+      "artifacts/reverse-audit-20260922-r1/frozen/jobs/guanque-pilot/qa/final-status.json",
+      "artifacts/reverse-audit-20260922-r1/frozen/jobs/guanque-pilot/qa/visual-review.json",
+      "artifacts/reverse-audit-20260922-r1/frozen/jobs/guanque-pilot/references/provenance.md",
+      "artifacts/reverse-audit-20260922-r1/frozen/jobs/guanque-pilot/sources.json",
+      "artifacts/reverse-audit-20260922-r1/frozen/pipeline/lib.mjs",
+      "artifacts/reverse-audit-20260922-r1/frozen/pipeline/video/guanque-pilot-wide.json",
+      "artifacts/reverse-audit-20260922-r1/frozen/vendor/architecture-skill/SKILL.md",
+      "artifacts/reverse-audit-20260922-r1/frozen/vendor/threejs-architecture-effects/assets/preview.mp4"
+    ],
+    "added_checklist_evidence_paths": [
+      "artifacts/reverse-audit-20260922-r1/checklist-evidence/app/src/export-contract.ts",
+      "artifacts/reverse-audit-20260922-r1/checklist-evidence/app/src/heritage/builder.ts",
+      "artifacts/reverse-audit-20260922-r1/checklist-evidence/app/src/timeline.ts",
+      "artifacts/reverse-audit-20260922-r1/checklist-evidence/artifacts/reverse-audit-20260922-r1/inputs.json",
+      "artifacts/reverse-audit-20260922-r1/checklist-evidence/docs/governance/titmas-service-discovery.json",
+      "artifacts/reverse-audit-20260922-r1/checklist-evidence/pipeline/render-video.mjs",
+      "artifacts/reverse-audit-20260922-r1/checklist-evidence/pipeline/schemas/contract.schema.json",
+      "artifacts/reverse-audit-20260922-r1/checklist-evidence/pipeline/snapshot-app.mjs",
+      "artifacts/reverse-audit-20260922-r1/checklist-evidence/pipeline/titmas-handoff.json"
+    ],
+    "policy": "全部带path+sha256的引用只指向frozen/或checklist-evidence/；原工作区施工入口存为original_path/target_path，后续工作区更新不使本审计字节引用失效。"
+  }
+}

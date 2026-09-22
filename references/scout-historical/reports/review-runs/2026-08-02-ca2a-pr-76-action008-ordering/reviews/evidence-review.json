@@ -1,0 +1,37 @@
+{
+  "schema_version": "0.1",
+  "review_id": "ca2a-pr-76-action008-ordering-evidence-review",
+  "agent_identifier": "/root/pr76_q_evidence",
+  "model_runtime_identifier": "openai-codex/gpt-5",
+  "review_role": "EVIDENCE_REVIEWER",
+  "input_digest": "sha256:7b3867e1b1dfa0840beb912570b0039978d6f85dc99ca37e070420dfb2f1a686",
+  "output_digest": "sha256:9d0cb7f16796a3cf12a9ca1008b563007682ada1fda565432ef42e75b3651a73",
+  "decision": "PASS",
+  "timestamp": "2026-08-02T03:52:46Z",
+  "ruleset_version": "0.1",
+  "reason_codes": [
+    "INPUT_DIGEST_REPRODUCED",
+    "REMOTE_DIFF_DIGEST_REPRODUCED",
+    "LOCAL_DIFF_DIGEST_REPRODUCED",
+    "BODY_TEST_VALIDATION_HISTORY_DIGESTS_REPRODUCED",
+    "REMOTE_HEAD_UNCHANGED",
+    "READY_STATE_ALREADY_SATISFIED"
+  ],
+  "findings": [
+    "The designated input digest and the current remote head were reproduced independently.",
+    "The exact GitHub diff bytes and the separately defined local git diff bytes reproduce their recorded digests.",
+    "The PR body, ACTION-008 test file, local validation record, and prior decision history references are traceable by digest.",
+    "Upstream CI and CodeQL are accurately recorded as action_required and not executed, rather than presented as passing evidence.",
+    "The PR is already Ready and the review requests no external state write."
+  ],
+  "blocking_reasons": [],
+  "evidence_references": [
+    "reports/review-runs/2026-08-02-ca2a-pr-76-action008-ordering/input.json#sha256:7b3867e1b1dfa0840beb912570b0039978d6f85dc99ca37e070420dfb2f1a686",
+    "github-diff:sha256:134716257464e3b7fdb72402855e74dca58031dcbfc133c6e628fe2057352bfb",
+    "local-git-diff:sha256:82688a11ed0f103c75cabc80f6c7e16fbd51bee0766a52043d0894ff2d066731",
+    "pr-body:sha256:a87c1075c95dbb3b638eac02affe164115cae36350fd869d3453cd21e116011e",
+    "tests/conformance/test_profile_conformance.py#sha256:034bb82405fceb8a0861fc6ddf91652d7f3e4ea5495f297c51c28ec9821796c2",
+    "reports/review-runs/2026-08-02-ca2a-pr-76-action008-ordering/local-validation.json#sha256:44578dada59ad0981e81fa0d0335e2835c8f9230b3bb5d20dc40a6cdd0062a47",
+    "git:joy7758/ca2a@9fb5c3b112c1f2d083bc97a12d55f7a583190b9f"
+  ]
+}

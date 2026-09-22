@@ -1,0 +1,139 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/architecture-video-pipeline/review.schema.json",
+  "title": "Application review contract, result and local observation records",
+  "description": "Agent-readable structural contract. evaluateReview in ../review.mjs additionally enforces current file digests, bounded paths, unique IDs, complete roles, reviewer separation and media access. A hashed local observation record is NOT cryptographic proof of perception, semantic correctness, TITMAS execution or release authorization.",
+  "oneOf": [
+    { "$ref": "#/$defs/contract" },
+    { "$ref": "#/$defs/results" },
+    { "$ref": "#/$defs/access" }
+  ],
+  "$defs": {
+    "text": { "type": "string", "pattern": "\\S" },
+    "sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "jobId": { "type": "string", "pattern": "^[a-z0-9](?:[a-z0-9-]{0,62}[a-z0-9])?$" },
+    "texts": { "type": "array", "items": { "$ref": "#/$defs/text" } },
+    "role": { "enum": ["reference", "output", "requirements", "source", "model", "camera"] },
+    "reference": {
+      "type": "object", "additionalProperties": false,
+      "required": ["path", "sha256"],
+      "properties": {
+        "path": { "$ref": "#/$defs/text", "description": "Repository-relative POSIX file path. Runtime enforces jobs/<this-id>/, artifacts/, docs/, app/src/, app/package*.json, app/tsconfig*.json, app/vite.config.ts, vendor/ or pipeline/video/. No traversal or symlink escape." },
+        "sha256": { "$ref": "#/$defs/sha256" }
+      }
+    },
+    "input": {
+      "type": "object", "additionalProperties": false,
+      "required": ["id", "role", "kind", "path", "sha256"],
+      "properties": {
+        "id": { "$ref": "#/$defs/text" },
+        "role": { "$ref": "#/$defs/role" },
+        "kind": { "enum": ["image", "video", "document", "source"] },
+        "path": { "$ref": "#/$defs/text" },
+        "sha256": { "$ref": "#/$defs/sha256" }
+      }
+    },
+    "criterion": {
+      "type": "object", "additionalProperties": false,
+      "required": ["id", "group", "required", "external", "severity", "title", "expected", "input_ids", "required_evidence_roles"],
+      "properties": {
+        "id": { "$ref": "#/$defs/text" },
+        "group": { "enum": ["architectural_fidelity", "reference_demo_match", "technical", "titmas_evidence"] },
+        "required": { "type": "boolean" },
+        "external": { "type": "boolean", "description": "Only TITMAS criteria are external. They never open the content gate or authenticate a receipt." },
+        "severity": { "enum": ["P1", "P2"] },
+        "title": { "$ref": "#/$defs/text" },
+        "expected": { "$ref": "#/$defs/texts", "minItems": 1 },
+        "input_ids": { "$ref": "#/$defs/texts", "minItems": 1, "uniqueItems": true },
+        "required_evidence_roles": { "type": "array", "minItems": 1, "uniqueItems": true, "items": { "$ref": "#/$defs/role" } }
+      },
+      "allOf": [{
+        "if": { "properties": { "group": { "const": "titmas_evidence" } } },
+        "then": { "properties": { "external": { "const": true } } },
+        "else": { "properties": { "external": { "const": false } } }
+      }]
+    },
+    "contract": {
+      "type": "object", "additionalProperties": false,
+      "required": ["schema_version", "job_id", "revision", "scope", "source_checklist", "input_bindings", "criteria"],
+      "properties": {
+        "schema_version": { "const": "review-contract.v1" },
+        "job_id": { "$ref": "#/$defs/jobId" },
+        "revision": { "$ref": "#/$defs/text" },
+        "scope": { "$ref": "#/$defs/text" },
+        "source_checklist": { "$ref": "#/$defs/reference" },
+        "input_bindings": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/input" }, "description": "IDs must be unique; every current file is read and SHA-256 checked on every evaluation, including inputs not cited by a result." },
+        "criteria": {
+          "type": "array", "minItems": 3, "items": { "$ref": "#/$defs/criterion" },
+          "description": "Runtime requires unique IDs, registered input IDs, bound evidence roles, required nonexternal architectural/demo/technical criteria, and at least one required reference/output media comparison in each visual group.",
+          "allOf": [
+            { "contains": { "properties": { "group": { "const": "architectural_fidelity" }, "required": { "const": true }, "external": { "const": false } }, "required": ["group", "required", "external"] } },
+            { "contains": { "properties": { "group": { "const": "reference_demo_match" }, "required": { "const": true }, "external": { "const": false } }, "required": ["group", "required", "external"] } },
+            { "contains": { "properties": { "group": { "const": "technical" }, "required": { "const": true }, "external": { "const": false } }, "required": ["group", "required", "external"] } }
+          ]
+        }
+      }
+    },
+    "issue": {
+      "type": "object", "additionalProperties": false,
+      "required": ["id", "severity", "status"],
+      "properties": {
+        "id": { "$ref": "#/$defs/text" },
+        "severity": { "enum": ["P1", "P2"] },
+        "status": { "enum": ["OPEN", "CLOSED"] },
+        "resolution_evidence": { "$ref": "#/$defs/reference" }
+      },
+      "allOf": [{ "if": { "properties": { "status": { "const": "CLOSED" } } }, "then": { "required": ["resolution_evidence"] } }]
+    },
+    "evidence": {
+      "type": "object", "additionalProperties": false,
+      "required": ["input_id", "locator", "access_record"],
+      "properties": {
+        "input_id": { "$ref": "#/$defs/text" },
+        "locator": { "$ref": "#/$defs/text", "description": "Specific image region, video time/frame range or document location. Runtime checks presence, not whether the location is semantically correct." },
+        "access_record": { "$ref": "#/$defs/reference" }
+      }
+    },
+    "result": {
+      "type": "object", "additionalProperties": false,
+      "required": ["criterion_id", "status", "reviewer_id", "reviewed_at", "observation", "limitations", "shared_dependencies", "evidence", "issues"],
+      "properties": {
+        "criterion_id": { "$ref": "#/$defs/text" },
+        "status": { "enum": ["PASS", "FAIL", "UNKNOWN", "NOT_APPLICABLE", "NOT_RUN"] },
+        "reviewer_id": { "$ref": "#/$defs/text", "not": { "enum": ["UNASSIGNED", "UNKNOWN", "NOT_RUN"] } },
+        "reviewed_at": { "type": "string", "format": "date-time" },
+        "observation": { "$ref": "#/$defs/text" },
+        "limitations": { "$ref": "#/$defs/texts" },
+        "shared_dependencies": { "$ref": "#/$defs/texts", "description": "Disclose shared model, source and tools; different reviewer names do not prove independent error distributions." },
+        "evidence": { "type": "array", "items": { "$ref": "#/$defs/evidence" } },
+        "issues": { "type": "array", "items": { "$ref": "#/$defs/issue" } }
+      },
+      "allOf": [{ "if": { "properties": { "status": { "const": "PASS" } } }, "then": { "properties": { "evidence": { "minItems": 1 } } } }]
+    },
+    "results": {
+      "type": "object", "additionalProperties": false,
+      "required": ["schema_version", "job_id", "contract_sha256", "status", "results"],
+      "properties": {
+        "schema_version": { "const": "review-results.v1" },
+        "job_id": { "$ref": "#/$defs/jobId" },
+        "contract_sha256": { "$ref": "#/$defs/sha256" },
+        "status": { "enum": ["NOT_RUN", "RECORDED"] },
+        "results": { "type": "array", "items": { "$ref": "#/$defs/result" } }
+      },
+      "allOf": [{ "if": { "properties": { "status": { "const": "NOT_RUN" } } }, "then": { "properties": { "results": { "maxItems": 0 } } } }]
+    },
+    "access": {
+      "type": "object", "additionalProperties": false,
+      "required": ["schema_version", "input_id", "input_sha256", "method", "observer_id", "observed_at", "trace_reference"],
+      "properties": {
+        "schema_version": { "const": "review-access.v1" },
+        "input_id": { "$ref": "#/$defs/text" },
+        "input_sha256": { "$ref": "#/$defs/sha256" },
+        "method": { "enum": ["IMAGE_VIEW", "VIDEO_REVIEW", "FRAME_EXTRACTION", "DOCUMENT_READ"] },
+        "observer_id": { "$ref": "#/$defs/text" },
+        "observed_at": { "type": "string", "format": "date-time" },
+        "trace_reference": { "$ref": "#/$defs/text", "description": "Local observation/tool trace locator. This field is not an authenticated signature and does not prove that the media was understood." }
+      }
+    }
+  }
+}

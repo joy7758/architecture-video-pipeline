@@ -1,0 +1,56 @@
+{
+  "schema_version": "1.0",
+  "job_id": "guanque-pilot",
+  "entries": [
+    {
+      "id": "user-reference",
+      "source_type": "USER_PROVIDED",
+      "title": "鹳雀楼原测试任务中用户提供的两张外观照片",
+      "url": null,
+      "accessed_at": "2026-09-22T11:36:38.025111+00:00",
+      "provenance": {
+        "task_id": "01a0c8bf-80c0-7ab0-9c1b-8f3fc83460ef",
+        "note": "原任务用户提供；本总指挥已实际查看两图。原摄影者、原站点和发布权未核实。",
+        "evidence": {
+          "path": "jobs/guanque-pilot/references/provenance.md",
+          "sha256": "120caef8193bd7ca6cbe3a2a21d93a4091459b34a17e30a958208f77f2efe4c5"
+        }
+      },
+      "license": {
+        "usage": "RESEARCH_ONLY",
+        "publish_permission": "UNKNOWN"
+      }
+    }
+  ],
+  "views": [
+    {
+      "id": "front-oblique-wide",
+      "source_id": "user-reference",
+      "angle": "front-oblique-wide",
+      "image": {
+        "path": "jobs/guanque-pilot/references/guanque-user-01.png",
+        "sha256": "e03f001b1ab6e31eea997b2fe8ce346237276e033648b2a4b261fdb5afec32d0"
+      },
+      "observed": "正面偏侧全景；高台、长阶、三层主体与多道层檐；能看见台基侧面与屋面进深。"
+    },
+    {
+      "id": "front-oblique-detail",
+      "source_id": "user-reference",
+      "angle": "front-oblique-closer",
+      "image": {
+        "path": "jobs/guanque-pilot/references/guanque-user-02.png",
+        "sha256": "d6fe50eb5e20dd789a2cc95925c0a3ed21b2f8f927e3a248155fd8dc8ad9c8e3"
+      },
+      "observed": "较近斜正面；阶梯分段、绿色剪边、上层栏杆与顶层抱厦。"
+    }
+  ],
+  "notes": [
+    "本pilot复用已经施工的模型与用户参考，用于检验出片流程，不代表重新完成上游Scout发现。",
+    "这两张均偏正面斜视，没有完整背面或内部资料；未观察部分保持艺术简化。",
+    "docs/user-reference.md中的尺寸是用户转述，本轮未独立核实；模型不声称测绘精度。",
+    "官方网页本轮尝试刷新超时；不将历史官方介绍升级为本轮已核实事实。"
+  ],
+  "bindings": {
+    "request_sha256": "a0ef38da1a439a6bd821bc0e459a1a2c4afffff41bb0ea77ba229dc87606cf7b"
+  }
+}

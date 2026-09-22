@@ -1,0 +1,183 @@
+{
+  "$schema": "schemas/constitution-machine-contract-v0.1.schema.json",
+  "contract_id": "DBA-MAIN-CONSTITUTION-COHERENCE-v0.1",
+  "contract_type": "DBA_MAIN_CONSTITUTION_PRINCIPLES",
+  "version": "0.1.0",
+  "status": "ACCEPTED_EFFECTIVE_ON_CANONICAL_MERGE",
+  "title": "Digital Biosphere Architecture main constitutional coherence principles",
+  "title_zh": "数字生物圈架构主宪法一致性原则",
+  "parent_constitution_ref": "PROGRAM-CHARTER.md",
+  "authority_effect": "EFFECTIVE_WHEN_REACHABLE_FROM_CANONICAL_MAIN",
+  "human_adoption_decision": "APPROVED",
+  "effective_trigger": "REACHABLE_FROM_CANONICAL_MAIN",
+  "canonical_ref": "refs/heads/main",
+  "authorized_content_head": "440d0163aea1577437a2a9c6737a37e0af47663a",
+  "candidate_branch_authority_effect": "NONE",
+  "post_merge_authority_effect": "ADOPTED_AND_EFFECTIVE",
+  "merge_authorized": true,
+  "implementation_authorized": false,
+  "principles": [
+    {
+      "stable_id": "ADR-032",
+      "title": "Compositional scale and replaceable coordination",
+      "title_zh": "组合式规模与可替换协调",
+      "status": "REUSED_ACCEPTED_PRINCIPLE",
+      "statement": "Prefer many bounded and composable entities with finite, replaceable and auditable coordination over an unbounded central intelligence.",
+      "statement_zh": "优先通过大量有界、可组合主体以及有限、可替换、可审计的协调形成规模，而不是建设无限强中心。",
+      "source_refs": [
+        "architecture/ADR-032-compositional-scale-over-unbounded-center.md"
+      ]
+    },
+    {
+      "stable_id": "ADR-033",
+      "title": "Dynamic and evidence-aware attention",
+      "title_zh": "动态且证据感知的注意力",
+      "status": "REUSED_ACCEPTED_PRINCIPLE",
+      "statement": "Participant selection may adapt to task, context and evidence, but it creates neither authority nor a permanent central controller.",
+      "statement_zh": "参与者选择可以随任务、上下文和证据动态变化，但不得由此产生权威或永久中央控制器。",
+      "source_refs": [
+        "architecture/ADR-033-attention-principle-for-dynamic-coordination.md"
+      ]
+    },
+    {
+      "stable_id": "DBA-P-COMPATIBILITY-BEFORE-INNOVATION",
+      "title": "Compatibility before invention",
+      "title_zh": "兼容优先于另造",
+      "status": "ADOPTED_CONSTITUTIONAL_EXTENSION",
+      "statement": "Audit and reuse compatible protocols, schemas, evidence formats and adapters before introducing a new overlapping mechanism.",
+      "statement_zh": "引入新的重叠机制前，必须先审计并复用兼容的协议、Schema、证据格式和适配器。",
+      "source_refs": [
+        "architecture/dba-titmas-constitution-reuse-compatibility-audit-v0.1.md"
+      ]
+    },
+    {
+      "stable_id": "DBA-P-HUMAN-CONSTITUTIONAL-SOVEREIGNTY",
+      "title": "Human constitutional sovereignty",
+      "title_zh": "人类宪法主权",
+      "status": "ADOPTED_CONSTITUTIONAL_EXTENSION",
+      "statement": "Agents and components may advise, verify and execute within scope, but only an explicit Human Decision may amend constitutional authority or authorize irreversible effects.",
+      "statement_zh": "智能体与组件可以在范围内建议、核验和执行，但只有显式人类决策可以修改宪法权威或授权不可逆效果。",
+      "source_refs": [
+        "PROGRAM-CHARTER.md",
+        "architecture/commercial-private-infrastructure-strategy-constitution.md"
+      ]
+    },
+    {
+      "stable_id": "DBA-P-COMPOSITION-ACCOUNTABILITY",
+      "title": "Composition accountability",
+      "title_zh": "组合责任可追溯",
+      "status": "ADOPTED_CONSTITUTIONAL_EXTENSION",
+      "statement": "A composition must preserve the identity, task, permission, evidence and responsibility lineage of every participating entity and must be assessed as a composition.",
+      "statement_zh": "组合必须保留每个参与主体的身份、任务、权限、证据与责任谱系，并对组合整体重新评估。",
+      "source_refs": [
+        "architecture/ADR-032-compositional-scale-over-unbounded-center.md",
+        "architecture/entity-lifecycle.md"
+      ]
+    },
+    {
+      "stable_id": "ADR-039",
+      "title": "Evidence-based change and revalidation",
+      "title_zh": "基于证据的变化与重新核验",
+      "status": "REUSED_ACCEPTED_PRINCIPLE",
+      "statement": "Material changes to context, dependencies, policy, permissions or composition invalidate inherited conclusions until bounded revalidation is complete.",
+      "statement_zh": "上下文、依赖、策略、权限或组合发生实质变化时，既有结论必须失效并等待有界重新核验。",
+      "source_refs": [
+        "architecture/ADR-039-verified-correction-and-execution-context-continuity.md"
+      ]
+    },
+    {
+      "stable_id": "DBA-P-SHARED-PROTOCOL-NOT-CONTROLLER",
+      "title": "Shared protocol is not a shared controller",
+      "title_zh": "共享协议不等于共享控制器",
+      "status": "ADOPTED_CONSTITUTIONAL_EXTENSION",
+      "statement": "Interoperability should converge on shared contracts while execution and enforcement remain distributed, scoped and owned by their canonical domains.",
+      "statement_zh": "互操作应在共享契约上收敛，而执行与执法必须保持分布式、有范围并由规范责任域所有。",
+      "source_refs": [
+        "architecture/stack-specification.md",
+        "architecture/saee-dbos-contract.md"
+      ]
+    },
+    {
+      "stable_id": "DBA-P-REAL-ENVIRONMENT-FEEDBACK",
+      "title": "Real-environment feedback before capability claims",
+      "title_zh": "能力声明前需要真实环境反馈",
+      "status": "ADOPTED_CONSTITUTIONAL_EXTENSION",
+      "statement": "Synthetic, local or document-level validation must not be elevated into cross-platform, scale, production, adoption or commercial claims without matching real-environment evidence.",
+      "statement_zh": "缺少相匹配的真实环境证据时，不得把合成、本地或文档级验证提升为跨平台、规模、生产、采用或商业声明。",
+      "source_refs": [
+        "architecture/commercial-private-infrastructure-strategy-constitution.md",
+        "commercial/entry/customer-entry-validation-report.json"
+      ]
+    }
+  ],
+  "constitutional_assertions": {
+    "distributed_complexity_generation": true,
+    "centers_may_emerge": true,
+    "bootstrap_center_allowed": true,
+    "permanent_absolute_center": false,
+    "center_must_be_replaceable": true,
+    "center_must_be_auditable": true,
+    "center_is_not_immune_from_evolution": true,
+    "existing_standard_review_required": true,
+    "duplicate_core_forbidden": true,
+    "profile_before_core_expansion": true,
+    "adapter_before_new_runtime": true,
+    "gap_evidence_required_for_new_definition": true,
+    "human_or_organization_is_final_authority": true,
+    "applicable_constraint_intersection_required": true,
+    "human_approval_always_required": false,
+    "not_applicable_constraint_is_missing_constraint": false,
+    "unknown_applicability_fails_closed": true,
+    "agent_recommendation_is_authority": false,
+    "agent_can_self_authorize": false,
+    "cell_can_self_authorize": false,
+    "agent_can_amend_parent_constitution": false,
+    "cell_can_amend_parent_constitution": false,
+    "component_conformance_is_composition_conformance": false,
+    "composition_requires_reevaluation": true,
+    "composition_graph_required_for_consequential_action": true,
+    "composite_authority_escalation_forbidden": true,
+    "change_event_required": true,
+    "silent_authority_inheritance": false,
+    "high_risk_permission_revalidation_required": true,
+    "evidence_required_for_trust_restoration": true,
+    "shared_protocol_is_shared_controller": false,
+    "identity_pluralism": true,
+    "multiple_discovery_paths": true,
+    "direct_invocation_allowed_where_policy_permits": true,
+    "registry_portability_required": true,
+    "verifier_replaceability_required": true,
+    "documented_capability_is_operational_capability": false,
+    "synthetic_test_is_external_adoption": false,
+    "real_goal_and_deadline_evidence_required": true,
+    "capability_claim_requires_execution_evidence": true
+  },
+  "invariants": [
+    "AUTHORITY_NE_OWNERSHIP=true",
+    "OWNERSHIP_NE_IMPLEMENTATION=true",
+    "SHARED_PROTOCOL_NE_SHARED_CONTROLLER=true",
+    "COMPOSITION_NE_AUTHORITY_AGGREGATION=true",
+    "EVIDENCE_NE_TRUTH=true",
+    "VERIFICATION_NE_AUTHORIZATION=true",
+    "RECOMMENDATION_NE_DECISION=true",
+    "DECISION_NE_EXECUTION=true"
+  ],
+  "non_claims": [
+    "UNIFIED_ENTRY_IMPLEMENTED",
+    "GLOBAL_CONTROL_PLANE_CREATED",
+    "CROSS_PLATFORM_ENFORCEMENT_PROVEN",
+    "PRODUCTION_READY",
+    "COMMERCIAL_OFFER_AVAILABLE"
+  ],
+  "source_refs": [
+    "PROGRAM-CHARTER.md",
+    "architecture/ADR-032-compositional-scale-over-unbounded-center.md",
+    "architecture/ADR-033-attention-principle-for-dynamic-coordination.md",
+    "architecture/ADR-039-verified-correction-and-execution-context-continuity.md",
+    "architecture/commercial-private-infrastructure-strategy-constitution.md"
+  ],
+  "limitations": [
+    "Human adoption is approved; normative effect begins only when this contract is reachable from canonical refs/heads/main.",
+    "No runtime, gateway, SDK, website or product behavior is changed."
+  ]
+}

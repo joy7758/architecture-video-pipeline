@@ -1,0 +1,105 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://redcrag.cn/schemas/commercial-readiness-v1.0.schema.json",
+  "title": "TITMAS Commercial Readiness v1.0",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "readiness_version",
+    "observed_at",
+    "commercial_technical_ready",
+    "paid_beta_ready",
+    "production_ready",
+    "mature_commercial_infrastructure",
+    "technical_gates",
+    "operational_gates",
+    "external_evidence",
+    "commercial_evidence",
+    "security",
+    "next_human_decision"
+  ],
+  "properties": {
+    "$schema": {"type": "string"},
+    "readiness_version": {"const": "1.0"},
+    "observed_at": {"type": "string", "format": "date-time"},
+    "commercial_technical_ready": {"type": "boolean"},
+    "paid_beta_ready": {"type": "boolean"},
+    "production_ready": {"type": "boolean"},
+    "mature_commercial_infrastructure": {"type": "boolean"},
+    "technical_gates": {"$ref": "#/$defs/gateMap"},
+    "operational_gates": {"$ref": "#/$defs/gateMap"},
+    "external_evidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "external_agent_frameworks",
+        "external_agent_identities",
+        "external_agent_tenants",
+        "valid_external_calls",
+        "adoption_events"
+      ],
+      "properties": {
+        "external_agent_frameworks": {"type": "integer", "minimum": 0},
+        "external_agent_identities": {"type": "integer", "minimum": 0},
+        "external_agent_tenants": {"type": "integer", "minimum": 0},
+        "valid_external_calls": {"type": "integer", "minimum": 0},
+        "adoption_events": {"type": "integer", "minimum": 0},
+        "d29_api_sessions": {"type": "integer", "minimum": 0},
+        "d29_valid_external_agent_sessions": {"type": "integer", "minimum": 0},
+        "d29_distinct_valid_providers": {"type": "integer", "minimum": 0},
+        "d29_distinct_valid_model_families": {"type": "integer", "minimum": 0},
+        "d29_distinct_valid_entry_surfaces": {"type": "integer", "minimum": 0}
+      }
+    },
+    "commercial_evidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "paying_principals",
+        "real_payment_collection_confirmed",
+        "successful_protected_calls_30d",
+        "active_external_agent_identities_30d"
+      ],
+      "properties": {
+        "paying_principals": {"type": "integer", "minimum": 0},
+        "real_payment_collection_confirmed": {"type": "boolean"},
+        "successful_protected_calls_30d": {"type": "integer", "minimum": 0},
+        "active_external_agent_identities_30d": {"type": "integer", "minimum": 0}
+      }
+    },
+    "security": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "critical_findings_open",
+        "high_findings_without_mitigation",
+        "cross_tenant_leakage_findings"
+      ],
+      "properties": {
+        "critical_findings_open": {"type": ["integer", "null"], "minimum": 0},
+        "high_findings_without_mitigation": {"type": ["integer", "null"], "minimum": 0},
+        "cross_tenant_leakage_findings": {"type": ["integer", "null"], "minimum": 0}
+      }
+    },
+    "next_human_decision": {"type": ["string", "null"]}
+  },
+  "$defs": {
+    "gateMap": {
+      "type": "object",
+      "additionalProperties": {
+        "enum": [
+          "NOT_STARTED",
+          "IN_PROGRESS",
+          "PASS",
+          "PASS_WITH_LIMITATIONS",
+          "BLOCKED",
+          "WAITING_FOR_ELAPSED_TIME",
+          "WAITING_FOR_EXTERNAL_AGENT_USAGE",
+          "WAITING_FOR_HUMAN_DECISION",
+          "FAILED_RETAINED",
+          "NOT_ASSESSED"
+        ]
+      }
+    }
+  }
+}

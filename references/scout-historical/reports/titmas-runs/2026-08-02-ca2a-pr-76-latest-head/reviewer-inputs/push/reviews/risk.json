@@ -1,0 +1,16 @@
+{
+  "schema_version": "0.1",
+  "review_id": "2026-08-02-ca2a-pr-76-push-risk-review",
+  "agent_identifier": "/root/push_risk_review",
+  "model_runtime_identifier": "OpenAI Codex GPT-5",
+  "review_role": "RISK_REVIEWER",
+  "input_digest": "sha256:0f059a8d6ce43e0dced5c3bdb6eac023c2dfa8859ca0833475b2718c166b7f09",
+  "output_digest": "sha256:7efd5bcb93afc1b28e9af1bc71a32ac1071169a08d158c9f54c64d5d0b4bbf34",
+  "decision": "PASS",
+  "timestamp": "2026-08-02T06:28:41Z",
+  "ruleset_version": "0.1",
+  "reason_codes": ["NO_SECRETS_OR_LICENSE_CHANGE", "FAST_FORWARD_PERSONAL_FORK_ONLY", "CLAIMS_BOUNDED"],
+  "findings": ["The reviewed diff contains no detected secret, restricted data, dependency or license change; the exact action is a fast-forward-only personal-fork push and canonical evidence is correctly treated as non-authorizing."],
+  "blocking_reasons": [],
+  "evidence_references": ["github-fork:joy7758/ca2a", "git:ca2a@0a1ffa6710d25f58515b2dca7e0619e134c0a43e", "reports/titmas-runs/2026-08-02-ca2a-pr-76-latest-head/agent-evidence-verification.json"]
+}

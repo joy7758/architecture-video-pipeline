@@ -1,0 +1,75 @@
+{
+  "fixture_version": "0.1.0",
+  "cases": [
+    {
+      "id": "SC-POSITIVE-CURRENT-DORMANT",
+      "payload": {
+        "draft_pr": {
+          "created": true,
+          "state": "OPEN_DRAFT",
+          "merged": false
+        },
+        "limitations": [
+          "DRAFT_PR_41_OPEN_DRAFT_NOT_MERGED"
+        ],
+        "public_contribution_surface": {
+          "templates_developed": true,
+          "templates_installed": false,
+          "active": false,
+          "authorized": false
+        },
+        "security": {
+          "process_defined": true,
+          "transport_active": false
+        },
+        "maintainer": {
+          "interim_assigned": true,
+          "formal_assigned": false
+        },
+        "public_launch": {
+          "active": false
+        },
+        "canonical_main_integration_complete": false,
+        "community_established": false,
+        "infrastructure_complete": true,
+        "dormant_path_auto_discoverable": false,
+        "active_destination_used_outside_activation_pr": false
+      },
+      "expected_errors": []
+    },
+    {
+      "id": "SC-POSITIVE-MAIN-NE-ACTIVATION",
+      "payload": {
+        "draft_pr": {
+          "created": true,
+          "state": "MERGED",
+          "merged": true
+        },
+        "limitations": [],
+        "public_contribution_surface": {
+          "templates_developed": true,
+          "templates_installed": false,
+          "active": false,
+          "authorized": false
+        },
+        "security": {
+          "process_defined": true,
+          "transport_active": false
+        },
+        "maintainer": {
+          "interim_assigned": true,
+          "formal_assigned": false
+        },
+        "public_launch": {
+          "active": false
+        },
+        "canonical_main_integration_complete": true,
+        "community_established": false,
+        "infrastructure_complete": true,
+        "dormant_path_auto_discoverable": false,
+        "active_destination_used_outside_activation_pr": false
+      },
+      "expected_errors": []
+    }
+  ]
+}

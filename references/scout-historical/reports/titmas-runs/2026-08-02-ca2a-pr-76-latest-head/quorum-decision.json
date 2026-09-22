@@ -1,0 +1,26 @@
+{
+  "authorized_actions":["POST_BOUNDED_TECHNICAL_COMMENT"],
+  "authorization_binding":{
+    "run_id":"2026-08-02-ca2a-pr-76-latest-head",
+    "repository":"agentrust-io/ca2a",
+    "target":"agentrust-io/ca2a#76",
+    "head_sha":"0a1ffa6710d25f58515b2dca7e0619e134c0a43e",
+    "diff_digest":"sha256:82688a11ed0f103c75cabc80f6c7e16fbd51bee0766a52043d0894ff2d066731",
+    "input_digest":"sha256:5532305a50fd3177920965118ab24cb989ac2121a70eb4ee3724693e967d4af0",
+    "ruleset_version":"0.1",
+    "action":"POST_BOUNDED_TECHNICAL_COMMENT",
+    "expires_at":"2026-08-02T08:00:00Z"
+  },
+  "blocked_actions":[],
+  "decision":"ALLOW",
+  "human_review_required":false,
+  "reason_codes":["ALL_REQUIRED_REVIEWERS_PASS"],
+  "reviewers":[
+    {"review_role":"DISCOVERY_REVIEWER","agent_identifier":"/root/comment_discovery_review","decision":"PASS","output_digest":"sha256:bc79e71ba9af742d8e64848a7e447011c319fc25c954634e94f27e834654639e"},
+    {"review_role":"EVIDENCE_REVIEWER","agent_identifier":"/root/comment_evidence_review","decision":"PASS","output_digest":"sha256:cc931341a3b2c8b05b28433905a5b00e6dc26a7b1f6aec79632b7f704b53e3c4"},
+    {"review_role":"SCOPE_REVIEWER","agent_identifier":"/root/comment_scope_review","decision":"PASS","output_digest":"sha256:e7ba6b2f8906867c3390738b64bf9a4cda2481c2e214c7986256ba9c32495658"},
+    {"review_role":"QUALITY_REVIEWER","agent_identifier":"/root/comment_quality_review","decision":"PASS","output_digest":"sha256:192d2f14d7020f402854b148f452b64d6f2e567d7cdb56b5f55f44a49c7d5174"},
+    {"review_role":"RISK_REVIEWER","agent_identifier":"/root/comment_risk_review","decision":"PASS","output_digest":"sha256:ae717652266e7b441e9f8de1d269e6d2ba4a939bf3a9d29dee8bb1eb616e75fb"}
+  ],
+  "ruleset_version":"0.1"
+}

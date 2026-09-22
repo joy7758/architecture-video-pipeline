@@ -1,0 +1,102 @@
+{
+  "schema_version": "1.0",
+  "pipeline_id": "architecture-video-pipeline",
+  "mode": "LOCAL_AGENT_ORCHESTRATED",
+  "coordinator": "CURRENT_CODEX_TASK",
+  "discovery": {
+    "executor": "CODEX_RESEARCH_ADAPTER",
+    "state": "AVAILABLE_AS_AGENT_ROLE",
+    "contract": "sources.json",
+    "upstream_scout": {
+      "canonical_project_id": "titmac-scout",
+      "conversation_alias": "tiamas-scout",
+      "canonical_repository": "joy7758/titmac-scout",
+      "execution": "NOT_RUN",
+      "current_canonical_checkout": "NOT_LOCATED",
+      "observed_legacy_capability": "GitHub Issues/Discussions opportunity discovery; not general architectural research"
+    }
+  },
+  "construction": {
+    "executor": "CODEX_WITH_THREEJS_ARCHITECTURE_EFFECTS",
+    "state": "AVAILABLE",
+    "skill": "vendor/architecture-skill/SKILL.md",
+    "upstream": "https://github.com/lhlGitHub/threejs-architecture-effects",
+    "commit": "693ca2ec1193e7355054f14d7deb1427439a24d0",
+    "adapters": [
+      "guanque"
+    ]
+  },
+  "visual_review": {
+    "executor": "INDEPENDENT_CODEX_REVIEWER",
+    "scope": "reference-grounded artistic silhouette and rendered frame review",
+    "separate_from_builder": true
+  },
+  "titmas": {
+    "state": "BLOCKED_CURRENT_SERVICE_UNAVAILABLE",
+    "user_choice": "SPECIFIED_TITMAS_SERVICE_LOCATE_FROM_DBA",
+    "missing": [
+      "Reachable current canonical TITMAS service and project-compatible review contract"
+    ],
+    "execution": "NOT_RUN",
+    "receipt_verification": "NOT_RUN",
+    "known_interface_candidates": [
+      "titmas_capabilities",
+      "titmas_preflight",
+      "titmas_verify_receipt",
+      "titmas_quota"
+    ],
+    "candidate_is_selected": false,
+    "local_agent_evidence_substitution": false,
+    "required_contract": [
+      "service identity and version",
+      "authorized input scope",
+      "model/video/source digest binding",
+      "raw receipt",
+      "independent receipt verification",
+      "result and issue semantics"
+    ],
+    "failure": "PREVIEW_ONLY",
+    "canonical_implementation_repository": "joy7758/titmas-sandbox-gateway",
+    "current_public_domain": "https://dcell.net",
+    "current_machine_endpoint": null,
+    "legacy_domain": "https://redcrag.cn",
+    "legacy_domain_is_current": false,
+    "registry_source": "docs/governance/titmas-service-discovery.json",
+    "new_runtime_work": "PAUSED_PER_CANONICAL_REGISTRY",
+    "service_id": "titmas-agent-native-infrastructure",
+    "api_version": "v1",
+    "owner_repository": "joy7758/titmas-sandbox-gateway",
+    "health": "NOT_VERIFIED",
+    "service_call": "NOT_RUN",
+    "receipt": "NOT_AVAILABLE",
+    "upstream_schema_candidates": [
+      "project-manifest",
+      "execution-object",
+      "verification-object",
+      "evidence-reference-object"
+    ],
+    "upstream_schema_observation": "Source inspection only; no live API contract obtained",
+    "requested_scope": "Record/validate bounded execution and review evidence; independent agent performs building/video review",
+    "implementation_handoff": "pipeline/titmas-handoff.json"
+  },
+  "video": {
+    "executor": "pipeline/render-video.mjs",
+    "state": "IMPLEMENTATION_IN_PROGRESS",
+    "scope": "deterministic frame capture; no external model calls"
+  },
+  "publication": {
+    "executor": "USER",
+    "automation": "NONE"
+  },
+  "truth_boundaries": [
+    "local tests do not equal TITMAS execution",
+    "receipt integrity does not equal architectural accuracy",
+    "research references do not authorize republishing the source photos",
+    "preview is not final acceptance"
+  ],
+  "integration_observation_sources": [
+    "/Users/zhangbin/GitHub/tiamas-scout/src/discovery/README.md",
+    "/Users/zhangbin/GitHub/titmas-integrations/agent-entry.json",
+    "/Volumes/ORICO_DATA/Projects/active/digital-biosphere-architecture-specification/digital-biosphere-architecture/cockpit/source-registry.json"
+  ]
+}

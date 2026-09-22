@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Security policy
+    url: https://github.com/joy7758/digital-biosphere-architecture-specification/blob/main/digital-biosphere-architecture/SECURITY.md
+    about: Do not publish secrets or vulnerability details in an Issue.

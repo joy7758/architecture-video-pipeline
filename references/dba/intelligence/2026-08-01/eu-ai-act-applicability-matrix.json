@@ -1,0 +1,65 @@
+{
+  "matrix_id": "DBA-EU-AI-ACT-APPLICABILITY-MATRIX-2026-08-01",
+  "artifact_kind": "legal_applicability_screening",
+  "status": "SCREENING_ONLY_LEGAL_REVIEW_REQUIRED",
+  "observed_at": "2026-08-01",
+  "primary_repository": "DBA",
+  "jurisdiction": "EUROPEAN_UNION",
+  "sources": [
+    "https://ai-act-service-desk.ec.europa.eu/en/ai-act/article-113",
+    "https://digital-strategy.ec.europa.eu/en/library/guidelines-transparency-obligations-providers-and-deployers-ai-systems"
+  ],
+  "source_reconciliation": {
+    "base_article_113_general_application_date": "2026-08-02",
+    "article_50_guideline_application_date": "2026-08-02",
+    "digital_omnibus_disclaimer_present": true,
+    "official_service_desk_text_fully_updated_for_amendments": false,
+    "legal_interpretation_complete": false
+  },
+  "screening_rows": [
+    {
+      "role_or_surface": "DBA_REFERENCE_ONLY_SPECIFICATION_HUB",
+      "current_observed_role": true,
+      "potential_obligation": "NO_AUTOMATIC_CLASSIFICATION_FROM_REPOSITORY_ROLE",
+      "screening_result": "FACT_SPECIFIC_REVIEW_ONLY",
+      "evidence_needed": ["actual EU market role", "actual provider or deployer conduct", "actual system and output surface"]
+    },
+    {
+      "role_or_surface": "PUBLIC_AI_INTERACTION_OR_GENERATED_CONTENT",
+      "current_observed_role": "NOT_ASSESSED",
+      "potential_obligation": "ARTICLE_50_TRANSPARENCY",
+      "screening_result": "POTENTIALLY_APPLICABLE_IF_FACTS_MATCH",
+      "evidence_needed": ["interaction type", "content type", "provider and deployer identity", "applicable exceptions", "machine-readable marking behavior"]
+    },
+    {
+      "role_or_surface": "GENERAL_PURPOSE_AI_MODEL_PROVIDER",
+      "current_observed_role": false,
+      "potential_obligation": "GPAI_PROVIDER_OBLIGATIONS",
+      "screening_result": "NOT_CURRENTLY_SUPPORTED_BY_PROJECT_ROLE",
+      "evidence_needed": ["model provider status", "placing-on-market facts", "model and distribution scope"]
+    },
+    {
+      "role_or_surface": "HIGH_RISK_AI_SYSTEM_PROVIDER_OR_DEPLOYER",
+      "current_observed_role": "NOT_ASSESSED",
+      "potential_obligation": "CHAPTER_III_FACT_SPECIFIC",
+      "screening_result": "DO_NOT_INFER_FROM_AGENT_OR_GOVERNANCE_LABEL",
+      "evidence_needed": ["Article 6 classification", "Annex context", "intended purpose", "deployment facts", "current amended timeline"]
+    },
+    {
+      "role_or_surface": "EVIDENCE_LOG_OR_GOVERNANCE_ARTIFACT",
+      "current_observed_role": true,
+      "potential_obligation": "POSSIBLE_SUPPORTING_DOCUMENTATION_ONLY",
+      "screening_result": "ARTIFACT_NE_COMPLIANCE_PROOF",
+      "evidence_needed": ["applicable duty", "required retention", "coverage", "accuracy", "authority", "independent legal review"]
+    }
+  ],
+  "required_next_action": "OBTAIN_QUALIFIED_EU_LEGAL_REVIEW_ONLY_WHEN_AN_ACTUAL_ROLE_USE_CASE_OR_MARKET_ACTION_EXISTS",
+  "implementation_authorized": false,
+  "compliance_claim_authorized": false,
+  "non_claims": [
+    "This matrix is not legal advice.",
+    "This matrix does not determine whether TITMAS, DBA, DBOS, SAEE or a website is compliant.",
+    "The 2026-08-02 date does not mean every high-risk obligation applies identically on that date.",
+    "A log, receipt, trace, validator pass or documentation set is not by itself proof of compliance."
+  ]
+}

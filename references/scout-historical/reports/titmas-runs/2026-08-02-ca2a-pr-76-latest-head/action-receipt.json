@@ -1,0 +1,16 @@
+{
+  "action":"POST_BOUNDED_TECHNICAL_COMMENT",
+  "authorization_reference":"quorum-decision.json",
+  "authorization_binding_digest":"sha256:158ad16f56d569d8c715f16fff0261fb4014fd390ebf740f0b95513e402ac8f3",
+  "executed_at":"2026-08-02T06:47:23Z",
+  "repository":"agentrust-io/ca2a",
+  "pull_request_number":76,
+  "head_sha":"0a1ffa6710d25f58515b2dca7e0619e134c0a43e",
+  "body":"@codex review",
+  "body_digest":"sha256:7750379659fbba413136c8bf4f500a59f1e03f0c36c0ab16b0a2475eb13ecb1a",
+  "comment_id":5156010029,
+  "comment_url":"https://github.com/agentrust-io/ca2a/pull/76#issuecomment-5156010029",
+  "exact_comment_count_after":1,
+  "automatic_retry_authorized":false,
+  "result":"SUCCESS"
+}

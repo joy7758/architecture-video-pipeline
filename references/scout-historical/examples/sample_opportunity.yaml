@@ -1,0 +1,57 @@
+# EXAMPLE ONLY - NOT A SPECIFICATION
+# Illustrative OpportunityObject shape for agent inspection.
+# Schema validation and customer-demo use are not authorized.
+
+_meta:
+  artifact_type: illustrative_scaffold
+  status: design_draft
+  normative: false
+  schema_validated: false
+  example_only: true
+
+identity:
+  opportunity_id: EXAMPLE-NOT-REAL-001
+  object_version: 0.1.0-draft
+
+source:
+  source_id: EXAMPLE-SOURCE-NOT-REAL
+  source_type: illustrative_customer_declaration
+  source_reference: null
+  observed_at: null
+  retrieved_at: null
+  content_digest: null
+  trust_level: UNKNOWN
+  admission_status: NOT_AUTHORIZED_FOR_USE
+
+need:
+  statement: Illustrative bounded need; not an observed customer request.
+  taxonomy_ref: null
+
+capability:
+  capability_ref: null
+  supporting_evidence_refs: []
+
+constraints:
+  policy_refs: []
+  cost_limit: null
+  time_limit: null
+  compatibility_refs: []
+  risk_refs: []
+
+evidence:
+  claim_evidence_refs: []
+  evidence_status: INSUFFICIENT_EVIDENCE
+
+matching:
+  score_status: NOT_COMPUTABLE
+  score_value: null
+  match_eligible: false
+  review_required: true
+
+lifecycle:
+  state: DRAFT
+  transitions: []
+
+manual_review:
+  review_status: NOT_REVIEWED
+  authorization_granted: false

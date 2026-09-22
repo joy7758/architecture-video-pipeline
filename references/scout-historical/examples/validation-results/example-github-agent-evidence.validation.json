@@ -1,0 +1,62 @@
+{
+  "authorization_granted": false,
+  "checked_rule_ids": [
+    "TVP-SCH-002",
+    "TVP-SCH-003",
+    "TVP-SCH-004",
+    "TVP-SCH-005",
+    "TVP-REF-001",
+    "TVP-REF-004",
+    "TVP-LIF-003",
+    "TVP-EVD-001",
+    "TVP-EVD-005",
+    "TVP-AUT-001"
+  ],
+  "external_action_allowed": false,
+  "failed_rules": [
+    {
+      "message": "No Approval Object is present; the chain is invalid and no action is allowed.",
+      "path": "$.approval",
+      "reason_code": "APPROVAL_MISSING",
+      "rule_id": "TVP-AUT-001",
+      "severity": "CRITICAL",
+      "source_design_rule": "TVM-AUT-001"
+    },
+    {
+      "message": "A post-action prototype chain requires an explicit matching assessment.",
+      "path": "$.assessment",
+      "reason_code": "MATCHING_ASSESSMENT_MISSING",
+      "rule_id": "TVP-LIF-003",
+      "severity": "HIGH",
+      "source_design_rule": "TVM-LIF-003,TVM-LIF-004,TVM-LIF-007"
+    }
+  ],
+  "input_form": "PLAIN_OPPORTUNITY_NORMALIZED_FAIL_CLOSED",
+  "input_source": "examples/opportunities/example-github-agent-evidence.yaml",
+  "non_authorization_assertion": "VALIDATION_DOES_NOT_GRANT_AUTHORIZATION",
+  "prototype_classification": "RESEARCH_PROTOTYPE_NOT_PRODUCTION",
+  "ruleset_version": "TITMAS-SCOUT-VALIDATOR-PROTOTYPE-STRUCTURAL-SUBSET-V0.1",
+  "timestamp": "2026-08-01T12:00:00Z",
+  "timestamp_trust": "UNATTESTED_CALLER_OR_LOCAL_CLOCK",
+  "unchecked_capabilities": [
+    "formal_schema_validation",
+    "full_validation_model_conformance",
+    "nested_extension_semantics_beyond_prototype_allowlists",
+    "ruleset_registry_and_manifest_integrity",
+    "trusted_time_attestation",
+    "uri_resolution",
+    "artifact_digest_recomputation",
+    "cryptographic_signature_verification",
+    "evidence_provenance_freshness_and_admissibility",
+    "reviewer_identity_authority_and_attestation_verification",
+    "action_policy_evaluation",
+    "authorized_scope_and_constraint_evaluation",
+    "replay_and_use_limit_enforcement",
+    "action_execution",
+    "github_api_access",
+    "external_action",
+    "production_deployment"
+  ],
+  "validation_scope": "PROTOTYPE_STRUCTURAL_SUBSET_POST_ACTION_CHAIN",
+  "validation_status": "INVALID"
+}

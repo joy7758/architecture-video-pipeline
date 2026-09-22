@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://titmas.cn/schemas/d19/rollback-evidence-2.1.json",
+  "title": "TITMAS RollbackEvidenceObject v2.1",
+  "type": "object",
+  "required": [
+    "rollback_id",
+    "mutation_id",
+    "pre_change_revision",
+    "rollback_target_revision",
+    "trigger",
+    "procedure_reference",
+    "validation_results",
+    "failed_mutation_retained",
+    "evidence_references",
+    "status"
+  ],
+  "properties": {
+    "rollback_id": {"type": "string"},
+    "mutation_id": {"type": "string"},
+    "pre_change_revision": {"type": "string", "minLength": 7},
+    "rollback_target_revision": {"type": "string", "minLength": 7},
+    "trigger": {"type": "string"},
+    "procedure_reference": {"type": "string", "minLength": 3},
+    "validation_results": {"enum": ["PASS", "FAIL", "NOT_ASSESSED"]},
+    "failed_mutation_retained": {"const": true},
+    "evidence_references": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+    "status": {"enum": ["READY", "EXECUTED", "NOT_ASSESSED"]}
+  },
+  "additionalProperties": false
+}

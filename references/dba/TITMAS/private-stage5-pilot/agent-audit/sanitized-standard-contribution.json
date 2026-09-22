@@ -1,0 +1,63 @@
+{
+  "checkpoint_id": "stage5-standard-contribution",
+  "checkpoint_state": "DURABLE",
+  "checkpoint_payload_sha256": "af5fe38eeaef4b03e07edb753085be6850a083f3f63fbf39801d60e5f1643b62",
+  "sanitized_payload_sha256": "193d76e12b6518d9d5ff6c5d5f921d4e48aecb8f165520e78bf515233b4f0c14",
+  "stage": "STANDARD_CONTRIBUTION",
+  "provider": "ALIBABA_DASHSCOPE",
+  "requested_model": "qwen3.7-max",
+  "returned_model": "qwen3.7-max",
+  "model_identity_status": "MATCH",
+  "structured_result": {
+    "submission_id": "stage5-submission-AGENT-001",
+    "contribution_type": "TEST_VECTOR",
+    "submission": {
+      "vector_id": "STAGE5-VECTOR-AN04-LOOPBACK-01",
+      "target_specification": "TITMAS Stage 5 Conformance Client Preflight and Loopback Submission",
+      "input": {
+        "payload_type": "TEST_VECTOR",
+        "synthetic_data": {
+          "id": "syn-001",
+          "value": 42
+        },
+        "task_id": "AN-04-OBJECT-GENERATION"
+      },
+      "expected_result": {
+        "status": "CONFORMANCE_PASS",
+        "next_state": "HUMAN_DISPOSITION_REQUIRED",
+        "validation_checks": [
+          "SCHEMA_PREFLIGHT_OK",
+          "LOOPBACK_ECHO_OK"
+        ]
+      },
+      "expected_reason_code": "TITMAS-CONFORMANCE-PASS-LOOPBACK",
+      "positive_or_negative": "POSITIVE",
+      "failure_classification": "NONE",
+      "source_refs": [
+        "titmas-stage5-protocol-v1.0",
+        "api-contract.json",
+        "schemas/test-vector.schema.json"
+      ],
+      "limitations": [
+        "Requires ephemeral sandbox key for loopback execution",
+        "Does not validate private core algorithms",
+        "Conformance pass does not imply standard adoption"
+      ]
+    },
+    "conformance_status": "CONFORMANCE_PASS",
+    "reason_codes": [
+      "TITMAS-STAGE5-CONTRIBUTION-CONFORMANT"
+    ],
+    "agent_recommendation": "PROCEED_TO_HUMAN_REVIEW",
+    "human_disposition_required": true,
+    "limitations": [
+      "PRIVATE_STAGE5_PILOT_ONLY",
+      "PILOT_ACCEPTANCE_NE_STANDARD_ADOPTION"
+    ],
+    "non_claims": [
+      "PILOT_ACCEPTANCE_NE_STANDARD_ADOPTION",
+      "CONFORMANCE_NE_TRUTH",
+      "CONFORMANCE_NE_AUTHORIZATION"
+    ]
+  }
+}

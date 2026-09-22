@@ -1,0 +1,83 @@
+artifact_type: TITMAS_SCOUT_LOCAL_EXECUTION_RECEIPT_V0_1
+receipt_id: RECEIPT-STAGE2-STRUCTURAL-SUBSET-20260801-091104Z
+classification: LOCAL_REPRODUCIBILITY_RECEIPT_UNATTESTED
+receipt_scope: VALIDATOR_PROCESS_ONLY
+
+execution:
+  executed_at: "2026-08-01T09:11:04Z"
+  timestamp_source: CALLER_SUPPLIED_LOCAL_UTC
+  timestamp_trust: UNATTESTED_CALLER_OR_LOCAL_CLOCK
+  working_directory: /Users/zhangbin/GitHub/tiamas-scout
+  command: >-
+    ruby src/validator/validate.rb
+    --timestamp 2026-08-01T09:11:04Z
+    examples/validation-runs/2026-08-01-github-agent-hitl-issue-636-stage-2-structural-subset/lifecycle-input.yaml
+  exit_code: 0
+  exit_code_meaning: STRUCTURAL_SUBSET_VALID
+  stderr_observed_empty: true
+
+runtime:
+  language: Ruby
+  version: ruby 2.6.10p210 (2022-04-12 revision 67958)
+  platform: universal.arm64e-darwin25
+
+validator:
+  name: TITMAS Scout Validator Prototype
+  ruleset_version: TITMAS-SCOUT-VALIDATOR-PROTOTYPE-STRUCTURAL-SUBSET-V0.1
+  repository_commit: 8f42d75fa57ee3203b53c08151bef9d968c5ec33
+  core_logic_modified_for_run: false
+  source_files:
+    - path: src/validator/schema_check.rb
+      content_digest: sha256:a4dbd1140bc29024da87a9466122ea4a34412fc3e482561241ae300399cea192
+    - path: src/validator/reference_check.rb
+      content_digest: sha256:0eec1a53fb7e53896069fc9cf0ee444690d5c2b2e9cc3a5169a156a6fd90ed7e
+    - path: src/validator/lifecycle_check.rb
+      content_digest: sha256:69cff9b9b58ee02a00f621f8ada629d09c2a28645d2b3cea984bdbab74924db9
+    - path: src/validator/validation_aggregator.rb
+      content_digest: sha256:4f2771b2bbc0ef3ae8fa74e92af15052b6fa9cefcdb846ca4a25942959e7803d
+    - path: src/validator/validate.rb
+      content_digest: sha256:28836c7496faaa541476778afb84d74e3d0b506a466e56da31d113157f2b105a
+
+input:
+  path: examples/validation-runs/2026-08-01-github-agent-hitl-issue-636-stage-2-structural-subset/lifecycle-input.yaml
+  content_digest: sha256:6f97f958eea94274082191abfcd31dc78ad2a78cd876762055954b7b53f15ee0
+  classification: SYNTHETIC_RESEARCH_FIXTURE_ONLY
+  created_for_run: true
+  untracked_at_execution: true
+
+output:
+  path: examples/validation-runs/2026-08-01-github-agent-hitl-issue-636-stage-2-structural-subset/validation-result.json
+  content_digest: sha256:7d3138b6ae459843df8645d9798e014d822a2bb4c51d0c63ee6a270e5d1fa0a2
+  validation_status: VALID
+  failed_rule_count: 0
+  authorization_granted: false
+  external_action_allowed: false
+
+historical_boundary:
+  stage_1_modified: false
+  stage_1_git_commit: 8f42d75fa57ee3203b53c08151bef9d968c5ec33
+  stage_1_git_tree: cfd2826b4c558c3ae3d63c31b4e5a52defb9d9fc
+
+io_boundary:
+  validator_input_mode: LOCAL_FILE_READ
+  validator_output_mode: STANDARD_OUTPUT_CAPTURED_AS_LOCAL_ARTIFACT
+  validator_network_isolation_enforced: false
+  validator_network_calls_observed: false
+  validator_external_api_calls: false
+  validator_external_actions: false
+  real_action_executed: false
+  assurance: SOURCE_INSPECTION_AND_STATIC_SCAN_NOT_RUNTIME_NETWORK_SANDBOX
+
+replay:
+  deterministic_replay_expected: true
+  required_same_input_bytes: true
+  required_same_validator_commit: true
+  required_same_ruleset_version: true
+  required_same_explicit_timestamp: true
+
+limitations:
+  - Receipt is self-recorded and has no signature or trusted attestation.
+  - Synthetic object states are fixture data, not historical events.
+  - Validator does not resolve supporting references or recompute digests.
+  - VALID does not establish evidence sufficiency, Approval, or authorization.
+  - No operating-system network sandbox was applied to the Validator process.

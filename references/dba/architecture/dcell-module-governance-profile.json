@@ -1,0 +1,340 @@
+{
+  "$schema": "schemas/constitution-machine-contract-v0.1.schema.json",
+  "contract_id": "TITMAS-DCELL-MODULE-GOVERNANCE-PROFILE-v0.1",
+  "contract_type": "DCELL_MODULE_GOVERNANCE_PROFILE",
+  "version": "0.1.0",
+  "status": "ACCEPTED_EFFECTIVE_ON_CANONICAL_MERGE",
+  "title": "DCell module governance profile",
+  "title_zh": "DCell模块治理配置规范",
+  "parent_constitution_ref": "TITMAS-PROJECT-CONSTITUTION-COHERENCE-v0.1",
+  "authority_effect": "EFFECTIVE_WHEN_REACHABLE_FROM_CANONICAL_MAIN",
+  "human_adoption_decision": "APPROVED",
+  "effective_trigger": "REACHABLE_FROM_CANONICAL_MAIN",
+  "canonical_ref": "refs/heads/main",
+  "authorized_content_head": "440d0163aea1577437a2a9c6737a37e0af47663a",
+  "candidate_branch_authority_effect": "NONE",
+  "post_merge_authority_effect": "ADOPTED_AND_EFFECTIVE",
+  "merge_authorized": true,
+  "implementation_authorized": false,
+  "principles": [
+    {
+      "stable_id": "DCELL-P-CELL-GRADE-GOVERNANCE",
+      "title": "Skill-like selection with cell-grade governance",
+      "title_zh": "技能式选择与细胞级治理",
+      "status": "ADOPTED_CONSTITUTIONAL_EXTENSION",
+      "statement": "A DCell may be selected like a skill, but admission, permission, composition, evidence, lifecycle and revalidation remain governed as a digital entity module.",
+      "statement_zh": "DCell可以像技能一样被选择，但准入、权限、组合、证据、生命周期和重新核验必须按数字主体模块治理。",
+      "source_refs": [
+        "architecture/digital-entity-specification.md",
+        "architecture/capability-boundary-specification.md"
+      ]
+    },
+    {
+      "stable_id": "DCELL-P-PERMISSION-INTERSECTION",
+      "title": "Permission intersection",
+      "title_zh": "权限交集",
+      "status": "ADOPTED_CONSTITUTIONAL_EXTENSION",
+      "statement": "Effective module permission is the intersection of entity permission, task authorization, module constraints, policy constraints and current context validity.",
+      "statement_zh": "模块有效权限是主体权限、任务授权、模块约束、策略约束和当前上下文有效性的交集。",
+      "source_refs": [
+        "architecture/capability-boundary-specification.md",
+        "architecture/governance-decision-model.md"
+      ]
+    },
+    {
+      "stable_id": "DCELL-P-CHANGE-REVALIDATION",
+      "title": "Composition and version change revalidation",
+      "title_zh": "组合与版本变化重新核验",
+      "status": "ADOPTED_CONSTITUTIONAL_EXTENSION",
+      "statement": "Selecting, removing, updating or recomposing a module invalidates inherited conclusions until the affected composition is revalidated.",
+      "statement_zh": "选择、移除、更新或重组模块都会使继承结论失效，直到受影响组合完成重新核验。",
+      "source_refs": [
+        "architecture/ADR-039-verified-correction-and-execution-context-continuity.md"
+      ]
+    },
+    {
+      "stable_id": "DCELL-P-USABILITY-AS-SAFETY",
+      "title": "Usability is a constitutional safety property",
+      "title_zh": "可用性是宪法级安全属性",
+      "status": "ADOPTED_CONSTITUTIONAL_EXTENSION",
+      "statement": "A first-value path that requires hidden command syntax, schema guessing or manual secret handling is not constitutionally usable for the intended agent or human entry.",
+      "statement_zh": "首次价值路径若要求隐藏命令语法、猜测Schema或手工处理秘密，就不满足预期智能体或人类入口的宪法级可用性。",
+      "source_refs": [
+        "commercial/entry/first-value-contract.schema.json",
+        "commercial/entry/customer-entry-check.json"
+      ]
+    }
+  ],
+  "classification_levels": [
+    "SKILL",
+    "CAPABILITY_MODULE",
+    "DCELL_CANDIDATE",
+    "ECOLOGICAL_DCELL"
+  ],
+  "qualification_rules": {
+    "all_functions_are_dcells": false,
+    "all_scripts_are_dcells": false,
+    "all_skills_are_dcells": false,
+    "all_adapters_are_dcells": false,
+    "ecological_dcell_requires_real_external_use_or_replacement_evidence": true,
+    "manifest_only_is_sufficient_for_ecological_dcell": false
+  },
+  "activation_classes": [
+    "MANDATORY",
+    "POLICY_REQUIRED",
+    "USER_SELECTABLE",
+    "EXPERIMENTAL"
+  ],
+  "minimum_contract_fields": [
+    "cell_id",
+    "logical_identity",
+    "version",
+    "provider_or_operator",
+    "capability_contract",
+    "input_contract",
+    "output_contract",
+    "allowed_actions",
+    "forbidden_actions",
+    "required_data",
+    "data_retention",
+    "external_side_effects",
+    "evidence_obligations",
+    "lifecycle_state",
+    "upgrade_path",
+    "rollback_path",
+    "replacement_semantics",
+    "revocation_path",
+    "known_limitations"
+  ],
+  "module_categories": {
+    "mandatory_constitutional_cells": {
+      "logical_capabilities": [
+        "CONSTITUTION_GATE",
+        "IDENTITY_AND_VERSION_BINDING",
+        "MINIMUM_RECEIPT",
+        "AUTHORIZATION_REFERENCE"
+      ],
+      "can_be_disabled_by_ordinary_user": false,
+      "separate_process_or_repository_required": false
+    },
+    "policy_required_cells": {
+      "examples": [
+        "EVIDENCE_VERIFICATION",
+        "CONTEXT_ASSURANCE",
+        "HUMAN_APPROVAL",
+        "AUDIT"
+      ],
+      "activation_decided_by": [
+        "PARENT_CONSTITUTION",
+        "ORGANIZATION_POLICY",
+        "TASK_RISK",
+        "JURISDICTION"
+      ]
+    },
+    "user_selectable_cells": {
+      "examples": [
+        "AHRP_MEMORY_CELL",
+        "HEALTH_CELL",
+        "DRIFT_WATCH_CELL",
+        "RESEARCH_CELL",
+        "COST_OPTIMIZATION_CELL"
+      ]
+    },
+    "experimental_cells": {
+      "allowed_modes": [
+        "SANDBOX",
+        "SHADOW",
+        "MONITOR",
+        "CANARY"
+      ],
+      "production_default": false,
+      "high_risk_permission_default": false
+    }
+  },
+  "permission_model": {
+    "formula": "INTERSECTION_OF_ALL_APPLICABLE_CONSTRAINTS(PARENT_CONSTITUTION, ORGANIZATION_POLICY, ROLE_POLICY, TASK_AUTHORIZATION, AGENT_BOUNDARY, DCELL_BOUNDARY, CURRENT_CONTEXT, HUMAN_APPROVAL_WHEN_APPLICABLE)",
+    "applicable_constraints": [
+      "PARENT_CONSTITUTION",
+      "ORGANIZATION_POLICY",
+      "ROLE_POLICY",
+      "TASK_AUTHORIZATION",
+      "AGENT_BOUNDARY",
+      "DCELL_BOUNDARY",
+      "CURRENT_CONTEXT",
+      "HUMAN_APPROVAL_WHEN_APPLICABLE"
+    ],
+    "applicable_constraint_intersection_required": true,
+    "permission_intersection_required": true,
+    "human_approval_always_required": false,
+    "human_approval_required_when_policy_requires": true,
+    "human_approval_required_when_risk_class_requires": true,
+    "human_approval_required_when_action_class_requires": true,
+    "human_approval_required_on_explicit_escalation": true,
+    "not_applicable_constraint_is_missing_constraint": false,
+    "unknown_applicability_fails_closed": true,
+    "standing_authorization_can_satisfy_approval": "WHEN_EXPLICITLY_ALLOWED_AND_SCOPE_VALID",
+    "capability_implies_permission": false,
+    "composition_aggregates_authority": false,
+    "cell_can_only_reduce_or_preserve_authority": true,
+    "cell_can_expand_authority": false,
+    "lower_level_policy_can_override_higher_level_deny": false,
+    "one_time_approval_can_expand_parent_constitution": false,
+    "one_time_approval_can_override_non_overridable_rule": false,
+    "natural_language_direct_activation": false,
+    "activation_requires_explicit_authorization": true,
+    "approval_binding_required": [
+      "PRINCIPAL",
+      "AGENT_ID_AND_VERSION",
+      "TASK",
+      "ACTION_AND_RESOURCE",
+      "CONSTITUTION_VERSION",
+      "COMPOSITION_DIGEST_WHEN_APPLICABLE",
+      "SCOPE",
+      "EXPIRY"
+    ],
+    "decision_outcomes": {
+      "ALLOW_OR_READY": "Every applicable constraint is satisfied and no approval obligation remains outstanding; this result is not execution.",
+      "NEEDS_APPROVAL": "Policy, risk class, action class or explicit escalation makes approval applicable and no valid bound approval is present.",
+      "BLOCK": "An applicable non-overridable deny or violated applicable constraint blocks the action.",
+      "NOT_ASSESSED_AND_FAIL_CLOSED": "Constraint applicability or a required input cannot be determined; the action must not proceed."
+    },
+    "conformance_examples": [
+      {"case_id": "LOW_RISK_VALID_STANDING_AUTH", "approval_applicable": false, "standing_authorization_valid": true, "non_overridable_deny": false, "applicability_known": true, "expected_outcome": "ALLOW_OR_READY"},
+      {"case_id": "REQUIRED_APPROVAL_MISSING", "approval_applicable": true, "approval_state": "MISSING", "non_overridable_deny": false, "applicability_known": true, "expected_outcome": "NEEDS_APPROVAL"},
+      {"case_id": "REQUIRED_APPROVAL_EXPIRED", "approval_applicable": true, "approval_state": "EXPIRED", "non_overridable_deny": false, "applicability_known": true, "expected_outcome": "NEEDS_APPROVAL"},
+      {"case_id": "REQUIRED_APPROVAL_SCOPE_MISMATCH", "approval_applicable": true, "approval_state": "SCOPE_MISMATCH", "non_overridable_deny": false, "applicability_known": true, "expected_outcome": "NEEDS_APPROVAL"},
+      {"case_id": "NON_OVERRIDABLE_DENY_WITHOUT_APPROVAL", "approval_applicable": false, "non_overridable_deny": true, "applicability_known": true, "expected_outcome": "BLOCK"},
+      {"case_id": "NON_OVERRIDABLE_DENY_WITH_APPROVAL", "approval_applicable": true, "approval_state": "VALID", "non_overridable_deny": true, "applicability_known": true, "expected_outcome": "BLOCK"},
+      {"case_id": "UNKNOWN_CONSTRAINT_APPLICABILITY", "approval_applicable": null, "non_overridable_deny": false, "applicability_known": false, "expected_outcome": "NOT_ASSESSED_AND_FAIL_CLOSED"},
+      {"case_id": "HUMAN_APPROVAL_NOT_APPLICABLE", "approval_applicable": false, "approval_state": "NOT_PRESENT", "non_overridable_deny": false, "applicability_known": true, "expected_outcome": "ALLOW_OR_READY"}
+    ]
+  },
+  "entry_defaults": {
+    "human_readback_must_be_comprehensible": true,
+    "human_readback_must_use_declared_principal_or_market_locale": true,
+    "locale_must_be_explicitly_declared": true,
+    "critical_status_must_not_be_machine_code_only": true,
+    "machine_contract_and_localized_explanation_must_coexist": true,
+    "global_hardcoded_human_locale": false,
+    "machine_contract_required": true,
+    "first_value_requires_cli": false,
+    "first_value_requires_schema_guessing": false,
+    "first_value_requires_manual_secret_handling": false,
+    "usability_is_constitutional_requirement": true,
+    "usability_is_safety_property": true,
+    "progressive_disclosure": true,
+    "reversible_actions_visible": true
+  },
+  "composition_rules": {
+    "re_evaluation_required": true,
+    "change_revalidation_required": true,
+    "dependency_lineage_required": true,
+    "failure_must_be_retained": true,
+    "automatic_pass_inheritance": false,
+    "safe_cell_a_plus_safe_cell_b_is_safe_composition": false,
+    "composition_data_flow_analysis_required": true,
+    "composition_side_effect_analysis_required": true,
+    "circular_invocation_check_required": true,
+    "mutual_agent_approval_forbidden": true,
+    "composite_permission_escalation_forbidden": true,
+    "required_high_impact_graphs": [
+      "COMPOSITION_GRAPH",
+      "AUTHORITY_GRAPH",
+      "DATA_FLOW_GRAPH",
+      "EVIDENCE_GRAPH"
+    ]
+  },
+  "change_revalidation": {
+    "triggers": [
+      "DCELL_VERSION_CHANGE",
+      "PROVIDER_CHANGE",
+      "OPERATOR_CHANGE",
+      "MODEL_CHANGE",
+      "SKILL_CHANGE",
+      "TOOL_CHANGE",
+      "INPUT_OUTPUT_CONTRACT_CHANGE",
+      "DATA_SCOPE_CHANGE",
+      "STORAGE_LOCATION_CHANGE",
+      "JURISDICTION_CHANGE",
+      "EXTERNAL_SIDE_EFFECT_CHANGE",
+      "ADAPTER_CHANGE"
+    ],
+    "process": [
+      "CHANGE_DETECTED",
+      "HIGH_RISK_PERMISSION_SUSPENDED",
+      "CONTRACT_DIFF",
+      "CONSTITUTIONAL_PREFLIGHT",
+      "SYNTHETIC_SHADOW_OR_CANARY_TEST",
+      "RESTORE_LIMIT_QUARANTINE_OR_ROLLBACK"
+    ],
+    "dcell_change_requires_revalidation": true,
+    "new_dcell_version_automatic_high_risk_inheritance": false,
+    "contract_break_requires_new_version_or_lineage": true,
+    "upgrade_receipt_required": true
+  },
+  "natural_language_rule_pipeline": {
+    "steps": [
+      "NATURAL_LANGUAGE_RULE",
+      "STRUCTURED_RULE_CANDIDATE",
+      "HUMAN_LANGUAGE_EQUIVALENCE_READBACK",
+      "SUBJECT_AND_SCOPE",
+      "CONFLICT_GAP_AND_EXCEPTION_CHECK",
+      "SYNTHETIC_SCENARIO_TEST",
+      "HUMAN_CONFIRMATION",
+      "SIGNATURE",
+      "VERSIONED_PUBLICATION"
+    ],
+    "natural_language_rule_direct_activation": false,
+    "human_readback_required": true,
+    "conflict_detection_required": true,
+    "synthetic_test_required": true,
+    "signed_human_approval_required": true
+  },
+  "portfolio_effect": {
+    "is_fifth_product": false,
+    "public_product_count_effect": 0,
+    "runtime_created": false,
+    "repository_created": false
+  },
+  "invariants": [
+    "DCELL_NE_SKILL_ALIAS=true",
+    "DCELL_MODULE_SELECTION_ALLOWED=true",
+    "SKILL_LIKE_SELECTION_EXPERIENCE=true",
+    "CELL_GRADE_GOVERNANCE_REQUIRED=true",
+    "CELL_SELECTION_NE_AUTHORIZATION=true",
+    "CELL_INSTALLATION_NE_ACTIVATION=true",
+    "CELL_ACTIVATION_NE_EXTERNAL_EFFECT_PERMISSION=true",
+    "DCELL_CLASSIFICATION_NE_PERMISSION=true",
+    "CAPABILITY_NE_PERMISSION=true",
+    "COMPOSITION_NE_AUTHORITY_AGGREGATION=true",
+    "APPLICABLE_CONSTRAINT_INTERSECTION_REQUIRED=true",
+    "HUMAN_APPROVAL_ALWAYS_REQUIRED=false",
+    "NOT_APPLICABLE_CONSTRAINT_NE_MISSING_CONSTRAINT=true",
+    "UNKNOWN_APPLICABILITY_FAILS_CLOSED=true",
+    "NATURAL_LANGUAGE_NE_DIRECT_ACTIVATION=true",
+    "READY_NE_AUTHORIZATION=true",
+    "MANDATORY_CONSTITUTIONAL_CAPABILITIES_CANNOT_BE_DISABLED=true",
+    "DCELL_CHANGE_REQUIRES_REVALIDATION=true",
+    "DCELL_LAYER_IS_PRODUCT=false",
+    "DCELL_LAYER_IS_FIFTH_PRODUCT=false",
+    "EXPERIMENTAL_CELLS_PRODUCTION_DEFAULT=false"
+  ],
+  "non_claims": [
+    "SELECTABLE_DCELL_LIBRARY_IMPLEMENTED",
+    "DCELL_RUNTIME_IMPLEMENTED",
+    "DCELL_MARKETPLACE_IMPLEMENTED",
+    "ECOLOGICAL_DCELL_VALIDATED",
+    "FIFTH_TITMAS_PRODUCT_CREATED"
+  ],
+  "source_refs": [
+    "architecture/digital-entity-specification.md",
+    "architecture/capability-boundary-specification.md",
+    "architecture/governance-decision-model.md",
+    "architecture/entity-lifecycle.md",
+    "architecture/ADR-039-verified-correction-and-execution-context-continuity.md"
+  ],
+  "limitations": [
+    "Human adoption is approved and becomes effective only from canonical refs/heads/main; the profile defines governance semantics only and does not create modules, a catalog, a resolver, a runtime or an activation path.",
+    "Classification progression and evaluation criteria require future separately authorized specifications."
+  ]
+}

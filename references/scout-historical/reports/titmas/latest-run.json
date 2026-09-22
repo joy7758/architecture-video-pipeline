@@ -1,0 +1,16 @@
+{
+  "artifact_type": "TITMAS_SCOUT_DBA_HANDOFF",
+  "schema_version": "0.1",
+  "handoff_status": "READY_FOR_READ_ONLY_REVIEW_NOT_INTEGRATED",
+  "dba_repository_modified": false,
+  "dba_ingestion_observed": false,
+  "payload": {
+    "run_id": "2026-08-02-ca2a-pr-76-latest-head",
+    "status": "COMPLETED_AWAITING_MAINTAINER_REVIEW",
+    "pr": "https://github.com/agentrust-io/ca2a/pull/76",
+    "head_sha": "0a1ffa6710d25f58515b2dca7e0619e134c0a43e",
+    "codex_current_head": "NO_MAJOR_ISSUES_FOUND",
+    "maintainer_review_present": false,
+    "merged": false
+  }
+}

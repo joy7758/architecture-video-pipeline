@@ -1,0 +1,104 @@
+{
+  "artifact_type": "TITMAS_SCOUT_AGENT_REVIEW_RUN",
+  "schema_version": "0.1",
+  "run_id": "2026-08-02-ca2a-pr-76-action008-ordering",
+  "target": "agentrust-io/ca2a#76",
+  "requested_action": "MARK_PR_READY_FOR_REVIEW",
+  "review_purpose": "REVALIDATE_CURRENT_HEAD_FOR_READY_RETENTION",
+  "policy_reference": {
+    "path": "config/agent-review-policy.yaml",
+    "content_digest": "sha256:b749b56f7223a416c257b15f9a127065c90282aa7dedc919b08ab3722a7dedff"
+  },
+  "ruleset_version": "0.1",
+  "input": {
+    "path": "reports/review-runs/2026-08-02-ca2a-pr-76-action008-ordering/input.json",
+    "content_digest": "sha256:7b3867e1b1dfa0840beb912570b0039978d6f85dc99ca37e070420dfb2f1a686",
+    "head_commit": "9fb5c3b112c1f2d083bc97a12d55f7a583190b9f"
+  },
+  "local_validation": {
+    "path": "reports/review-runs/2026-08-02-ca2a-pr-76-action008-ordering/local-validation.json",
+    "content_digest": "sha256:44578dada59ad0981e81fa0d0335e2835c8f9230b3bb5d20dc40a6cdd0062a47"
+  },
+  "prior_decision_invalidation": {
+    "path": "reports/review-runs/2026-08-02-ca2a-pr-76-action008-ordering/prior-decision-invalidation.json",
+    "content_digest": "sha256:8731457fcec22368b0b6e1829162f0b9a7de4a0c62344a5b594d42cc031d3ed0",
+    "reason": "The prior ALLOW was bound to b223ee41ac9e3b635651f9636a08061801b5c826 and cannot authorize or qualify the new head."
+  },
+  "review_results": [
+    {
+      "role": "DISCOVERY_REVIEWER",
+      "path": "reports/review-runs/2026-08-02-ca2a-pr-76-action008-ordering/reviews/discovery-review.json",
+      "file_digest": "sha256:517731bd4529d481e3c3efd20cbf99bc2e516a8e04d0c07e51743da12241b9dd",
+      "decision": "PASS"
+    },
+    {
+      "role": "EVIDENCE_REVIEWER",
+      "path": "reports/review-runs/2026-08-02-ca2a-pr-76-action008-ordering/reviews/evidence-review.json",
+      "file_digest": "sha256:915bc2c6302d1fa7fee7da6dfd06393dae2aa90b258c00ff08b06c15f5814669",
+      "decision": "PASS"
+    },
+    {
+      "role": "SCOPE_REVIEWER",
+      "path": "reports/review-runs/2026-08-02-ca2a-pr-76-action008-ordering/reviews/scope-review.json",
+      "file_digest": "sha256:70c2ba2203d203df71bc2f675d52863be569a39e8b1588791a119bd152f5daa3",
+      "decision": "PASS"
+    },
+    {
+      "role": "QUALITY_REVIEWER",
+      "path": "reports/review-runs/2026-08-02-ca2a-pr-76-action008-ordering/reviews/quality-review.json",
+      "file_digest": "sha256:8aa664c00d071adb3c55e0e9c7d58164909bbfeb2ba95c73291876811dcb3ad2",
+      "decision": "PASS"
+    },
+    {
+      "role": "RISK_REVIEWER",
+      "path": "reports/review-runs/2026-08-02-ca2a-pr-76-action008-ordering/reviews/risk-review.json",
+      "file_digest": "sha256:1e7e53c706101c61ec3ed0b15d3af8fb125077339ebfbd8b1409252c773b29d4",
+      "decision": "PASS"
+    }
+  ],
+  "aggregate_decision": {
+    "path": "reports/review-runs/2026-08-02-ca2a-pr-76-action008-ordering/decision.json",
+    "content_digest": "sha256:24ff747724ec7a04fd1c96ae5ca2d1b19f2617bdc907dfe2a9df96891d43d8ff",
+    "decision": "ALLOW",
+    "human_review_required": false,
+    "authorized_actions": [
+      "MARK_PR_READY_FOR_REVIEW"
+    ],
+    "blocked_actions": []
+  },
+  "acceptance_boundary": {
+    "upstream_maintainer_review_is_internal_authorization_prerequisite": false,
+    "upstream_maintainer_review_controls_merge_acceptance": true,
+    "maintainer_approval_observed_for_current_head": false,
+    "upstream_ci_executed_for_current_head": false,
+    "upstream_codeql_executed_for_current_head": false,
+    "merge_or_adoption_established": false,
+    "production_safety_established": false
+  },
+  "main_drift": {
+    "reviewed_pr_base_commit": "76c1a31193ff6a70b732cf8f668935808002e273",
+    "current_upstream_main_commit": "c0be574c6af4fca464659eed559e611f8f9d92ce",
+    "head_ahead_by": 2,
+    "head_behind_by": 2,
+    "github_mergeable_at_observation": true,
+    "merge_time_revalidation_required": true
+  },
+  "history_integrity": {
+    "prior_run_path": "reports/review-runs/2026-08-02-ca2a-pr-76-ready/run.json",
+    "prior_run_digest": "sha256:78b9f0036bd4f3064d35230b43655ff698b507870a7fb198d16262177325bbb2",
+    "prior_decision_path": "reports/review-runs/2026-08-02-ca2a-pr-76-ready/decision.json",
+    "prior_decision_digest": "sha256:6e9e005ba9847876d542e7cb61e369746d0e7ff8c6104d532461b5f0230350cf",
+    "historical_files_modified": false
+  },
+  "execution_boundary": {
+    "branch_push_performed_before_review": true,
+    "branch_push_target": "joy7758/ca2a:contrib/issue-36-action-invalid-signature",
+    "branch_push_was_force": false,
+    "pr_already_ready_at_review_time": true,
+    "pr_state_change_performed_by_this_review": false,
+    "external_comment_performed": false,
+    "review_thread_resolution_performed": false,
+    "upstream_branch_modified": false,
+    "additional_external_action_performed": false
+  }
+}

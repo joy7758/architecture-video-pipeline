@@ -1,0 +1,24 @@
+{
+  "artifact_type": "TITMAS_SCOUT_SELF_IMPROVEMENT_DIAGNOSIS",
+  "iteration": 1,
+  "timestamp": "2026-08-02T06:24:10Z",
+  "source_reference": "src/discovery/cli.rb",
+  "commit_sha": "c32d545",
+  "digest_algorithm": "sha256",
+  "digest_value": "NOT_APPLICABLE_SOURCE_SET",
+  "ruleset_version": "0.1",
+  "action_scope": [
+    "DISCOVERY_STATUS_TRACKING",
+    "CROSS_RUN_DEDUPLICATION"
+  ],
+  "actor_type": "FEEDBACK_ANALYST",
+  "result": "ROOT_CAUSE_CONFIRMED",
+  "uncertainty": [
+    "title_similarity_is_not_used_for_implicit_linking"
+  ],
+  "unsupported_claims": [
+    "all_cross_repository_duplicates_detected"
+  ],
+  "root_cause": "Discovery loaded no conversion, publication, review, TITMAS, or self-improvement state before ranking; the existing Deduplicator only merged repeated hits inside one collection run.",
+  "minimal_fix": "Build a read-only exact-reference status index, attach explicit issue-to-PR relations, and exclude active conversions from the new-candidate ranking while reporting them separately."
+}

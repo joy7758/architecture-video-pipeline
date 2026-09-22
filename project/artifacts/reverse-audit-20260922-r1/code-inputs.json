@@ -1,0 +1,53 @@
+{
+  "captured_at": "2026-09-22T15:02:31.993859+00:00",
+  "files": [
+    {
+      "path": "app/src/heritage/guanque.ts",
+      "sha256": "5b1b5462f680a66d820bca7bc16529944ba3dc3a62ef7d4d12f2f407c914662c"
+    },
+    {
+      "path": "app/src/heritage/roof.ts",
+      "sha256": "2268b7eff4f1437448c04d21dc4050b7bc0ee415ce94073dd367620abbfb3ddc"
+    },
+    {
+      "path": "app/src/heritage/facade.ts",
+      "sha256": "a1a0f24134c3fe991eeb8da6fa6fa0f3647e27a750fae404b2722e8b80073ae4"
+    },
+    {
+      "path": "app/src/heritage/materials.ts",
+      "sha256": "d55067e72813ba4dc94f17a34ed3a43b92c60c8762f92006f6a38a59e1d3f5ce"
+    },
+    {
+      "path": "app/src/PagodaThreeScene.tsx",
+      "sha256": "d4ee3e54ffc6acc44f693f6b36cd48943d747c6a26e2bd0abed7e1873330bd68"
+    },
+    {
+      "path": "pipeline/lib.mjs",
+      "sha256": "ee59002335f82197f1156d1b6944f5385922f47d59ddfab1d0071bf9ce9df72d"
+    },
+    {
+      "path": "vendor/architecture-skill/assets/starter/src/heritage/architecture.ts",
+      "sha256": "c4f8fe2d48b6bbcac8a0c781b7a77c802494e0488a550ce903fe98dd9c9f701f"
+    },
+    {
+      "path": "vendor/architecture-skill/assets/starter/src/heritage/materials.ts",
+      "sha256": "30fe3f549bed1bfd505531c13cbf00ae6d59e14c52be22d9b17ed9e3f57c3aeb"
+    },
+    {
+      "path": "vendor/architecture-skill/assets/starter/src/PagodaThreeScene.tsx",
+      "sha256": "d7f1b104bf02a64d86b905e4d3486bd76a94278b97a063ea73b0f72234d7ed4f"
+    },
+    {
+      "path": "vendor/architecture-skill/assets/starter/src/App.tsx",
+      "sha256": "e05347f1a1cdd98a701fae2408c86273a0b23e883bf034c86b29fbf6742c5008"
+    },
+    {
+      "path": "vendor/architecture-skill/references/construction-principles.md",
+      "sha256": "3ef8c7b1822ca69e9528185e95efa05eb49d0670261027a248950053905775e9"
+    },
+    {
+      "path": "vendor/architecture-skill/references/template-guide.md",
+      "sha256": "a479dd18ca8d5847fe6a5db270dd3f192cb40845d093d340bef5a98200739d3c"
+    }
+  ]
+}

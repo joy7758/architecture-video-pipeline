@@ -1,0 +1,26 @@
+{
+  "authorized_actions": ["PUSH_PERSONAL_BRANCH"],
+  "authorization_binding": {
+    "run_id": "2026-08-02-ca2a-pr-76-latest-head",
+    "repository": "joy7758/ca2a",
+    "target": "refs/heads/contrib/issue-36-action-invalid-signature",
+    "head_sha": "0a1ffa6710d25f58515b2dca7e0619e134c0a43e",
+    "diff_digest": "sha256:82688a11ed0f103c75cabc80f6c7e16fbd51bee0766a52043d0894ff2d066731",
+    "input_digest": "sha256:0f059a8d6ce43e0dced5c3bdb6eac023c2dfa8859ca0833475b2718c166b7f09",
+    "ruleset_version": "0.1",
+    "action": "PUSH_PERSONAL_BRANCH",
+    "expires_at": "2026-08-02T08:00:00Z"
+  },
+  "blocked_actions": [],
+  "decision": "ALLOW",
+  "human_review_required": false,
+  "reason_codes": ["ALL_REQUIRED_REVIEWERS_PASS"],
+  "reviewers": [
+    {"review_role":"DISCOVERY_REVIEWER","agent_identifier":"/root/push_discovery_review","decision":"PASS","output_digest":"sha256:8837a2c28bea7bc692a35c3f127fd0d01e215826b2f7b72145674f13571dcd91"},
+    {"review_role":"EVIDENCE_REVIEWER","agent_identifier":"/root/push_evidence_review","decision":"PASS","output_digest":"sha256:1ae7b76b7659e17890de4e4da90d746589cf584ac243961c49b17c46d507cdab"},
+    {"review_role":"SCOPE_REVIEWER","agent_identifier":"/root/push_scope_review","decision":"PASS","output_digest":"sha256:14799b3ec4da6d8fab0572cf25157f722d00db9cfeebc691ec37b095299f1ea2"},
+    {"review_role":"QUALITY_REVIEWER","agent_identifier":"/root/push_quality_review","decision":"PASS","output_digest":"sha256:fabb681079bd727a913773475a352aedf07898705eeb5a0fb92c3d1bc5730a86"},
+    {"review_role":"RISK_REVIEWER","agent_identifier":"/root/push_risk_review","decision":"PASS","output_digest":"sha256:7efd5bcb93afc1b28e9af1bc71a32ac1071169a08d158c9f54c64d5d0b4bbf34"}
+  ],
+  "ruleset_version": "0.1"
+}

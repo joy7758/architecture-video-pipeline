@@ -1,0 +1,258 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:titmas:schema:commercial-evaluation-pack:0.1",
+  "title": "TITMAS Commercial Evaluation Pack Schema v0.1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "$schema",
+    "document_id",
+    "version",
+    "status",
+    "observed_at",
+    "positioning",
+    "evaluation_scope",
+    "public_artifact",
+    "object_contracts",
+    "first_run",
+    "validation_basis",
+    "agent_advisory",
+    "commercial_truth",
+    "next_gate",
+    "effects"
+  ],
+  "properties": {
+    "$schema": {
+      "const": "./architecture/schemas/titmas-commercial-evaluation-pack.schema.v0.1.json"
+    },
+    "document_id": {
+      "const": "TITMAS-COMMERCIAL-EVALUATION-PACK-0.1"
+    },
+    "version": {
+      "const": "0.1.0"
+    },
+    "status": {
+      "const": "COMMERCIAL_EVALUATION_PACKAGE_PREPARED_NOT_AVAILABLE_OFFERING"
+    },
+    "observed_at": {
+      "type": "string",
+      "format": "date"
+    },
+    "positioning": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["en", "zh", "value_problem", "primary_customer"],
+      "properties": {
+        "en": {"const": "Trusted Multi-Agent Infrastructure"},
+        "zh": {"const": "可信多智能体基础设施"},
+        "value_problem": {"const": "AGENT_EXECUTION_ACCOUNTABILITY"},
+        "primary_customer": {"const": "AI_AGENT"}
+      }
+    },
+    "evaluation_scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["can_evaluate", "cannot_evaluate"],
+      "properties": {
+        "can_evaluate": {
+          "type": "array",
+          "minItems": 4,
+          "uniqueItems": true,
+          "items": {"type": "string", "minLength": 3}
+        },
+        "cannot_evaluate": {
+          "type": "array",
+          "minItems": 7,
+          "uniqueItems": true,
+          "items": {"type": "string", "minLength": 3}
+        }
+      }
+    },
+    "public_artifact": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "distribution",
+        "version",
+        "python_requires",
+        "url",
+        "sha256",
+        "install_command",
+        "cli_entry"
+      ],
+      "properties": {
+        "distribution": {"const": "digital-biosphere-os-preview"},
+        "version": {"const": "0.1.0.dev0"},
+        "python_requires": {"const": ">=3.11"},
+        "url": {"type": "string", "format": "uri"},
+        "sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+        "install_command": {"type": "string", "minLength": 50},
+        "cli_entry": {"const": "dbos-validate OBJECT_FILE [--schema-id SCHEMA_ID]"}
+      }
+    },
+    "object_contracts": {
+      "type": "array",
+      "minItems": 5,
+      "maxItems": 5,
+      "uniqueItems": true,
+      "items": {
+        "enum": [
+          "dbio://schema/entity-object/v0.1",
+          "dbio://schema/capability-object/v0.1",
+          "dbio://schema/execution-object/v0.1",
+          "dbio://schema/evidence-reference-object/v0.1",
+          "dbio://schema/verification-object/v0.1"
+        ]
+      }
+    },
+    "first_run": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "guide",
+        "synthetic_fixture",
+        "command",
+        "expected_result",
+        "pass_meaning"
+      ],
+      "properties": {
+        "guide": {"const": "TITMAS-FIRST-RUN-v0.1.md"},
+        "synthetic_fixture": {
+          "const": "examples/titmas-first-run/entity-object.synthetic.v0.1.json"
+        },
+        "command": {
+          "const": "dbos-validate examples/titmas-first-run/entity-object.synthetic.v0.1.json"
+        },
+        "expected_result": {"const": "PASS"},
+        "pass_meaning": {
+          "const": "LOCAL_STRUCTURE_AND_GOVERNANCE_CONSTRAINTS_PASS_ONLY"
+        }
+      }
+    },
+    "validation_basis": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "dbos_tests_passed",
+        "dbos_validators_passed",
+        "clean_wheel_install_passed",
+        "installed_cli_help_passed",
+        "remote_baseline_commit",
+        "remote_json_documents_parsed",
+        "remote_first_run_passed",
+        "remote_validation_report",
+        "remote_secret_scan_passed"
+      ],
+      "properties": {
+        "dbos_tests_passed": {"const": 334},
+        "dbos_validators_passed": {"const": 34},
+        "clean_wheel_install_passed": {"const": true},
+        "installed_cli_help_passed": {"const": true},
+        "remote_baseline_commit": {"type": "string", "pattern": "^[a-f0-9]{7,40}$"},
+        "remote_json_documents_parsed": {"type": "integer", "minimum": 1},
+        "remote_first_run_passed": {"const": true},
+        "remote_validation_report": {
+          "const": "TITMAS-COMMERCIAL-EVALUATION-PACK-v0.1-VALIDATION-REPORT.md"
+        },
+        "remote_secret_scan_passed": {"const": true}
+      }
+    },
+    "agent_advisory": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "provider",
+        "model",
+        "review_roles",
+        "sessions_completed",
+        "final_reviews_passed",
+        "boundary_failures",
+        "common_requirements",
+        "authority_effect"
+      ],
+      "properties": {
+        "provider": {"const": "ALIBABA_CLOUD_MODEL_STUDIO"},
+        "model": {"const": "qwen3.7-plus"},
+        "review_roles": {
+          "type": "array",
+          "minItems": 5,
+          "uniqueItems": true,
+          "items": {"type": "string"}
+        },
+        "sessions_completed": {"const": 5},
+        "final_reviews_passed": {"const": 2},
+        "boundary_failures": {"const": 0},
+        "common_requirements": {
+          "type": "array",
+          "minItems": 4,
+          "uniqueItems": true,
+          "items": {"type": "string"}
+        },
+        "authority_effect": {"const": false}
+      }
+    },
+    "commercial_truth": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "evaluation_package_prepared",
+        "available_offering",
+        "customers_verified",
+        "contracts_created",
+        "revenue_verified",
+        "sla_defined",
+        "production_ready",
+        "certification_available"
+      ],
+      "properties": {
+        "evaluation_package_prepared": {"const": true},
+        "available_offering": {"const": false},
+        "customers_verified": {"const": 0},
+        "contracts_created": {"const": 0},
+        "revenue_verified": {"const": false},
+        "sla_defined": {"const": false},
+        "production_ready": {"const": false},
+        "certification_available": {"const": false}
+      }
+    },
+    "next_gate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name", "execution_authorized", "success_requires"],
+      "properties": {
+        "name": {"const": "EXTERNAL_AGENT_FIRST_RUN_VALIDATION"},
+        "execution_authorized": {"const": false},
+        "success_requires": {
+          "type": "array",
+          "minItems": 6,
+          "uniqueItems": true,
+          "items": {"type": "string"}
+        }
+      }
+    },
+    "effects": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "authority",
+        "permission",
+        "runtime",
+        "agent",
+        "entity",
+        "evidence_truth",
+        "certification",
+        "commercial_offer"
+      ],
+      "properties": {
+        "authority": {"const": false},
+        "permission": {"const": false},
+        "runtime": {"const": false},
+        "agent": {"const": false},
+        "entity": {"const": false},
+        "evidence_truth": {"const": false},
+        "certification": {"const": false},
+        "commercial_offer": {"const": false}
+      }
+    }
+  }
+}

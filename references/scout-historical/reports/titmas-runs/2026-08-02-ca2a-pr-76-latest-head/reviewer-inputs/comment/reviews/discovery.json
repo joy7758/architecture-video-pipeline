@@ -1,0 +1,16 @@
+{
+  "schema_version":"0.1",
+  "review_id":"2026-08-02-ca2a-pr-76-comment-discovery-review",
+  "agent_identifier":"/root/comment_discovery_review",
+  "model_runtime_identifier":"OpenAI Codex GPT-5",
+  "review_role":"DISCOVERY_REVIEWER",
+  "input_digest":"sha256:5532305a50fd3177920965118ab24cb989ac2121a70eb4ee3724693e967d4af0",
+  "output_digest":"sha256:bc79e71ba9af742d8e64848a7e447011c319fc25c954634e94f27e834654639e",
+  "decision":"PASS",
+  "timestamp":"2026-08-02T06:39:04Z",
+  "ruleset_version":"0.1",
+  "reason_codes":["ISSUE_AND_PR_OPEN","CURRENT_HEAD_CONFIRMED","NO_DUPLICATE_REVIEW_REQUEST","NO_DUPLICATE_ACTION008"],
+  "findings":["Issue #36 and PR #76 remain open at the reviewed head; no exact @codex review comment or current-head Codex review exists, and PR #80 is not a duplicate of ACTION-008."],
+  "blocking_reasons":[],
+  "evidence_references":["https://github.com/agentrust-io/ca2a/issues/36","https://github.com/agentrust-io/ca2a/pull/76","https://github.com/agentrust-io/ca2a/pull/80"]
+}

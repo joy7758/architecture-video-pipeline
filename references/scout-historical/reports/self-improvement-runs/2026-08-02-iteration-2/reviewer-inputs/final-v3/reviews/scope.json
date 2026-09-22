@@ -1,0 +1,27 @@
+{
+  "schema_version": "0.1",
+  "review_id": "iteration2-v3-scope",
+  "agent_identifier": "/root/comment_scope_review",
+  "model_runtime_identifier": "OpenAI Codex GPT-5",
+  "review_role": "SCOPE_REVIEWER",
+  "input_digest": "sha256:1127f5b8187e798824487268f840368a23ceafc2b2337261af2bdaf71af1be06",
+  "output_digest": "sha256:76a2e14d719ea3058c12f4a59b9ecdefc50c753e7eef1afbefa4afaea4a6cf62",
+  "decision": "PASS",
+  "timestamp": "2026-08-02T07:10:35Z",
+  "ruleset_version": "0.1",
+  "reason_codes": [
+    "SEVEN_FILE_DISCOVERY_SCOPE",
+    "NO_GOVERNANCE_VALIDATOR_OR_RANKING_CHANGE",
+    "LOCAL_ONLY"
+  ],
+  "findings": [
+    "The cumulative change is confined to seven discovery, configuration, and test files and grants only local status output."
+  ],
+  "blocking_reasons": [
+
+  ],
+  "evidence_references": [
+    "reports/self-improvement-runs/2026-08-02-iteration-2/cumulative-code-diff-v3.patch",
+    "reports/self-improvement-runs/2026-08-02-iteration-2/test-result-v3.json"
+  ]
+}

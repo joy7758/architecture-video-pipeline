@@ -1,0 +1,21 @@
+{
+  "identity": {
+    "id": "synthetic-agent-001",
+    "source": "synthetic://identity-registry",
+    "version": "0.1"
+  },
+  "boundary": {
+    "allowed_actions": ["summarize"],
+    "forbidden_actions": ["publish", "modify_source"],
+    "constraints": ["LOCAL_ONLY", "SYNTHETIC_DATA_ONLY"]
+  },
+  "event": {
+    "event_id": "synthetic-event-001",
+    "action": "summarize",
+    "result": "COMPLETED",
+    "timestamp": "2026-07-28T00:00:00Z"
+  },
+  "existing_evidence_ref": "synthetic://agent-evidence/ae-001",
+  "existing_verification_ref": "synthetic://verifier/vr-001",
+  "limitations": ["SYNTHETIC_ONLY", "NO_TRUTH_CLAIM", "NO_AUTHORIZATION"]
+}

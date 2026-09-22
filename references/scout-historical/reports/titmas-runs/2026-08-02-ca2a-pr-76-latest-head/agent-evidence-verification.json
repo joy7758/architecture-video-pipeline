@@ -1,0 +1,31 @@
+{
+  "action_scope": [
+    "PUSH_PERSONAL_BRANCH",
+    "POST_BOUNDED_TECHNICAL_COMMENT"
+  ],
+  "actor_type": "AGENT_QUORUM",
+  "authorization_granted": false,
+  "commit_sha": "0a1ffa6710d25f58515b2dca7e0619e134c0a43e",
+  "digest_algorithm": "sha256",
+  "digest_value": "82688a11ed0f103c75cabc80f6c7e16fbd51bee0766a52043d0894ff2d066731",
+  "external_action_allowed": false,
+  "result": "PASS",
+  "ruleset_version": "0.1",
+  "signature_present": false,
+  "signature_verified": null,
+  "source_reference": "agentrust-io/ca2a#76",
+  "timestamp": "2026-08-02T06:22:30Z",
+  "uncertainty": [
+    "maintainer_acceptance_unknown",
+    "remote_workflows_not_executed"
+  ],
+  "unsupported_claims": [
+    "authorization_from_verification",
+    "identity_authentication",
+    "certification",
+    "production_safety"
+  ],
+  "verification_digest": "sha256:1806479a3ecc575773785aeba9e1865445accd8c447bc8ae70c23d1013e84180",
+  "verification_reference": "agent-evidence-export/agent-evidence-verification.json",
+  "verification_scope": "STRUCTURE_DIGEST_CHAIN_ONLY"
+}

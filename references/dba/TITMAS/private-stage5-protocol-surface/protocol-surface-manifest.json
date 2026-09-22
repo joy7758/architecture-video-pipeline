@@ -1,0 +1,155 @@
+{
+  "decision_reference": "TITMAS-STAGE-5-PRIVATE-AGENT-NATIVE-CONTRIBUTION-PREVIEW-D01",
+  "files": [
+    {
+      "classification": "COMMERCIAL_CUSTOMER_ONLY",
+      "commercial_review_status": "PRIVATE_STAGE5_DECISION_BOUND",
+      "legal_review_status": "NOT_ASSESSED_PRIVATE_USE_ONLY",
+      "output_sha256": "475681d9a9b2a0027f6bf570e4c12f36480604c1ebc2b86a11f20c0f895bac66",
+      "path": "README.md",
+      "private_stage_5_use_allowed": true,
+      "public_release_allowed": false,
+      "security_review_status": "BOUNDED_RECONSTRUCTION_SCAN_PASS",
+      "source_blob_sha": "d56e5912275306d9e141302d607a7b6ac5324e9f",
+      "source_ref": "TITMAS/private-governance/build_stage5_protocol_surface.py"
+    },
+    {
+      "classification": "COMMERCIAL_CUSTOMER_ONLY",
+      "commercial_review_status": "PRIVATE_STAGE5_DECISION_BOUND",
+      "legal_review_status": "NOT_ASSESSED_PRIVATE_USE_ONLY",
+      "output_sha256": "36d1856e90d8bde6ba4bdacf2f75cd43133711518ef411b98272373eabf2e8ce",
+      "path": "api-contract.json",
+      "private_stage_5_use_allowed": true,
+      "public_release_allowed": false,
+      "security_review_status": "BOUNDED_RECONSTRUCTION_SCAN_PASS",
+      "source_blob_sha": "6c60a2cdb40fd3c2e12d9f63d49a4d3924e2806d",
+      "source_ref": "TITMAS/private-customer-evaluation/api-contract.json"
+    },
+    {
+      "classification": "COMMERCIAL_CUSTOMER_ONLY",
+      "commercial_review_status": "PRIVATE_STAGE5_DECISION_BOUND",
+      "legal_review_status": "NOT_ASSESSED_PRIVATE_USE_ONLY",
+      "output_sha256": "7a25f61e976a70c8b4ab86f314a5466647d32f81086cf752c8189eb279b142f5",
+      "path": "error-codes.json",
+      "private_stage_5_use_allowed": true,
+      "public_release_allowed": false,
+      "security_review_status": "BOUNDED_RECONSTRUCTION_SCAN_PASS",
+      "source_blob_sha": "59cd21d5a5f4fac1b5e46761a677bc0b641de010",
+      "source_ref": "TITMAS/private-customer-evaluation/error-codes.json"
+    },
+    {
+      "classification": "PUBLIC_PROTOCOL",
+      "commercial_review_status": "PRIVATE_STAGE5_DECISION_BOUND",
+      "legal_review_status": "NOT_ASSESSED_PRIVATE_USE_ONLY",
+      "output_sha256": "50010728b4ed9d5b0146bb0c133f79ab0d407e69a28a72a8e0e5e0360b50d03a",
+      "path": "schemas/adapter-mapping.schema.json",
+      "private_stage_5_use_allowed": true,
+      "public_release_allowed": false,
+      "security_review_status": "BOUNDED_RECONSTRUCTION_SCAN_PASS",
+      "source_blob_sha": "4c3912b19c1b1ad18dc972d0878cf246e9d51f94",
+      "source_ref": "TITMAS/conformance/schemas/stage5-adapter-mapping.schema.json"
+    },
+    {
+      "classification": "PUBLIC_PROTOCOL",
+      "commercial_review_status": "PRIVATE_STAGE5_DECISION_BOUND",
+      "legal_review_status": "NOT_ASSESSED_PRIVATE_USE_ONLY",
+      "output_sha256": "df4040e4c3f33a725257b82a0af0e04c4ae39cf1277ff18e0aec29f2967519e8",
+      "path": "schemas/contribution-result.schema.json",
+      "private_stage_5_use_allowed": true,
+      "public_release_allowed": false,
+      "security_review_status": "BOUNDED_RECONSTRUCTION_SCAN_PASS",
+      "source_blob_sha": "bedc1aa558771c144bf1ad899712679f97f0e8a7",
+      "source_ref": "TITMAS/conformance/schemas/stage5-contribution-result.schema.json"
+    },
+    {
+      "classification": "PUBLIC_PROTOCOL",
+      "commercial_review_status": "PRIVATE_STAGE5_DECISION_BOUND",
+      "legal_review_status": "NOT_ASSESSED_PRIVATE_USE_ONLY",
+      "output_sha256": "5286890352d030b8b7363c5da4acdc879d0a327606ffa13dda0a41dd478ba2d8",
+      "path": "schemas/review.schema.json",
+      "private_stage_5_use_allowed": true,
+      "public_release_allowed": false,
+      "security_review_status": "BOUNDED_RECONSTRUCTION_SCAN_PASS",
+      "source_blob_sha": "d966c7c8211cf6ae34781e4d3b606ad2c96b0631",
+      "source_ref": "TITMAS/conformance/schemas/stage5-review.schema.json"
+    },
+    {
+      "classification": "PUBLIC_PROTOCOL",
+      "commercial_review_status": "PRIVATE_STAGE5_DECISION_BOUND",
+      "legal_review_status": "NOT_ASSESSED_PRIVATE_USE_ONLY",
+      "output_sha256": "8abb26db417be22aa631c444677f6d8ec5e6a3d3ca4524bad63c9f43f06d3c3d",
+      "path": "schemas/specification-proposal.schema.json",
+      "private_stage_5_use_allowed": true,
+      "public_release_allowed": false,
+      "security_review_status": "BOUNDED_RECONSTRUCTION_SCAN_PASS",
+      "source_blob_sha": "0380b60ad4c829f90fd13ce875b6b185553b02db",
+      "source_ref": "TITMAS/conformance/schemas/stage5-specification-proposal.schema.json"
+    },
+    {
+      "classification": "PUBLIC_PROTOCOL",
+      "commercial_review_status": "PRIVATE_STAGE5_DECISION_BOUND",
+      "legal_review_status": "NOT_ASSESSED_PRIVATE_USE_ONLY",
+      "output_sha256": "ee32ef8a745c887036151147b4a4347824d08c5005fd37c1b49f8dd2650ff07a",
+      "path": "schemas/test-vector.schema.json",
+      "private_stage_5_use_allowed": true,
+      "public_release_allowed": false,
+      "security_review_status": "BOUNDED_RECONSTRUCTION_SCAN_PASS",
+      "source_blob_sha": "80a498652d33a9b1ee7883d30df0437acf5a5827",
+      "source_ref": "TITMAS/conformance/schemas/stage5-test-vector.schema.json"
+    },
+    {
+      "classification": "COMMERCIAL_CUSTOMER_ONLY",
+      "commercial_review_status": "PRIVATE_STAGE5_DECISION_BOUND",
+      "legal_review_status": "NOT_ASSESSED_PRIVATE_USE_ONLY",
+      "output_sha256": "ad5fd5618954e466ef7a189b5a988cdb08c3aa785a9cb10d71a238427b4e8f43",
+      "path": "standard-catalog.json",
+      "private_stage_5_use_allowed": true,
+      "public_release_allowed": false,
+      "security_review_status": "BOUNDED_RECONSTRUCTION_SCAN_PASS",
+      "source_blob_sha": "d0fcfd7f56fdb0b67d2192236d4422ed95a4794f",
+      "source_ref": "TITMAS/specifications/registry.yaml"
+    },
+    {
+      "classification": "PUBLIC_SYNTHETIC_EXAMPLE",
+      "commercial_review_status": "PRIVATE_STAGE5_DECISION_BOUND",
+      "legal_review_status": "NOT_ASSESSED_PRIVATE_USE_ONLY",
+      "output_sha256": "89b85fd446356a55134430b0b21b4099dc59618fe7ef440ae5530f3577da3d8f",
+      "path": "synthetic-examples.json",
+      "private_stage_5_use_allowed": true,
+      "public_release_allowed": false,
+      "security_review_status": "BOUNDED_RECONSTRUCTION_SCAN_PASS",
+      "source_blob_sha": "d56e5912275306d9e141302d607a7b6ac5324e9f",
+      "source_ref": "TITMAS/private-governance/build_stage5_protocol_surface.py"
+    },
+    {
+      "classification": "COMMERCIAL_CUSTOMER_ONLY",
+      "commercial_review_status": "PRIVATE_STAGE5_DECISION_BOUND",
+      "legal_review_status": "NOT_ASSESSED_PRIVATE_USE_ONLY",
+      "output_sha256": "243757911133ce49fbe9b02cd5239b48c1f6ca080fa27fc186c29d2794ce8571",
+      "path": "task-catalog.json",
+      "private_stage_5_use_allowed": true,
+      "public_release_allowed": false,
+      "security_review_status": "BOUNDED_RECONSTRUCTION_SCAN_PASS",
+      "source_blob_sha": "592b8798f3f79fef23f85a446a08af2c7cf54fcd",
+      "source_ref": "TITMAS/agent-native/tasks/task-registry.json"
+    }
+  ],
+  "findings": {
+    "protocol_surface_core_source_findings": 0,
+    "protocol_surface_private_path_findings": 0,
+    "protocol_surface_secret_findings": 0,
+    "protocol_surface_symlink_findings": 0
+  },
+  "git_tracking_default": false,
+  "manifest_version": "1.0.0",
+  "non_claims": [
+    "PROTOCOL_SURFACE_NE_PRIVATE_IMPLEMENTATION",
+    "OPEN_STANDARD_NE_OPEN_CORE_SOURCE",
+    "PRIVATE_PREVIEW_NE_PUBLIC_RELEASE"
+  ],
+  "private_core_is_canonical": true,
+  "private_stage_5_use_allowed": true,
+  "public_release_allowed": false,
+  "publication_by_reconstruction": true,
+  "source_main": "7b7e36c3ac5513deb23b03c8d86e6fc8853f4af1"
+}

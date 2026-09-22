@@ -1,0 +1,46 @@
+{
+  "artifact_type": "TITMAS_SCOUT_SELF_IMPROVEMENT_QUORUM_DECISION",
+  "run_id": "2026-08-02-actionability-gate",
+  "decision": "ALLOW",
+  "human_review_required": false,
+  "authorized_actions": ["COMMIT_LOCAL_SELECTION_FIX"],
+  "blocked_actions": [
+    "PUSH_SCOUT_BRANCH",
+    "POST_EXTERNAL_COMMENT",
+    "OPEN_EXTERNAL_PULL_REQUEST"
+  ],
+  "ruleset_version": "0.1",
+  "reviewers": [
+    {
+      "review_role": "DISCOVERY_REVIEWER",
+      "agent_identifier": "/root/pr76_final_discovery",
+      "decision": "PASS"
+    },
+    {
+      "review_role": "EVIDENCE_REVIEWER",
+      "agent_identifier": "/root/comment_evidence_review",
+      "decision": "PASS"
+    },
+    {
+      "review_role": "SCOPE_REVIEWER",
+      "agent_identifier": "/root/comment_scope_review",
+      "decision": "PASS"
+    },
+    {
+      "review_role": "QUALITY_REVIEWER",
+      "agent_identifier": "/root/qwen_action008_audit",
+      "decision": "PASS"
+    },
+    {
+      "review_role": "RISK_REVIEWER",
+      "agent_identifier": "/root/pr76_final_risk",
+      "decision": "PASS"
+    }
+  ],
+  "evidence": {
+    "full_suite": "88 runs, 327 assertions, 0 failures, 0 errors, 0 skips",
+    "live_read_only_run": "94 raw records; next target praxis-proxy/ai#194",
+    "external_write_performed": false,
+    "external_action_authorized": false
+  }
+}

@@ -1,0 +1,88 @@
+{
+  "schema_version": "1.0",
+  "method": "Delivery snapshot TypeScript transpiled in memory. Every buildArchitecture source vertex is transformed and inspected; courtyard, textures, plaques, GPU animation and rendering are excluded. All values are scene units unless explicitly labelled.",
+  "sources": [
+    {
+      "path": "artifacts/pipeline/source-snapshots/2026-09-22T12-27-10-638Z-0fb796b3/app/src/heritage/builder.ts",
+      "sha256": "61cee6b0b70352e5b0a330fd7975757f882c57ab49cb6a25e981b72a2c085d7f",
+      "current_app_sha256": "61cee6b0b70352e5b0a330fd7975757f882c57ab49cb6a25e981b72a2c085d7f",
+      "matches_current_app": true
+    },
+    {
+      "path": "artifacts/pipeline/source-snapshots/2026-09-22T12-27-10-638Z-0fb796b3/app/src/heritage/facade.ts",
+      "sha256": "a1a0f24134c3fe991eeb8da6fa6fa0f3647e27a750fae404b2722e8b80073ae4",
+      "current_app_sha256": "a1a0f24134c3fe991eeb8da6fa6fa0f3647e27a750fae404b2722e8b80073ae4",
+      "matches_current_app": true
+    },
+    {
+      "path": "artifacts/pipeline/source-snapshots/2026-09-22T12-27-10-638Z-0fb796b3/app/src/heritage/roof.ts",
+      "sha256": "2268b7eff4f1437448c04d21dc4050b7bc0ee415ce94073dd367620abbfb3ddc",
+      "current_app_sha256": "2268b7eff4f1437448c04d21dc4050b7bc0ee415ce94073dd367620abbfb3ddc",
+      "matches_current_app": true
+    },
+    {
+      "path": "artifacts/pipeline/source-snapshots/2026-09-22T12-27-10-638Z-0fb796b3/app/src/heritage/guanque.ts",
+      "sha256": "5b1b5462f680a66d820bca7bc16529944ba3dc3a62ef7d4d12f2f407c914662c",
+      "current_app_sha256": "5b1b5462f680a66d820bca7bc16529944ba3dc3a62ef7d4d12f2f407c914662c",
+      "matches_current_app": true
+    }
+  ],
+  "components_visited": 26854,
+  "source_vertices_visited": 1368708,
+  "bounds": {
+    "min": [
+      -17.26000000715256,
+      -0.15000007057189935,
+      -13.725000381469727
+    ],
+    "max": [
+      17.26000000715256,
+      29.590450286865234,
+      28.44627311530708
+    ]
+  },
+  "height_comparison": {
+    "datum_y": 0,
+    "model_highest_y": 29.590450286865234,
+    "podium_to_first_hall_floor": 6.6,
+    "body_above_first_hall_floor": 22.990450286865233,
+    "model_podium_body_ratio": 0.2870757169889218,
+    "user_provided_podium_metres": 16.5,
+    "user_provided_body_metres": 57.4,
+    "user_provided_ratio": 0.2874564459930314,
+    "ratio_relative_difference_percent": -0.1324475444599349,
+    "user_provided_total_metres": 73.9,
+    "reference_scale": 0.4,
+    "user_provided_total_scaled": 29.560000000000002,
+    "meaning": "The roughly 0.13 percent value compares a code-derived ratio with an unverified user-provided ratio. It is NOT real-world reconstruction accuracy. Ground datum is y=0; below-ground source geometry is excluded from the nominal height comparison."
+  },
+  "footprint_comparison": {
+    "lower_hall_width": 15.12,
+    "lower_hall_depth": 10.32,
+    "lower_hall_ratio": 1.4651162790697674,
+    "user_provided_lower_hall_ratio": 1.4651162790697674,
+    "upper_hall_width": 11.52,
+    "upper_hall_depth": 6.72,
+    "upper_hall_ratio": 1.7142857142857142,
+    "user_provided_upper_hall_ratio": 1.7142857142857142,
+    "terrace_front_width": 34,
+    "outer_corridor_column_width": 19.92,
+    "terrace_to_outer_column_width_ratio": 1.7068273092369477,
+    "highest_gallery_width": 17.6,
+    "middle_gallery_width": 17.9,
+    "gallery_width_ratio": 0.9832402234636873,
+    "meaning": "Hall axis dimensions and gallery dimensions are different quantities. Photo perspectives have not been calibrated; these ratios do not establish actual building dimensions."
+  },
+  "annex_clamp": {
+    "requested_rise": 1.18,
+    "main_roof_rise": 2.3,
+    "break_fraction": 0.43,
+    "formula": "min(1.18, (2.3 * (1 - .43 - .14 * sin(pi * .43))) * .96)",
+    "effective_rise": 0.9568846105494944,
+    "reduction_from_request_percent": 18.908083851737768,
+    "outset": 0.4,
+    "origin": "guanque.ts:213-214; roof.ts:92-100 and 369-372",
+    "meaning": "This is the roof generator effective rise parameter, not a surveyed annex height or a complete measure of visible roof silhouette."
+  },
+  "status": "CODE_OBSERVATION_ONLY_NOT_PHOTOGRAMMETRIC_VALIDATION"
+}

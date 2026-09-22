@@ -1,0 +1,18 @@
+{
+  "artifact_type":"TITMAS_SCOUT_AGENT_REVIEW_INPUT","ruleset_version":"0.1","review_run_id":"2026-08-02-scout-self-improvement-iteration-2-final-v3","observed_at":"2026-08-02T07:10:30Z","requested_action":"UPDATE_SCOUT_STATUS",
+  "target":{"type":"LOCAL_SCOUT_CHANGE","reference":"tiamas-scout:self-improvement:cumulative-final-v3","url":"local://tiamas-scout/self-improvement/2026-08-02-final-v3"},
+  "source_issue":{"reference":"reports/daily/2026-08-02-opportunity-report.json","state":"ROOT_CAUSES_CORRECTED","observed_defect":"zero GH CLI recall plus prefix allowlist accepting GraphQL mutation"},
+  "duplicate_check":{"iterations":2,"maximum_iterations":3,"third_iteration_not_used":true,"prior_blocking_reviews_preserved":true},
+  "pull_request":{"repository":"tiamas-scout","external_pull_request":false,"external_write_requested":false,"base_commit":"c32d545","worktree_only":true},
+  "diff":{"content_digest":"sha256:24dc92798d6723421de13d6f442a524ef95933846663469723ea2e2911c6b433","content_representation":"reports/self-improvement-runs/2026-08-02-iteration-2/cumulative-code-diff-v3.patch","files":["config/discovery-sources.yaml","src/discovery/cli.rb","src/discovery/daily_report.rb","src/discovery/opportunity_ranker.rb","src/discovery/source_collector.rb","src/discovery/status_index.rb","tests/discovery_test.rb"],"ranking_factors_changed":false,"validator_or_governance_changed":false},
+  "local_validation":{"record_reference":"reports/self-improvement-runs/2026-08-02-iteration-2/test-result-v3.json","record_digest":"sha256:a3877a1e59283b0354cc469a39247d1949e60af7a29bda517b4dfa392be61f8d","result":"71_RUNS_265_ASSERTIONS_GH_FLAGS_AND_GRAPHQL_FAIL_CLOSED_PASS"},
+  "github_checks":[],
+  "automation":{"iteration":2,"revision":3,"live_full_read_only_rerun_pending":true,"graphql_discussions_disabled":true},
+  "risk_evidence":{"external_write_requested":false,"read_only_allowlist":["gh version","gh auth status","gh search issues"],"graphql_removed":true,"rest_get_only":true,"historical_files_modified":false},
+  "history_references":[
+    {"path":"reports/self-improvement-runs/2026-08-02-iteration-2/reviewer-inputs/discovery-blocking-fail.json","content_digest":"sha256:c2a599c09f76c103451249f4069f6421e7ce4c385d7e8640f481349ba7edbe5c"},
+    {"path":"reports/self-improvement-runs/2026-08-02-iteration-2/reviewer-inputs/final-v2/risk-blocking-fail.json","content_digest":"sha256:32c06f1802375daef47a2f9d9b755ef058619836cd8a8e136903345fcf71f7be"},
+    {"path":"reports/self-improvement-runs/2026-08-02-iteration-2/cumulative-code-diff-v3.patch","content_digest":"sha256:24dc92798d6723421de13d6f442a524ef95933846663469723ea2e2911c6b433"}
+  ],
+  "known_limits":["Full live nine-query rerun remains required.","GitHub Discussions are explicitly not collected.","Ranking remains heuristic_unvalidated.","UPDATE_SCOUT_STATUS grants no external action."]
+}

@@ -1,0 +1,28 @@
+{
+  "registry_version": "1.0.0",
+  "number_registry_authority_assigned": false,
+  "entries": [
+    {
+      "id": "DRAFT-ID-CORE-INTEROP-001",
+      "title": "TITMAS Core Developer Interoperability Surface v0.1",
+      "title_zh": "TITMAS 核心开发者互操作表面 v0.1",
+      "category": "INTEROPERABILITY",
+      "status": "DEVELOPMENT_DRAFT",
+      "maturity": "Development",
+      "owner_ref": "DBA_STEWARDSHIP",
+      "authority_ref": "HUMAN_ARCHITECTURE_DECISION_REQUIRED",
+      "version": "0.1.0",
+      "normative": false,
+      "implementation_status": "REFERENCE_IMPLEMENTATION_AVAILABLE",
+      "conformance_status": "LOCAL_HARNESS_PASS",
+      "security_review_status": "INTERNAL_ADVISORY_REVIEW_PASS",
+      "external_adoption_status": "NONE",
+      "created_at": "2026-07-28",
+      "updated_at": "2026-07-28",
+      "supersedes": [],
+      "dependencies": ["EEOAP", "VEAP_DRAFT", "DBOS_CONTRACT", "SAEE_HANDOFF"],
+      "limitations": ["NOT_STABLE", "NOT_ADOPTED", "NO_RUNTIME_COMPATIBILITY_CLAIM"],
+      "document_ref": "proposals/titmas-core-developer-interoperability-surface-v0.1.md"
+    }
+  ]
+}

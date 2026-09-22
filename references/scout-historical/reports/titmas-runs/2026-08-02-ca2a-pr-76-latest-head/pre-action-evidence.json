@@ -1,0 +1,29 @@
+{
+  "action_scope": [
+    "PUSH_PERSONAL_BRANCH",
+    "POST_BOUNDED_TECHNICAL_COMMENT"
+  ],
+  "actor_type": "AGENT_QUORUM",
+  "authorization_granted": false,
+  "canonical_evidence_commit": "911db6650547617c71331ddd9506811f04191656",
+  "canonical_evidence_decision": "PASS",
+  "commit_sha": "0a1ffa6710d25f58515b2dca7e0619e134c0a43e",
+  "digest_algorithm": "sha256",
+  "digest_value": "82688a11ed0f103c75cabc80f6c7e16fbd51bee0766a52043d0894ff2d066731",
+  "external_action_allowed": false,
+  "latest_chain_hash": "a06a13eb3f51a83a43071cf245c254135d1f8745754a2400d28927b7818be57d",
+  "result": "CANONICAL_EVIDENCE_PASS_AUTHORIZATION_PENDING",
+  "ruleset_version": "0.1",
+  "source_reference": "agentrust-io/ca2a#76",
+  "timestamp": "2026-08-02T06:22:30Z",
+  "uncertainty": [
+    "maintainer_acceptance_unknown",
+    "remote_workflows_not_executed"
+  ],
+  "unsupported_claims": [
+    "authorization_from_verification",
+    "identity_authentication",
+    "certification",
+    "production_safety"
+  ]
+}

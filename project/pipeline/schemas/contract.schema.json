@@ -1,0 +1,703 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:3d-building-pipeline:contract:1.0",
+  "title": "Local architectural breakdown job protocol",
+  "description": "Structural contract. File existence, SHA-256, image/video headers, independence and trusted TITMAS require runtime checks.",
+  "$defs": {
+    "sha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "nullableHash": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/sha256"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "slug": {
+      "type": "string",
+      "pattern": "^[a-z0-9](?:[a-z0-9-]{0,62}[a-z0-9])?$"
+    },
+    "reference": {
+      "type": "object",
+      "required": [
+        "path",
+        "sha256"
+      ],
+      "properties": {
+        "path": {
+          "type": "string",
+          "pattern": "^(jobs/[a-z0-9-]+|artifacts)/[^\\\\]+$",
+          "description": "Repository-relative. Runtime further restricts to the current job, rejects traversal and symlink escapes."
+        },
+        "sha256": {
+          "$ref": "#/$defs/sha256"
+        }
+      },
+      "additionalProperties": false
+    },
+    "nullableReference": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/reference"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "strings": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "request": {
+      "type": "object",
+      "required": [
+        "schema_version",
+        "id",
+        "building",
+        "created_at",
+        "intent",
+        "publication",
+        "measured_accuracy_claim"
+      ],
+      "properties": {
+        "schema_version": {
+          "const": "1.0"
+        },
+        "id": {
+          "$ref": "#/$defs/slug"
+        },
+        "building": {
+          "type": "object",
+          "required": [
+            "name",
+            "location",
+            "era"
+          ],
+          "properties": {
+            "name": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 500
+            },
+            "location": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 500
+            },
+            "era": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 500
+            }
+          }
+        },
+        "created_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "intent": {
+          "const": "LOCAL_ARTISTIC_ARCHITECTURAL_BREAKDOWN_VIDEO"
+        },
+        "publication": {
+          "const": "USER_ONLY"
+        },
+        "measured_accuracy_claim": {
+          "const": false
+        }
+      }
+    },
+    "source": {
+      "type": "object",
+      "required": [
+        "id",
+        "title",
+        "accessed_at",
+        "license"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "source_type": {
+          "enum": [
+            "WEB",
+            "USER_PROVIDED"
+          ],
+          "default": "WEB"
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "url": {
+          "type": "string",
+          "format": "uri",
+          "pattern": "^https?://"
+        },
+        "accessed_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "provenance": {
+          "type": "object",
+          "required": [
+            "task_id",
+            "note"
+          ],
+          "properties": {
+            "task_id": {
+              "type": "string",
+              "minLength": 1
+            },
+            "note": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        },
+        "license": {
+          "type": "object",
+          "required": [
+            "usage",
+            "publish_permission"
+          ],
+          "properties": {
+            "usage": {
+              "const": "RESEARCH_ONLY"
+            },
+            "publish_permission": {
+              "enum": [
+                "UNKNOWN",
+                "ALLOWED",
+                "DENIED"
+              ]
+            }
+          }
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "required": [
+              "source_type"
+            ],
+            "properties": {
+              "source_type": {
+                "const": "USER_PROVIDED"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "provenance"
+            ]
+          },
+          "else": {
+            "required": [
+              "url"
+            ]
+          }
+        }
+      ]
+    },
+    "sources": {
+      "type": "object",
+      "required": [
+        "schema_version",
+        "job_id",
+        "entries",
+        "views",
+        "bindings"
+      ],
+      "properties": {
+        "schema_version": {
+          "const": "1.0"
+        },
+        "job_id": {
+          "$ref": "#/$defs/slug"
+        },
+        "entries": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/source"
+          }
+        },
+        "views": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "id",
+              "source_id",
+              "angle",
+              "image"
+            ],
+            "properties": {
+              "id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "source_id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "angle": {
+                "type": "string",
+                "minLength": 1
+              },
+              "image": {
+                "$ref": "#/$defs/reference"
+              }
+            }
+          }
+        },
+        "notes": {
+          "$ref": "#/$defs/strings"
+        },
+        "bindings": {
+          "type": "object",
+          "required": [
+            "request_sha256"
+          ],
+          "properties": {
+            "request_sha256": {
+              "$ref": "#/$defs/nullableHash"
+            }
+          }
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "entries": {
+                "minItems": 1
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "bindings": {
+                "properties": {
+                  "request_sha256": {
+                    "$ref": "#/$defs/sha256"
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "modelPlan": {
+      "type": "object",
+      "required": [
+        "schema_version",
+        "job_id",
+        "status",
+        "builder_id",
+        "skill",
+        "bindings",
+        "recognizable_features",
+        "components",
+        "assembly",
+        "camera",
+        "limitations"
+      ],
+      "properties": {
+        "schema_version": {
+          "const": "1.0"
+        },
+        "job_id": {
+          "$ref": "#/$defs/slug"
+        },
+        "status": {
+          "enum": [
+            "DRAFT",
+            "READY"
+          ]
+        },
+        "builder_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "skill": {
+          "const": "lhlGitHub/threejs-architecture-effects"
+        },
+        "bindings": {
+          "type": "object",
+          "required": [
+            "request_sha256",
+            "sources_sha256"
+          ],
+          "properties": {
+            "sources_sha256": {
+              "$ref": "#/$defs/nullableHash"
+            },
+            "request_sha256": {
+              "$ref": "#/$defs/nullableHash"
+            }
+          }
+        },
+        "recognizable_features": {
+          "$ref": "#/$defs/strings"
+        },
+        "components": {
+          "$ref": "#/$defs/strings"
+        },
+        "assembly": {
+          "$ref": "#/$defs/strings"
+        },
+        "camera": {
+          "$ref": "#/$defs/strings"
+        },
+        "limitations": {
+          "$ref": "#/$defs/strings"
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "const": "READY"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "recognizable_features": {
+                "minItems": 1
+              },
+              "components": {
+                "minItems": 1
+              },
+              "assembly": {
+                "minItems": 1
+              },
+              "camera": {
+                "minItems": 1
+              },
+              "limitations": {
+                "minItems": 1
+              },
+              "bindings": {
+                "properties": {
+                  "sources_sha256": {
+                    "$ref": "#/$defs/sha256"
+                  },
+                  "request_sha256": {
+                    "$ref": "#/$defs/sha256"
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "check": {
+      "type": "object",
+      "required": [
+        "status",
+        "reviewer_id",
+        "checked_at",
+        "evidence",
+        "bindings",
+        "findings"
+      ],
+      "properties": {
+        "status": {
+          "enum": [
+            "NOT_RUN",
+            "UNKNOWN",
+            "PASS",
+            "FAIL"
+          ]
+        },
+        "reviewer_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "checked_at": {
+          "oneOf": [
+            {
+              "type": "string",
+              "format": "date-time"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "evidence": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/reference"
+          }
+        },
+        "bindings": {
+          "type": "object",
+          "required": [
+            "request_sha256",
+            "sources_sha256",
+            "model_plan_sha256",
+            "video_manifest_sha256"
+          ],
+          "properties": {
+            "sources_sha256": {
+              "$ref": "#/$defs/nullableHash"
+            },
+            "model_plan_sha256": {
+              "$ref": "#/$defs/nullableHash"
+            },
+            "video_manifest_sha256": {
+              "$ref": "#/$defs/nullableHash"
+            },
+            "request_sha256": {
+              "$ref": "#/$defs/nullableHash"
+            }
+          }
+        },
+        "findings": {
+          "$ref": "#/$defs/strings"
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "const": "PASS"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "checked_at": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "evidence": {
+                "minItems": 1
+              },
+              "bindings": {
+                "properties": {
+                  "sources_sha256": {
+                    "$ref": "#/$defs/sha256"
+                  },
+                  "model_plan_sha256": {
+                    "$ref": "#/$defs/sha256"
+                  },
+                  "video_manifest_sha256": {
+                    "$ref": "#/$defs/sha256"
+                  },
+                  "request_sha256": {
+                    "$ref": "#/$defs/sha256"
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "checks": {
+      "type": "object",
+      "required": [
+        "schema_version",
+        "job_id",
+        "technical",
+        "visual",
+        "titmas",
+        "video"
+      ],
+      "properties": {
+        "schema_version": {
+          "const": "1.0"
+        },
+        "job_id": {
+          "$ref": "#/$defs/slug"
+        },
+        "technical": {
+          "$ref": "#/$defs/check"
+        },
+        "visual": {
+          "$ref": "#/$defs/check"
+        },
+        "titmas": {
+          "type": "object",
+          "required": [
+            "status",
+            "connector_id",
+            "raw_receipt",
+            "independent_verification"
+          ],
+          "properties": {
+            "status": {
+              "const": "NOT_CONNECTED",
+              "description": "No trusted adapter exists in this version; changing JSON cannot enable it."
+            },
+            "connector_id": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "raw_receipt": {
+              "$ref": "#/$defs/nullableReference"
+            },
+            "independent_verification": {
+              "type": "object",
+              "required": [
+                "status",
+                "verifier_id",
+                "evidence"
+              ],
+              "properties": {
+                "status": {
+                  "enum": [
+                    "NOT_RUN",
+                    "UNKNOWN",
+                    "PASS",
+                    "FAIL"
+                  ]
+                },
+                "verifier_id": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "evidence": {
+                  "$ref": "#/$defs/nullableReference"
+                }
+              }
+            }
+          }
+        },
+        "video": {
+          "type": "object",
+          "required": [
+            "status",
+            "manifest"
+          ],
+          "properties": {
+            "status": {
+              "enum": [
+                "NOT_RUN",
+                "UNKNOWN",
+                "RENDERED",
+                "FAIL"
+              ]
+            },
+            "manifest": {
+              "$ref": "#/$defs/nullableReference"
+            }
+          }
+        }
+      }
+    },
+    "videoManifest": {
+      "type": "object",
+      "required": [
+        "schema_version",
+        "job_id",
+        "status",
+        "video",
+        "spec",
+        "bindings"
+      ],
+      "properties": {
+        "schema_version": {
+          "const": "1.0"
+        },
+        "job_id": {
+          "$ref": "#/$defs/slug"
+        },
+        "status": {
+          "const": "RENDERED"
+        },
+        "video": {
+          "$ref": "#/$defs/reference"
+        },
+        "poster": {
+          "$ref": "#/$defs/reference"
+        },
+        "spec": {
+          "type": "object",
+          "required": [
+            "duration_seconds",
+            "fps",
+            "width",
+            "height"
+          ],
+          "properties": {
+            "duration_seconds": {
+              "type": "number",
+              "exclusiveMinimum": 0
+            },
+            "fps": {
+              "type": "number",
+              "exclusiveMinimum": 0
+            },
+            "width": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "height": {
+              "type": "integer",
+              "minimum": 1
+            }
+          }
+        },
+        "bindings": {
+          "type": "object",
+          "required": [
+            "request_sha256",
+            "sources_sha256",
+            "model_plan_sha256"
+          ],
+          "properties": {
+            "sources_sha256": {
+              "$ref": "#/$defs/sha256"
+            },
+            "model_plan_sha256": {
+              "$ref": "#/$defs/sha256"
+            },
+            "request_sha256": {
+              "$ref": "#/$defs/sha256"
+            }
+          }
+        }
+      }
+    }
+  },
+  "oneOf": [
+    {
+      "$ref": "#/$defs/request"
+    },
+    {
+      "$ref": "#/$defs/sources"
+    },
+    {
+      "$ref": "#/$defs/modelPlan"
+    },
+    {
+      "$ref": "#/$defs/checks"
+    },
+    {
+      "$ref": "#/$defs/videoManifest"
+    }
+  ]
+}

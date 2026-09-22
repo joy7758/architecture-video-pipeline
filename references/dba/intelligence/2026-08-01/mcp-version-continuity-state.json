@@ -1,0 +1,43 @@
+{
+  "state_id": "DBA-MCP-VERSION-CONTINUITY-STATE-2026-08-01",
+  "artifact_kind": "protocol_version_continuity_state",
+  "status": "STABLE_RELEASE_RECONFIRMED_NOT_ADOPTED",
+  "observed_at": "2026-08-01",
+  "primary_repository": "DBA",
+  "extends": "../2026-07-29/mcp-protocol-authority-state.json",
+  "official_release": {
+    "version": "2026-07-28",
+    "release_class": "STABLE",
+    "tag_commit": "5f5440bb26a62e2cf3440b92da5a667efa03b267",
+    "published_at": "2026-07-28T16:47:49Z",
+    "prerelease": false,
+    "draft": false,
+    "url": "https://github.com/modelcontextprotocol/modelcontextprotocol/releases/tag/2026-07-28"
+  },
+  "superseded_claim": "2026-07-28 remains an RC and 2025-11-25 remains the latest stable release",
+  "corrected_claim": "2026-07-28 is the current stable MCP specification release",
+  "continuity_contract": {
+    "client_supported_versions_required": true,
+    "server_supported_versions_required": true,
+    "negotiated_version_required": true,
+    "sdk_name_and_exact_version_required": true,
+    "extensions_and_experimental_features_required": true,
+    "tool_and_server_manifest_digest_required": true,
+    "prior_conclusion_inherited_when_negotiated_version_changes": false,
+    "default_on_unknown_version": "HOLD_MISSING_EVIDENCE"
+  },
+  "digital_biosphere_state": {
+    "reference_adopted": false,
+    "runtime_connected": false,
+    "compatibility_tested": false,
+    "conformance_pass": false,
+    "implementation_authorized": false
+  },
+  "authority_boundaries": [
+    "MCP_STABLE_RELEASE_NE_DIGITAL_BIOSPHERE_ADOPTION",
+    "PROTOCOL_NEGOTIATION_NE_IDENTITY_OR_PERMISSION",
+    "TOOL_DISCOVERY_NE_EFFECT_AUTHORIZATION",
+    "TRACE_CONTEXT_NE_COMPLETE_EVIDENCE",
+    "VERSION_SUPPORT_CLAIM_REQUIRES_EXACT_IMPLEMENTATION_SOURCE"
+  ]
+}

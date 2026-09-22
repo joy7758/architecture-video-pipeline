@@ -1,0 +1,100 @@
+{
+  "inventory_version": "0.1.0",
+  "decision_reference": "TITMAS-PRIVATE-CORE-COMMERCIALIZATION-SUPERSESSION-D01",
+  "assessment_basis": {
+    "last_potentially_public_commit": "83dcc6e49aac713774e0ede2dbe5212f0f5f6e28",
+    "interpretation": "CONSERVATIVE_UPPER_BOUND_NOT_EXACT_VISIBILITY_TRANSITION_PROOF",
+    "prior_public_content_cannot_be_retracted": true,
+    "potentially_public_content_may_have_been_copied": true,
+    "confirmed_third_party_copy": false
+  },
+  "classification_policy": {
+    "L0_PUBLIC_GENERAL_INFORMATION": {
+      "may_be_public_candidate": true,
+      "export_allowed_without_review": false
+    },
+    "L1_PUBLIC_PROTOCOL_CANDIDATE": {
+      "legal_security_commercial_review_required": true,
+      "export_allowed_without_review": false
+    },
+    "L2_COMMERCIAL_SENSITIVE": {"export_allowed": false},
+    "L3_CONFIDENTIAL_CORE": {"export_allowed": false},
+    "L4_SECRET_NEVER_EXPORT": {"export_allowed": false}
+  },
+  "secret_findings": 0,
+  "secret_rotation_required": false,
+  "entries": [
+    {
+      "path": "README.md",
+      "blob_sha": "e7affcde4edc70d19c73c43b8fefea862eb6a6c0",
+      "last_potentially_public_commit": "83dcc6e49aac713774e0ede2dbe5212f0f5f6e28",
+      "classification": "L0_PUBLIC_GENERAL_INFORMATION",
+      "commercial_impact": "Public positioning and historical maturity statements may remain cached or copied.",
+      "recommended_action": "Retain history; require current-state correction before any reconstructed public documentation."
+    },
+    {
+      "path": "agent-index.json",
+      "blob_sha": "2d968093c218942801e9cdddc6918690cb7776f4",
+      "last_potentially_public_commit": "83dcc6e49aac713774e0ede2dbe5212f0f5f6e28",
+      "classification": "L1_PUBLIC_PROTOCOL_CANDIDATE",
+      "commercial_impact": "Machine-readable entry may have exposed workflow and repository surface descriptions.",
+      "recommended_action": "Keep private canonical entry; prepare only reviewed, reconstructed discovery metadata."
+    },
+    {
+      "path": "TITMAS/README.md",
+      "blob_sha": "d8c0796a28c7718b6d7a922246d7b402ad68f1db",
+      "last_potentially_public_commit": "83dcc6e49aac713774e0ede2dbe5212f0f5f6e28",
+      "classification": "L0_PUBLIC_GENERAL_INFORMATION",
+      "commercial_impact": "Community positioning and contribution claims may have been indexed.",
+      "recommended_action": "Preserve as historical exposure; publish no replacement until reviews are complete."
+    },
+    {
+      "path": "TITMAS/FIRST_CONTRIBUTION.md",
+      "blob_sha": "cb969bccf5970a56c0bdc907f5a3c08b0134b9fe",
+      "last_potentially_public_commit": "83dcc6e49aac713774e0ede2dbe5212f0f5f6e28",
+      "classification": "L1_PUBLIC_PROTOCOL_CANDIDATE",
+      "commercial_impact": "Contribution workflow details may be reusable outside the private core.",
+      "recommended_action": "Classify and reconstruct a bounded public contribution guide only after legal, security and commercial review."
+    },
+    {
+      "path": "TITMAS/community/community-status.json",
+      "blob_sha": "ae61c6da795775302de9375fa3373a7bc2bee427",
+      "last_potentially_public_commit": "83dcc6e49aac713774e0ede2dbe5212f0f5f6e28",
+      "classification": "L2_COMMERCIAL_SENSITIVE",
+      "commercial_impact": "Operational state, governance gates and historical identifiers reveal internal program posture.",
+      "recommended_action": "Never export the canonical live state; derive a separately reviewed public status summary."
+    },
+    {
+      "path": "TITMAS/specifications/registry.yaml",
+      "blob_sha": "d0fcfd7f56fdb0b67d2192236d4422ed95a4794f",
+      "last_potentially_public_commit": "83dcc6e49aac713774e0ede2dbe5212f0f5f6e28",
+      "classification": "L1_PUBLIC_PROTOCOL_CANDIDATE",
+      "commercial_impact": "Draft protocol names and maturity metadata may have been copied.",
+      "recommended_action": "Export only explicitly approved protocol entries through publication-by-reconstruction."
+    },
+    {
+      "path": "TITMAS/conformance/harness.py",
+      "blob_sha": "73b75809e75ae510efc32d2a50c2a28c7d2ccbca",
+      "last_potentially_public_commit": "83dcc6e49aac713774e0ede2dbe5212f0f5f6e28",
+      "classification": "L3_CONFIDENTIAL_CORE",
+      "commercial_impact": "Core validation logic and boundary checks are implementation know-how.",
+      "recommended_action": "Do not export; expose only black-box conformance results or a separately authored client contract."
+    },
+    {
+      "path": "TITMAS/agent-native/customer-cycle/response_capture.py",
+      "blob_sha": "20c24ebbaeb9c4e19efb0e324bb769828a6204de",
+      "last_potentially_public_commit": "83dcc6e49aac713774e0ede2dbe5212f0f5f6e28",
+      "classification": "L3_CONFIDENTIAL_CORE",
+      "commercial_impact": "Failure handling, persistence and model-response validation are private implementation details.",
+      "recommended_action": "Do not export; describe behavior only through the private customer API contract."
+    },
+    {
+      "path": "TITMAS/agent-native/tests/test_response_capture.py",
+      "blob_sha": "dbbf9290d684cc6fdaef834ab0ed48d972bc2c17",
+      "last_potentially_public_commit": "83dcc6e49aac713774e0ede2dbe5212f0f5f6e28",
+      "classification": "L3_CONFIDENTIAL_CORE",
+      "commercial_impact": "Internal tests disclose expected failure behavior and validation strategy.",
+      "recommended_action": "Never include internal tests in a public export candidate."
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "$schema": "schemas/community-manifest.schema.json",
+  "manifest_version": "2.0.0",
+  "canonical_name": "TITMAS Agent-Native Standards Community",
+  "canonical_entry": "../../agent-index.json",
+  "community_mode": "PRIVATE_COMMERCIALIZATION_BOUNDARY",
+  "default_participant_type": "GOVERNED_AGENT",
+  "human_routine_operation_default": false,
+  "capabilities": [
+    "DISCOVER_TASKS",
+    "RANK_TASKS",
+    "CHECK_ELIGIBILITY",
+    "REQUEST_BOUNDED_CLAIM",
+    "GENERATE_TASK_CONTRACT",
+    "PREPARE_CONTRIBUTION_PACKAGE",
+    "PREPARE_REVIEW_RECEIPT",
+    "PREPARE_MAINTENANCE_REPORT",
+    "PREPARE_HANDOFF_PACKAGE",
+    "CALIBRATE_RECOMMENDATION",
+    "PREPARE_PRIVATE_EVALUATION_INPUT",
+    "VALIDATE_PUBLIC_EXPORT_CANDIDATE_LOCALLY"
+  ],
+  "non_capabilities": [
+    "SELF_AUTHORIZE",
+    "SELF_APPROVE",
+    "MERGE",
+    "RELEASE",
+    "DEPLOY",
+    "AUTO_ACCEPT_PUBLIC_ISSUE",
+    "AUTO_MERGE_PUBLIC_PR",
+    "SUBMIT_PUBLIC_ISSUE",
+    "SUBMIT_PUBLIC_PR",
+    "EXPORT_PRIVATE_CORE",
+    "DECLARE_STABLE",
+    "DECLARE_ADOPTION",
+    "CERTIFY"
+  ],
+  "long_term_design_assumption": {
+    "agent_operational_majority_target": 0.99,
+    "human_routine_intervention_target_max": 0.01,
+    "current_measured_fact": false
+  }
+}

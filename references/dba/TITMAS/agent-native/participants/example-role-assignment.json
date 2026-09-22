@@ -1,0 +1,11 @@
+{
+  "assignment_id": "PILOT-ROLE-ASSIGNMENT-EXAMPLE",
+  "participant_ref": "PILOT-PARTICIPANT-EXAMPLE",
+  "role": "AGENT_REVIEWER",
+  "issued_by_ref": "TITMAS-AGENT-NATIVE-COMMUNITY-D01",
+  "allowed_scope": ["synthetic local review"],
+  "prohibited_scope": ["self-approval", "merge", "release", "external write"],
+  "valid_from": "2026-07-29T00:00:00+08:00",
+  "expires_at": "2026-07-31T23:59:59+08:00",
+  "revocation_ref": "PILOT-REVOCATION-NONE"
+}

@@ -1,0 +1,32 @@
+{
+  "schema_version": "0.1",
+  "review_id": "2026-08-02-praxis-ai-194-scope-review-attempt-2",
+  "agent_identifier": "/root/comment_scope_review",
+  "model_runtime_identifier": "OpenAI Codex GPT-5",
+  "review_role": "SCOPE_REVIEWER",
+  "input_digest": "sha256:8a31c48c73f94a1fd71b9ddf50baf6cf8da4cdcc62d9d026198f5a3d2a3ce097",
+  "output_digest": "sha256:2e5038ba3cb491f959dcebe3c091a997f8815588c3400b684da5133a2e071024",
+  "decision": "BLOCKING_FAIL",
+  "timestamp": "2026-08-02T08:11:56Z",
+  "ruleset_version": "0.1",
+  "reason_codes": [
+    "SLICE_SCOPE_BOUNDED",
+    "TITMAS_BOUNDARY_PRESERVED",
+    "ISSUE_SCOPE_NOT_EXPANDED",
+    "AGENT_GENERATED_COMMENT_NOT_PUBLISHABLE"
+  ],
+  "findings": [
+    "The selected slice is limited to maintainer confirmation of an integration contract test and bounded metadata allowlist.",
+    "Trace correlation is not represented as authorization, immutable evidence, identity proof, or execution success.",
+    "The exact agent-authored draft cannot be posted under the repository person-to-person communication policy."
+  ],
+  "blocking_reasons": [
+    "HUMAN_REVIEW_REQUIRED:REPOSITORY_PERSON_TO_PERSON_AUTHORSHIP",
+    "ASSIGNMENT_REQUIRED_BEFORE_ANY_PULL_REQUEST"
+  ],
+  "evidence_references": [
+    "reports/conversion-runs/2026-08-02-praxis-ai-194-agent-audit/selected-slice.json",
+    "reports/conversion-runs/2026-08-02-praxis-ai-194-agent-audit/proposed-action.json",
+    "/Users/zhangbin/GitHub/praxis-ai/CONTRIBUTING.md"
+  ]
+}

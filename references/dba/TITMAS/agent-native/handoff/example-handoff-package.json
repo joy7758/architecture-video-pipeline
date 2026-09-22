@@ -1,0 +1,19 @@
+{
+  "$schema": "../schemas/handoff-package.schema.json",
+  "handoff_id": "HANDOFF-PILOT-001",
+  "from_participant_ref": "PILOT-B",
+  "to_participant_ref": "PILOT-E",
+  "task_ref": "AN-08-CROSS-AGENT-HANDOFF",
+  "authority_ref": "TITMAS-AGENT-NATIVE-COMMUNITY-D01",
+  "object_ids": ["CONTRIB-PILOT-001"],
+  "source_revision": "76e882d",
+  "provenance": ["controlled local synthetic pilot"],
+  "limitations": ["single model lineage", "no external adoption"],
+  "experimental_status": "Development",
+  "unresolved_uncertainty": ["cross-provider reproducibility"],
+  "review_results": ["LEVEL_2 advisory review"],
+  "negative_findings": ["external usability NOT_ASSESSED"],
+  "rejected_alternatives": ["automatic public PR"],
+  "failure_records": ["first draft omitted limitation; corrected and retained"],
+  "not_assessed_records": ["production readiness"]
+}

@@ -1,0 +1,126 @@
+{
+  "schema_version": "reverse-audit-inputs.v1",
+  "captured_at": "2026-09-22T14:41:57.439479+00:00",
+  "review_scope": [
+    "architectural_fidelity",
+    "upstream_demo_style",
+    "skill_provenance",
+    "qa_and_titmas"
+  ],
+  "files": [
+    {
+      "path": "docs/user-reference.md",
+      "frozen_path": "artifacts/reverse-audit-20260922-r1/frozen/docs/user-reference.md",
+      "sha256": "53d5fb6d6a73055e90225b3908eeb72ba25391af030c8e06c477d8da4eb3f78e",
+      "size": 2306
+    },
+    {
+      "path": "docs/photo-comparison-r3.md",
+      "frozen_path": "artifacts/reverse-audit-20260922-r1/frozen/docs/photo-comparison-r3.md",
+      "sha256": "260375bdf56aa52fdcade201cf370e4bfdbdd342fbf024640234e8e78da3147c",
+      "size": 5748
+    },
+    {
+      "path": "docs/governance/project-intake.json",
+      "frozen_path": "artifacts/reverse-audit-20260922-r1/frozen/docs/governance/project-intake.json",
+      "sha256": "e154b5a85abe5dfa160dd5cf1c6931ae1827fd1b284c6182524c01dc4ae3d625",
+      "size": 2102
+    },
+    {
+      "path": "jobs/guanque-pilot/references/provenance.md",
+      "frozen_path": "artifacts/reverse-audit-20260922-r1/frozen/jobs/guanque-pilot/references/provenance.md",
+      "sha256": "120caef8193bd7ca6cbe3a2a21d93a4091459b34a17e30a958208f77f2efe4c5",
+      "size": 1484
+    },
+    {
+      "path": "jobs/guanque-pilot/qa/visual-review.json",
+      "frozen_path": "artifacts/reverse-audit-20260922-r1/frozen/jobs/guanque-pilot/qa/visual-review.json",
+      "sha256": "bf7c7a921721df246bb712f3e536f88cee306df76e77f6bf2b00a5e40f7e5a0f",
+      "size": 2891
+    },
+    {
+      "path": "jobs/guanque-pilot/qa/final-status.json",
+      "frozen_path": "artifacts/reverse-audit-20260922-r1/frozen/jobs/guanque-pilot/qa/final-status.json",
+      "sha256": "c5c43b3789cb95cbc8d1f09ad94e5913b70b7df8d140e3ae73d56be01b3bdb9a",
+      "size": 1235
+    },
+    {
+      "path": "jobs/guanque-pilot/checks.json",
+      "frozen_path": "artifacts/reverse-audit-20260922-r1/frozen/jobs/guanque-pilot/checks.json",
+      "sha256": "30e642742cd313d806bd396927aa44b74d7b81ae84b29851033d54baab808dbe",
+      "size": 4206
+    },
+    {
+      "path": "jobs/guanque-pilot/delivery/delivery-manifest.json",
+      "frozen_path": "artifacts/reverse-audit-20260922-r1/frozen/jobs/guanque-pilot/delivery/delivery-manifest.json",
+      "sha256": "fd508c37e141848169a786ee7ddd93848f508cfe34e5a16f8b6a5ee9fa872225",
+      "size": 1698
+    },
+    {
+      "path": "jobs/guanque-pilot/delivery/qa-summary.md",
+      "frozen_path": "artifacts/reverse-audit-20260922-r1/frozen/jobs/guanque-pilot/delivery/qa-summary.md",
+      "sha256": "f31ec394570885d73ab2a62aa9ec45da8bba00a471df4006e47ad772d91092e4",
+      "size": 1217
+    },
+    {
+      "path": "jobs/guanque-pilot/sources.json",
+      "frozen_path": "artifacts/reverse-audit-20260922-r1/frozen/jobs/guanque-pilot/sources.json",
+      "sha256": "a9841495b4c7db87a5d69e9085ff77a477ce83de2fda5a29a35eb1ab62195662",
+      "size": 2252
+    },
+    {
+      "path": "jobs/guanque-pilot/model-plan.json",
+      "frozen_path": "artifacts/reverse-audit-20260922-r1/frozen/jobs/guanque-pilot/model-plan.json",
+      "sha256": "5d754eb806d22e5fc5716c4945f9a14984360dfc6f04aa67015281438302dcda",
+      "size": 1961
+    },
+    {
+      "path": "jobs/guanque-pilot/request.json",
+      "frozen_path": "artifacts/reverse-audit-20260922-r1/frozen/jobs/guanque-pilot/request.json",
+      "sha256": "a0ef38da1a439a6bd821bc0e459a1a2c4afffff41bb0ea77ba229dc87606cf7b",
+      "size": 620
+    },
+    {
+      "path": "pipeline/video/guanque-pilot-wide.json",
+      "frozen_path": "artifacts/reverse-audit-20260922-r1/frozen/pipeline/video/guanque-pilot-wide.json",
+      "sha256": "7516ea85624189a161beb217e5ee3e869b7a2607c8930decdc08760c142e4a0c",
+      "size": 2644
+    },
+    {
+      "path": "vendor/architecture-skill/SKILL.md",
+      "frozen_path": "artifacts/reverse-audit-20260922-r1/frozen/vendor/architecture-skill/SKILL.md",
+      "sha256": "deb2d1687f5b7a7b4845cbbbeb799087990a06ff451d25f546e0546cb0ad825a",
+      "size": 4753
+    },
+    {
+      "path": "docs/references/guanque-user-01.png",
+      "frozen_path": "artifacts/reverse-audit-20260922-r1/frozen/docs/references/guanque-user-01.png",
+      "sha256": "e03f001b1ab6e31eea997b2fe8ce346237276e033648b2a4b261fdb5afec32d0",
+      "size": 450775
+    },
+    {
+      "path": "docs/references/guanque-user-02.png",
+      "frozen_path": "artifacts/reverse-audit-20260922-r1/frozen/docs/references/guanque-user-02.png",
+      "sha256": "d6fe50eb5e20dd789a2cc95925c0a3ed21b2f8f927e3a248155fd8dc8ad9c8e3",
+      "size": 651876
+    },
+    {
+      "path": "vendor/threejs-architecture-effects/assets/preview.mp4",
+      "frozen_path": "artifacts/reverse-audit-20260922-r1/frozen/vendor/threejs-architecture-effects/assets/preview.mp4",
+      "sha256": "6039c15e6f03df0801ca730ebd4fc1c8f897950c0bf6b17571fc168ac93fe712",
+      "size": 24333378
+    },
+    {
+      "path": "jobs/guanque-pilot/delivery/guanque-pilot-preview.mp4",
+      "frozen_path": "artifacts/reverse-audit-20260922-r1/frozen/jobs/guanque-pilot/delivery/guanque-pilot-preview.mp4",
+      "sha256": "37ce5076a7c7cb9342df309eb69a00bd5c35b5684c0606079aaa69ea6472eeb6",
+      "size": 5574189
+    },
+    {
+      "path": "jobs/guanque-pilot/delivery/cover.png",
+      "frozen_path": "artifacts/reverse-audit-20260922-r1/frozen/jobs/guanque-pilot/delivery/cover.png",
+      "sha256": "5bfdcd5002050fff1a3ba18d45d679ba7e06ad169eaccca2c73907463a2ef064",
+      "size": 770284
+    }
+  ]
+}

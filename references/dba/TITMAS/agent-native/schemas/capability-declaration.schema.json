@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": ["capability_id", "description", "declared_scope", "limitations", "verified_status"],
+  "properties": {
+    "capability_id": {"type": "string"},
+    "description": {"type": "string"},
+    "declared_scope": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+    "limitations": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+    "verified_status": {"enum": ["DECLARED_NOT_VERIFIED", "LOCALLY_VERIFIED", "NOT_ASSESSED"]}
+  },
+  "additionalProperties": false
+}

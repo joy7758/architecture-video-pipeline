@@ -1,0 +1,36 @@
+{
+  "action_scope": [
+    "PUSH_PERSONAL_BRANCH",
+    "POST_BOUNDED_TECHNICAL_COMMENT"
+  ],
+  "actor_type": "AGENT_QUORUM",
+  "canonical_evidence": {
+    "artifact_family": "EVIDENCE_ENVELOPE_EXPORT",
+    "commit": "911db6650547617c71331ddd9506811f04191656",
+    "package_version": "0.1.0rc3",
+    "repository": "agent-evidence"
+  },
+  "commit_sha": "0a1ffa6710d25f58515b2dca7e0619e134c0a43e",
+  "digest_algorithm": "sha256",
+  "digest_value": "82688a11ed0f103c75cabc80f6c7e16fbd51bee0766a52043d0894ff2d066731",
+  "integration_version": "0.1",
+  "result": "BASELINE_CAPTURED_LOCAL_SYNC_COMPLETE",
+  "ruleset_version": "0.1",
+  "run_id": "2026-08-02-ca2a-pr-76-latest-head",
+  "source_reference": "agentrust-io/ca2a#76",
+  "timestamp": "2026-08-02T06:21:39Z",
+  "uncertainty": [
+    "maintainer_acceptance_unknown",
+    "remote_ci_not_executed",
+    "codex_review_for_final_head_absent"
+  ],
+  "unsupported_claims": [
+    "maintainer_approval",
+    "merge",
+    "adoption",
+    "customer",
+    "revenue",
+    "production_safety",
+    "dba_ingestion"
+  ]
+}

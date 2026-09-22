@@ -1,0 +1,10 @@
+{
+  "decision": "DENY",
+  "external_action_allowed": false,
+  "reason_codes": [
+    "ACTION_NOT_AUTHORIZED",
+    "HUMAN_REVIEW_FLAG_INVALID",
+    "QUORUM_NOT_ALLOWED"
+  ],
+  "authorization_binding_digest": "sha256:e60e2e4741b92c5703de3bf0416cc45a5bb20424ff7f65ab728cf19ed71d0b97"
+}

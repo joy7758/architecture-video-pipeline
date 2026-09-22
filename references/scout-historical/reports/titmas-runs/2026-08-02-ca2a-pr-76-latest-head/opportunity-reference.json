@@ -1,0 +1,22 @@
+{
+  "action_scope": [
+    "ACTION-008"
+  ],
+  "actor_type": "AGENT",
+  "commit_sha": "0a1ffa6710d25f58515b2dca7e0619e134c0a43e",
+  "digest_algorithm": "sha256",
+  "digest_value": "82688a11ed0f103c75cabc80f6c7e16fbd51bee0766a52043d0894ff2d066731",
+  "related_pr": "agentrust-io/ca2a#76",
+  "result": "ACTIVE_CONVERSION_READY_FOR_REVIEW",
+  "root_problem_id": "github:agentrust-io/ca2a:issue:36",
+  "ruleset_version": "0.1",
+  "source_reference": "https://github.com/agentrust-io/ca2a/issues/36",
+  "timestamp": "2026-08-02T06:21:39Z",
+  "uncertainty": [
+    "upstream_acceptance_unknown"
+  ],
+  "unsupported_claims": [
+    "issue_closed",
+    "task_accepted"
+  ]
+}

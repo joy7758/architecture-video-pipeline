@@ -1,0 +1,153 @@
+{
+  "schema_version": "local-change-baseline.v1",
+  "observed_at": "2026-09-22T16:20:14.904513+00:00",
+  "version": "NO_GIT_REPOSITORY",
+  "modified_file_snapshots": [
+    {
+      "path": "pipeline/lib.mjs",
+      "snapshot": "artifacts/review-gate-20260923-r1/before/pipeline/lib.mjs",
+      "sha256": "ee59002335f82197f1156d1b6944f5385922f47d59ddfab1d0071bf9ce9df72d"
+    },
+    {
+      "path": "pipeline/cli.mjs",
+      "snapshot": "artifacts/review-gate-20260923-r1/before/pipeline/cli.mjs",
+      "sha256": "21d54e1dc83572baea6875d80cbf8860c9945a9a1db65f47a1fb8acc788ff286"
+    },
+    {
+      "path": "pipeline/test/control.test.mjs",
+      "snapshot": "artifacts/review-gate-20260923-r1/before/pipeline/test/control.test.mjs",
+      "sha256": "e8c772d6452fd24bf6f48b700b386ef2ab04122d9cb10633f0494cde945d1aba"
+    },
+    {
+      "path": "pipeline/schemas/contract.schema.json",
+      "snapshot": "artifacts/review-gate-20260923-r1/before/pipeline/schemas/contract.schema.json",
+      "sha256": "82bf2507a277e1ca5ff448beb80e3ebb34839272cc4148f9b75ea9059a984fb6"
+    },
+    {
+      "path": "pipeline/README.md",
+      "snapshot": "artifacts/review-gate-20260923-r1/before/pipeline/README.md",
+      "sha256": "0b97d27dbe7bc799de767c80e5c1cd73d6cc48292a303af3f66817a07eaf1a35"
+    },
+    {
+      "path": "pipeline/roles.md",
+      "snapshot": "artifacts/review-gate-20260923-r1/before/pipeline/roles.md",
+      "sha256": "23e8d200533e1c34b95b29bbc81bb5134002b2065c86c52c4e0516367c663356"
+    },
+    {
+      "path": "pipeline/CLI.md",
+      "snapshot": "artifacts/review-gate-20260923-r1/before/pipeline/CLI.md",
+      "sha256": "03f568e7c2dd2729e462776f8a1cc0d4e91ad3f116db31eefc737157ee775232"
+    },
+    {
+      "path": "pipeline/integrations.json",
+      "snapshot": "artifacts/review-gate-20260923-r1/before/pipeline/integrations.json",
+      "sha256": "a62a00d1ae60ee8136d8ac274dfdfc090c8ef23f7121870856a15c7cd1772770"
+    },
+    {
+      "path": "agent-index.json",
+      "snapshot": "artifacts/review-gate-20260923-r1/before/agent-index.json",
+      "sha256": "0c3eed4544a83259fd430cc2dba021b8fa95535ca304983e1127fa4e8363498b"
+    },
+    {
+      "path": "docs/governance/pipeline-intake.json",
+      "snapshot": "artifacts/review-gate-20260923-r1/before/docs/governance/pipeline-intake.json",
+      "sha256": "992ff33f058fe1cc8109cb6a7ad39eac794ea580c6762b95fc458f3f884e8084"
+    },
+    {
+      "path": "jobs/guanque-pilot/qa/final-status.json",
+      "snapshot": "artifacts/review-gate-20260923-r1/before/jobs/guanque-pilot/qa/final-status.json",
+      "sha256": "ca09f92ebf09a7222dd7a93a6c4236be66b13b4a02831f7e97b1d71dfe92345f"
+    },
+    {
+      "path": "jobs/guanque-pilot/delivery/current-status.json",
+      "snapshot": "artifacts/review-gate-20260923-r1/before/jobs/guanque-pilot/delivery/current-status.json",
+      "sha256": "cf1cbd84e64eb210644e78e1ccf98b60b64d806db6f3c88b67e7e3796d1edafa"
+    }
+  ],
+  "protected_files": [
+    {
+      "path": "app/src/App.tsx",
+      "sha256": "b17b23f42fbb567b9340c80821f9043b67f6508e2183f4c0ffc5c2a2cdc68d76"
+    },
+    {
+      "path": "app/src/main.tsx",
+      "sha256": "1411490ded30f203ea8d24183d9adf5c734984f1d6df8934f7fde5c56745eab5"
+    },
+    {
+      "path": "app/src/PagodaThreeScene.tsx",
+      "sha256": "d4ee3e54ffc6acc44f693f6b36cd48943d747c6a26e2bd0abed7e1873330bd68"
+    },
+    {
+      "path": "app/src/export-contract.ts",
+      "sha256": "515cd03ac3a0cbebbed27078bb52baf434e989bdb602c002324493484f63f031"
+    },
+    {
+      "path": "app/src/style.css",
+      "sha256": "762d60c8bbd596163251b2a6756a4823fed9ddbfa9d15bbaec4d261cbd6a9bf2"
+    },
+    {
+      "path": "app/src/timeline.ts",
+      "sha256": "43b99e428c7f2a3768f1cb31f95a52d7f1b149b81bd8c73c3187a4a62e4d7da1"
+    },
+    {
+      "path": "app/src/heritage/architecture.ts",
+      "sha256": "c4f8fe2d48b6bbcac8a0c781b7a77c802494e0488a550ce903fe98dd9c9f701f"
+    },
+    {
+      "path": "app/src/heritage/builder.ts",
+      "sha256": "61cee6b0b70352e5b0a330fd7975757f882c57ab49cb6a25e981b72a2c085d7f"
+    },
+    {
+      "path": "app/src/heritage/roof.ts",
+      "sha256": "2268b7eff4f1437448c04d21dc4050b7bc0ee415ce94073dd367620abbfb3ddc"
+    },
+    {
+      "path": "app/src/heritage/guanque.ts",
+      "sha256": "5b1b5462f680a66d820bca7bc16529944ba3dc3a62ef7d4d12f2f407c914662c"
+    },
+    {
+      "path": "app/src/heritage/materials.ts",
+      "sha256": "d55067e72813ba4dc94f17a34ed3a43b92c60c8762f92006f6a38a59e1d3f5ce"
+    },
+    {
+      "path": "app/src/heritage/facade.ts",
+      "sha256": "a1a0f24134c3fe991eeb8da6fa6fa0f3647e27a750fae404b2722e8b80073ae4"
+    },
+    {
+      "path": "jobs/guanque-pilot/request.json",
+      "sha256": "a0ef38da1a439a6bd821bc0e459a1a2c4afffff41bb0ea77ba229dc87606cf7b"
+    },
+    {
+      "path": "jobs/guanque-pilot/sources.json",
+      "sha256": "a9841495b4c7db87a5d69e9085ff77a477ce83de2fda5a29a35eb1ab62195662"
+    },
+    {
+      "path": "jobs/guanque-pilot/model-plan.json",
+      "sha256": "5d754eb806d22e5fc5716c4945f9a14984360dfc6f04aa67015281438302dcda"
+    },
+    {
+      "path": "jobs/guanque-pilot/checks.json",
+      "sha256": "6335e49e3780afd2648db0ea08f1316567fbd7b1b05bd856501c3a997124a4fc"
+    },
+    {
+      "path": "jobs/guanque-pilot/video-manifest.json",
+      "sha256": "17f17e0fbd0b25f6d08944b62828e3bce42ba7723298dbf615a163332e81941f"
+    },
+    {
+      "path": "jobs/guanque-pilot/delivery/guanque-pilot-preview.mp4",
+      "sha256": "37ce5076a7c7cb9342df309eb69a00bd5c35b5684c0606079aaa69ea6472eeb6"
+    },
+    {
+      "path": "jobs/guanque-pilot/delivery/delivery-manifest.json",
+      "sha256": "fd508c37e141848169a786ee7ddd93848f508cfe34e5a16f8b6a5ee9fa872225"
+    },
+    {
+      "path": "vendor/threejs-architecture-effects/assets/preview.mp4",
+      "sha256": "6039c15e6f03df0801ca730ebd4fc1c8f897950c0bf6b17571fc168ac93fe712"
+    },
+    {
+      "path": "artifacts/reverse-audit-20260922-r1/acceptance-checklist.json",
+      "sha256": "3bf84ac9190bc38147059e97868f4a37daa74dc2d89bce2bcdacf56d61661069"
+    }
+  ]
+}

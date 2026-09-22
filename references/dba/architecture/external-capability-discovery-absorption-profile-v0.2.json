@@ -1,0 +1,403 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "profile_id": "DBA-EXTERNAL-CAPABILITY-DISCOVERY-ABSORPTION-PROFILE-0.2",
+  "version": "0.2",
+  "status": "REVISED_PROPOSAL_NOT_ACTIVE",
+  "supersedes_proposal": "DBA-EXTERNAL-CAPABILITY-DISCOVERY-ABSORPTION-PROFILE-0.1",
+  "review_addressed": "DBA-REVIEW-20260829-EXTERNAL-CAPABILITY-DISCOVERY-ABSORPTION-001",
+  "normative_owner": "DBA",
+  "implementation_owner": "UNASSIGNED",
+  "constitutional_interpretation": {
+    "agent_absolute_priority": true,
+    "agent_deep_reasoning_is_primary_operational_decision_source": true,
+    "human_per_action_approval_default": false,
+    "valid_standing_authorization_may_satisfy_approval_obligation": true,
+    "post_action_reporting_default": true,
+    "human_exception_escalation_only": true,
+    "agent_priority_creates_unbounded_authority": false,
+    "agent_may_override_constitution": false,
+    "agent_conclusion_infallible": false
+  },
+  "survival_objective": {
+    "objective": "LONG_TERM_USEFUL_CONTINUITY_AND_IMPROVEMENT",
+    "dimensions": [
+      "CONTINUITY",
+      "ADAPTABILITY",
+      "RESILIENCE",
+      "DIVERSITY",
+      "REPLACEABILITY",
+      "EVIDENCE_INTEGRITY",
+      "RESOURCE_SUSTAINABILITY",
+      "USER_VALUE"
+    ],
+    "single_score_equals_survival": false,
+    "forbidden_survival_behaviors": [
+      "PERMISSION_EXPANSION",
+      "FAILURE_CONCEALMENT",
+      "HUMAN_STOP_RESISTANCE",
+      "UNAUTHORIZED_REPLICATION",
+      "UNAUTHORIZED_PERSISTENCE",
+      "SCOPE_ESCAPE"
+    ]
+  },
+  "object_ownership": {
+    "CapabilityDiscoveryRecord": {
+      "owner": "DBA_CAPABILITY_DISCOVERY_PROFILE",
+      "record_class": "ARCHITECTURE_PLANNING_METADATA",
+      "creates_dbos_observation": false,
+      "creates_dbos_evidence": false,
+      "promotes_source_claim_to_truth": false
+    },
+    "CapabilitySourceReference": {
+      "owner": "DBA_REFERENCE_PROFILE",
+      "source_ownership_retained_by_upstream": true,
+      "creates_evidence_admission": false
+    },
+    "CapabilityFingerprint": {
+      "owner": "DBA_ARCHITECTURE_PROFILE",
+      "creates_capability_equivalence": false,
+      "creates_adoption": false
+    },
+    "InternalCapabilityNeedReference": {
+      "owner": "CANONICAL_CHILD_PROJECT",
+      "rewrites_child_evidence": false
+    },
+    "CapabilityOverlapAssessment": {
+      "owner": "DBA_ARCHITECTURE_GOVERNANCE",
+      "creates_saee_fitness_result": false
+    },
+    "AbsorptionAssessment": {
+      "owner": "DBA_DECISION_SUPPORT_PROFILE",
+      "canonical_saee_evaluation": false,
+      "scientific_validity_result": false
+    },
+    "AgentAbsorptionDecision": {
+      "owner": "AGENT_UNDER_STANDING_AUTHORIZATION",
+      "creates_permission": false,
+      "creates_constitutional_authority": false,
+      "creates_release_authority": false
+    },
+    "AbsorptionActionRecord": {
+      "owner": "CANONICAL_IMPLEMENTATION_OWNER",
+      "proves_correctness": false,
+      "proves_production_readiness": false
+    },
+    "AgentEvolutionReport": {
+      "owner": "DBA_REPORTING_PROFILE",
+      "creates_human_approval": false,
+      "creates_certification": false
+    },
+    "HumanExceptionDecisionReference": {
+      "owner": "EXTERNAL_HUMAN_DECISION_SYSTEM",
+      "automatically_expands_standing_scope": false
+    }
+  },
+  "domain_scope_classification": {
+    "dbos_position_for_planning_profile": "NOT_APPLICABLE",
+    "dbos_reason": "NO_DBOS_OBJECT_OR_OPERATIONAL_STATE_IS_CREATED_OR_CHANGED",
+    "future_dbos_mapping_requires_domain_review": true,
+    "saee_position_for_planning_profile": "NOT_APPLICABLE",
+    "saee_reason": "NO_SAEE_EVALUATION_OR_EVOLUTION_STATE_IS_CREATED_OR_CHANGED",
+    "future_saee_mapping_requires_domain_review": true,
+    "classification_is_domain_owner_opinion": false
+  },
+  "source_reference_contract": {
+    "required_fields": [
+      "source_type",
+      "canonical_uri_or_identifier",
+      "source_owner",
+      "version_or_revision",
+      "content_digest_or_stable_identifier",
+      "observed_at",
+      "fresh_until",
+      "retrieval_mode",
+      "source_policy_id",
+      "source_policy_version"
+    ],
+    "source_policy_owner": "DBA_ARCHITECTURE_GOVERNANCE",
+    "discovery_hint_satisfies_source_verification": false,
+    "stale_source_retains_adoption_clearance": false,
+    "source_unavailable_result": "NOT_ASSESSED"
+  },
+  "candidate_identity": {
+    "algorithm": "SHA-256",
+    "canonical_encoding": "UTF-8",
+    "canonical_field_order": [
+      "upstream_identity",
+      "version_or_revision",
+      "capability_fingerprint_sha256",
+      "source_identity_sha256"
+    ],
+    "different_material_version_creates_new_candidate_version": true,
+    "different_upstream_with_similar_fingerprint_remains_separate": true,
+    "overlap_group_supported": true,
+    "deduplication_deletes_history": false
+  },
+  "deep_reasoning_contract": {
+    "private_chain_of_thought_required": false,
+    "decision_structure_and_evidence_required": true,
+    "required_fields": [
+      "reasoning_record_id",
+      "objective",
+      "constitutional_constraints",
+      "candidate_ref",
+      "source_refs",
+      "internal_baseline_ref",
+      "no_change_baseline",
+      "viable_alternatives",
+      "supporting_evidence",
+      "contradicting_evidence",
+      "uncertainty_and_unknowns",
+      "failure_modes",
+      "blast_radius",
+      "rollback_path",
+      "short_term_effects",
+      "survival_effect_vector",
+      "diversity_and_lock_in_effects",
+      "resource_security_privacy_license_effects",
+      "decision",
+      "reason_codes",
+      "confidence_boundary",
+      "verification_plan",
+      "rollback_trigger",
+      "reporting_obligation"
+    ],
+    "independent_verification_required_for": [
+      "AC-3",
+      "AC-4",
+      "AC-5"
+    ],
+    "independent_verifier_may_be": [
+      "DETERMINISTIC_VALIDATOR",
+      "SEPARATE_AGENT_LINEAGE",
+      "BOTH"
+    ],
+    "agent_confidence_creates_authority": false
+  },
+  "autonomy_classes": {
+    "AC-0": {
+      "name": "OBSERVE",
+      "scope": "READ_ALLOWLISTED_PUBLIC_METADATA_AND_INTERNAL_REFERENCES",
+      "default_action": "AUTONOMOUS",
+      "human_involvement": "RESULT_REPORT_ONLY"
+    },
+    "AC-1": {
+      "name": "REFERENCE",
+      "scope": "ADD_OR_REFRESH_QUARANTINED_SOURCE_AND_CAPABILITY_RECORDS",
+      "default_action": "AUTONOMOUS",
+      "human_involvement": "RESULT_REPORT_ONLY"
+    },
+    "AC-2": {
+      "name": "SANDBOX",
+      "scope": "ISOLATED_NON_PRODUCTION_CANDIDATE_BUILD_AND_EVALUATION",
+      "default_action": "AUTONOMOUS_WITH_VALID_STANDING_AUTHORIZATION",
+      "human_involvement": "RESULT_REPORT_ONLY"
+    },
+    "AC-3": {
+      "name": "REVERSIBLE_ADOPTION",
+      "scope": "REPLACEABLE_SKILL_OR_DEPENDENCY_CHANGE_IN_EXACT_PREAUTHORIZED_SCOPE",
+      "default_action": "AUTONOMOUS_WITH_TESTED_ROLLBACK_AND_VALID_BINDINGS",
+      "human_involvement": "IMMEDIATE_POST_ACTION_REPORT"
+    },
+    "AC-4": {
+      "name": "BOUNDED_CANARY",
+      "scope": "LIMITED_EXTERNAL_EFFECT_UNDER_EXPLICIT_STANDING_CANARY_POLICY",
+      "default_action": "AUTONOMOUS_WITH_KILL_SWITCH_MONITORING_AND_ROLLBACK",
+      "human_involvement": "IMMEDIATE_REPORT_AND_EXCEPTION_ALERT"
+    },
+    "AC-5": {
+      "name": "EXCEPTION",
+      "scope": "CONSTITUTION_AUTHORITY_PERMISSION_IRREVERSIBLE_LEGAL_FINANCIAL_OR_UNAUTHORIZED_SCOPE",
+      "default_action": "STOP_AND_ESCALATE",
+      "human_involvement": "HUMAN_EXCEPTION_DECISION_REQUIRED"
+    }
+  },
+  "classification_rules": {
+    "agent_may_self_lower_class": false,
+    "unknown_classification": "AC-5",
+    "hard_gate_failure_ineligible": true,
+    "high_score_may_override_hard_gate": false
+  },
+  "discovery_transitions": [
+    {
+      "from": "UNSEEN",
+      "to": "DISCOVERED",
+      "required": ["discovery_hint", "provisional_source_identity"],
+      "actor": "AGENT",
+      "failure": "SOURCE_IDENTITY_AMBIGUOUS"
+    },
+    {
+      "from": "DISCOVERED",
+      "to": "SOURCE_VERIFIED",
+      "required": ["primary_or_official_source", "exact_version", "source_policy_match", "freshness"],
+      "actor": "AGENT_AND_SOURCE_VALIDATOR",
+      "failure": "SOURCE_NOT_VERIFIED"
+    },
+    {
+      "from": "SOURCE_VERIFIED",
+      "to": "FINGERPRINTED",
+      "required": ["complete_fingerprint", "fingerprint_digest"],
+      "actor": "AGENT",
+      "failure": "FINGERPRINT_INCOMPLETE"
+    },
+    {
+      "from": "FINGERPRINTED",
+      "to": "COMPARED",
+      "required": ["current_internal_inventory", "no_change_baseline", "overlap_assessment"],
+      "actor": "AGENT",
+      "failure": "COMPARISON_INCOMPLETE"
+    },
+    {
+      "from": "COMPARED",
+      "to": "CANDIDATE",
+      "required": ["candidate_key", "owner_route", "risk_class", "no_hard_gate_failure"],
+      "actor": "AGENT_AND_INDEPENDENT_VERIFIER",
+      "failure": "CANDIDATE_INELIGIBLE"
+    }
+  ],
+  "absorption_transitions": [
+    {
+      "from": "CANDIDATE",
+      "to": "ASSESSED",
+      "required": ["deep_reasoning_record", "source_checks", "duplication_assessment", "risk_classification"],
+      "authority_basis": "CONSTITUTION",
+      "failure": "ASSESSMENT_INCOMPLETE"
+    },
+    {
+      "from": "ASSESSED",
+      "to": "SANDBOX_VERIFIED",
+      "required": ["reproducible_sandbox", "retained_failures", "license_status", "security_status", "rollback_evidence"],
+      "authority_basis": "VALID_AC2_STANDING_AUTHORIZATION",
+      "failure": "SANDBOX_NOT_VERIFIED"
+    },
+    {
+      "from": "SANDBOX_VERIFIED",
+      "to": "AGENT_DECISION_READY",
+      "required": ["independent_verifier_pass", "all_bindings_fresh"],
+      "authority_basis": "CONSTITUTION",
+      "failure": "DECISION_NOT_READY"
+    },
+    {
+      "from": "AGENT_DECISION_READY",
+      "to": "REFERENCE_ABSORBED",
+      "required": ["ac1_scope_valid"],
+      "authority_basis": "VALID_STANDING_AUTHORIZATION",
+      "postcondition": "VERIFY_AND_REPORT"
+    },
+    {
+      "from": "AGENT_DECISION_READY",
+      "to": "REVERSIBLE_ADOPTION_EXECUTED",
+      "required": ["ac3_scope_valid", "exact_owner_path", "tested_rollback", "resource_budget", "all_bindings_valid"],
+      "authority_basis": "VALID_STANDING_AUTHORIZATION",
+      "postcondition": "VERIFY_RETAIN_OR_ROLLBACK_AND_REPORT"
+    },
+    {
+      "from": "AGENT_DECISION_READY",
+      "to": "BOUNDED_CANARY_RUNNING",
+      "required": ["ac4_policy", "kill_switch", "limits", "monitoring", "rollback"],
+      "authority_basis": "VALID_STANDING_CANARY_AUTHORIZATION",
+      "postcondition": "VERIFY_RETAIN_OR_ROLLBACK_AND_REPORT"
+    },
+    {
+      "from": "AGENT_DECISION_READY",
+      "to": "DEFERRED_OR_REJECTED",
+      "required": ["reason_codes", "retained_evidence"],
+      "authority_basis": "CONSTITUTION",
+      "postcondition": "REPORT"
+    },
+    {
+      "from": "ANY",
+      "to": "HUMAN_EXCEPTION_REQUIRED",
+      "required": ["ac5_condition_or_unknown_scope_or_binding_conflict_or_irreversible_effect"],
+      "authority_basis": "NO_APPLICABLE_STANDING_AUTHORIZATION",
+      "postcondition": "STOP_AND_REQUEST_EXCEPTION_DECISION"
+    }
+  ],
+  "transition_invariants": {
+    "skip_state_allowed": false,
+    "source_change_invalidates_downstream": true,
+    "baseline_change_invalidates_downstream": true,
+    "report_expands_authorization": false,
+    "transition_creates_release_authority": false,
+    "transition_creates_deployment_authority": false
+  },
+  "standing_authorization_required_bindings": [
+    "constitution_and_policy_version",
+    "agent_identity_version_or_allowed_class",
+    "action_class_and_allowed_operations",
+    "canonical_owner_and_exact_resource_scope",
+    "source_and_dependency_policy",
+    "data_network_and_credential_boundaries",
+    "resource_budget",
+    "start_expiry_and_revocation",
+    "rollback_and_stop_conditions",
+    "reporting_destination_and_deadline"
+  ],
+  "standing_authorization_rules": {
+    "missing_expired_conflicting_or_unverifiable": "FAIL_CLOSED",
+    "agent_may_issue_renew_or_expand_own_authorization": false
+  },
+  "agent_evolution_report": {
+    "required_every_cycle": true,
+    "required_fields": [
+      "report_id",
+      "cycle_id",
+      "agent_identity",
+      "constitution_version",
+      "standing_authorization_ref",
+      "observed_candidates",
+      "verified_candidates",
+      "decision_summary",
+      "actions_executed",
+      "actions_rejected_or_deferred",
+      "verification_result",
+      "rollback_status",
+      "survival_effect_vector",
+      "evidence_refs",
+      "unknowns_and_limitations",
+      "exceptions_requiring_human_attention",
+      "next_observation_time"
+    ],
+    "failure_report_required": true,
+    "no_change_report_required": true,
+    "report_creates_authorization": false,
+    "report_creates_certification": false
+  },
+  "dcell_seed_case": {
+    "input_status": "DISCOVERY_HINT_NOT_SOURCE_VERIFIED",
+    "external_capabilities_remain_replaceable_skills": true,
+    "dcell_identity_and_mission_changed": false,
+    "dcell_core_changed": false,
+    "old_tkde_experiment_changed": false,
+    "new_comparison_requires_new_protocol_evidence_identity_and_lineage": true
+  },
+  "review_blocker_closure": {
+    "AR-01": "CLOSED_BY_CAPABILITY_DISCOVERY_RECORD_AND_OWNERSHIP_MAP",
+    "AR-02": "CLOSED_BY_ABSORPTION_ASSESSMENT_REFERENCE_BOUNDARY",
+    "AR-03": "CLOSED_BY_SOURCE_REFERENCE_AND_CANDIDATE_IDENTITY",
+    "AR-04": "CLOSED_BY_TRANSITION_GUARDS_AND_INVARIANTS",
+    "AR-05": "CLASSIFIED_NOT_APPLICABLE_FOR_PLANNING_ONLY_PROFILE_WITH_FUTURE_DOMAIN_REVIEW_REQUIRED"
+  },
+  "non_claims": {
+    "human_adoption_decision_recorded": false,
+    "architecture_rereview_complete": false,
+    "implementation_authorized": false,
+    "standing_authorization_created": false,
+    "automatic_discovery_runtime_active": false,
+    "automatic_absorption_runtime_active": false,
+    "source_adapter_created": false,
+    "task_registry_changed": false,
+    "weekly_cockpit_changed": false,
+    "new_cell_created": false,
+    "new_runtime_created": false,
+    "new_control_plane_created": false,
+    "new_truth_source_created": false,
+    "dependency_adopted": false,
+    "code_reused": false,
+    "dcell_core_changed": false,
+    "frozen_experiment_changed": false,
+    "merge_authorized": false,
+    "release_authorized": false,
+    "deployment_authorized": false
+  }
+}

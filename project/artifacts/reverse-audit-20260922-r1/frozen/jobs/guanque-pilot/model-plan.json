@@ -1,0 +1,48 @@
+{
+  "schema_version": "1.0",
+  "job_id": "guanque-pilot",
+  "status": "READY",
+  "builder_id": "codex-task-01a0c8bf-80c0-7ab0-9c1b-8f3fc83460ef",
+  "skill": "lhlGitHub/threejs-architecture-effects",
+  "adapter_id": "guanque",
+  "model_entry": "artifacts/pipeline/source-snapshots/2026-09-22T12-27-10-638Z-0fb796b3/app/src/heritage/guanque.ts",
+  "bindings": {
+    "sources_sha256": "a9841495b4c7db87a5d69e9085ff77a477ce83de2fda5a29a35eb1ab62195662",
+    "request_sha256": "a0ef38da1a439a6bd821bc0e459a1a2c4afffff41bb0ea77ba229dc87606cf7b"
+  },
+  "recognizable_features": [
+    "高台与分段前阶",
+    "三层主要外观体量、主檐与平座腰檐关系",
+    "顶层歇山及前伸抱厦",
+    "灰青屋面与绿色剪边"
+  ],
+  "components": [
+    "艺术单位台基与台阶",
+    "立柱梁枋与楼层平台",
+    "主屋面、斗拱与檐部",
+    "栏杆、屋脊与牌匾"
+  ],
+  "assembly": [
+    "沿用现有guanque确定性时间线，台基先于上层主体",
+    "共用0..1进度与颜色/阴影位移",
+    "倒放时间线表达逐构件拆解，非独立分层爆炸图"
+  ],
+  "camera": [
+    "先展示建成全景",
+    "固定相机倒放装配",
+    "从基础重新营造",
+    "成品缓慢调整观察角度并停留"
+  ],
+  "limitations": [
+    "程序化艺术重现；非测绘、历史结构或真实施工仿真",
+    "现存建筑实际受力体系不等于画面木色构件",
+    "当前视图与屋顶相贯、斗拱彩画、侧翼有简化",
+    "本pilot复用现有模型，未来建筑必须另建adapter",
+    "参考图只作本地研究，不打包进视频"
+  ],
+  "source_snapshot": {
+    "path": "artifacts/pipeline/source-snapshots/2026-09-22T12-27-10-638Z-0fb796b3/source-manifest.json",
+    "sha256": "25504eedabbe8be7e75e463ffc367eb54f9169756c7cd0bed2b41d8c5d4a5a64"
+  },
+  "revision_note": "固定快照包含原施工任务最新的门窗立面与屋面修订；此版本已独立build/check。"
+}

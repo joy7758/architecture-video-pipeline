@@ -1,0 +1,201 @@
+schema_version: "0.1"
+config_id: TITMAS-SCOUT-DISCOVERY-SOURCES-V0.1
+status: RESEARCH_MVP_CONFIGURATION
+
+collection_policy:
+  preferred_backend: GH_CLI_AUTHENTICATED
+  fallback_backend: GITHUB_PUBLIC_REST_GET_ONLY
+  fallback_allowed: true
+  github_host: github.com
+  public_api_base: https://api.github.com
+  user_agent: titmas-scout-discovery-mvp-v0.1
+  per_query_limit: 15
+  maximum_queries_per_run: 9
+  freshness_days: 90
+  maximum_selected_opportunities: 5
+  external_write_methods_allowed: []
+  external_action_authorized: false
+
+source_types:
+  - source_type: GITHUB_ISSUE
+    enabled: true
+    authenticated_mode: GH_SEARCH_ISSUES
+    fallback_mode: PUBLIC_REST_SEARCH_ISSUES_GET_ONLY
+  - source_type: GITHUB_DISCUSSION
+    enabled: true
+    authenticated_mode: AUTHENTICATED_GRAPHQL_REQUIRED
+    fallback_mode: UNAVAILABLE
+    unavailable_reason: PUBLIC_GRAPHQL_REQUIRES_VALID_AUTHENTICATION
+
+queries:
+  - query_id: Q-AI-AGENT-AUDIT
+    topic: AI_AGENT_AUDIT
+    query: 'agent audit'
+  - query_id: Q-EXECUTION-EVIDENCE
+    topic: EXECUTION_EVIDENCE
+    query: '"execution evidence"'
+  - query_id: Q-VERIFIABLE-TRACE
+    topic: VERIFIABLE_TRACE
+    query: '"verifiable trace" agent'
+  - query_id: Q-HUMAN-IN-THE-LOOP
+    topic: HUMAN_IN_THE_LOOP
+    query: 'human-in-the-loop agent'
+  - query_id: Q-AGENT-AUTHORIZATION
+    topic: AGENT_AUTHORIZATION
+    query: 'agent authorization'
+  - query_id: Q-MCP-SECURITY-AUDIT
+    topic: MCP_SECURITY_AUDIT
+    query: 'MCP security'
+  - query_id: Q-AGENT-GOVERNANCE
+    topic: AGENT_GOVERNANCE_COMPLIANCE
+    query: 'agent governance'
+  - query_id: Q-PROVENANCE-REPLAY
+    topic: PROVENANCE_REPLAY
+    query: 'provenance replay agent'
+  - query_id: Q-TAMPER-EVIDENCE
+    topic: TAMPER_EVIDENCE
+    query: 'tamper-evident agent'
+
+pain_point_taxonomy:
+  AI_AGENT_AUDIT:
+    keywords: [agent audit, audit trail, auditability, auditing]
+  EXECUTION_EVIDENCE:
+    keywords: [execution evidence, execution trace, receipt, evidence bundle]
+  VERIFIABLE_TRACE:
+    keywords: [verifiable trace, trace verification, trace integrity]
+  HUMAN_IN_THE_LOOP:
+    keywords: [human in the loop, human-in-the-loop, approval, intervention]
+  AGENT_AUTHORIZATION:
+    keywords: [agent authorization, permission, policy enforcement, access control]
+  MCP_SECURITY_AUDIT:
+    keywords: [mcp security, model context protocol, tool audit, mcp audit]
+  AGENT_GOVERNANCE_COMPLIANCE:
+    keywords: [agent governance, compliance, accountability, governance]
+  PROVENANCE_REPLAY:
+    keywords: [provenance, replay, reproducibility, lineage]
+  TAMPER_EVIDENCE:
+    keywords: [tamper evidence, tamper-evident, integrity proof, signed trace]
+
+capability_mappings:
+  - capability_id: AGENT_EVIDENCE
+    repository: joy7758/agent-evidence
+    keywords:
+      - execution evidence
+      - evidence bundle
+      - agent trace
+      - audit trail
+      - provenance
+      - verifiable receipt
+    bounded_role: execution evidence packaging and offline verification
+  - capability_id: ARO_AUDIT
+    repository: joy7758/aro-audit
+    keywords:
+      - agent audit
+      - audit trail
+      - replay
+      - verifiable receipt
+      - conformance
+    bounded_role: post-execution audit and replay-oriented review
+  - capability_id: TOKEN_GOVERNOR
+    repository: joy7758/token-governor
+    keywords:
+      - agent authorization
+      - agent permission
+      - policy enforcement
+      - human approval
+      - agent governance
+      - scope-bound
+    bounded_role: runtime policy, permission, and execution constraints
+  - capability_id: FDO_KERNEL_MVK
+    repository: joy7758/fdo-kernel-mvk
+    keywords:
+      - tamper evidence
+      - tamper-evident
+      - trace integrity
+      - integrity proof
+      - attestation
+    bounded_role: execution-integrity reference work
+  - capability_id: AGENT_INTENT_PROTOCOL
+    repository: joy7758/agent-intent-protocol
+    keywords:
+      - agent intent
+      - agent action
+      - agent authorization
+      - delegation
+    bounded_role: bounded intent, action, and result semantics
+  - capability_id: VERIFIABLE_AGENT_DEMO
+    repository: joy7758/verifiable-agent-demo
+    keywords:
+      - reproducible test
+      - proof of concept
+      - verification walkthrough
+      - conformance test
+    bounded_role: guided cross-stack verification walkthrough
+
+exclusion_policy:
+  excluded_source_urls:
+    - https://github.com/openai/openai-agents-python/issues/636
+  pure_news_keywords:
+    - announcement
+    - newsletter
+    - ecosystem digest
+    - daily digest
+    - weekly digest
+    - weekly roundup
+    - release notes
+    - launch news
+    - org status
+  private_or_abusive_entry_keywords:
+    - report privately
+    - private vulnerability report
+    - unsolicited marketing
+    - mass outreach
+    - impersonate
+  assigned_internal_work:
+    title_patterns:
+      - '\bworker\s+\d+\b'
+    body_keywords:
+      - this assignment
+      - is assigned
+      - is reassigned
+    match_policy: REQUIRE_TITLE_PATTERN_AND_BODY_KEYWORD
+  excluded_labels:
+    - announcement
+    - duplicate
+    - invalid
+    - wontfix
+    - spam
+
+action_policy:
+  allowed_suggestion_types:
+    - COMMENT
+    - DISCUSSION
+    - PR
+    - APPLICATION
+    - BID
+    - CONTACT
+    - OBSERVE
+  generated_external_action_authorized: false
+  generated_executable_payload_allowed: false
+  generated_message_body_allowed: false
+
+ranking_policy:
+  direct_relevance_keywords:
+    - agent credential
+    - agent manifest
+    - agent authorization
+    - agent action
+    - action evidence
+    - action receipt
+    - execution evidence
+    - intent attribution
+    - audit trail
+    - provenance
+    - replay
+    - verifiable trace
+    - tamper
+    - mcp security
+    - guardrail
+    - scope-bound
+    - identity verification
+    - delegation

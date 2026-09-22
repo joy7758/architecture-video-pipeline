@@ -1,0 +1,42 @@
+{
+  "schema_version": "1.0",
+  "observed_at": "2026-09-22T11:39:40.116305+00:00",
+  "source_repository": "joy7758/digital-biosphere-architecture-specification",
+  "source_commit": "81245d1b691e8038f4b39eebb0592ccf6e5f3cef",
+  "source_path": "digital-biosphere-architecture/agent-index.json",
+  "source_sha256": "45cee6079db59eb20d2468f0d78ad4d4f68c4c80f227b5d374b797a7e05032d2",
+  "source_kind": "FETCHED_ORIGIN_MAIN_NOT_LOCAL_HEAD",
+  "current_program_direction": {
+    "date": "2026-08-28",
+    "primary_active_project": "红岩公文",
+    "primary_engineering_direction": "红岩公文",
+    "current_canonical_public_domain": "https://dcell.net",
+    "current_primary_product_entry": "https://dcell.net/pilot",
+    "dcell_role": "SUPPORTING_ARCHITECTURE_AND_LONG_TERM_RESEARCH_LAYER",
+    "titmas_role": "SUPPORTING_TRUST_AND_EVIDENCE_INFRASTRUCTURE",
+    "digital_cell_demo_status": "RELEASED_FROZEN_REFERENCE_ASSET",
+    "redcrag_cn_role": "LEGACY_HISTORICAL_DOMAIN",
+    "infrastructure_supports_product": true,
+    "product_exists_to_prove_theory": false,
+    "public_titmas_machine_discovery_status": "UNAVAILABLE_ON_CURRENT_CANONICAL_DOMAIN",
+    "public_titmas_api_status": "UNAVAILABLE_ON_CURRENT_CANONICAL_DOMAIN",
+    "dba_cockpit_scope": "PROGRAM_GOVERNANCE_ONLY",
+    "new_titmas_runtime_work": "PAUSED",
+    "deb_status": "PAUSED",
+    "theory_expansion_status": "PAUSED",
+    "d29_role": "RETAINED_TITMAS_SUPPORTING_INFRASTRUCTURE_SNAPSHOT",
+    "d29_active_engineering_mainline": false,
+    "d29_execution_authorized": false,
+    "dba_dependency_audit": "FAIL_2_HIGH_NANOID_VIA_POSTCSS"
+  },
+  "registered_current_titmas_service": null,
+  "canonical_implementation_repository": "joy7758/titmas-sandbox-gateway",
+  "live_get_observation": "docs/governance/titmas-live-get-20260922.json",
+  "result": "BLOCKED_CURRENT_SERVICE_UNAVAILABLE",
+  "scope": "Read-only discovery; no credentials read; no service started; no POST performed",
+  "live_result": "NO_VALID_DISCOVERY_STATUS_CAPABILITIES_OR_OPENAPI_JSON",
+  "network_limitations": [
+    "Legacy redcrag.cn requests received proxy tunnel HTTP 503; source-server status not established.",
+    "Current dcell.net candidate paths returned HTTP 403 HTML; no JSON API contract verified."
+  ]
+}

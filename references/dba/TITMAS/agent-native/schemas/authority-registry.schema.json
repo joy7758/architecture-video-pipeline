@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": ["registry_version", "registry_scope", "authorities"],
+  "properties": {
+    "registry_version": {"type": "string"},
+    "registry_scope": {"const": "CANONICAL_INTEGRATION_CANDIDATE_ONLY"},
+    "authorities": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "authority_ref", "authority_kind", "decision_refs", "allowed_actions",
+          "prohibited_actions", "valid_from", "expires_at", "revocation_ref"
+        ],
+        "properties": {
+          "authority_ref": {"type": "string"},
+          "authority_kind": {"const": "ACCOUNTABLE_HUMAN_OWNER"},
+          "decision_refs": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+          "allowed_actions": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+          "prohibited_actions": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+          "valid_from": {"type": "string", "format": "date-time"},
+          "expires_at": {"type": "string", "format": "date-time"},
+          "revocation_ref": {"type": "string"}
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,12 @@
+{
+  "accepted_request_id": "SYNTHETIC-EVAL-001",
+  "result_status": "CONDITIONALLY_RECOMMENDED",
+  "public_reason_code": "SYNTHETIC_CONTRACT_MATCH_WITH_LIMITATIONS",
+  "limitations": [
+    "SYNTHETIC_INPUT_ONLY",
+    "NOT_EVIDENCE_TRUTH",
+    "NOT_AUTHORIZATION",
+    "NOT_CUSTOMER_ADOPTION"
+  ],
+  "correlation_id": "corr-example-only"
+}

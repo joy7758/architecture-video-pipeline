@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://titmas.cn/schemas/d19/selection-record-2.1.json",
+  "title": "TITMAS SelectionRecordObject v2.1",
+  "type": "object",
+  "required": [
+    "selection_id",
+    "problem_id",
+    "selected_variant",
+    "rejected_variants",
+    "selection_dimensions",
+    "tradeoffs",
+    "counterevidence",
+    "confidence",
+    "result",
+    "authorization_status"
+  ],
+  "properties": {
+    "selection_id": {"type": "string"},
+    "problem_id": {"type": "string"},
+    "selected_variant": {"type": "string"},
+    "rejected_variants": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string"}},
+    "selection_dimensions": {"type": "array", "minItems": 4, "uniqueItems": true, "items": {"type": "string"}},
+    "tradeoffs": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+    "counterevidence": {"type": "array", "items": {"type": "string"}},
+    "confidence": {"type": "number"},
+    "result": {"enum": ["SELECT", "SELECT_WITH_CONDITIONS", "REJECT_ALL", "DEFER", "NOT_ASSESSED"]},
+    "authorization_status": {"enum": ["POLICY_PREAUTHORIZED_DRAFT_ONLY", "AWAITING_HUMAN_AUTHORIZATION", "AUTHORIZED", "REJECTED", "NOT_ASSESSED"]}
+  },
+  "additionalProperties": false
+}
