@@ -1,0 +1,46 @@
+{
+  "schema_version": "1.0",
+  "job_id": "guanque-pilot",
+  "status": "PASS",
+  "scope": "LOCAL_TECHNICAL_PREVIEW_VALIDATION",
+  "reviewer_id": "/root",
+  "checked_at": "2026-09-22T12:36:57.455370+00:00",
+  "bindings": {
+    "request_sha256": "a0ef38da1a439a6bd821bc0e459a1a2c4afffff41bb0ea77ba229dc87606cf7b",
+    "sources_sha256": "a9841495b4c7db87a5d69e9085ff77a477ce83de2fda5a29a35eb1ab62195662",
+    "model_plan_sha256": "5d754eb806d22e5fc5716c4945f9a14984360dfc6f04aa67015281438302dcda",
+    "video_manifest_sha256": "17f17e0fbd0b25f6d08944b62828e3bce42ba7723298dbf615a163332e81941f"
+  },
+  "evidence": [
+    {
+      "path": "artifacts/pipeline/guanque-pilot/2026-09-22T12-33-26-809Z-film-0152d1ca/run.json",
+      "sha256": "156d939327f7131ff400d8c05cc9767e9034fb24fdc358ef366da8e52c60350b"
+    },
+    {
+      "path": "artifacts/pipeline/guanque-pilot/2026-09-22T12-33-26-809Z-film-0152d1ca/ffprobe.json",
+      "sha256": "4ba45ad2a81a994967ac4dc68e1f4168f8cbe84b1138279c4cd7e8528cb69f52"
+    },
+    {
+      "path": "artifacts/pipeline/source-snapshots/2026-09-22T12-27-10-638Z-0fb796b3/build-validation.json",
+      "sha256": "e63a7f8a8ea9a274afce1df2ee7df7a429969b40c5af68162c8206cf1e9aa4ce"
+    },
+    {
+      "path": "jobs/guanque-pilot/qa/control-tests.json",
+      "sha256": "7d7e447f94149151d373eaf0d9c43af703d4dd187a9dd00ad2d7e92f558c163d"
+    }
+  ],
+  "findings": [
+    "Snapshot model checks and production build PASS; bundle-size warning retained.",
+    "720 encoded/decoded-count frames;1080x1920;30fps;24seconds;H264/yuv420p;faststart;silent.",
+    "Source fingerprints unchanged and actual served HTML/JS/CSS match fixed snapshot build.",
+    "Three same-frame revisits pixel-identical in the same rendering environment.",
+    "No browser or network errors observed.",
+    "Job-control gates passed11 tests, including stale hashes and renamed building identities.",
+    "Historical SOURCE_HASH_CHANGED and served-bundle mismatch failures retained."
+  ],
+  "limitations": [
+    "Not a TITMAS receipt.",
+    "No cross-GPU determinism claim.",
+    "No architectural measurement/structural validation."
+  ]
+}

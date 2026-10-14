@@ -1,0 +1,13 @@
+{
+  "name": "guanque-tower-workspace",
+  "private": true,
+  "scripts": {
+    "dev": "npm --prefix app run dev -- --port 4186",
+    "build": "npm --prefix app run build",
+    "check": "npm --prefix app run check",
+    "preview": "npm --prefix app run preview -- --port 4187",
+    "pipeline": "node pipeline/cli.mjs",
+    "pipeline:check": "node --test pipeline/test/*.test.mjs",
+    "video:render": "node pipeline/render-video.mjs"
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "schema_version": "1.0",
+  "record_id": "happycapy-3d-private-access-v0.1",
+  "project_id": "architecture-video-pipeline",
+  "repository": {
+    "owner": "joy7758",
+    "name": "3d-building-agent-pipeline",
+    "visibility": "PRIVATE",
+    "url": "https://github.com/joy7758/3d-building-agent-pipeline"
+  },
+  "titmas": {
+    "base_url": "https://titmas-api.dcell.net/sandbox/v0.1",
+    "probe_path": "/status",
+    "credential_alias": "happycapy-3d-readonly-01",
+    "secret_environment_variable": "TITMAS_API_TOKEN",
+    "authorized_scopes": [
+      "sandbox.status.read",
+      "sandbox.catalog.read",
+      "sandbox.schema.read"
+    ],
+    "forbidden_scopes": [
+      "sandbox.preflight.execute"
+    ],
+    "credential_delivery": "RUNTIME_SECRET_INJECTION_ONLY",
+    "token_stored_in_repository": false,
+    "token_stored_in_memory": false,
+    "happycapy_connectivity": "UNKNOWN_PENDING_SECRET_INJECTION_AND_LIVE_PROBE"
+  },
+  "repository_data_boundary": {
+    "source_and_text_contracts": "IN_SCOPE",
+    "generated_artifacts": "LOCAL_ONLY_EXCLUDED",
+    "user_reference_images": "LOCAL_ONLY_EXCLUDED",
+    "rendered_videos": "LOCAL_ONLY_EXCLUDED",
+    "private_governance_snapshots": "LOCAL_ONLY_EXCLUDED",
+    "credentials": "NEVER_COMMIT"
+  },
+  "truth_boundary": [
+    "Repository access does not grant TITMAS API access.",
+    "A successful status probe does not establish project integration.",
+    "Read-only status, catalog and schema access does not authorize preflight execution.",
+    "TITMAS evidence checks do not replace architectural visual review."
+  ],
+  "credential_issuance": {
+    "authorization": "ONE_TIME_EXTERNAL_TRIAL_ISSUANCE=APPROVED",
+    "status": "ISSUED_STORED_IN_LOCAL_KEYCHAIN_NOT_DELIVERED_TO_HAPPYCAPY",
+    "expires_at": "2026-09-25T18:20:47Z",
+    "requests_per_minute": 5,
+    "verification": {
+      "authenticated_status_http": 200,
+      "authenticated_catalog_http": 200,
+      "unauthenticated_status_http": 401,
+      "preflight_http": 403,
+      "preflight_reason": "TITMAS-SANDBOX-SCOPE-REQUIRED"
+    }
+  },
+  "status": "PRIVATE_REPOSITORY_CREATED_READONLY_CREDENTIAL_ISSUED_DELIVERY_PENDING",
+  "updated_at": "2026-09-22T18:20:47Z"
+}

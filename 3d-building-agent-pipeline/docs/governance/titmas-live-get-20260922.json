@@ -1,0 +1,88 @@
+{
+  "artifact_type": "TITMAS_READONLY_PUBLIC_SERVICE_DISCOVERY",
+  "scope": "Unauthenticated public GET only; no credential read, no POST, no billing action",
+  "dba_origin_main": "81245d1b691e8038f4b39eebb0592ccf6e5f3cef",
+  "observed_at": "2026-09-22T11:39:15.699792+00:00",
+  "results": [
+    {
+      "url": "https://redcrag.cn/.well-known/titmas.json",
+      "method": "GET",
+      "authenticated": false,
+      "observed_at": "2026-09-22T11:39:15.699792+00:00",
+      "transport_error": "URLError: <urlopen error Tunnel connection failed: 503 Service Unavailable>"
+    },
+    {
+      "url": "https://redcrag.cn/api/v1/status",
+      "method": "GET",
+      "authenticated": false,
+      "observed_at": "2026-09-22T11:39:15.699792+00:00",
+      "transport_error": "URLError: <urlopen error Tunnel connection failed: 503 Service Unavailable>"
+    },
+    {
+      "url": "https://redcrag.cn/api/v1/capabilities",
+      "method": "GET",
+      "authenticated": false,
+      "observed_at": "2026-09-22T11:39:15.699792+00:00",
+      "transport_error": "URLError: <urlopen error Tunnel connection failed: 503 Service Unavailable>"
+    },
+    {
+      "url": "https://redcrag.cn/api/v1/openapi.json",
+      "method": "GET",
+      "authenticated": false,
+      "observed_at": "2026-09-22T11:39:15.699792+00:00",
+      "transport_error": "URLError: <urlopen error Tunnel connection failed: 503 Service Unavailable>"
+    },
+    {
+      "url": "https://dcell.net/.well-known/titmas.json",
+      "method": "GET",
+      "authenticated": false,
+      "observed_at": "2026-09-22T11:39:15.699792+00:00",
+      "http_status": 403,
+      "final_url": "https://dcell.net/.well-known/titmas.json",
+      "content_type": "text/html",
+      "response_bytes": 146,
+      "sha256": "32f2fa940d4b4fe19aca1e53a24e5aac29c57b7c5ee78588325b87f1b649c864",
+      "json_valid": false,
+      "html_title": "403 Forbidden"
+    },
+    {
+      "url": "https://dcell.net/api/v1/status",
+      "method": "GET",
+      "authenticated": false,
+      "observed_at": "2026-09-22T11:39:15.699792+00:00",
+      "http_status": 403,
+      "final_url": "https://dcell.net/api/v1/status",
+      "content_type": "text/html",
+      "response_bytes": 146,
+      "sha256": "32f2fa940d4b4fe19aca1e53a24e5aac29c57b7c5ee78588325b87f1b649c864",
+      "json_valid": false,
+      "html_title": "403 Forbidden"
+    },
+    {
+      "url": "https://dcell.net/api/v1/capabilities",
+      "method": "GET",
+      "authenticated": false,
+      "observed_at": "2026-09-22T11:39:15.699792+00:00",
+      "http_status": 403,
+      "final_url": "https://dcell.net/api/v1/capabilities",
+      "content_type": "text/html",
+      "response_bytes": 146,
+      "sha256": "32f2fa940d4b4fe19aca1e53a24e5aac29c57b7c5ee78588325b87f1b649c864",
+      "json_valid": false,
+      "html_title": "403 Forbidden"
+    },
+    {
+      "url": "https://dcell.net/api/v1/openapi.json",
+      "method": "GET",
+      "authenticated": false,
+      "observed_at": "2026-09-22T11:39:15.699792+00:00",
+      "http_status": 403,
+      "final_url": "https://dcell.net/api/v1/openapi.json",
+      "content_type": "text/html",
+      "response_bytes": 146,
+      "sha256": "32f2fa940d4b4fe19aca1e53a24e5aac29c57b7c5ee78588325b87f1b649c864",
+      "json_valid": false,
+      "html_title": "403 Forbidden"
+    }
+  ]
+}

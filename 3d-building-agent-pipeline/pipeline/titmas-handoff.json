@@ -1,0 +1,40 @@
+{
+  "schema_version": "1.0",
+  "status": "BLOCKED_SERVICE_ENTRY_UNAVAILABLE",
+  "primary_application": "architecture-video-pipeline",
+  "service_owner": "joy7758/titmas-sandbox-gateway",
+  "service_id": "titmas-agent-native-infrastructure",
+  "api_version": "v1",
+  "source_discovery": "docs/governance/titmas-service-discovery.json",
+  "live_observation": "docs/governance/titmas-live-get-20260922.json",
+  "requested_capability": [
+    "Catalog/schema read",
+    "Preflight on approved execution/review/evidence-reference objects",
+    "Read raw receipt",
+    "Independent receipt signature and chain verification"
+  ],
+  "required_project_scopes": [
+    "titmas.catalog.read",
+    "titmas.schema.read",
+    "titmas.preflight.execute",
+    "titmas.receipt.read",
+    "titmas.receipt.verify"
+  ],
+  "project_data_minimization": "Only project-scoped metadata and source/model/video/check report digests; raw reference photos and private governance snapshots excluded",
+  "review_responsibility": "TITMAS checks execution/evidence contract; independent visual reviewer judges artistic building/video fit",
+  "resume_conditions": [
+    "Owner publishes/reconfirms a reachable current canonical base_url and service version",
+    "Live capabilities/OpenAPI return compatible schema and no elevated truth/authorization claims",
+    "Owner provides project-scoped delegated credential via approved secret channel, never in repository or chat",
+    "Adapter performs real call and independent raw receipt verification",
+    "Negative tests reject stale building/request/model/video digests and invalid receipts"
+  ],
+  "not_done": [
+    "No credential read or created",
+    "No deployment or service restart",
+    "No API POST",
+    "No TITMAS receipt",
+    "No release or publication"
+  ],
+  "implementation_effect": "NONE_DRAFT_HANDOFF_ONLY"
+}

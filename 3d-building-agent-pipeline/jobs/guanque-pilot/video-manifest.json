@@ -1,0 +1,38 @@
+{
+  "schema_version": "1.0",
+  "job_id": "guanque-pilot",
+  "status": "RENDERED",
+  "adapter_id": "guanque",
+  "video": {
+    "path": "artifacts/pipeline/guanque-pilot/2026-09-22T12-33-26-809Z-film-0152d1ca/guanque-pilot.mp4",
+    "sha256": "37ce5076a7c7cb9342df309eb69a00bd5c35b5684c0606079aaa69ea6472eeb6"
+  },
+  "poster": {
+    "path": "artifacts/pipeline/guanque-pilot/2026-09-22T12-33-26-809Z-film-0152d1ca/cover.png",
+    "sha256": "5bfdcd5002050fff1a3ba18d45d679ba7e06ad169eaccca2c73907463a2ef064"
+  },
+  "spec": {
+    "duration_seconds": 24,
+    "fps": 30,
+    "width": 1080,
+    "height": 1920
+  },
+  "bindings": {
+    "request_sha256": "a0ef38da1a439a6bd821bc0e459a1a2c4afffff41bb0ea77ba229dc87606cf7b",
+    "sources_sha256": "a9841495b4c7db87a5d69e9085ff77a477ce83de2fda5a29a35eb1ab62195662",
+    "model_plan_sha256": "5d754eb806d22e5fc5716c4945f9a14984360dfc6f04aa67015281438302dcda"
+  },
+  "render_evidence": {
+    "path": "artifacts/pipeline/guanque-pilot/2026-09-22T12-33-26-809Z-film-0152d1ca/run.json",
+    "sha256": "156d939327f7131ff400d8c05cc9767e9034fb24fdc358ef366da8e52c60350b"
+  },
+  "source_snapshot": {
+    "path": "artifacts/pipeline/source-snapshots/2026-09-22T12-27-10-638Z-0fb796b3/source-manifest.json",
+    "sha256": "25504eedabbe8be7e75e463ffc367eb54f9169756c7cd0bed2b41d8c5d4a5a64"
+  },
+  "capture_scope": "ARTISTIC_PREVIEW_FIXED_SOURCE_SNAPSHOT",
+  "source_stable": true,
+  "served_bundle_verified": true,
+  "titmas": "NOT_RUN",
+  "publication": "NOT_RUN"
+}

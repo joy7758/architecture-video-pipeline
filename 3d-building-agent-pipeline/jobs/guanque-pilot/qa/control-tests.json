@@ -1,0 +1,41 @@
+{
+  "schema_version": "1.0",
+  "observed_at": "2026-09-22T12:34:53.458694+00:00",
+  "scope": "LOCAL_JOB_CONTROL_CONTRACT",
+  "command": "node --test pipeline/test/*.test.mjs",
+  "result": "PASS",
+  "tests_passed": 11,
+  "reported_by": "/root/job_control",
+  "independent_code_review": "/root/independent_review",
+  "evidence_kind": "Worker command result summarized; not a TITMAS receipt",
+  "covered": [
+    "no overwrite",
+    "path traversal and symlink escape",
+    "insufficient references",
+    "user-provided sources",
+    "unknown entity version",
+    "preview with TITMAS unconnected",
+    "forged TITMAS PASS rejected",
+    "stale digest rejected",
+    "builder visual self-sign rejected",
+    "building rename invalidates every downstream binding"
+  ],
+  "source_files": [
+    {
+      "path": "pipeline/lib.mjs",
+      "sha256": "ee59002335f82197f1156d1b6944f5385922f47d59ddfab1d0071bf9ce9df72d"
+    },
+    {
+      "path": "pipeline/cli.mjs",
+      "sha256": "21d54e1dc83572baea6875d80cbf8860c9945a9a1db65f47a1fb8acc788ff286"
+    },
+    {
+      "path": "pipeline/test/control.test.mjs",
+      "sha256": "e8c772d6452fd24bf6f48b700b386ef2ab04122d9cb10633f0494cde945d1aba"
+    },
+    {
+      "path": "pipeline/schemas/contract.schema.json",
+      "sha256": "82bf2507a277e1ca5ff448beb80e3ebb34839272cc4148f9b75ea9059a984fb6"
+    }
+  ]
+}

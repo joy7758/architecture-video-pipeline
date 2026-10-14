@@ -1,0 +1,72 @@
+{
+  "schema_version": "discovery-reuse-observation.v1",
+  "observed_at": "2026-09-22T17:20:54.864793+00:00",
+  "scope": "STATIC_READ_ONLY_DISCOVERY_REUSE_REVIEW",
+  "consumer": "architecture-video-pipeline",
+  "upstream_owner": "joy7758/titmac-scout",
+  "canonical_owner_checkout": "NOT_LOCATED",
+  "local_legacy_checkout": "/Users/zhangbin/GitHub/tiamas-scout",
+  "local_head": "0b2b4e5fab7ba4e3832786ce3d43704c782a778b",
+  "local_remotes_present": false,
+  "local_license": "UNKNOWN",
+  "source_projection_fresh_until": "2026-08-11T16:38:30Z",
+  "source_projection_current_freshness": "STALE",
+  "canonical_dba_main_observed": "81245d1b691e8038f4b39eebb0592ccf6e5f3cef",
+  "scout_execution": "NOT_RUN",
+  "source_code_tests": "NOT_RUN",
+  "architecture_gap_adapter": "NOT_IMPLEMENTED",
+  "recommendation": "REUSE_METHODS_AND_CANDIDATE_COMPONENTS_WITH_DOMAIN_ADAPTER_AFTER_SOURCE_AND_LICENSE_VERIFICATION",
+  "independent_reviewer": "/root/discovery_reuse",
+  "observations": [
+    {
+      "path": "/Users/zhangbin/GitHub/tiamas-scout/src/discovery/cli.rb",
+      "sha256": "d4eb49247d4ccac9e2add1c1163c80e65ed02df02fd9d3f2017681785851a98d"
+    },
+    {
+      "path": "/Users/zhangbin/GitHub/tiamas-scout/src/discovery/source_collector.rb",
+      "sha256": "dd868c7bc1dc23fafcf16c6cbe461f3f2c2db527e02e2ee1e92fafde6ef6eedf"
+    },
+    {
+      "path": "/Users/zhangbin/GitHub/tiamas-scout/src/discovery/support.rb",
+      "sha256": "0332bedc94edeee54d3bcf65c045a75480b73cc540833aa198c6941a83c23914"
+    },
+    {
+      "path": "/Users/zhangbin/GitHub/tiamas-scout/src/discovery/deduplicator.rb",
+      "sha256": "1e795524d75322c60a22e8c5c1d283379b2d44e98705f27e7bfb5a3268f857a6"
+    },
+    {
+      "path": "/Users/zhangbin/GitHub/tiamas-scout/src/discovery/daily_report.rb",
+      "sha256": "3a904ede6b0ab20d67c31e723db0e445cb5e1577987c9d208537fba3a616b877"
+    },
+    {
+      "path": "/Users/zhangbin/GitHub/tiamas-scout/src/discovery/status_index.rb",
+      "sha256": "860a8a9939615de0376a5e54628910d160fc5a329574257bf2678741719249ae"
+    },
+    {
+      "path": "/Users/zhangbin/GitHub/tiamas-scout/config/discovery-sources.yaml",
+      "sha256": "7eb2f81b488e3dd52024c468a5dd04ae12459c804ca84945c4ec89f5aaff4db8"
+    },
+    {
+      "path": "/Users/zhangbin/Documents/New project/digital-biosphere-architecture/architecture/external-capability-discovery-absorption-profile-v0.2.json",
+      "sha256": "b77988497ad1cb41efcdc827a1a42181634d1819034a81aae74a5125eb2f45ae"
+    },
+    {
+      "path": "/Users/zhangbin/Documents/New project/digital-biosphere-architecture/architecture/discovery-validation/dcell-external-capabilities-test-001/DISCOVERY-ABSORPTION-TEST-REPORT.md",
+      "sha256": "370f0ff2dda656b0aa5bb5a03894e50e93086f103f952cf0caf8093017d7cf11"
+    },
+    {
+      "path": "/Users/zhangbin/Documents/New project/digital-biosphere-architecture/cockpit/projections/titmac-scout.json",
+      "sha256": "ad784b58162500a061fc0d664c1829a1a9b25792f35cf06f16e2b085e75da6ee"
+    }
+  ],
+  "blocking_reuse_findings": [
+    "Historical checkout differs from canonical pinned revision",
+    "No license grant established in historical checkout",
+    "GitHub Issue sources and AI-infrastructure keyword extraction only",
+    "No gap-list input contract",
+    "Deduplication retains first content without conflict/version treatment",
+    "Same-day daily report path can overwrite",
+    "Status inferred from directory/highest stage without invalidation"
+  ],
+  "report": "docs/discovery-reuse-assessment.md"
+}
